@@ -14,7 +14,8 @@ export default function Journey() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
-            Your Chapter <span className="text-mulearn-trusty-blue">Journey</span>
+            Your Chapter{" "}
+            <span className="text-mulearn-trusty-blue">Journey</span>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-mulearn-gray-600">
             Seven steps from interest to impact
@@ -34,10 +35,12 @@ export default function Journey() {
                   {idx + 1}
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-1 text-2xl font-bold text-mulearn-blackish">
+                  <h3 className="mb-1 text-xl sm:text-2xl font-bold text-mulearn-blackish">
                     {step.title}
                   </h3>
-                  <p className=" text-xl text-mulearn-gray-600">{step.desc}</p>
+                  <p className="text-base sm:text-xl text-mulearn-gray-600">
+                    {step.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
