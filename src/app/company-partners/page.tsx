@@ -6,11 +6,10 @@ import { CompanyPartner } from "@/data/data";
 import CompanyCard from "@/app/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
 
-import Connecting_teams from "../../../public/assets/company-partners/Connecting_teams.gif";
 
 export default function CompanyPartnersPage() {
   const companies = CompanyPartner;
-
+  const Connecting_teams= cdnUrl("/src/modules/Public/CompanyPartners/assets/companies/Connecting_teams.gif");
   return (
     <div className="min-h-screen bg-white">
       <section className="px-4 sm:px-8 py-1 sm:py-1 lg:py-1">
@@ -42,7 +41,7 @@ export default function CompanyPartnersPage() {
             >
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[35rem] lg:h-[35rem]">
                 <Image
-                  src={cdnUrl(Connecting_teams.src)}
+                  src={Connecting_teams}
                   alt="Connecting teams"
                   fill
                   className="object-contain"
