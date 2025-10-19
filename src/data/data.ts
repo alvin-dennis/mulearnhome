@@ -44,6 +44,12 @@ export interface GalleryItem {
   };
 }
 
+export interface ImpactStat {
+  number: string;
+  label: string;
+  icon: string; // We'll use string names since we can't import React components here
+}
+
 export const navItems = [
   {
     label: "About",
@@ -862,4 +868,13 @@ export const galleryCategories = [
   { id: "companies", label: "Companies", count: galleryData.filter(item => item.category === "companies").length },
   { id: "mentors", label: "Mentors", count: galleryData.filter(item => item.category === "mentors").length },
   { id: "impact-stories", label: "Impact Stories", count: galleryData.filter(item => item.category === "impact-stories").length },
+];
+
+export const impactStats: ImpactStat[] = [
+  { number: "59,000+", label: "Learners", icon: "Users" },
+  { number: "1,900+", label: "Institutions", icon: "School" },
+  { number: "500+", label: "Events Hosted", icon: "Calendar" },
+  { number: "50+", label: "Company Partners", icon: "Handshake" },
+  { number: "1,000+", label: "Mentors", icon: "GraduationCap" },
+  { number: "100+", label: "Success Stories", icon: "TrendingUp" },
 ];
