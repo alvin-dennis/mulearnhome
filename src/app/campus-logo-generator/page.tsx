@@ -47,7 +47,6 @@ const CampusLogoGenerator = () => {
   ];
   const fileTypes = ["PNG", "SVG"] as const;
 
-  const mulearnLogo = "/assets/logo-template/logo.svg";
   const stripesPattern = "/assets/logo-template/stripes (1).svg";
   const yipLogoBlack = "/assets/logo-template/yip-logo-black.svg";
   const yipLogoRed = "/assets/logo-template/yip-logo-red.svg";
@@ -186,6 +185,7 @@ const CampusLogoGenerator = () => {
           >
             {logoType === "MuLearn" && muLogoVariant === "Profile Pic" && (
               <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   alt="stripes background"
                   src={stripesPattern}
@@ -195,6 +195,7 @@ const CampusLogoGenerator = () => {
               </div>
             )}
 
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoType === "MuLearn" ? logoVariants[selectedLogoVariant] : yipLogoImages[yipLogoVariant]}
               className={
@@ -231,6 +232,7 @@ const CampusLogoGenerator = () => {
             >
               {logoType === "MuLearn" && muLogoVariant === "Profile Pic" && (
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={stripesPattern}
                     alt="stripes background"
@@ -240,6 +242,7 @@ const CampusLogoGenerator = () => {
                 </div>
               )}
 
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logoType === "MuLearn" ? logoVariants[selectedLogoVariant] : yipLogoImages[yipLogoVariant]}
                 className={
@@ -277,6 +280,7 @@ const CampusLogoGenerator = () => {
             >
               {logoType === "MuLearn" && muLogoVariant === "Profile Pic" && (
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={stripesPattern}
                     alt="stripes background"
@@ -286,6 +290,7 @@ const CampusLogoGenerator = () => {
                 </div>
               )}
 
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logoType === "MuLearn" ? logoVariants[selectedLogoVariant] : yipLogoImages[yipLogoVariant]}
                 className={

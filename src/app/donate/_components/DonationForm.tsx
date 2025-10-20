@@ -70,8 +70,7 @@ export default function DonationForm() {
     handleSubmit,
     formState: { errors, isValid },
     watch,
-    setValue,
-    trigger
+    setValue
   } = useForm<DonationFormData>({
     resolver: zodResolver(donationFormSchema),
     mode: 'onChange',
