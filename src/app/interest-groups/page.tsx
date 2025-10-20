@@ -65,16 +65,12 @@ export default function InterestGroups() {
     );
 
     return (
-            <div className="bg-gradient-to-b from-mulearn-greyish/10 to-mulearn-whitish min-h-screen">
+        <div className="bg-gradient-to-b from-mulearn-greyish/10 to-mulearn-whitish min-h-screen">
             {/* Hero Section */}
             <motion.section 
                 style={{ y: heroY, opacity: heroOpacity }}
                 className="relative overflow-hidden bg-mulearn-trusty-blue pt-20 pb-32 md:pt-32 md:pb-40"
             >
-                {/* Background logo removed as requested */}
-
-                {/* Background accents removed to match solid brand banner */}
-
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -93,13 +89,13 @@ export default function InterestGroups() {
                             </span>
                         </motion.div>
                         
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-mulearn-whitish mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-mulearn-whitish mb-6 leading-tight font-display">
                             Find Your Tribe,
                             <br />
                             <span className="text-mulearn-whitish">Grow Together</span>
                         </h1>
                         
-                            <p className="text-lg md:text-xl text-mulearn-whitish/80 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-lg md:text-xl text-mulearn-whitish/80 max-w-3xl mx-auto leading-relaxed">
                             Join communities where learners explore specific domains, collaborate on projects, 
                             and grow together through shared curiosity and hands-on learning.
                         </p>
@@ -108,8 +104,8 @@ export default function InterestGroups() {
 
                 {/* Decorative wave */}
                 <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" className="fill-current text-mulearn-whitish/95"/>
+                    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                        <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" className="fill-current text-mulearn-whitish/95"/>
                     </svg>
                 </div>
             </motion.section>
@@ -123,10 +119,10 @@ export default function InterestGroups() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 font-display">
                         Built on Community Values
                     </h2>
-                    <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         At µLearn, we believe in the power of learning together
                     </p>
                 </motion.div>
@@ -139,11 +135,11 @@ export default function InterestGroups() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                                className="text-center p-8 rounded-2xl bg-mulearn-whitish shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/20"
+                            className="text-center p-8 rounded-2xl bg-mulearn-whitish shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/20"
                         >
                             <div className="text-5xl mb-4">{value.icon}</div>
-                                <h3 className="text-xl font-bold text-mulearn-blackish mb-2">{value.title}</h3>
-                                <p className="text-mulearn-gray-600">{value.description}</p>
+                            <h3 className="text-xl font-bold text-mulearn-blackish mb-2 font-display">{value.title}</h3>
+                            <p className="text-gray-600">{value.description}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -159,16 +155,19 @@ export default function InterestGroups() {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 font-display">
                             Your Learning Journey
                         </h2>
-                        <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                             From curiosity to career readiness in five simple steps
                         </p>
                     </motion.div>
 
                     {/* Desktop Timeline */}
                     <div className="hidden md:block relative">
+                        {/* Vertical center line */}
+                        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-mulearn-trusty-blue/30 transform -translate-x-1/2" />
+                        
                         {workflowSteps.map((step, index) => {
                             const Icon = step.icon;
                             const isLeft = index % 2 === 0;
@@ -187,9 +186,9 @@ export default function InterestGroups() {
                                             <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border border-mulearn-greyish/20 hover:shadow-xl transition-shadow duration-300">
                                                 <div className={`flex items-center gap-3 mb-3 ${isLeft ? 'justify-end' : 'justify-start'}`}>
                                                     <Icon className="w-6 h-6 text-mulearn-trusty-blue" />
-                                                    <h3 className="text-xl font-bold text-mulearn-blackish">{step.title}</h3>
+                                                    <h3 className="text-xl font-bold text-mulearn-blackish font-display">{step.title}</h3>
                                                 </div>
-                                                <p className="text-mulearn-gray-600 leading-relaxed">{step.description}</p>
+                                                <p className="text-gray-600 leading-relaxed">{step.description}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -239,8 +238,8 @@ export default function InterestGroups() {
                                     
                                     {/* Content */}
                                     <div className="bg-mulearn-whitish p-6 rounded-xl shadow-md border border-mulearn-greyish/20">
-                                        <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
-                                        <p className="text-mulearn-gray-600 text-sm leading-relaxed">{step.description}</p>
+                                        <h3 className="text-lg font-bold text-mulearn-blackish mb-2 font-display">{step.title}</h3>
+                                        <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
                                     </div>
                                 </motion.div>
                             );
@@ -258,22 +257,22 @@ export default function InterestGroups() {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 font-display">
                         Explore Interest Groups
                     </h2>
-                    <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto mb-8">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                         Choose a domain that excites you and start your learning journey today
                     </p>
 
                     {/* Search Bar */}
                     <div className="max-w-md mx-auto relative">
-                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-mulearn-gray-600 w-5 h-5" />
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
                             type="text"
                             placeholder="Search interest groups..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-mulearn-greyish/40 focus:border-mulearn-trusty-blue focus:outline-none transition-colors duration-300 text-mulearn-blackish placeholder-mulearn-gray-600/70"
+                            className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-mulearn-greyish/40 focus:border-mulearn-trusty-blue focus:outline-none transition-colors duration-300 text-mulearn-blackish placeholder-gray-400"
                             aria-label="Search interest groups"
                         />
                     </div>
@@ -294,7 +293,7 @@ export default function InterestGroups() {
                             className="group block"
                         >
                             <div className="relative h-full bg-mulearn-whitish rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-mulearn-greyish/20">
-                                {/* Image Header - Full width gradient background with centered image */}
+                                {/* Image Header */}
                                 <div className="relative h-48 overflow-hidden rounded-t-2xl">
                                     <MuImage
                                         src={group.image}
@@ -307,10 +306,10 @@ export default function InterestGroups() {
 
                                 {/* Card Content */}
                                 <div className="relative z-10 flex flex-col p-6">
-                                    <h3 className="text-xl font-bold text-mulearn-blackish mb-2 group-hover:text-mulearn-trusty-blue transition-colors duration-300">
+                                    <h3 className="text-xl font-bold text-mulearn-blackish mb-2 group-hover:text-mulearn-trusty-blue transition-colors duration-300 font-display">
                                         {group.name}
                                     </h3>
-                                    <p className="text-sm text-mulearn-gray-600 mb-4 flex-grow">
+                                    <p className="text-sm text-gray-600 mb-4 flex-grow">
                                         {group.tagline}
                                     </p>
                                     
@@ -336,7 +335,7 @@ export default function InterestGroups() {
                         animate={{ opacity: 1 }}
                         className="text-center py-16"
                     >
-                        <p className="text-mulearn-gray-600 text-lg">No interest groups found matching your search.</p>
+                        <p className="text-gray-500 text-lg">No interest groups found matching your search.</p>
                     </motion.div>
                 )}
             </section>
@@ -350,7 +349,7 @@ export default function InterestGroups() {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-whitish mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-mulearn-whitish mb-6 font-display">
                         Ready to Start Your Journey?
                     </h2>
                     <p className="text-lg text-mulearn-whitish/90 mb-8 max-w-2xl mx-auto">
