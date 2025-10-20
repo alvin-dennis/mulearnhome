@@ -166,7 +166,7 @@ export default function InterestGroups() {
                     {/* Desktop Timeline */}
                     <div className="hidden md:block relative">
                         {/* Vertical center line */}
-                        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-mulearn-trusty-blue/30 transform -translate-x-1/2 z-0" />
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn-trusty-blue/40 rounded-full" style={{ top: 0, height: 'calc(100% - 96px)' }} />
                         
                         {workflowSteps.map((step, index) => {
                             const Icon = step.icon;
