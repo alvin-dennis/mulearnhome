@@ -1,10 +1,36 @@
-"use server";
 
-import { privacyPolicy } from "@/data/data";
+import { refundPolicy } from "@/data/data";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
 
-export default async function PrivacyPolicy() {
+export const metadata: Metadata = {
+  title: "Refund Policy | µLearn Foundation",
+  description:
+    "Learn about µLearn Foundation's donation refund policy, including eligibility criteria, refund request process, and terms for one-time and recurring donations.",
+  keywords: [
+    "refund policy",
+    "donation refund",
+    "mulearn refund",
+    "donation terms",
+    "refund eligibility",
+  ],
+  openGraph: {
+    title: "Refund Policy | µLearn Foundation",
+    description:
+      "Understand our transparent donation refund policy and how we handle refund requests.",
+    type: "website",
+    siteName: "µLearn Foundation",
+  },
+  twitter: {
+    card: "summary",
+    title: "Refund Policy | µLearn Foundation",
+    description:
+      "Learn about µLearn Foundation's donation refund policy and terms.",
+  },
+};
+
+export default async function RefundPolicy() {
   const formatText = (text: string) =>
     text
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -18,15 +44,15 @@ export default async function PrivacyPolicy() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 xl:px-12">
         <header className="mb-10 text-center">
           <h1 className="mb-3 text-3xl sm:text-4xl font-extrabold text-[var(--mulearn-blackish)] tracking-tight uppercase">
-            {privacyPolicy.title}
+            {refundPolicy.title}
           </h1>
           <p className="text-sm text-[var(--mulearn-gray-600)]">
-            Last Updated: {privacyPolicy.lastUpdated}
+            Last Updated: {refundPolicy.lastUpdated}
           </p>
         </header>
 
         <div className="mb-12 space-y-6">
-          {privacyPolicy.introduction.split("\n\n").map((paragraph, index) => (
+          {refundPolicy.introduction.split("\n\n").map((paragraph, index) => (
             <p
               key={index}
               className="text-[15px] sm:text-base leading-7 text-[var(--mulearn-blackish)]"
@@ -36,7 +62,7 @@ export default async function PrivacyPolicy() {
         </div>
 
         <div className="space-y-12">
-          {privacyPolicy.sections.map((section, index) => (
+          {refundPolicy.sections.map((section, index) => (
             <section key={index} className="scroll-mt-20">
               <h2 className="mb-3 text-lg font-semibold text-[var(--mulearn-blackish)]">
                 {index + 1}. {section.heading}
@@ -59,7 +85,9 @@ export default async function PrivacyPolicy() {
                 >
                   {section.subsections.map((subsection, subIndex) => (
                     <li key={subIndex} className="pl-2 leading-relaxed">
-                      {subsection}
+                      <span
+                        dangerouslySetInnerHTML={{ __html: formatText(subsection) }}
+                      />
                     </li>
                   ))}
                 </ol>

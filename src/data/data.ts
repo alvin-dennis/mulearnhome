@@ -396,6 +396,7 @@ export const footer = [
     links: [
       { title: "Terms and Conditions", url: "/termsandconditions" },
       { title: "Privacy Policy", url: "/privacypolicy" },
+      { title: "Refund Policy", url: "/refundpolicy" },
     ],
   },
 ];
@@ -429,6 +430,123 @@ export const contactInfo = {
   email: "info@mulearn.org",
   phone: "+91 89436 47000",
   website: "www.mulearn.org",
+};
+
+export const refundPolicy = {
+  title: "REFUND POLICY",
+  lastUpdated: "October 2025",
+  introduction: `This Refund Policy is issued by µLearn Foundation, which includes its parent, subsidiaries and affiliates (together, "µLearn", or <strong>"We"</strong> or <strong>"us"</strong> or <strong>"our(s)"</strong>). This policy outlines the terms and conditions under which donations made to µLearn Foundation may be refunded.
+
+At µLearn Foundation, we are committed to transparency and accountability in all our operations, including the management of donations. We deeply appreciate your support and want to ensure that your contribution experience is positive and clear.`,
+  sections: [
+    {
+      heading: "General Donation Policy",
+      content:
+        "All donations made to µLearn Foundation are considered final and non-refundable unless specifically stated otherwise or required by law. Donations are voluntary contributions made to support our mission of empowering students through education and technology.",
+      subsections: [
+        "Donations are used exclusively for educational programs, community initiatives, student support, and operational expenses related to our mission.",
+        "Once processed, donations are allocated to various programs and activities, making refunds administratively challenging and potentially disruptive to our operations.",
+        "Donors are encouraged to carefully review their donation amount and frequency (one-time, monthly, or yearly) before completing the transaction.",
+      ],
+    },
+    {
+      heading: "Refund Eligibility",
+      content:
+        "While donations are generally non-refundable, we recognize that certain circumstances may warrant consideration for a refund. Refund requests may be considered in the following situations:",
+      subsections: [
+        "<strong>Duplicate Transactions:</strong> If you have been charged multiple times for the same donation due to a technical error or processing issue.",
+        "<strong>Unauthorized Transactions:</strong> If a donation was made without your knowledge or authorization, and you can provide reasonable evidence of the unauthorized transaction.",
+        "<strong>Processing Errors:</strong> If there was a clear error in the processing of your donation amount (e.g., you intended to donate ₹1,000 but were charged ₹10,000 due to a system error).",
+        "<strong>Immediate Request:</strong> Refund requests made within 48 hours of the donation transaction may be considered on a case-by-case basis.",
+      ],
+    },
+    {
+      heading: "Non-Refundable Circumstances",
+      content:
+        "The following circumstances are explicitly considered non-refundable:",
+      subsections: [
+        "Change of mind after the donation has been processed.",
+        "Financial hardship or personal circumstances that arise after making the donation.",
+        "Disagreement with how funds are allocated or utilized by µLearn Foundation.",
+        "Donations made more than 7 days prior to the refund request.",
+        "Recurring donations where advance notice of cancellation was not provided as per the cancellation policy.",
+      ],
+    },
+    {
+      heading: "Refund Request Process",
+      content:
+        "If you believe you qualify for a refund based on the eligibility criteria outlined above, please follow this process:",
+      subsections: [
+        "<strong>Contact Us:</strong> Send an email to <em>info@mulearn.org</em> with the subject line 'Donation Refund Request'.",
+        "<strong>Provide Required Information:</strong> Include your full name, email address, phone number, transaction date, transaction ID/reference number, donation amount, and detailed reason for the refund request with supporting documentation if applicable.",
+        "<strong>Review Period:</strong> We will review your request within 7-10 business days of receipt.",
+        "<strong>Decision Notification:</strong> You will be notified via email about the approval or denial of your refund request.",
+        "<strong>Processing Time:</strong> If approved, refunds will be processed within 14-21 business days and credited back to the original payment method used for the donation.",
+      ],
+    },
+    {
+      heading: "Recurring Donations",
+      content:
+        "For donors who have set up recurring donations (monthly or yearly), the following terms apply:",
+      subsections: [
+        "You may cancel recurring donations at any time by logging into your account or contacting us at <em>info@mulearn.org</em>.",
+        "Cancellation requests must be submitted at least 5 business days before the next scheduled donation date to ensure processing.",
+        "Already processed recurring donations are subject to the same refund policy as one-time donations.",
+        "No refunds will be provided for past recurring donations that were successfully processed unless they meet the refund eligibility criteria.",
+      ],
+    },
+    {
+      heading: "Tax Deductibility and Refunds",
+      content:
+        "Important considerations regarding tax implications of donations and refunds:",
+      subsections: [
+        "If you have claimed a tax deduction for your donation and subsequently receive a refund, you are responsible for amending your tax returns accordingly.",
+        "µLearn Foundation will provide updated donation receipts reflecting any refunds processed.",
+        "Consult with a tax professional regarding the implications of refunded donations on your tax filings.",
+      ],
+    },
+    {
+      heading: "Alternative to Refunds",
+      content:
+        "In situations where a refund may not be possible but you have concerns about your donation, we offer the following alternatives:",
+      subsections: [
+        "<strong>Donation Reallocation:</strong> You may request that your donation be reallocated to a different program or initiative within µLearn Foundation.",
+        "<strong>Credit for Future Donations:</strong> In certain circumstances, we may offer a credit that can be applied to future donations or program participation fees.",
+        "<strong>Recognition Adjustment:</strong> If there are concerns about donor recognition or acknowledgment, we will work with you to address these matters appropriately.",
+      ],
+    },
+    {
+      heading: "Contact Information",
+      content:
+        "For any questions, concerns, or requests related to this Refund Policy, please contact us:",
+      subsections: [
+        "<strong>Email:</strong> <em>info@mulearn.org</em>",
+        "<strong>Phone:</strong> <em>+91 89436 47000</em>",
+        "<strong>Address:</strong> Technopark Phase 1, Thiruvananthapuram, Kerala - 695581",
+        "<strong>Website:</strong> <em>www.mulearn.org</em>",
+      ],
+    },
+    {
+      heading: "Dispute Resolution",
+      content:
+        "If you are not satisfied with our response to your refund request, you may:",
+      subsections: [
+        "Request an escalation to senior management for further review.",
+        "Seek mediation through appropriate consumer protection channels.",
+        "Contact your payment provider or bank to dispute the transaction (note: this should be a last resort and may affect future donation capabilities).",
+      ],
+    },
+    {
+      heading: "Policy Updates",
+      content:
+        "<strong>Mulearn Foundation reserves the right to modify or update this donation refund policy at any time without prior notice. Any revisions will be effective immediately upon posting on our website or other communication channels.</strong>",
+      subsections: [
+        "Donors are encouraged to review this policy periodically to stay informed of any changes.",
+        "Continued donations after policy updates constitute acceptance of the revised terms.",
+        "Material changes to this policy will be communicated to active recurring donors via email.",
+      ],
+    },
+  ],
 };
 
 export const privacyPolicy = {

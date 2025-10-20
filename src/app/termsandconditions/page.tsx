@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 export default async function TermsAndConditions() {
   return (
     <>
-      <Navbar />
       <div className="mx-auto max-w-5xl lg:max-w-6xl px-4 sm:px-6 lg:px-8 py-16 text-[var(--mulearn-blackish)] text-base lg:text-lg leading-relaxed">
         <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-center text-[var(--mulearn-blackish)]">
           TERMS OF SERVICES
@@ -582,7 +581,6 @@ export default async function TermsAndConditions() {
           </li>
         </ol>
       </div>
-      <Footer />
     </>
   );
 }
