@@ -3,6 +3,7 @@
 import React from "react";
 import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ const handimg = cdnUrl("/src/modules/Public/Manifesto/assets/hand.png");
 
 export default function Manifesto() {
   return (
-    <section className="overflow-x-hidden">
+    <section className="overflow-x-hidden min-h-screen">
       <div className="relative min-h-[120px] flex flex-col md:flex-row bg-mulearn-trusty-blue mt-[6vw] md:h-[20vw] h-[40vw] pl-0 rounded-t-[1.2rem] md:rounded-none">
         <MuImage
           src={bglogo}
@@ -19,7 +20,6 @@ export default function Manifesto() {
           width={400}
           height={400}
           className="absolute w-[55vw] md:w-[35vw] h-[200px] align-middle"
-          loading="lazy"
         />
         <div className="flex flex-col justify-center w-full md:w-4/5 pl-[1.2rem] md:pl-20 pt-[1.2rem] md:pt-12 h-full">
           <div className="bg-mulearn-whitish/30 rounded-full pr-[6vw] md:pr-16 pl-[5vw] md:pl-8 py-[1vw] md:py-2 w-fit md:mb-4 uppercase text-mulearn-whitish text-[1.5vw] md:text-[1.3vw] font-medium">
@@ -30,7 +30,7 @@ export default function Manifesto() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-mulearn-whitish text-[10vw] md:text-[6.5vw] leading-[1.5] md:leading-none"
-            style={{ fontFamily: "Retro Team" }}
+            style={{ fontFamily: "var(--font-retro)" }}
           >
             We,The Unbound, The Unbowed
           </motion.h1>
@@ -42,7 +42,6 @@ export default function Manifesto() {
           width={400}
           height={400}
           className="absolute my-0 mx-auto -right-[5vw] md:right-[4vw] bottom-0 w-[30vw] md:w-[20vw] h-auto"
-          loading="lazy"
         />
       </div>
 
@@ -87,9 +86,9 @@ export default function Manifesto() {
         </motion.h2>
 
         <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
-          <button className="bg-mulearn-whitish text-mulearn-trusty-blue py-2 px-6 sm:px-8 sm:py-3 font-semibold text-[0.95rem] sm:text-[1.3rem] shadow hover:bg-mulearn-duke-purple hover:text-mulearn-whitish hover:scale-105 transition-all cursor-pointer rounded-full">
+          <Button variant={"mulearn-blue"} className="bg-mulearn-whitish text-mulearn-trusty-blue py-2 px-6 sm:px-8 sm:py-3 font-semibold text-[0.95rem] sm:text-[1.3rem] shadow hover:bg-mulearn-duke-purple hover:text-mulearn-whitish hover:scale-105 transition-all cursor-pointer rounded-full">
             Join µLearn
-          </button>
+          </Button>
         </Link>
       </div>
     </section>

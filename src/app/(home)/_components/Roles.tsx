@@ -2,12 +2,8 @@
 
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import {
-  rolesTitle,
-  rolesContent,
-  type Role,
-  type RoleItem,
-} from "@/data/data";
+import { rolesTitle, rolesContent } from "@/data/data";
+import { Role, RoleItem } from "@/lib/types";
 import MuImage from "@/components/MuImage";
 
 const fadeInUp: Variants = {
@@ -73,12 +69,11 @@ export default function Roles() {
               width={300}
               height={200}
               className="w-full min-h-[220px] mb-2.5 object-cover"
-              loading="lazy"
             />
             <h6 className="text-[1.1rem] font-bold text-mulearn-blackish m-0 mb-2">
               {item.name}
             </h6>
-            <p className="text-[0.85rem] font-normal text-center text-[var(--mulearn-greyish]">
+            <p className="text-[0.85rem] font-normal text-center text-mulearn-gray-600">
               {item.description}
             </p>
           </motion.div>
