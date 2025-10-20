@@ -514,6 +514,16 @@ export const footer = [
       { title: "Privacy Policy", url: "/privacypolicy" },
     ],
   },
+
+  {
+  title: "Be Part of Us",
+  links: [
+    { title: "Campus", url: "be-a-part/campus" },
+    { title: "Companies", url: "be-a-part/company" },
+    { title: "Students", url: "/students" },
+    { title: "Mentors", url: "/mentors" }
+  ]
+},
 ];
 
 export const socials = [

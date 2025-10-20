@@ -38,7 +38,6 @@ export default function Footer() {
                     unoptimized 
                   />
                 </div>
-                
               </div>
               <p className="text-mulearn-gray-600 text-sm leading-relaxed max-w-md">
                 Empowering learners through community-driven education and 
@@ -72,7 +71,7 @@ export default function Footer() {
             <div 
               key={section.title} 
               className={`space-y-4 ${
-                ['Quick Links', 'Legal'].includes(section.title) 
+                ['Quick Links', 'Legal', 'Be Part of Us'].includes(section.title) 
                   ? 'mt-8 lg:mt-12' 
                   : ''
               }`}
