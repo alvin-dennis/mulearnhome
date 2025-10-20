@@ -18,10 +18,6 @@ export const navItems = [
         { label: "TEAM", href: "/team" },
         { label: "ENABLERS", href: "/enablers" },
       ],
-      Partners: [
-        { label: "COMMUNITY PARTNERS", href: "/community-partners" },
-        { label: "COMPANY PARTNERS", href: "/company-partners" },
-      ],
       EVENTS: [
         { label: "GLOBAL CALENDAR", href: "/events/calendar" },
         // { label: "ANNOUNCEMENTS", href: "/events/announcements" },
@@ -62,6 +58,10 @@ export const navItems = [
         { label: "Company", href: "/be-a-part/company" },
         { label: "Campus", href: "/be-a-part/campus" },
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
+      ],
+      Partners: [
+        { label: "COMMUNITY PARTNERS", href: "/community-partners" },
+        { label: "COMPANY PARTNERS", href: "/company-partners" },
       ],
     },
   },
