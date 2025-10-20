@@ -1,39 +1,38 @@
 "use client";
-
+import { cdnUrl } from "@/services/cdn";
 import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Search, ArrowRight, Users, Target, BookOpen, Lightbulb, TrendingUp } from "lucide-react";
-import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";
 import { interestGroups } from "@/data/data";
 
-const bglogo = cdnUrl("/src/modules/Public/InterestGroups/assets/µ.png");
+const bgLogo = cdnUrl("/src/modules/Public/Manifesto/assets/µ.png");
 
 const workflowSteps = [
     {
         icon: Target,
-        title: "Clear Goal",
-        description: "The journey is designed to take a student from initial curiosity to career readiness."
+        title: "Reach Level 4",
+        description: "Start your µLearn journey and progress to Level 4 to unlock Interest Group related tasks and opportunities."
     },
     {
         icon: Users,
-        title: "Simple Onboarding",
-        description: "Members begin by exploring a group and using foundational resources to get started."
+        title: "Choose Your Interest Group",
+        description: "Explore and join an Interest Group that aligns with your passion and career goals from the available domains."
     },
     {
         icon: BookOpen,
-        title: "Community Learning",
-        description: "Growth happens through active participation in meetings and curated learning materials."
+        title: "Learn Through Real-World Problems",
+        description: "Engage in hands-on learning by working on real-world problems and industry-relevant projects within your group."
     },
     {
         icon: Lightbulb,
-        title: "Dual Support System",
-        description: "Get guidance from both student leads (peers) and industry mentors (professionals)."
+        title: "Build Practical Skills",
+        description: "Develop job-ready skills through collaborative learning, mentorship from peers and industry experts, and curated resources."
     },
     {
         icon: TrendingUp,
-        title: "Practical Outcome",
-        description: "Focus on building real-world skills and mapping them directly to job opportunities."
+        title: "Advance Your Career",
+        description: "Apply your skills to meaningful projects, build your portfolio, and prepare for career opportunities in your chosen field."
     }
 ];
 
@@ -71,38 +70,20 @@ export default function InterestGroups() {
             {/* Hero Section */}
             <motion.section 
                 style={{ y: heroY, opacity: heroOpacity }}
-                className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 pt-20 pb-32 md:pt-32 md:pb-40"
+                className="relative overflow-hidden bg-mulearn-trusty-blue pt-20 pb-32 md:pt-32 md:pb-40"
             >
                 {/* µLearn Background Logo */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <MuImage
-                        src={bglogo}
+                        src={bgLogo}
                         alt="µLearn background logo"
                         width={600}
                         height={600}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 w-[70vw] md:w-[45vw] lg:w-[35vw] opacity-10 object-contain"
+                        className="absolute left-0 top-0 w-[85vw] md:w-[55vw] lg:w-[45vw] opacity-20 object-contain select-none"
                     />
                 </div>
 
-                {/* Animated background elements */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <motion.div
-                        animate={{ 
-                            scale: [1, 1.2, 1],
-                            rotate: [0, 90, 0]
-                        }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-                    />
-                    <motion.div
-                        animate={{ 
-                            scale: [1.2, 1, 1.2],
-                            rotate: [90, 0, 90]
-                        }}
-                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                        className="absolute -bottom-1/2 -left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
-                    />
-                </div>
+                {/* Background accents removed to match solid brand banner */}
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
@@ -125,7 +106,7 @@ export default function InterestGroups() {
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                             Find Your Tribe,
                             <br />
-                            <span className="text-blue-200">Grow Together</span>
+                            <span className="text-mulearn-whitish">Grow Together</span>
                         </h1>
                         
                         <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
@@ -324,37 +305,38 @@ export default function InterestGroups() {
                             transition={{ duration: 0.5, delay: index * 0.05 }}
                             className="group block"
                         >
-                            <div className="relative h-full bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 p-6">
-                                {/* Card Content */}
-                                <div className="relative z-10 flex flex-col items-center text-center h-full">
+                            <div className="relative h-full bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+                                {/* Image Header - Full width gradient background with centered image */}
+                                <div className="relative h-48 overflow-hidden rounded-t-2xl">
                                     <MuImage
                                         src={group.image}
                                         alt={group.name}
-                                        width={80}
-                                        height={80}
-                                        className="mb-4 object-contain group-hover:scale-110 transition-transform duration-300"
+                                        width={400}
+                                        height={192}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     />
+                                </div>
+
+                                {/* Card Content */}
+                                <div className="relative z-10 flex flex-col p-6">
                                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                                         {group.name}
                                     </h3>
-                                    <p className="text-sm text-gray-600 mb-4">
+                                    <p className="text-sm text-gray-600 mb-4 flex-grow">
                                         {group.tagline}
                                     </p>
                                     
-                                    <div className="mt-auto flex items-center gap-2 text-blue-600 font-medium text-sm group-hover:gap-3 transition-all duration-300">
+                                    <div className="flex items-center gap-2 text-blue-600 font-medium text-sm group-hover:gap-3 transition-all duration-300">
                                         Explore <ArrowRight className="w-4 h-4" />
                                     </div>
                                 </div>
 
                                 {/* Hover Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20">
-                                    <p className="text-white text-sm leading-relaxed">
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl">
+                                    <p className="text-white text-sm leading-relaxed text-center">
                                         {group.description}
                                     </p>
                                 </div>
-
-                                {/* Decorative gradient on hover */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
                         </motion.a>
                     ))}
@@ -372,7 +354,7 @@ export default function InterestGroups() {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800">
+            <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-mulearn-trusty-blue">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -383,17 +365,20 @@ export default function InterestGroups() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Ready to Start Your Journey?
                     </h2>
-                    <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-lg text-mulearn-whitish/90 mb-8 max-w-2xl mx-auto">
                         Join thousands of learners who are building skills, making connections, 
                         and preparing for the careers of tomorrow.
                     </p>
-                    <motion.button
+                    <motion.a
+                        href="https://app.mulearn.org/dashboard/profile"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-700 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-white text-mulearn-trusty-blue rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
                     >
                         Join an Interest Group <ArrowRight className="w-5 h-5" />
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
             </section>
         </div>
