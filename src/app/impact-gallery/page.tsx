@@ -49,7 +49,7 @@ export default function ImpactGallery() {
               Our Impact in Action
             </h2>
             <p className="text-mulearn-gray-600 text-lg max-w-2xl mx-auto">
-              Explore the stories, events, and milestones that define our community's journey
+              Explore the stories, events, and milestones that define our community&apos;s journey
             </p>
           </div>
 
