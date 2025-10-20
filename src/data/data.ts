@@ -71,7 +71,7 @@ export const navItems = [
   },
   {
     label: "Learning",
-    href: "https://app.mulearn.org/dashboard/learningcircle",
+    href: "/learning-circle",
     submenu: {
       Explore: [
         {
@@ -80,7 +80,7 @@ export const navItems = [
         },
         {
           label: "Learning Circle",
-          href: "https://app.mulearn.org/dashboard/learningcircle",
+          href: "/learning-circle",
         },
         {
           label: "Learning Paths",
@@ -6444,7 +6444,7 @@ export const learningCircleData = {
   subtitle: "Learn, Collaborate & Grow Together",
   description:
     "Learning Circles are µLearn’s peer-learning communities where people grow through shared interests, discussions, and projects. It’s a space to explore, collaborate, and improve together.",
-  image: "/assets/learning-circle/learning-circle-illustration.webp",
+  image: "/assets/learning-circle/learning-circle-illustration.svg",
   ctaText: "Join a Learning Circle",
   ctaLink: "https://app.mulearn.org/dashboard/learningcircle",
   introduction: {

@@ -72,7 +72,7 @@ export default function LearningCirclePage() {
             width={500}
             height={400}
             priority
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl"
           />
         </motion.div>
       </section>
