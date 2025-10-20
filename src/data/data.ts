@@ -17,11 +17,8 @@ export const navItems = [
         { label: "MANIFESTO", href: "/manifesto" },
         { label: "TEAM", href: "/team" },
         { label: "ENABLERS", href: "/enablers" },
-      ],
-      EVENTS: [
-        { label: "GLOBAL CALENDAR", href: "/events/calendar" },
         // { label: "ANNOUNCEMENTS", href: "/events/announcements" },
-        { label: "ALL EVENTS", href: "/events" },
+        { label: "EVENTS", href: "/events" },
       ],
       Programs: [
         { label: "LAUNCHPAD", href: "https://launchpadkerala.org/" },
@@ -39,6 +36,7 @@ export const navItems = [
           label: "NEWSLETTER",
           href: "https://online.fliphtml5.com/slydm/yljq/",
         },
+        { label: "GLOBAL CALENDAR", href: "/events/calendar" },
         {
           label: "IMPACT GALLERY",
           href: "/impact-gallery",
