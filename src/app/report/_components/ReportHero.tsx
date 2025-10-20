@@ -115,7 +115,7 @@ export default function ReportHero() {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#2E85FE' }}>
                 <value.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
