@@ -55,6 +55,7 @@ export const navItems = [
       "Join Us": [
         { label: "Company", href: "/be-a-part/company" },
         { label: "Campus", href: "/be-a-part/campus" },
+        { label: "Enabler", href: "/be-a-part/enablers" },
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [
