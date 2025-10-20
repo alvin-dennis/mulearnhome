@@ -166,7 +166,7 @@ export default function InterestGroups() {
                     {/* Desktop Timeline */}
                     <div className="hidden md:block relative">
                         {/* Vertical center line */}
-                        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-mulearn-trusty-blue/30 transform -translate-x-1/2" />
+                        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-mulearn-trusty-blue/30 transform -translate-x-1/2 z-0" />
                         
                         {workflowSteps.map((step, index) => {
                             const Icon = step.icon;
@@ -179,7 +179,7 @@ export default function InterestGroups() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true, amount: 0.5 }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="relative mb-24 last:mb-0"
+                                    className="relative mb-24 last:mb-0 z-10"
                                 >
                                     <div className={`flex items-center ${isLeft ? 'justify-end' : 'justify-start'}`}>
                                         <div className={`w-5/12 ${isLeft ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
@@ -194,7 +194,7 @@ export default function InterestGroups() {
                                     </div>
                                     
                                     {/* Center dot */}
-                                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                                         <motion.div
                                             initial={{ scale: 0 }}
                                             whileInView={{ scale: 1 }}
