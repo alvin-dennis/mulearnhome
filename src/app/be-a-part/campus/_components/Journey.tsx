@@ -47,7 +47,7 @@ export default function Journey() {
                         isLeft ? "pr-12 text-right" : "pl-12 text-left"
                       }`}
                     >
-                      <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border hover:shadow-xl transition-shadow duration-300">
+                      <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-sm border hover:shadow-md transition-shadow duration-300">
                         <div
                           className={`flex items-center gap-3 mb-3 ${
                             isLeft ? "justify-end" : "justify-start"
@@ -105,7 +105,7 @@ export default function Journey() {
                     </div>
                   </div>
 
-                  <div className="bg-mulearn-whitish p-6 rounded-xl shadow-md border">
+                  <div className="bg-mulearn-whitish p-6 rounded-xl shadow-sm border">
                     <h3 className="text-lg font-bold text-gray-900 mb-2">
                       {step.title}
                     </h3>
