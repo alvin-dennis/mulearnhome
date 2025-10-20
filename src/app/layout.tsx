@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import MuLoader from "@components/Loader";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "µLearn",
-  description:
-    "Break the echo chamber",
+  description: "Break the echo chamber",
   authors: [{ name: "µLearn" }],
   openGraph: {
     title: "µLearn",
@@ -28,11 +28,24 @@ export const metadata: Metadata = {
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
+const circe = localFont({
+  src: "../components/fonts/CirceRounded-Bold.otf",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const retro = localFont({
+  src: "../components/fonts/Retro_Team.otf",
+  variable: "--font-retro",
+  display: "swap",
+});
+
+const cdnurl = process.env.NEXT_PUBLIC_CDN_URL;
 
 export default function RootLayout({
   children,
@@ -40,11 +53,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning> {/* suppress hydration warning */}
-      <body>
-        <Navbar/>
-        {children}
-        <Footer/>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${plusJakarta.variable} ${circe.variable} ${retro.variable}`}
+    >
+      <head>
+        <link rel="preconnect" href={cdnurl} crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href={cdnurl} />
+      </head>
+      <body className="font-sans antialiased">
+        <Navbar />
+        <Suspense fallback={<MuLoader />}>{children}</Suspense>
+        <Footer />
       </body>
     </html>
   );
