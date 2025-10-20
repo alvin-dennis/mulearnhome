@@ -9,7 +9,7 @@ import { cdnUrl } from "@/services/cdn";
 
 export default function CompanyPartnersPage() {
   const companies = CompanyPartner;
-  const Connecting_teams= cdnUrl("/src/modules/Public/CompanyPartners/assets/companies/Connecting_teams.gif");
+  const Connecting_teams= cdnUrl("/src/modules/Public/CompanyPartners/assets/Connecting teams.gif");
   return (
     <div className="min-h-screen bg-white">
       <section className="px-4 sm:px-8 py-1 sm:py-1 lg:py-1">
