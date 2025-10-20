@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { GalleryItem } from "@/data/data";
 import { 
-  Users, School, Building2, Eye, UsersRound, Calendar,Star,Trophy,Heart,Target,Award,Users2,Briefcase,
+   School, Building2, Eye, UsersRound, Calendar,Target,Award,Users2,Briefcase,
   GraduationCap,Sparkles
 } from "lucide-react";
 

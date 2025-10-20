@@ -27,13 +27,14 @@ export default function ImpactGallery() {
       μLearn Impact Gallery
     </motion.h1>
     <motion.p 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-white/90 font-sans"
-    >
-      Showcasing our journey, milestones, and the incredible impact we've created together
-    </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2 }}
+  className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-white/90 font-sans"
+>
+  Showcasing our journey, milestones, and the incredible impact we&apos;ve created together
+</motion.p>
+
   </div>
 </section>
 
