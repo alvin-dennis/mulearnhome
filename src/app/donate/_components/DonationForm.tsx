@@ -4,11 +4,13 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { toast } from 'sonner'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
+import { submitDonationForm } from '@/services/donation'
 
 type DonationType = "one-time" | "monthly" | "yearly";
 
@@ -150,10 +152,26 @@ export default function DonationForm() {
     setValue('donationAmount', numValue, { shouldValidate: true })
   }
 
-  const onSubmit = (data: DonationFormData) => {
-    console.log('Form submitted:', data)
-    // Handle form submission (e.g., navigate to payment gateway)
-    alert('Form is valid! Proceeding to payment...')
+  const onSubmit = async (data: DonationFormData) => {
+    try {
+      toast.loading('Processing your donation...', { id: 'donation-loading' });
+      
+      await submitDonationForm({
+        amount: data.donationAmount,
+        name: data.name,
+        email: data.email,
+        mobile: data.phone,
+        pan: data.panNumber,
+        donationType: data.donationType,
+        isOrganisation: data.isOrganisation,
+        organisationName: data.organisationName
+      });
+      
+      toast.dismiss('donation-loading');
+    } catch (error) {
+      toast.dismiss('donation-loading');
+      console.error('Donation submission error:', error);
+    }
   }
 
   const renderDonationForm = (tabType: string) => (

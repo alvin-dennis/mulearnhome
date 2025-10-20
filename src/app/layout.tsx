@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import MuLoader from "@components/Loader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -66,6 +67,7 @@ export default function RootLayout({
         <Navbar />
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
