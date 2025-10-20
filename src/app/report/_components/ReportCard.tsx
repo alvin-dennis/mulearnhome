@@ -10,7 +10,6 @@ import MuImage from "@/components/MuImage";
 interface ReportCardProps {
   report: AnnualReport;
   onDownload: () => void;
-  index: number;
 }
 
 const cardVariants: Variants = {
@@ -26,14 +25,7 @@ const cardVariants: Variants = {
   },
 };
 
-const hoverVariants: Variants = {
-  hover: { 
-    y: -8,
-    transition: { duration: 0.3, ease: easeOut }
-  }
-};
-
-export default function ReportCard({ report, onDownload, index }: ReportCardProps) {
+export default function ReportCard({ report, onDownload }: ReportCardProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 

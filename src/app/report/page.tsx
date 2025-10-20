@@ -62,7 +62,7 @@ export default function Report() {
             variants={staggerContainer}
             className="grid gap-8 md:gap-12"
           >
-            {annualReports.map((report, index) => (
+            {annualReports.map((report) => (
               <motion.div
                 key={report.id}
                 variants={fadeInUp}
@@ -71,7 +71,6 @@ export default function Report() {
                 <ReportCard
                   report={report}
                   onDownload={() => handleDownload(report)}
-                  index={index}
                 />
               </motion.div>
             ))}
