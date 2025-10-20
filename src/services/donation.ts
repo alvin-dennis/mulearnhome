@@ -158,7 +158,7 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
 
     } catch (error: unknown) {
         console.error("Donation submission error:", error);
-        const errorMessage = (error as any)?.response?.data?.message?.general?.[0] ||
+        const errorMessage = (error as { response?: { data?: { message?: { general?: string[] } } } })?.response?.data?.message?.general?.[0] ||
             "Error in processing donation. Please try again.";
         toast.error(errorMessage);
         throw error;
