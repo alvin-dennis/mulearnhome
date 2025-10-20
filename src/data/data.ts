@@ -1,27 +1,13 @@
 import { cdnUrl } from "@/services/cdn";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
-import { Event, Role, RolesContent } from "@/lib/types";
+import {
+  Event,
+  Role,
+  RolesContent,
+  GalleryItem,
+  ImpactStat,
+} from "@/lib/types";
 import { Calendar, Clock, PartyPopper, Sparkle, Target, Trophy, Users, Zap } from "lucide-react";
-
-export interface GalleryItem {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  category: "events" | "students" | "companies" | "mentors" | "impact-stories";
-  type: "image" | "video";
-  stats?: {
-    participants?: number;
-    campuses?: number;
-    companies?: number;
-  };
-}
-
-export interface ImpactStat {
-  number: string;
-  label: string;
-  icon: string; // We'll use string names since we can't import React components here
-}
 
 export const navItems = [
   {
@@ -492,7 +478,7 @@ export const footer = [
     title: "Be Part of Us",
     links: [
       { title: "Campus", url: "be-a-part/campus" },
-      { title: "Companies", url: "be-a-part/companies" },
+      { title: "Companies", url: "be-a-part/company" },
       {
         title: "Students",
         url: "https://app.mulearn.org/dashboard/search?activetab=mulearners",
@@ -5954,7 +5940,11 @@ export const campusChapter = {
       title: "Proof-of-Work",
       desc: "GitHub repos, portfolios, demos",
     },
-    { icon: Target, title: "Gamify Growth", desc: "Karma Points & leaderboards" },
+    {
+      icon: Target,
+      title: "Gamify Growth",
+      desc: "Karma Points & leaderboards",
+    },
     {
       icon: Sparkle,
       title: "Mini Communities",
@@ -5985,7 +5975,66 @@ export const campusChapter = {
     },
   ],
 };
-// Add gallery data
+
+export const companies = [
+  {
+    alt: "CAFIT",
+    src: "/assets/careers/companies/cafit.webp",
+  },
+  {
+    alt: "Carestack",
+    src: "/assets/careers/companies/carestack.webp",
+  },
+  {
+    alt: "cdf",
+    src: "/assets/careers/companies/cdf.webp",
+  },
+  {
+    alt: "Ecesis",
+    src: "/assets/careers/companies/ecesis.webp",
+  },
+  {
+    alt: "Experion",
+    src: "/assets/careers/companies/experion.webp",
+  },
+  {
+    alt: "EY",
+    src: "/assets/careers/companies/ey.webp",
+  },
+  {
+    alt: "Nucore",
+    src: "/assets/careers/companies/nucore.webp",
+  },
+  {
+    alt: "Softnotion",
+    src: "/assets/careers/companies/softnotions.webp",
+  },
+  {
+    alt: "SunTec",
+    src: "/assets/careers/companies/suntec.webp",
+  },
+  {
+    alt: "Tata Elexis",
+    src: "/assets/careers/companies/tata.webp",
+  },
+  {
+    alt: "Techfunic",
+    src: "/assets/careers/companies/techfunic.webp",
+  },
+  {
+    alt: "Thinkpalm",
+    src: "/assets/careers/companies/thinkpalm.webp",
+  },
+  {
+    alt: "Undaku",
+    src: "/assets/careers/companies/undaku.webp",
+  },
+  {
+    alt: "YIP",
+    src: "/assets/careers/companies/yip.webp",
+  },
+];
+
 export const galleryData: GalleryItem[] = [
   {
     id: "1",

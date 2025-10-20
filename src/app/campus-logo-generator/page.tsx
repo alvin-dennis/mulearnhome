@@ -47,17 +47,17 @@ const CampusLogoGenerator = () => {
   ];
   const fileTypes = ["PNG", "SVG"] as const;
 
-  const mulearnLogo = "/logo-template/logo.svg";
-  const stripesPattern = "/logo-template/stripes (1).svg";
-  const yipLogoBlack = "/logo-template/yip-logo-black.svg";
-  const yipLogoRed = "/logo-template/yip-logo-red.svg";
-  const yipLogoDark = "/logo-template/yip-logo-dark.svg";
+  const mulearnLogo = "/assets/logo-template/logo.svg";
+  const stripesPattern = "/assets/logo-template/stripes (1).svg";
+  const yipLogoBlack = "/assets/logo-template/yip-logo-black.svg";
+  const yipLogoRed = "/assets/logo-template/yip-logo-red.svg";
+  const yipLogoDark = "/assets/logo-template/yip-logo-dark.svg";
 
   const logoVariants = {
-    white: "/logo-template/logo-white.svg",
-    blue: "/logo-template/logo-blue.svg", 
-    violet: "/logo-template/logo-violet.svg",
-    gradient: "/logo-template/logo-gradient.svg"
+    white: "/assets/logo-template/logo-white.svg",
+    blue: "/assets/logo-template/logo-blue.svg",
+    violet: "/assets/logo-template/logo-violet.svg",
+    gradient: "/assets/logo-template/logo-gradient.svg",
   };
 
   const [selectedLogoVariant, setSelectedLogoVariant] = useState<keyof typeof logoVariants>("white");
