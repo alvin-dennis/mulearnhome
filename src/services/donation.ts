@@ -156,12 +156,11 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
 
         rzp1.open();
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("Donation submission error:", error);
-        toast.error(
-            error?.response?.data?.message?.general?.[0] ||
-            "Error in processing donation. Please try again."
-        );
+        const errorMessage = (error as any)?.response?.data?.message?.general?.[0] ||
+            "Error in processing donation. Please try again.";
+        toast.error(errorMessage);
         throw error;
     }
 };
