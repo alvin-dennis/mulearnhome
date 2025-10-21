@@ -34,7 +34,7 @@ export default function WhatYouCanDo() {
                   key={index}
                   className="flex flex-col items-center text-center p-6 gap-4"
                 >
-                  <h3 className="text-xl font-bold text-[#456FF6] leading-tight">
+                  <h3 className="text-xl font-bold text-mulearn-trusty-blue leading-tight">
                     {action.title}
                   </h3>
                   <p className="text-lg text-black leading-snug max-w-[400px]">

@@ -56,7 +56,7 @@ export default function WhyCollaborate() {
           className="text-xl sm:text-xl md:text-2xl font-semibold text-center mb-16 tracking-tight"
         >
           <span className="text-[#1A202C]">Why Collaborate with </span>
-          <span className="text-[#456FF6]">µLearn</span>
+          <span className="text-mulearn-trusty-blue">µLearn</span>
           <span className="text-[#1A202C]">?</span>
         </motion.h2>
 
@@ -83,7 +83,7 @@ export default function WhyCollaborate() {
               }`}
             >
               <NetworkIcon />
-              <h3 className={`text-xl sm:text-2xl font-bold text-[#456FF6] text-center leading-tight transition-all duration-300`}>
+              <h3 className={`text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight transition-all duration-300`}>
                 {feature.title}
               </h3>
               <p className={`text-center font-thin text-black leading-relaxed transition-all duration-300 ${index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
@@ -109,7 +109,7 @@ export default function WhyCollaborate() {
               style={{ backgroundColor: hoveredIndex === index ? "#E7F2FF" : "#FFF" }}
             >
               <NetworkIcon />
-              <h3 className="text-xl sm:text-2xl font-bold text-[#456FF6] text-center leading-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">
                 {feature.title}
               </h3>
               <p className="text-center font-thin text-black leading-relaxed text-base sm:text-lg">

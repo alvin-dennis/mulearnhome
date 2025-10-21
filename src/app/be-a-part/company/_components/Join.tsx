@@ -56,7 +56,7 @@ export default function HowToJoin() {
 										</div>
 
 										<div className="flex-1 pl-16 relative z-20">
-											<h3 className="text-xl font-bold text-[#456FF6] mb-3">
+											<h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
 												{step.title}
 											</h3>
 											<p className="text-lg text-black max-w-xl">
@@ -88,7 +88,7 @@ export default function HowToJoin() {
 										</div>
 
 										<div className="flex-1 pr-16 text-right relative z-20">
-											<h3 className="text-xl font-bold text-[#456FF6] mb-3">
+											<h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
 												{step.title}
 											</h3>
 											<p className="text-lg text-black max-w-xl ml-auto">
@@ -131,7 +131,7 @@ export default function HowToJoin() {
 									</span>
 								</div>
 
-								<h3 className="text-2xl font-bold text-[#456FF6] leading-tight">
+								<h3 className="text-2xl font-bold text-mulearn-trusty-blue leading-tight">
 									{step.title}
 								</h3>
 								<p className="text-lg text-black leading-snug">
