@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image"; // Import the Next.js Image component
+import MuImage from "@/components/MuImage";
 
 const steps = [
     {
@@ -69,7 +69,7 @@ export default function Onboarding() {
                                     (step.icon.startsWith("/") ||
                                         step.icon.startsWith("http")) ? (
                                         // **FIX: Replaced <img> with <Image> and added width/height**
-                                        <Image
+                                        <MuImage
                                             src={step.icon}
                                             alt={`${step.title} icon`}
                                             width={40}

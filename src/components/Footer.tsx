@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import { footer, socials, contactInfo } from "@/data/data";
 import { Mail, Phone, Globe } from "lucide-react";
 
@@ -29,14 +29,14 @@ export default function Footer() {
             <div className="flex flex-col items-start space-y-4">
               <div className="flex items-center space-x-4">
                 <div className="w-25 h-25 rounded-2xl flex items-center justify-center overflow-hidden ">
-                  <Image
-                    src="/assets/loader/MuLoader.gif"
-                    alt="µLearn Logo"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                    unoptimized 
-                  />
+                    <MuImage
+                      src="/assets/loader/MuLoader.gif"
+                      alt="µLearn Logo"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                      unoptimized 
+                    />
                 </div>
               </div>
               <p className="text-mulearn-gray-600 text-sm leading-relaxed max-w-md">

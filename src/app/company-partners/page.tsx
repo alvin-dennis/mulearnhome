@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import { CompanyPartner } from "@/data/data";
 import CompanyCard from "@/app/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
@@ -40,7 +40,7 @@ export default function CompanyPartnersPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[35rem] lg:h-[35rem]">
-                <Image
+                <MuImage
                   src={Connecting_teams}
                   alt="Connecting teams"
                   fill

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const bglogo = cdnUrl("/src/modules/Public/Manifesto/assets/µ.png");
-const handimg = cdnUrl("/src/modules/Public/Manifesto/assets/hand.png");
+const handimg = cdnUrl("src/modules/Public/Manifesto/assets/hand.png");
 
 export default function Manifesto() {
   return (
