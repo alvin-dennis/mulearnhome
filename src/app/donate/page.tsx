@@ -4,9 +4,7 @@ import DonateCounters from "@/app/donate/_components/DonateCounters";
 import DonationForm from "@/app/donate/_components/DonationForm";
 import { cdnUrl } from "@/services/cdn";
 
- const heroImg = cdnUrl(
-    "src/components/assets/donate/heroImg.webp"
-  );
+ const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
 
 export default function DonatePage() {
   return (
