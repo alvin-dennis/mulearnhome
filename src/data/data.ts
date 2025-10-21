@@ -6811,9 +6811,9 @@ export const artOfTeachingUrls = {
   mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
   firstEdition: "https://www.youtube-nocookie.com/embed/vPLuA5kXoBI",
   archives: [
-    "https://www.youtube-nocookie.com/embed/Wmo0StqW9Kc",
-    "https://www.youtube-nocookie.com/embed/TEylubYDzhQ",
-    "https://www.youtube-nocookie.com/embed/jRcseEVk2sk"
+    "https://www.youtube.com/embed/Wmo0StqW9Kc?si=lM3hb1r6OrGUHX7C",
+    "https://www.youtube.com/embed/TEylubYDzhQ?si=zm5EA_Or7YOcI73E",
+    "https://www.youtube.com/embed/jRcseEVk2sk?si=eSXHqiAWmw_vOwcv"
   ],
   registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
 };

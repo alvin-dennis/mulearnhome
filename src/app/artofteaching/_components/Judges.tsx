@@ -10,7 +10,7 @@ const Judges = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-gray-800 leading-tight mb-4">
-            The Former <span className="text-[#5570F1]">Judging Panel</span>
+            The Former <span className="text-[var(--mulearn-trusty-blue)]">Judging Panel</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 font-poppins lg:w-2/5">
             We needed some really creative people with amazing mentoring

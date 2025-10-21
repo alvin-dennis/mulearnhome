@@ -10,7 +10,7 @@ const FirstEdition = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-2/5">
             <h2 className="text-4xl lg:text-6xl font-semibold text-gray-800 leading-tight">
-              Art of Teaching <span className="text-[#5570F1]">First Edition</span>
+              Art of Teaching <span className="text-[var(--mulearn-trusty-blue)]">First Edition</span>
             </h2>
             <p className="mt-4 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
               The First Edition of Art of Teaching was a huge success with

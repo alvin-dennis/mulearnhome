@@ -24,7 +24,7 @@ const Guidelines = () => {
   const circleStyle: React.CSSProperties = {
     width: '20px',
     height: '20px',
-    backgroundColor: '#555',
+    backgroundColor: 'var(--mulearn-trusty-blue)',
     borderRadius: '50%',
     position: 'relative',
     zIndex: 1,
@@ -35,7 +35,7 @@ const Guidelines = () => {
   const lineStyle: React.CSSProperties = {
     width: '2px',
     height: '40px',
-    backgroundColor: '#555',
+    backgroundColor: 'var(--mulearn-trusty-blue)',
     position: 'absolute',
     top: '20px',
     left: '9px',
@@ -45,7 +45,7 @@ const Guidelines = () => {
   const mobilelineStyle: React.CSSProperties = {
     width: '2px',
     height: '40px',
-    backgroundColor: '#555',
+    backgroundColor: 'var(--mulearn-trusty-blue)',
     position: 'absolute',
     top: '42px',
     left: '9px',
@@ -67,7 +67,7 @@ const Guidelines = () => {
                 Theme: Lessons of The Future.
               </p>
               <h2 className="text-4xl lg:text-7xl font-semibold text-gray-800 leading-tight">
-                What is <span className="text-[#5570F1]">Art of Teaching???</span>
+                What is <span className="text-[var(--mulearn-trusty-blue)]">Art of Teaching???</span>
               </h2>
               <p className="mt-2 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
                 The &apos;Art of Teaching&apos; is a contest that celebrates educators who creatively simplify complex 
@@ -83,7 +83,7 @@ const Guidelines = () => {
             <div className="hidden lg:block lg:w-1/2">
               <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-lg max-w-lg">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                  <span className="text-[#5570F1]">Guidelines</span>
+                  <span className="text-[var(--mulearn-trusty-blue)]">Guidelines</span>
                 </h3>
                 <div style={timelineStyle}>
                   <div>
@@ -118,7 +118,7 @@ const Guidelines = () => {
                       href={artOfTeachingGuidelines}
                       download="Art of Teaching Guidelines.pdf"
                     >
-                      <button className="bg-[#5570F1] text-white border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-[#4056b3] transition-colors">
+                      <button className="bg-[var(--mulearn-trusty-blue)] text-white border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-[var(--mulearn-duke-purple)] transition-colors">
                         Download Pdf
                       </button>
                     </a>
@@ -132,7 +132,7 @@ const Guidelines = () => {
           <div className="block lg:hidden mt-12 mb-8">
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                <span className="text-[#5570F1]">Guidelines</span>
+                <span className="text-[var(--mulearn-trusty-blue)]">Guidelines</span>
               </h3>
               <div style={timelineStyle}>
                 <div>
@@ -169,7 +169,7 @@ const Guidelines = () => {
                     download="Art of Teaching Guidelines.pdf"
                     className="download-button"
                   >
-                    <button className="bg-[#5570F1] text-white border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-[#4056b3] transition-colors">
+                    <button className="bg-[var(--mulearn-trusty-blue)] text-white border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-[var(--mulearn-duke-purple)] transition-colors">
                       Download Pdf
                     </button>
                   </a>

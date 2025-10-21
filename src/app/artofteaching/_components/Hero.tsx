@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between max-w-7xl mx-auto">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-7xl font-semibold text-gray-800 leading-tight">
-            <span className="text-[#5570F1]">µLearn Art</span> of Teaching 3.0
+            <span className="text-[var(--mulearn-trusty-blue)]">µLearn Art</span> of Teaching 3.0
           </h1>
           <p className="mt-2 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
             µLearn is returning with Art of Teaching to pay tribute to educators who shape the next generation.
@@ -22,19 +22,19 @@ const Hero = () => {
           
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2">
             <Link href={artOfTeachingUrls.registerNow} className="no-underline">
-              <button className="bg-[#5570F1] text-white px-6 py-2 rounded-md w-[300px] text-center font-bold mt-4 hover:bg-[#4056b3] transition-colors">
+              <button className="bg-[var(--mulearn-trusty-blue)] text-white px-6 py-2 rounded-md w-[300px] text-center font-bold mt-4 hover:bg-[var(--mulearn-duke-purple)] transition-colors">
                 Register Now
               </button>
             </Link>
             
             <div className="flex flex-row justify-center items-center gap-1 mt-2">
               <Link href="/enablers">
-                <button className="border-2 border-[#5570F1] text-[#5570F1] px-6 py-2 rounded-md w-[150px] font-bold hover:bg-[#e6e9f8] transition-colors">
+                <button className="border-2 border-[var(--mulearn-trusty-blue)] text-[var(--mulearn-trusty-blue)] px-6 py-2 rounded-md w-[150px] font-bold hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-opacity-10 transition-colors">
                   Enablers
                 </button>
               </Link>
               <Link href="/">
-                <button className="border-2 border-[#5570F1] text-[#5570F1] px-6 py-2 rounded-md w-[150px] font-bold hover:bg-[#e6e9f8] transition-colors">
+                <button className="border-2 border-[var(--mulearn-trusty-blue)] text-[var(--mulearn-trusty-blue)] px-6 py-2 rounded-md w-[150px] font-bold hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-opacity-10 transition-colors">
                   µlearn
                 </button>
               </Link>
