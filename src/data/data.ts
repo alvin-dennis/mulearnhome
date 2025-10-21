@@ -552,10 +552,8 @@ export const footer = [
       { title: "Blog", url: "https://gtechmulearn.medium.com/" },
       { title: "Team", url: "/team" },
       { title: "Career Labs", url: "/careers" },
-      {
-        title: "Interest Groups",
-        url: "/interest-groups",
-      },
+      {title: "Interest Groups", url: "/interest-groups"},
+      {title: "Contact Us", url: "/contact"},
       { title: "Donate", url: "/donate" },
     ],
   },
@@ -567,16 +565,6 @@ export const footer = [
       { title: "Refund Policy", url: "/refundpolicy" },
     ],
   },
-
-  {
-  title: "Be Part of Us",
-  links: [
-    { title: "Campus", url: "be-a-part/campus" },
-    { title: "Companies", url: "be-a-part/company" },
-    { title: "Students", url: "/students" },
-    { title: "Mentors", url: "/mentors" }
-  ]
-},
 ];
 
 export const socials = [

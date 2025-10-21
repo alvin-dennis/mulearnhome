@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import ContactForm from "./_components/ContactForm";
-import { cdnUrl } from "@/services/cdn";
+// import { cdnUrl } from "@/services/cdn";
 
 // Placeholder hero image – replace with a real contact-themed image if available (e.g., add to public/assets/ and update path)
 const heroImg = "/assets/contact-hero.png"; // Or use cdnUrl("path/to/image") if using CDN
@@ -19,7 +19,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-6 w-full flex justify-center md:justify-start">
-            <Image
+            <MuImage
               src={heroImg}
               alt="Contact Us"
               width={500}

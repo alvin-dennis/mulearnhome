@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import { footer, socials, contactInfo } from "@/data/data";
 import { Mail, Phone, Globe } from "lucide-react";
 

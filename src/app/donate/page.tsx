@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import DonateCounters from "@/app/donate/_components/DonateCounters";
 import DonationForm from "@/app/donate/_components/DonationForm";
 import { cdnUrl } from "@/services/cdn";
@@ -23,7 +23,7 @@ export default function DonatePage() {
           </p>
 
           <div className="mt-6 w-full flex justify-center md:justify-start">
-            <Image
+            <MuImage
               src={heroImg}
               alt="Donate"
               width={500}

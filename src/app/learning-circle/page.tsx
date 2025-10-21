@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { learningCircleData } from "@/data/data";
@@ -66,7 +66,7 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex-1 flex justify-center"
         >
-          <Image
+          <MuImage
             src={image}
             alt="Learning Circle illustration"
             width={500}
