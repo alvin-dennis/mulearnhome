@@ -32,7 +32,7 @@ export default function EventCard({ event, featured = false }: Props) {
         </div>
       )}
 
-      <div className={`p-6 space-y-4 ${featured ? "lg:p-8 lg:space-y-6" : ""}`}>
+      <div className={"p-6 space-y-4 " + (featured ? "lg:p-8 lg:space-y-6" : "")}>
         <div className="space-y-3">
           <h3
             className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 leading-snug ${
