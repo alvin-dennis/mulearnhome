@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ContactForm from "./_components/ContactForm";
-import { cdnUrl } from "@/services/cdn";
+// import { cdnUrl } from "@/services/cdn";
 
 // Placeholder hero image – replace with a real contact-themed image if available (e.g., add to public/assets/ and update path)
 const heroImg = "/assets/contact-hero.png"; // Or use cdnUrl("path/to/image") if using CDN
