@@ -6651,3 +6651,35 @@ export const annualReports: AnnualReport[] = [
     publishedDate: "2023-01-05"
   }
 ];
+
+export const artOfTeachingMentors = [
+  {
+    name: "Dr T M George",
+    designation: "Former Principal at Mar Baselios College of Engineering and Technology",
+    image: "/src/modules/Public/artofteaching/assets/dpm.webp",
+    linkedIn: "https://www.linkedin.com/in/dr-t-m-george-87b86028/?originalSubdomain=in"
+  },
+  {
+    name: "Ann Andrews",
+    designation: "Product | Technology & Data Strategy | NYU & Columbia Fellow",
+    image: "/src/modules/Public/artofteaching/assets/dpm.webp",
+    linkedIn: "https://www.linkedin.com/in/annandrews/"
+  },
+  {
+    name:"Rajeev J Sebastian",
+    designation:"CEO Alokin Software Private Limited",
+    image:"/src/modules/Public/artofteaching/assets/dpm.webp",
+    linkedIn:"https://www.linkedin.com/in/rajeevjs",
+  },
+];
+
+export const artOfTeachingUrls = {
+  mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
+  firstEdition: "https://www.youtube-nocookie.com/embed/vPLuA5kXoBI",
+  archives: [
+    "https://www.youtube-nocookie.com/embed/Wmo0StqW9Kc",
+    "https://www.youtube-nocookie.com/embed/TEylubYDzhQ",
+    "https://www.youtube-nocookie.com/embed/jRcseEVk2sk"
+  ],
+  registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
+};
