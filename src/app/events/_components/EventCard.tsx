@@ -6,6 +6,16 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Event } from "@/lib/types";
 import MuImage from "@/components/MuImage";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   event: Event;
@@ -13,6 +23,13 @@ interface Props {
 }
 
 export default function EventCard({ event, featured = false }: Props) {
+  const truncateWords = (text: string, wordLimit: number) => {
+    const words = text.split(" ");
+    return words.length > wordLimit
+      ? words.slice(0, wordLimit).join(" ") + "..."
+      : text;
+  };
+
   return (
     <motion.div
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -25,14 +42,16 @@ export default function EventCard({ event, featured = false }: Props) {
           <MuImage
             src={event.image}
             alt={event.title}
-            width={featured ? 1200 : 800} 
+            width={featured ? 1200 : 800}
             height={featured ? 600 : 400}
             className="rounded-t-2xl object-cover w-full h-48 lg:h-64"
           />
         </div>
       )}
 
-      <div className={"p-6 space-y-4 " + (featured ? "lg:p-8 lg:space-y-6" : "")}>
+      <div
+        className={"p-6 space-y-4 " + (featured ? "lg:p-8 lg:space-y-6" : "")}
+      >
         <div className="space-y-3">
           <h3
             className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 leading-snug ${
@@ -50,27 +69,64 @@ export default function EventCard({ event, featured = false }: Props) {
         </div>
 
         <p className="text-mulearn-blackish text-sm leading-relaxed">
-          {event.description}
+          {truncateWords(event.description, 27)}
         </p>
 
         {event.link && (
-          <Link href={event.link} className="block mt-4">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="
-                w-full flex items-center justify-center gap-3
-                bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl
-                px-5 py-3 font-semibold text-sm shadow-sm
-                hover:shadow-md transition-all duration-300 cursor-pointer
-              "
-            >
-              <span className="flex items-center gap-2">
-                Check it out!
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-              </span>
-            </motion.button>
-          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                  w-full flex items-center justify-center gap-3
+                  bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl
+                  px-5 py-3 font-semibold text-sm shadow-sm
+                  hover:shadow-md transition-all duration-300 cursor-pointer
+                "
+              >
+                <span className="flex items-center gap-2">
+                  Check it out!
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                </span>
+              </motion.button>
+            </DialogTrigger>
+            <DialogContent className="max-w-lg">
+              <DialogHeader>
+                <DialogTitle>{event.title}</DialogTitle>
+                {event.date && (
+                  <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
+                    <Calendar className="w-4 h-4 shrink-0 text-mulearn-blackish/60" />
+                    <span>{event.date}</span>
+                  </div>
+                )}
+                {event.image && (
+                  <MuImage
+                    src={event.image}
+                    alt={event.title}
+                    width={800}
+                    height={400}
+                    className="rounded-lg object-cover w-full mb-4"
+                  />
+                )}
+                <DialogDescription className="text-mulearn-blackish text-sm leading-relaxed">
+                  {event.description}
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button
+                  variant="mulearn"
+                  className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl
+                  px-5 py-3 font-semibold text-sm shadow-sm
+                  hover:shadow-md"
+                >
+                  <Link href={event.link} target="_blank noreferrer">
+                    Go to Event
+                  </Link>
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         )}
       </div>
     </motion.div>
