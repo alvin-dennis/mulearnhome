@@ -558,21 +558,6 @@ export const footer = [
     ],
   },
   {
-    title: "Be Part of Us",
-    links: [
-      { title: "Campus", url: "be-a-part/campus" },
-      { title: "Companies", url: "be-a-part/company" },
-      {
-        title: "Students",
-        url: "https://app.mulearn.org/dashboard/search?activetab=mulearners",
-      },
-      {
-        title: "Mentors",
-        url: "https://app.mulearn.org/dashboard/search?activetab=mentors",
-      },
-    ],
-  },
-  {
     title: "Legal",
     links: [
       { title: "Terms and Conditions", url: "/termsandconditions" },
