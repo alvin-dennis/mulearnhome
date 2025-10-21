@@ -20,24 +20,22 @@ import { Badge } from "@/components/ui/badge";
 
 interface Props {
   event: Event;
-  featured?: boolean;
 }
 
-export default function EventCard({ event, featured = false }: Props) {
+export default function EventCard({ event }: Props) {
   return (
     <motion.div
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-  ${featured ? "lg:col-span-2 lg:row-span-2" : ""}
-  w-[380px] ${event.image ? "h-[350px]" : "h-[280px]"} flex flex-col`}
+        w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"} flex flex-col`}
     >
       {event.image && (
         <div className="w-full h-20">
           <MuImage
             src={event.image}
             alt={event.title}
-            width={featured ? 1200 : 800}
-            height={featured ? 600 : 400}
+            width={800}
+            height={400}
             className="rounded-t-2xl object-cover w-full h-full"
           />
         </div>
@@ -46,11 +44,7 @@ export default function EventCard({ event, featured = false }: Props) {
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div className="space-y-3">
           <div className="flex justify-between items-start">
-            <h3
-              className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 ${
-                featured ? "text-2xl lg:text-3xl" : "text-xl"
-              }`}
-            >
+            <h3 className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 text-xl">
               {event.title}
             </h3>
             {event.date && (
