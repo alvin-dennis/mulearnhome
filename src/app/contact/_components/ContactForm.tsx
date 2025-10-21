@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Building, School, Users, Calendar, Mic, FileText, HelpCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Building, School, Users, Calendar, FileText, HelpCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
