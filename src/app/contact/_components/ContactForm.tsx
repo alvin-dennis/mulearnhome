@@ -13,7 +13,6 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    muId: "",
     region: "",
     message: "",
     consent: false,
@@ -144,7 +143,6 @@ export default function ContactForm() {
         name: "",
         email: "",
         phone: "",
-        muId: "",
         region: "",
         message: "",
         consent: false,
@@ -582,7 +580,10 @@ export default function ContactForm() {
                 <p className="text-sm text-red-600">{errors.email}</p>
               )}
             </div>
+          </div>
 
+          {/* Right Column */}
+          <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="phone">Phone Number</Label>
               <Input
@@ -592,20 +593,6 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Enter your phone number"
-              />
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="muId">MuID (if available)</Label>
-              <Input
-                id="muId"
-                name="muId"
-                value={formData.muId}
-                onChange={handleChange}
-                placeholder="Enter your MuID"
               />
             </div>
 
