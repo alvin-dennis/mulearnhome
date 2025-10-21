@@ -1069,7 +1069,7 @@ export const events: {
       {
         title: "Mutate",
         description:
-          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, is designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
+          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, held at the Gokulam Grand in Kazhakoottam, was designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
         link: "https://mulearn.org/",
         // image: cdnUrl("src/modules/Public/Home/assets/mutate-2025.webp"),
         isLive: false,
@@ -1077,7 +1077,7 @@ export const events: {
       {
         title: "Top 100 Designers",
         description:
-          "Discover the forefront of design innovation with Top 100 Designers, an initiative dedicated to recognizing and celebrating India's most talented and influential designers. This platform brings together creative minds from various design disciplines - from UI/UX and graphic design to product and motion design.",
+          "Discover the forefront of design innovation with Top 100 Designers, an initiative dedicated to recognizing and celebrating India's most talented and influential designers. This platform brings together creative minds from various design disciplines - from UI/UX and graphic design to product and motion design. Join us in spotlighting exceptional design talent and shaping the future of India's creative landscape.",
         link: "https://designers.top100series.com/",
         // image: cdnUrl("src/modules/Public/Home/assets/top-100-designers.webp"),
         isLive: true,
@@ -1085,7 +1085,7 @@ export const events: {
       {
         title: "Top 100 Makers",
         description:
-          "Welcome to Top 100 Makers - an initiative celebrating India's most innovative creators, builders, and hardware enthusiasts. We're dedicated to recognizing brilliant minds who turn ideas into tangible prototypes, electronic innovations, and real-world solutions.",
+          "Welcome to Top 100 Makers - an initiative celebrating India's most innovative creators, builders, and hardware enthusiasts. We're dedicated to recognizing brilliant minds who turn ideas into tangible prototypes, electronic innovations, and real-world solutions. From IoT devices and robotics to DIY projects and smart gadgets, join us in empowering the maker community and shaping the future of hands-on innovation in India.",
         link: "https://makers.top100series.com/",
         // image: cdnUrl("src/modules/Public/Home/assets/top-100-makers.webp"),
         isLive: true,
@@ -1093,7 +1093,7 @@ export const events: {
       {
         title: "CareHack 2025",
         description:
-          "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation.",
+          "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation, scheduled for August 2nd & 3rd, 2025. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation. Beyond talent acquisition, CareHack aims to amplify CareRevenue's brand presence within the tech ecosystem while evaluating participants on technical expertise, teamwork, communication, and problem-solving abilities.",
         link: "https://carehack.tech/",
         // image: cdnUrl("src/modules/Public/Home/assets/carehack-2025.webp"),
         isLive: false,
