@@ -26,7 +26,7 @@ export default function BackToTop() {
   if (!showButton) return null;
   return (
     <Link
-      className="p-2 flex justify-center bg-mulearn-trusty-blue rounded-[140px] fixed bottom-10 right-10 cursor-pointer"
+      className="p-2.5 flex justify-center bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-[140px] fixed bottom-3 right-6 md:bottom-10 md:right-10  cursor-pointer"
       href="#home"
     >
       <MoveUp className="w-10 h-9 text-mulearn-whitish" />

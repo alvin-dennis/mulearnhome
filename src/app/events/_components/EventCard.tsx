@@ -22,7 +22,7 @@ export default function EventCard({ event, featured = false }: Props) {
       <div className={`p-6 space-y-4 ${featured ? "lg:p-8 lg:space-y-6" : ""}`}>
         <div className="space-y-3">
           <h3
-            className={`text-mulearn-trusty-blue group-hover:text-mulearn-trusty-blue transition-colors duration-300 line-clamp-2 leading-snug ${
+            className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 leading-snug ${
               featured ? "text-2xl lg:text-3xl" : "text-xl"
             }`}
           >
@@ -47,7 +47,7 @@ export default function EventCard({ event, featured = false }: Props) {
               whileTap={{ scale: 0.98 }}
               className="
                 w-full flex items-center justify-center gap-3
-                bg-mulearn-trusty-blue hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl
+                bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl
                 px-5 py-3 font-semibold text-sm shadow-sm
                 hover:shadow-md transition-all duration-300 cursor-pointer
               "

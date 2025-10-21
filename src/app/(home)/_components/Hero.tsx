@@ -50,7 +50,10 @@ export default function Hero({ refreshToken, redirect }: HeroProps) {
           >
             Your Ultimate Gateway
             <br />
-            to <span className="text-mulearn-trusty-blue">Peer-Led Growth</span>
+            to{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Peer-Led Growth
+            </span>
           </motion.h1>
 
           <motion.p
@@ -72,7 +75,7 @@ export default function Hero({ refreshToken, redirect }: HeroProps) {
             variants={textVariant}
           >
             <Button
-              variant={"mulearn-blue"}
+              variant={"mulearn"}
               className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg hover:shadow-xl hover:scale-105 active:scale-95"
               onClick={() =>
                 refreshToken

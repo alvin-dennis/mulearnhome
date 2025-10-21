@@ -24,16 +24,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           <div className="lg:col-span-2">
-            <div className="flex flex-col items-start space-y-4">
+            <div className="flex flex-col md:items-start items-center justify-center space-y-4">
               <div className="flex items-center space-x-4">
-                <div className="w-[400px] h-[200px] rounded-2xl flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/assets/loader/MuLoader.gif"
-                    alt="µLearn Logo"
-                    width={200}
-                    height={200}
-                    className="object-cover"
-                  />
+                <div className="flex items-center justify-center">
+                  <div className="w-[200px] h-[200px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden flex items-center justify-center">
+                    <MuImage
+                      src="/assets/loader/MuLoader.gif"
+                      alt="µLearn Logo"
+                      width={200}
+                      height={200}
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               <p className="text-mulearn-gray-600 text-sm text-justify leading-relaxed max-w-md">
@@ -53,7 +55,7 @@ export default function Footer() {
                         key={social.label}
                         href={social.url}
                         aria-label={social.label}
-                        className="w-10 h-10 rounded-lg bg-white border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-mulearn-trusty-blue hover:text-white hover:shadow-lg hover:scale-105"
+                        className="w-10 h-10 rounded-lg bg-white border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:text-white hover:shadow-lg hover:scale-105"
                       >
                         <Icon />
                       </Link>
@@ -75,7 +77,7 @@ export default function Footer() {
                   : ""
               }`}
             >
-              <h3 className="text-sm font-semibold text-mulearn-gray-900 uppercase tracking-wide">
+              <h3 className="text-sm font-semibold text-mulearn-gray-900 uppercase">
                 {section.title}
               </h3>
               <ul className="space-y-3">

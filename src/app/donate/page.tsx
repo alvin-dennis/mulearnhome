@@ -16,10 +16,14 @@ export default function DonatePage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Help us sustain
             <br />
-            Our <span className="text-mulearn-trusty-blue">Mission</span>
+            Our{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Mission
+            </span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-            Foster an innovation culture, introduce new technologies, and develop skilled entrepreneurs.
+            Foster an innovation culture, introduce new technologies, and
+            develop skilled entrepreneurs.
           </p>
 
           <div className="mt-6 w-full flex justify-center md:justify-start">
