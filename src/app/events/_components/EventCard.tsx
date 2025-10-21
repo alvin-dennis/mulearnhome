@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Event } from "@/lib/types";
+import MuImage from "@/components/MuImage";
 
 interface Props {
   event: Event;
@@ -19,6 +20,18 @@ export default function EventCard({ event, featured = false }: Props) {
         featured ? "lg:col-span-2 lg:row-span-2" : ""
       }`}
     >
+      {event.image && (
+        <div className="w-full">
+          <MuImage
+            src={event.image}
+            alt={event.title}
+            width={featured ? 1200 : 800} 
+            height={featured ? 600 : 400}
+            className="rounded-t-2xl object-cover w-full h-48 lg:h-64"
+          />
+        </div>
+      )}
+
       <div className={`p-6 space-y-4 ${featured ? "lg:p-8 lg:space-y-6" : ""}`}>
         <div className="space-y-3">
           <h3
@@ -30,7 +43,7 @@ export default function EventCard({ event, featured = false }: Props) {
           </h3>
           {event.date && (
             <div className="flex items-center gap-2 text-mulearn-blackish text-sm">
-              <Calendar className="w-4 h-4 flex-shrink-0 text-mulearn-blackish/60" />
+              <Calendar className="w-4 h-4 shrink-0 text-mulearn-blackish/60" />
               <span>{event.date}</span>
             </div>
           )}

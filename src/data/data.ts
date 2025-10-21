@@ -1041,7 +1041,64 @@ export const events: {
     },
   ],
   recurringEvents: {
-    flagship: [],
+    flagship: [
+      {
+        title: "Top 100 Coders",
+        description:
+          "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
+        link: "https://top100coders.com/",
+        // image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
+        isLive: true,
+      },
+      {
+        title: "Launchpad",
+        description:
+          "Launchpad Kerala is a premier job fair that brings together talented individuals and innovative companies in the technical and engineering fields. With its skills-first approach, flexible interviews, and a wide talent pool, Launchpad Kerala offers unmatched opportunities for both candidates and employers.",
+        link: "https://launchpad.mulearn.org/",
+        // image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
+        isLive: false,
+      },
+      {
+        title: "Permute 2025",
+        description:
+          "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
+        link: "https://permute.mulearn.org/",
+        // image: cdnUrl("src/modules/Public/Home/assets/permute-2025.webp"),
+        isLive: false,
+      },
+      {
+        title: "Mutate",
+        description:
+          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, is designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
+        link: "https://mulearn.org/",
+        // image: cdnUrl("src/modules/Public/Home/assets/mutate-2025.webp"),
+        isLive: false,
+      },
+      {
+        title: "Top 100 Designers",
+        description:
+          "Discover the forefront of design innovation with Top 100 Designers, an initiative dedicated to recognizing and celebrating India's most talented and influential designers. This platform brings together creative minds from various design disciplines - from UI/UX and graphic design to product and motion design.",
+        link: "https://designers.top100series.com/",
+        // image: cdnUrl("src/modules/Public/Home/assets/top-100-designers.webp"),
+        isLive: true,
+      },
+      {
+        title: "Top 100 Makers",
+        description:
+          "Welcome to Top 100 Makers - an initiative celebrating India's most innovative creators, builders, and hardware enthusiasts. We're dedicated to recognizing brilliant minds who turn ideas into tangible prototypes, electronic innovations, and real-world solutions.",
+        link: "https://makers.top100series.com/",
+        // image: cdnUrl("src/modules/Public/Home/assets/top-100-makers.webp"),
+        isLive: true,
+      },
+      {
+        title: "CareHack 2025",
+        description:
+          "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation.",
+        link: "https://carehack.tech/",
+        // image: cdnUrl("src/modules/Public/Home/assets/carehack-2025.webp"),
+        isLive: false,
+      },
+    ],
     weekly: [
       {
         title: "Inspiration Station Radio",
