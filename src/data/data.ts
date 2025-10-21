@@ -1047,7 +1047,7 @@ export const events: {
         description:
           "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
         link: "https://top100coders.com/",
-        // image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
+        image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
         isLive: true,
       },
       {
@@ -1055,7 +1055,7 @@ export const events: {
         description:
           "Launchpad Kerala is a premier job fair that brings together talented individuals and innovative companies in the technical and engineering fields. With its skills-first approach, flexible interviews, and a wide talent pool, Launchpad Kerala offers unmatched opportunities for both candidates and employers.",
         link: "https://launchpad.mulearn.org/",
-        // image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
+        image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
         isLive: false,
       },
       {

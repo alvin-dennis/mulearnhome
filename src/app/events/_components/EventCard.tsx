@@ -16,6 +16,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 interface Props {
   event: Event;
@@ -23,54 +24,54 @@ interface Props {
 }
 
 export default function EventCard({ event, featured = false }: Props) {
-  const truncateWords = (text: string, wordLimit: number) => {
-    const words = text.split(" ");
-    return words.length > wordLimit
-      ? words.slice(0, wordLimit).join(" ") + "..."
-      : text;
-  };
-
   return (
     <motion.div
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-      className={`group relative h-full bg-mulearn-whitish rounded-2xl overflow-visible shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue ${
-        featured ? "lg:col-span-2 lg:row-span-2" : ""
-      }`}
+      className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
+  ${featured ? "lg:col-span-2 lg:row-span-2" : ""}
+  w-[380px] ${event.image ? "h-[350px]" : "h-[280px]"} flex flex-col`}
     >
       {event.image && (
-        <div className="w-full">
+        <div className="w-full h-20">
           <MuImage
             src={event.image}
             alt={event.title}
             width={featured ? 1200 : 800}
             height={featured ? 600 : 400}
-            className="rounded-t-2xl object-cover w-full h-48 lg:h-64"
+            className="rounded-t-2xl object-cover w-full h-full"
           />
         </div>
       )}
 
-      <div
-        className={"p-6 space-y-4 " + (featured ? "lg:p-8 lg:space-y-6" : "")}
-      >
+      <div className="p-4 flex-1 flex flex-col justify-between">
         <div className="space-y-3">
-          <h3
-            className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 leading-snug ${
-              featured ? "text-2xl lg:text-3xl" : "text-xl"
-            }`}
-          >
-            {event.title}
-          </h3>
-          {event.date && (
-            <div className="flex items-center gap-2 text-mulearn-blackish text-sm">
-              <Calendar className="w-4 h-4 shrink-0 text-mulearn-blackish/60" />
-              <span>{event.date}</span>
-            </div>
-          )}
-        </div>
+          <div className="flex justify-between items-start">
+            <h3
+              className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 ${
+                featured ? "text-2xl lg:text-3xl" : "text-xl"
+              }`}
+            >
+              {event.title}
+            </h3>
+            {event.date && (
+              <Badge className="bg-mulearn-greyish/20 text-mulearn-trusty-blue hover:bg-mulearn-greyish/20 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                <Calendar className="w-3 h-3" />
+                {event.date}
+              </Badge>
+            )}
+          </div>
 
-        <p className="text-mulearn-blackish text-sm leading-relaxed">
-          {truncateWords(event.description, 27)}
-        </p>
+          <p
+            className="text-mulearn-blackish text-sm leading-relaxed overflow-hidden"
+            style={{
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: "6",
+            }}
+          >
+            {event.description}
+          </p>
+        </div>
 
         {event.link && (
           <Dialog>
@@ -78,25 +79,18 @@ export default function EventCard({ event, featured = false }: Props) {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="
-                  w-full flex items-center justify-center gap-3
-                  bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl
-                  px-5 py-3 font-semibold text-sm shadow-sm
-                  hover:shadow-md transition-all duration-300 cursor-pointer
-                "
+                className="mt-4 w-full flex items-center justify-center gap-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl px-4 py-3 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <span className="flex items-center gap-2">
-                  Check it out!
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                </span>
+                Check it out! <ArrowRight className="w-4 h-4" />
               </motion.button>
             </DialogTrigger>
-            <DialogContent className="max-w-lg">
+
+            <DialogContent className="max-w-lg rounded-2xl">
               <DialogHeader>
                 <DialogTitle>{event.title}</DialogTitle>
                 {event.date && (
                   <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
-                    <Calendar className="w-4 h-4 shrink-0 text-mulearn-blackish/60" />
+                    <Calendar className="w-4 h-4" />
                     <span>{event.date}</span>
                   </div>
                 )}
@@ -116,9 +110,7 @@ export default function EventCard({ event, featured = false }: Props) {
               <DialogFooter>
                 <Button
                   variant="mulearn"
-                  className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl
-                  px-5 py-3 font-semibold text-sm shadow-sm
-                  hover:shadow-md"
+                  className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                 >
                   <Link href={event.link} target="_blank noreferrer">
                     Go to Event
