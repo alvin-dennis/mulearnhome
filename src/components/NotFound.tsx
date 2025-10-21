@@ -58,7 +58,7 @@ export default function NotFoundPage() {
         />
         <Link
           href="/"
-          className="mt-6 px-6 py-3 bg-mulearn-trusty-blue text-mulearn-whitish font-semibold rounded-2xl shadow-lg hover:bg-mulearn-duke-purple transition-all duration-300"
+          className="mt-6 px-6 py-3 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-semibold rounded-2xl shadow-lg hover:bg-mulearn-duke-purple transition-all duration-300"
         >
           Back to Home
         </Link>
