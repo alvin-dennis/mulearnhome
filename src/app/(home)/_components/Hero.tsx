@@ -29,6 +29,7 @@ const illustration = cdnUrl("src/modules/Public/Home/assets/illustration.webp");
 export default function Hero({ refreshToken, redirect }: HeroProps) {
   return (
     <motion.header
+      id="#home"
       className="relative flex flex-col items-center justify-start overflow-hidden"
       style={{
         background:
