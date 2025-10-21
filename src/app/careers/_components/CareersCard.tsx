@@ -29,7 +29,7 @@ const CareersCard = ({
           height={125}
         />
       )}
-      <p className="mb-2.5 text-center  text-[1.75rem] font-semibold text-mulearn-trusty-blue">
+      <p className="mb-2.5 text-center  text-[1.75rem] font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
         {role}
       </p>
 
@@ -100,7 +100,7 @@ const CareersCard = ({
         {applylink && (
           <Link href={applylink} target="_blank" rel="noopener noreferrer">
             <Button
-              variant={"mulearn-blue"}
+              variant={"mulearn"}
               className="mr-4 px-[15px] py-2.5 font-bold"
             >
               Apply Now
@@ -110,7 +110,7 @@ const CareersCard = ({
         {jdlink && (
           <Link href={jdlink} target="_blank" rel="noopener noreferrer">
             <Button
-              variant={"mulearn-blue"}
+              variant={"mulearn"}
               className="mr-4 px-[15px] py-2 font-bold"
             >
               View JD
@@ -120,7 +120,7 @@ const CareersCard = ({
         {extraButton && (
           <Link href={extraButton} target="_blank" rel="noopener noreferrer">
             <Button
-              variant={"mulearn-blue"}
+              variant={"mulearn"}
               className="mr-4 cursor-pointer px-[15px] py-2 font-bold"
             >
               View Challenge
