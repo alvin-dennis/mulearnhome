@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import { companyImages } from "@/data/data";
 export default function Hero() {
   return (
@@ -12,18 +12,18 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1"
+            className="relative w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 lg:-ml-14"
           >
-            <div className="relative w-full max-w-[512px]">
-              <div className="absolute top-1/4 left-8 w-[236px] h-[283px] rounded-full bg-[#456FF6] blur-[200px] opacity-70 hidden sm:block" />
+            <div className="relative w-full max-w-[650px] aspect-[512/400]">
+              <div className="absolute top-1/4 left-8 w-[236px] h-[283px] rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple blur-[200px] opacity-70 hidden sm:block" />
 
-              <Image
+              <MuImage
                 src={companyImages.hero}
                 alt="Company Partnership Illustration"
-                className="w-full h-auto relative z-10"
-                 width={512}
-                height={400}
-            
+                className="w-full h-full relative z-10 object-contain"
+                width={650}
+                height={500}
+                priority
               />
 
             </div>
@@ -44,7 +44,7 @@ export default function Hero() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-mulearn-trusty-blue text-white font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:bg-[#3558d9] shadow-md"
+              className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
             >
               Join as a Company Partner
             </motion.button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import {companyDo, companyImages} from "@/data/data";
 
 export default function WhatYouCanDo() {
@@ -51,7 +51,7 @@ export default function WhatYouCanDo() {
             viewport={{ once: true }}
             className="flex-shrink-0 w-full max-w-[300px] lg:max-w-[388px]"
           >
-            <Image
+            <MuImage
               src={companyImages.studLap}
               alt="student with a laptop image"
               className="w-full h-auto"

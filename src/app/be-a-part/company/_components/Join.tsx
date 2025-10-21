@@ -48,7 +48,7 @@ export default function HowToJoin() {
 											/>
 										</svg>
 										<div className="relative z-20 flex-shrink-0 ml-[22px]">
-											<div className="w-[90px] h-[90px] rounded-full bg-[#456FF6] flex items-center justify-center">
+											<div className="w-[90px] h-[90px] rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
 												<span className="text-white text-5xl font-bold">
 													{step.number}
 												</span>
@@ -80,7 +80,7 @@ export default function HowToJoin() {
 										</svg>
 
 										<div className="relative z-20 flex-shrink-0 mr-[22px]">
-											<div className="w-[90px] h-[90px] rounded-full bg-[#456FF6] flex items-center justify-center">
+											<div className="w-[90px] h-[90px] rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
 												<span className="text-white text-5xl font-bold">
 													{step.number}
 												</span>
@@ -125,7 +125,7 @@ export default function HowToJoin() {
 								transition={{ delay: index * 0.1 }}
 								className="flex flex-col items-center text-center gap-4 p-6 border-2 border-[#EEE] rounded-lg bg-white"
 							>
-								<div className="w-[100px] h-[100px] rounded-full bg-[#456FF6] flex items-center justify-center">
+								<div className="w-[100px] h-[100px] rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
 									<span className="text-white text-4xl font-bold">
 										{step.number}
 									</span>
@@ -148,7 +148,7 @@ export default function HowToJoin() {
 					viewport={{ once: true }}
 					className="flex justify-center mt-12"
 				>
-					<button onClick={()=>redirect("https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1")} className="cursor-pointer bg-[#456FF6] hover:bg-[#3558d9] text-white px-4 py-3 text-md font-bold rounded-[20px] transition-all">
+					<button onClick={()=>redirect("https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1")} className="cursor-pointer bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:opacity-90 text-white px-4 py-3 text-md font-bold rounded-[20px] transition-all">
 						Join as a Company Partner
 					</button>
 				</motion.div>
