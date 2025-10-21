@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import MuImage from "@/components/MuImage";
 import ContactForm from "./_components/ContactForm";
 // import { cdnUrl } from "@/services/cdn";
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-6 w-full flex justify-center md:justify-start">
-            <Image
+            <MuImage
               src={heroImg}
               alt="Contact Us"
               width={500}
