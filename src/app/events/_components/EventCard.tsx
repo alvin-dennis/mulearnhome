@@ -27,7 +27,7 @@ export default function EventCard({ event }: Props) {
     <motion.div
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-        w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"} flex flex-col`}
+        w-full sm:w-[340px] md:w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"} flex flex-col`}
     >
       {event.image && (
         <div className="w-full h-20">
@@ -60,7 +60,7 @@ export default function EventCard({ event }: Props) {
             style={{
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
-              WebkitLineClamp: "6",
+              WebkitLineClamp: "5",
             }}
           >
             {event.description}

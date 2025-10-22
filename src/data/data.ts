@@ -6341,59 +6341,59 @@ export const campusChapter = {
 export const companies = [
   {
     alt: "CAFIT",
-    src: "/assets/careers/companies/cafit.webp",
+    src: "/public/assets/careers/companies/cafit.webp",
   },
   {
     alt: "Carestack",
-    src: "/assets/careers/companies/carestack.webp",
+    src: "/public/assets/careers/companies/carestack.webp",
   },
   {
     alt: "cdf",
-    src: "/assets/careers/companies/cdf.webp",
+    src: "/public/assets/careers/companies/cdf.webp",
   },
   {
     alt: "Ecesis",
-    src: "/assets/careers/companies/ecesis.webp",
+    src: "/public/assets/careers/companies/ecesis.webp",
   },
   {
     alt: "Experion",
-    src: "/assets/careers/companies/experion.webp",
+    src: "/public/assets/careers/companies/experion.webp",
   },
   {
     alt: "EY",
-    src: "/assets/careers/companies/ey.webp",
+    src: "/public/assets/careers/companies/ey.webp",
   },
   {
     alt: "Nucore",
-    src: "/assets/careers/companies/nucore.webp",
+    src: "/public/assets/careers/companies/nucore.webp",
   },
   {
     alt: "Softnotion",
-    src: "/assets/careers/companies/softnotions.webp",
+    src: "/public/assets/careers/companies/softnotions.webp",
   },
   {
     alt: "SunTec",
-    src: "/assets/careers/companies/suntec.webp",
+    src: "/public/assets/careers/companies/suntec.webp",
   },
   {
     alt: "Tata Elexis",
-    src: "/assets/careers/companies/tata.webp",
+    src: "/public/assets/careers/companies/tata.webp",
   },
   {
     alt: "Techfunic",
-    src: "/assets/careers/companies/techfunic.webp",
+    src: "/public/assets/careers/companies/techfunic.webp",
   },
   {
     alt: "Thinkpalm",
-    src: "/assets/careers/companies/thinkpalm.webp",
+    src: "/public/assets/careers/companies/thinkpalm.webp",
   },
   {
     alt: "Undaku",
-    src: "/assets/careers/companies/undaku.webp",
+    src: "/public/assets/careers/companies/undaku.webp",
   },
   {
     alt: "YIP",
-    src: "/assets/careers/companies/yip.webp",
+    src: "/public/assets/careers/companies/yip.webp",
   },
 ];
 
