@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
 import Hero from "@/app/(home)/_components/Hero";
 import Features from "@/app/(home)/_components/Features";
 import Story from "@/app/(home)/_components/Story";

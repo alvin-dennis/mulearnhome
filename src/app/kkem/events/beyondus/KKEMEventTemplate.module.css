@@ -29,11 +29,6 @@
     color: #2e85fe;
 }
 
-/* Banner */
-html {
-    scroll-behavior: smooth;
-}
-
 .main {
     max-width: 200rem;
     margin: 0 auto;

@@ -1,4 +1,4 @@
-import { cdnUrl } from "@/modules/utils/cdn";
+import { cdnUrl } from "@/services/cdn";
 
 const assets = {
     AI: cdnUrl("src/modules/Public/KKEM/assets/IGS/ai.webp"),
