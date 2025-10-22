@@ -3,8 +3,10 @@
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { learningCircleData } from "@/data/data";
-export default function LearningCirclePage() {
+
+export default function LearningCircle() {
   const {
     subtitle,
     description,
@@ -20,9 +22,7 @@ export default function LearningCirclePage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-mulearn-whitish text-mulearn-blackish gap-16 md:gap-24">
-      {/* Hero Section */}
       <section className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,6 @@ export default function LearningCirclePage() {
           </motion.div>
         </motion.div>
 
-        {/* Illustration Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +76,6 @@ export default function LearningCirclePage() {
         </motion.div>
       </section>
 
-      {/* Introduction Section */}
       <section className="max-w-6xl w-full text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -118,7 +116,6 @@ export default function LearningCirclePage() {
         </div>
       </section>
 
-      {/* Learning Domains Section */}
       <section className="max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -162,7 +159,6 @@ export default function LearningCirclePage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
       <section className="max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -189,7 +185,7 @@ export default function LearningCirclePage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative text-center ${
                 index === 4 ? "md:col-start-2" : ""
-              } ${index === 5 ? "md:col-start-3" : ""}`} // centering steps 5 and 6
+              } ${index === 5 ? "md:col-start-3" : ""}`}
             >
               <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ">
                 {step.step}
@@ -206,7 +202,6 @@ export default function LearningCirclePage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -254,7 +249,6 @@ export default function LearningCirclePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -273,14 +267,14 @@ export default function LearningCirclePage() {
           whileTap={{ scale: 0.95 }}
           className="inline-block"
         >
-          <a
-            href={ctaSection.buttonLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-mulearn-whitish bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent px-8 py-3 rounded-xl font-semibold shadow-md hover:bg-mulearn-whitish/90 transition-colors duration-200"
-          >
-            {ctaSection.buttonText}
-          </a>
+          <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
+            <Button
+              variant={"mulearn"}
+              className="bg-mulearn-whitish text-mulearn-trusty-blue py-2 px-6 sm:px-8 sm:py-3 font-semibold text-[0.95rem] sm:text-[1.3rem] shadow hover:bg-mulearn-duke-purple hover:text-mulearn-whitish hover:scale-105 transition-all cursor-pointer rounded-full"
+            >
+              Join µLearn
+            </Button>
+          </Link>
         </motion.div>
       </motion.section>
     </main>

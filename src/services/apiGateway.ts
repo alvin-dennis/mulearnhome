@@ -8,6 +8,7 @@ export const publicGateway = axios.create({
   },
 });
 
+
 // Add request interceptor for any global request configuration
 publicGateway.interceptors.request.use(
   (config) => {
