@@ -7,11 +7,11 @@ import { artOfTeachingUrls } from "@/data/data";
 import { cdnUrl } from "@/services/cdn";
 
 const Hero = () => {
-  const teachingGif = cdnUrl("/src/modules/Public/artofteaching/assets/Teaching.gif");
+  const teachingGif = cdnUrl("/src/modules/Public/ArtOfTeaching/assets/Teaching.gif");
 
   return (
     <div className="px-8 py-8 bg-white lg:px-12 lg:py-12">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
         <div className="text-center lg:text-left lg:w-1/2">
           <h1 className="text-4xl lg:text-7xl font-semibold text-gray-800 leading-tight">
             <span className="text-[var(--mulearn-trusty-blue)]">µLearn Art</span> of Teaching 3.0

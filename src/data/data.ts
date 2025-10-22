@@ -6790,19 +6790,19 @@ export const artOfTeachingMentors = [
   {
     name: "Dr T M George",
     designation: "Former Principal at Mar Baselios College of Engineering and Technology",
-    image: "/src/modules/Public/artofteaching/assets/dpm.webp",
+    image: "/public/assets/dpm.webp",
     linkedIn: "https://www.linkedin.com/in/dr-t-m-george-87b86028/?originalSubdomain=in"
   },
   {
     name: "Ann Andrews",
     designation: "Product | Technology & Data Strategy | NYU & Columbia Fellow",
-    image: "/src/modules/Public/artofteaching/assets/dpm.webp",
+    image: "/public/assets/dpm.webp",
     linkedIn: "https://www.linkedin.com/in/annandrews/"
   },
   {
     name:"Rajeev J Sebastian",
     designation:"CEO Alokin Software Private Limited",
-    image:"/src/modules/Public/artofteaching/assets/dpm.webp",
+    image:"/public/assets/dpm.webp",
     linkedIn:"https://www.linkedin.com/in/rajeevjs",
   },
 ];

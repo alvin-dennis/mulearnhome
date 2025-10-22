@@ -5,7 +5,7 @@ import { artOfTeachingUrls } from "@/data/data";
 import { cdnUrl } from "@/services/cdn";
 
 const Guidelines = () => {
-  const artOfTeachingGuidelines = cdnUrl("/src/modules/Public/artofteaching/assets/Art of Teaching Guidelines.pdf");
+  const artOfTeachingGuidelines = cdnUrl("/assets/Guidlines1-BgJl08J_.pdf");
 
   const timelineStyle: React.CSSProperties = {
     display: 'flex',
