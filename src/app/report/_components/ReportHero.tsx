@@ -58,7 +58,7 @@ export default function ReportHero() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5" />
+      <div className="absolute inset-0 bg-linear-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
         <div className="text-center mb-16">

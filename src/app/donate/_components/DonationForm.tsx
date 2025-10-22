@@ -308,7 +308,7 @@ export default function DonationForm() {
             type="checkbox"
             id="isOrganisation"
             {...register("isOrganisation")}
-            className="w-4 h-4 text-[var(--mulearn-trusty-blue)] border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[var(--mulearn-trusty-blue)] focus:ring-offset-0 transition-all cursor-pointer"
+            className="w-4 h-4 text-mulearn-trusty-blue border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[var(--mulearn-trusty-blue)] focus:ring-offset-0 transition-all cursor-pointer"
           />
           <Label
             htmlFor="isOrganisation"
@@ -509,7 +509,7 @@ export default function DonationForm() {
                 type="checkbox"
                 id="termsAccepted"
                 {...register("termsAccepted")}
-                className="w-4 h-4 mt-0.5 text-[var(--mulearn-trusty-blue)] border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[var(--mulearn-trusty-blue)] focus:ring-offset-0 transition-all cursor-pointer"
+                className="w-4 h-4 mt-0.5 text-mulearn-trusty-blue border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-[var(--mulearn-trusty-blue)] focus:ring-offset-0 transition-all cursor-pointer"
               />
               <div className="flex-1">
                 <Label
@@ -520,7 +520,7 @@ export default function DonationForm() {
                   <a
                     href="/termsandconditions"
                     target="_blank"
-                    className="text-[var(--mulearn-trusty-blue)] hover:underline"
+                    className="text-mulearn-trusty-blue hover:underline"
                   >
                     Terms and Conditions
                   </a>
@@ -528,7 +528,7 @@ export default function DonationForm() {
                   <a
                     href="/privacypolicy"
                     target="_blank"
-                    className="text-[var(--mulearn-trusty-blue)] hover:underline"
+                    className="text-mulearn-trusty-blue hover:underline"
                   >
                     Privacy Policy
                   </a>{" "}
@@ -536,7 +536,7 @@ export default function DonationForm() {
                   <a
                     href="/refundpolicy"
                     target="_blank"
-                    className="text-[var(--mulearn-trusty-blue)] hover:underline"
+                    className="text-mulearn-trusty-blue hover:underline"
                   >
                     Refund Policy
                   </a>

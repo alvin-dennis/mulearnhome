@@ -1,4 +1,3 @@
-
 import { refundPolicy } from "@/data/data";
 
 import { Metadata } from "next";
@@ -36,7 +35,7 @@ export default async function RefundPolicy() {
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(
         /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-        '<a href="mailto:$1" class="font-medium text-[var(--mulearn-trusty-blue)] underline underline-offset-4 hover:text-[var(--mulearn-duke-purple)]">$1</a>'
+        '<a href="mailto:$1" class="font-medium text-mulearn-trusty-blue underline underline-offset-4 hover:text-[var(--mulearn-duke-purple)]">$1</a>'
       );
   return (
     <main className="min-h-screen bg[var(--mulearn-whitish)]">
@@ -85,7 +84,9 @@ export default async function RefundPolicy() {
                   {section.subsections.map((subsection, subIndex) => (
                     <li key={subIndex} className="pl-2 leading-relaxed">
                       <span
-                        dangerouslySetInnerHTML={{ __html: formatText(subsection) }}
+                        dangerouslySetInnerHTML={{
+                          __html: formatText(subsection),
+                        }}
                       />
                     </li>
                   ))}
