@@ -16,7 +16,7 @@ const Hero = () => {
           <h1 className="text-4xl lg:text-7xl font-semibold text-gray-800 leading-tight">
             <span className="text-[var(--mulearn-trusty-blue)]">µLearn Art</span> of Teaching 3.0
           </h1>
-          <p className="mt-2 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
+          <p className="mt-2 text-base lg:text-lg text-gray-600 lg:w-4/5">
             µLearn is returning with Art of Teaching to pay tribute to educators who shape the next generation.
           </p>
           

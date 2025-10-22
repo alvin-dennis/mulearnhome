@@ -57,7 +57,7 @@ const MentorCard = ({
       <h3 className="text-lg font-semibold text-gray-800 mt-4 mb-2">
         {name}
       </h3>
-      <p className="text-sm text-gray-600 font-poppins leading-relaxed">
+      <p className="text-sm text-gray-600 leading-relaxed">
         {designation}
       </p>
     </div>

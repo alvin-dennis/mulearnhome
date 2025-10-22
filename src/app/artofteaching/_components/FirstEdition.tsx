@@ -12,7 +12,7 @@ const FirstEdition = () => {
             <h2 className="text-4xl lg:text-6xl font-semibold text-gray-800 leading-tight">
               Art of Teaching <span className="text-[var(--mulearn-trusty-blue)]">First Edition</span>
             </h2>
-            <p className="mt-4 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
+            <p className="mt-4 text-base lg:text-lg text-gray-600 lg:w-4/5">
               The First Edition of Art of Teaching was a huge success with
               more than 100 distinct entries, all of which used creative
               teaching methods to simplify a topic for better understanding by

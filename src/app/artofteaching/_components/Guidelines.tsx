@@ -69,7 +69,7 @@ const Guidelines = () => {
               <h2 className="text-4xl lg:text-7xl font-semibold text-gray-800 leading-tight">
                 What is <span className="text-[var(--mulearn-trusty-blue)]">Art of Teaching???</span>
               </h2>
-              <p className="mt-2 text-base lg:text-lg text-gray-600 font-poppins lg:w-4/5">
+              <p className="mt-2 text-base lg:text-lg text-gray-600 lg:w-4/5">
                 The &apos;Art of Teaching&apos; is a contest that celebrates educators who creatively simplify complex 
                 topics for better student understanding and retention.
                 <br />
