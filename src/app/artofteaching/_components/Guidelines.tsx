@@ -24,7 +24,7 @@ const Guidelines = () => {
   const circleStyle: React.CSSProperties = {
     width: '20px',
     height: '20px',
-    backgroundColor: 'var(--mulearn-trusty-blue)',
+    backgroundColor: 'var(--mulearn-gray-600)',
     borderRadius: '50%',
     position: 'relative',
     zIndex: 1,
@@ -35,7 +35,7 @@ const Guidelines = () => {
   const lineStyle: React.CSSProperties = {
     width: '2px',
     height: '40px',
-    backgroundColor: 'var(--mulearn-trusty-blue)',
+    backgroundColor: 'var(--mulearn-gray-600)',
     position: 'absolute',
     top: '20px',
     left: '9px',
