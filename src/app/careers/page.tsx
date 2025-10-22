@@ -118,7 +118,7 @@ export default function Careers() {
             <h2 className="mt-8 text-center text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
               New Hiring Calls
             </h2>
-            <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
+            <p className="mx-auto mb-4 block max-w-160 text-center text-base">
               Unlock your potential and accelerate your career growth with the
               endless opportunities available on Career Labs
             </p>
@@ -151,7 +151,7 @@ export default function Careers() {
           <h2 className="mt-8 text-center text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
             Previous Hiring Calls
           </h2>
-          <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
+          <p className="mx-auto mb-4 block max-w-160 text-center text-base">
             Listed below are the list of hiring calls that were announced
             through career labs previously.
           </p>
