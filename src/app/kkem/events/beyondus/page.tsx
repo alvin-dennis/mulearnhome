@@ -2,36 +2,10 @@ import React from "react";
 import styles from "./KKEMEventTemplate.module.css";
 import Card from "../../components/Card";
 import { cdnUrl } from "@/services/cdn";
-import Link from "next/link";
 
 const KKEMEventBeyondUs = () => {
     return (
         <>
-            <nav className={styles.navbar}>
-                <div className={styles.container}>
-                    <Link
-                        target="_blank"
-                        rel="noreferrer"
-                        href="/"
-                    >
-                        About µLearn
-                    </Link>
-                    <Link
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://knowledgemission.kerala.gov.in/"
-                    >
-                        About K-KEM
-                    </Link>
-                    <a href="/kkem#events">Our Programs</a>
-                </div>
-            </nav>
-
-            <div style={{ position: "relative", height: "100%" }}>
-                <img src={cdnUrl("src/modules/Public/KKEM/assets/past_events/beyondus/Beyond Us Banner.svg")} alt="Beyond Us Banner" className={styles.title} />
-                <img src={cdnUrl("src/modules/Public/KKEM/assets/mU_pl.svg")} alt="µLearn Logo" className={styles.mU} />
-            </div>
-
             <div className={styles.aboutSection}>
                 <div className={styles.aboutTexts}>
                     <p className={styles.aboutTextsHeading}>Beyond Us</p>

@@ -1,7 +1,4 @@
-"use client";
-
 import { cdnUrl } from "@/services/cdn";
-import MuImage from "@/components/MuImage";
 import IGAbout from "./components/IGAbout";
 import IGSection from "./components/IGSection";
 
@@ -128,29 +125,12 @@ export default function Landing() {
   return (
     <>
       <main className="max-w-800">
-        <div className="relative h-full">
-          <MuImage
-            src={cdnUrl("src/modules/Public/KKEM/assets/titleFrame.svg")}
-            alt="KKEM title frame"
-            width={300}
-            height={200}
-            className="w-full h-auto overflow-hidden block object-cover"
-          />
-          <MuImage
-            src={cdnUrl("src/modules/Public/KKEM/assets/mU_pl.svg")}
-            alt="mU"
-            width={300}
-            height={200}
-            className="absolute top-[-30%] left-5 h-[150%] opacity-50 w-auto"
-          />
-        </div>
         <IGAbout />
         <IGSection cards={igCardData} />
         <div id="events">
           <IGSection
             cards={pastEventCardData}
             heading="Partnered Events"
-            headerFlag={true}
             largeImg={true}
           />
         </div>

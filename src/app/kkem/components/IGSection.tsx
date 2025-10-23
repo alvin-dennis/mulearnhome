@@ -11,7 +11,6 @@ import { IGSectionProps } from "@/lib/types";
 const IGSection = ({
   cards,
   heading,
-  headerFlag,
   largeImg,
 }: IGSectionProps) => {
   const redirect = useRedirectToApp();
@@ -23,7 +22,6 @@ const IGSection = ({
   return (
     <>
       <div className={styles.main_container}>
-        {!headerFlag && (
           <div className={styles.first_view_container}>
             <div className={styles.first_view}>
               <div className={styles.image_container}>
@@ -56,7 +54,6 @@ const IGSection = ({
               </div>
             </div>
           </div>
-        )}
 
         <div className={styles.explore_view_container}>
           <div className={styles.explore_view}>

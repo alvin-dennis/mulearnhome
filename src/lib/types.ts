@@ -229,6 +229,5 @@ export type cardProps = {
 export type IGSectionProps = {
   cards: cardProps[];
   heading?: string;
-  headerFlag?: boolean;
   largeImg?: boolean;
 };
