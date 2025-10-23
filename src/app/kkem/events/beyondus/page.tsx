@@ -36,7 +36,7 @@ const KKEMEventBeyondUs = () => {
                 <div className={styles.aboutTexts}>
                     <p className={styles.aboutTextsHeading}>Beyond Us</p>
                     <p className={styles.aboutTextstDescription}>
-                        A hackathon like never before in association iwht Kerala
+                        A hackathon like never before in association with Kerala
                         Knowledge Economy Mission as a part of Kerala Skill
                         Express wherein your skills of technical knowledge and
                         problem solving will be put to the test.

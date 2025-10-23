@@ -1,10 +1,9 @@
 "use client";
 
 import { cdnUrl } from "@/services/cdn";
-import styles from "./KKEMLanding.module.css";
+import MuImage from "@/components/MuImage";
 import IGAbout from "./components/IGAbout";
 import IGSection from "./components/IGSection";
-import pastEventsAssets from "./assets/past_events";
 
 export default function Landing() {
   const igCardData = [
@@ -85,7 +84,7 @@ export default function Landing() {
       code: "gtas",
       description:
         "After Codestorm get ready for an exhilarating journey with GTA:SandShore Hackathon💫",
-      image: pastEventsAssets.gtas,
+      image: cdnUrl("src/modules/Public/KKEM/assets/past_events/gtas.webp"),
       link: "https://gta.mulearn.org",
       date: "14th and 15th October",
     },
@@ -94,7 +93,7 @@ export default function Landing() {
       code: "lf",
       description:
         "µLearn in association with KKEM brings you Learning Fest a series of bootcamps to improve your skills in various domains and the chance to earn Karma points and various other opportunities.",
-      image: pastEventsAssets.lf,
+      image: cdnUrl("src/modules/Public/KKEM/assets/past_events/lf.webp"),
       link: "https://mulearn.org/keralatechfest",
       date: "7th August 2023",
     },
@@ -103,7 +102,7 @@ export default function Landing() {
       code: "gtac",
       description:
         "It's time to gear up for the CodeStorm, the first hackathon of the Grand Tech Adventure Hackathon series. 🚀",
-      image: pastEventsAssets.gtac,
+      image: cdnUrl("src/modules/Public/KKEM/assets/past_events/gtac.webp"),
       link: "https://gta.mulearn.org/codestorm",
       date: "19th and 20th August",
     },
@@ -112,7 +111,7 @@ export default function Landing() {
       code: "buh",
       description:
         "Embark on an extraordinary hackathon mission 🚀. Utilize your strategic thinking and create impressive projects from scratch to explore Beyond Us ✨",
-      image: pastEventsAssets.buh,
+      image: cdnUrl("src/modules/Public/KKEM/assets/past_events/buh.webp"),
       link: "https://mulearn.org/events/beyondus",
       date: "8th and 9th July 2023",
     },
@@ -121,24 +120,28 @@ export default function Landing() {
       code: "kf",
       description:
         "his festive season, don't miss the chance to boost your career with µLearn's Karma Fest‼️\n\nEarn valuable karma points by completing learning tracks, tasks, and participating in mini-hackathons based on Design & Research, Development, No-code, and AI.",
-      image: pastEventsAssets.kf,
+      image: cdnUrl("src/modules/Public/KKEM/assets/past_events/kf.webp"),
       link: "",
       date: "May 2023",
     },
   ];
   return (
     <>
-      <main className="max-w-[200rem]">
-        <div style={{ position: "relative", height: "100%" }}>
-          <img
+      <main className="max-w-800">
+        <div className="relative h-full">
+          <MuImage
             src={cdnUrl("src/modules/Public/KKEM/assets/titleFrame.svg")}
             alt="KKEM title frame"
-            className={styles.title}
+            width={300}
+            height={200}
+            className="w-full h-auto overflow-hidden block object-cover"
           />
-          <img
+          <MuImage
             src={cdnUrl("src/modules/Public/KKEM/assets/mU_pl.svg")}
             alt="mU"
-            className={styles.mU}
+            width={300}
+            height={200}
+            className="absolute top-[-30%] left-5 h-[150%] opacity-50 w-auto"
           />
         </div>
         <IGAbout />
