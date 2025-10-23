@@ -1,4 +1,15 @@
-import { ClosedCareersCardProps } from "@/lib/types";
+"use client";
+import React from "react";
+
+interface ClosedCareersCardProps {
+  date?: string;
+  title?: string;
+  location?: string;
+  qualifications?: string;
+  role?: string;
+  duration?: string;
+  remuneration?: string;
+}
 
 const ClosedCareersCard = ({
   date,
@@ -10,49 +21,48 @@ const ClosedCareersCard = ({
   remuneration,
 }: ClosedCareersCardProps) => {
   return (
-    <div className="m-4 flex w-[350px] items-center justify-between rounded-lg p-4 text-center shadow-md">
-      <div className="flex-1">
-        {title && (
-          <p className="mb-2.5 text-center  text-2xl font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-            {title}
+    <div className="relative w-[350px] rounded-2xl bg-white shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+      {/* Gradient Header */}
+      <div className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-4 text-center">
+        <h2 className="text-lg font-semibold text-white">{title}</h2>
+        <p className="text-sm text-white/90 italic">Closed on {date}</p>
+      </div>
+
+      {/* Body */}
+      <div className="p-5 space-y-2 text-mulearn-blackish text-sm">
+        {role && (
+          <p>
+            <strong>Role:</strong> {role}
           </p>
         )}
+        {location && (
+          <p>
+            <strong>Location:</strong> {location}
+          </p>
+        )}
+        {duration && (
+          <p>
+            <strong>Duration:</strong> {duration}
+          </p>
+        )}
+        {remuneration && (
+          <p>
+            <strong>Remuneration:</strong> {remuneration}
+          </p>
+        )}
+        {qualifications && (
+          <p>
+            <strong>Qualifications:</strong> {qualifications}
+          </p>
+        )}
+      </div>
 
-        <ul className="m-0 list-none p-0">
-          {qualifications && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Qualifications:</strong> {qualifications}
-            </li>
-          )}
-          {date && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Dated:</strong> {date}
-            </li>
-          )}
-          {remuneration && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Package:</strong> {remuneration}
-            </li>
-          )}
-          {role && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Roles:</strong> {role}
-            </li>
-          )}
-          {duration && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Duration:</strong> {duration}
-            </li>
-          )}
-          {location && (
-            <li className="mb-2 text-base text-mulearn-blackish">
-              <strong>Location:</strong> {location}
-            </li>
-          )}
-        </ul>
+      {/* Closed Tag */}
+      <div className="absolute top-3 right-3 bg-red-100 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
+        Closed
       </div>
     </div>
   );
 };
-
 export default ClosedCareersCard;
+
