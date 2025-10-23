@@ -90,7 +90,7 @@ export default function PartnersPage() {
                 <div className="bg-white rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
                   <div className="relative w-full h-48 sm:h-56 overflow-hidden">
                     <MuImage
-                      src="/assets/partners/community.jpg"
+                      src="/assets/partners/community.svg"
                       alt="Community Partners"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -278,10 +278,16 @@ export default function PartnersPage() {
               <p className="text-white/90 text-base sm:text-lg">
                 Join our growing network of partners and help us create impactful learning experiences for thousands of learners worldwide.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/contact">
-                  <button className="px-8 py-4 bg-white text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    Get in Touch
+              <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
+                <Link href="/be-a-part/company">
+                  <button className="px-8 py-4 cursor-pointer bg-white text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                      Join as Company
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <Link href="/be-a-part/campus">
+                  <button className="px-8 py-4 bg-white cursor-pointer text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                      Join as Community
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
