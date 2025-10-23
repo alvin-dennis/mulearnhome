@@ -19,110 +19,75 @@ const CareersCard = ({
   organization,
 }: CareersCardProps) => {
   return (
-    <div className="w-80 rounded-lg border-2 border-mulearn-trusty-blue bg-white p-6 shadow-sm">
+    <div className="w-80 rounded-2xl border border-mulearn-trusty-blue bg-mulearn-whitish p-6 shadow-sm hover:shadow-lg transition-all duration-300">
       {logo && (
         <MuImage
           src={logo}
           alt="Company Logo"
-          className="mx-auto mb-2.5 object-contain"
+          className="mx-auto mb-3 object-contain"
           width={150}
           height={125}
         />
       )}
-      <p className="mb-2.5 text-center  text-[1.75rem] font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+
+      <p className="mb-3 text-center text-2xl font-semibold bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
         {role}
       </p>
 
-      {remuneration && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Remuneration:
-          </span>
-          <span className="mr-2.5 ">{remuneration}</span>
-        </p>
-      )}
-
-      {vacancies && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Vacancies:
-          </span>
-          <span className="mr-2.5 ">{vacancies}</span>
-        </p>
-      )}
-
       {organization && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Organization:
-          </span>
-          <span className="mr-2.5 ">{organization}</span>
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Organization:</span> {organization}
         </p>
       )}
-
+      {remuneration && (
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Remuneration:</span> {remuneration}
+        </p>
+      )}
+      {vacancies && (
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Vacancies:</span> {vacancies}
+        </p>
+      )}
       {location && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Location:
-          </span>
-          <span className="mr-2.5 ">{location}</span>
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Location:</span> {location}
         </p>
       )}
-
-      {lastdate && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Last Date:
-          </span>
-          <span className="mr-2.5 ">{lastdate}</span>
-        </p>
-      )}
-
       {duration && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            Duration:
-          </span>
-          <span className="mr-2.5 ">{duration}</span>
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Duration:</span> {duration}
         </p>
       )}
-
+      {lastdate && (
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">Last Date:</span> {lastdate}
+        </p>
+      )}
       {extraField && extraContent && (
-        <p className="mb-2.5 text-center text-base">
-          <span className="mr-1.5 whitespace-nowrap  font-bold text-mulearn-blackish">
-            {extraField}
-          </span>
-          <span className="mr-2.5 ">{extraContent}</span>
+        <p className="mb-2 text-center text-base text-mulearn-blackish">
+          <span className="font-semibold">{extraField}:</span> {extraContent}
         </p>
       )}
 
-      <div className="flex flex-wrap items-center justify-evenly gap-y-2">
+      <div className="mt-4 flex flex-wrap justify-center gap-3">
         {applylink && (
           <Link href={applylink} target="_blank" rel="noopener noreferrer">
-            <Button
-              variant={"mulearn"}
-              className="mr-4 px-[15px] py-2.5 font-bold"
-            >
+            <Button variant="mulearn" className="px-5 py-2 font-semibold">
               Apply Now
             </Button>
           </Link>
         )}
         {jdlink && (
           <Link href={jdlink} target="_blank" rel="noopener noreferrer">
-            <Button
-              variant={"mulearn"}
-              className="mr-4 px-[15px] py-2 font-bold"
-            >
+            <Button variant="mulearn" className="px-5 py-2 font-semibold">
               View JD
             </Button>
           </Link>
         )}
         {extraButton && (
           <Link href={extraButton} target="_blank" rel="noopener noreferrer">
-            <Button
-              variant={"mulearn"}
-              className="mr-4 cursor-pointer px-[15px] py-2 font-bold"
-            >
+            <Button variant="mulearn" className="px-5 py-2 font-semibold">
               View Challenge
             </Button>
           </Link>
@@ -133,3 +98,4 @@ const CareersCard = ({
 };
 
 export default CareersCard;
+
