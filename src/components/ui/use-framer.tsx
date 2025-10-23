@@ -4,99 +4,99 @@ import React from "react";
 import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
 
-const Motiondiv = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
+const MotionDiv = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   function MotionDiv({ children, ...props }, ref) {
     return (
-      <Motiondiv ref={ref} {...props}>
+      <motion.div ref={ref} {...props}>
         {children}
-      </Motiondiv>
+      </motion.div>
     );
   }
 );
 
-const Motionsection = React.forwardRef<HTMLElement, HTMLMotionProps<"section">>(
+const MotionSection = React.forwardRef<HTMLElement, HTMLMotionProps<"section">>(
   function MotionSection({ children, ...props }, ref) {
     return (
-      <Motionsection ref={ref} {...props}>
+      <motion.section ref={ref} {...props}>
         {children}
-      </Motionsection>
+      </motion.section>
     );
   }
 );
 
-const Motionheader = React.forwardRef<HTMLElement, HTMLMotionProps<"header">>(
+const MotionHeader = React.forwardRef<HTMLElement, HTMLMotionProps<"header">>(
   function MotionHeader({ children, ...props }, ref) {
     return (
-      <Motionheader ref={ref} {...props}>
+      <motion.header ref={ref} {...props}>
         {children}
-      </Motionheader>
+      </motion.header>
     );
   }
 );
 
-const Motionh1 = React.forwardRef<HTMLHeadingElement, HTMLMotionProps<"h1">>(
+const MotionH1 = React.forwardRef<HTMLHeadingElement, HTMLMotionProps<"h1">>(
   function MotionH1({ children, ...props }, ref) {
     return (
-      <Motionh1 ref={ref} {...props}>
+      <motion.h1 ref={ref} {...props}>
         {children}
-      </Motionh1>
+      </motion.h1>
     );
   }
 );
 
-const Motionh2 = React.forwardRef<HTMLHeadingElement, HTMLMotionProps<"h2">>(
+const MotionH2 = React.forwardRef<HTMLHeadingElement, HTMLMotionProps<"h2">>(
   function MotionH2({ children, ...props }, ref) {
     return (
-      <Motionh2 ref={ref} {...props}>
+      <motion.h2 ref={ref} {...props}>
         {children}
-      </Motionh2>
+      </motion.h2>
     );
   }
 );
 
-const Motionp = React.forwardRef<HTMLParagraphElement, HTMLMotionProps<"p">>(
+const MotionP = React.forwardRef<HTMLParagraphElement, HTMLMotionProps<"p">>(
   function MotionP({ children, ...props }, ref) {
     return (
-      <Motionp ref={ref} {...props}>
+      <motion.p ref={ref} {...props}>
         {children}
-      </Motionp>
+      </motion.p>
     );
   }
 );
 
-const Motionnav = React.forwardRef<HTMLElement, HTMLMotionProps<"nav">>(
+const MotionNav = React.forwardRef<HTMLElement, HTMLMotionProps<"nav">>(
   function MotionNav({ children, ...props }, ref) {
     return (
-      <Motionnav ref={ref} {...props}>
+      <motion.nav ref={ref} {...props}>
         {children}
-      </Motionnav>
+      </motion.nav>
     );
   }
 );
 
-const Motionbq = React.forwardRef<
+const MotionBQ = React.forwardRef<
   HTMLQuoteElement,
   HTMLMotionProps<"blockquote">
 >(function MotionBlockquote({ children, ...props }, ref) {
   return (
-    <Motionbq ref={ref} {...props}>
+    <motion.blockquote ref={ref} {...props}>
       {children}
-    </Motionbq>
+    </motion.blockquote>
   );
 });
 
-const Motionbutton = React.forwardRef<
+const MotionButton = React.forwardRef<
   HTMLButtonElement,
   HTMLMotionProps<"button">
 >(function MotionButton({ children, ...props }, ref) {
   return (
-    <Motionbutton ref={ref} {...props}>
+    <motion.button ref={ref} {...props}>
       {children}
-    </Motionbutton>
+    </motion.button>
   );
 });
 
-const Motionfooter = React.forwardRef<HTMLElement, HTMLMotionProps<"footer">>(
+const MotionFooter = React.forwardRef<HTMLElement, HTMLMotionProps<"footer">>(
   function MotionFooter({ children, ...props }, ref) {
     return (
       <motion.footer ref={ref} {...props}>
@@ -107,14 +107,14 @@ const Motionfooter = React.forwardRef<HTMLElement, HTMLMotionProps<"footer">>(
 );
 
 export {
-  Motiondiv,
-  Motionsection,
-  Motionheader,
-  Motionh1,
-  Motionh2,
-  Motionp,
-  Motionnav,
-  Motionbq,
-  Motionbutton,
-  Motionfooter,
+  MotionDiv,
+  MotionSection,
+  MotionHeader,
+  MotionH1,
+  MotionH2,
+  MotionP,
+  MotionNav,
+  MotionBQ,
+  MotionButton,
+  MotionFooter,
 };
