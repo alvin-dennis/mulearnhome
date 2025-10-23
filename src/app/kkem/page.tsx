@@ -1,6 +1,7 @@
 import { cdnUrl } from "@/services/cdn";
-import IGAbout from "./components/IGAbout";
-import IGSection from "./components/IGSection";
+import IGAbout from "./_components/IGAbout";
+import IGSection from "./_components/IGSection";
+import IGEvents from "./_components/IGEvents";
 
 export default function Landing() {
   const igCardData = [
@@ -128,7 +129,7 @@ export default function Landing() {
         <IGAbout />
         <IGSection cards={igCardData} />
         <div id="events">
-          <IGSection
+          <IGEvents
             cards={pastEventCardData}
             heading="Partnered Events"
             largeImg={true}
