@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Users, Building2, Sparkles, Target, Rocket } from "lucide-react"
+import { ArrowRight, Users, Building2, Target, Rocket } from "lucide-react"
 import { motion } from "framer-motion"
 import MuImage from "@/components/MuImage"
 
