@@ -5,7 +5,8 @@ import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navItems, type SubItem } from "@data/data";
+import { navItems } from "@data/data";
+import { SubItem } from "@/lib/types";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +76,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative z-[1000] w-full bg-mulearn-whitish p-2">
+    <div className="relative z-1000 w-full bg-mulearn-whitish p-2">
       {!isMobileView && (
         <motion.div
           className="flex justify-between items-center h-20 w-full px-12 box-border xl:px-12 lg:px-8 md:px-5"
@@ -83,18 +84,18 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center shrink-0">
             <MuImage
               src="/assets/logo.png"
               alt="Mulearn Brand"
               width={170}
               height={170}
               priority
-              style={{ height: 'auto' }}
+              style={{ height: "auto" }}
             />
           </Link>
 
-          <ul className="flex items-center gap-8 list-none m-0 p-0 xl:gap-8 lg:gap-6 md:gap-4 font-sans">
+          <ul className="flex items-center gap-8 list-none m-0 p-0 xl:gap-8 lg:gap-6 md:gap-4">
             {navItems.map((item, index) => (
               <motion.li
                 key={index}
@@ -109,7 +110,7 @@ export default function Navbar() {
                 <AnimatePresence>
                   {activeSubmenu === index && item.submenu && (
                     <motion.div
-                      className="absolute top-full left-1/2 -translate-x-1/2 bg-mulearn-whitish rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-mulearn-greyish z-[1000] overflow-hidden mt-2 lg:min-w-[240px]"
+                      className="absolute top-full left-1/2 -translate-x-1/2 bg-mulearn-whitish rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-mulearn-greyish z-1000 overflow-hidden mt-2 lg:min-w-[240px]"
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -149,7 +150,7 @@ export default function Navbar() {
           </ul>
 
           <motion.button
-            className="bg-mulearn-trusty-blue text-mulearn-whitish border-none py-3 px-6 rounded-[50px] font-semibold text-[0.9rem] cursor-pointer shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-mulearn-trusty-blue lg:py-2.5 lg:px-5 lg:text-[0.85rem]"
+            className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none py-3 px-6 rounded-[50px] font-semibold text-[0.9rem] cursor-pointer shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:py-2.5 lg:px-5 lg:text-[0.85rem]"
             onClick={handleAuthClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -161,19 +162,19 @@ export default function Navbar() {
 
       {isMobileView && (
         <>
-          <div className="flex justify-between items-center p-4 relative z-[1000]">
-            <Link href="/" className="flex items-center flex-shrink-0">
+          <div className="flex justify-between items-center p-4 relative z-1000">
+            <Link href="/" className="flex items-center shrink-0">
               <MuImage
                 src="/assets/logo.png"
                 alt="Mulearn Brand"
                 width={170}
                 height={170}
                 priority
-                style={{ height: 'auto' }}
+                style={{ height: "auto" }}
               />
             </Link>
             <motion.button
-              className="cursor-pointer flex items-center justify-center w-8 h-8 z-[2001]"
+              className="cursor-pointer flex items-center justify-center w-8 h-8 z-2001"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
               whileHover={{ scale: 1.1 }}
@@ -187,7 +188,7 @@ export default function Navbar() {
             {isMenuOpen && (
               <>
                 <motion.div
-                  className="fixed inset-0 bg-mulearn-blackish/50 z-[1001]"
+                  className="fixed inset-0 bg-mulearn-blackish/50 z-1001"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -196,7 +197,7 @@ export default function Navbar() {
                 />
 
                 <motion.div
-                  className="fixed top-0 right-0 h-full w-full max-w-[400px] bg-gradient-to-br from-white to-slate-50 shadow-[-5px_0_25px_rgba(0,0,0,0.15)] z-[1002] flex flex-col p-8 overflow-y-auto"
+                  className="fixed top-0 right-0 h-full w-full max-w-[400px] bg-linear-to-br from-white to-slate-50 shadow-[-5px_0_25px_rgba(0,0,0,0.15)] z-1002 flex flex-col p-8 overflow-y-auto"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
@@ -267,7 +268,7 @@ export default function Navbar() {
                   </ul>
 
                   <motion.button
-                    className="w-full p-4 mb-20 bg-mulearn-trusty-blue text-mulearn-whitish border-none rounded-[50px] font-semibold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-mulearn-trusty-blue"
+                    className="w-full p-4 mb-20 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none rounded-[50px] font-semibold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
                     onClick={handleAuthClick}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

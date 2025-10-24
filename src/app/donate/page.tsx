@@ -1,17 +1,23 @@
-import MuImage from "@/components/MuImage";
 import React from "react";
+import MuImage from "@/components/MuImage";
 import DonateCounters from "@/app/donate/_components/DonateCounters";
 import DonationForm from "@/app/donate/_components/DonationForm";
+import { cdnUrl } from "@/services/cdn";
 
-export default function Donate() {
+ const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
+
+export default function DonatePage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 min-h-screen">
-      <div className="flex flex-col justify-start items-center md:items-start md:col-span-1">
-        <div className="p-4 text-center md:text-left md:max-w-md">
+      <div className="flex flex-col md:justify-start lg:justify-center lg:-mt-15 items-center md:items-center md:col-span-1">
+        <div className="p-4 text-center md:text-center md:max-w-md">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Help us sustain
             <br />
-            Our <span className="text-mulearn-trusty-blue">Mission</span>
+            Our{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Mission
+            </span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">
             Foster an innovation culture, introduce new technologies, and
@@ -20,7 +26,7 @@ export default function Donate() {
 
           <div className="mt-6 w-full flex justify-center md:justify-start">
             <MuImage
-              src="/assets/donate/heroImg.webp"
+              src={heroImg}
               alt="Donate"
               width={500}
               height={500}
@@ -40,4 +46,4 @@ export default function Donate() {
       </div>
     </div>
   );
-};
+}

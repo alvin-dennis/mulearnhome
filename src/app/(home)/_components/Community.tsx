@@ -28,10 +28,15 @@ export default function Community() {
         >
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-center max-w-[40rem] mb-5 leading-normal">
             Learn and Grow{" "}
-            <span className="text-mulearn-trusty-blue">Together</span> as a{" "}
-            <span className="text-mulearn-trusty-blue">Community</span>
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Together
+            </span>{" "}
+            as a{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Community
+            </span>
           </h1>
-          <h6 className="font-normal mb-8 max-w-[800px] text-left text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
+          <h6 className="font-normal mb-8 max-w-[800px] text-jusify text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             Are you ready to learn, grow, and upskill yourself to the next
             level? Come, be a part of the community, and let&apos;s start
             learning in a new, better way. Call your friends as well because
@@ -43,7 +48,7 @@ export default function Community() {
             href="https://discord.com/invite/gtech-mulearn-771670169691881483"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-center sm:self-auto bg-mulearn-trusty-blue px-6 py-4 text-mulearn-whitish rounded-[10px] hover:opacity-90 hover:bg-mulearn-duke-purple transition-all duration-300 text-center"
+            className="self-center sm:self-auto bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-6 py-4 text-mulearn-whitish rounded-[10px] hover:opacity-90 hover:bg-mulearn-duke-purple transition-all duration-300 text-center"
           >
             Join The Community
           </Link>
@@ -59,7 +64,6 @@ export default function Community() {
             height={640}
             width={640}
             className="h-[40rem] w-auto max-w-full object-contain"
-            loading="lazy"
           />
         </motion.div>
       </motion.section>

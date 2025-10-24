@@ -3,7 +3,8 @@
 import { motion, type Variants, easeOut } from "framer-motion";
 import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
-import { events, type Event } from "@/data/data";
+import { events } from "@/data/data";
+import { Event } from "@/lib/types";
 
 export default function Events() {
   const fadeInUp: Variants = {
@@ -35,7 +36,7 @@ export default function Events() {
 
   return (
     <>
-      <section className="bg-mulearn-whitish px-6 py-8 md:px-12">
+      <section className="bg-mulearn-whitish px-6 py-8 md:px-12 min-h-screen">
         <div className="max-w-[1300px] mx-auto mb-16">
           <motion.div
             initial="hidden"
@@ -45,7 +46,7 @@ export default function Events() {
             className="flex-1 w-full text-center px-2 sm:px-0"
           >
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] text-mulearn-blackish font-bold leading-tight mb-6">
-              <span className="bg-mulearn-trusty-blue bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                 µLearn
               </span>{" "}
               Events
@@ -73,7 +74,7 @@ export default function Events() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl mb-1">
                   {formatSectionTitle(type)}
                 </h2>
-                <div className="w-20 h-1 bg-mulearn-trusty-blue mx-auto md:mx-0 rounded-full" />
+                <div className="w-20 h-1 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple mx-auto md:mx-0 rounded-full" />
               </div>
 
               {shouldUseCarousel(events) ? (

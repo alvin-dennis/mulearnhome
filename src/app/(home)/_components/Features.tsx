@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 import MuImage from "@/components/MuImage";
 import { features } from "@/data/data";
@@ -9,6 +11,7 @@ export default function Features() {
   const [expandedIndex, setExpandedIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number>(0);
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -28,23 +31,12 @@ export default function Features() {
   const isMobile = windowWidth < 768;
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
-  const totalCards = features.length;
-  const baseWidth = `${100 / totalCards}%`;
-  const expandedWidth = `calc(${baseWidth} + 200px)`;
-  const shrunkWidth = `calc(${baseWidth} - (200px / ${totalCards - 1}))`;
-
   const isCardActive = (index: number) =>
     !isMobile && !isTablet
       ? isHovering
         ? expandedIndex === index
         : index === 0
       : false;
-
-  const getCardWidth = () => {
-    if (isMobile) return "100%";
-    if (isTablet) return "calc(50% - 12px)";
-    return undefined;
-  };
 
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 w-full text-center flex flex-col items-center justify-center gap-4">
@@ -56,8 +48,12 @@ export default function Features() {
         viewport={{ once: true }}
       >
         <div className="pt-10 sm:pt-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-[35rem] font-extrabold leading-snug">
-            What <span className="text-mulearn-trusty-blue">µLearn</span> offers
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
+            What{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              µLearn
+            </span>{" "}
+            offers
           </h1>
         </div>
         <h6 className="font-normal max-w-[800px] text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
@@ -65,10 +61,9 @@ export default function Features() {
           learn, grow, and upskill yourself in a fun and engaging way. Here are
           some of the key features that µLearn offers.
         </h6>
+
         <motion.div
-          className={`featuresGrid flex w-full mt-10 overflow-hidden relative justify-center ${
-            isMobile || isTablet ? "flex-wrap gap-5" : "flex-nowrap"
-          }`}
+          className={`flex w-full mt-10 overflow-hidden relative justify-center gap-5 flex-wrap`}
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -86,23 +81,18 @@ export default function Features() {
                   setIsHovering(true);
                 }
               }}
-              className={`featureCard flex flex-col items-center justify-between p-5 sm:p-6 overflow-hidden border border-mulearn-gray-600/20 transition-all duration-300 ${
-                i === 0
-                  ? "rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none"
-                  : i === totalCards - 1
-                  ? "rounded-b-xl sm:rounded-r-xl sm:rounded-bl-none"
-                  : "rounded-none"
-              }`}
+              className={`flex flex-col items-center justify-between p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300
+                rounded-xl
+                grow
+                min-w-[200px]
+                sm:min-w-[240px]
+                md:min-w-[250px]
+                lg:min-w-[360px]
+                `}
               style={{
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
-                width:
-                  isMobile || isTablet
-                    ? getCardWidth()
-                    : isCardActive(i)
-                    ? expandedWidth
-                    : shrunkWidth,
+                flex: isCardActive(i) ? 2 : 1,
                 height: isMobile ? "auto" : "300px",
-                transition: "all 0.3s ease",
               }}
             >
               <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
@@ -119,20 +109,20 @@ export default function Features() {
                   {feature.title}
                 </h3>
                 <p
-                  className="transition-all duration-300 text-mulearn-gray-600 leading-snug"
+                  className="transition-all duration-300 text-mulearn-blackish leading-tight"
                   style={{
                     fontSize: isCardActive(i)
                       ? "1rem"
                       : isMobile
                       ? "0.9rem"
-                      : "0.85rem",
+                      : "0.9rem",
                   }}
                 >
                   {feature.description}
                 </p>
               </div>
               <div
-                className="relative transition-transform duration-300 mb-2 sm:mb-0"
+                className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center"
                 style={{
                   transform: isCardActive(i) ? "scale(1.1)" : "scale(1)",
                 }}
@@ -142,21 +132,33 @@ export default function Features() {
                   alt={feature.title}
                   width={
                     feature.title === "Community"
-                      ? 110
+                      ? 150
                       : feature.title === "Mentors"
-                      ? 100
+                      ? 120
                       : feature.title === "Interest Groups"
-                      ? 80
+                      ? 120
                       : feature.title === "Roadmaps"
-                      ? 90
+                      ? 130
                       : feature.title === "Challenges"
-                      ? 100
-                      : 90
+                      ? 170
+                      : 100
                   }
                   height={120}
-                  className="object-contain"
+                  className="object-cover max-w-full h-auto"
                 />
               </div>
+              <Link
+                href={feature.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="mulearn"
+                  className="mt-auto px-4 py-2 font-semibold w-full sm:w-auto"
+                >
+                  {feature.cta}
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

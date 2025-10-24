@@ -11,14 +11,14 @@ const fadeInUp: Variants = {
 export default function Calendar() {
   return (
     <>
-      <div className="mx-4 md:mx-auto md:max-w-[1000px] mt-4 md:mt-14">
+      <div className="mx-4 md:mx-auto md:max-w-[1000px] mt-4 md:mt-14 min-h-screen">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
           className="text-center my-8"
         >
-          <h2 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] font-semibold text-mulearn-trusty-blue">
+          <h2 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
             µLearn <span className="text-mulearn-blackish">Calendar</span>
           </h2>
           <p className="mt-2 text-base md:text-lg text-mulearn-gray-600 leading-relaxed">

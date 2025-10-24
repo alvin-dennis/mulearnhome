@@ -3,30 +3,7 @@
 import { motion, Variants, easeOut } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
-
-interface OrgTypeCount {
-  org_type: string;
-  org_count: number;
-}
-
-interface KarmaPowCount {
-  karma_count: number;
-  pow_count: number;
-}
-
-interface RoleCount {
-  role__title: string;
-  role_count: number;
-}
-
-interface Counts {
-  members: number;
-  learning_circle_count: number;
-  org_type_counts: OrgTypeCount[];
-  ig_count: number;
-  karma_pow_count: KarmaPowCount;
-  enablers_mentors_count: RoleCount[];
-}
+import { Counts } from "@/lib/types";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -47,7 +24,7 @@ export default function Stats() {
         setCounts(JSON.parse(event.data) as Counts);
       };
       const handleError = (event: Event) => {
-        console.error("WebSocket error: ", event);
+        void event;
       };
       socket.addEventListener("message", handleMessage);
       socket.addEventListener("error", handleError);
@@ -84,7 +61,9 @@ export default function Stats() {
           <div className="flex-1">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] text-center font-extrabold leading-normal min-w-0 sm:min-w-[400px]">
               The Impact of{" "}
-              <span className="text-mulearn-trusty-blue">μLearn</span>
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                μLearn
+              </span>
             </h1>
           </div>
           <div className="flex-1">
@@ -154,7 +133,7 @@ function StatCard({
 }) {
   return (
     <div className="flex flex-col justify-center items-center p-4">
-      <p className="font-semibold text-mulearn-trusty-blue text-2xl sm:text-3xl lg:text-[2.5rem]">
+      <p className="font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-2xl sm:text-3xl lg:text-[2rem]">
         {isString ? (
           value
         ) : (

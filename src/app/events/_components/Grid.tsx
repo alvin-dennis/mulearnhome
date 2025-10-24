@@ -3,18 +3,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import EventCard from "./EventCard";
-import { type Event } from "@/data/data";
+import { Event } from "@/lib/types";
 
 interface Props {
   events: Event[];
   featured?: boolean;
 }
 
-export default function Grid({ events, featured = false }: Props) {
+export default function Grid({ events }: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
       {events.map((event, i) => {
-        const isFeatured = featured && i === 0;
         return (
           <motion.div
             key={event.title}
@@ -22,9 +21,8 @@ export default function Grid({ events, featured = false }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className={isFeatured ? "lg:col-span-2 lg:row-span-2" : ""}
           >
-            <EventCard event={event} featured={isFeatured} />
+            <EventCard event={event} />
           </motion.div>
         );
       })}
