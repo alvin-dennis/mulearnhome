@@ -1,7 +1,7 @@
 "use client";
 
 import { communityPartners } from "@/data/data";
-import CommunityCard from "@/app/community-partners/_components/CommunityCard";
+import CommunityCard from "@/app/partners/community-partners/_components/CommunityCard";
 import { cdnUrl } from "@services/cdn";
 import MuImage from "@/components/MuImage";
 import { motion, Variants, easeOut } from "framer-motion";

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import MuImage from "@/components/MuImage";
 import { CompanyPartner } from "@/data/data";
-import CompanyCard from "@/app/company-partners/_components/CompanyCard";
+import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
 
 
