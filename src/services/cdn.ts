@@ -5,3 +5,8 @@ export function cdnUrl(path: string): string {
   const cleanPath = path.replace(/^\/+/, "");
   return `${base}/${cleanPath}`;
 }
+
+
+export function getLearnerAsset(name: string): string {
+  return cdnUrl(`/assets/learners/${name}`);
+}
