@@ -80,8 +80,8 @@ export const navItems = [
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [
-        { label: "COMMUNITY PARTNERS", href: "/community-partners" },
-        { label: "COMPANY PARTNERS", href: "/company-partners" },
+        { label: "COMMUNITY PARTNERS", href: "/partners/community-partners" },
+        { label: "COMPANY PARTNERS", href: "/partners/company-partners" },
       ],
     },
   },
