@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import Image from 'next/image';
+import MuImage from '@/components/MuImage';
 import * as htmlToImage from 'html-to-image';
 import { cdnUrl } from '@/services/cdn';
 
 const StripesBackground = ({ className = "" }: { className?: string }) => (
-  <Image
+  <MuImage
     src="/assets/logo-template/stripes (1).svg"
     alt="Stripes Background"
     fill
@@ -48,7 +48,7 @@ const MuLearnLogo = ({ color, width = 200, height = 50 }: { color: string, width
           height: height 
         }}
       >
-        <Image
+        <MuImage
           src="/assets/logo-template/logo.svg"
           alt="MuLearn Logo"
           width={width}
@@ -79,7 +79,7 @@ const MuLearnLogo = ({ color, width = 200, height = 50 }: { color: string, width
         height: height 
       }}
     >
-      <Image
+      <MuImage
         src="/assets/logo-template/logo.svg"
         alt="MuLearn Logo"
         width={width}
@@ -112,7 +112,7 @@ const YIPLogo = ({ variant, width = 200, height = 50 }: { variant: string, width
         height: height 
       }}
     >
-      <Image
+      <MuImage
         src={getLogoPath()}
         alt="YIP Logo"
         width={width}
@@ -230,7 +230,6 @@ export default function CampusLogoGenerator() {
       
     } catch (error) {
       console.error('Error generating logo:', error);
-      // Simple fallback with minimal config
       try {
         const simpleConfig = {
           quality: 1.0,
