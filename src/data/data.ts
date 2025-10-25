@@ -80,8 +80,8 @@ export const navItems = [
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [
-        { label: "COMMUNITY PARTNERS", href: "/community-partners" },
-        { label: "COMPANY PARTNERS", href: "/company-partners" },
+        { label: "COMMUNITY PARTNERS", href: "/partners/community-partners" },
+        { label: "COMPANY PARTNERS", href: "/partners/company-partners" },
       ],
     },
   },
@@ -6785,6 +6785,38 @@ export const annualReports: AnnualReport[] = [
     publishedDate: "2023-01-05",
   },
 ];
+
+export const artOfTeachingMentors = [
+  {
+    name: "Dr T M George",
+    designation: "Former Principal at Mar Baselios College of Engineering and Technology",
+    image: "/public/assets/dpm.webp",
+    linkedIn: "https://www.linkedin.com/in/dr-t-m-george-87b86028/?originalSubdomain=in"
+  },
+  {
+    name: "Ann Andrews",
+    designation: "Product | Technology & Data Strategy | NYU & Columbia Fellow",
+    image: "/public/assets/dpm.webp",
+    linkedIn: "https://www.linkedin.com/in/annandrews/"
+  },
+  {
+    name:"Rajeev J Sebastian",
+    designation:"CEO Alokin Software Private Limited",
+    image:"/public/assets/dpm.webp",
+    linkedIn:"https://www.linkedin.com/in/rajeevjs",
+  },
+];
+
+export const artOfTeachingUrls = {
+  mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
+  firstEdition: "https://www.youtube-nocookie.com/embed/vPLuA5kXoBI",
+  archives: [
+    "https://www.youtube.com/embed/Wmo0StqW9Kc?si=lM3hb1r6OrGUHX7C",
+    "https://www.youtube.com/embed/TEylubYDzhQ?si=zm5EA_Or7YOcI73E",
+    "https://www.youtube.com/embed/jRcseEVk2sk?si=eSXHqiAWmw_vOwcv"
+  ],
+  registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
+};
 export const CompanyFeatures = [
     {
     title: "Access to Talent",
