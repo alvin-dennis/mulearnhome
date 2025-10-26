@@ -1,0 +1,136 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { useRedirectToApp } from "@/lib/utils";
+import { cdnUrl } from "@/services/cdn";
+import { cardProps, IGSectionProps } from "@/lib/types";
+import MuImage from "@/components/MuImage";
+
+const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
+  const redirect = useRedirectToApp();
+  const [refreshToken, setRefreshToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    setRefreshToken(localStorage.getItem("refreshToken"));
+  }, []);
+
+  return (
+    <>
+      <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-6 py-12 md:px-0 md:py-12">
+        <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between md:mx-12">
+          <div className="md:-m-12 mt-0">
+            <MuImage
+              src={cdnUrl("src/modules/Public/KKEM/assets/IGS/fvimg.webp")}
+              alt="Learning Circles"
+              width={576}
+              height={576}
+              className="w-72 md:w-[36rem] hidden md:block"
+              priority
+            />
+          </div>
+
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <p className="text-mulearn-whitish font-semibold text-5xl md:text-[5rem] leading-[6rem] mb-8 md:max-w-[40rem]">
+              Introducing Learning Circles
+            </p>
+            <p className="text-mulearn-whitish font-normal text-base md:text-lg leading-7 md:leading-8 mb-4 md:mb-0 md:max-w-[45rem]">
+              An informal mechanism for bringing together learners who are
+              interested in the same topic from across different fields and
+              disciplines. A fantastic way to spend a small amount of time
+              learning about new things with a group of people with same
+              interests!
+            </p>
+            <Button
+              variant="mulearn"
+              className="bg-mulearn-whitish text-mulearn-trusty-blue mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
+              onClick={() =>
+                redirect?.(refreshToken ? "/dashboard/home" : "/register")
+              }
+            >
+              Get Started
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="my-8 md:my-12 px-4 md:px-12 flex flex-col md:items-start items-center">
+        <p className="text-3xl md:text-5xl font-semibold text-center md:text-left">
+          {heading ? heading : "Existing Interest Groups"}
+        </p>
+      </div>
+
+      <div className="px-4 md:px-12 my-6 md:my-12 flex justify-center">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-evenly items-center gap-6 md:gap-8 w-full">
+          {cards.map((card) => (
+            <Card
+              {...card}
+              key={card.name}
+              link={card.link}
+              largeImg={largeImg}
+            />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default IGSection;
+
+const Card = ({
+  name,
+  image,
+  link,
+  description,
+  largeImg,
+  date,
+}: cardProps) => {
+  return (
+    <Link href={link} target="_blank" rel="noopener noreferrer">
+      <div
+        className={`flex flex-col items-start p-4 gap-4 w-[310px] h-[475px] bg-white shadow-[8px_8px_28px_rgba(0,0,0,0.12)] rounded-[17px] mt-4 mb-4 transition-all duration-300 ease-in-out cursor-pointer
+        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${
+          largeImg ? "group" : ""
+        }`}
+      >
+        <div className="flex justify-center items-center w-[278px] h-[214px] bg-[#f3f3f3] rounded-[17px] overflow-hidden">
+          <MuImage
+            src={image}
+            alt="domain images"
+            width={188}
+            height={200}
+            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${
+              largeImg ? "group-hover:object-bottom" : ""
+            }`}
+          />
+        </div>
+
+        <p className="font-medium text-[26px] leading-10">{name}</p>
+        <p className="font-light text-[16px] leading-[22px]">{date}</p>
+        <p className="font-light text-[16px] leading-[22px]">{description}</p>
+
+        {link !== "#" ? (
+          <div className="flex flex-row items-center gap-2">
+            <span className="uppercase font-medium text-[16px] leading-[22px] group-hover:text-mulearn-trusty-blue">
+              Explore More
+            </span>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 15 15"
+              className="group-hover:fill-mulearn-trusty-blue"
+            >
+              <path d="M12.1711 3.983L2.12965 14.0245L0.47998 12.3748L10.5203 2.33333H1.67115V0H14.5045V12.8333H12.1711V3.983Z" />
+            </svg>
+          </div>
+        ) : (
+          <span className="uppercase font-medium text-[16px] leading-[22px]">
+            Coming Soon!
+          </span>
+        )}
+      </div>
+    </Link>
+  );
+};
