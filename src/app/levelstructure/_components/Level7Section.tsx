@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import MuImage from '@/components/MuImage';
 
@@ -113,7 +113,7 @@ export default function Level7Section() {
                   <span className="text-xs sm:text-sm">🛰️</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Space IG:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Global CubeSat fellowship opportunity."
+                    &ldquo;Global CubeSat fellowship opportunity.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -128,7 +128,7 @@ export default function Level7Section() {
                   <span className="text-xs sm:text-sm">🤖</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">AI Innovator:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Early ML engineer at fast-scaling startup."
+                    &ldquo;Early ML engineer at fast-scaling startup.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -143,7 +143,7 @@ export default function Level7Section() {
                   <span className="text-xs sm:text-sm">🎬</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Film/Creative:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Freelance work in ad agencies."
+                    &ldquo;Freelance work in ad agencies.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -158,7 +158,7 @@ export default function Level7Section() {
                   <span className="text-xs sm:text-sm">⚙️</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Mechanical Engineer:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Hardware prototype → Funded startup."
+                    &ldquo;Hardware prototype → Funded startup.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -174,7 +174,7 @@ export default function Level7Section() {
             >
               <h3 className="text-lg sm:text-xl font-bold text-mulearn-blackish mb-2 sm:mb-3">The Impact</h3>
               <p className="text-sm sm:text-base text-mulearn-blackish/80 leading-relaxed mb-2">
-                Unlike most ecosystems, μLearn doesn't stop at "skill training." It converts talent into{' '}
+                Unlike most ecosystems, μLearn doesn&apos;t stop at &ldquo;skill training.&rdquo; It converts talent into{' '}
                 <em className="text-mulearn-duke-purple font-semibold">direct pipelines of opportunity</em>.
               </p>
               <p className="text-xs sm:text-sm text-mulearn-blackish/70 leading-relaxed">

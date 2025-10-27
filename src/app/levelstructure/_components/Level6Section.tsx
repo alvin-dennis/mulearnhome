@@ -63,7 +63,7 @@ export default function Level6Section() {
             >
               <p className="text-sm sm:text-base md:text-lg text-mulearn-blackish/80 leading-relaxed">
                 <em className="text-mulearn-duke-purple font-semibold">Every hero must build their sword.</em> 
-                Here, they don't just make prototypes. They <strong className="text-mulearn-duke-purple">ship to real users</strong>.
+                Here, they don&apos;t just make prototypes. They <strong className="text-mulearn-duke-purple">ship to real users</strong>.
               </p>
 
             {/* Project Example Cards - Compact */}
@@ -78,7 +78,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🤖</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">AI Team:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Mental wellness chatbot → deployed in colleges."
+                    &ldquo;Mental wellness chatbot → deployed in colleges.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -93,7 +93,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🌐</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Web Dev Team:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Alumni-network portal → adopted by campus."
+                    &ldquo;Alumni-network portal → adopted by campus.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -108,7 +108,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🔧</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Civil + Mechanical:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Water filter prototype → tested with NGOs."
+                    &ldquo;Water filter prototype → tested with NGOs.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -123,7 +123,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🎬</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Film + Comics:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Gamified storytelling series → shared in schools."
+                    &ldquo;Gamified storytelling series → shared in schools.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -138,7 +138,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">📊</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Project Managers:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "End-to-end pipeline with 3000+ peers."
+                    &ldquo;End-to-end pipeline with 3000+ peers.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -153,7 +153,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🏥</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Biomedical Team:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Low-cost prosthetic → tested in hospitals."
+                    &ldquo;Low-cost prosthetic → tested in hospitals.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -168,7 +168,7 @@ export default function Level6Section() {
                   <span className="text-xs sm:text-sm">🎮</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Game Developer:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "First game launched with active user base."
+                    &ldquo;First game launched with active user base.&rdquo;
                   </span>
                 </div>
               </motion.div>

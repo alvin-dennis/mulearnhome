@@ -233,7 +233,7 @@ export default function Level4Section() {
                   <span className="text-xs sm:text-sm">🤖</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">AI Guild:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Driven by algorithms and machine learning."
+                    &ldquo;Driven by algorithms and machine learning.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -248,7 +248,7 @@ export default function Level4Section() {
                   <span className="text-xs sm:text-sm">🌐</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Web Tribe:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Chasing digital experiences and interfaces."
+                    &ldquo;Chasing digital experiences and interfaces.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -263,7 +263,7 @@ export default function Level4Section() {
                   <span className="text-xs sm:text-sm">🎬</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Film & Animation:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Telling stories with light and motion."
+                    &ldquo;Telling stories with light and motion.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -278,7 +278,7 @@ export default function Level4Section() {
                   <span className="text-xs sm:text-sm">🚀</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Space/Hardware:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Bold ones touching the stars and circuits."
+                    &ldquo;Bold ones touching the stars and circuits.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -311,7 +311,7 @@ export default function Level4Section() {
             <div className="relative w-full max-w-[450px] h-[540px] lg:max-w-[500px] lg:h-[600px] flex-shrink-0">
 
               {/* Interest Group Photos - Relative Positioned */}
-              {interestGroups.map((group, index) => (
+              {interestGroups.map((group) => (
                 <InterestGroupCard 
                   key={group.name}
                   group={group}

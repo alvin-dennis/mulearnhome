@@ -51,7 +51,7 @@ export default function Level3Section() {
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-mulearn-blackish leading-tight mb-3 sm:mb-4">
                 The{' '}
                 <span className="text-mulearn-trusty-blue">
-                  Explorer's Compass
+                  Explorer&apos;s Compass
                 </span>
               </h2>
               <div className="w-16 sm:w-20 h-1 bg-mulearn-trusty-blue rounded-full" />
@@ -81,7 +81,7 @@ export default function Level3Section() {
                   <span className="text-xs sm:text-sm">💻</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Web Dev:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "GitHub, hosting, and Figma become my workflow."
+                    &ldquo;GitHub, hosting, and Figma become my workflow.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -96,7 +96,7 @@ export default function Level3Section() {
                   <span className="text-xs sm:text-sm">🤖</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">AI Student:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "HuggingFace and ChatGPT streamline my workflows."
+                    &ldquo;HuggingFace and ChatGPT streamline my workflows.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -111,7 +111,7 @@ export default function Level3Section() {
                   <span className="text-xs sm:text-sm">🎬</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Film:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "DaVinci Resolve and AI editing tools unlock creativity."
+                    &ldquo;DaVinci Resolve and AI editing tools unlock creativity.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -126,7 +126,7 @@ export default function Level3Section() {
                   <span className="text-xs sm:text-sm">🏗️</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Civil Engineer:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "AutoCAD + Project Management tools bring ideas to life."
+                    &ldquo;AutoCAD + Project Management tools bring ideas to life.&rdquo;
                   </span>
                 </div>
               </motion.div>

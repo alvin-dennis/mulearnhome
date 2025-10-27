@@ -49,7 +49,7 @@ export default function Level1Section() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-mulearn-blackish leading-tight mb-4">
                 Say{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-trusty-blue">
-                  "Here I Am"
+                  &ldquo;Here I Am&rdquo;
                 </span>
               </h2>
               <div className="w-20 h-1 bg-mulearn-trusty-blue rounded-full" />
@@ -63,11 +63,11 @@ export default function Level1Section() {
               className="space-y-4"
             >
               <p className="text-lg text-mulearn-blackish/80 leading-relaxed">
-                Every explorer in μLearn's galaxy starts by saying: <em className="text-mulearn-trusty-blue font-semibold">"Here I am."</em>
+                Every explorer in μLearn&apos;s galaxy starts by saying: <em className="text-mulearn-trusty-blue font-semibold">&ldquo;Here I am.&rdquo;</em>
               </p>
               
               <p className="text-base text-mulearn-blackish/70 leading-relaxed">
-                This is not a roll call. It's an <strong className="text-mulearn-trusty-blue">act of visibility</strong> letting peers, mentors, and opportunities discover you.
+                This is not a roll call. It&apos;s an <strong className="text-mulearn-trusty-blue">act of visibility</strong> letting peers, mentors, and opportunities discover you.
               </p>
 
               {/* Example Cards */}
@@ -80,7 +80,7 @@ export default function Level1Section() {
                 >
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold text-mulearn-trusty-blue">Civil Engineering Student:</span> 
-                    <span className="italic"> "curious about green buildings."</span>
+                    <span className="italic"> &ldquo;curious about green buildings.&rdquo;</span>
                   </p>
                 </motion.div>
 
@@ -92,7 +92,7 @@ export default function Level1Section() {
                 >
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold text-mulearn-trusty-blue">Mechanical Engineer:</span> 
-                    <span className="italic"> "I sketch machines but want to learn 3D modeling."</span>
+                    <span className="italic"> &ldquo;I sketch machines but want to learn 3D modeling.&rdquo;</span>
                   </p>
                 </motion.div>
 
@@ -104,7 +104,7 @@ export default function Level1Section() {
                 >
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold text-mulearn-trusty-blue">Film Enthusiast:</span> 
-                    <span className="italic"> "I make short reels in my hostel room."</span>
+                    <span className="italic"> &ldquo;I make short reels in my hostel room.&rdquo;</span>
                   </p>
                 </motion.div>
               </div>

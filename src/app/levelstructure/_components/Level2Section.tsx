@@ -98,7 +98,7 @@ export default function Level2Section() {
               
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-mulearn-trusty-blue rounded-r-lg p-2 sm:p-3 my-2 sm:my-4">
                 <p className="text-xs sm:text-sm md:text-base text-mulearn-blackish/70 leading-relaxed italic">
-                  "μLearn rewires these narratives. Through experiences, reflection spaces, and peer nudges, a fixed mindset stretches into a <strong className="text-mulearn-trusty-blue">growth mindset</strong>… and finally into <strong className="text-mulearn-trusty-blue">abundance thinking</strong>."
+                  &ldquo;μLearn rewires these narratives. Through experiences, reflection spaces, and peer nudges, a fixed mindset stretches into a <strong className="text-mulearn-trusty-blue">growth mindset</strong>… and finally into <strong className="text-mulearn-trusty-blue">abundance thinking</strong>.&rdquo;
                 </p>
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ export default function Level2Section() {
                   <span className="text-xs sm:text-sm">💻</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Web Dev:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "I'll never be good enough to compete globally."
+                    &ldquo;I&apos;ll never be good enough to compete globally.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -130,7 +130,7 @@ export default function Level2Section() {
                   <span className="text-xs sm:text-sm">🎨</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Comics:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "I doubt whether my passion has career potential."
+                    &ldquo;I doubt whether my passion has career potential.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -145,7 +145,7 @@ export default function Level2Section() {
                   <span className="text-xs sm:text-sm">🚀</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Space:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "I feel locked out because labs are pricey."
+                    &ldquo;I feel locked out because labs are pricey.&rdquo;
                   </span>
                 </div>
               </motion.div>

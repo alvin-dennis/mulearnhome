@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from '@/services/cdn';

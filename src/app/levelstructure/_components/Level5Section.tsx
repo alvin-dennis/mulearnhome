@@ -97,7 +97,7 @@ export default function Level5Section() {
                   <span className="text-xs sm:text-sm">🤖</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">AI Students:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Competing in Kaggle & LLM hackathons."
+                    &ldquo;Competing in Kaggle & LLM hackathons.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -112,7 +112,7 @@ export default function Level5Section() {
                   <span className="text-xs sm:text-sm">📊</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Project Management:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "PMI global case competitions."
+                    &ldquo;PMI global case competitions.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -127,7 +127,7 @@ export default function Level5Section() {
                   <span className="text-xs sm:text-sm">🎬</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Film Group:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Submitting to online festivals & comic cons."
+                    &ldquo;Submitting to online festivals & comic cons.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -142,7 +142,7 @@ export default function Level5Section() {
                   <span className="text-xs sm:text-sm">🏗️</span>
                   <span className="font-medium text-mulearn-trusty-blue text-xs sm:text-sm">Civil Engineers:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Sustainable city models in design challenges."
+                    &ldquo;Sustainable city models in design challenges.&rdquo;
                   </span>
                 </div>
               </motion.div>
@@ -157,7 +157,7 @@ export default function Level5Section() {
                   <span className="text-xs sm:text-sm">🚀</span>
                   <span className="font-medium text-mulearn-duke-purple text-xs sm:text-sm">Space/Cosmos Tribe:</span>
                   <span className="text-mulearn-blackish italic text-xs sm:text-sm flex-1">
-                    "Writing proposals for CubeSat challenges."
+                    &ldquo;Writing proposals for CubeSat challenges.&rdquo;
                   </span>
                 </div>
               </motion.div>
