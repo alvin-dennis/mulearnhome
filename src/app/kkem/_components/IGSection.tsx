@@ -8,6 +8,12 @@ import { cdnUrl } from "@/services/cdn";
 import { cardProps, IGSectionProps } from "@/lib/types";
 import MuImage from "@/components/MuImage";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { motion, Variants, easeInOut } from "framer-motion";
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeInOut } },
+};
 
 const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
   const redirect = useRedirectToApp();
@@ -19,7 +25,13 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
 
   return (
     <>
-      <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl px-6 py-12 md:px-0 md:py-12">
+      <motion.div
+        className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl px-6 py-12 md:px-0 md:py-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between md:mx-12">
           <div className="md:-m-12 mt-0">
             <MuImage
@@ -54,23 +66,33 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
             </Button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="my-8 md:my-12 px-4 md:px-12 flex flex-col md:items-start items-center">
+      <motion.div
+        className="my-8 md:my-12 px-4 md:px-12 flex flex-col md:items-start items-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true}}
+        variants={fadeInUp}
+      >
         <h3 className="text-3xl md:text-5xl font-semibold text-center md:text-left">
           {heading ? heading : "Existing Interest Groups"}
         </h3>
-      </div>
+      </motion.div>
 
       <div className="px-4 md:px-12 my-6 md:my-12 flex justify-center">
         <div className="flex flex-col md:flex-row md:flex-wrap md:justify-evenly items-center gap-6 md:gap-8 w-full">
-          {cards.map((card) => (
-            <Card
-              {...card}
+          {cards.map((card, index) => (
+            <motion.div
               key={card.name}
-              link={card.link}
-              largeImg={largeImg}
-            />
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card {...card} link={card.link} largeImg={largeImg} />
+            </motion.div>
           ))}
         </div>
       </div>
