@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { TopLearner, Testimonial } from '../../data/data';
+import { TopLearner, Testimonial } from '@/data/data';
 
 interface RankingSectionProps {
   topLearners: TopLearner[];

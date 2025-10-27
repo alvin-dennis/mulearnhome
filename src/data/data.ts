@@ -6995,36 +6995,36 @@ export const testimonialsData: Testimonial[] = [
     imageUrl: "/assets/learners/testimonials/soorya.jpg",
   },
   {
-    name: "Alex Mathew",
+    name: "Alex",
     designation: "Product Designer",
     quote: "μLearn provided the real-world projects and mentorship I needed to switch careers. The focus on Karma Points kept me motivated to consistently build my portfolio.",
     imageUrl: "/assets/learners/testimonials/alex.jpg",
   },
   {
-    name: "Soorya",
+    name: "Arya",
     designation: "SWE",
     quote: "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
-    imageUrl: "/assets/learners/testimonials/soorya.jpg",
+    imageUrl: "/assets/learners/testimonials/arya.jpg",
   },
   {
-    name: "Alex Mathew",
+    name: "Riya",
     designation: "Product Designer",
     quote: "μLearn provided the real-world projects and mentorship I needed to switch careers. The focus on Karma Points kept me motivated to consistently build my portfolio.",
-    imageUrl: "/assets/learners/testimonials/alex.jpg",
+    imageUrl: "/assets/learners/testimonials/riya.jpg",
   },
   {
-    name: "Soorya",
+    name: "Manu",
     designation: "SWE",
     quote: "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
-    imageUrl: "/assets/learners/testimonials/soorya.jpg",
+    imageUrl: "/assets/learners/testimonials/manu.jpg",
   },
   // Add more testimonials if needed
 ];
 
 
 export const slideImages = [
-  { imageUrl: "/images/slide1.jpg", alt: "Slide 1" },
-  { imageUrl: "/images/slide2.jpg", alt: "Slide 2" },
-  { imageUrl: "/images/slide3.jpg", alt: "Slide 3" },
+  { imageUrl: "/assets/learners/slide1.png", alt: "Slide 1" },
+  { imageUrl: "/assets/learners/slide2.png", alt: "Slide 2" },
+  { imageUrl: "/assets/learners/slide3.png", alt: "Slide 3" },
   // Add more images if needed
 ];

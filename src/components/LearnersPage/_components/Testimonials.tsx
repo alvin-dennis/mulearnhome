@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { testimonialsData, slideImages } from '@/data/data'; 
+import React, { useState, useEffect, useRef } from "react";
+import { testimonialsData, slideImages } from "@/data/data";
+
 interface SlideImage {
   imageUrl: string;
   alt: string;
@@ -9,20 +10,52 @@ interface SlideImage {
 
 const Testimonials: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides: SlideImage[] = slideImages;
 
-  // Auto-slide every 5 seconds
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(timer);
   }, [slides.length]);
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const goToPrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+    useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let scrollStep = 1;
+    const scrollDelay = 20;
+
+    const scrollInterval = setInterval(() => {
+      const scrollContent = container.querySelector(".scroll-content") as HTMLDivElement;
+      if (!scrollContent) return;
+
+      const singleSetWidth = scrollContent.scrollWidth / 2;
+      if (container.scrollLeft >= singleSetWidth) {
+        container.scrollLeft = container.scrollLeft - singleSetWidth;
+      }
+      
+      container.scrollLeft += scrollStep;
+    }, scrollDelay);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
+
 
   return (
     <section className="bg-gray-50 pt-8 md:pt-12 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Image Slider Section */}
         <div className="relative mt-10 mx-auto w-full max-w-6xl h-[400px] rounded-[32px] overflow-hidden shadow-[0_20px_60px_-15px_rgba(37,99,235,0.4)]">
           {slides.map((slide, index) => (
             <img
@@ -35,13 +68,29 @@ const Testimonials: React.FC = () => {
             />
           ))}
 
+          {/* Controllers */}
+          <button
+            onClick={goToPrevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-gray-800 rounded-full p-2 transition"
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={goToNextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-gray-800 rounded-full p-2 transition"
+            aria-label="Next slide"
+          >
+            &#10095;
+          </button>
+
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'
+                  index === currentSlide ? "bg-white w-8" : "bg-white/40 hover:bg-white/60"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -54,8 +103,11 @@ const Testimonials: React.FC = () => {
           <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-48 bg-gradient-to-r from-white via-gray-50/80 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-48 bg-gradient-to-l from-white via-gray-50/80 to-transparent z-10 pointer-events-none" />
 
-          <div className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing">
-            <div className="flex gap-6 pb-4 px-8">
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+          >
+            <div className="scroll-content flex gap-6 pb-4 px-8">
               {testimonialsData.map((testimonial, index) => (
                 <div
                   key={index}
@@ -74,12 +126,18 @@ const Testimonials: React.FC = () => {
                         className="w-14 h-14 rounded-xl object-cover shadow-lg border-2 border-white/30"
                         onError={(e) => {
                           e.currentTarget.onerror = null;
-                          e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=" + testimonial.name;
+                          e.currentTarget.src =
+                            "" +
+                            testimonial.name;
                         }}
                       />
                       <div>
-                        <p className="font-bold text-white text-base drop-shadow">– {testimonial.name}</p>
-                        <p className="text-sm text-white/90 font-medium drop-shadow">{testimonial.designation}</p>
+                        <p className="font-bold text-white text-base drop-shadow">
+                          – {testimonial.name}
+                        </p>
+                        <p className="text-sm text-white/90 font-medium drop-shadow">
+                          {testimonial.designation}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -89,7 +147,6 @@ const Testimonials: React.FC = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

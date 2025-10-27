@@ -1,11 +1,11 @@
 import React from 'react';
-import LearnersHero from '../../components/LearnersPage/LearnersHero';
-import LearnerIntro from '../../components/LearnersPage/LearnerIntro';
-import Testimonials from '../../components/LearnersPage/Testimonials';
-import RankingSection from '../../components/LearnersPage/RankingSection';
-import OnboardingSteps from '../../components/LearnersPage/OnboardingSteps';
+import LearnersHero from '@/components/LearnersPage/_components/LearnersHero';
+import LearnerIntro from '@/components/LearnersPage/_components/LearnerIntro';
+import Testimonials from '@/components/LearnersPage/_components/Testimonials';
+import RankingSection from '@/components/LearnersPage/_components/RankingSection';
+import OnboardingSteps from '@/components/LearnersPage/_components/OnboardingSteps';
 
-import { learnerIdentityTags, topLearnersData, testimonialsData, onboardingSteps } from '../../data/data';
+import { learnerIdentityTags, topLearnersData, testimonialsData, onboardingSteps } from '@/data/data';
 
 export default function LearnersPage() {
   return (

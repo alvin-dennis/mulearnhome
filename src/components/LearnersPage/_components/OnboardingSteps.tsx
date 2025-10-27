@@ -1,5 +1,5 @@
 import React from 'react';
-import { OnboardingStep } from '../../data/data';
+import { OnboardingStep } from '@/data/data';
 import { Lightbulb } from 'lucide-react';
 import { FaDiscord } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ const getStepIcon = (step: number) => {
     case 1:
       return <div className="text-[color:var(--mulearn-whitish)] text-5xl font-bold">μ</div>;
     case 2:
-      return <FaDiscord className="w-12 h-12 text-[color:var(--mulearn-whitish)]" />;;
+      return <FaDiscord className="w-12 h-12 text-[color:var(--mulearn-whitish)]" />;
     case 3:
       return <Lightbulb className="w-12 h-12 text-[color:var(--mulearn-whitish)]" />;
     default:
@@ -26,27 +26,33 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
     <div className="relative max-w-7xl mx-auto px-4">
       
       {/* Desktop: Horizontal Flow with Connecting Lines */}
-      <div className="hidden lg:flex justify-between items-start relative">
-        <div className="absolute top-16 left-0 right-0 z-0 flex items-center justify-between px-55">
-          <div className="flex-1 h-0.5 bg-[color:var(--mulearn-gray-900)] mx-28" />
-          <div className="flex-1 h-0.5 bg-[color:var(--mulearn-gray-900)] mx-28" />
-        </div>
-
-        {data.map((step) => (
-          <div key={step.step} className="flex flex-col items-center flex-1 max-w-sm text-center px-4 relative z-10">
-            <div className="relative mb-6">
-              <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                {getStepIcon(step.step)}
+      <div className="hidden lg:flex justify-center items-start relative gap-8">
+        
+        {/* Steps */}
+        {data.map((step, index) => (
+          <React.Fragment key={step.step}>
+            <div className="flex flex-col items-center flex-1 max-w-sm text-center px-4 relative z-10">
+              
+              <div className="relative mb-6">
+                <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                  {getStepIcon(step.step)}
+                </div>
+                
+                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-white border-4 border-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
+                  0{step.step}
+                </span>
               </div>
-
-              <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-white rounded-full w-10 h-10 flex items-center border-2 border-white justify-center font-bold text-sm shadow-md">
-                0{step.step}
-              </span>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
             </div>
-            
-            <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-            <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-          </div>
+
+            {index < data.length - 1 && (
+              <div className="flex items-center" style={{ marginTop: '64px' }}>
+                <div className="w-20 h-1 bg-black"></div>
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </div>
 
@@ -60,7 +66,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
                   {getStepIcon(step.step)}
                 </div>
-                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-white rounded-full w-10 h-10 flex items-center border-2 border-white justify-center font-bold text-sm shadow-md">
+                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-white border-4 border-white rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
                   0{step.step}
                 </span>
               </div>

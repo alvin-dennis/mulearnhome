@@ -1,8 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
-import { Sparkle } from 'lucide-react';
-import { Button } from '../ui/button';
-import { getLearnerAsset } from "@/services/cdn";
+import MuImage from "@/components/MuImage";import { Sparkle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const LearnersHero = () => {
   return (
@@ -14,8 +12,8 @@ const LearnersHero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div className="relative inline-block mb-6">
           <div className="absolute -top-6 -left-12 lg:-left-16">
-            <Image
-              src={getLearnerAsset("graduation-cap.png")}
+            <MuImage
+              src="/assets/learners/graduation-cap.png"
               alt="Graduation Cap"
               width={64}
               height={64}
