@@ -1119,13 +1119,6 @@ export const events: {
         date: "Every Thursday",
       },
       {
-        title: "µLearn Mentor Connect",
-        description:
-          "GTech μLearn presents Mentor Connect 👨🏽‍🏫, an original initiative as part of Weekly Twitch. This initiative will give members an opportunity to interact, learn, and explore their interests with mentors from the Industry.",
-        link: "/events/mentorconnect",
-        date: "Every Friday",
-      },
-      {
         title: "Salt Mango Tree",
         description:
           "English! English! English! I avoid I don't like it, but English likes me, I can't avoid! Well since avoiding English isn't an option, let's try to work towards improving our knowledge of English, by practicing, together.",
