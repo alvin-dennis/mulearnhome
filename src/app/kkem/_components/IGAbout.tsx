@@ -9,7 +9,10 @@ export default function IGAbout() {
     >
       <div className="flex-1">
         <h1 className="text-mulearn-blackish font-semibold leading-[111.5%] mb-12 text-4xl lg:text-[4.25rem]">
-          Interest Groups?
+          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-transparent bg-clip-text">
+            μLearn{" "}
+          </span>
+          Interest Groups
         </h1>
         <p className="text-mulearn-blackish text-lg lg:text-xl leading-[127.5%] max-w-200 mt-8">
           Discover your passion, collaborate with like-minded individuals, and

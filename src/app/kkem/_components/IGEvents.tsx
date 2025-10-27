@@ -1,6 +1,7 @@
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
 import { cardProps, IGSectionProps } from "@/lib/types";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 const Card = ({
   name,
@@ -35,18 +36,11 @@ const Card = ({
         <p className="font-light text-[16px] leading-[22px]">{description}</p>
 
         {link !== "#" ? (
-          <div className="flex flex-row items-center gap-2">
-            <span className="uppercase font-medium text-[16px] leading-[22px] group-hover:text-mulearn-trusty-blue">
+          <div className="flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
+            <span className="uppercase font-medium text-[16px] leading-[22px]">
               Explore More
             </span>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 15 15"
-              className="group-hover:fill-mulearn-trusty-blue"
-            >
-              <path d="M12.1711 3.983L2.12965 14.0245L0.47998 12.3748L10.5203 2.33333H1.67115V0H14.5045V12.8333H12.1711V3.983Z" />
-            </svg>
+            <SquareArrowOutUpRight />
           </div>
         ) : (
           <span className="uppercase font-medium text-[16px] leading-[22px]">
@@ -62,9 +56,9 @@ const IGEvents = ({ cards, heading, largeImg }: IGSectionProps) => {
   return (
     <>
       <div className="my-8 md:my-12 px-4 md:px-12 flex flex-col md:items-start items-center">
-        <p className="text-3xl md:text-5xl font-semibold text-center md:text-left">
+        <h3 className="text-3xl md:text-5xl font-semibold text-center md:text-left">
           {heading ? heading : "Partnered Events"}
-        </p>
+        </h3>
       </div>
 
       <div className="px-4 md:px-12 my-6 md:my-12 flex justify-center">

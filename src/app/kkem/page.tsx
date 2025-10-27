@@ -6,7 +6,7 @@ import { kkem, interestGroups } from "@/data/data";
 export default function Landing() {
   return (
     <>
-      <main className="max-w-800">
+      <div className="max-w-800">
         <IGAbout />
         <IGSection cards={interestGroups} />
         <div id="events">
@@ -16,7 +16,7 @@ export default function Landing() {
             largeImg={true}
           />
         </div>
-      </main>
+      </div>
     </>
   );
 }
