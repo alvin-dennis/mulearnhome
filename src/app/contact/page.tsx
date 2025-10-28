@@ -1,40 +1,109 @@
-import React from "react";
-import MuImage from "@/components/MuImage";
 import ContactForm from "./_components/ContactForm";
-
-const heroImg = "/assets/contact/contact-us.svg";
+import { contactPage } from "@/data/data";
+import { MessageCircle, Users, Building } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 min-h-screen">
-      <div className="flex flex-col md:justify-start lg:justify-center lg:-mt-15 items-center md:items-center md:col-span-1">
-        <div className="p-4 text-center md:text-center md:max-w-md">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl  font-bold">
-            Get in{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              Touch
-            </span>
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-            Have questions or feedback? Reach out to us.
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-mulearn-gray-50 to-mulearn-whitish">
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-28 lg:pt-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content Card */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-mulearn-trusty-blue/10 border border-mulearn-trusty-blue/20 mb-4">
+                <span className="text-sm font-medium text-mulearn-trusty-blue">
+                  {contactPage.hero.badge}
+                </span>
+              </div>
 
-          <div className="mt-6 w-full flex justify-center md:justify-start">
-            <MuImage
-              src={heroImg}
-              alt="Contact Us"
-              width={500}
-              height={500}
-              className="rounded-md w-full h-auto max-w-xs sm:max-w-sm md:max-w-md"
-              priority
-            />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+                {contactPage.hero.title.line1}
+                <span className="block bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  {contactPage.hero.title.line2}
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed">
+                {contactPage.hero.description}
+              </p>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-6 pt-6">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn-trusty-blue">
+                    {contactPage.hero.stats[0].value}
+                  </div>
+                  <div className="text-sm text-mulearn-gray-600">
+                    {contactPage.hero.stats[0].label}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn-duke-purple">
+                    {contactPage.hero.stats[1].value}
+                  </div>
+                  <div className="text-sm text-mulearn-gray-600">
+                    {contactPage.hero.stats[1].label}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn-trusty-blue">
+                    {contactPage.hero.stats[2].value}
+                  </div>
+                  <div className="text-sm text-mulearn-gray-600">
+                    {contactPage.hero.stats[2].label}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Fixed Icons Section */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md">
+                <div className="hidden lg:grid lg:grid-cols-2 gap-8 p-8">
+                  <div className="w-32 h-32 bg-gradient-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 rounded-2xl flex items-center justify-center">
+                    <MessageCircle className="w-12 h-12 text-mulearn-trusty-blue" />
+                  </div>
+                  <div className="w-32 h-32 bg-gradient-to-br from-mulearn-duke-purple/20 to-mulearn-trusty-blue/20 rounded-2xl flex items-center justify-center mt-16">
+                    <Users className="w-12 h-12 text-mulearn-duke-purple" />
+                  </div>
+                  <div className="w-32 h-32 bg-gradient-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 rounded-2xl flex items-center justify-center -translate-y-8">
+                    <Building className="w-12 h-12 text-mulearn-trusty-blue" />
+                  </div>
+                </div>
+
+                <div className="lg:hidden flex justify-center items-center gap-6 py-8">
+                  <div className="w-24 h-24 bg-gradient-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 rounded-2xl flex items-center justify-center">
+                    <MessageCircle className="w-10 h-10 text-mulearn-trusty-blue" />
+                  </div>
+                  <div className="w-24 h-24 bg-gradient-to-br from-mulearn-duke-purple/20 to-mulearn-trusty-blue/20 rounded-2xl flex items-center justify-center">
+                    <Users className="w-10 h-10 text-mulearn-duke-purple" />
+                  </div>
+                  <div className="w-24 h-24 bg-gradient-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 rounded-2xl flex items-center justify-center">
+                    <Building className="w-10 h-10 text-mulearn-trusty-blue" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="col-span-1 md:col-span-2">
-        <ContactForm />
-      </div>
+      <section className="pt-20 pb-8 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4">
+            {contactPage.getInTouch.title}
+          </h1>
+          <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto mb-8">
+            {contactPage.getInTouch.description}
+          </p>
+        </div>
+      </section>
+
+      <section className="py-4 px-6">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm />
+        </div>
+      </section>
     </div>
   );
 }

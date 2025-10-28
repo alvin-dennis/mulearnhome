@@ -1,18 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Building,
-  School,
-  Users,
-  Calendar,
-  FileText,
-  HelpCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send, Building, School, Users, Calendar,FileText, HelpCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -27,7 +16,7 @@ export default function ContactForm() {
     region: "",
     message: "",
     consent: false,
-
+    
     // Conditional fields
     institution: "",
     courseYear: "",
@@ -47,7 +36,7 @@ export default function ContactForm() {
     eventDate: "",
     outlet: "",
     deadline: "",
-    issueCategory: "",
+    issueCategory: ""
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -61,7 +50,7 @@ export default function ContactForm() {
     { value: "events", label: "Events & Speaking" },
     { value: "media", label: "Media & Press" },
     { value: "support", label: "Technical support" },
-    { value: "other", label: "Something else" },
+    { value: "other", label: "Something else" }
   ];
 
   const organizationTypes = [
@@ -69,7 +58,7 @@ export default function ContactForm() {
     { value: "company", label: "Company" },
     { value: "ngo", label: "NGO" },
     { value: "academia", label: "Academia" },
-    { value: "government", label: "Government" },
+    { value: "government", label: "Government" }
   ];
 
   const focusAreas = [
@@ -79,7 +68,7 @@ export default function ContactForm() {
     { value: "research", label: "Research" },
     { value: "product-testing", label: "Product Testing" },
     { value: "venture-support", label: "Venture Support" },
-    { value: "social-impact", label: "Social Impact" },
+    { value: "social-impact", label: "Social Impact" }
   ];
 
   const programTypes = [
@@ -88,7 +77,7 @@ export default function ContactForm() {
     { value: "learning-sprint", label: "Learning Sprint" },
     { value: "product-testing", label: "Product Testing" },
     { value: "research", label: "Research-as-a-Service" },
-    { value: "govtech", label: "GovTech Pilot" },
+    { value: "govtech", label: "GovTech Pilot" }
   ];
 
   const issueCategories = [
@@ -96,7 +85,7 @@ export default function ContactForm() {
     { value: "login", label: "Login/Access" },
     { value: "profile", label: "Profile Issues" },
     { value: "bug", label: "Bug Report" },
-    { value: "other-tech", label: "Other Technical Issue" },
+    { value: "other-tech", label: "Other Technical Issue" }
   ];
 
   const validateForm = () => {
@@ -130,32 +119,24 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     if (validateForm()) {
       console.log("Form submitted:", formData);
-
+      
       // Show success message based on intent
       const successMessages = {
-        student:
-          "Thank you! Our community team will contact you within 48 hours.",
-        partner:
-          "Thank you! Our partnerships team will contact you within 72 hours.",
-        program:
-          "Thank you! Our programs team will contact you within 72 hours.",
-        hiring:
-          "Thank you! Our Launchpad team will contact you within 48 hours.",
+        student: "Thank you! Our community team will contact you within 48 hours.",
+        partner: "Thank you! Our partnerships team will contact you within 72 hours.",
+        program: "Thank you! Our programs team will contact you within 72 hours.",
+        hiring: "Thank you! Our Launchpad team will contact you within 48 hours.",
         events: "Thank you! Our events team will contact you within 48 hours.",
         media: "Thank you! Our media team will contact you within 24-48 hours.",
-        support:
-          "Thank you! Our support team will contact you within 24-48 hours.",
-        other: "Thank you! We'll get back to you as soon as possible.",
+        support: "Thank you! Our support team will contact you within 24-48 hours.",
+        other: "Thank you! We'll get back to you as soon as possible."
       };
 
-      alert(
-        successMessages[formData.intent as keyof typeof successMessages] ||
-          "Thank you for your message!"
-      );
-
+      alert(successMessages[formData.intent as keyof typeof successMessages] || "Thank you for your message!");
+      
       // Reset form
       setFormData({
         intent: "",
@@ -183,30 +164,25 @@ export default function ContactForm() {
         eventDate: "",
         outlet: "",
         deadline: "",
-        issueCategory: "",
+        issueCategory: ""
       });
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
-    const checked =
-      type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
-
-    setFormData((prev) => ({
+    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
+    
+    setFormData(prev => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === 'checkbox' ? checked : value
     }));
 
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors((prev) => ({
+      setErrors(prev => ({
         ...prev,
-        [name]: "",
+        [name]: ""
       }));
     }
   };
@@ -296,12 +272,8 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
-                  {organizationTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                  {organizationTypes.map(option => (
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -316,12 +288,8 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
-                  {focusAreas.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                  {focusAreas.map(option => (
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -358,12 +326,8 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
-                  {programTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                  {programTypes.map(option => (
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -535,12 +499,8 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
               >
-                {issueCategories.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                    disabled={option.value === ""}
-                  >
+                {issueCategories.map(option => (
+                  <option key={option.value} value={option.value} disabled={option.value === ""}>
                     {option.label}
                   </option>
                 ))}
@@ -560,7 +520,7 @@ export default function ContactForm() {
         {/* Primary Intent Dropdown */}
         <div className="space-y-2">
           <Label htmlFor="intent" className="text-base font-semibold">
-            I am here to...
+            I am here to... 
           </Label>
           <select
             id="intent"
@@ -572,12 +532,8 @@ export default function ContactForm() {
               errors.intent ? "border-red-500" : "border-mulearn-gray-300"
             }`}
           >
-            {intents.map((option) => (
-              <option
-                key={option.value}
-                value={option.value}
-                disabled={option.disabled}
-              >
+            {intents.map(option => (
+              <option key={option.value} value={option.value} disabled={option.disabled}>
                 {option.label}
               </option>
             ))}
@@ -610,21 +566,6 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Enter your phone number"
-              />
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-4">
-            <div className="space-y-2">
               <Label htmlFor="email">Email Address *</Label>
               <Input
                 id="email"
@@ -638,6 +579,21 @@ export default function ContactForm() {
               {errors.email && (
                 <p className="text-sm text-red-600">{errors.email}</p>
               )}
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone number"
+              />
             </div>
 
             <div className="space-y-2">
@@ -680,11 +636,10 @@ export default function ContactForm() {
               name="consent"
               checked={formData.consent}
               onChange={handleChange}
-              className="mt-1 rounded border-mulearn-gray-300 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent focus:ring-mulearn-trusty-blue"
+              className="mt-1 rounded border-mulearn-gray-300 text-mulearn-trusty-blue focus:ring-mulearn-trusty-blue"
             />
             <span className="text-sm text-mulearn-gray-700">
-              I agree to the privacy policy and to be contacted about my query.
-              *
+              I agree to the privacy policy and to be contacted about my query. *
             </span>
           </label>
           {errors.consent && (
@@ -693,9 +648,9 @@ export default function ContactForm() {
         </div>
 
         {/* Submit Button */}
-        <Button
-          type="submit"
-          className="w-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white py-3"
+        <Button 
+          type="submit" 
+          className="w-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white py-3"
         >
           <Send className="w-4 h-4 mr-2" />
           Send Message
@@ -709,33 +664,25 @@ export default function ContactForm() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="text-center">
-            <div className="w-10 h-10 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 bg-mulearn-trusty-blue rounded-full flex items-center justify-center mx-auto mb-2">
               <Mail className="w-4 h-4 text-white" />
             </div>
-            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">
-              Email
-            </h4>
+            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">Email</h4>
             <p className="text-xs text-mulearn-gray-600">{contactInfo.email}</p>
           </div>
           <div className="text-center">
             <div className="w-10 h-10 bg-mulearn-duke-purple rounded-full flex items-center justify-center mx-auto mb-2">
               <Phone className="w-4 h-4 text-white" />
             </div>
-            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">
-              Phone
-            </h4>
+            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">Phone</h4>
             <p className="text-xs text-mulearn-gray-600">{contactInfo.phone}</p>
           </div>
           <div className="text-center">
-            <div className="w-10 h-10 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 bg-mulearn-trusty-blue rounded-full flex items-center justify-center mx-auto mb-2">
               <MapPin className="w-4 h-4 text-white" />
             </div>
-            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">
-              Location
-            </h4>
-            <p className="text-xs text-mulearn-gray-600">
-              {contactInfo.address}
-            </p>
+            <h4 className="font-medium text-mulearn-gray-900 text-sm mb-1">Location</h4>
+            <p className="text-xs text-mulearn-gray-600">{contactInfo.address}</p>
           </div>
         </div>
       </div>
