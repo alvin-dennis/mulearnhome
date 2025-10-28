@@ -231,3 +231,14 @@ export type IGSectionProps = {
   heading?: string;
   largeImg?: boolean;
 };
+
+export interface OMEvent {
+  id: number;
+  title: string;
+  description: string;
+  date?: string;
+  performer?: string;
+  tags: string[];
+  thumbnail?: string;
+  isUpcoming: boolean;
+}

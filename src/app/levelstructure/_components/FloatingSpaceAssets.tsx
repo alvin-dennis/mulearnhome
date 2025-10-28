@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import MuImage from '@/components/MuImage';
 
-// Floating asset configuration using actual SVG assets
 const floatingAssets = [
   { src: '/assets/levelstructure/rocket.svg', name: 'rocket', size: 60 },
   { src: '/assets/levelstructure/ufo.svg', name: 'ufo', size: 55 },
@@ -14,16 +13,11 @@ const floatingAssets = [
  
 ];
 
-// Generate random animation values
-const getRandomAnimation = (index: number) => {
-  const duration = 15 + Math.random() * 25; // 15-40 seconds
-  const delay = Math.random() * 5; // 0-5 seconds delay
-  
-  // Random start position
+const getRandomAnimation = () => {
+  const duration = 15 + Math.random() * 25;
+  const delay = Math.random() * 5;
   const startX = Math.random() * 100;
   const startY = Math.random() * 100;
-  
-  // Random end position (ensure it moves)
   const endX = Math.random() * 100;
   const endY = Math.random() * 100;
   
@@ -65,9 +59,8 @@ export default function FloatingSpaceAssets() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if mobile on mount and resize
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      setIsMobile(window.innerWidth < 768);
     };
     
     checkMobile();
@@ -76,7 +69,6 @@ export default function FloatingSpaceAssets() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Don't render on desktop
   if (!isMobile) return null;
 
   return (
@@ -85,7 +77,7 @@ export default function FloatingSpaceAssets() {
       aria-hidden="true"
     >
       {floatingAssets.map((asset, index) => {
-        const animation = getRandomAnimation(index);
+        const animation = getRandomAnimation();
         
         return (
           <motion.div

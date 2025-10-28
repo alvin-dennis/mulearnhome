@@ -3,7 +3,6 @@
 import React, { useState, useRef } from 'react';
 import MuImage from '@/components/MuImage';
 import * as htmlToImage from 'html-to-image';
-import { cdnUrl } from '@/services/cdn';
 
 const StripesBackground = ({ className = "" }: { className?: string }) => (
   <MuImage
