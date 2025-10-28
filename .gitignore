@@ -38,3 +38,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+src/app/leaderboard/page.tsx
+src/app/api/leaderboard/route.ts

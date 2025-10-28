@@ -7,6 +7,7 @@ import {
   GalleryItem,
   ImpactStat,
   AnnualReport,
+  OMEvent
 } from "@/lib/types";
 import {
   Calendar,
@@ -6973,14 +6974,14 @@ export const topLearnersData: TopLearner[] = [
     kp: 20300,
     imageUrl: "/assets/learners/images/vishnu.png",
   },
-  { name: "John", kp: 20000, imageUrl: "/assets/learners/images/generic1.jpg" },
-  { name: "Jane", kp: 19900, imageUrl: "/assets/learners/images/generic2.jpg" },
-  { name: "Alice", kp: 19800, imageUrl: "/assets/learners/images/generic3.jpg" },
-  { name: "Doe", kp: 19700, imageUrl: "/assets/learners/images/generic4.jpg" },
-  { name: "Smith", kp: 19600, imageUrl: "/assets/learners/images/generic5.jpg" },
-  { name: "Lenita", kp: 19500, imageUrl: "/assets/learners/images/generic6.jpg" },
-  { name: "Grace", kp: 19400, imageUrl: "/assets/learners/images/generic7.jpg" },
-  { name: "Rodrigues", kp: 19300, imageUrl: "/assets/learners/images/generic8.jpg" },
+  { name: "John", kp: 20000, imageUrl: "" },
+  { name: "Jane", kp: 19900, imageUrl: "" },
+  { name: "Alice", kp: 19800, imageUrl: "" },
+  { name: "Doe", kp: 19700, imageUrl: "" },
+  { name: "Smith", kp: 19600, imageUrl: "" },
+  { name: "Lenita", kp: 19500, imageUrl: "" },
+  { name: "Grace", kp: 19400, imageUrl: "" },
+  { name: "Rodrigues", kp: 19300, imageUrl: "" },
 ];
 
 
@@ -6989,31 +6990,31 @@ export const testimonialsData: Testimonial[] = [
     name: "Soorya",
     designation: "SWE",
     quote: "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
-    imageUrl: "/assets/learners/testimonials/soorya.jpg",
+    imageUrl: "",
   },
   {
     name: "Alex",
     designation: "Product Designer",
     quote: "μLearn provided the real-world projects and mentorship I needed to switch careers. The focus on Karma Points kept me motivated to consistently build my portfolio.",
-    imageUrl: "/assets/learners/testimonials/alex.jpg",
+    imageUrl: "",
   },
   {
     name: "Arya",
     designation: "SWE",
     quote: "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
-    imageUrl: "/assets/learners/testimonials/arya.jpg",
+    imageUrl: "",
   },
   {
     name: "Riya",
     designation: "Product Designer",
     quote: "μLearn provided the real-world projects and mentorship I needed to switch careers. The focus on Karma Points kept me motivated to consistently build my portfolio.",
-    imageUrl: "/assets/learners/testimonials/riya.jpg",
+    imageUrl: "",
   },
   {
     name: "Manu",
     designation: "SWE",
     quote: "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
-    imageUrl: "/assets/learners/testimonials/manu.jpg",
+    imageUrl: "",
   },
   // Add more testimonials if needed
 ];
@@ -7025,41 +7026,49 @@ export const slideImages = [
   { imageUrl: "/assets/learners/slide3.png", alt: "Slide 3" },
   // Add more images if needed
 ];
-export const openMicData = {
+
+export interface OpenMicData {
+  events: OMEvent[];
+}
+
+export const openMicData: OpenMicData = {
   events: [
     {
       id: 1,
       title: "Open Mic #1 ft. @s.o.d.666 & sabareesh__k",
       performer: "George Ben Chirby & Sabareesh K",
-      description: "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "15/12/2022",
       tags: ["Music", "Performance"],
       thumbnail: "/assets/openmic/dummy_img.png",
-      isUpcoming: false
+      isUpcoming: false,
     },
     {
       id: 2,
       title: "Open Mic #2 ft. Ramakrishnan",
       performer: "Ramakrishnan Haraden",
-      description: "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
+      description:
+        "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
       date: "08/12/2022",
       tags: ["Music", "Composition"],
       thumbnail: "/assets/openmic/dummy_img.png",
-      isUpcoming: false
+      isUpcoming: false,
     },
     {
       id: 3,
       title: "Open Mic #3 ft. Arjun",
       performer: "Arjun",
-      description: "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
+      description:
+        "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
       date: "01/12/2022",
       tags: ["Music", "Singing"],
       thumbnail: "/assets/openmic/dummy_img.png",
-      isUpcoming: false
-    }
-  ]
+      isUpcoming: false,
+    },
+  ],
 };
-} 
+
 export const contactPage = {
   hero: {
     badge: "Connect With Us",
