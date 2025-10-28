@@ -6901,6 +6901,41 @@ export const companyImages = {
   note: "/assets/company/note.svg",
   handshake: "/assets/company/handshake.svg",
   studLap: "/assets/company/studLap.svg",
+}
+export const openMicData = {
+  events: [
+    {
+      id: 1,
+      title: "Open Mic #1 ft. @s.o.d.666 & sabareesh__k",
+      performer: "George Ben Chirby & Sabareesh K",
+      description: "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "15/12/2022",
+      tags: ["Music", "Performance"],
+      thumbnail: "/assets/openmic/dummy_img.png",
+      isUpcoming: false
+    },
+    {
+      id: 2,
+      title: "Open Mic #2 ft. Ramakrishnan",
+      performer: "Ramakrishnan Haraden",
+      description: "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
+      date: "08/12/2022",
+      tags: ["Music", "Composition"],
+      thumbnail: "/assets/openmic/dummy_img.png",
+      isUpcoming: false
+    },
+    {
+      id: 3,
+      title: "Open Mic #3 ft. Arjun",
+      performer: "Arjun",
+      description: "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
+      date: "01/12/2022",
+      tags: ["Music", "Singing"],
+      thumbnail: "/assets/openmic/dummy_img.png",
+      isUpcoming: false
+    }
+  ]
+};
 } 
 export const contactPage = {
   hero: {
