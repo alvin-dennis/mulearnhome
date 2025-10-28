@@ -1,4 +1,4 @@
-"use cache";
+"use cache"
 import axios from "axios";
 import { NextResponse } from "next/server";
 import { ContributorStats } from "@/lib/types";
