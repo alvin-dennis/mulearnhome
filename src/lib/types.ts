@@ -268,8 +268,3 @@ export interface ContributorStats {
   issues_opened: number;
   issues_closed: number;
 }
-
-export interface LeaderboardProps {
-  props: LeaderboardData & { date: string };
-  revalidate: number;
-}
