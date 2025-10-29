@@ -69,7 +69,7 @@ export default function LeaderBoard() {
               key={score.username}
               className={
                 index < 3
-                  ? "bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white font-bold"
+                  ? "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white font-bold"
                   : ""
               }
             >
@@ -105,7 +105,7 @@ export default function LeaderBoard() {
   return (
     <div className="flex flex-col w-full px-3 md:px-5 py-10">
       <motion.h2
-        className="text-3xl md:text-5xl font-bold text-center mb-10 text-mulearn-primary"
+        className="text-4xl md:text-5xl font-bold text-center mb-10 text-mulearn-primary"
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
