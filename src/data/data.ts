@@ -7,6 +7,8 @@ import {
   GalleryItem,
   ImpactStat,
   AnnualReport,
+  VideoTestimonial,
+  TextTestimonial,
 } from "@/lib/types";
 import {
   Calendar,
@@ -62,6 +64,10 @@ export const navItems = [
           label: "IMPACT GALLERY",
           href: "/impact-gallery",
         },
+        {
+          label:"TESTIMONIALS",
+          href:"/testimonials"
+        }
       ],
     },
   },
@@ -6870,3 +6876,136 @@ export const companyImages = {
   handshake: "/assets/company/handshake.svg",
   studLap: "/assets/company/studLap.svg",
 }
+export const videoTestimonials: VideoTestimonial[] = [
+  {
+    id: '1',
+    name: 'Michael Rodriguez',
+    role: 'Senior Engineering Manager',
+    company: 'Google',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    thumbnailUrl: 'https://placehold.co/600x400/2E85FE/ffffff.png?text=Mentor+Story',
+    profileImage: 'https://placehold.co/600x600/2E85FE/ffffff.png?text=MR',
+    type: 'mentor',
+    quote: 'Mentoring through µLearn has been incredibly rewarding. Seeing learners grow from beginners to confident professionals reminds me why I love this industry.'
+  },
+  {
+    id: '2',
+    name: 'Priya Sharma',
+    role: 'Computer Science Student',
+    company: 'KTU University',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+    thumbnailUrl: 'https://placehold.co/600x400/AF2EE6/ffffff.png?text=Learner+Story',
+    profileImage: 'https://placehold.co/600x600/AF2EE6/ffffff.png?text=PS',
+    type: 'learner',
+    quote: 'µLearn transformed my learning journey with hands-on projects and an amazing community. The peer learning approach helped me land my dream job.'
+  },
+  {
+    id: '3',
+    name: 'Sarah Chen',
+    role: 'HR Director',
+    company: 'Innovate Solutions',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    thumbnailUrl: 'https://placehold.co/600x400/666771/ffffff.png?text=Partner+Story',
+    profileImage: 'https://placehold.co/600x600/666771/ffffff.png?text=SC',
+    type: 'partner',
+    quote: 'We found exceptional talent through µLearn. The students are industry-ready and bring fresh perspectives to our engineering teams.'
+  },
+  {
+    id: '4',
+    name: 'Rahul Kumar',
+    role: 'Community Lead',
+    company: 'Google Developer Groups',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    thumbnailUrl: 'https://placehold.co/600x400/2E85FE/ffffff.png?text=Community+Story',
+    profileImage: 'https://placehold.co/600x600/2E85FE/ffffff.png?text=RK',
+    type: 'community-leader',
+    quote: 'µLearn has created a vibrant learning ecosystem that complements formal education perfectly. The community-driven approach is revolutionary.'
+  },
+  {
+    id: '5',
+    name: 'Dr. Ananya Patel',
+    role: 'AI Research Scientist',
+    company: 'Tech Research Labs',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    thumbnailUrl: 'https://placehold.co/600x400/AF2EE6/ffffff.png?text=Research+Story',
+    profileImage: 'https://placehold.co/600x600/AF2EE6/ffffff.png?text=AP',
+    type: 'mentor',
+    quote: 'The collaborative environment at µLearn fosters innovation. I have seen students develop cutting-edge projects that rival professional work.'
+  }
+];
+
+export const textTestimonials: TextTestimonial[] = [
+  {
+    id: 't1',
+    name: 'Anjali Nair',
+    role: 'Software Developer',
+    company: 'Tech Solutions Inc.',
+    profileImage: 'https://placehold.co/600x600/AF2EE6/ffffff.png?text=AN',
+    quote: 'The peer learning sessions at µLearn helped me transition from a beginner to a confident full-stack developer. The community support is incredible!',
+    type: 'learner',
+    rating: 5,
+    date: '2024-01-15',
+    socialProof: 'Posted on LinkedIn'
+  },
+  {
+    id: 't2',
+    name: 'Dr. Rajesh Kumar',
+    role: 'Professor',
+    company: 'State University',
+    profileImage: 'https://placehold.co/600x600/666771/ffffff.png?text=RK',
+    quote: 'As an educator, I am impressed by how µLearn complements formal education. The hands-on projects give students real-world experience that classrooms cannot provide.',
+    type: 'mentor',
+    rating: 5,
+    date: '2024-01-10',
+    socialProof: 'Shared on Twitter'
+  },
+  {
+    id: 't3',
+    name: 'Priya Sharma',
+    role: 'Product Manager',
+    company: 'StartUp Ventures',
+    profileImage: 'https://placehold.co/600x600/2E85FE/ffffff.png?text=PS',
+    quote: 'We hired three developers from µLearn and they have been exceptional. The platform truly prepares students for industry challenges.',
+    type: 'partner',
+    rating: 5,
+    date: '2024-01-08'
+  },
+  {
+    id: 't4',
+    name: 'Karthik Menon',
+    role: 'AI Enthusiast',
+    profileImage: 'https://placehold.co/600x600/AF2EE6/ffffff.png?text=KM',
+    quote: 'The learning circles at µLearn helped me build my first ML project. The collaborative environment makes complex topics approachable.',
+    type: 'learner',
+    rating: 5,
+    date: '2024-01-05',
+    socialProof: 'Posted in Community'
+  },
+  {
+    id: 't5',
+    name: 'Sarah Johnson',
+    role: 'HR Director',
+    company: 'Global Tech Corp',
+    profileImage: 'https://placehold.co/600x600/666771/ffffff.png?text=SJ',
+    quote: 'µLearn graduates bring fresh perspectives and strong fundamentals. They are our go-to talent pool for junior developer roles.',
+    type: 'partner',
+    rating: 5,
+    date: '2024-01-03'
+  },
+  {
+    id: 't6',
+    name: 'Arun Patel',
+    role: 'Community Lead',
+    company: 'Developer Groups',
+    profileImage: 'https://placehold.co/600x600/2E85FE/ffffff.png?text=AP',
+    quote: 'The energy and enthusiasm in µLearn communities is contagious. It is amazing to see learners supporting each other grow.',
+    type: 'community-leader',
+    rating: 5,
+    date: '2024-01-01'
+  }
+];
+
+export const testimonials = {
+  video: videoTestimonials,
+  text: textTestimonials
+};
