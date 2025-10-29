@@ -24,7 +24,7 @@ jobs:
 
       - name: Run leaderboard script
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run generate
 
       - name: Configure git
