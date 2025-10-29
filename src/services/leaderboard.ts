@@ -13,7 +13,7 @@ interface ContributorStats {
 }
 
 const TOKEN = process.env.GITHUB_TOKEN;
-if (!TOKEN) throw new Error("GITHUB_TOKEN is required");
+if (!TOKEN) throw new Error("GITHUB_TOKEN is required to run");
 
 const HEADERS: Record<string, string> = {
   Accept: "application/vnd.github+json",
