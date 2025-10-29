@@ -1,13 +1,14 @@
 {
   "name": "mulearn",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate": "ts-node src/services/leaderboard.ts"
+    "generate": "node --loader ts-node/esm src/services/leaderboard.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
