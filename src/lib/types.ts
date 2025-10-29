@@ -259,16 +259,6 @@ export interface LeaderboardData {
   date: string;
 }
 
-export interface ContributorStats {
-  username: string;
-  displayname?: string;
-  commits: number;
-  prs_opened: number;
-  prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
-}
-
 export interface LeaderboardProps {
   props: LeaderboardData & { date: string };
   revalidate: number;

@@ -1,15 +1,18 @@
-"use cache";
-
 import axios from "axios";
-import { writeFileSync } from "fs"; // ✅ ADD THIS
+import { writeFileSync, existsSync } from "fs";
 import path from "path";  
-import { ContributorStats } from "@/lib/types";
 
-const ORG = "gtech-mulearn";
-const GITHUB_API = "https://api.github.com";
-const PER_PAGE = 100;
+interface ContributorStats {
+  username: string;
+  displayname?: string;
+  commits: number;
+  prs_opened: number;
+  prs_merged: number;
+  issues_opened: number;
+  issues_closed: number;
+}
 
-const TOKEN = process.env.GITHUB_TOKEN;
+const TOKEN = "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";
 if (!TOKEN) throw new Error("GITHUB_TOKEN is required");
 
 const HEADERS: Record<string, string> = {
@@ -31,7 +34,7 @@ async function paginatedGet<T>(
   while (true) {
     const response = await axios.get<T[]>(url, {
       headers: HEADERS,
-      params: { ...params, per_page: PER_PAGE, page },
+      params: { ...params, per_page: 100, page },
     });
 
     if (response.status === 202) {
@@ -41,7 +44,7 @@ async function paginatedGet<T>(
 
     results.push(...response.data);
 
-    if (response.data.length < PER_PAGE) break;
+    if (response.data.length < 100) break;
     page++;
   }
 
@@ -70,7 +73,7 @@ export async function getLeaderboard() {
   });
 
   const repos = await paginatedGet<{ name: string }>(
-    `${GITHUB_API}/orgs/${ORG}/repos`,
+    `https://api.github.com/orgs/gtech-mulearn/repos`,
     { type: "all", sort: "updated" }
   );
 
@@ -82,19 +85,23 @@ export async function getLeaderboard() {
   const repoPromises = repos.map(async (repo) => {
     const [contributors, prs, issues] = await Promise.all([
       paginatedGet<{ login: string; contributions: number }>(
-        `${GITHUB_API}/repos/${ORG}/${repo.name}/contributors`
+        `https://api.github.com/repos/gtech-mulearn/${repo.name}/contributors`
       ),
       paginatedGet<{
         user: { login: string } | null;
         created_at: string;
         merged_at: string | null;
-      }>(`${GITHUB_API}/repos/${ORG}/${repo.name}/pulls`, { state: "all" }),
+      }>(`https://api.github.com/repos/gtech-mulearn/${repo.name}/pulls`, {
+        state: "all",
+      }),
       paginatedGet<{
         user: { login: string } | null;
         state: string;
         created_at: string;
         pull_request?: string;
-      }>(`${GITHUB_API}/repos/${ORG}/${repo.name}/issues`, { state: "all" }),
+      }>(`https://api.github.com/repos/gtech-mulearn/${repo.name}/issues`, {
+        state: "all",
+      }),
     ]);
 
     return { contributors, prs, issues };
@@ -231,7 +238,7 @@ export async function getLeaderboard() {
       list.map(async (contributor) => {
         try {
           const { data } = await axios.get(
-            `${GITHUB_API}/users/${contributor.username}`,
+            `https://api.github.com/users/${contributor.username}`,
             { headers: HEADERS }
           );
           contributor.displayname = data.name || contributor.username;
@@ -257,7 +264,20 @@ export async function getLeaderboard() {
 (async () => {
   try {
     const data = await getLeaderboard();
-    const outputPath = path.resolve(process.cwd(), "data/leaderboard.json");
+
+    const outputPath = path.join(
+      process.cwd(),
+      "src",
+      "data",
+      "leaderboard.json"
+    );
+
+    if (existsSync(outputPath)) {
+      console.log(`✏️ Updating existing file: ${outputPath}`);
+    } else {
+      console.log(`📁 Creating new file: ${outputPath}`);
+    }
+
     writeFileSync(outputPath, JSON.stringify(data, null, 2));
     console.log(`✅ Leaderboard saved to ${outputPath}`);
   } catch (err) {

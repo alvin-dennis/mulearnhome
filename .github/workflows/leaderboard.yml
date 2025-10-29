@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -23,12 +23,18 @@ jobs:
         run: npm install
 
       - name: Run leaderboard script
-        run: npx ts-node src/services/leaderboard.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run generate
 
-      - name: Commit and push changes
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/leaderboard.json
+
+      - name: Commit and push changes
+        run: |
+          git add src/data/leaderboard.json
           git commit -m "Update leaderboard.json with new data" || echo "No changes to commit"
           git push
+
