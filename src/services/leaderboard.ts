@@ -1,6 +1,8 @@
 "use cache";
 
 import axios from "axios";
+import { writeFileSync } from "fs"; // ✅ ADD THIS
+import path from "path";  
 import { ContributorStats } from "@/lib/types";
 
 const ORG = "gtech-mulearn";
@@ -251,3 +253,15 @@ export async function getLeaderboard() {
     date,
   };
 }
+
+(async () => {
+  try {
+    const data = await getLeaderboard();
+    const outputPath = path.resolve(process.cwd(), "data/leaderboard.json");
+    writeFileSync(outputPath, JSON.stringify(data, null, 2));
+    console.log(`✅ Leaderboard saved to ${outputPath}`);
+  } catch (err) {
+    console.error("❌ Failed to generate leaderboard:", err);
+    process.exit(1);
+  }
+})();
