@@ -12,7 +12,7 @@ interface ContributorStats {
   issues_closed: number;
 }
 
-const TOKEN = "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";
+const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) throw new Error("GITHUB_TOKEN is required");
 
 const HEADERS: Record<string, string> = {
