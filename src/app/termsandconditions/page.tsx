@@ -1,6 +1,4 @@
-"use server";
-
-import { termsAndConditions } from "@/data/data";
+import { termsAndConditions } from "@/data/data"
 
 const Paragraph = ({ text }: { text: string }) => (
   <p className="text-[15px] sm:text-base leading-7 text-mulearn-blackish text-justify mb-4">

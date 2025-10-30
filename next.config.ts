@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   compress: true,
+  output: "export",
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -16,6 +17,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    unoptimized: true
   },
 };
 export default nextConfig;
