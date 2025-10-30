@@ -127,7 +127,12 @@ export default function LeaderBoard() {
           {renderTable("Overall Leaderboard", mapScores(overall))}
         </div>
       </div>
-      <div className="flex justify-center mt-6">
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        animate="visible"
+        className="flex justify-center mt-6"
+      >
         <Link href="https://contributors.mulearn.org">
           <Button
             variant={"mulearn"}
@@ -136,7 +141,7 @@ export default function LeaderBoard() {
             View Full Leaderboard <ArrowRight className="w-5 h-5" />
           </Button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 }
