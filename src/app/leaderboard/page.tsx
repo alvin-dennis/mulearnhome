@@ -9,9 +9,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ArrowRight } from "lucide-react";
 import leaderboardData from "@/data/leaderboard.json";
 import { Score } from "@/lib/types";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -110,7 +112,10 @@ export default function LeaderBoard() {
         initial="hidden"
         animate="visible"
       >
-        <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">μLearn </span>Contribution Leaderboard
+        <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+          μLearn{" "}
+        </span>
+        Contribution Leaderboard
       </motion.h2>
 
       <div className="flex flex-col lg:flex-row justify-center items-start w-full gap-5 lg:gap-10">
@@ -121,6 +126,16 @@ export default function LeaderBoard() {
         <div className="w-full lg:w-1/2 flex justify-center">
           {renderTable("Overall Leaderboard", mapScores(overall))}
         </div>
+      </div>
+      <div className="flex justify-center mt-6">
+        <Link href="https://contributors.mulearn.org">
+          <Button
+            variant={"mulearn"}
+            className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-lg"
+          >
+            View Full Leaderboard <ArrowRight className="w-5 h-5" />
+          </Button>
+        </Link>
       </div>
     </div>
   );
