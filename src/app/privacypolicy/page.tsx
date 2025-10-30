@@ -1,3 +1,5 @@
+"use server";
+
 import { privacyPolicy } from "@/data/data";
 
 const formatText = (text: string) =>
