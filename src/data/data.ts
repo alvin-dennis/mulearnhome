@@ -1115,7 +1115,7 @@ export const events: {
         title: "Inspiration Station Radio",
         description:
           "Everyone has a story to tell, the story about finding their passion, the story of learning new things and much more. Often times these stories are filled with fun and inspirations which fuel others to start their own journey.",
-        link: "/isr",
+        link: "/events/inspiration-station",
         date: "Every Tuesday",
       },
       {
@@ -7334,4 +7334,69 @@ export const kkem = {
       link: "https://github.com/suryan-s/Ekipa",
     },
   ],
+};
+
+export const inspirationStationData = {
+  events: [
+    {
+      id: 1,
+      title: "From Failure to Success: My Tech Journey",
+      speaker: "Alex Johnson",
+      description: "Alex shares his inspiring journey from multiple failures to building a successful career in technology, and the lessons he learned along the way.",
+      date: "Next Tuesday",
+      tags: ["Career", "Resilience", "Technology"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: true
+    },
+    {
+      id: 2,
+      title: "Women in Leadership: Breaking the Glass Ceiling",
+      speaker: "Maria Garcia",
+      description: "Maria discusses her experiences as a female leader in a male-dominated industry and how she empowers other women to take on leadership roles.",
+      date: "Coming Soon",
+      tags: ["Leadership", "Diversity", "Empowerment"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: true
+    },
+    {
+      id: 3,
+      title: "The Art of Public Speaking",
+      speaker: "David Chen",
+      description: "David shares his transformation from a shy introvert to a confident public speaker and how communication skills changed his career trajectory.",
+      date: "December 5th",
+      tags: ["Communication", "Personal Growth", "Confidence"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: true
+    },
+    {
+      id: 4,
+      title: "From Engineer to Entrepreneur",
+      speaker: "John Doe",
+      description: "John shares his incredible journey from being a software engineer to building a successful startup, the challenges he faced, and how he overcame them to create impact.",
+      date: "15/11/2023",
+      tags: ["Career", "Entrepreneurship", "Resilience"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: false
+    },
+    {
+      id: 5,
+      title: "Breaking Barriers in Tech",
+      speaker: "Sarah Wilson",
+      description: "Sarah discusses her experience as a woman in technology, breaking stereotypes, and creating opportunities for others in the tech industry.",
+      date: "08/11/2023",
+      tags: ["Leadership", "Diversity", "Technology"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: false
+    },
+    {
+      id: 6,
+      title: "The Power of Community Learning",
+      speaker: "Mike Johnson",
+      description: "Mike talks about how community-driven learning transformed his career and the importance of peer-to-peer knowledge sharing in personal growth.",
+      date: "01/11/2023",
+      tags: ["Community", "Learning", "Growth"],
+      thumbnail: "/assets/dummyimg/dummy.png",
+      isUpcoming: false
+    }
+  ]
 };
