@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { AnimatePresence } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import VideoTestimonialCard from "./VideoTestimonialcard";
 import { VideoTestimonial } from "@/lib/types";
@@ -21,7 +22,9 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
   }, [testimonials.length]);
 
   const prevTestimonial = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   }, [testimonials.length]);
 
   const goToTestimonial = (index: number) => {
@@ -53,29 +56,29 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
     enter: {
       x: 1000,
       opacity: 0,
-      scale: 0.9
+      scale: 0.9,
     },
     center: {
       x: 0,
       opacity: 1,
-      scale: 1
+      scale: 1,
     },
     exit: {
       x: -1000,
       opacity: 0,
-      scale: 0.9
-    }
+      scale: 0.9,
+    },
   };
 
   // Fixed transition configuration
   const transition = {
     x: { type: "spring" as const, stiffness: 300, damping: 30 },
     opacity: { duration: 0.4 },
-    scale: { duration: 0.4 }
+    scale: { duration: 0.4 },
   };
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -109,7 +112,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
         {/* Main Slider */}
         <div className="relative h-auto overflow-hidden">
           <AnimatePresence mode="wait" initial={false}>
-            <motion.div
+            <MotionDiv
               key={activeIndex}
               variants={slideVariants}
               initial="enter"
@@ -140,19 +143,21 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
                   isActive={true}
                 />
               </div>
-            </motion.div>
+            </MotionDiv>
           </AnimatePresence>
         </div>
 
         {/* Simple Counter */}
         <div className="flex justify-center items-center mt-6">
           <div className="text-mulearn-gray-600 font-sans font-medium">
-            <span className="text-xl font-bold text-mulearn-blackish">{activeIndex + 1}</span>
+            <span className="text-xl font-bold text-mulearn-blackish">
+              {activeIndex + 1}
+            </span>
             <span className="mx-2">/</span>
             <span>{testimonials.length}</span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

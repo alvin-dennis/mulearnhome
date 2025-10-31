@@ -1,21 +1,20 @@
-"use client"
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { CompanyPartner } from "@/data/data";
 import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
 
-
 export default function CompanyPartners() {
   const companies = CompanyPartner;
-  const Connecting_teams= cdnUrl("/src/modules/Public/CompanyPartners/assets/Connecting teams.gif");
+  const Connecting_teams = cdnUrl(
+    "/src/modules/Public/CompanyPartners/assets/Connecting teams.gif"
+  );
   return (
     <div className="min-h-screen bg-white">
       <section className="px-4 sm:px-8 py-1 sm:py-1 lg:py-1">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-            <motion.div
+            <MotionDiv
               className="flex-1 text-center lg:text-left"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -33,13 +32,13 @@ export default function CompanyPartners() {
                 have to do is look out for the best one that suits you as well
                 as your passion and skills.
               </p>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               className="flex-1 flex justify-center lg:justify-end"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6 }}
             >
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-140 lg:h-140">
                 <MuImage
@@ -50,14 +49,14 @@ export default function CompanyPartners() {
                   priority
                 />
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </section>
 
       <section className="px-4 sm:px-8 py-12 sm:py-16 bg-mulearn-whitish">
         <div className="max-w-7xl mx-auto">
-          <motion.div
+          <MotionDiv
             className="mb-8 sm:mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +73,7 @@ export default function CompanyPartners() {
               µLearn has partnered with multiple Companies to provide the
               student the best Resources and Opportunities possible
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {companies.map((company, index) => (

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionFooter } from "@/components/MuFramer";
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { footer, socials, contactInfo } from "@/data/data";
@@ -8,7 +6,7 @@ import { Mail, Phone, Globe } from "lucide-react";
 
 export default function Footer() {
   return (
-    <motion.footer
+    <MotionFooter
       className="bg-mulearn-whitish text-mulearn-blackish px-6 py-12 border-t border-mulearn-gray-200"
       variants={{
         hidden: { opacity: 0, y: 20 },
@@ -135,6 +133,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </motion.footer>
+    </MotionFooter>
   );
 }

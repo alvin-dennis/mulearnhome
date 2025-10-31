@@ -1,12 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { enablers } from "@/data/data";
 
 export default function Benefits() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-      <motion.div
+      <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -20,7 +18,7 @@ export default function Benefits() {
         </h2>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,9 +62,9 @@ export default function Benefits() {
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -98,9 +96,9 @@ export default function Benefits() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -144,9 +142,9 @@ export default function Benefits() {
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -171,9 +169,9 @@ export default function Benefits() {
                 That Shapes Tomorrow&quot;
               </p>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 }

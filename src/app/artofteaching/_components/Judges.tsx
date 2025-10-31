@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import MentorCard from "./MentorCard";
 import { artOfTeachingMentors } from "@/data/data";
 

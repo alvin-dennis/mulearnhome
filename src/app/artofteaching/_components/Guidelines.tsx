@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { artOfTeachingUrls } from "@/data/data";
 import { cdnUrl } from "@/services/cdn";
 

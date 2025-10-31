@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
@@ -44,7 +42,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-16 md:pt-24">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -76,7 +74,12 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                   style={{ transform: "rotate(180deg)" }}
                 >
-                  <path d="M2 30c40-18 92-20 156-16" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+                  <path
+                    d="M2 30c40-18 92-20 156-16"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                  />
                   <path
                     d="M140 8l18 8-14 12"
                     stroke="currentColor"
@@ -89,12 +92,31 @@ export default function Hero() {
             </span>
 
             <span className="relative mt-2 inline-block">
-              <span className="absolute -left-8 -bottom-1 hidden h-12 w-6 md:block" aria-hidden>
-                <svg viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
+              <span
+                className="absolute -left-8 -bottom-1 hidden h-12 w-6 md:block"
+                aria-hidden
+              >
+                <svg
+                  viewBox="0 0 24 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-full w-full"
+                >
                   <circle cx="12" cy="8" r="6" fill="var(--mulearn-blackish)" />
-                  <path d="M12 14c6 0 7 10 7 16v12H5V30c0-6 1-16 7-16Z" fill="var(--mulearn-blackish)" />
-                  <path d="M5 30h14" stroke="var(--mulearn-blackish)" strokeWidth="5" />
-                  <path d="M16 16l6-4" stroke="var(--mulearn-blackish)" strokeWidth="4" />
+                  <path
+                    d="M12 14c6 0 7 10 7 16v12H5V30c0-6 1-16 7-16Z"
+                    fill="var(--mulearn-blackish)"
+                  />
+                  <path
+                    d="M5 30h14"
+                    stroke="var(--mulearn-blackish)"
+                    strokeWidth="5"
+                  />
+                  <path
+                    d="M16 16l6-4"
+                    stroke="var(--mulearn-blackish)"
+                    strokeWidth="4"
+                  />
                 </svg>
               </span>
               <span>industry ready</span>
@@ -106,11 +128,22 @@ export default function Hero() {
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
               >
-                <path d="M2 5C100 3 200 3 298 5" stroke="url(#u)" strokeWidth="6" strokeLinecap="round" />
+                <path
+                  d="M2 5C100 3 200 3 298 5"
+                  stroke="url(#u)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
                 <defs>
                   <linearGradient id="u" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: "var(--mulearn-trusty-blue)" }} />
-                    <stop offset="100%" style={{ stopColor: "var(--mulearn-duke-purple)" }} />
+                    <stop
+                      offset="0%"
+                      style={{ stopColor: "var(--mulearn-trusty-blue)" }}
+                    />
+                    <stop
+                      offset="100%"
+                      style={{ stopColor: "var(--mulearn-duke-purple)" }}
+                    />
                   </linearGradient>
                 </defs>
               </svg>
@@ -129,7 +162,7 @@ export default function Hero() {
               Join µLearn
             </Button>
           </Link>
-        </motion.div>
+        </MotionDiv>
       </div>
 
       <div

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { LearnerRoleTag } from '@/data/data';
 
 interface LearnerIntroProps {
@@ -8,7 +7,6 @@ interface LearnerIntroProps {
 const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
   return (
     <section className="py-16 md:py-20 container mx-auto px-4" aria-labelledby="learners-intro-heading">
-      {/* Who is a Learner */}
       <div className="text-center max-w-6xl mx-auto">
         <h2
           id="learners-intro-heading"

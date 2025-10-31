@@ -1,13 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { campusChapter } from "@/data/data";
 
 export default function Journey() {
   return (
     <section className="py-20 lg:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -31,7 +29,7 @@ export default function Journey() {
               const isLeft = index % 2 === 0;
 
               return (
-                <motion.div
+                <MotionDiv
                   key={step.title}
                   initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +65,7 @@ export default function Journey() {
                   </div>
 
                   <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <motion.div
+                    <MotionDiv
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
@@ -77,9 +75,9 @@ export default function Journey() {
                       <span className="text-mulearn-whitish font-bold text-lg">
                         {stepNumber}
                       </span>
-                    </motion.div>
+                    </MotionDiv>
                   </div>
-                </motion.div>
+                </MotionDiv>
               );
             })}
           </div>
@@ -89,7 +87,7 @@ export default function Journey() {
               const stepNumber = index + 1;
 
               return (
-                <motion.div
+                <MotionDiv
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -115,11 +113,11 @@ export default function Journey() {
                       {step.desc}
                     </p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               );
             })}
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

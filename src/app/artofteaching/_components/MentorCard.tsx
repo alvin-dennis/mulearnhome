@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";

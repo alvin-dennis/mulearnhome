@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "./_components/Hero";
 import WhyCollaborate from "./_components/Collabrate";
 import WhatYouCanDo from "./_components/Do";

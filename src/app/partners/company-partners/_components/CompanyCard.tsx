@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionA } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 
@@ -18,7 +16,7 @@ interface CompanyCardProps {
 
 export default function CompanyCard({ company, index }: CompanyCardProps) {
   return (
-    <motion.a
+    <MotionA
       href={company.website}
       target="_blank"
       rel="noopener noreferrer"
@@ -26,9 +24,9 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.05, delay: index * 0.05 }}
-      whileHover={{ 
+      whileHover={{
         scale: 1.05,
-        boxShadow: "0 10px 30px rgba(46, 133, 254, 0.2)"
+        boxShadow: "0 10px 30px rgba(46, 133, 254, 0.2)",
       }}
       className="group flex items-center justify-between hover:border-[var(--color-mulearn-trusty-blue)] rounded-lg p-3 sm:p-4 transition-all duration-300 bg-white"
     >
@@ -46,6 +44,6 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
           {company.name}
         </p>
       </div>
-    </motion.a>
+    </MotionA>
   );
 }

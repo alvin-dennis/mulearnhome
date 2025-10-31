@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { artOfTeachingUrls } from "@/data/data";
 
 const Archives = () => {
@@ -9,7 +6,7 @@ const Archives = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-gray-800 leading-tight mb-4">
-            Art of Teaching <span className="text-[var(--mulearn-trusty-blue)]">Archives</span>
+            Art of Teaching <span className="text-mulearn-trusty-blue">Archives</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 lg:w-2/5">
             Take a look at the top submissions by the teachers from the

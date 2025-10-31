@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { GalleryItem } from "@/lib/types";
 import {
   School,
@@ -70,7 +68,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
   };
 
   return (
-    <motion.div
+    <MotionDiv
       whileHover={{ scale: 1.05, y: -5 }}
       whileTap={{ scale: 0.95 }}
       className="bg-mulearn-whitish rounded-lg overflow-hidden cursor-pointer group border border-mulearn-greyish hover:shadow-xl transition-all "
@@ -101,7 +99,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-mulearn-blackish bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             whileHover={{ opacity: 1, scale: 1 }}
             className="text-mulearn-whitish text-center"
@@ -109,7 +107,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
             <div className="bg-mulearn-blackish bg-opacity-70 rounded-full p-3">
               <Eye size={20} />
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
 
@@ -145,6 +143,6 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
           </span>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

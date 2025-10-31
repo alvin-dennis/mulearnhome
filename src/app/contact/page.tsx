@@ -5,11 +5,10 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mulearn-gray-50 to-mulearn-whitish">
+    <div className="min-h-screen bg-linear-to-br from-mulearn-gray-50 to-mulearn-whitish">
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-28 lg:pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Text Content Card */}
             <div className="space-y-6 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight whitespace-nowrap">
                 {contactPage.hero.title.line1}{" "}
@@ -22,7 +21,6 @@ export default function ContactPage() {
                 {contactPage.hero.description}
               </p>
 
-              {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-mulearn-trusty-blue">
@@ -51,7 +49,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Image */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md">
                 <MuImage
@@ -66,7 +63,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-         
+
       <section className="relative mt-14 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -93,8 +90,12 @@ export default function ContactPage() {
                       <Mail className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-mulearn-blackish mb-1">Email</h4>
-                      <p className="text-mulearn-gray-600">{contactInfo.email}</p>
+                      <h4 className="font-semibold text-mulearn-blackish mb-1">
+                        Email
+                      </h4>
+                      <p className="text-mulearn-gray-600">
+                        {contactInfo.email}
+                      </p>
                     </div>
                   </div>
 
@@ -104,8 +105,12 @@ export default function ContactPage() {
                       <Phone className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-mulearn-blackish mb-1">Phone</h4>
-                      <p className="text-mulearn-gray-600">{contactInfo.phone}</p>
+                      <h4 className="font-semibold text-mulearn-blackish mb-1">
+                        Phone
+                      </h4>
+                      <p className="text-mulearn-gray-600">
+                        {contactInfo.phone}
+                      </p>
                     </div>
                   </div>
 
@@ -115,8 +120,12 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-mulearn-blackish mb-1">Location</h4>
-                      <p className="text-mulearn-gray-600">{contactInfo.address}</p>
+                      <h4 className="font-semibold text-mulearn-blackish mb-1">
+                        Location
+                      </h4>
+                      <p className="text-mulearn-gray-600">
+                        {contactInfo.address}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -142,7 +151,9 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-mulearn-blackish mb-1">Email</h4>
+                    <h4 className="font-semibold text-mulearn-blackish mb-1">
+                      Email
+                    </h4>
                     <p className="text-mulearn-gray-600">{contactInfo.email}</p>
                   </div>
                 </div>
@@ -153,7 +164,9 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-mulearn-blackish mb-1">Phone</h4>
+                    <h4 className="font-semibold text-mulearn-blackish mb-1">
+                      Phone
+                    </h4>
                     <p className="text-mulearn-gray-600">{contactInfo.phone}</p>
                   </div>
                 </div>
@@ -164,8 +177,12 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-mulearn-blackish mb-1">Location</h4>
-                    <p className="text-mulearn-gray-600">{contactInfo.address}</p>
+                    <h4 className="font-semibold text-mulearn-blackish mb-1">
+                      Location
+                    </h4>
+                    <p className="text-mulearn-gray-600">
+                      {contactInfo.address}
+                    </p>
                   </div>
                 </div>
               </div>

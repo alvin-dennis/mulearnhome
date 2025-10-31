@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { OnboardingStep } from '@/data/data';
 import { Lightbulb } from 'lucide-react';
 import { FaDiscord } from "react-icons/fa";
@@ -25,12 +25,10 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
   return (
     <div className="relative max-w-7xl mx-auto px-4">
       
-      {/* Desktop: Horizontal Flow with Connecting Lines */}
       <div className="hidden lg:flex justify-center items-start relative gap-8">
         
-        {/* Steps */}
         {data.map((step, index) => (
-          <React.Fragment key={step.step}>
+          <Fragment key={step.step}>
             <div className="flex flex-col items-center flex-1 max-w-sm text-center px-4 relative z-10">
               
               <div className="relative mb-6">
@@ -52,14 +50,13 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 <div className="w-20 h-1 bg-black"></div>
               </div>
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
 
-      {/* Mobile: Vertical Stack with Arrows */}
       <div className="lg:hidden flex flex-col items-center space-y-8">
         {data.map((step, index) => (
-          <React.Fragment key={step.step}>
+          <Fragment key={step.step}>
             <div className="flex flex-col items-center max-w-md text-center">
               
               <div className="relative mb-4">
@@ -82,7 +79,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 </svg>
               </div>
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </div>

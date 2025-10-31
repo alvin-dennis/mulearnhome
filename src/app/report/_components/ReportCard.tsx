@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, type Variants, easeOut } from "framer-motion";
+import { type Variants } from "framer-motion";
+import { MotionDiv } from "@/components/MuFramer";
 import { AnnualReport } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -19,7 +20,7 @@ const cardVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: easeOut,
+      ease: [0.42, 0, 0.58, 1],
       delay: 0.1,
     },
   },
@@ -36,12 +37,12 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
   };
 
   return (
-    <motion.div variants={cardVariants} whileHover="hover" className="w-full">
+    <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
       <Card className="overflow-hidden bg-white border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
           {/* Report Cover Image */}
           <div className="lg:w-1/3 relative overflow-hidden">
-            <div className="aspect-[4/3] lg:aspect-square bg-gradient-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
+            <div className="aspect-[4/3] lg:aspect-square bg-linear-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
               {report.imageUrl ? (
                 <MuImage
                   src={report.imageUrl}
@@ -67,7 +68,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
             </div>
 
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
           {/* Report Content */}
@@ -126,6 +127,6 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
           </div>
         </div>
       </Card>
-    </motion.div>
+    </MotionDiv>
   );
 }
