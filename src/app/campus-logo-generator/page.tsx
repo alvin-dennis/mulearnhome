@@ -298,7 +298,7 @@ export default function CampusLogoGenerator() {
                 <div className="relative group">
                   <div
                     ref={squareLogoRef}
-                    className="w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-white relative transform transition-all duration-300 overflow-hidden shadow-2xl"
+                    className="w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden shadow-2xl"
                     style={{
                       backgroundColor:
                         yipVariants.find((v) => v.value === formData.yipVariant)
@@ -335,7 +335,7 @@ export default function CampusLogoGenerator() {
                 </div>
 
                 <div
-                  className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-white relative overflow-hidden shadow-2xl"
+                  className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-mulearn-whitish relative overflow-hidden shadow-2xl"
                   style={{
                     backgroundColor:
                       yipVariants.find((v) => v.value === formData.yipVariant)
@@ -375,7 +375,7 @@ export default function CampusLogoGenerator() {
                 <div className="relative group">
                   <div
                     ref={squareLogoRef}
-                    className={`w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-white relative transform transition-all duration-300 overflow-hidden ${
+                    className={`w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden ${
                       formData.logoVariant === "Transparent Bg"
                         ? ""
                         : "shadow-2xl"
@@ -417,7 +417,7 @@ export default function CampusLogoGenerator() {
 
                 {formData.logoVariant !== "Transparent Bg" && (
                   <div
-                    className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-white relative overflow-hidden shadow-2xl"
+                    className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-mulearn-whitish relative overflow-hidden shadow-2xl"
                     style={{ backgroundColor: formData.backgroundColor }}
                   >
                     <StripesBackground />
@@ -512,7 +512,7 @@ export default function CampusLogoGenerator() {
                 <button
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                     formData.logoType === "MuLearn"
-                      ? "text-white"
+                      ? "text-mulearn-whitish"
                       : "bg-gray-100 hover:bg-gray-200"
                   }`}
                   style={{
@@ -534,7 +534,7 @@ export default function CampusLogoGenerator() {
                 <button
                   className={`flex-1 rounded-lg p-3 font-medium transition-all ${
                     formData.logoType === "YIP"
-                      ? "text-white"
+                      ? "text-mulearn-whitish"
                       : "bg-gray-100 hover:bg-gray-200"
                   }`}
                   style={{
@@ -575,7 +575,7 @@ export default function CampusLogoGenerator() {
                       key={variant.value}
                       className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                         formData.yipVariant === variant.value
-                          ? "text-white"
+                          ? "text-mulearn-whitish"
                           : "bg-gray-100 hover:bg-gray-200"
                       }`}
                       style={{
@@ -616,7 +616,7 @@ export default function CampusLogoGenerator() {
                   <button
                     className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                       formData.logoVariant === "Profile Pic"
-                        ? "text-white"
+                        ? "text-mulearn-whitish"
                         : "bg-gray-100 hover:bg-gray-200"
                     }`}
                     style={{
@@ -640,7 +640,7 @@ export default function CampusLogoGenerator() {
                   <button
                     className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                       formData.logoVariant === "Transparent Bg"
-                        ? "text-white"
+                        ? "text-mulearn-whitish"
                         : "bg-gray-100 hover:bg-gray-200"
                     }`}
                     style={{
@@ -758,7 +758,7 @@ export default function CampusLogoGenerator() {
                 <button
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                     formData.fileType === "PNG"
-                      ? "text-white"
+                      ? "text-mulearn-whitish"
                       : "bg-gray-100 hover:bg-gray-200"
                   }`}
                   style={{
@@ -780,7 +780,7 @@ export default function CampusLogoGenerator() {
                 <button
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${
                     formData.fileType === "SVG"
-                      ? "text-white"
+                      ? "text-mulearn-whitish"
                       : "bg-gray-100 hover:bg-gray-200"
                   }`}
                   style={{
@@ -803,7 +803,7 @@ export default function CampusLogoGenerator() {
             </div>
 
             <button
-              className="w-full rounded-lg p-4 text-white font-medium transition-all hover:opacity-90 active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-lg p-4 text-mulearn-whitish font-medium transition-all hover:opacity-90 active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 backgroundColor: "var(  --mulearn-trusty-blue )",
                 fontFamily: "var(--font-plus-jakarta)",

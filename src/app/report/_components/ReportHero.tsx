@@ -134,7 +134,7 @@ export default function ReportHero() {
                 className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300"
                 style={{ backgroundColor: "#2E85FE" }}
               >
-                <value.icon className="w-8 h-8 text-white" />
+                <value.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
               <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
                 {value.title}

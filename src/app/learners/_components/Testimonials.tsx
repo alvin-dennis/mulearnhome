@@ -76,14 +76,14 @@ const Testimonials: React.FC = () => {
 
           <button
             onClick={goToPrevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-gray-800 rounded-full p-2 transition"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Previous slide"
           >
             &#10094;
           </button>
           <button
             onClick={goToNextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-gray-800 rounded-full p-2 transition"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Next slide"
           >
             &#10095;
@@ -122,7 +122,7 @@ const Testimonials: React.FC = () => {
                   <div className="absolute inset-0 bg-linear-to-br from-[#4A7FE8] via-[#5B8FF5] to-[#6BA5FF]" />
                   <div className="absolute inset-0 bg-linear-radial from-white/10 via-transparent to-transparent" />
                   <div className="relative h-full p-6 flex flex-col justify-between">
-                    <p className="text-sm text-white leading-relaxed italic mb-4 drop-shadow-sm">
+                    <p className="text-sm text-mulearn-whitish leading-relaxed italic mb-4 drop-shadow-sm">
                       &quot;{testimonial.quote}&quot;
                     </p>
                     <div className="flex items-center space-x-3">
@@ -138,10 +138,10 @@ const Testimonials: React.FC = () => {
                         className="object-contain rounded-2xl"
                       />
                       <div>
-                        <p className="font-bold text-white text-base drop-shadow">
+                        <p className="font-bold text-mulearn-whitish text-base drop-shadow">
                           – {testimonial.name}
                         </p>
-                        <p className="text-sm text-white/90 font-medium drop-shadow">
+                        <p className="text-sm text-mulearn-whitish/90 font-medium drop-shadow">
                           {testimonial.designation}
                         </p>
                       </div>

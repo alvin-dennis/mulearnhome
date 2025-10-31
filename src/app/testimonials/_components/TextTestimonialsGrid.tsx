@@ -42,14 +42,14 @@ export default function TextTestimonialsGrid({
       {}
       <div className="text-center mb-12">
         <MotionH2
-          className="font-display text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4"
+          className=" text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4"
           variants={itemVariants}
           transition={itemTransition}
         >
           Community Voices
         </MotionH2>
         <MotionP
-          className="text-xl text-mulearn-gray-600 font-sans max-w-3xl mx-auto"
+          className="text-xl text-mulearn-gray-600  max-w-3xl mx-auto"
           variants={itemVariants}
           transition={itemTransition}
         >

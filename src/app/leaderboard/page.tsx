@@ -74,7 +74,7 @@ export default function LeaderBoard() {
               key={score.username}
               className={
                 index < 3
-                  ? "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white font-bold"
+                  ? "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-bold"
                   : ""
               }
             >

@@ -44,7 +44,7 @@ export default function Hero() {
             <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
+              className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
             >
               Join as a Company Partner
             </MotionButton>

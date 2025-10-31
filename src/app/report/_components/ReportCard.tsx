@@ -63,7 +63,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
             </div>
 
             {}
-            <div className="absolute top-4 left-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            <div className="absolute top-4 left-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
               {report.year}
             </div>
 
@@ -79,7 +79,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 <span>Published {formatDate(report.publishedDate)}</span>
               </div>
 
-              <h3 className="text-2xl lg:text-3xl font-bold text-mulearn-blackish mb-4 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300">
                 {report.title}
               </h3>
 

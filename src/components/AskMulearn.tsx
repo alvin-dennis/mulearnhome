@@ -29,7 +29,7 @@ const AskMulearn = () => {
     if (!messageText.trim()) return;
 
     const userMessage: Message = { sender: "user", text: messageText };
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setQuery("");
     setLoading(true);
 
@@ -42,12 +42,16 @@ const AskMulearn = () => {
 
       const data = await res.json().catch(() => null);
       const botReply =
-        data?.answer?.trim() || "Sorry, I couldn’t find an answer. Try rephrasing your question!";
-      setMessages(prev => [...prev, { sender: "bot", text: botReply }]);
+        data?.answer?.trim() ||
+        "Sorry, I couldn’t find an answer. Try rephrasing your question!";
+      setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
     } catch {
-      setMessages(prev => [
+      setMessages((prev) => [
         ...prev,
-        { sender: "bot", text: "⚠️ Something went wrong while fetching your answer." },
+        {
+          sender: "bot",
+          text: "⚠️ Something went wrong while fetching your answer.",
+        },
       ]);
     } finally {
       setLoading(false);
@@ -55,19 +59,22 @@ const AskMulearn = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 font-sans">
+    <div className="fixed bottom-20 right-6 md:bottom-40 md:right-10 flex justify-center">
       {!open ? (
         <button
           onClick={() => setOpen(true)}
-          className="bg-purple-600 text-white rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-200"
+          className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-[140px] text-mulearn-whitish p-3 shadow-lg hover:scale-110 transition-transform duration-200"
         >
           🤖
         </button>
       ) : (
         <div className="bg-white w-72 sm:w-80 max-h-[500px] flex flex-col rounded-xl shadow-xl border border-gray-200 overflow-hidden">
-          <div className="bg-purple-600 text-white flex items-center justify-between px-4 py-2">
+          <div className="bg-purple-600 text-mulearn-whitish flex items-center justify-between px-4 py-2">
             <h3 className="font-semibold text-md sm:text-lg">MUBot </h3>
-            <button onClick={() => setOpen(false)} className="text-white hover:text-gray-200">
+            <button
+              onClick={() => setOpen(false)}
+              className="text-mulearn-whitish hover:text-gray-200"
+            >
               ✕
             </button>
           </div>
@@ -84,7 +91,6 @@ const AskMulearn = () => {
             ))}
           </div>
 
-          {/* Chat */}
           <div className="flex-1 p-3 flex flex-col gap-2 overflow-y-auto bg-gray-50 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-gray-200">
             {messages.map((m, i) => (
               <div
@@ -92,13 +98,15 @@ const AskMulearn = () => {
                 className={`max-w-[75%] p-2 rounded-lg text-sm break-words ${
                   m.sender === "user"
                     ? "self-end bg-purple-100 text-purple-900"
-                    : "self-start bg-white text-gray-900 shadow-sm"
+                    : "self-start bg-white text-mulearn-blackish shadow-sm"
                 }`}
-                dangerouslySetInnerHTML={{ __html: (m.text || "").replace(/\n/g, "<br />") }}
+                dangerouslySetInnerHTML={{
+                  __html: (m.text || "").replace(/\n/g, "<br />"),
+                }}
               />
             ))}
             {loading && (
-              <div className="self-start bg-white p-2 rounded-lg text-gray-800 shadow-sm animate-pulse text-sm">
+              <div className="self-start bg-white p-2 rounded-lg text-mulearn-blackish shadow-sm animate-pulse text-sm">
                 MUBot is typing...
               </div>
             )}
@@ -110,14 +118,14 @@ const AskMulearn = () => {
               type="text"
               placeholder="Ask a question..."
               value={query}
-              onChange={e => setQuery(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && handleAsk()}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleAsk()}
               className="flex-1 rounded-full px-3 py-1.5 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
             />
             <button
               onClick={() => handleAsk()}
               disabled={loading || !query.trim()}
-              className="bg-purple-600 text-white px-3 py-1.5 rounded-full hover:bg-purple-700 disabled:opacity-50 transition-colors"
+              className="bg-purple-600 text-mulearn-whitish px-3 py-1.5 rounded-full hover:bg-purple-700 disabled:opacity-50 transition-colors"
             >
               Send
             </button>

@@ -26,10 +26,10 @@ const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({
     </div>
 
     <div className="mt-4">
-      <p className="text-lg font-bold text-gray-900 mb-1">{name}</p>
-      <p className="text-xl font-extrabold text-gray-900">
+      <p className="text-lg font-bold text-mulearn-blackish mb-1">{name}</p>
+      <p className="text-xl font-extrabold text-mulearn-blackish">
         {kp.toLocaleString()}
-        <span className="text-blue-600">KP</span>
+        <span className="text-mulearn-trusty-blue">KP</span>
       </p>
     </div>
   </div>
@@ -53,10 +53,10 @@ const SmallLearnerCard: React.FC<{
       />
 
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-white truncate drop-shadow">
+        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">
           {name}
         </p>
-        <p className="text-xs font-medium text-white/90 drop-shadow">
+        <p className="text-xs font-medium text-mulearn-whitish/90 drop-shadow">
           {kp.toLocaleString()} <span className="font-bold">KP</span>
         </p>
       </div>
@@ -79,8 +79,8 @@ const RankingSection: React.FC<RankingSectionProps> = ({ topLearners }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-center text-4xl sm:text-5xl font-extrabold mb-16 text-gray-900">
-        Top <span className="text-blue-600">Learners</span>
+      <h2 className="text-center text-4xl sm:text-5xl font-extrabold mb-16 text-mulearn-blackish">
+        Top <span className="text-mulearn-trusty-blue">Learners</span>
       </h2>
 
       <div className="flex flex-col md:flex-row items-end justify-center gap-8 md:gap-12 mb-16 max-w-5xl mx-auto w-full">

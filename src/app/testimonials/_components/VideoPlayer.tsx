@@ -170,10 +170,10 @@ export default function VideoPlayer({
                 />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-mulearn-blackish">
+                <h3 className=" font-semibold text-mulearn-blackish">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-mulearn-gray-600 font-sans">
+                <p className="text-sm text-mulearn-gray-600 ">
                   {testimonial.role}
                 </p>
               </div>

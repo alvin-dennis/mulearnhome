@@ -49,7 +49,7 @@ export default function Onboarding() {
                   />
                 </div>
 
-                <div className="absolute -right-2 -top-2 flex h-10 w-10 items-center justify-center rounded-full bg-mulearn-blackish text-xs font-bold text-white shadow-md">
+                <div className="absolute -right-2 -top-2 flex h-10 w-10 items-center justify-center rounded-full bg-mulearn-blackish text-xs font-bold text-mulearn-whitish shadow-md">
                   {step.number}
                 </div>
               </div>

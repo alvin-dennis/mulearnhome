@@ -57,8 +57,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               interests!
             </p>
             <Button
-              variant="mulearn"
-              className="bg-mulearn-whitish text-mulearn-trusty-blue mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
+              className="bg-mulearn-whitish text-mulearn-trusty-blue rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
               onClick={() =>
                 redirect?.(refreshToken ? "/dashboard/home" : "/register")
               }

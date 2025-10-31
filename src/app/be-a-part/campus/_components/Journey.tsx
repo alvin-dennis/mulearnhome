@@ -106,7 +106,7 @@ export default function Journey() {
                   </div>
 
                   <div className="bg-mulearn-whitish p-6 rounded-xl shadow-sm border">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-lg font-bold text-mulearn-blackish mb-2">
                       {step.title}
                     </h3>
                     <p className="text-mulearn-gray-600 text-sm leading-relaxed">

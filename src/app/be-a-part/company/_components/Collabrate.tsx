@@ -216,7 +216,7 @@ export default function WhyCollaborate() {
                 {feature.title}
               </h3>
               <p
-                className={`text-center font-thin text-black leading-relaxed transition-all duration-300 ${
+                className={`text-center font-thin text-mulearn-blackish leading-relaxed transition-all duration-300 ${
                   index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
                 }`}
               >
@@ -246,7 +246,7 @@ export default function WhyCollaborate() {
               <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-center font-thin text-black leading-relaxed text-base sm:text-lg">
+              <p className="text-center font-thin text-mulearn-blackish leading-relaxed text-base sm:text-lg">
                 {feature.description}
               </p>
             </MotionDiv>

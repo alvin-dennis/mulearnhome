@@ -340,7 +340,7 @@ export default function InterestGroups() {
                 </div>
 
                 <div className="relative z-10 flex flex-col p-6">
-                  <h3 className="text-xl font-bold text-mulearn-blackish mb-2 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 ">
+                  <h3 className="text-xl font-bold mb-2 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 ">
                     {group.name}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 flex-grow">
@@ -399,8 +399,7 @@ export default function InterestGroups() {
             rel="noopener noreferrer"
           >
             <Button
-              variant={"mulearn"}
-              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
             >
               Join an Interest Group <ArrowRight className="w-5 h-5" />
             </Button>

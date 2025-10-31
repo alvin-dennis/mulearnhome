@@ -88,10 +88,10 @@ export default function TextTestimonialCard({
             />
           </div>
           <div>
-            <h3 className="font-display font-semibold text-mulearn-blackish">
+            <h3 className=" font-semibold text-mulearn-blackish">
               {testimonial.name}
             </h3>
-            <p className="text-sm text-mulearn-gray-600 font-sans">
+            <p className="text-sm text-mulearn-gray-600 ">
               {testimonial.role}
               {testimonial.company && ` • ${testimonial.company}`}
             </p>
@@ -111,7 +111,7 @@ export default function TextTestimonialCard({
 
       {}
       <blockquote className="mb-4">
-        <p className="text-mulearn-gray-700 font-sans leading-relaxed">
+        <p className="text-mulearn-gray-700  leading-relaxed">
           "{testimonial.quote}"
         </p>
       </blockquote>
@@ -124,10 +124,10 @@ export default function TextTestimonialCard({
           {testimonial.socialProof && (
             <>
               {getSocialIcon(testimonial.socialProof)}
-              <span className="font-sans">{testimonial.socialProof}</span>
+              <span className="">{testimonial.socialProof}</span>
             </>
           )}
-          <span className="font-sans">{formatDate(testimonial.date)}</span>
+          <span className="">{formatDate(testimonial.date)}</span>
         </div>
       </div>
     </div>

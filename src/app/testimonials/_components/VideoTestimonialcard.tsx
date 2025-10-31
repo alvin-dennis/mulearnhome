@@ -151,14 +151,14 @@ export default function VideoTestimonialCard({
         <div className="flex flex-col justify-center p-8">
           {}
           <div className="mb-6">
-            <h3 className="font-display text-2xl font-bold text-mulearn-blackish mb-2">
+            <h3 className=" text-2xl font-bold text-mulearn-blackish mb-2">
               {testimonial.name}
             </h3>
-            <p className="text-lg text-mulearn-gray-600 font-sans mb-1">
+            <p className="text-lg text-mulearn-gray-600  mb-1">
               {testimonial.role}
             </p>
             {testimonial.company && (
-              <p className="text-base text-mulearn-gray-500 font-sans">
+              <p className="text-base text-mulearn-gray-500 ">
                 {testimonial.company}
               </p>
             )}
@@ -166,7 +166,7 @@ export default function VideoTestimonialCard({
 
           {}
           <blockquote className="mb-6">
-            <p className="text-lg font-sans font-light text-mulearn-gray-700 leading-relaxed">
+            <p className="text-lg  font-light text-mulearn-gray-700 leading-relaxed">
               {testimonial.quote}
             </p>
           </blockquote>
@@ -174,7 +174,7 @@ export default function VideoTestimonialCard({
           {}
           <div className="flex items-center gap-3">
             <StarRating rating={5} />
-            <span className="text-base font-sans font-semibold text-mulearn-gray-700">
+            <span className="text-base  font-semibold text-mulearn-gray-700">
               {testimonial.type === "learner"
                 ? "Learning Excellence"
                 : testimonial.type === "mentor"

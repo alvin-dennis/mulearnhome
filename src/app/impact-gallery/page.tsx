@@ -22,7 +22,7 @@ export default function ImpactGallery() {
           <MotionH1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-white "
+            className="text-5xl md:text-6xl font-bold mb-6 text-mulearn-whitish "
           >
             μLearn Impact Gallery
           </MotionH1>
@@ -30,7 +30,7 @@ export default function ImpactGallery() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-white/90 "
+            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-mulearn-whitish/90 "
           >
             Showcasing our journey, milestones, and the incredible impact
             we&apos;ve created together

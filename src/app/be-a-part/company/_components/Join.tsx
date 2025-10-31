@@ -48,7 +48,7 @@ export default function HowToJoin() {
                     </svg>
                     <div className="relative z-20 flex-shrink-0 ml-[22px]">
                       <div className="w-[90px] h-[90px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
-                        <span className="text-white text-5xl font-bold">
+                        <span className="text-mulearn-whitish text-5xl font-bold">
                           {step.number}
                         </span>
                       </div>
@@ -58,7 +58,7 @@ export default function HowToJoin() {
                       <h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-lg text-black max-w-xl">
+                      <p className="text-lg text-mulearn-blackish max-w-xl">
                         {step.description}
                       </p>
                     </div>
@@ -80,7 +80,7 @@ export default function HowToJoin() {
 
                     <div className="relative z-20 flex-shrink-0 mr-[22px]">
                       <div className="w-[90px] h-[90px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
-                        <span className="text-white text-5xl font-bold">
+                        <span className="text-mulearn-whitish text-5xl font-bold">
                           {step.number}
                         </span>
                       </div>
@@ -90,7 +90,7 @@ export default function HowToJoin() {
                       <h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-lg text-black max-w-xl ml-auto">
+                      <p className="text-lg text-mulearn-blackish max-w-xl ml-auto">
                         {step.description}
                       </p>
                     </div>
@@ -125,7 +125,7 @@ export default function HowToJoin() {
                 className="flex flex-col items-center text-center gap-4 p-6 border-2 border-[#EEE] rounded-lg bg-white"
               >
                 <div className="w-[100px] h-[100px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">
+                  <span className="text-mulearn-whitish text-4xl font-bold">
                     {step.number}
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export default function HowToJoin() {
                 <h3 className="text-2xl font-bold text-mulearn-trusty-blue leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-lg text-black leading-snug">
+                <p className="text-lg text-mulearn-blackish leading-snug">
                   {step.description}
                 </p>
               </MotionDiv>
@@ -153,7 +153,7 @@ export default function HowToJoin() {
                 "https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
               )
             }
-            className="cursor-pointer bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:opacity-90 text-white px-4 py-3 text-md font-bold rounded-[20px] transition-all"
+            className="cursor-pointer bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:opacity-90 text-mulearn-whitish px-4 py-3 text-md font-bold rounded-[20px] transition-all"
           >
             Join as a Company Partner
           </button>

@@ -1,4 +1,4 @@
-import { MotionH2, MotionDiv} from "@/components/MuFramer";
+import { MotionH2, MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { companyDo, companyImages } from "@/data/data";
 
@@ -35,7 +35,7 @@ export default function WhatYouCanDo() {
                   <h3 className="text-xl font-bold text-mulearn-trusty-blue leading-tight">
                     {action.title}
                   </h3>
-                  <p className="text-lg text-black leading-snug max-w-[400px]">
+                  <p className="text-lg text-mulearn-blackish leading-snug max-w-[400px]">
                     {action.description}
                   </p>
                 </div>

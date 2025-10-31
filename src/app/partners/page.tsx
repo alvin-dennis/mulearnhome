@@ -49,7 +49,7 @@ export default function PartnersPage() {
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl text-mulearn-blackish max-w-2xl mx-auto lg:mx-0">
                 Collaborating with incredible organizations and communities to
                 empower learners and drive innovation across the ecosystem.
               </p>
@@ -91,7 +91,7 @@ export default function PartnersPage() {
                 Partnership Network
               </span>
             </h2>
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+            <p className="text-mulearn-blackish text-lg max-w-2xl mx-auto">
               Discover the communities and companies that make our ecosystem
               thrive
             </p>
@@ -127,7 +127,7 @@ export default function PartnersPage() {
                       </h2>
                     </div>
 
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
                       Educational institutions, student communities, and
                       learning groups that share our vision of accessible,
                       peer-driven education and collaborative growth.
@@ -186,7 +186,7 @@ export default function PartnersPage() {
                       </h2>
                     </div>
 
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
                       Industry leaders, startups, and organizations providing
                       real-world opportunities, mentorship, and resources to
                       help learners succeed in their careers.
@@ -268,7 +268,9 @@ export default function PartnersPage() {
                 <h3 className="text-xl font-bold text-[#212121] mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-700 text-sm">{benefit.description}</p>
+                <p className="text-mulearn-blackish text-sm">
+                  {benefit.description}
+                </p>
               </MotionDiv>
             ))}
           </div>
@@ -295,14 +297,14 @@ export default function PartnersPage() {
                 transition={{ delay: 0.2, type: "spring" }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-4">
-                  <Rocket className="w-8 h-8 text-white" />
+                  <Rocket className="w-8 h-8 text-mulearn-whitish" />
                 </div>
               </MotionDiv>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-whitish">
                 Interested in Partnering?
               </h2>
-              <p className="text-white/90 text-base sm:text-lg">
+              <p className="text-mulearn-whitish/90 text-base sm:text-lg">
                 Join our growing network of partners and help us create
                 impactful learning experiences for thousands of learners
                 worldwide.

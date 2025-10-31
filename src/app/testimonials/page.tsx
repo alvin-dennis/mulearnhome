@@ -54,7 +54,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.8 }}
           >
             <MotionH1
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
+              className=" text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -65,7 +65,7 @@ export default function TestimonialsPage() {
               </span>
             </MotionH1>
             <MotionP
-              className="text-xl md:text-2xl text-mulearn-gray-600 font-sans max-w-4xl mx-auto leading-relaxed mb-8"
+              className="text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -88,10 +88,10 @@ export default function TestimonialsPage() {
                     <div className="flex items-center justify-center w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-xl mx-auto mb-3">
                       <Icon className="w-6 h-6 text-mulearn-whitish" />
                     </div>
-                    <div className="font-display text-2xl font-bold text-mulearn-blackish">
+                    <div className=" text-2xl font-bold text-mulearn-blackish">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-mulearn-gray-500 font-sans uppercase tracking-wide">
+                    <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide">
                       {stat.label}
                     </div>
                   </div>
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
             <div className="flex bg-mulearn-gray-100 rounded-2xl p-1 my-6">
               <button
                 onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-sans font-medium transition-all duration-300 ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
                   activeTab === "video"
                     ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
                     : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
@@ -120,7 +120,7 @@ export default function TestimonialsPage() {
               </button>
               <button
                 onClick={() => setActiveTab("text")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-sans font-medium transition-all duration-300 ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
                   activeTab === "text"
                     ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
                     : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
@@ -148,7 +148,7 @@ export default function TestimonialsPage() {
               <div className="absolute top-0 left-0 w-full h-full border-4 border-mulearn-trusty-blue border-t-transparent rounded-full animate-spin"></div>
             </MotionDiv>
             <MotionP
-              className="text-xl text-mulearn-gray-600 font-medium font-sans"
+              className="text-xl text-mulearn-gray-600 font-medium "
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -176,10 +176,10 @@ export default function TestimonialsPage() {
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Video className="w-10 h-10 text-mulearn-gray-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 font-display">
+                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
                   No Video Testimonials Available
                 </h3>
-                <p className="text-mulearn-gray-500 font-sans text-lg">
+                <p className="text-mulearn-gray-500  text-lg">
                   Check back soon for video testimonials from our community
                   members.
                 </p>
@@ -191,10 +191,10 @@ export default function TestimonialsPage() {
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <MessageCircle className="w-10 h-10 text-mulearn-gray-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 font-display">
+                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
                   No Text Testimonials Available
                 </h3>
-                <p className="text-mulearn-gray-500 font-sans text-lg">
+                <p className="text-mulearn-gray-500  text-lg">
                   Check back soon for community feedback and stories.
                 </p>
               </div>
@@ -212,10 +212,10 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-mulearn-blackish mb-6">
+            <h2 className=" text-4xl md:text-5xl font-bold text-mulearn-blackish mb-6">
               Ready to Share Your Story?
             </h2>
-            <p className="text-xl text-mulearn-gray-600 mb-10 font-sans max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-mulearn-gray-600 mb-10  max-w-3xl mx-auto leading-relaxed">
               Join thousands of learners, mentors, and partners who are
               transforming education through collaborative learning
             </p>

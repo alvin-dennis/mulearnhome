@@ -57,7 +57,7 @@ export default function Benefits() {
                 height="32"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="text-white/30"
+                className="text-mulearn-whitish/30"
               >
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
@@ -137,7 +137,7 @@ export default function Benefits() {
                 height="32"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="text-white/30"
+                className="text-mulearn-whitish/30"
               >
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>

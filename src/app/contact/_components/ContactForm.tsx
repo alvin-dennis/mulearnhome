@@ -679,7 +679,7 @@ export default function ContactForm() {
 
         <Button
           type="submit"
-          className="w-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white py-3"
+          className="w-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish py-3"
         >
           <Send className="w-4 h-4 mr-2" />
           Send Message

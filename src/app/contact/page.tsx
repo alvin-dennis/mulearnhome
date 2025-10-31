@@ -84,7 +84,7 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-white" />
+                      <Mail className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-mulearn-blackish mb-1">
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-white" />
+                      <Phone className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-mulearn-blackish mb-1">
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-white" />
+                      <MapPin className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-mulearn-blackish mb-1">
@@ -140,7 +140,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-white" />
+                    <Mail className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-mulearn-blackish mb-1">
@@ -152,7 +152,7 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-white" />
+                    <Phone className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-mulearn-blackish mb-1">
@@ -164,7 +164,7 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-white" />
+                    <MapPin className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-mulearn-blackish mb-1">

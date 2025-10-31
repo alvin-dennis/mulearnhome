@@ -197,7 +197,7 @@ export default function Hero() {
                 boxShadow: "0 8px 30px rgba(46,133,254,0.15)",
               }}
             >
-              <span className="font-sans text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
                 Build Brighter Futures
               </span>
               <svg
@@ -208,7 +208,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className="font-sans text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
                 Make Learning Accessible
               </span>
               <svg
@@ -219,7 +219,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className="font-sans text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
                 Transform Education Today
               </span>
             </div>

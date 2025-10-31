@@ -27,7 +27,7 @@ export default function CompanyPartners() {
                 <br />
                 Companies
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 lg:w-[90%]">
+              <p className="text-base sm:text-lg lg:text-xl text-mulearn-blackish max-w-2xl mx-auto lg:mx-0 lg:w-[90%]">
                 There are multiple opportunities around you right now. All you
                 have to do is look out for the best one that suits you as well
                 as your passion and skills.
@@ -69,7 +69,7 @@ export default function CompanyPartners() {
                 Onboardings
               </span>
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-700 text-center lg:text-left max-w-3xl">
+            <p className="text-sm sm:text-base lg:text-lg text-mulearn-blackish text-center lg:text-left max-w-3xl">
               µLearn has partnered with multiple Companies to provide the
               student the best Resources and Opportunities possible
             </p>

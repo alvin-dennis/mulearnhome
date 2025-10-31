@@ -89,7 +89,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           <Button
             variant="ghost"
             onClick={prevTestimonial}
-            className="w-9 h-9 rounded-full bg-white shadow-md hover:bg-mulearn-trusty-blue hover:text-white transition-all duration-300 flex items-center justify-center"
+            className="w-9 h-9 rounded-full bg-white shadow-md hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish transition-all duration-300 flex items-center justify-center"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -100,7 +100,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           <Button
             variant="ghost"
             onClick={nextTestimonial}
-            className="w-9 h-9 rounded-full bg-white shadow-md hover:bg-mulearn-trusty-blue hover:text-white transition-all duration-300 flex items-center justify-center"
+            className="w-9 h-9 rounded-full bg-white shadow-md hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish transition-all duration-300 flex items-center justify-center"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
@@ -146,7 +146,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
 
         {}
         <div className="flex justify-center items-center mt-6">
-          <div className="text-mulearn-gray-600 font-sans font-medium">
+          <div className="text-mulearn-gray-600  font-medium">
             <span className="text-xl font-bold text-mulearn-blackish">
               {activeIndex + 1}
             </span>

@@ -63,7 +63,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
             className={`flex items-center ${
               event.isUpcoming
                 ? "bg-white text-mulearn-trusty-blue border border-mulearn-trusty-blue"
-                : "bg-gray-100 text-gray-800"
+                : "bg-gray-100 text-mulearn-blackish"
             }`}
           >
             <Clock className="w-3 h-3 mr-1" />
@@ -123,8 +123,8 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
             variant={event.isUpcoming ? "outline" : "outline"}
             className={`gap-1 px-4 py-2 text-sm rounded-full ${
               event.isUpcoming
-                ? "bg-white text-mulearn-trusty-blue border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-white text-mulearn-trusty-blue border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish"
+                : "bg-gray-100 text-mulearn-blackish hover:bg-gray-200"
             }`}
           >
             <PlayCircle className="w-4 h-4" />

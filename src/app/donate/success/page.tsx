@@ -48,7 +48,7 @@ export default function DonateSuccessPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-white to-purple-50">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--mulearn-trusty-blue)] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-mulearn-trusty-blue mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading...</p>
         </div>
       </div>
@@ -61,16 +61,16 @@ export default function DonateSuccessPage() {
         {}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {}
-          <div className="bg-linear-to-r from-[var(--mulearn-trusty-blue)] to-[var(--mulearn-duke-purple)] px-8 py-12 text-center">
+          <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-8 py-12 text-center">
             <div className="flex justify-center mb-4">
               <div className="bg-white rounded-full p-3">
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-mulearn-whitish mb-2">
               Thank You!
             </h1>
-            <p className="text-blue-100 text-lg">
+            <p className="text-mulearn-trusty-blue text-lg">
               Your donation has been received successfully
             </p>
           </div>
@@ -81,25 +81,25 @@ export default function DonateSuccessPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Donation Amount</p>
-                  <p className="text-3xl font-bold text-[var(--mulearn-trusty-blue)]">
+                  <p className="text-3xl font-bold text-mulearn-trusty-blue">
                     ₹{donationData.amount.toLocaleString("en-IN")}
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Donation Type</p>
-                  <p className="text-xl font-semibold text-gray-900">
+                  <p className="text-xl font-semibold text-mulearn-blackish">
                     {formatDonationType(donationData.donationType)}
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Donor Name</p>
-                  <p className="text-lg font-medium text-gray-900">
+                  <p className="text-lg font-medium text-mulearn-blackish">
                     {donationData.name}
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Email</p>
-                  <p className="text-lg font-medium text-gray-900 break-all">
+                  <p className="text-lg font-medium text-mulearn-blackish break-all">
                     {donationData.email}
                   </p>
                 </div>
@@ -109,9 +109,9 @@ export default function DonateSuccessPage() {
             {}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[var(--mulearn-trusty-blue)] mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-mulearn-trusty-blue mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-mulearn-blackish leading-relaxed">
                     A confirmation email with your donation receipt has been
                     sent to{" "}
                     <span className="font-semibold">{donationData.email}</span>.
@@ -125,7 +125,7 @@ export default function DonateSuccessPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handleDownloadReceipt}
-                className="flex-1 h-12 bg-[var(--mulearn-trusty-blue)] hover:bg-[var(--mulearn-duke-purple)] text-white"
+                className="flex-1 h-12 bg-mulearn-trusty-blue hover:bg-mulearn-duke-purple text-mulearn-whitish"
               >
                 <Download className="w-5 h-5 mr-2" />
                 Download Receipt
@@ -152,7 +152,7 @@ export default function DonateSuccessPage() {
                 If you have any questions, please contact us at{" "}
                 <a
                   href="mailto:donate@mulearn.org"
-                  className="text-[var(--mulearn-trusty-blue)] hover:underline"
+                  className="text-mulearn-trusty-blue hover:underline"
                 >
                   donate@mulearn.org
                 </a>

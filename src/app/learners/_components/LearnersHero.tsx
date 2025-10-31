@@ -24,19 +24,17 @@ const LearnersHero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-3xl leading-tight">
-            <span className="text-gray-900">Unlock Your</span>
+            <span className="text-mulearn-blackish">Unlock Your</span>
             <br />
-            <span className="text-gray-900">Potential with</span>
+            <span className="text-mulearn-blackish">Potential with</span>
             <br />
-            <span className="text-[color:var(--mulearn-trusty-blue)]">
-              μLearn
-            </span>
+            <span className="text--mulearn-trusty-blue">μLearn</span>
           </h1>
         </div>
 
         <div className="flex justify-center mb-8">
           <svg
-            className="w-28 h-8 text-blue-500"
+            className="w-28 h-8 text-mulearn-trusty-blue"
             viewBox="0 0 120 30"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -104,11 +102,11 @@ const LearnersHero = () => {
 
 const RibbonItem = ({ text }: { text: string }) => (
   <div className="flex items-center whitespace-nowrap px-2 sm:px-3">
-    <span className="text-lg sm:text-xl text-gray-900 mr-2">✦</span>
-    <span className="text-base sm:text-lg lg:text-xl font-bold text-blue-700">
+    <span className="text-lg sm:text-xl text-mulearn-blackish mr-2">✦</span>
+    <span className="text-base sm:text-lg lg:text-xl font-bold text-mulearn-trusty-blue">
       {text}
     </span>
-    <span className="text-lg sm:text-xl text-gray-900 ml-2">✦</span>
+    <span className="text-lg sm:text-xl text-mulearn-blackish ml-2">✦</span>
   </div>
 );
 

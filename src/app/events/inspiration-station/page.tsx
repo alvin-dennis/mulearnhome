@@ -47,7 +47,7 @@ export default function InspirationStationPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-white hover:brightness-110">
+                <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
                   <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                   Listen Live
                 </Button>
@@ -166,7 +166,7 @@ export default function InspirationStationPage() {
               to tell, then you can request them to come to the Inspiration
               Station Radio and share their story with our listeners.
             </p>
-            <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-white hover:brightness-110">
+            <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
               <Users className="w-4 h-4 md:w-5 md:h-5" />
               Apply Now
             </Button>
