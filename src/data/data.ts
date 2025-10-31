@@ -106,6 +106,10 @@ export const navItems = [
     href: "/learning-circle",
     submenu: {
       Explore: [
+              {
+          label: "Level Structure",
+          href: "/levelstructure",
+        },
         {
           label: "Interest Groups",
           href: "/interest-groups",
