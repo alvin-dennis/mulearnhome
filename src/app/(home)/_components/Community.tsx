@@ -1,4 +1,4 @@
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";

@@ -1,4 +1,4 @@
-import { type Variants, easeOut } from "framer-motion";
+import { type Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
@@ -69,7 +69,7 @@ export default function Events() {
               key={type}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true }}
               variants={fadeInUp}
               className="mb-12"
             >

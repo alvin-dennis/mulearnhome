@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionSection, MotionDiv, MotionH2 } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {

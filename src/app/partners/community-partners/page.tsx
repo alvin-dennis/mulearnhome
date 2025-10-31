@@ -2,7 +2,7 @@ import { communityPartners } from "@/data/data";
 import CommunityCard from "@/app/partners/community-partners/_components/CommunityCard";
 import { cdnUrl } from "@services/cdn";
 import MuImage from "@/components/MuImage";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import { Partner } from "@/lib/types";
 

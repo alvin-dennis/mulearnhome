@@ -1,7 +1,7 @@
 import MuImage from "@/components/MuImage";
 import { enablers } from "@/data/data";
 import { BiSolidRightArrow } from "react-icons/bi";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 
 export default function Benefits() {

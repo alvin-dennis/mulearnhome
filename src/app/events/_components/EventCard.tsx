@@ -25,7 +25,9 @@ export default function EventCard({ event }: Props) {
     <MotionDiv
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-        w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"} flex flex-col`}
+    w-full h-auto sm:w-[380px] ${
+      event.image ? "h-[360px]" : "h-[280px]"
+    } flex flex-col`}
     >
       {event.image && (
         <div className="w-full h-20">

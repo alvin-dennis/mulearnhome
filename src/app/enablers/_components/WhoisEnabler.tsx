@@ -1,4 +1,4 @@
-import { type Variants, easeOut } from "framer-motion";
+import { type Variants } from "framer-motion";
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
 
 export default function WhoIsEnabler() {

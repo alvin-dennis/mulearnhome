@@ -1,4 +1,4 @@
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { comparisons } from "@/data/data";
 

@@ -1,4 +1,4 @@
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import {
   Table,

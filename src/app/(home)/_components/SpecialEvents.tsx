@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import SpecialEventCard from "@/app/(home)/_components/SpecialEventCard";
 import { Button } from "@/components/ui/button";

@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 import { enablers } from "@/data/data";
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 
 export default function Programs() {

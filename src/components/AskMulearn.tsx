@@ -65,7 +65,6 @@ const AskMulearn = () => {
         </button>
       ) : (
         <div className="bg-white w-72 sm:w-80 max-h-[500px] flex flex-col rounded-xl shadow-xl border border-gray-200 overflow-hidden">
-          {/* Header */}
           <div className="bg-purple-600 text-white flex items-center justify-between px-4 py-2">
             <h3 className="font-semibold text-md sm:text-lg">MUBot </h3>
             <button onClick={() => setOpen(false)} className="text-white hover:text-gray-200">
@@ -73,7 +72,6 @@ const AskMulearn = () => {
             </button>
           </div>
 
-          {/* Suggested Questions */}
           <div className="bg-gray-50 px-3 py-2 flex flex-wrap gap-1 border-b border-gray-200">
             {suggestedQuestions.map((q, i) => (
               <button
@@ -107,7 +105,6 @@ const AskMulearn = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <div className="p-2 border-t border-gray-200 flex gap-2 bg-gray-100">
             <input
               type="text"

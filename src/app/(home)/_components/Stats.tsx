@@ -1,6 +1,6 @@
 "use client";
 
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Variants, easeOut } from "framer-motion";
+import { Variants } from "framer-motion";
 import {
   MotionHeader,
   MotionDiv,
