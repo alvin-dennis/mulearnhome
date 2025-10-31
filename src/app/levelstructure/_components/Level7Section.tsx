@@ -21,7 +21,6 @@ export default function Level7Section() {
       className="min-h-screen relative bg-mulearn-whitish flex items-center py-20"
       id="level-7"
     >
-      {/* Background Ring */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
         <MuImage
           src="/assets/levelstructure/ring.svg"
@@ -32,7 +31,6 @@ export default function Level7Section() {
         />
       </div>
 
-      {/* Centered Content */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +38,6 @@ export default function Level7Section() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-16"
         >
-          {/* Main Heading */}
           <div className="space-y-6">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-mulearn-blackish leading-tight">
               Welcome to the{" "}
@@ -52,7 +49,6 @@ export default function Level7Section() {
             </p>
           </div>
 
-          {/* Key Pillars */}
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="space-y-3">
               <h3 className="text-2xl font-bold text-mulearn-trusty-blue">
@@ -85,7 +81,6 @@ export default function Level7Section() {
             </div>
           </div>
 
-          {/* Success Pathways */}
           <div className="space-y-8 max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold text-mulearn-blackish">
               Where Learners Go
@@ -142,7 +137,6 @@ export default function Level7Section() {
             </div>
           </div>
 
-          {/* Final Statement */}
           <div className="space-y-6 pt-8">
             <div className="w-20 h-1 bg-mulearn-duke-purple rounded-full mx-auto"></div>
             <p className="text-lg md:text-xl text-mulearn-blackish leading-relaxed max-w-3xl mx-auto">

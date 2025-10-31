@@ -18,7 +18,6 @@ export default function DonateSuccessPage() {
   const [donationData, setDonationData] = useState<DonationData | null>(null);
 
   useEffect(() => {
-    // Retrieve donation data from localStorage
     const storedData = localStorage.getItem("donationData");
     if (storedData) {
       try {
@@ -26,18 +25,15 @@ export default function DonateSuccessPage() {
         setDonationData(data);
       } catch (error) {
         console.error("Failed to parse donation data:", error);
-        // Redirect to donate page if data is invalid
+
         setTimeout(() => router.push("/donate"), 3000);
       }
     } else {
-      // Redirect to donate page if no data found
       setTimeout(() => router.push("/donate"), 3000);
     }
   }, [router]);
 
   const handleDownloadReceipt = () => {
-    // Implement receipt download logic here
-    // This could generate a PDF or download from the backend
     console.log("Download receipt clicked", donationData);
   };
 
@@ -62,9 +58,9 @@ export default function DonateSuccessPage() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        {/* Success Card */}
+        {}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* Header with Success Icon */}
+          {}
           <div className="bg-linear-to-r from-[var(--mulearn-trusty-blue)] to-[var(--mulearn-duke-purple)] px-8 py-12 text-center">
             <div className="flex justify-center mb-4">
               <div className="bg-white rounded-full p-3">
@@ -79,7 +75,7 @@ export default function DonateSuccessPage() {
             </p>
           </div>
 
-          {/* Donation Details */}
+          {}
           <div className="px-8 py-10">
             <div className="bg-gray-50 rounded-xl p-6 mb-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -110,7 +106,7 @@ export default function DonateSuccessPage() {
               </div>
             </div>
 
-            {/* Information Message */}
+            {}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[var(--mulearn-trusty-blue)] mt-0.5 flex-shrink-0" />
@@ -125,7 +121,7 @@ export default function DonateSuccessPage() {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handleDownloadReceipt}
@@ -144,7 +140,7 @@ export default function DonateSuccessPage() {
               </Button>
             </div>
 
-            {/* Thank You Message */}
+            {}
             <div className="mt-10 text-center">
               <p className="text-gray-600 leading-relaxed">
                 Your generous contribution helps us empower thousands of

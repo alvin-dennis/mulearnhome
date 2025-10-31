@@ -29,7 +29,6 @@ export default function Report() {
   };
 
   const handleDownload = (report: AnnualReport) => {
-    // Create a temporary anchor element to trigger download
     const link = document.createElement("a");
     link.href = report.pdfUrl;
     link.download = `${report.title}.pdf`;

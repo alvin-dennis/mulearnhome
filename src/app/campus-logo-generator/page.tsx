@@ -239,7 +239,6 @@ export default function CampusLogoGenerator() {
       }-logo.${formData.fileType.toLowerCase()}`;
       link.href = dataUrl;
 
-      // Trigger download
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

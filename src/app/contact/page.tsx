@@ -67,7 +67,6 @@ export default function ContactPage() {
       <section className="relative mt-14 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Content */}
             <div className="space-y-8 flex flex-col justify-center">
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-mulearn-blackish leading-tight">
@@ -78,13 +77,11 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Contact Details - Desktop Only */}
               <div className="space-y-6 hidden lg:block">
                 <h3 className="text-xl md:text-2xl font-semibold text-mulearn-blackish">
                   Other Ways to Connect
                 </h3>
                 <div className="space-y-4">
-                  {/* Email */}
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-white" />
@@ -99,7 +96,6 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Phone */}
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5 text-white" />
@@ -114,7 +110,6 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Location */}
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-white" />
@@ -132,20 +127,17 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Form */}
             <div className="flex justify-center lg:justify-end">
               <div className="w-full">
                 <ContactForm />
               </div>
             </div>
 
-            {/* Contact Details - Mobile Only (Below Form) */}
             <div className="space-y-6 lg:hidden">
               <h3 className="text-xl md:text-2xl font-semibold text-mulearn-blackish">
                 Other Ways to Connect
               </h3>
               <div className="space-y-4">
-                {/* Email */}
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-white" />
@@ -158,7 +150,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-white" />
@@ -171,7 +162,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Location */}
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                   <div className="w-12 h-12 bg-mulearn-trusty-blue rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-white" />

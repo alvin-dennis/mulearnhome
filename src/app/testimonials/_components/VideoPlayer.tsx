@@ -100,13 +100,13 @@ export default function VideoPlayer({
         preload="metadata"
         playsInline
       />
-      {/* Loading Overlay */}
+      {}
       {isLoading && (
         <div className="absolute inset-0 bg-mulearn-blackish/80 flex items-center justify-center">
           <div className="w-8 h-8 border-2 border-mulearn-whitish border-t-transparent rounded-full animate-spin" />
         </div>
       )}
-      {/* Play/Pause Button Overlay */}
+      {}
       <AnimatePresence>
         {!isPlaying && !isLoading && (
           <MotionDiv
@@ -122,13 +122,13 @@ export default function VideoPlayer({
           </MotionDiv>
         )}
       </AnimatePresence>
-      {/* Type Badge */}
+      {}
       <div className="absolute top-4 left-4">
         {getTypeBadge(testimonial.type)}
       </div>
 
       <div className="absolute bottom-4 right-4 flex gap-2">
-        {/* Mute/Unmute Button */}
+        {}
         <Button
           variant="ghost"
           onClick={toggleMute}
@@ -141,7 +141,7 @@ export default function VideoPlayer({
           )}
         </Button>
 
-        {/* Play/Pause Button (when playing) */}
+        {}
         {isPlaying && (
           <Button
             variant="ghost"
@@ -152,7 +152,7 @@ export default function VideoPlayer({
           </Button>
         )}
       </div>
-      {/* User Info Overlay */}
+      {}
       <AnimatePresence>
         {!isPlaying && (
           <MotionDiv

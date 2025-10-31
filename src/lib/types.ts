@@ -216,7 +216,7 @@ export interface AnnualReport {
   highlights?: string[];
   publishedDate: string;
 }
-// Updated VideoTestimonial interface
+
 export interface VideoTestimonial {
   id: string;
   name: string;
@@ -225,11 +225,10 @@ export interface VideoTestimonial {
   videoUrl: string;
   thumbnailUrl: string;
   profileImage: string;
-  type: 'learner' | 'mentor' | 'partner' | 'community-leader';
+  type: "learner" | "mentor" | "partner" | "community-leader";
   quote: string;
 }
 
-// Text Testimonial interface for written feedback
 export interface TextTestimonial {
   id: string;
   name: string;
@@ -237,13 +236,12 @@ export interface TextTestimonial {
   company?: string;
   profileImage: string;
   quote: string;
-  type: 'learner' | 'mentor' | 'partner' | 'community-leader';
+  type: "learner" | "mentor" | "partner" | "community-leader";
   rating: number;
   date: string;
   socialProof?: string; // e.g., "Posted on LinkedIn", "Shared on Twitter"
 }
 
-// Combined testimonial type
 export type Testimonial = VideoTestimonial | TextTestimonial;
 
 export type cardProps = {

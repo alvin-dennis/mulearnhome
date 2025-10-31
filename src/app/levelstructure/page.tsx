@@ -26,7 +26,7 @@ export default function LevelStructure() {
     const style = document.createElement("style");
     style.id = "levelstructure-white-theme";
     style.textContent = `
-      /* UFO Space Floating Animation */
+      
       @keyframes ufoFloat {
         0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
         25% { transform: translateY(-15px) translateX(8px) rotate(2deg); }
@@ -43,7 +43,7 @@ export default function LevelStructure() {
         animation: ufoFloat 8s ease-in-out infinite, ufoGlow 4s ease-in-out infinite;
       }
       
-      /* Rocket Thrust Animation */
+      
       @keyframes rocketThrust {
         0%, 100% { transform: translateY(0px) translateX(0px) rotate(45deg); }
         25% { transform: translateY(-8px) translateX(-3px) rotate(47deg); }
@@ -60,7 +60,7 @@ export default function LevelStructure() {
         animation: rocketThrust 3s ease-in-out infinite, rocketGlow 2.5s ease-in-out infinite;
       }
 
-      /* Static Rock Floating Effect */
+      
       .rock-static {
         animation: gentleFloat 6s ease-in-out infinite;
       }
@@ -70,7 +70,7 @@ export default function LevelStructure() {
         50% { transform: translateY(-10px) rotate(2deg); }
       }
 
-      /* Level unlock animations - ready for GSAP integration */
+      
       .level-section {
         scroll-behavior: smooth;
       }

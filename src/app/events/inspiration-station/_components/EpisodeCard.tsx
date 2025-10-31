@@ -47,7 +47,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
 
   return (
     <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
-      {/* Episode Image */}
+      {}
       <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative flex-shrink-0">
         {event.thumbnail ? (
           <img
@@ -72,7 +72,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
         </div>
       </div>
 
-      {/* Episode Content */}
+      {}
       <CardHeader className="pb-4 flex-grow">
         <div className="flex flex-wrap gap-2 mb-3">
           {event.tags.map((tag: string) => (
@@ -99,7 +99,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
       </CardHeader>
 
       <CardContent className="pt-0 flex flex-col flex-grow">
-        {/* Description with Read More */}
+        {}
         <div className="mb-4 flex-grow">
           <p className="text-mulearn-gray-600 leading-relaxed">{displayText}</p>
           {shouldTruncate && (
@@ -113,7 +113,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
           )}
         </div>
 
-        {/* Date and CTA Button */}
+        {}
         <div className="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto">
           <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
             <Calendar className="w-4 h-4 mr-1" />

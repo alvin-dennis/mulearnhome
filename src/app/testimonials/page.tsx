@@ -44,7 +44,7 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from-mulearn-whitish via-mulearn-gray-50 to-mulearn-whitish">
-      {/* Enhanced Header Section - Clean white background */}
+      {}
       <div className="relative overflow-hidden bg-mulearn-whitish">
         <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
           <MotionDiv
@@ -74,7 +74,7 @@ export default function TestimonialsPage() {
               who are shaping the future of learning
             </MotionP>
 
-            {/* Stats */}
+            {}
             <MotionDiv
               className="flex justify-center items-center gap-8 mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {/* Tab Navigation */}
+      {}
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {/* Content Sections */}
+      {}
       <div className="py-20">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32">
@@ -158,19 +158,19 @@ export default function TestimonialsPage() {
           </div>
         ) : (
           <>
-            {/* Video Testimonials */}
+            {}
             {activeTab === "video" && videoTestimonialData.length > 0 && (
               <VideoCarousel testimonials={videoTestimonialData} />
             )}
 
-            {/* Text Testimonials */}
+            {}
             {activeTab === "text" && textTestimonialData.length > 0 && (
               <div className="max-w-7xl mx-auto px-6">
                 <TextTestimonialsGrid testimonials={textTestimonialData} />
               </div>
             )}
 
-            {/* Empty States */}
+            {}
             {activeTab === "video" && videoTestimonialData.length === 0 && (
               <div className="max-w-2xl mx-auto px-6 text-center py-32">
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -203,7 +203,7 @@ export default function TestimonialsPage() {
         )}
       </div>
 
-      {/* Simple CTA Section - No background, just text and buttons */}
+      {}
       <div className="py-20 mb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <MotionDiv

@@ -40,7 +40,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
     <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
       <Card className="overflow-hidden bg-white border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
-          {/* Report Cover Image */}
+          {}
           <div className="lg:w-1/3 relative overflow-hidden">
             <div className="aspect-[4/3] lg:aspect-square bg-linear-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
               {report.imageUrl ? (
@@ -62,16 +62,16 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {/* Year Badge */}
+            {}
             <div className="absolute top-4 left-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
               {report.year}
             </div>
 
-            {/* Gradient Overlay */}
+            {}
             <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          {/* Report Content */}
+          {}
           <div className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-mulearn-gray-600 text-sm mb-3">
@@ -87,7 +87,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 {report.summary}
               </p>
 
-              {/* Highlights */}
+              {}
               {report.highlights && report.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-mulearn-blackish mb-3">
@@ -113,7 +113,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {/* Download Button */}
+            {}
             <div className="flex justify-start">
               <Button
                 onClick={onDownload}

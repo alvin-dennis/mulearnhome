@@ -1,18 +1,18 @@
 "use client";
-import { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX, Star } from 'lucide-react';
-import { VideoTestimonial } from '@/lib/types';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { useState, useRef } from "react";
+import { Play, Pause, Volume2, VolumeX, Star } from "lucide-react";
+import { VideoTestimonial } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface VideoTestimonialCardProps {
   testimonial: VideoTestimonial;
   isActive: boolean;
 }
 
-export default function VideoTestimonialCard({ 
-  testimonial, 
-  isActive 
+export default function VideoTestimonialCard({
+  testimonial,
+  isActive,
 }: VideoTestimonialCardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -33,7 +33,7 @@ export default function VideoTestimonialCard({
         setIsLoading(false);
       }
     } catch (error) {
-      console.error('Error playing video:', error);
+      console.error("Error playing video:", error);
       setIsLoading(false);
     }
   };
@@ -45,7 +45,6 @@ export default function VideoTestimonialCard({
     }
   };
 
-  // Star rating component
   const StarRating = ({ rating = 5 }: { rating?: number }) => (
     <div className="flex items-center gap-1">
       {[...Array(5)].map((_, i) => (
@@ -53,8 +52,8 @@ export default function VideoTestimonialCard({
           key={i}
           className={cn(
             "w-4 h-4",
-            i < rating 
-              ? "fill-yellow-400 text-yellow-400" 
+            i < rating
+              ? "fill-yellow-400 text-yellow-400"
               : "fill-gray-300 text-gray-300"
           )}
         />
@@ -63,27 +62,29 @@ export default function VideoTestimonialCard({
   );
 
   return (
-    <div className={cn(
-      "group relative bg-mulearn-whitish rounded-2xl border border-mulearn-gray-200 shadow-lg transition-all duration-500 overflow-hidden w-full max-w-6xl mx-auto",
-      isActive ? "scale-100 opacity-100" : "scale-95 opacity-70"
-    )}>
-      {/* Compact Content Grid */}
+    <div
+      className={cn(
+        "group relative bg-mulearn-whitish rounded-2xl border border-mulearn-gray-200 shadow-lg transition-all duration-500 overflow-hidden w-full max-w-6xl mx-auto",
+        isActive ? "scale-100 opacity-100" : "scale-95 opacity-70"
+      )}
+    >
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[450px]">
-        {/* Left Side - Video */}
+        {}
         <div className="relative bg-mulearn-gray-900 p-6">
-          {/* Video Container */}
+          {}
           <div className="relative w-full h-full rounded-xl overflow-hidden bg-mulearn-gray-800">
-            {/* Thumbnail Fallback */}
+            {}
             {!isPlaying && (
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${testimonial.thumbnailUrl})` }}
               >
                 <div className="absolute inset-0 bg-mulearn-blackish/40" />
               </div>
             )}
-            
-            {/* Video Element */}
+
+            {}
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
@@ -99,14 +100,14 @@ export default function VideoTestimonialCard({
               Your browser does not support the video tag.
             </video>
 
-            {/* Loading Overlay */}
+            {}
             {isLoading && (
               <div className="absolute inset-0 bg-mulearn-blackish/80 flex items-center justify-center">
                 <div className="w-10 h-10 border-2 border-mulearn-whitish border-t-transparent rounded-full animate-spin" />
               </div>
             )}
 
-            {/* Play/Pause Button */}
+            {}
             <Button
               variant="ghost"
               onClick={togglePlay}
@@ -124,11 +125,13 @@ export default function VideoTestimonialCard({
               )}
             </Button>
 
-            {/* Video Controls */}
-            <div className={cn(
-              "absolute bottom-4 right-4 flex gap-2 transition-opacity duration-300",
-              isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-            )}>
+            {}
+            <div
+              className={cn(
+                "absolute bottom-4 right-4 flex gap-2 transition-opacity duration-300",
+                isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+              )}
+            >
               <Button
                 variant="ghost"
                 onClick={toggleMute}
@@ -141,14 +144,12 @@ export default function VideoTestimonialCard({
                 )}
               </Button>
             </div>
-
-            
           </div>
         </div>
 
-        {/* Right Side - Content */}
+        {}
         <div className="flex flex-col justify-center p-8">
-          {/* Author Info */}
+          {}
           <div className="mb-6">
             <h3 className="font-display text-2xl font-bold text-mulearn-blackish mb-2">
               {testimonial.name}
@@ -163,20 +164,24 @@ export default function VideoTestimonialCard({
             )}
           </div>
 
-          {/* Testimonial Text */}
+          {}
           <blockquote className="mb-6">
             <p className="text-lg font-sans font-light text-mulearn-gray-700 leading-relaxed">
               {testimonial.quote}
             </p>
           </blockquote>
 
-          {/* Star Rating and Label */}
+          {}
           <div className="flex items-center gap-3">
             <StarRating rating={5} />
             <span className="text-base font-sans font-semibold text-mulearn-gray-700">
-              {testimonial.type === 'learner' ? 'Learning Excellence' : 
-               testimonial.type === 'mentor' ? 'Mentorship Excellence' :
-               testimonial.type === 'partner' ? 'Partnership Success' : 'Community Impact'}
+              {testimonial.type === "learner"
+                ? "Learning Excellence"
+                : testimonial.type === "mentor"
+                ? "Mentorship Excellence"
+                : testimonial.type === "partner"
+                ? "Partnership Success"
+                : "Community Impact"}
             </span>
           </div>
         </div>

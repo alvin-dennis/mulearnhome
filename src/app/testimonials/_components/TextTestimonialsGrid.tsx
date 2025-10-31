@@ -21,7 +21,6 @@ export default function TextTestimonialsGrid({
     visible: { opacity: 1, y: 0 },
   };
 
-  // Separate transition configurations
   const containerTransition = {
     staggerChildren: 0.1,
   };
@@ -40,7 +39,7 @@ export default function TextTestimonialsGrid({
       viewport={{ once: true, amount: 0.1 }}
       className="w-full"
     >
-      {/* Section Header */}
+      {}
       <div className="text-center mb-12">
         <MotionH2
           className="font-display text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4"
@@ -59,7 +58,7 @@ export default function TextTestimonialsGrid({
         </MotionP>
       </div>
 
-      {/* Testimonials Grid */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <MotionDiv

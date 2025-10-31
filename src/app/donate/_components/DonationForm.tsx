@@ -60,7 +60,6 @@ const donationFormSchema = z
   })
   .refine(
     (data) => {
-      // If organisation is checked, organisation name is required
       if (
         data.isOrganisation &&
         (!data.organisationName || data.organisationName.trim() === "")
@@ -105,7 +104,6 @@ export default function DonationForm() {
     },
   });
 
-  // Get donation amounts based on donation type
   const getDonationAmounts = (type: DonationType) => {
     switch (type) {
       case "monthly":
@@ -141,12 +139,10 @@ export default function DonationForm() {
   const isOrganisation = watch("isOrganisation");
   const totalAmount = watch("donationAmount") || 0;
 
-  // Handle client-side hydration
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Reset amount selection when donation type changes
   useEffect(() => {
     setSelectedAmount("");
     setCustomAmount("");
@@ -318,7 +314,7 @@ export default function DonationForm() {
           </Label>
         </div>
 
-        {/* Organisation Name (conditional) */}
+        {}
         {isOrganisation && (
           <div className="space-y-2 animate-in fade-in duration-200">
             <Label
@@ -435,7 +431,6 @@ export default function DonationForm() {
     </TabsContent>
   );
 
-  // Prevent hydration mismatch by only rendering after mount
   if (!mounted) {
     return (
       <div className="w-full bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
@@ -499,11 +494,11 @@ export default function DonationForm() {
         </Tabs>
       </div>
 
-      {/* Fixed Footer with Total and Continue Button */}
+      {}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="border-t border-gray-200 dark:border-gray-800 bg-white  px-6 sm:px-10 py-6">
           <div className="flex flex-col gap-5">
-            {/* Terms and Conditions Checkbox */}
+            {}
             <div className="flex items-start space-x-3">
               <input
                 type="checkbox"
@@ -549,14 +544,14 @@ export default function DonationForm() {
               </div>
             </div>
 
-            {/* Donation Amount Error */}
+            {}
             {errors.donationAmount && (
               <p className="text-xs text-red-500">
                 {errors.donationAmount.message}
               </p>
             )}
 
-            {/* Total and Continue */}
+            {}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               <div>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">

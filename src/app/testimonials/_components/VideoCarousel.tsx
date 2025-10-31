@@ -31,7 +31,6 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
     setActiveIndex(index);
   };
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) {
       if (autoPlayRef.current) {
@@ -51,7 +50,6 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
     };
   }, [isAutoPlaying, nextTestimonial]);
 
-  // Fixed variants with proper Framer Motion types
   const slideVariants = {
     enter: {
       x: 1000,
@@ -70,7 +68,6 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
     },
   };
 
-  // Fixed transition configuration
   const transition = {
     x: { type: "spring" as const, stiffness: 300, damping: 30 },
     opacity: { duration: 0.4 },
@@ -85,9 +82,9 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
       viewport={{ once: true, amount: 0.3 }}
       className="w-full max-w-6xl mx-auto px-6 py-8"
     >
-      {/* Main Carousel Container */}
+      {}
       <div className="relative">
-        {/* Left Arrow */}
+        {}
         <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 z-30">
           <Button
             variant="ghost"
@@ -98,7 +95,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           </Button>
         </div>
 
-        {/* Right Arrow */}
+        {}
         <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-30">
           <Button
             variant="ghost"
@@ -109,7 +106,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           </Button>
         </div>
 
-        {/* Main Slider */}
+        {}
         <div className="relative h-auto overflow-hidden">
           <AnimatePresence mode="wait" initial={false}>
             <MotionDiv
@@ -122,7 +119,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
               className="w-full"
             >
               <div className="relative">
-                {/* Autoplay Toggle - Inside the card */}
+                {}
                 <div
                   className="absolute top-4 right-4 z-30 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-2 text-sm text-mulearn-gray-700 cursor-pointer hover:bg-white transition-all duration-300 rounded-lg shadow-sm"
                   onClick={() => setIsAutoPlaying((s) => !s)}
@@ -147,7 +144,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           </AnimatePresence>
         </div>
 
-        {/* Simple Counter */}
+        {}
         <div className="flex justify-center items-center mt-6">
           <div className="text-mulearn-gray-600 font-sans font-medium">
             <span className="text-xl font-bold text-mulearn-blackish">
