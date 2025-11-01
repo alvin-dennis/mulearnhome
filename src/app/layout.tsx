@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import BackToTop from "@/components/BacktoTop";
 
 export const metadata: Metadata = {
   title: "µLearn",
@@ -68,6 +69,9 @@ export default function RootLayout({
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
         <Toaster />
+        <div className="fixed bottom-4 right-4 z-50">
+          <BackToTop />
+        </div>
       </body>
     </html>
   );
