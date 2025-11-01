@@ -86,7 +86,7 @@ const LearnersHero = () => {
         </div>
 
         <div
-          className="absolute inset-0 transform -skew-y-3 origin-bottom-left bg-white shadow-lg"
+          className="absolute inset-0 transform -skew-y-3 origin-bottom-left bg-mulearn-whitish shadow-lg"
           style={{ top: "8px", bottom: "8px" }}
         />
 

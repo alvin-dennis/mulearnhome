@@ -97,7 +97,7 @@ export default function InterestGroups() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30"
+              className="inline-block mb-6 px-6 py-2 bg-mulearn-whitish/20 backdrop-blur-sm rounded-full border border-mulearn-whitish/30"
             >
               <span className="text-mulearn-whitish text-sm font-medium tracking-wide uppercase">
                 Interest Groups
@@ -398,9 +398,7 @@ export default function InterestGroups() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
-              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
-            >
+            <Button className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300">
               Join an Interest Group <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

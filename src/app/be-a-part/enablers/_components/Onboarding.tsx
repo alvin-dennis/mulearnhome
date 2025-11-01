@@ -39,7 +39,7 @@ export default function Onboarding() {
               )}
 
               <div className="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-linear-to-br from-mulearn-trusty-blue to-mulearn-duke-purple shadow-lg">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-mulearn-whitish">
                   <MuImage
                     src={step.image}
                     alt={`${step.title} icon`}

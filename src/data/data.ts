@@ -595,7 +595,7 @@ export const footer = [
       { title: "Companies", url: "be-a-part/company" },
       {
         title: "Students",
-        url: "https://app.mulearn.org/dashboard/search?activetab=mulearners",
+        url: "/learners",
       },
       {
         title: "Mentors",

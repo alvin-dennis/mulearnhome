@@ -46,7 +46,7 @@ export default function DonateSuccessPage() {
 
   if (!donationData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-white to-purple-50">
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-mulearn-whitish to-purple-50">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-mulearn-trusty-blue mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading...</p>
@@ -56,14 +56,14 @@ export default function DonateSuccessPage() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-mulearn-whitish to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         {}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-mulearn-whitish rounded-2xl shadow-xl overflow-hidden">
           {}
           <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-8 py-12 text-center">
             <div className="flex justify-center mb-4">
-              <div className="bg-white rounded-full p-3">
+              <div className="bg-mulearn-whitish rounded-full p-3">
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
               </div>
             </div>

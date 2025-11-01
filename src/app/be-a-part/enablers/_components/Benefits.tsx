@@ -31,7 +31,7 @@ export default function Benefits() {
             <ul className=" space-y-4">
               {enablers.benefits[0].items.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20">
+                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
                     <svg
                       className="h-3 w-3"
                       fill="currentColor"
@@ -111,7 +111,7 @@ export default function Benefits() {
             <ul className=" space-y-4">
               {enablers.benefits[2].items.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20">
+                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
                     <svg
                       className="h-3 w-3"
                       fill="currentColor"
@@ -149,7 +149,7 @@ export default function Benefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative flex items-center justify-center overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-lg"
+            className="relative flex items-center justify-center overflow-hidden rounded-3xl border-2 border-gray-200 bg-mulearn-whitish p-8 shadow-lg"
           >
             <div className="absolute right-6 top-6">
               <svg

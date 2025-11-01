@@ -451,7 +451,7 @@ export default function CampusLogoGenerator() {
           </div>
         </div>
 
-        <div className="order-2 lg:order-1 w-full lg:w-110 bg-white p-4 lg:p-10 shadow overflow-y-auto">
+        <div className="order-2 lg:order-1 w-full lg:w-110 bg-mulearn-whitish p-4 lg:p-10 shadow overflow-y-auto">
           <div className="space-y-6">
             <div>
               <h1
@@ -481,7 +481,7 @@ export default function CampusLogoGenerator() {
               <input
                 type="text"
                 placeholder="Enter Campus Code"
-                className="w-full p-3 border-0 focus:outline-none bg-gray-50 focus:bg-white transition-all duration-200"
+                className="w-full p-3 border-0 focus:outline-none bg-gray-50 focus:bg-mulearn-whitish transition-all duration-200"
                 style={{
                   fontFamily: "var(--font-plus-jakarta)",
                   fontSize: "var(--font-size-body)",
@@ -815,7 +815,7 @@ export default function CampusLogoGenerator() {
             >
               {isDownloading ? (
                 <div className="flex items-center justify-center gap-2">
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-4 h-4 border-2 border-mulearn-whitish border-t-transparent rounded-full animate-spin"></div>
                   Downloading...
                 </div>
               ) : formData.campusCode.length < 3 ? (

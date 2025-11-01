@@ -5,7 +5,7 @@ import MuImage from "@/components/MuImage";
 
 export default function PartnersPage() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-mulearn-whitish relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-linear-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5 rounded-full blur-3xl -z-10" />
 
@@ -105,7 +105,7 @@ export default function PartnersPage() {
               transition={{ duration: 0.5 }}
             >
               <Link href="/partners/community-partners" className="block group">
-                <div className="bg-white rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
+                <div className="bg-mulearn-whitish rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
                   <div className="relative w-full h-48 sm:h-56 overflow-hidden">
                     <MuImage
                       src="/assets/partners/community.svg"
@@ -164,7 +164,7 @@ export default function PartnersPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <Link href="/partners/company-partners" className="block group">
-                <div className="bg-white rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
+                <div className="bg-mulearn-whitish rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
                   <div className="relative w-full h-48 sm:h-56 overflow-hidden">
                     <MuImage
                       src="/assets/partners/company2.png"
@@ -256,7 +256,7 @@ export default function PartnersPage() {
             ].map((benefit, index) => (
               <MotionDiv
                 key={benefit.title}
-                className="bg-white rounded-xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] p-6 hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300"
+                className="bg-mulearn-whitish rounded-xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] p-6 hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -286,8 +286,8 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-mulearn-whitish/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-mulearn-whitish/10 rounded-full blur-3xl" />
 
             <div className="relative text-center space-y-6 max-w-3xl mx-auto">
               <MotionDiv
@@ -296,7 +296,7 @@ export default function PartnersPage() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, type: "spring" }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mulearn-whitish/20 backdrop-blur-sm mb-4">
                   <Rocket className="w-8 h-8 text-mulearn-whitish" />
                 </div>
               </MotionDiv>
@@ -311,13 +311,13 @@ export default function PartnersPage() {
               </p>
               <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/be-a-part/company">
-                  <button className="px-8 py-4 cursor-pointer bg-white text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                  <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     Join as Company
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
-                  <button className="px-8 py-4 bg-white cursor-pointer text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                  <button className="px-8 py-4 bg-mulearn-whitish cursor-pointer text-mulearn-trusty-blue font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     Join as Community
                     <ArrowRight className="w-5 h-5" />
                   </button>

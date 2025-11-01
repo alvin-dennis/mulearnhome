@@ -148,7 +148,7 @@ const NetworkIcon = () => (
 export default function WhyCollaborate() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <section className="bg-white py-16 px-4 sm:px-8 relative">
+    <section className="bg-mulearn-whitish py-16 px-4 sm:px-8 relative">
       <MuImage
         src={companyImages.note}
         alt="note icon"

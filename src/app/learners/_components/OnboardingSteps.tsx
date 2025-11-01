@@ -32,7 +32,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                   {getStepIcon(step.step)}
                 </div>
 
-                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
+                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
                   0{step.step}
                 </span>
               </div>
@@ -62,7 +62,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
                   {getStepIcon(step.step)}
                 </div>
-                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-white rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
+                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
                   0{step.step}
                 </span>
               </div>

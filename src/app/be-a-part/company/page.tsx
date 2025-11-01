@@ -6,7 +6,7 @@ import HowToJoin from "./_components/Join";
 
 export default function Company() {
   return (
-    <div className="bg-white">
+    <div className="bg-mulearn-whitish min-h-screen">
       <Hero />
       <WhyCollaborate />
       <WhatYouCanDo />

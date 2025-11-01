@@ -4,7 +4,7 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 
 export default function Programs() {
   return (
-    <section className="bg-linear-to-b from-gray-50 to-white py-16 lg:py-20">
+    <section className="bg-linear-to-b from-gray-50 to-mulearn-whitish py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}

@@ -10,7 +10,7 @@ export default function CompanyPartners() {
     "/src/modules/Public/CompanyPartners/assets/Connecting teams.gif"
   );
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-mulearn-whitish">
       <section className="px-4 sm:px-8 py-1 sm:py-1 lg:py-1">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">

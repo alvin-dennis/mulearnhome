@@ -2,7 +2,7 @@ import { MotionH2 } from "@/components/MuFramer";
 
 export default function Gateway() {
   return (
-    <section className="bg-white py-16 px-4 sm:px-8">
+    <section className="bg-mulearn-whitish py-16 px-4 sm:px-8">
       <div className="max-w-4xl mx-auto">
         <MotionH2
           initial={{ opacity: 0, y: 30 }}

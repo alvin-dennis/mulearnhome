@@ -38,7 +38,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
 
   return (
     <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
-      <Card className="overflow-hidden bg-white border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
+      <Card className="overflow-hidden bg-mulearn-whitish border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
           {}
           <div className="lg:w-1/3 relative overflow-hidden">

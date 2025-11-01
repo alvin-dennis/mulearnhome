@@ -1,5 +1,3 @@
-"use client";
-
 import { MotionDiv } from "@/components/MuFramer";
 import { VideoTestimonial } from "@/lib/types";
 import VideoTestimonialCard from "./VideoTestimonialcard";
@@ -20,7 +18,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="w-full max-w-3xl md:max-w-4xl mx-auto px-7"
+      className="w-full h-full max-w-3xl md:max-w-4xl mx-auto px-7"
     >
       <div className="relative">
         <Swiper
@@ -30,17 +28,17 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           pagination={{
             clickable: true,
             bulletClass: "swiper-pagination-bullet",
             bulletActiveClass: "swiper-pagination-bullet-active",
           }}
-          className="!pb-12"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-                <VideoTestimonialCard testimonial={testimonial} isActive />
+              <VideoTestimonialCard testimonial={testimonial} />
             </SwiperSlide>
           ))}
         </Swiper>

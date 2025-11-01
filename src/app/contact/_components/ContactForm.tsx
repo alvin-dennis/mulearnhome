@@ -547,7 +547,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6">
+    <div className="bg-mulearn-whitish rounded-xl shadow-lg p-6">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
           <Label htmlFor="intent" className="text-base font-semibold">

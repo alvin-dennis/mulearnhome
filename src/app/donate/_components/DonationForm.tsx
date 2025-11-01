@@ -206,7 +206,7 @@ export default function DonationForm() {
               type="text"
               placeholder="John Doe"
               {...register("name")}
-              className={`h-11 bg-white  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
@@ -230,7 +230,7 @@ export default function DonationForm() {
               type="email"
               placeholder="john.doe@example.com"
               {...register("email")}
-              className={`h-11 bg-white  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
                 errors.email ? "border-red-500" : ""
               }`}
             />
@@ -256,7 +256,7 @@ export default function DonationForm() {
               type="tel"
               placeholder="+91 98765 43210"
               {...register("phone")}
-              className={`h-11 bg-white  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
                 errors.phone ? "border-red-500" : ""
               }`}
             />
@@ -287,7 +287,7 @@ export default function DonationForm() {
                 },
               })}
               maxLength={10}
-              className={`h-11 bg-white  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
                 errors.panNumber ? "border-red-500" : ""
               }`}
             />
@@ -331,7 +331,7 @@ export default function DonationForm() {
               type="text"
               placeholder="Enter organisation name"
               {...register("organisationName")}
-              className={`h-11 bg-white  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
                 errors.organisationName ? "border-red-500" : ""
               }`}
             />
@@ -433,7 +433,7 @@ export default function DonationForm() {
 
   if (!mounted) {
     return (
-      <div className="w-full bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
+      <div className="w-full bg-mulearn-whitish dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-8 sm:py-10 min-h-0">
           <div className="mb-10">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-mulearn-blackish dark:text-gray-50 tracking-tight">
@@ -496,7 +496,7 @@ export default function DonationForm() {
 
       {}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="border-t border-gray-200 dark:border-gray-800 bg-white  px-6 sm:px-10 py-6">
+        <div className="border-t border-gray-200 dark:border-gray-800 bg-mulearn-whitish  px-6 sm:px-10 py-6">
           <div className="flex flex-col gap-5">
             {}
             <div className="flex items-start space-x-3">

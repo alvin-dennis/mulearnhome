@@ -16,7 +16,7 @@ const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({
 }) => (
   <div className="text-center group relative flex flex-col items-center">
     <div className="relative">
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-white-300 rounded-xl   " />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-mulearn-whitish-300 rounded-xl   " />
       <MuImage
         src={imageUrl ? imageUrl : fallbackImage}
         alt={`${name}'s profile`}
@@ -42,7 +42,7 @@ const SmallLearnerCard: React.FC<{
 }> = ({ name, kp, imageUrl }) => (
   <div className="relative w-44 sm:w-60 h-18 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
     <div className="absolute inset-0 bg-linear-to-br from-blue-500 via-blue-600 to-blue-700" />
-    <div className="absolute inset-0 bg-linear-radial from-white/10 via-transparent to-transparent" />
+    <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />
     <div className="relative h-full flex items-center px-3 gap-3">
       <MuImage
         src={imageUrl ? imageUrl : fallbackImage}
@@ -62,7 +62,7 @@ const SmallLearnerCard: React.FC<{
       </div>
     </div>
 
-    <div className="absolute inset-0 rounded-xl border border-white/20 pointer-events-none" />
+    <div className="absolute inset-0 rounded-xl border border-mulearn-whitish/20 pointer-events-none" />
   </div>
 );
 
@@ -104,8 +104,8 @@ const RankingSection: React.FC<RankingSectionProps> = ({ topLearners }) => {
       </div>
 
       <div className="relative mt-12 mb-8">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-white via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-white via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 place-items-center lg:-ml-8">
             {smallLearners.slice(0, 4).map((learner, index) => (

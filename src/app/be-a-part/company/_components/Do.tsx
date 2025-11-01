@@ -4,7 +4,7 @@ import { companyDo, companyImages } from "@/data/data";
 
 export default function WhatYouCanDo() {
   return (
-    <section className="bg-white py-16 px-4 sm:px-8">
+    <section className="bg-mulearn-whitish py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <MotionH2
           initial={{ opacity: 0, x: -30 }}

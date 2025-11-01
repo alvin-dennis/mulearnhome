@@ -28,7 +28,7 @@ export default function ImpactStats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-16 bg-white">
+    <section ref={ref} className="py-16 bg-mulearn-whitish">
       <div className="container mx-auto px-4">
         <MotionH2
           initial={{ opacity: 0, y: 30 }}

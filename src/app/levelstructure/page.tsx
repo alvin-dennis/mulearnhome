@@ -24,7 +24,7 @@ export default function LevelStructure() {
 
   useEffect(() => {
     const style = document.createElement("style");
-    style.id = "levelstructure-white-theme";
+    style.id = "levelstructure-mulearn-whitish-theme";
     style.textContent = `
       
       @keyframes ufoFloat {
@@ -90,7 +90,9 @@ export default function LevelStructure() {
     document.head.appendChild(style);
 
     return () => {
-      const styleEl = document.getElementById("levelstructure-white-theme");
+      const styleEl = document.getElementById(
+        "levelstructure-mulearn-whitish-theme"
+      );
       if (styleEl) styleEl.remove();
     };
   }, []);

@@ -90,8 +90,8 @@ export default function InspirationStationPage() {
                 onClick={() => setActiveTab("upcoming")}
                 className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
                   activeTab === "upcoming"
-                    ? "bg-white text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-white/50"
+                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
+                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
                 }`}
               >
                 <Clock className="w-4 h-4 md:w-5 md:h-5" />
@@ -102,8 +102,8 @@ export default function InspirationStationPage() {
                 onClick={() => setActiveTab("past")}
                 className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
                   activeTab === "past"
-                    ? "bg-white text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-white/50"
+                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
+                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
                 }`}
               >
                 <Calendar className="w-4 h-4 md:w-5 md:h-5" />

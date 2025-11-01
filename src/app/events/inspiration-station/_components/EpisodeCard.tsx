@@ -62,7 +62,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
           <Badge
             className={`flex items-center ${
               event.isUpcoming
-                ? "bg-white text-mulearn-trusty-blue border border-mulearn-trusty-blue"
+                ? "bg-mulearn-whitish text-mulearn-trusty-blue border border-mulearn-trusty-blue"
                 : "bg-gray-100 text-mulearn-blackish"
             }`}
           >
@@ -123,7 +123,7 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
             variant={event.isUpcoming ? "outline" : "outline"}
             className={`gap-1 px-4 py-2 text-sm rounded-full ${
               event.isUpcoming
-                ? "bg-white text-mulearn-trusty-blue border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish"
+                ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish"
                 : "bg-gray-100 text-mulearn-blackish hover:bg-gray-200"
             }`}
           >

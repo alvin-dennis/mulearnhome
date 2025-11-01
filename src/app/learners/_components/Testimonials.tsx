@@ -76,14 +76,14 @@ const Testimonials: React.FC = () => {
 
           <button
             onClick={goToPrevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-mulearn-blackish rounded-full p-2 transition"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Previous slide"
           >
             &#10094;
           </button>
           <button
             onClick={goToNextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/40 hover:bg-white/60 text-mulearn-blackish rounded-full p-2 transition"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Next slide"
           >
             &#10095;
@@ -96,8 +96,8 @@ const Testimonials: React.FC = () => {
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   index === currentSlide
-                    ? "bg-white w-8"
-                    : "bg-white/40 hover:bg-white/60"
+                    ? "bg-mulearn-whitish w-8"
+                    : "bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -106,8 +106,8 @@ const Testimonials: React.FC = () => {
         </div>
 
         <div className="mt-12 relative w-screen left-1/2 right-1/2 -mx-[50vw] overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-48 bg-linear-to-r from-white via-gray-50/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-48 bg-linear-to-l from-white via-gray-50/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-48 bg-linear-to-r from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-48 bg-linear-to-l from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none" />
 
           <div
             ref={scrollRef}
@@ -120,7 +120,7 @@ const Testimonials: React.FC = () => {
                   className="mt-4 flex-shrink-0 w-80 relative h-[280px] rounded-[24px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(256,256,256,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)]"
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-[#4A7FE8] via-[#5B8FF5] to-[#6BA5FF]" />
-                  <div className="absolute inset-0 bg-linear-radial from-white/10 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />
                   <div className="relative h-full p-6 flex flex-col justify-between">
                     <p className="text-sm text-mulearn-whitish leading-relaxed italic mb-4 drop-shadow-sm">
                       &quot;{testimonial.quote}&quot;
@@ -147,7 +147,7 @@ const Testimonials: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 rounded-[24px] border border-white/20 pointer-events-none" />
+                  <div className="absolute inset-0 rounded-[24px] border border-mulearn-whitish/20 pointer-events-none" />
                 </div>
               ))}
             </div>

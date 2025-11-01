@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 export default function HowToJoin() {
   return (
-    <section className="bg-white py-16 px-4 sm:px-8">
+    <section className="bg-mulearn-whitish py-16 px-4 sm:px-8">
       <div className="max-w-5xl mx-auto">
         <MotionH2
           initial={{ opacity: 0, y: 30 }}
@@ -122,7 +122,7 @@ export default function HowToJoin() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center gap-4 p-6 border-2 border-[#EEE] rounded-lg bg-white"
+                className="flex flex-col items-center text-center gap-4 p-6 border-2 border-[#EEE] rounded-lg bg-mulearn-whitish"
               >
                 <div className="w-[100px] h-[100px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
                   <span className="text-mulearn-whitish text-4xl font-bold">

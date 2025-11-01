@@ -4,7 +4,7 @@ import { companyImages } from "@/data/data";
 
 export default function Hero() {
   return (
-    <section className="bg-white py-12 px-4 sm:px-8 overflow-hidden">
+    <section className="bg-mulearn-whitish py-12 px-4 sm:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           <MotionDiv

@@ -19,7 +19,7 @@ export default function Story() {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true }}
       >
         <div>
           <MotionDiv variants={fadeInUp}>

@@ -13,7 +13,7 @@ export default function ImpactGallery() {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-mulearn-whitish to-white">
+    <div className="min-h-screen bg-linear-to-b from-mulearn-whitish to-mulearn-whitish">
       <section
         className="relative py-20"
         style={{ background: "var(--mulearn-trusty)" }}
