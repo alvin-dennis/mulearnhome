@@ -220,13 +220,7 @@ export interface AnnualReport {
 export interface VideoTestimonial {
   id: string;
   name: string;
-  role: string;
-  company?: string;
   videoUrl: string;
-  thumbnailUrl: string;
-  profileImage: string;
-  type: "learner" | "mentor" | "partner" | "community-leader";
-  quote: string;
 }
 
 export interface TextTestimonial {
@@ -239,7 +233,7 @@ export interface TextTestimonial {
   type: "learner" | "mentor" | "partner" | "community-leader";
   rating: number;
   date: string;
-  socialProof?: string; // e.g., "Posted on LinkedIn", "Shared on Twitter"
+  socialProof?: string;
 }
 
 export type Testimonial = VideoTestimonial | TextTestimonial;

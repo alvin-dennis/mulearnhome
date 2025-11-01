@@ -8,6 +8,7 @@ import { testimonials } from "@/data/data";
 import { VideoTestimonial, TextTestimonial } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Users, Star, TrendingUp, MessageCircle, Video } from "lucide-react";
+import MuLoader from "@/components/Loader";
 
 export default function TestimonialsPage() {
   const [videoTestimonialData, setVideoTestimonialData] = useState<
@@ -43,9 +44,9 @@ export default function TestimonialsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-mulearn-whitish via-mulearn-gray-50 to-mulearn-whitish">
+    <div className="min-h-screen">
       {}
-      <div className="relative overflow-hidden bg-mulearn-whitish">
+      <div className="relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
           <MotionDiv
             className="text-center"
@@ -81,7 +82,7 @@ export default function TestimonialsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              {stats.map((stat, index) => {
+              {stats.map((stat) => {
                 const Icon = stat.icon;
                 return (
                   <div key={stat.label} className="text-center">
@@ -134,19 +135,10 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {}
       <div className="py-20">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32">
-            <MotionDiv
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative w-20 h-20 mb-6"
-            >
-              <div className="absolute top-0 left-0 w-full h-full border-4 border-mulearn-gray-200 rounded-full"></div>
-              <div className="absolute top-0 left-0 w-full h-full border-4 border-mulearn-trusty-blue border-t-transparent rounded-full animate-spin"></div>
-            </MotionDiv>
+            <MuLoader />
             <MotionP
               className="text-xl text-mulearn-gray-600 font-medium "
               initial={{ opacity: 0, y: 10 }}
@@ -203,7 +195,6 @@ export default function TestimonialsPage() {
         )}
       </div>
 
-      {}
       <div className="py-20 mb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <MotionDiv
