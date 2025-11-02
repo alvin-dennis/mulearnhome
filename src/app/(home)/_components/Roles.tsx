@@ -2,12 +2,8 @@
 
 import { useState } from "react";
 import { Variants } from "framer-motion";
-import {
-  MotionSection,
-  MotionDiv,
-  MotionNav
-} from "@/components/MuFramer";
-import { rolesTitle, rolesContent } from "@/data/data";
+import { MotionSection, MotionDiv, MotionNav } from "@/components/MuFramer";
+import { rolesTitle, rolesContent } from "@/data/home";
 import { Role, RoleItem } from "@/lib/types";
 import MuImage from "@/components/MuImage";
 

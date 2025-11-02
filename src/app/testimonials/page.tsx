@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { MotionDiv, MotionP, MotionH1 } from "@/components/MuFramer";
 import VideoCarousel from "./_components/VideoCarousel";
 import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
-import { testimonials } from "@/data/data";
+import { testimonials } from "@/data/testimonials";
 import { VideoTestimonial, TextTestimonial } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Users, Star, TrendingUp, MessageCircle, Video } from "lucide-react";

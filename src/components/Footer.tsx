@@ -1,7 +1,7 @@
 import { MotionFooter } from "@/components/MuFramer";
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
-import { footer, socials, contactInfo } from "@/data/data";
+import { footer, socials, contactInfo } from "@/data/common";
 import { Mail, Phone, Globe } from "lucide-react";
 
 export default function Footer() {

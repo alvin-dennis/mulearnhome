@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
-import { galleryCategories } from "@/data/data";
+import { galleryCategories } from "@/data/impact-gallery";
 import { Button } from "@/components/ui/button";
 
 interface FilterButtonsProps {

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { OnboardingStep } from "@/data/data";
+import { OnboardingStep } from "@/lib/types";
 import { Lightbulb } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 

@@ -1,6 +1,6 @@
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { enablers } from "@/data/data";
+import { enablers } from "@/data/enablers";
 
 export default function Onboarding() {
   return (

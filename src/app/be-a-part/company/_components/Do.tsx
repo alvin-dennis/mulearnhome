@@ -1,6 +1,6 @@
 import { MotionH2, MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { companyDo, companyImages } from "@/data/data";
+import { companyDo, companyImages } from "@/data/company";
 
 export default function WhatYouCanDo() {
   return (

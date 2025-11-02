@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { testimonialsData, slideImages } from "@/data/data";
+import { testimonialsData, slideImages } from "@/data/learners";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 

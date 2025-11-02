@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
-import { CompanyFeatures, companyImages } from "@/data/data";
+import { CompanyFeatures, companyImages } from "@/data/company";
 import MuImage from "@/components/MuImage";
 
 const NetworkIcon = () => (

@@ -1,6 +1,6 @@
 import { MotionDiv, MotionButton } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { companyImages } from "@/data/data";
+import { companyImages } from "@/data/company";
 
 export default function Hero() {
   return (

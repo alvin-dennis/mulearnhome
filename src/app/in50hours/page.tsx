@@ -1,6 +1,6 @@
 import { MotionDiv, MotionButton } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { in50hrs } from "@/data/data";
+import { in50hrs } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
-"use client";
-
 import { MotionH2, MotionDiv } from "@/components/MuFramer";
-import { companySteps } from "@/data/data";
+import { Button } from "@/components/ui/button";
+import { companySteps } from "@/data/company";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default function HowToJoin() {
@@ -147,16 +147,18 @@ export default function HowToJoin() {
           viewport={{ once: true }}
           className="flex justify-center mt-12"
         >
-          <button
-            onClick={() =>
-              redirect(
-                "https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
-              )
-            }
-            className="cursor-pointer bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:opacity-90 text-mulearn-whitish px-4 py-3 text-md font-bold rounded-[20px] transition-all"
+          <Link
+            href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Join as a Company Partner
-          </button>
+            <Button
+              variant={"mulearn"}
+              className="cursor-pointer hover:opacity-90 text-mulearn-whitish px-4 py-3 text-md font-bold transition-all"
+            >
+              Join as a Company Partner
+            </Button>
+          </Link>
         </MotionDiv>
       </div>
     </section>

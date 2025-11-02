@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import { enablers } from "@/data/data";
+import { enablers } from "@/data/enablers";
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
 import { Variants } from "framer-motion";

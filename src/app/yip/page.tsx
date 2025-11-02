@@ -1,6 +1,6 @@
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
-import { yip } from "@/data/data";
+import { yip } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 import { Button } from "@/components/ui/button";
 

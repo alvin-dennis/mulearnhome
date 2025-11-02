@@ -1,6 +1,6 @@
 "use client";
 
-import { inspirationStationData } from "@/data/data";
+import { inspirationStationData } from "@/data/events";
 import { Radio, Calendar, Mic, PlayCircle, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

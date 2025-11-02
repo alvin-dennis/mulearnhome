@@ -1,4 +1,4 @@
-import { communityPartners } from "@/data/data";
+import { communityPartners } from "@/data/community";
 import CommunityCard from "@/app/partners/community-partners/_components/CommunityCard";
 import { cdnUrl } from "@services/cdn";
 import MuImage from "@/components/MuImage";

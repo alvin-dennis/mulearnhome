@@ -236,7 +236,7 @@ export interface TextTestimonial {
   socialProof?: string;
 }
 
-export type Testimonial = VideoTestimonial | TextTestimonial;
+export type Testimonials = VideoTestimonial | TextTestimonial;
 
 export type cardProps = {
   name: string;
@@ -283,4 +283,30 @@ export interface LeaderboardData {
 export interface LeaderboardProps {
   props: LeaderboardData & { date: string };
   revalidate: number;
+}
+
+export interface OnboardingStep {
+  step: number;
+  title: string;
+  description: string;
+  iconUrl: string;
+}
+
+export interface LearnerRoleTag {
+  label: string;
+  id: string;
+}
+
+export interface TopLearner {
+  name: string;
+  kp: number;
+  imageUrl: string;
+  designation?: string;
+}
+
+export interface Testimonial {
+  name: string;
+  designation: string;
+  quote: string;
+  imageUrl: string;
 }

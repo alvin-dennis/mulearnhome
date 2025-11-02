@@ -2,7 +2,7 @@ import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
 
-import { learningCircleData } from "@/data/data";
+import { learningCircleData } from "@/data/lc-ig";
 import { Button } from "@/components/ui/button";
 
 export default function LearningCirclePage() {
@@ -270,9 +270,7 @@ export default function LearningCirclePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
-              className="inline-block bg-mulearn-whitish text-mulearn-duke-purple rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish px-8 py-3 font-semiboldhover:bg-mulearn-whitish/90"
-            >
+            <Button className="inline-block bg-mulearn-whitish text-mulearn-duke-purple rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish px-8 py-3 font-semiboldhover:bg-mulearn-whitish/90">
               {ctaSection.buttonText}
             </Button>
           </Link>

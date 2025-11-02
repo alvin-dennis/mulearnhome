@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import MediaCard from "./MediaCard";
-import { galleryData } from "@/data/data";
+import { galleryData } from "@/data/impact-gallery";
 import { GalleryItem } from "@/lib/types";
 
 interface GalleryGridProps {

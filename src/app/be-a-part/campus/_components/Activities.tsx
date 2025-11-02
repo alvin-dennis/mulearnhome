@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
-import { campusChapter } from "@/data/data";
+import { campusChapter } from "@/data/campus";
 
 export default function Activities() {
   return (

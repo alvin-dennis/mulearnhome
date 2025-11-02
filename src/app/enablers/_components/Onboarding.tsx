@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { enablers } from "@/data/data";
+import { enablers } from "@/data/enablers";
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
 import { Variants } from "framer-motion";

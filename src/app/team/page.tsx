@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { TeamCard } from "@/app/team/_components/TeamCard";
-import { team } from "@/data/data";
+import { team } from "@/data/team";
 import { YearData, Teams } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";

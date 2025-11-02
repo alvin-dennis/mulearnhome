@@ -11,7 +11,7 @@ import {
   GraduationCap,
   TrendingUp,
 } from "lucide-react";
-import { impactStats } from "@/data/data";
+import { impactStats } from "@/data/impact-gallery";
 import { ImpactStat } from "@/lib/types";
 
 const iconMap = {

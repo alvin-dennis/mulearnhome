@@ -1,4 +1,4 @@
-import type { LearnerRoleTag } from "@/data/data";
+import type { LearnerRoleTag } from "@/lib/types";
 
 interface LearnerIntroProps {
   learnerTags: LearnerRoleTag[];
@@ -15,11 +15,7 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
           id="learners-intro-heading"
           className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight "
         >
-          Who is a{" "}
-          <span className="text-mulearn-trusty-blue">
-            Learner
-          </span>
-          ?
+          Who is a <span className="text-mulearn-trusty-blue">Learner</span>?
         </h2>
 
         <p className="text-[20px] md:text-[20px] leading-[1.45] font-normal text-mulearn-gray-600 mx-auto max-w-[1119px]">
@@ -50,10 +46,7 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
       {}
       <div className="text-center max-w-3xl mx-auto mt-16">
         <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 leading-tight ">
-          Why{" "}
-          <span className="text-mulearn-trusty-blue">
-            μLearn?
-          </span>
+          Why <span className="text-mulearn-trusty-blue">μLearn?</span>
         </h3>
         <p className="text-base sm:text-lg text-mulearn-gray-600 leading-relaxed">
           In a world that never stops changing, learning consistently is how you
