@@ -22,7 +22,7 @@ export default function Journey() {
           </p>
 
           <div className="hidden md:block relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple transform -translate-x-1/2" />
+            <div className="absolute left-1/2 top-0 bottom-[5%] w-0.5 bg-linear-to-b from-mulearn-trusty-blue to-mulearn-duke-purple transform -translate-x-1/2" />
 
             {campusChapter.journey.map((step, index) => {
               const stepNumber = index + 1;

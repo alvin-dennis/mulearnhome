@@ -148,7 +148,6 @@ export const in50hrs = {
   ],
 };
 
-
 export const inspirationStationData = {
   events: [
     {
@@ -159,7 +158,7 @@ export const inspirationStationData = {
         "Alex shares his inspiring journey from multiple failures to building a successful career in technology, and the lessons he learned along the way.",
       date: "Next Tuesday",
       tags: ["Career", "Resilience", "Technology"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: true,
     },
     {
@@ -170,7 +169,7 @@ export const inspirationStationData = {
         "Maria discusses her experiences as a female leader in a male-dominated industry and how she empowers other women to take on leadership roles.",
       date: "Coming Soon",
       tags: ["Leadership", "Diversity", "Empowerment"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: true,
     },
     {
@@ -181,7 +180,7 @@ export const inspirationStationData = {
         "David shares his transformation from a shy introvert to a confident public speaker and how communication skills changed his career trajectory.",
       date: "December 5th",
       tags: ["Communication", "Personal Growth", "Confidence"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: true,
     },
     {
@@ -192,7 +191,7 @@ export const inspirationStationData = {
         "John shares his incredible journey from being a software engineer to building a successful startup, the challenges he faced, and how he overcame them to create impact.",
       date: "15/11/2023",
       tags: ["Career", "Entrepreneurship", "Resilience"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
     {
@@ -203,7 +202,7 @@ export const inspirationStationData = {
         "Sarah discusses her experience as a woman in technology, breaking stereotypes, and creating opportunities for others in the tech industry.",
       date: "08/11/2023",
       tags: ["Leadership", "Diversity", "Technology"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
     {
@@ -214,7 +213,7 @@ export const inspirationStationData = {
         "Mike talks about how community-driven learning transformed his career and the importance of peer-to-peer knowledge sharing in personal growth.",
       date: "01/11/2023",
       tags: ["Community", "Learning", "Growth"],
-      thumbnail: "/assets/dummyimg/dummy.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
   ],
@@ -234,7 +233,7 @@ export const openMicData: OpenMicData = {
         "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "15/12/2022",
       tags: ["Music", "Performance"],
-      thumbnail: "/assets/openmic/dummy_img.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
     {
@@ -245,7 +244,7 @@ export const openMicData: OpenMicData = {
         "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
       date: "08/12/2022",
       tags: ["Music", "Composition"],
-      thumbnail: "/assets/openmic/dummy_img.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
     {
@@ -256,7 +255,7 @@ export const openMicData: OpenMicData = {
         "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
       date: "01/12/2022",
       tags: ["Music", "Singing"],
-      thumbnail: "/assets/openmic/dummy_img.png",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
   ],
@@ -287,11 +286,11 @@ export const artOfTeachingMentors = [
 
 export const artOfTeachingUrls = {
   mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
-  firstEdition: "https://www.youtube-nocookie.com/embed/vPLuA5kXoBI",
+  firstEdition: "vPLuA5kXoBI",
   archives: [
-    "https://www.youtube.com/embed/Wmo0StqW9Kc?si=lM3hb1r6OrGUHX7C",
-    "https://www.youtube.com/embed/TEylubYDzhQ?si=zm5EA_Or7YOcI73E",
-    "https://www.youtube.com/embed/jRcseEVk2sk?si=eSXHqiAWmw_vOwcv",
+    "Wmo0StqW9Kc",
+    "TEylubYDzhQ",
+    "jRcseEVk2sk",
   ],
   registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
 };

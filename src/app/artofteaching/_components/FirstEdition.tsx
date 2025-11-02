@@ -1,4 +1,5 @@
 import { artOfTeachingUrls } from "@/data/events";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 const FirstEdition = () => {
   return (
@@ -20,14 +21,14 @@ const FirstEdition = () => {
           </div>
           <div className="lg:w-1/2 mt-8 lg:mt-0">
             <div className="rounded-lg overflow-hidden">
-              <iframe
-                className="w-full h-56 lg:h-80 rounded-lg"
-                src={artOfTeachingUrls.firstEdition}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              />
+              <div className="w-full h-56 lg:h-80 rounded-lg">
+                <YouTubeEmbed
+                  videoid={artOfTeachingUrls.firstEdition}
+                  style="border-none"
+                  playlabel="true"
+                  params="disablekb=1&enablejsapi=1&playsinline=1"
+                />
+              </div>
             </div>
           </div>
         </div>

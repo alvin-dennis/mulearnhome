@@ -72,7 +72,6 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
         </div>
       </div>
 
-      {}
       <CardHeader className="pb-4 flex-grow">
         <div className="flex flex-wrap gap-2 mb-3">
           {event.tags.map((tag: string) => (

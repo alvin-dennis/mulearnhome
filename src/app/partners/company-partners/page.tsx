@@ -46,7 +46,7 @@ export default function CompanyPartners() {
                   alt="Connecting teams"
                   fill
                   className="object-contain"
-                  priority
+                  preload
                 />
               </div>
             </MotionDiv>

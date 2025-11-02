@@ -69,7 +69,7 @@ export default function LearningCirclePage() {
             alt="Learning Circle illustration"
             width={500}
             height={400}
-            priority
+            preload
             className="rounded-2xl"
           />
         </MotionDiv>

@@ -70,7 +70,7 @@ const Testimonials: React.FC = () => {
               className={`object-cover transition-opacity duration-1000 ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
-              priority={index === currentSlide}
+              preload={index === currentSlide}
             />
           ))}
 

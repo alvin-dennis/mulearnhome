@@ -13,7 +13,11 @@ import { MotionDiv } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1]  } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
 const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
@@ -41,7 +45,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               width={576}
               height={576}
               className="w-72 md:w-[36rem] hidden md:block"
-              priority
+              preload
             />
           </div>
 

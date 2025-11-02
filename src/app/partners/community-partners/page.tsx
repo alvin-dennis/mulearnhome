@@ -81,7 +81,7 @@ export default function CommmunityPartners() {
                 height: "auto",
                 borderRadius: "1.5rem",
               }}
-              priority
+              preload
             />
           </MotionDiv>
         </div>

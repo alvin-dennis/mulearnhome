@@ -64,7 +64,7 @@ export default function InspirationStationPage() {
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
                 <img
-                  src="/assets/radio/radio.png"
+                  src="/assets/isr/isr-hero.png"
                   alt="Inspiration Station Radio Illustration"
                   className="w-full h-auto rounded-2xl"
                   loading="eager"

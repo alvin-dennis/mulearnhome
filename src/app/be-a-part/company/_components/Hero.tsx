@@ -22,7 +22,7 @@ export default function Hero() {
                 className="w-full h-full relative z-10 object-contain"
                 width={650}
                 height={500}
-                priority
+                unoptimized
               />
             </div>
           </MotionDiv>

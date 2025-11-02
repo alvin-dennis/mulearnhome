@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
+import { YouTubeEmbed } from "@next/third-parties/google";
 import Link from "next/link";
 
 const Guidelines = () => {
@@ -196,7 +197,7 @@ const Guidelines = () => {
                     className="download-button"
                   >
                     <Button className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors">
-                      Download Pdf
+                      Download PDF
                     </Button>
                   </Link>
                 </div>

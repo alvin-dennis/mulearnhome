@@ -106,63 +106,63 @@ export default function Level4Section() {
           >
             <div className="grid grid-cols-3 gap-6 w-full max-w-md">
               <MuImage
-                src="/assets/InterestGroups/webdev.svg"
+                src="/assets/interestgroups/webdev.svg"
                 alt="Web Development"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/design.svg"
+                src="/assets/interestgroups/design.svg"
                 alt="Design"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/game.svg"
+                src="/assets/interestgroups/game.svg"
                 alt="Game Development"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/arvr.svg"
+                src="/assets/interestgroups/arvr.svg"
                 alt="AR/VR"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/cloud.svg"
+                src="/assets/interestgroups/cloud.svg"
                 alt="Cloud Computing"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/marketing.svg"
+                src="/assets/interestgroups/marketing.svg"
                 alt="Marketing"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/cyber.svg"
+                src="/assets/interestgroups/cyber.svg"
                 alt="Cyber Security"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/iot.svg"
+                src="/assets/interestgroups/iot.svg"
                 alt="IoT"
                 width={120}
                 height={120}
                 className="w-full h-auto"
               />
               <MuImage
-                src="/assets/InterestGroups/product.svg"
+                src="/assets/interestgroups/product.svg"
                 alt="Product Management"
                 width={120}
                 height={120}

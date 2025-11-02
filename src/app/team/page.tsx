@@ -174,7 +174,7 @@ export default function Team() {
               width={512}
               height={512}
               className="w-full h-auto max-w-[32rem]"
-              priority
+              preload
             />
           </MotionDiv>
         </div>

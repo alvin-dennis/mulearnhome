@@ -93,7 +93,7 @@ export default function Navbar() {
               alt="Mulearn Brand"
               width={170}
               height={170}
-              priority
+              preload
               style={{ height: "auto" }}
             />
           </Link>
@@ -174,7 +174,7 @@ export default function Navbar() {
                 alt="Mulearn Brand"
                 width={170}
                 height={170}
-                priority
+                preload
                 style={{ height: "auto" }}
               />
             </Link>

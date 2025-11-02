@@ -86,7 +86,7 @@ export default function Careers() {
               width={400}
               height={400}
               className="w-49 sm:w-64 md:w-72 lg:w-80 h-auto rounded-2xl object-cover"
-              priority
+              preload
             />
           </div>
         </div>
