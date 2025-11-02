@@ -2,6 +2,42 @@
   "month": "2025-11",
   "monthly": [
     {
+      "username": "godlykmathews",
+      "commits": 0,
+      "prs_opened": 4,
+      "prs_merged": 4,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Godly K Mathews"
+    },
+    {
+      "username": "Amith-Abey-Stephen",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Amith Abey Stephen"
+    },
+    {
+      "username": "thomasjacob0207-design",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "thomasjacob0207-design"
+    },
+    {
+      "username": "suhair-098",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "SUHAIR SUBAIR"
+    },
+    {
       "username": "alanfrancis442",
       "commits": 0,
       "prs_opened": 0,
@@ -38,58 +74,22 @@
       "displayname": "Nash N Sulthan"
     },
     {
-      "username": "alvin-dennis",
+      "username": "Dany-Koshy-P",
       "commits": 0,
       "prs_opened": 0,
       "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Alvin Dennis"
+      "displayname": "Dany-Koshy-P"
     },
     {
-      "username": "Amith-Abey-Stephen",
+      "username": "solvz",
       "commits": 0,
       "prs_opened": 0,
       "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Amith Abey Stephen"
-    },
-    {
-      "username": "aflaha01",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "aflahaa"
-    },
-    {
-      "username": "abin-karukappallil",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Abin Thomas"
-    },
-    {
-      "username": "adn26",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Muhammed Adnan"
-    },
-    {
-      "username": "AdarshDev9349",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Adarsh Dev"
+      "displayname": "Krishna Rajeev"
     }
   ],
   "overall": [
