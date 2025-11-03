@@ -2,6 +2,15 @@
   "month": "2025-11",
   "monthly": [
     {
+      "username": "nanda-kshr",
+      "commits": 0,
+      "prs_opened": 5,
+      "prs_merged": 5,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Nandakishore P"
+    },
+    {
       "username": "godlykmathews",
       "commits": 0,
       "prs_opened": 4,
@@ -9,15 +18,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Godly K Mathews"
-    },
-    {
-      "username": "nanda-kshr",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 3,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Nandakishore P"
     },
     {
       "username": "Amith-Abey-Stephen",
@@ -47,6 +47,15 @@
       "displayname": "Awindsr"
     },
     {
+      "username": "thomasjacob0207-design",
+      "commits": 0,
+      "prs_opened": 2,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "thomasjacob0207-design"
+    },
+    {
       "username": "alvin-dennis",
       "commits": 0,
       "prs_opened": 1,
@@ -54,6 +63,15 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "FathimaMinhaZain",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Minha"
     },
     {
       "username": "Safwancs7",
@@ -72,24 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "elizabethreji142"
-    },
-    {
-      "username": "thomasjacob0207-design",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "thomasjacob0207-design"
-    },
-    {
-      "username": "ABHISHEK2k6",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Abhishek P"
     }
   ],
   "overall": [
