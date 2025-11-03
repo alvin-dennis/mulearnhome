@@ -2,40 +2,67 @@
   "month": "2025-11",
   "monthly": [
     {
-      "username": "alanfrancis442",
+      "username": "godlykmathews",
       "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
+      "prs_opened": 4,
+      "prs_merged": 4,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Alan Francis"
+      "displayname": "Godly K Mathews"
     },
     {
-      "username": "ABHISHEK2k6",
+      "username": "nanda-kshr",
       "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
+      "prs_opened": 3,
+      "prs_merged": 3,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Abhishek P"
+      "displayname": "Nandakishore P"
     },
     {
-      "username": "JUDU-13",
+      "username": "Amith-Abey-Stephen",
       "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
+      "prs_opened": 2,
+      "prs_merged": 1,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "JAIDON GILL SHAJAN"
+      "displayname": "Amith Abey Stephen"
     },
     {
-      "username": "nashnsulthan",
+      "username": "suhair-098",
       "commits": 0,
-      "prs_opened": 0,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "SUHAIR SUBAIR"
+    },
+    {
+      "username": "Safwancs7",
+      "commits": 0,
+      "prs_opened": 1,
       "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Nash N Sulthan"
+      "displayname": "Muhammad Safwan C S"
+    },
+    {
+      "username": "Elizabeth142",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "elizabethreji142"
+    },
+    {
+      "username": "thomasjacob0207-design",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "thomasjacob0207-design"
     },
     {
       "username": "alvin-dennis",
@@ -45,15 +72,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Alvin Dennis"
-    },
-    {
-      "username": "Amith-Abey-Stephen",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Amith Abey Stephen"
     },
     {
       "username": "aflaha01",
@@ -72,24 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Abin Thomas"
-    },
-    {
-      "username": "adn26",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Muhammed Adnan"
-    },
-    {
-      "username": "AdarshDev9349",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Adarsh Dev"
     }
   ],
   "overall": [
