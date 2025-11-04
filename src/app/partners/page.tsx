@@ -20,7 +20,7 @@ export default function PartnersPage() {
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#212121] leading-tight">
                 Our{" "}
-                <span className="text-mulearn-trusty-blue relative">
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent relative">
                   Partners
                   <svg
                     className="absolute -bottom-2 left-0 w-full"
@@ -68,7 +68,7 @@ export default function PartnersPage() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
-                  priority
+                  preload
                 />
               </div>
             </MotionDiv>
@@ -76,7 +76,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <section className="px-4 sm:px-8 py-12 sm:py-16 bg-[#F5F5F5] relative">
+      <section className="px-4 sm:px-8 py-12 sm:py-16 relative">
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             className="text-center mb-12"
@@ -85,9 +85,9 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#212121] mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mulearn-blackish mb-4">
               Explore Our{" "}
-              <span className="text-mulearn-trusty-blue">
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                 Partnership Network
               </span>
             </h2>
@@ -229,8 +229,11 @@ export default function PartnersPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#212121] mb-4">
-              Why <span className="text-mulearn-trusty-blue">Partner</span> With
-              Us?
+              Why{" "}
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                Partner
+              </span>{" "}
+              With Us?
             </h2>
           </MotionDiv>
 

@@ -1,4 +1,4 @@
-import { refundPolicy } from "@/data/data";
+import { refundPolicy } from "@/data/legal";
 
 import { Metadata } from "next";
 

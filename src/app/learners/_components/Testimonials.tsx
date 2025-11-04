@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { testimonialsData, slideImages } from "@/data/data";
+import { testimonialsData, slideImages } from "@/data/learners";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 
@@ -70,7 +70,7 @@ const Testimonials: React.FC = () => {
               className={`object-cover transition-opacity duration-1000 ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
-              priority={index === currentSlide}
+              preload={index === currentSlide}
             />
           ))}
 

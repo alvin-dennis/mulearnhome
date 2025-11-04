@@ -112,7 +112,7 @@ export default function TextTestimonialCard({
       {}
       <blockquote className="mb-4">
         <p className="text-mulearn-gray-700  leading-relaxed">
-          "{testimonial.quote}"
+          &quot;{testimonial.quote}&quot;
         </p>
       </blockquote>
 

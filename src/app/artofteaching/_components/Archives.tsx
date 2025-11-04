@@ -1,4 +1,5 @@
-import { artOfTeachingUrls } from "@/data/data";
+import { artOfTeachingUrls } from "@/data/events";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 const Archives = () => {
   return (
@@ -7,9 +8,11 @@ const Archives = () => {
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
             Art of Teaching{" "}
-            <span className="text-mulearn-trusty-blue">Archives</span>
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Archives
+            </span>
           </h2>
-          <p className="text-base lg:text-lg text-gray-600 lg:w-2/5">
+          <p className="text-base lg:text-lg text-mulearn-gray-600 lg:w-2/5">
             Take a look at the top submissions by the teachers from the first
             edition of The Art of Teaching.
           </p>
@@ -22,14 +25,14 @@ const Archives = () => {
               className="relative w-full rounded-lg overflow-hidden"
               style={{ paddingTop: "56.25%" }}
             >
-              <iframe
-                className="absolute top-0 left-0 w-full h-full border-none"
-                src={videoUrl}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              />
+              <div className="absolute top-0 left-0 w-full h-full">
+                <YouTubeEmbed
+                  videoid={videoUrl}
+                  style="border-none"
+                  playlabel="true"
+                  params="disablekb=1&enablejsapi=1&playsinline=1"
+                />
+              </div>
             </div>
           ))}
         </div>

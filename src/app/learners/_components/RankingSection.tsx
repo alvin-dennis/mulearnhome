@@ -1,5 +1,5 @@
 import MuImage from "@/components/MuImage";
-import { TopLearner, Testimonial } from "@/data/data";
+import { TopLearner, Testimonial } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
 interface RankingSectionProps {

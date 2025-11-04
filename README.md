@@ -11,7 +11,7 @@ A modern, scalable web application for the MuLearn community built with Next.js,
 - **Tailwind CSS:** Rapid UI development
 - **Modular Structure:** Organized folders for components, services, and data
 - **Path Aliases:** Clean and maintainable imports
-- **Centralized Data:** All static data in `src/data/data.ts`
+- **Centralized Data:** All static data in `src/data` folder
 - **CDN Service:** Centralized asset URL management via `src/services/cdn.ts`
 - **Brand Guide:** All UI and assets follow the [MuLearn Brand Guide](https://mulearn.org/r/brandguide)
 
@@ -81,7 +81,7 @@ mulearnhome/
 
 ## 📊 Centralized Data
 
-- All static data (navigation, team, values, etc.) should be stored and exported from `src/data/data.ts`.
+- All static data (navigation, team, values, etc.) should be stored and exported from `src/data` folder.
 - Import data from this file wherever needed in your components/pages.
 
 ---
@@ -94,8 +94,8 @@ mulearnhome/
 **Example usage:**
 
 ```ts
-import { getCdnUrl } from "@/services/cdn";
-const logoUrl = getCdnUrl("images/logo.png");
+import { cdnUrl } from "@/services/cdn";
+const logoUrl = cdnUrl("images/logo.png");
 ```
 
 ---

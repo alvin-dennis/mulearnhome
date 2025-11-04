@@ -7,7 +7,7 @@ Please follow these guidelines to keep the project organized and maintainable.
 
 ## 🛠️ How to Contribute
 
-1. **Fork the repository** and create your branch from `main`.
+1. **Fork the repository** and create your branch from `dev`.
 
 2. **Clone the repository:**
 
@@ -28,7 +28,7 @@ Please follow these guidelines to keep the project organized and maintainable.
    - **Components:**  
      Place reusable UI elements (Navbar, Footer, etc.) in `src/components`.
    - **Static Data:**  
-     Add or update all static datasets (navigation, team, values, etc.) only in `src/data/data.ts`.
+     Add or update all static datasets (navigation, team, values, etc.) only in `src/data` folder.
    - **Services:**  
      Add API logic or asset management in `src/services`.  
      For asset URLs, use and update `src/services/cdn.ts`.
@@ -49,7 +49,7 @@ Please follow these guidelines to keep the project organized and maintainable.
 
 - **src/app/**: Page routes (each folder with `page.tsx` is a route)
 - **src/components/**: Common UI components (Navbar, Footer, etc.)
-- **src/data/data.ts**: All static data (navigation, team, values, etc.)
+- **src/data**: All static data (navigation, team, values, etc.)
 - **src/services/cdn.ts**: Centralized CDN asset URL logic
 
 ---

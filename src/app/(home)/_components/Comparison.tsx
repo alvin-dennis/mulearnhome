@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import { comparisons } from "@/data/data";
+import { comparisons } from "@/data/home";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

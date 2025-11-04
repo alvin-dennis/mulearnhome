@@ -2,8 +2,10 @@ import { type Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
-import { events } from "@/data/data";
+import { events } from "@/data/events";
 import { Event } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Events() {
   const fadeInUp: Variants = {
@@ -60,6 +62,18 @@ export default function Events() {
               inspirations, and much more. Join in and let&apos;s learn
               something new.
             </p>
+            <Link
+              href="/events/calendar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant={"mulearn"}
+                className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg hover:shadow-xl hover:scale-105 active:scale-95 mt-10"
+              >
+                View Events Calendar
+              </Button>
+            </Link>
           </MotionDiv>
         </div>
 

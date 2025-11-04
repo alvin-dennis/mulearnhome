@@ -3,7 +3,7 @@ import { Variants } from "framer-motion";
 import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import SpecialEventCard from "@/app/(home)/_components/SpecialEventCard";
 import { Button } from "@/components/ui/button";
-import { specialevents } from "@/data/data";
+import { specialevents } from "@/data/home";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

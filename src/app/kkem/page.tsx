@@ -1,7 +1,8 @@
 import IGAbout from "./_components/IGAbout";
 import IGSection from "./_components/IGSection";
 import IGEvents from "./_components/IGEvents";
-import { kkem, interestGroups } from "@/data/data";
+import { kkem } from "@/data/kkem";
+import { interestGroups } from "@/data/lc-ig"
 
 export default function Landing() {
   return (

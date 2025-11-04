@@ -1,14 +1,16 @@
 import MentorCard from "./MentorCard";
-import { artOfTeachingMentors } from "@/data/data";
+import { artOfTeachingMentors } from "@/data/events";
 
 const Judges = () => {
   return (
-    <div className="px-8 py-8 bg-white lg:px-12">
+    <div className="px-8 py-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
             The Former{" "}
-            <span className="text-mulearn-trusty-blue">Judging Panel</span>
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              Judging Panel
+            </span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 lg:w-2/5">
             We needed some really creative people with amazing mentoring skills

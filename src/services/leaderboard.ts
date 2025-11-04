@@ -15,11 +15,6 @@ interface ContributorStats {
 const TOKEN = process.env.GH_TOKEN;
 if (!TOKEN) throw new Error("GITHUB_TOKEN is required to run");
 
-const HEADERS: Record<string, string> = {
-  Accept: "application/vnd.github+json",
-  Authorization: `token ${TOKEN}`,
-};
-
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -33,7 +28,9 @@ async function paginatedGet<T>(
 
   while (true) {
     const response = await axios.get<T[]>(url, {
-      headers: HEADERS,
+      headers: {
+        Authorization: `token ${TOKEN}`,
+      },
       params: { ...params, per_page: 100, page },
     });
 
@@ -239,8 +236,13 @@ export async function getLeaderboard() {
         try {
           const { data } = await axios.get(
             `https://api.github.com/users/${contributor.username}`,
-            { headers: HEADERS }
+            {
+              headers: {
+                Authorization: `token ${TOKEN}`,
+              },
+            }
           );
+
           contributor.displayname = data.name || contributor.username;
         } catch {
           contributor.displayname = contributor.username;

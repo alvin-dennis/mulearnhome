@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { features } from "@/data/data";
+import { features } from "@/data/home";
 
 export default function Features() {
   const [expandedIndex, setExpandedIndex] = useState(0);

@@ -116,7 +116,7 @@ export default function Hero() {
           width={1300}
           height={900}
           className="object-cover h-auto"
-          priority
+          preload
           fetchPriority="high"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 70vw, (max-width: 1280px) 60vw, 50vw"
         />

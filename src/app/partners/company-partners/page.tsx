@@ -1,6 +1,6 @@
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { CompanyPartner } from "@/data/data";
+import { CompanyPartner } from "@/data/company";
 import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
 
@@ -46,7 +46,7 @@ export default function CompanyPartners() {
                   alt="Connecting teams"
                   fill
                   className="object-contain"
-                  priority
+                  preload
                 />
               </div>
             </MotionDiv>

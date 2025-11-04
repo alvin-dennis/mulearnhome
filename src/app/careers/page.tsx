@@ -5,7 +5,7 @@ import CareersCard from "@/app/careers/_components/CareersCard";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
 import axios from "axios";
 import LogoLoop from "@/components/ui/LogoLoop";
-import { companies } from "@/data/data";
+import { companies } from "@/data/company";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 import { NewHiringRole, PreviousHiringRole, Company } from "@/lib/types";
@@ -86,7 +86,7 @@ export default function Careers() {
               width={400}
               height={400}
               className="w-49 sm:w-64 md:w-72 lg:w-80 h-auto rounded-2xl object-cover"
-              priority
+              preload
             />
           </div>
         </div>

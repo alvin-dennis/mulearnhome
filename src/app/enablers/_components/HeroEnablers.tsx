@@ -46,7 +46,7 @@ export default function Hero() {
                 width={400}
                 height={400}
                 className="h-auto object-contain rounded-2xl shadow-lg"
-                priority
+                preload
               />
             </div>
           </MotionDiv>

@@ -13,7 +13,11 @@ import { MotionDiv } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1]  } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
 const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
@@ -41,7 +45,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               width={576}
               height={576}
               className="w-72 md:w-[36rem] hidden md:block"
-              priority
+              preload
             />
           </div>
 
@@ -57,7 +61,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               interests!
             </p>
             <Button
-              className="bg-mulearn-whitish text-mulearn-trusty-blue rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
+              className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish cursor-pointer rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
               onClick={() =>
                 redirect?.(refreshToken ? "/dashboard/home" : "/register")
               }

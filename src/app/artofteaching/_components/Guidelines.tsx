@@ -1,5 +1,8 @@
-import { artOfTeachingUrls } from "@/data/data";
+import { Button } from "@/components/ui/button";
+import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
+import { YouTubeEmbed } from "@next/third-parties/google";
+import Link from "next/link";
 
 const Guidelines = () => {
   const artOfTeachingGuidelines = cdnUrl("/assets/Guidlines1-BgJl08J_.pdf");
@@ -55,16 +58,16 @@ const Guidelines = () => {
 
   return (
     <>
-      <div className="px-8 py-8 bg-white lg:px-12">
+      <div className="px-8 py-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2">
-              <p className="text-lg lg:text-2xl text-gray-600 font-normal font-noto-sans mb-2">
+              <p className="text-lg lg:text-2xl text-gray-600 font-normal mb-2">
                 Theme: Lessons of The Future.
               </p>
               <h2 className="text-4xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
                 What is{" "}
-                <span className="text-mulearn-trusty-blue">
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   Art of Teaching???
                 </span>
               </h2>
@@ -85,7 +88,9 @@ const Guidelines = () => {
             <div className="hidden lg:block lg:w-1/2">
               <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-lg max-w-lg">
                 <h3 className="text-2xl font-semibold text-mulearn-blackish mb-6">
-                  <span className="text-mulearn-trusty-blue">Guidelines</span>
+                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                    Guidelines
+                  </span>
                 </h3>
                 <div style={timelineStyle}>
                   <div>
@@ -125,14 +130,17 @@ const Guidelines = () => {
                     </div>
                   </div>
                   <div className="mt-4">
-                    <a
+                    <Link
                       href={artOfTeachingGuidelines}
                       download="Art of Teaching Guidelines.pdf"
                     >
-                      <button className="bg-mulearn-trusty-blue text-mulearn-whitish border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-mulearn-duke-purple transition-colors">
+                      <Button
+                        variant={"mulearn"}
+                        className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors"
+                      >
                         Download Pdf
-                      </button>
-                    </a>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -140,9 +148,11 @@ const Guidelines = () => {
           </div>
 
           <div className="block lg:hidden mt-12 mb-8">
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+            <div className=" border border-gray-200 rounded-lg p-6 shadow-lg">
               <h3 className="text-xl font-semibold text-mulearn-blackish mb-4">
-                <span className="text-mulearn-trusty-blue">Guidelines</span>
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  Guidelines
+                </span>
               </h3>
               <div style={timelineStyle}>
                 <div>
@@ -181,15 +191,15 @@ const Guidelines = () => {
                 </div>
 
                 <div className="mt-5">
-                  <a
+                  <Link
                     href={artOfTeachingGuidelines}
                     download="Art of Teaching Guidelines.pdf"
                     className="download-button"
                   >
-                    <button className="bg-mulearn-trusty-blue text-mulearn-whitish border-none px-4 py-2 text-base font-bold rounded-md w-[180px] hover:bg-mulearn-duke-purple transition-colors">
-                      Download Pdf
-                    </button>
-                  </a>
+                    <Button className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors">
+                      Download PDF
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

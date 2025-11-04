@@ -1,6 +1,6 @@
 import { MotionDiv, MotionButton } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { companyImages } from "@/data/data";
+import { companyImages } from "@/data/company";
 
 export default function Hero() {
   return (
@@ -22,7 +22,7 @@ export default function Hero() {
                 className="w-full h-full relative z-10 object-contain"
                 width={650}
                 height={500}
-                priority
+                unoptimized
               />
             </div>
           </MotionDiv>

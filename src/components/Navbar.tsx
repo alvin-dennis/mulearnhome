@@ -6,8 +6,9 @@ import MuImage from "@/components/MuImage";
 import { AnimatePresence } from "framer-motion";
 import { MotionDiv, MotionButton, MotionLi } from "./MuFramer";
 import { Menu, X } from "lucide-react";
-import { navItems } from "@data/data";
+import { navItems } from "@/data/common";
 import { SubItem } from "@/lib/types";
+import { useRedirectToApp } from "@/lib/utils";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Navbar() {
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<number | null>(
     null
   );
+  const redirect = useRedirectToApp();
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
   useEffect(() => {
@@ -35,9 +37,9 @@ export default function Navbar() {
     };
   }, [isMenuOpen, isMobileView]);
 
-  const handleAuthClick = () => {
-    window.location.href = refreshToken ? "/dashboard/home" : "/login";
-  };
+  useEffect(() => {
+    setRefreshToken(localStorage.getItem("refreshToken"));
+  }, []);
 
   const handleMouseEnter = (index: number, hasSubmenu: boolean) => {
     if (!isMobileView && hasSubmenu) setActiveSubmenu(index);
@@ -91,7 +93,7 @@ export default function Navbar() {
               alt="Mulearn Brand"
               width={170}
               height={170}
-              priority
+              preload
               style={{ height: "auto" }}
             />
           </Link>
@@ -152,7 +154,9 @@ export default function Navbar() {
 
           <MotionButton
             className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none py-3 px-6 rounded-[50px] font-semibold text-[0.9rem] cursor-pointer shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:py-2.5 lg:px-5 lg:text-[0.85rem]"
-            onClick={handleAuthClick}
+            onClick={() =>
+              refreshToken ? redirect("/dashboard/home") : redirect("/login")
+            }
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -170,7 +174,7 @@ export default function Navbar() {
                 alt="Mulearn Brand"
                 width={170}
                 height={170}
-                priority
+                preload
                 style={{ height: "auto" }}
               />
             </Link>
@@ -270,7 +274,11 @@ export default function Navbar() {
 
                   <MotionButton
                     className="w-full p-4 mb-20 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none rounded-[50px] font-semibold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
-                    onClick={handleAuthClick}
+                    onClick={() =>
+                      refreshToken
+                        ? redirect("/dashboard/home")
+                        : redirect("/login")
+                    }
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

@@ -1,5 +1,5 @@
 import MuImage from "@/components/MuImage";
-import { enablers } from "@/data/data";
+import { enablers } from "@/data/enablers";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { Variants } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";

@@ -1,10 +1,7 @@
 import { Variants } from "framer-motion";
-import {
-  MotionSection,
-  MotionDiv
-} from "@/components/MuFramer";
+import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { opportunities } from "@/data/data";
+import { opportunities } from "@/data/home";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },

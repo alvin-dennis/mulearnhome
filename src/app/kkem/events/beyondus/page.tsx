@@ -3,23 +3,35 @@ import Link from "next/link";
 import { cardProps } from "@/lib/types";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
-import { kkem } from "@/data/data";
+import { kkem } from "@/data/kkem";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { Variants } from "framer-motion";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1]  } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
 const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1]  } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
 const slideInRight: Variants = {
   hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1]  } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
 export default function BeyondUs() {

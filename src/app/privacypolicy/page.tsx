@@ -1,6 +1,6 @@
 "use server";
 
-import { privacyPolicy } from "@/data/data";
+import { privacyPolicy } from "@/data/legal";
 
 const formatText = (text: string) =>
   text

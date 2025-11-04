@@ -1,6 +1,6 @@
 "use client";
 
-import { openMicData } from "@/data/data";
+import { openMicData } from "@/data/events";
 import { OMEvent } from "@/lib/types";
 import { useState } from "react";
 import { Mic, Calendar, Users, PlayCircle, Clock } from "lucide-react";

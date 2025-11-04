@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import { interestGroups } from "@/data/data";
+import { interestGroups } from "@/data/lc-ig";
 import Link from "next/link";
 
 const workflowSteps = [

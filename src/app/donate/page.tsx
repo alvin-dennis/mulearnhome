@@ -5,7 +5,7 @@ import DonateCounters from "@/app/donate/_components/DonateCounters";
 import DonationForm from "@/app/donate/_components/DonationForm";
 import { cdnUrl } from "@/services/cdn";
 
- const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
+const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
 
 export default function DonatePage() {
   return (
@@ -32,7 +32,7 @@ export default function DonatePage() {
               width={500}
               height={500}
               className="rounded-md w-full h-auto max-w-xs sm:max-w-sm md:max-w-md"
-              priority
+              preload
             />
           </div>
 
