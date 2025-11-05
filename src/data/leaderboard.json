@@ -22,8 +22,8 @@
     {
       "username": "Amith-Abey-Stephen",
       "commits": 0,
-      "prs_opened": 2,
-      "prs_merged": 2,
+      "prs_opened": 3,
+      "prs_merged": 3,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Amith Abey Stephen"
@@ -47,6 +47,15 @@
       "displayname": "Awindsr"
     },
     {
+      "username": "alvin-dennis",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Alvin Dennis"
+    },
+    {
       "username": "thomasjacob0207-design",
       "commits": 0,
       "prs_opened": 2,
@@ -56,13 +65,22 @@
       "displayname": "thomasjacob0207-design"
     },
     {
-      "username": "alvin-dennis",
+      "username": "shaunmg",
       "commits": 0,
       "prs_opened": 1,
       "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Alvin Dennis"
+      "displayname": "shaunmg"
+    },
+    {
+      "username": "vedhavk",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Vedha"
     },
     {
       "username": "FathimaMinhaZain",
@@ -72,24 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Minha"
-    },
-    {
-      "username": "Safwancs7",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Muhammad Safwan C S"
-    },
-    {
-      "username": "Elizabeth142",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "elizabethreji142"
     }
   ],
   "overall": [
