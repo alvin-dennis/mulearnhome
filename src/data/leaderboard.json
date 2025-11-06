@@ -29,6 +29,24 @@
       "displayname": "Amith Abey Stephen"
     },
     {
+      "username": "alvin-dennis",
+      "commits": 0,
+      "prs_opened": 3,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "thomasjacob0207-design",
+      "commits": 0,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "thomasjacob0207-design"
+    },
+    {
       "username": "suhair-098",
       "commits": 0,
       "prs_opened": 2,
@@ -45,24 +63,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Awindsr"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Alvin Dennis"
-    },
-    {
-      "username": "thomasjacob0207-design",
-      "commits": 0,
-      "prs_opened": 2,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "thomasjacob0207-design"
     },
     {
       "username": "shaunmg",
