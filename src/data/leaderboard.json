@@ -56,6 +56,33 @@
       "displayname": "SUHAIR SUBAIR"
     },
     {
+      "username": "Soorya005",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Soorya A P"
+    },
+    {
+      "username": "vedhavk",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Vedha"
+    },
+    {
+      "username": "mufeeda12",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Mufeeda A P"
+    },
+    {
       "username": "awindsr",
       "commits": 0,
       "prs_opened": 1,
@@ -63,33 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Awindsr"
-    },
-    {
-      "username": "shaunmg",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "shaunmg"
-    },
-    {
-      "username": "vedhavk",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Vedha"
-    },
-    {
-      "username": "FathimaMinhaZain",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Minha"
     }
   ],
   "overall": [
@@ -149,7 +149,7 @@
     },
     {
       "username": "vishakh-abhayan",
-      "commits": 962,
+      "commits": 963,
       "prs_opened": 76,
       "prs_merged": 66,
       "issues_opened": 4,
