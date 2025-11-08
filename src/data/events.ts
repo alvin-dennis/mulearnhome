@@ -12,6 +12,12 @@ export const events: {
 } = {
   latestEvents: [
     {
+      title: "Hacktoberfest 205",
+      date: "Oct 1-31, 2025",
+      description:
+        "Hacktoberfest 2025 is a month-long open-source celebration where developers across the globe contribute to projects, improve software, and earn a digital badge.",
+    },
+    {
       title: "Hacktoberfest 2025",
       date: "Oct 1-31, 2025",
       description:
@@ -21,23 +27,7 @@ export const events: {
   recurringEvents: {
     flagship: [
       {
-        title: "Top 100 Coders",
-        description:
-          "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
-        link: "https://top100coders.com/",
-        image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
-        isLive: true,
-      },
-      {
-        title: "Launchpad",
-        description:
-          "Launchpad Kerala is a premier job fair that brings together talented individuals and innovative companies in the technical and engineering fields. With its skills-first approach, flexible interviews, and a wide talent pool, Launchpad Kerala offers unmatched opportunities for both candidates and employers.",
-        link: "https://launchpad.mulearn.org/",
-        image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
-        isLive: false,
-      },
-      {
-        title: "Permute 2025",
+        title: "Permute",
         description:
           "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
         link: "https://permute.mulearn.org/",
@@ -45,12 +35,12 @@ export const events: {
         isLive: false,
       },
       {
-        title: "Mutate",
+        title: "Top 100 Coders",
         description:
-          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, held at the Gokulam Grand in Kazhakoottam, was designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
-        link: "https://mulearn.org/",
-
-        isLive: false,
+          "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
+        link: "https://top100coders.com/",
+        image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
+        isLive: true,
       },
       {
         title: "Top 100 Designers",
@@ -67,6 +57,30 @@ export const events: {
         link: "https://makers.top100series.com/",
 
         isLive: true,
+      },
+      {
+        title: "Launchpad",
+        description:
+          "Launchpad Kerala is a premier job fair that brings together talented individuals and innovative companies in the technical and engineering fields. With its skills-first approach, flexible interviews, and a wide talent pool, Launchpad Kerala offers unmatched opportunities for both candidates and employers.",
+        link: "https://launchpad.mulearn.org/",
+        image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
+        isLive: false,
+      },
+      {
+        title: "Mutate",
+        description:
+          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, held at the Gokulam Grand in Kazhakoottam, was designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
+        link: "https://mulearn.org/",
+
+        isLive: false,
+      },
+      {
+        title: "Amuse",
+        description:
+          "Amuse is a vibrant, invite-only gathering that brought together campus leads, district leads, and core enablers from the μLearn community. Hosted as a collaborative planning retreat, Amuse served as a space for vision-building, strategy discussions, and cross-campus collaboration. The event fostered meaningful conversations and collective ideation, empowering leaders to align on future initiatives and strengthen the ecosystem of student-led innovation across campuses.",
+        link: "https://mulearn.org/",
+
+        isLive: false,
       },
       {
         title: "CareHack 2025",
@@ -90,7 +104,7 @@ export const events: {
         description:
           "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
         link: "/events/openmic",
-        date: "Every Thursday",
+        date: "Every Saturday",
       },
       {
         title: "Salt Mango Tree",
@@ -287,11 +301,7 @@ export const artOfTeachingMentors = [
 export const artOfTeachingUrls = {
   mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
   firstEdition: "vPLuA5kXoBI",
-  archives: [
-    "Wmo0StqW9Kc",
-    "TEylubYDzhQ",
-    "jRcseEVk2sk",
-  ],
+  archives: ["Wmo0StqW9Kc", "TEylubYDzhQ", "jRcseEVk2sk"],
   registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
 };
 
@@ -357,7 +367,7 @@ export const yip = [
   {
     type: "type1",
     icon: cdnUrl(
-      "src/modules/Public/yip/assets/procedure/winner%20annoucement.webp"
+      "src/modules/Public/yip/assets/procedure/winner%20annoucement.webp",
     ),
     phaseLabel: "Winner\nAnnouncement",
     title: "Step Eight",
