@@ -119,7 +119,7 @@ export const events: {
         title: "Office Hour",
         description:
           "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
-        link: "/events/openmic",
+        link: "/events/office-hour",
         date: "Every Saturday",
       },
       {
