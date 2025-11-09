@@ -3,6 +3,7 @@ import { Event, OMEvent } from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
+  pastEvents: Event[];
   recurringEvents: {
     weekly: Event[];
     biweekly: Event[];
@@ -12,16 +13,46 @@ export const events: {
 } = {
   latestEvents: [
     {
-      title: "Hacktoberfest 205",
-      date: "Oct 1-31, 2025",
+      title: "NUDGE Studio Design Challenge",
+      date: "Nov - Jan 2026",
       description:
-        "Hacktoberfest 2025 is a month-long open-source celebration where developers across the globe contribute to projects, improve software, and earn a digital badge.",
+        "The NUDGE Studio Design Challenge is a three-month program using behavioral science to solve real-world problems in finance, farming, and women’s leadership, ending with a showcase at BC2026 and cash prizes for winners.",
     },
+  ],
+  pastEvents: [
     {
       title: "Hacktoberfest 2025",
       date: "Oct 1-31, 2025",
       description:
         "Hacktoberfest 2025 is a month-long open-source celebration where developers across the globe contribute to projects, improve software, and earn a digital badge.",
+      //link: "https://hacktoberfest.com/",
+    },
+    {
+      title: "Acsia Hackathon 2025",
+      date: "31 Oct - 1 Nov 2025",
+      description:
+        "Acsia Hackathon 2025 is a 24-hour offline coding marathon happening on October 31 – November 1, 2025, at Acsia Global HQ, Thiruvananthapuram. Open to BTech, MTech, MCA, and MSc students, the event focuses on AI/ML and offers ₹1,00,000 in prizes, internships, and mentorship from industry experts. Registration is free with a HackerRank profile required.",
+    },
+    {
+      title: "3 Day VR Bootcamp",
+      date: "Sept 20 - 22 2025",
+      description:
+        "The 3-Day VR Bootcamp by μLearn was an immersive learning experience held on September 20–22 at 7 PM. Led by Fahad P N, a Unity Certified Educator and CTO of Soft Served Web, the bootcamp covered the fundamentals of VR, hands-on Unity sessions, and project showcases. Participants learned to build and explore in VR through practical sessions, tips, and live demos.",
+    },
+    {
+      title: "CineHack.AI",
+      date: "Oct 04 - 06 2025",
+      description:
+        "CineHack.AI is India’s largest Cinema-AI hackathon happening on October 4–6, 2025, with a prize pool of ₹2.25 lakhs. The event is exclusively for μLearn members, and the first five teams at Level 5 with 10K+ karma points can join for free. Registration closes on September 19, 2025.",
+    },
+    {
+      title: "CareHack 2025",
+      date: "Sept 20 - 22 2025",
+      description:
+        "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation, scheduled for August 2nd & 3rd, 2025. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation. Beyond talent acquisition, CareHack aims to amplify CareRevenue's brand presence within the tech ecosystem while evaluating participants on technical expertise, teamwork, communication, and problem-solving abilities.",
+      //link: "https://carehack.tech/",
+
+      isLive: false,
     },
   ],
   recurringEvents: {
@@ -82,16 +113,15 @@ export const events: {
 
         isLive: false,
       },
-      {
-        title: "CareHack 2025",
-        description:
-          "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation, scheduled for August 2nd & 3rd, 2025. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation. Beyond talent acquisition, CareHack aims to amplify CareRevenue's brand presence within the tech ecosystem while evaluating participants on technical expertise, teamwork, communication, and problem-solving abilities.",
-        link: "https://carehack.tech/",
-
-        isLive: false,
-      },
     ],
     weekly: [
+      {
+        title: "Office Hour",
+        description:
+          "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
+        link: "/events/openmic",
+        date: "Every Saturday",
+      },
       {
         title: "Inspiration Station Radio",
         description:
