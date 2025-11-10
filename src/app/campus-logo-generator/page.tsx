@@ -199,8 +199,8 @@ export default function CampusLogoGenerator() {
             ? yipVariants.find((v) => v.value === formData.yipVariant)
                 ?.bgColor || "#FFFFFF"
             : formData.logoVariant === "Transparent Bg"
-            ? "transparent"
-            : formData.backgroundColor,
+              ? "transparent"
+              : formData.backgroundColor,
         width: rect.width,
         height: rect.height,
         quality: 1.0,
