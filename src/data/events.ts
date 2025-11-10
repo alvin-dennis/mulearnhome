@@ -3,6 +3,7 @@ import { Event, OMEvent } from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
+  pastEvents: Event[];
   recurringEvents: {
     weekly: Event[];
     biweekly: Event[];
@@ -12,21 +13,119 @@ export const events: {
 } = {
   latestEvents: [
     {
+      title: "NUDGE Studio Design Challenge",
+      date: "Nov - Jan 2026",
+      description:
+        "The NUDGE Studio Design Challenge is a three-month program using behavioral science to solve real-world problems in finance, farming, and women’s leadership, ending with a showcase at BC2026 and cash prizes for winners.",
+      link: "www.example.com",
+    },
+  ],
+  pastEvents: [
+    {
+      title: "Acsia Hackathon 2025",
+      date: "31 Oct - 1 Nov 2025",
+      description:
+        "Acsia Hackathon 2025 is a 24-hour offline coding marathon happening on October 31 – November 1, 2025, at Acsia Global HQ, Thiruvananthapuram. Open to BTech, MTech, MCA, and MSc students, the event focuses on AI/ML and offers ₹1,00,000 in prizes, internships, and mentorship from industry experts. Registration is free with a HackerRank profile required.",
+      link: "https://www.acsiatech.com/news-and-media/acsia-launches-24-hour-ai-ml-hackathon-2025-to-drive-next-generation-innovation/",
+    },
+    {
       title: "Hacktoberfest 2025",
       date: "Oct 1-31, 2025",
       description:
         "Hacktoberfest 2025 is a month-long open-source celebration where developers across the globe contribute to projects, improve software, and earn a digital badge.",
+      link: "https://hacktoberfest.com/",
+    },
+    {
+      title: "CineHack.AI",
+      date: "Oct 04 - 06 2025",
+      description:
+        "CineHack.AI is India’s largest Cinema-AI hackathon happening on October 4–6, 2025, with a prize pool of ₹2.25 lakhs. The event is exclusively for μLearn members, and the first five teams at Level 5 with 10K+ karma points can join for free. Registration closes on September 19, 2025.",
+      link: "https://cinehackai.in/",
+      isLive: false,
+    },
+    {
+      title: "NASA Space App Challenge 2025",
+      date: "July 17 - Oct 05 2025",
+      description:
+        "The NASA International Space Apps Challenge 2025 is a global, two-day hackathon held on October 4–5, 2025, inviting scientists, technologists, designers, writers and curious minds to collaborate across borders using open data from NASA and its 14 international space agency partners to create actionable solutions under the theme “Learn, Launch, Lead.",
+      link: "https://www.spaceappschallenge.org/",
+    },
+    {
+      title: "Hac'KP '25",
+      date: "Oct 01 - 04 2025",
+      description:
+        "The Hac’KP 2025 is an international online hackathon organised by Kerala Police Cyberdome as part of c0c0n 2025, inviting participants to design and build innovative solutions under the themes of “Prevention First” and “Detect to Defend” to tackle online harm and child exploitation.",
+      link: "https://hackp.kerala.gov.in/",
+
+      isLive: false,
+    },
+    {
+      title: "Quantum Computing Challenge",
+      date: "Sept 20 - 23 2025",
+      description:
+        "The Quantum Computing Challenge by μLearn, held from September 20th to 23rd, 2025, was an engaging online event designed to help participants explore the fundamentals of quantum computing. Through short explainer video challenges, students demonstrated their understanding of concepts like quantum gates and the differences between quantum and classical computing. Hosted on Discord, the challenge encouraged creativity, learning, and knowledge sharing, with participants earning up to 800 Karma points for their contributions.",
+      link: "www.example.com",
+    },
+    {
+      title: "3 Day VR Bootcamp",
+      date: "Sept 20 - 22 2025",
+      description:
+        "The 3-Day VR Bootcamp by μLearn was an immersive learning experience held on September 20–22 at 7 PM. Led by Fahad P N, a Unity Certified Educator and CTO of Soft Served Web, the bootcamp covered the fundamentals of VR, hands-on Unity sessions, and project showcases. Participants learned to build and explore in VR through practical sessions, tips, and live demos.",
+      link: "www.example.com",
+    },
+    {
+      title: "CareHack 2025",
+      date: "Sept 20 - 22 2025",
+      description:
+        "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation, scheduled for August 2nd & 3rd, 2025. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation. Beyond talent acquisition, CareHack aims to amplify CareRevenue's brand presence within the tech ecosystem while evaluating participants on technical expertise, teamwork, communication, and problem-solving abilities.",
+      link: "https://carehack.tech/",
+
+      isLive: false,
+    },
+    {
+      title: "Hac'KP Bootcamp",
+      date: "Aug 24 - 29 2025",
+      description:
+        "The Hac'k P Bootcamp, organized by the μLearn Foundation in collaboration with the Silicon Society, was an intensive online program aimed at enhancing participants’ skills in hacking, problem-solving, and real-world project building. Led by Abimel S B Kulumala, Founder of Silicon Society, the bootcamp focused on practical approaches, community-driven innovation, and mindset development for both competitive and collaborative projects.",
+      link: "https://example.com/",
+
+      isLive: false,
+    },
+    {
+      title: "30 Days Coding Challenge",
+      date: "01 - 30 June 2025",
+      description:
+        "μLearn, in collaboration with KKEM and hosted by μLearn LBSITW, is launching a 30-Day Coding Challenge from June 1 to 30, 2025. The challenge offers daily coding tasks, exciting rewards, and Karma points to help participants learn, code, and grow every day. Open to both beginners and experienced coders, it’s a great opportunity to build consistency and improve coding skills throughout the month. Participants can join through the provided link to be part of the action.",
+      link: "https://example.com",
+
+      isLive: false,
     },
   ],
   recurringEvents: {
     flagship: [
       {
-        title: "Top 100 Coders",
+        title: "Permute",
         description:
-          "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
-        link: "https://top100coders.com/",
+          "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
+        link: "https://permute.mulearn.org/",
+
+        isLive: false,
+      },
+      {
+        title: "Top 100 Series",
+        description:
+          "Top 100 Series aims to highlight and empower India’s top innovative talents in the fields of coding, designing and hardware development and product innovation. Through well curated challenges and expert guidance, we help individuals connect, grow and gain global recognition.",
+        link: "https://top100series.com/",
         image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
         isLive: true,
+      },
+      {
+        title: "In50Hours",
+        description:
+          "Get ready to unleash your creativity and innovation at In50Hr, a high-energy 50-hour hackathon where ideas turn into reality. Over an intense and inspiring weekend, participants will collaborate, code, and create groundbreaking solutions while connecting with like-minded innovators, mentors, and industry experts. It’s a space where passion meets purpose — filled with brainstorming sessions, sleepless nights, and bursts of caffeine-fueled energy. Whether you’re a developer, designer, or dreamer, In50Hr offers the perfect platform to showcase your talent, learn new skills, and build something extraordinary in just 50 hours.",
+        link: "/in50hours/",
+        image: cdnUrl("src/modules/Public/Home/assets/in50hrs.webp"),
+        isLive: false,
       },
       {
         title: "Launchpad",
@@ -37,11 +136,11 @@ export const events: {
         isLive: false,
       },
       {
-        title: "Permute 2025",
+        title: "Trivial Ideas",
         description:
-          "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
-        link: "https://permute.mulearn.org/",
-
+          "The Trivial Ideas program is a monthly initiative by μLearn where students create and share small, useful tools that solve real problems. Each month starts with a new theme and continues through building, reviewing, and publishing the best tools. The program helps students practice building consistently, learn from feedback, and see their work adopted by others. It also involves partners who guide, support, and validate the tools through real-world use.",
+        link: "/in50hours/",
+        image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
         isLive: false,
       },
       {
@@ -53,31 +152,22 @@ export const events: {
         isLive: false,
       },
       {
-        title: "Top 100 Designers",
+        title: "Amuse",
         description:
-          "Discover the forefront of design innovation with Top 100 Designers, an initiative dedicated to recognizing and celebrating India's most talented and influential designers. This platform brings together creative minds from various design disciplines - from UI/UX and graphic design to product and motion design. Join us in spotlighting exceptional design talent and shaping the future of India's creative landscape.",
-        link: "https://designers.top100series.com/",
-
-        isLive: true,
-      },
-      {
-        title: "Top 100 Makers",
-        description:
-          "Welcome to Top 100 Makers - an initiative celebrating India's most innovative creators, builders, and hardware enthusiasts. We're dedicated to recognizing brilliant minds who turn ideas into tangible prototypes, electronic innovations, and real-world solutions. From IoT devices and robotics to DIY projects and smart gadgets, join us in empowering the maker community and shaping the future of hands-on innovation in India.",
-        link: "https://makers.top100series.com/",
-
-        isLive: true,
-      },
-      {
-        title: "CareHack 2025",
-        description:
-          "CareHack is a dynamic two-phase hackathon presented by CareRevenue in collaboration with the μLearn Foundation, scheduled for August 2nd & 3rd, 2025. This competitive event is designed to identify and recruit exceptional full-stack developers and UI/UX designers through intense, collaborative innovation. Beyond talent acquisition, CareHack aims to amplify CareRevenue's brand presence within the tech ecosystem while evaluating participants on technical expertise, teamwork, communication, and problem-solving abilities.",
-        link: "https://carehack.tech/",
+          "Amuse is a vibrant, invite-only gathering that brought together campus leads, district leads, and core enablers from the μLearn community. Hosted as a collaborative planning retreat, Amuse served as a space for vision-building, strategy discussions, and cross-campus collaboration. The event fostered meaningful conversations and collective ideation, empowering leaders to align on future initiatives and strengthen the ecosystem of student-led innovation across campuses.",
+        link: "https://mulearn.org/",
 
         isLive: false,
       },
     ],
     weekly: [
+      {
+        title: "Office Hour",
+        description:
+          "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
+        link: "/events/office-hour",
+        date: "Every Saturday",
+      },
       {
         title: "Inspiration Station Radio",
         description:
@@ -90,7 +180,7 @@ export const events: {
         description:
           "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
         link: "/events/openmic",
-        date: "Every Thursday",
+        date: "Every Saturday",
       },
       {
         title: "Salt Mango Tree",
@@ -261,6 +351,48 @@ export const openMicData: OpenMicData = {
   ],
 };
 
+export interface OfficeHoursData {
+  events: OMEvent[];
+}
+
+export const officehourdata: OfficeHoursData = {
+  events: [
+    {
+      id: 1,
+      title: "What is BMC?",
+      performer: "Karthik Krishnan",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "08/11/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 2,
+      title: "Open Mic #2 ft. Ramakrishnan",
+      performer: "Ramakrishnan Haraden",
+      description:
+        "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
+      date: "08/12/2022",
+      tags: ["Music", "Composition"],
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
+      isUpcoming: false,
+    },
+    {
+      id: 3,
+      title: "Open Mic #3 ft. Arjun",
+      performer: "Arjun",
+      description:
+        "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
+      date: "01/12/2022",
+      tags: ["Music", "Singing"],
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
+      isUpcoming: false,
+    },
+  ],
+};
+
 export const artOfTeachingMentors = [
   {
     name: "Dr T M George",
@@ -287,11 +419,7 @@ export const artOfTeachingMentors = [
 export const artOfTeachingUrls = {
   mainVideo: "https://www.youtube.com/embed/r5izRx-4j68?si=L9gHSznyZTeCI3b3",
   firstEdition: "vPLuA5kXoBI",
-  archives: [
-    "Wmo0StqW9Kc",
-    "TEylubYDzhQ",
-    "jRcseEVk2sk",
-  ],
+  archives: ["Wmo0StqW9Kc", "TEylubYDzhQ", "jRcseEVk2sk"],
   registerNow: "https://airtable.com/appopz4GXqkTszuJ7/pagmodllXiRWsjhXi/form",
 };
 
@@ -357,7 +485,7 @@ export const yip = [
   {
     type: "type1",
     icon: cdnUrl(
-      "src/modules/Public/yip/assets/procedure/winner%20annoucement.webp"
+      "src/modules/Public/yip/assets/procedure/winner%20annoucement.webp",
     ),
     phaseLabel: "Winner\nAnnouncement",
     title: "Step Eight",
