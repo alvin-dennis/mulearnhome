@@ -1,6 +1,6 @@
 "use client";
 
-import { openMicData } from "@/data/events";
+import { officehourdata } from "@/data/events";
 import { OMEvent } from "@/lib/types";
 import { useState } from "react";
 import { Mic, Calendar, Users, PlayCircle, Clock } from "lucide-react";
@@ -10,8 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import MuImage from "@/components/MuImage";
 
 export default function OpenMicPage() {
-  const upcomingEvents = openMicData.events.filter((event) => event.isUpcoming);
-  const pastEvents = openMicData.events.filter((event) => !event.isUpcoming);
+  const upcomingEvents = officehourdata.events.filter(
+    (event) => event.isUpcoming,
+  );
+  const pastEvents = officehourdata.events.filter((event) => !event.isUpcoming);
 
   return (
     <div className="min-h-screen bg-linear-to-br from-mulearn-gray-50 to-mulearn-whitish">

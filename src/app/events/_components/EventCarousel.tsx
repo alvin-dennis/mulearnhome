@@ -26,7 +26,7 @@ export default function EventCarousel({ events }: Props) {
           pauseOnMouseEnter: true,
         }}
         pagination={{ clickable: true, dynamicBullets: true }}
-        loop={events.length > 3}
+        loop={false}
         breakpoints={{
           640: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 3, spaceBetween: 24 },
