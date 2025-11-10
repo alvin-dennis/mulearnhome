@@ -29,15 +29,6 @@
       "displayname": "Amith Abey Stephen"
     },
     {
-      "username": "awindsr",
-      "commits": 0,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Awindsr"
-    },
-    {
       "username": "alvin-dennis",
       "commits": 0,
       "prs_opened": 3,
@@ -45,6 +36,15 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "awindsr",
+      "commits": 0,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Awindsr"
     },
     {
       "username": "thomasjacob0207-design",
