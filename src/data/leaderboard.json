@@ -74,6 +74,15 @@
       "displayname": "SUHAIR SUBAIR"
     },
     {
+      "username": "Vishal-Jobin",
+      "commits": 0,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Vishal-Jobin"
+    },
+    {
       "username": "Soorya005",
       "commits": 0,
       "prs_opened": 1,
@@ -81,15 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Soorya A P"
-    },
-    {
-      "username": "vedhavk",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Vedha"
     }
   ],
   "overall": [
