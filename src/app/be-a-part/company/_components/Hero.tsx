@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MotionDiv, MotionButton } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { companyImages } from "@/data/company";
@@ -14,7 +15,7 @@ export default function Hero() {
             className="relative w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 lg:-ml-14"
           >
             <div className="relative w-full max-w-[650px] aspect-[512/400]">
-              <div className="absolute top-1/4 left-8 w-[236px] h-[283px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple blur-[200px] opacity-70 hidden sm:block" />
+              <div className="absolute top-1/4 left-30 w-[236px] h-[283px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple blur-[200px] opacity-70 hidden sm:block" />
 
               <MuImage
                 src={companyImages.hero}
@@ -35,7 +36,7 @@ export default function Hero() {
           >
             <h1 className="text-xl sm:text-lg md:text-xl lg:text-[40px] font-semibold leading-tight text-center lg:text-right max-w-[630px]">
               <span className="text-[#1A202C]">Partner with </span>
-              <span className="text-mulearn-trusty-blue">µLearn </span>
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">µLearn </span>
               <span className="text-[#1A202C]">
                 to discover talent and spark innovation
               </span>
@@ -46,7 +47,13 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
             >
-              Join as a Company Partner
+              <Link
+                href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join as a Company Partner
+              </Link>
             </MotionButton>
           </MotionDiv>
         </div>

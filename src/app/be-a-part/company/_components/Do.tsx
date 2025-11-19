@@ -10,7 +10,7 @@ export default function WhatYouCanDo() {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-xl sm:text-4xl font-bold text-[#1A202C] tracking-tight text-center md:text-left mb-12"
+          className="text-xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight text-center md:text-left mb-12"
         >
           What You Can Do?
         </MotionH2>
@@ -23,16 +23,16 @@ export default function WhatYouCanDo() {
             className="flex-1 relative"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative">
-              <div className="absolute left-0 right-0 top-1/2 h-px bg-black hidden md:block" />
+              <div className="absolute left-0 right-0 top-1/2 h-px bg-mulearn-blackish hidden md:block" />
 
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-black hidden md:block" />
+              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-mulearn-blackish hidden md:block" />
 
               {companyDo.map((action, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center text-center p-6 gap-4"
                 >
-                  <h3 className="text-xl font-bold text-mulearn-trusty-blue leading-tight">
+                  <h3 className="text-xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent leading-tight">
                     {action.title}
                   </h3>
                   <p className="text-lg text-mulearn-blackish leading-snug max-w-[400px]">
