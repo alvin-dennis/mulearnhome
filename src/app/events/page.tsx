@@ -20,6 +20,7 @@ export default function Events() {
   const formatSectionTitle = (type: string) => {
     const titles: Record<string, string> = {
       latest: "Ongoing Events",
+      past: "Past Events",
       flagship: "Flagship Events",
       weekly: "Weekly Twitch Events",
       biweekly: "Biweekly Events",
@@ -29,13 +30,14 @@ export default function Events() {
   };
 
   const recurringEventsEntries: [string, Event[]][] = Object.entries(
-    events.recurringEvents
+    events.recurringEvents,
   ).filter(([, events]) => events.length > 0);
 
   const shouldUseCarousel = (events: Event[]) => events.length > 3;
 
   const allEventsSections: [string, Event[]][] = [
     ["latest", events.latestEvents],
+    ["past", events.pastEvents],
     ...recurringEventsEntries,
   ] as [string, Event[]][];
 
@@ -62,18 +64,6 @@ export default function Events() {
               inspirations, and much more. Join in and let&apos;s learn
               something new.
             </p>
-            <Link
-              href="/events/calendar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant={"mulearn"}
-                className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg hover:shadow-xl hover:scale-105 active:scale-95 mt-10"
-              >
-                View Events Calendar
-              </Button>
-            </Link>
           </MotionDiv>
         </div>
 
