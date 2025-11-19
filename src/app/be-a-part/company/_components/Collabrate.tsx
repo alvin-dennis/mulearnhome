@@ -107,7 +107,7 @@ export default function WhyCollaborate() {
               whileHover={{ scale: 1.02 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="flex flex-col items-center justify-start gap-5 p-6 border-2 border-mulearn-whitish rounded-lg transition-all duration-300 ease-in-out"
+              className="flex flex-col items-center justify-start gap-5 p-6 border-2 border-mulearn-gray-600/10 rounded-lg transition-all duration-300 ease-in-out"
               style={{
                 backgroundColor: hoveredIndex === index ? "#E7F2FF" : "#FFF",
               }}
