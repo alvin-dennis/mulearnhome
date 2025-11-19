@@ -71,7 +71,7 @@ export default function WhyCollaborate() {
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-whitish transition-all duration-100 ease-in-out ${
+              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-gray-600/10 transition-all duration-100 ease-in-out ${
                 index === 0
                   ? "rounded-l-[10px] border-r-0"
                   : index === CompanyFeatures.length - 1
