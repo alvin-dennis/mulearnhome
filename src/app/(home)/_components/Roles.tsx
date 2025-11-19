@@ -3,6 +3,13 @@
 import { useState } from "react";
 import { Variants } from "framer-motion";
 import { MotionSection, MotionDiv, MotionNav } from "@/components/MuFramer";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import { rolesTitle, rolesContent } from "@/data/home";
 import { Role, RoleItem } from "@/lib/types";
 import MuImage from "@/components/MuImage";
@@ -36,16 +43,33 @@ export default function Roles() {
         </h6>
       </MotionDiv>
 
-      <MotionNav className="flex justify-center mb-10" variants={fadeInUp}>
+      <div className=" flex flex-col w-full mb-6 items-center justify-center sm:hidden">
+        <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
+          <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <SelectValue placeholder="Select Role" />
+          </SelectTrigger>
+          <SelectContent>
+            {rolesTitle.map((role: Role) => (
+              <SelectItem key={role.id} value={role.id}>
+                {role.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <MotionNav
+        className="hidden sm:flex justify-center mb-10"
+        variants={fadeInUp}
+      >
         <ul className="list-none flex gap-5 p-0 m-0">
           {rolesTitle.map((role: Role) => (
             <li
               key={role.id}
-              className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${
-                activeRole === role.id
+              className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${activeRole === role.id
                   ? "font-bold border-mulearn-blackish"
                   : "border-transparent hover:text-mulearn-trusty-blue"
-              }`}
+                }`}
               onClick={() => setActiveRole(role.id)}
             >
               {role.label}
