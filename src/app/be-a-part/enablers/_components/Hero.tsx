@@ -52,7 +52,7 @@ export default function Hero() {
             <span className="block">Polish your skills through</span>
 
             <span className="relative block">
-              <span className="relative inline-block align-middle text-mulearn-trusty-blue">
+              <span className="relative inline-block align-middle bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                 µLearn
                 <span
                   className="absolute -left-6 -top-0.5 hidden md:block"
@@ -61,7 +61,7 @@ export default function Hero() {
                     transformOrigin: "center",
                   }}
                 >
-                  <GraduationCap className="h-10 w-10" />
+                  <GraduationCap className="h-10 w-10 text-mulearn-trusty-blue" />
                 </span>
               </span>
               <span className="px-2">to make</span>
@@ -177,14 +177,14 @@ export default function Hero() {
             <div
               className="absolute left-0 right-0 -top-2 h-2 rounded-full"
               style={{
-                backgroundColor: "var(--mulearn-trusty-blue)",
+                backgroundColor: "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
                 boxShadow: "0 2px 8px rgba(46,133,254,0.25)",
               }}
             />
             <div
               className="absolute left-0 right-0 -bottom-3 h-4 rounded-full"
               style={{
-                backgroundColor: "var(--mulearn-trusty-blue)",
+                backgroundColor: "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
                 boxShadow: "0 6px 14px rgba(46,133,254,0.25)",
               }}
             />
@@ -197,7 +197,7 @@ export default function Hero() {
                 boxShadow: "0 8px 30px rgba(46,133,254,0.15)",
               }}
             >
-              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
                 Build Brighter Futures
               </span>
               <svg
@@ -208,7 +208,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
                 Make Learning Accessible
               </span>
               <svg
@@ -219,7 +219,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className=" text-sm font-semibold text-mulearn-trusty-blue md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
                 Transform Education Today
               </span>
             </div>

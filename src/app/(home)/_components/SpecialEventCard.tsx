@@ -50,10 +50,10 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
                   }}
                 />
                 <div
-                  className="absolute top-3 right-3 w-5 h-5 text-mulearn-whitish cursor-pointer p-1 rounded-full transition-colors duration-200 hover:bg-mulearn-whitish/20"
+                  className="absolute top-3 right-3 w-5 h-5 text-mulearn-whitish cursor-pointer p-1 rounded-full transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
-                  <FiX className="w-5 h-5 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent" />
+                  <FiX className="w-5 h-5 text-mulearn-whitish" />
                 </div>
               </div>
 
@@ -93,9 +93,9 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
                 </div>
               </div>
 
-              <div className="bg-mulearn-whitish pt-2 pb-6 px-6">
+              <div className="pt-2 pb-6 px-6">
                 <Button
-                  variant={"mulearn"}
+                  variant="mulearn"
                   className="font-semibold rounded-md py-3 px-6 h-[50px] w-full border-none cursor-pointer"
                   onClick={() => window.open(specialevent.link, "_blank")}
                 >

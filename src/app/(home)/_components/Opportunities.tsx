@@ -41,7 +41,9 @@ export default function Opportunities() {
           {opportunities.map((opportunity) => (
             <MotionDiv
               key={opportunity.id}
-              className="flex flex-col items-center justify-center py-12 px-8 bg-mulearn-greyish/20 transition-all rounded-lg duration-500 ease-in-out hover:-translate-y-[5px] cursor-pointer min-h-[250px]"
+              className="flex flex-col items-center justify-start py-12 px-8 bg-mulearn-greyish/20 
+             transition-all rounded-lg duration-500 ease-in-out hover:-translate-y-[5px] 
+             cursor-pointer min-h-[250px]"
               variants={fadeInUp}
             >
               <span className="w-full max-w-[150px]">
@@ -53,7 +55,8 @@ export default function Opportunities() {
                   className="w-full h-auto"
                 />
               </span>
-              <h6 className="text-xl mt-6 font-semibold text-center">
+
+              <h6 className="text-xl font-semibold text-center mt-auto">
                 {opportunity.name}
               </h6>
             </MotionDiv>

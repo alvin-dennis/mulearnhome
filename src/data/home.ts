@@ -160,7 +160,7 @@ export const rolesContent: RolesContent = {
       name: "Skill Development",
       description:
         "Gain practical experience through hands-on projects and industry-relevant training. Build a strong technical foundation with real-world applications that enhance your expertise.",
-      image: cdnUrl("public/assets/roles_images/skill-development.svg"),
+      image: "/assets/home/skill.svg",
     },
     {
       id: 2,
@@ -174,7 +174,7 @@ export const rolesContent: RolesContent = {
       name: "Collaborative Learning Experience",
       description:
         "Learn alongside peers and industry experts in an interactive, knowledge-sharing environment. Develop critical problem-solving skills while staying ahead with the latest tech trends.",
-      image: cdnUrl("public/assets/roles_images/learning.svg"),
+      image: "/assets/home/collab.svg",
     },
     {
       id: 4,
@@ -190,7 +190,7 @@ export const rolesContent: RolesContent = {
       name: "Expand Your Network & Build Connections",
       description:
         "Engage with a vibrant community of like-minded individuals and industry professionals. Grow your network, discover collaboration opportunities, and build lasting relationships that drive career success.",
-      image: cdnUrl("public/assets/roles_images/networking.svg"),
+      image: "/assets/home/networking.svg",
     },
     {
       id: 2,
@@ -204,7 +204,7 @@ export const rolesContent: RolesContent = {
       name: "Collaborative Projects & Real-World Impact",
       description:
         "Join forces with community members to work on impactful projects that shape the tech ecosystem. Gain hands-on experience, enhance problem-solving skills, and contribute to meaningful innovations.",
-      image: cdnUrl("public/assets/roles_images/collaboration.svg"),
+      image: "/assets/home/collaboration.svg",
     },
     {
       id: 4,
