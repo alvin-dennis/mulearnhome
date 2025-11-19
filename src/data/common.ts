@@ -7,7 +7,6 @@ export const navItems = [
       "KEY PAGES": [
         { label: "MANIFESTO", href: "/manifesto" },
         { label: "TEAM", href: "/team" },
-        { label: "ENABLERS", href: "/enablers" },
         {
           label: "IMPACT GALLERY",
           href: "/impact-gallery",
@@ -21,6 +20,7 @@ export const navItems = [
         { label: "TOP100SERIES", href: "https://top100coders.com/" },
         { label: "ART OF TEACHING", href: "/artofteaching" },
         { label: "IN50HOURS", href: "/in50hours" },
+        { label: "KKEM", href: "/kkem" },
       ],
       OTHERS: [
         {
@@ -31,7 +31,6 @@ export const navItems = [
           label: "NEWSLETTER",
           href: "https://online.fliphtml5.com/slydm/yljq/",
         },
-        { label: "GLOBAL CALENDAR", href: "/events/calendar" },
         { label: "ANNUAL REPORTS", href: "/report" },
         {
           label: "CONTACT US",
@@ -56,6 +55,7 @@ export const navItems = [
         { label: "Company", href: "/be-a-part/company" },
         { label: "Campus", href: "/be-a-part/campus" },
         { label: "Enabler", href: "/be-a-part/enablers" },
+        { label: "Learners", href: "/be-a-part/learners" },
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [
@@ -133,6 +133,7 @@ export const footer = [
       { title: "Terms and Conditions", url: "/termsandconditions" },
       { title: "Privacy Policy", url: "/privacypolicy" },
       { title: "Refund Policy", url: "/refundpolicy" },
+      { title: "Annual Reports", url: "/report" },
     ],
   },
 ];
