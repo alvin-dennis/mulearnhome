@@ -200,6 +200,17 @@ h5{
   }
 }
 
+.text-mulearn {
+  background: linear-gradient(to right, #6366f1, #2E85FE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-mulearn {
+  background: linear-gradient(to right, #6366f1, #2E85FE);
+}
+
 .swiper-pagination-bullet {
   background: hsl(var(--primary));
   opacity: 0.3;
