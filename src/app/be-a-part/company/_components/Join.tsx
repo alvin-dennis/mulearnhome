@@ -2,7 +2,6 @@ import { MotionH2, MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { companySteps } from "@/data/company";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 export default function HowToJoin() {
   return (
@@ -12,7 +11,7 @@ export default function HowToJoin() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xl sm:text-3xl font-bold text-[#1A202C] mb-12 tracking-tight"
+          className="text-xl sm:text-3xl font-bold text-mulearn-blackish mb-12 tracking-tight"
         >
           How To Join?
         </MotionH2>
@@ -122,7 +121,7 @@ export default function HowToJoin() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center gap-4 p-6 border-2 border-[#EEE] rounded-lg bg-mulearn-whitish"
+                className="flex flex-col items-center text-center gap-4 p-6 border-2 border-mulearn-whitish rounded-lg bg-mulearn-whitish"
               >
                 <div className="w-[100px] h-[100px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
                   <span className="text-mulearn-whitish text-4xl font-bold">
@@ -130,7 +129,7 @@ export default function HowToJoin() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-mulearn-trusty-blue leading-tight">
+                <h3 className="text-2xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent leading-tight">
                   {step.title}
                 </h3>
                 <p className="text-lg text-mulearn-blackish leading-snug">

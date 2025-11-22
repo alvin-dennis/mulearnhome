@@ -33,8 +33,10 @@ export default function Activities() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="rounded-2xl p-6 text-center shadow-sm transition-all border hover:scale-105 hover:shadow-md"
               >
-                <div className="mb-3 text-4xl text-primary">
-                  <Icon className="mx-auto h-10 w-10 text-mulearn-trusty-blue" />
+                <div className="mb-3">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple">
+                    <Icon className="h-8 w-8 text-mulearn-whitish" />
+                  </div>
                 </div>
                 <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-mulearn-gray-600">
                   {activity.title}

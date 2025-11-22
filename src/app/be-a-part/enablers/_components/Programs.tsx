@@ -1,6 +1,7 @@
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import Link from "next/link";
 
 export default function Programs() {
   return (
@@ -65,12 +66,14 @@ export default function Programs() {
                   winners with cash prizes.
                 </p>
                 <div>
+                  <Link href="https://mulearnfoundation.notion.site/artofteaching-guidelines" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="mulearn"
                     className=" px-6 py-3 text-sm font-semibold md:text-base"
                   >
                     Know More
                   </Button>
+                  </Link>
                 </div>
               </MotionDiv>
             </div>

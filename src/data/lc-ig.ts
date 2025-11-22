@@ -68,39 +68,32 @@ export const learningCircleData = {
         title: "Web Development",
         description:
           "Frontend, Backend, Full-stack development with modern technologies",
-        color:
-          "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent",
       },
       {
         icon: Smartphone,
         title: "Mobile Development",
         description: "iOS, Android, and cross-platform mobile app development",
-        color: "text-chart-1",
       },
       {
         icon: Palette,
         title: "UI/UX Design",
         description:
           "User interface design, user experience, and design thinking",
-        color: "text-mulearn-duke-purple",
       },
       {
         icon: Database,
         title: "Data Science",
         description: "Machine learning, AI, data analysis, and visualization",
-        color: "text-chart-3",
       },
       {
         icon: Globe,
         title: "DevOps & Cloud",
         description: "Cloud platforms, CI/CD, infrastructure, and deployment",
-        color: "text-chart-5",
       },
       {
         icon: Zap,
         title: "Emerging Tech",
         description: "Blockchain, IoT, AR/VR, and cutting-edge technologies",
-        color: "text-chart-2",
       },
     ],
   },
