@@ -146,6 +146,7 @@ export interface ClosedCareersCardProps {
   location?: string;
   qualifications?: string;
   role?: string;
+  organization?: string;
   duration?: string;
   remuneration?: string;
 }
