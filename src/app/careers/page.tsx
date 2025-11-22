@@ -210,7 +210,6 @@ export default function Careers() {
                 qualifications={role.qualifications}
                 date={role.date}
                 role={role.role}
-                organization={role.organization}
                 remuneration={role.remuneration}
                 location={role.location}
                 duration={role.duration}
