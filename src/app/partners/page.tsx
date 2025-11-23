@@ -56,18 +56,18 @@ export default function PartnersPage() {
             </MotionDiv>
 
             <MotionDiv
-              className="relative w-full h-64 sm:h-80 lg:h-96"
+              className="relative w-full h-80 sm:h-96 lg:h-[28rem] xl:h-[32rem]"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden ">
                 <MuImage
-                  src="assets\learning-circle\learning-circle-illustration.svg"
+                  src="assets\partners\Partnership-bro.svg"
                   alt="Partnership collaboration"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-contain"
                   preload
                 />
               </div>
@@ -320,7 +320,7 @@ export default function PartnersPage() {
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
-                  <button className="px-8 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                  <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Community</span>
                     <ArrowRight className="w-5 h-5" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
                   </button>
