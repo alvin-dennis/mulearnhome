@@ -365,7 +365,7 @@ export const officehourdata: OfficeHoursData = {
         "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "08/11/2025",
       tags: ["Entrepreneurship"],
-      thumbnail: "/assets/bmc.jpeg",
+      thumbnail: cdnUrl("public/assets/team/default.webp"),
       isUpcoming: false,
     },
     {
