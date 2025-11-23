@@ -41,7 +41,7 @@ export default function Level7Section() {
           <div className="space-y-6">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-mulearn-blackish leading-tight">
               Welcome to the{" "}
-              <span className="text-mulearn-duke-purple">μVerse</span>
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">μVerse</span>
             </h2>
             <p className="text-xl md:text-2xl text-mulearn-gray-600 leading-relaxed max-w-3xl mx-auto">
               Where learning transforms into opportunity, and students become
@@ -51,7 +51,7 @@ export default function Level7Section() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-trusty-blue">
+              <h3 className="text-2xl font-bold text-mulearn-gray-600">
                 Access
               </h3>
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
@@ -61,7 +61,7 @@ export default function Level7Section() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-duke-purple">
+              <h3 className="text-2xl font-bold text-mulearn-gray-600">
                 Network
               </h3>
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
@@ -71,7 +71,7 @@ export default function Level7Section() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-trusty-blue">
+              <h3 className="text-2xl font-bold text-mulearn-gray-600">
                 Impact
               </h3>
               <p className="text-base text-mulearn-gray-600 leading-relaxed">

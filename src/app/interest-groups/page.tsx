@@ -333,14 +333,14 @@ export default function InterestGroups() {
                   <MuImage
                     src={group.image}
                     alt={group.name}
-                    width={400}
-                    height={192}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 <div className="relative z-10 flex flex-col p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 ">
+                  <h3 className="text-xl font-bold mb-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 ">
                     {group.name}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 flex-grow">
