@@ -45,19 +45,21 @@ export default function Level2Section() {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
                 The Mindset{" "}
-                <span className="text-mulearn-trusty-blue">Shift</span>
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                Shift
+              </span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
                 From{" "}
-                <span className="text-mulearn-trusty-blue font-semibold">
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   Fixed
                 </span>{" "}
                 →{" "}
-                <span className="text-mulearn-trusty-blue font-semibold">
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   Growth
                 </span>{" "}
                 →{" "}
-                <span className="text-mulearn-trusty-blue font-semibold">
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   Abundance
                 </span>
               </p>
@@ -66,10 +68,10 @@ export default function Level2Section() {
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 Most students walk into μLearn trapped in{" "}
-                <span className="font-semibold text-mulearn-duke-purple">
-                  invisible cages
-                </span>
-                .
+               <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                invisble cages
+              </span>
+                
               </p>
 
               <p className="text-base text-mulearn-gray-600 leading-relaxed">

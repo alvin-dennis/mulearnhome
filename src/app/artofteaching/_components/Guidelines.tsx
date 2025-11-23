@@ -16,7 +16,7 @@ const Guidelines = () => {
 
   const timelineItemStyle: React.CSSProperties = {
     display: "flex",
-    alignItems: "center" as const,
+    alignItems: "flex-start" as const,
     position: "relative",
     marginBottom: "20px",
   };
@@ -27,9 +27,10 @@ const Guidelines = () => {
     backgroundColor: "var(--mulearn-gray-600)",
     borderRadius: "50%",
     position: "relative",
-    zIndex: 1,
+    zIndex: 2,
     minWidth: "20px",
     minHeight: "20px",
+    flexShrink: 0,
   };
 
   const lineStyle: React.CSSProperties = {
@@ -39,7 +40,7 @@ const Guidelines = () => {
     position: "absolute",
     top: "20px",
     left: "9px",
-    zIndex: 0,
+    zIndex: 1,
   };
 
   const mobilelineStyle: React.CSSProperties = {
@@ -53,7 +54,8 @@ const Guidelines = () => {
   };
 
   const contentStyle = {
-    marginLeft: "40px",
+    marginLeft: "20px",
+    flex: 1,
   };
 
   return (
@@ -85,8 +87,8 @@ const Guidelines = () => {
               </p>
             </div>
 
-            <div className="hidden lg:block lg:w-1/2">
-              <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-lg max-w-lg">
+            <div className=" lg:block lg:w-1/2">
+              <div className="bg-white rounded-lg p-8 max-w-2xl">
                 <h3 className="text-2xl font-semibold text-mulearn-blackish mb-6">
                   <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                     Guidelines
@@ -98,33 +100,25 @@ const Guidelines = () => {
                       Level 1
                     </h4>
                   </div>
-                  <div className="pl-4" style={timelineItemStyle}>
-                    <div className="pl-4" style={circleStyle}></div>
-                    <div className="ml-4" style={lineStyle}></div>
+                  <div style={timelineItemStyle}>
+                    <div style={circleStyle}></div>
+                    <div style={lineStyle}></div>
                     <div style={contentStyle}>
-                      <p className="text-lg">Task 1 - Self introduction.</p>
+                      <p className="text-lg">Task 1 - Video submission explaining a selected topic.</p>
                     </div>
                   </div>
-                  <div className="pl-4" style={timelineItemStyle}>
-                    <div className="pl-4" style={circleStyle}></div>
-                    <div className="ml-4" style={lineStyle}></div>
-                    <div style={contentStyle}>
-                      <p className="text-lg">
-                        Task 2 - Video submission explaining a selected topic.
-                      </p>
-                    </div>
-                  </div>
+           
                   <div>
                     <h4 className="text-lg font-semibold text-mulearn-blackish mb-2 mt-4">
                       Level 2
                     </h4>
                   </div>
-                  <div className="pl-4" style={timelineItemStyle}>
-                    <div className="pl-4" style={circleStyle}></div>
-                    <div className="ml-4" style={lineStyle}></div>
+                  <div style={timelineItemStyle}>
+                    <div style={circleStyle}></div>
+                    <div style={lineStyle}></div>
                     <div style={contentStyle}>
                       <p className="text-lg">
-                        Task 1 - Detailed document submission of the designed
+                        Task 2 - Detailed document submission of the designed
                         course curriculum.
                       </p>
                     </div>
@@ -135,8 +129,8 @@ const Guidelines = () => {
                       download="Art of Teaching Guidelines.pdf"
                     >
                       <Button
-                        variant={"mulearn"}
-                        className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors"
+                        variant={"mulearn-trusty"}
+                        className="border-none  px-4 py-2 text-base font-bold w-[180px] transition-colors"
                       >
                         Download Pdf
                       </Button>
@@ -147,66 +141,10 @@ const Guidelines = () => {
             </div>
           </div>
 
-          <div className="block lg:hidden mt-12 mb-8">
-            <div className=" border border-gray-200 rounded-lg p-6 shadow-lg">
-              <h3 className="text-xl font-semibold text-mulearn-blackish mb-4">
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                  Guidelines
-                </span>
-              </h3>
-              <div style={timelineStyle}>
-                <div>
-                  <h4 className="text-lg font-semibold text-mulearn-blackish mb-2">
-                    Level 1
-                  </h4>
-                </div>
-                <div className="pl-4" style={timelineItemStyle}>
-                  <div className="pl-4" style={circleStyle}></div>
-                  <div className="ml-4" style={mobilelineStyle}></div>
-                  <div style={contentStyle} className="text-gray-600">
-                    Task 1 - Self introduction with welcome ticket.
-                  </div>
-                </div>
-                <div className="pl-4" style={timelineItemStyle}>
-                  <div className="pl-4" style={circleStyle}></div>
-                  <div className="ml-4" style={mobilelineStyle}></div>
-                  <div style={contentStyle} className="text-gray-600">
-                    Task 2 - Video submission explaining a selected topic.
-                  </div>
-                </div>
-                <div className="mt-3 pt-2">
-                  <h4 className="text-lg font-semibold text-mulearn-blackish mb-2">
-                    Level 2
-                  </h4>
-                </div>
-                <div className="pl-4" style={timelineItemStyle}>
-                  <div className="pl-4 pb-5" style={circleStyle}></div>
-                  <div className="ml-4" style={mobilelineStyle}></div>
-                  <div style={contentStyle} className="text-gray-600">
-                    <p className="pt-3">
-                      Task 1 - Detailed document submission of the designed
-                      course curriculum.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-5">
-                  <Link
-                    href={artOfTeachingGuidelines}
-                    download="Art of Teaching Guidelines.pdf"
-                    className="download-button"
-                  >
-                    <Button className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors">
-                      Download PDF
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full max-w-md lg:max-w-2xl mt-8">
+          <div className="mt-24 mb-8 flex items-center justify-center">
+            <div className="w-full max-w-md lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
               <iframe
-                className="w-full h-56 lg:h-70 xl:h-96 rounded-lg"
+                className="w-full h-56 lg:h-70 xl:h-96 rounded-lg mx-auto lg:w-[750px]"
                 src={artOfTeachingUrls.mainVideo}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -215,19 +153,6 @@ const Guidelines = () => {
               />
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="hidden lg:flex items-center justify-center h-[500px] mb-4">
-        <div className="w-full max-w-md lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
-          <iframe
-            className="flex items-center justify-center mx-auto lg:w-[750px] h-56 lg:h-70 xl:h-96 rounded-lg"
-            src={artOfTeachingUrls.mainVideo}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          />
         </div>
       </div>
     </>

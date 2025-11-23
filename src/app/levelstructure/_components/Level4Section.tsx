@@ -26,7 +26,7 @@ export default function Level4Section() {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
                 The Path of{" "}
-                <span className="text-mulearn-duke-purple">Choice</span>
+                    <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Choice</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
                 Choose Your Interest Group
@@ -36,9 +36,9 @@ export default function Level4Section() {
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 This is where the hero chooses their{" "}
-                <span className="font-semibold text-mulearn-duke-purple">
-                  tribe
-                </span>
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                tribe
+              </span>
                 . Students anchor under mentors & industry-aligned pathways.
               </p>
 
