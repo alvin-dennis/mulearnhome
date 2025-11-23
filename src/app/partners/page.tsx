@@ -63,7 +63,7 @@ export default function PartnersPage() {
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden ">
                 <MuImage
-                  src="assets\partners\Partnership-bro.svg"
+                  src="assets\partners\Collaboration-pana.svg"
                   alt="Partnership collaboration"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
