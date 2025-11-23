@@ -2,6 +2,15 @@
   "month": "2025-11",
   "monthly": [
     {
+      "username": "Amith-Abey-Stephen",
+      "commits": 0,
+      "prs_opened": 4,
+      "prs_merged": 4,
+      "issues_opened": 17,
+      "issues_closed": 5,
+      "displayname": "Amith Abey Stephen"
+    },
+    {
       "username": "awindsr",
       "commits": 0,
       "prs_opened": 5,
@@ -29,13 +38,13 @@
       "displayname": "Godly K Mathews"
     },
     {
-      "username": "Amith-Abey-Stephen",
+      "username": "alvin-dennis",
       "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 3,
+      "prs_opened": 4,
+      "prs_merged": 2,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Amith Abey Stephen"
+      "displayname": "Alvin Dennis"
     },
     {
       "username": "salahudheenthajudheen",
@@ -45,15 +54,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Salahudheen Thajudheen"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Alvin Dennis"
     },
     {
       "username": "thomasjacob0207-design",
@@ -83,13 +83,13 @@
       "displayname": "Vishal-Jobin"
     },
     {
-      "username": "Soorya005",
+      "username": "Safwancs7",
       "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
+      "prs_opened": 3,
+      "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Soorya A P"
+      "displayname": "Muhammad Safwan C S"
     }
   ],
   "overall": [
