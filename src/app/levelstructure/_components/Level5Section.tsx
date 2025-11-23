@@ -45,7 +45,7 @@ export default function Level5Section() {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
                 The Global{" "}
-                <span className="text-mulearn-duke-purple">Arena</span>
+                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Arena</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
                 Challenges, Hackathons & Competitions
@@ -55,9 +55,9 @@ export default function Level5Section() {
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 The student now steps onto{" "}
-                <span className="font-semibold text-mulearn-duke-purple">
-                  global battlegrounds
-                </span>
+               <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                global battlegrounds
+              </span>
                 . Facing global peers raises the bar, sharpens skills, and
                 builds recognition.
               </p>
