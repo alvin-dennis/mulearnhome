@@ -264,6 +264,16 @@ export interface OMEvent {
   isUpcoming: boolean;
 }
 
+export interface OfficeHours {
+  title: string;
+  date?: string;
+  description: string;
+  performer?: string;
+  tags: string[];
+  thumbnail?: string;
+  isUpcoming: boolean;
+}
+
 export interface Score {
   username: string;
   displayname: string;

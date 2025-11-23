@@ -1,5 +1,6 @@
 import { cdnUrl } from "@/services/cdn";
 import { Event, OMEvent } from "@/lib/types";
+import { Event, OfficeHours } from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
@@ -352,15 +353,34 @@ export const openMicData: OpenMicData = {
 };
 
 export interface OfficeHoursData {
-  events: OMEvent[];
+  events: OfficeHours[];
 }
 
 export const officehourdata: OfficeHoursData = {
   events: [
     {
-      id: 1,
-      title: "What is BMC?",
+      title: "Customer Centric Thinking",
       performer: "Karthik Krishnan",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "15/11/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Mastering the OODA Loop",
+      performer: "Akshat Pradeep",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "14/11/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "What is BMC?",
+      performer: "Karthik Krishnan & Diya Bhatt A",
       description:
         "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "08/11/2025",
@@ -369,25 +389,123 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 2,
-      title: "Open Mic #2 ft. Ramakrishnan",
-      performer: "Ramakrishnan Haraden",
+      title: "Cognitive Leadership: From Belief to Behavior",
+      performer: "Aradhana Rose",
       description:
-        "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
-      date: "08/12/2022",
-      tags: ["Music", "Composition"],
-      thumbnail: cdnUrl("public/assets/team/default.webp"),
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "07/11/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
-      id: 3,
-      title: "Open Mic #3 ft. Arjun",
-      performer: "Arjun",
+      title: "Advertising 101",
+      performer: "Karthik Krishnan",
       description:
-        "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
-      date: "01/12/2022",
-      tags: ["Music", "Singing"],
-      thumbnail: cdnUrl("public/assets/team/default.webp"),
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "01/11/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "All Things Strategic",
+      performer: "Akshat Pradeep",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "31/10/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Entrepreneurship Development 2",
+      performer: "Diya Bhatt A",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "25/10/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Atomic Habits",
+      performer: "Akshat Pradeep",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "24/10/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Entrepreneurship Development 1 - QUIZ",
+      performer: "Diya Bhatt A",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "18/10/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "The Galacticos Paradox",
+      performer: "Akshat Pradeep",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "17/10/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Entrepreneurship Development 1",
+      performer: "Diya Bhatt A",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "11/10/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "OKR's and KPI's",
+      performer: "Akshat Pradeep",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "10/10/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Open Discussion about Entrepreneurship ",
+      performer: "Diya Bhatt A",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "04/10/2025",
+      tags: ["Entrepreneurship"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Cognitive Bias",
+      performer: "Meenakshi Santhosh M S",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "03/10/2025",
+      tags: ["Strategic Leadership"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      title: "Should cinema be a trial source?",
+      performer: "Open Call",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "03/10/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
   ],
