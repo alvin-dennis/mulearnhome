@@ -1,6 +1,5 @@
 import { cdnUrl } from "@/services/cdn";
-import { Event, OMEvent } from "@/lib/types";
-import { Event, OfficeHours } from "@/lib/types";
+import { Event, OMEvent, OfficeHours } from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
@@ -359,6 +358,7 @@ export interface OfficeHoursData {
 export const officehourdata: OfficeHoursData = {
   events: [
     {
+      id: 1,
       title: "Customer Centric Thinking",
       performer: "Karthik Krishnan",
       description:
@@ -369,6 +369,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 2,
       title: "Mastering the OODA Loop",
       performer: "Akshat Pradeep",
       description:
@@ -379,6 +380,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 3,
       title: "What is BMC?",
       performer: "Karthik Krishnan & Diya Bhatt A",
       description:
@@ -389,6 +391,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 4,
       title: "Cognitive Leadership: From Belief to Behavior",
       performer: "Aradhana Rose",
       description:
@@ -399,6 +402,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 5,
       title: "Advertising 101",
       performer: "Karthik Krishnan",
       description:
@@ -409,6 +413,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 6,
       title: "All Things Strategic",
       performer: "Akshat Pradeep",
       description:
@@ -419,6 +424,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 7,
       title: "Entrepreneurship Development 2",
       performer: "Diya Bhatt A",
       description:
@@ -429,6 +435,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 8,
       title: "Atomic Habits",
       performer: "Akshat Pradeep",
       description:
@@ -439,6 +446,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 9,
       title: "Entrepreneurship Development 1 - QUIZ",
       performer: "Diya Bhatt A",
       description:
@@ -449,6 +457,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 10,
       title: "The Galacticos Paradox",
       performer: "Akshat Pradeep",
       description:
@@ -459,6 +468,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 11,
       title: "Entrepreneurship Development 1",
       performer: "Diya Bhatt A",
       description:
@@ -469,6 +479,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 12,
       title: "OKR's and KPI's",
       performer: "Akshat Pradeep",
       description:
@@ -479,6 +490,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 13,
       title: "Open Discussion about Entrepreneurship ",
       performer: "Diya Bhatt A",
       description:
@@ -489,6 +501,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 14,
       title: "Cognitive Bias",
       performer: "Meenakshi Santhosh M S",
       description:
@@ -499,6 +512,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
+      id: 15,
       title: "Should cinema be a trial source?",
       performer: "Open Call",
       description:

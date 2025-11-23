@@ -265,6 +265,7 @@ export interface OMEvent {
 }
 
 export interface OfficeHours {
+  id: number;
   title: string;
   date?: string;
   description: string;
