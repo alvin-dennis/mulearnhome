@@ -23,12 +23,12 @@ export default function LearnersPage() {
       <section id="testimonials" className="pt-12 md:pt-16 pb-12 md:pb-16">
         <Testimonials />
       </section>
-      <section id="rankings" className="py-12 md:py-16">
+      {/*/*<section id="rankings" className="py-12 md:py-16">
         <RankingSection
           topLearners={topLearnersData}
           testimonials={testimonialsData}
         />
-      </section>
+      </section>*/}
       <section
         id="onboarding"
         className="py-12 md:py-16 container mx-auto px-4"
