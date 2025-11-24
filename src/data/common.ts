@@ -7,10 +7,10 @@ export const navItems = [
       "KEY PAGES": [
         { label: "MANIFESTO", href: "/manifesto" },
         { label: "TEAM", href: "/team" },
-        {
-          label: "IMPACT GALLERY",
-          href: "/impact-gallery",
-        },
+        // {
+        //   label: "IMPACT GALLERY",
+        //   href: "/impact-gallery",
+        // },
         { label: "OUR PARTNERS", href: "/partners" },
         { label: "EVENTS", href: "/events" },
       ],
