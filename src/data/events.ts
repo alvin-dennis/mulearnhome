@@ -359,6 +359,17 @@ export const officehourdata: OfficeHoursData = {
   events: [
     {
       id: 1,
+      title: "Why are people pulling back off theatres?",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "21/11/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 2,
       title: "Customer Centric Thinking",
       performer: "Karthik Krishnan",
       description:
@@ -369,7 +380,7 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 2,
+      id: 3,
       title: "Mastering the OODA Loop",
       performer: "Akshat Pradeep",
       description:
@@ -380,7 +391,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 3,
+      id: 4,
+      title: "What gave Rise to OTT?",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "14 /11/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 5,
       title: "What is BMC?",
       performer: "Karthik Krishnan & Diya Bhatt A",
       description:
@@ -391,7 +413,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 4,
+      id: 6,
+      title: "Discussion about The Shawshank Redemption",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "08/11/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 7,
       title: "Cognitive Leadership: From Belief to Behavior",
       performer: "Aradhana Rose",
       description:
@@ -402,7 +435,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 5,
+      id: 8,
+      title: "Initial Days of Cinema",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "07/11/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 9,
       title: "Advertising 101",
       performer: "Karthik Krishnan",
       description:
@@ -413,7 +457,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 6,
+      id: 10,
+      title: "Discussion about the 6th Sense Movie ",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "04/10/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 11,
       title: "All Things Strategic",
       performer: "Akshat Pradeep",
       description:
@@ -424,18 +479,51 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 7,
-      title: "Entrepreneurship Development 2",
-      performer: "Diya Bhatt A",
+      id: 12,
+      title: "Basics of Sound Design",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "31/10/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    // {
+    //   id: 20,
+    //   title: "Open Discussion about Entrepreneurship ",
+    //   performer: "Diya Bhatt A",
+    //   description:
+    //     "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+    //   date: "04/10/2025",
+    //   tags: ["Entrepreneurship"],
+    //   thumbnail: "/assets/bmc.jpeg",
+    //   isUpcoming: false,
+    // },
+    {
+      id: 13,
+      title: "Session by Savio Sir",
+      performer: "",
       description:
         "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "25/10/2025",
-      tags: ["Entrepreneurship"],
+      tags: ["AR/VR"],
       thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
-      id: 8,
+      id: 14,
+      title: "Tell your Story",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "25/10/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 15,
       title: "Atomic Habits",
       performer: "Akshat Pradeep",
       description:
@@ -446,7 +534,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 9,
+      id: 16,
+      title: "Is nostalgia the new marketing strategy",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "24/10/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 17,
       title: "Entrepreneurship Development 1 - QUIZ",
       performer: "Diya Bhatt A",
       description:
@@ -457,7 +556,29 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 10,
+      id: 18,
+      title: "Interaction in Unity",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "18/10/2025",
+      tags: ["AR/VR"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 19,
+      title: "Sketch, Snicker, Storyboard",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "18/10/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 20,
       title: "The Galacticos Paradox",
       performer: "Akshat Pradeep",
       description:
@@ -468,7 +589,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 11,
+      id: 21,
+      title: "The Art of Visual Storytelling",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "17/10/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 22,
       title: "Entrepreneurship Development 1",
       performer: "Diya Bhatt A",
       description:
@@ -479,7 +611,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 12,
+      id: 23,
+      title: "Write, Design, Repeat",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "11/10/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 24,
       title: "OKR's and KPI's",
       performer: "Akshat Pradeep",
       description:
@@ -490,7 +633,29 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 13,
+      id: 25,
+      title: "Budget allocation in modern cinema",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "03/10/2025",
+      tags: ["MuVie"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 26,
+      title: "AR/VR Research Paper Discussion",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "04/10/2025",
+      tags: ["AR/VR"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 27,
       title: "Open Discussion about Entrepreneurship ",
       performer: "Diya Bhatt A",
       description:
@@ -501,7 +666,18 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 14,
+      id: 28,
+      title: "the onces that connect",
+      performer: "",
+      description:
+        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
+      date: "04/10/2025",
+      tags: ["Comics"],
+      thumbnail: "/assets/bmc.jpeg",
+      isUpcoming: false,
+    },
+    {
+      id: 29,
       title: "Cognitive Bias",
       performer: "Meenakshi Santhosh M S",
       description:
@@ -512,9 +688,9 @@ export const officehourdata: OfficeHoursData = {
       isUpcoming: false,
     },
     {
-      id: 15,
+      id: 30,
       title: "Should cinema be a trial source?",
-      performer: "Open Call",
+      performer: "",
       description:
         "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
       date: "03/10/2025",

@@ -36,11 +36,13 @@ export default function OpenMicPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
-              A platform where µLearn members perform, speak, express
-              creativity, and share unique stories or talents. Join our
-              community-driven stage for music, poetry, storytelling, and
-              innovative performances that celebrate youth expression and
-              creative voices.
+              A space where µLearn members connect, learn, and grow together.
+              Office Hour is our community-driven learning zone — a place to ask
+              questions, share progress, explore ideas, and get guidance from
+              peers and mentors. Whether you're building projects, seeking
+              clarity, or sharing what you’ve learned, Office Hour brings
+              everyone together to empower growth, collaboration, and continuous
+              learning.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

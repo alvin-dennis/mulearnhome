@@ -1,8 +1,4 @@
-import {
-  GalleryItem,
-  ImpactStat,
-  AnnualReport,
-} from "@/lib/types";
+import { GalleryItem, ImpactStat, AnnualReport } from "@/lib/types";
 
 export const galleryData: GalleryItem[] = [
   {
@@ -43,10 +39,10 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: "4",
-    title: "Mentor Meetup",
+    title: "Rising Beyond Limits",
     description:
-      "Our dedicated mentors guiding the next generation of innovators",
-    image: "/images/impact/mentor-meetup.jpg",
+      "Two inspiring mentors from the µLearn community have achieved a remarkable milestone as the founders of an AI startup incubated into Y Combinator. This moment marks a proud win for the entire ecosystem, showcasing the power of dedication, skill, and visionary thinking.",
+    image: "/public/assets/impact-gallery/Congratulations!.png",
     category: "mentors",
     type: "image",
   },
@@ -60,17 +56,6 @@ export const galleryData: GalleryItem[] = [
   },
   {
     id: "6",
-    title: "Permute Hackathon",
-    description: "48 hours of innovation and problem-solving with 300+ teams",
-    image: "/images/impact/permute-hackathon.jpg",
-    category: "events",
-    type: "image",
-    stats: {
-      participants: 1200,
-    },
-  },
-  {
-    id: "7",
     title: "Campus Community Growth",
     description: "Our expanding network of campus ambassadors and clubs",
     image: "/images/impact/campus-growth.jpg",
@@ -81,7 +66,7 @@ export const galleryData: GalleryItem[] = [
     },
   },
   {
-    id: "8",
+    id: "7",
     title: "Industry Collaboration",
     description:
       "Working with industry leaders to shape future-ready curriculum",
@@ -90,7 +75,7 @@ export const galleryData: GalleryItem[] = [
     type: "image",
   },
   {
-    id: "9",
+    id: "8",
     title: "Mentor Training Program",
     description: "Empowering experienced professionals to guide young talents",
     image: "/images/impact/mentor-training.jpg",
@@ -98,7 +83,7 @@ export const galleryData: GalleryItem[] = [
     type: "image",
   },
   {
-    id: "10",
+    id: "9",
     title: "Rural Tech Revolution",
     description: "Bringing digital literacy to rural communities across Kerala",
     image: "/images/impact/rural-tech.jpg",
@@ -106,7 +91,7 @@ export const galleryData: GalleryItem[] = [
     type: "image",
   },
   {
-    id: "11",
+    id: "10",
     title: "Women in Tech Conference",
     description: "Celebrating and empowering women in technology",
     image: "/images/impact/women-in-tech.jpg",
@@ -117,7 +102,7 @@ export const galleryData: GalleryItem[] = [
     },
   },
   {
-    id: "12",
+    id: "11",
     title: "Student Innovation Showcase",
     description:
       "Showcasing groundbreaking projects from our student community",
