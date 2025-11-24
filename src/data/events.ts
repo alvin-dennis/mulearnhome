@@ -166,7 +166,7 @@ export const events: {
         description:
           "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
         link: "/events/office-hour",
-        date: "Every Saturday",
+        date: "Daily",
       },
       {
         title: "Inspiration Station Radio",
