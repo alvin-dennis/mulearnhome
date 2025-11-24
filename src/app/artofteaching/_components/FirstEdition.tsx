@@ -13,20 +13,20 @@ const FirstEdition = () => {
                 First Edition
               </span>
             </h2>
-            <p className="mt-4 text-base lg:text-lg text-mulearn-gray-600 lg:w-4/5">
+            <p className="mt-4 text-base lg:text-lg text-mulearn-gray-600 lg:w-1/1">
               The First Edition of Art of Teaching was a huge success with more
               than 100 distinct entries, all of which used creative teaching
               methods to simplify a topic for better understanding by a student.
             </p>
           </div>
-          <div className="lg:w-1/2 mt-8 lg:mt-0">
-            <div className="rounded-lg overflow-hidden">
-              <div className="w-full h-56 lg:h-80 rounded-lg">
+          <div className="w-full lg:w-2/5 mt-8 lg:mt-0">
+            <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: '56.25%', height: 0 }}>
+              <div className="absolute top-0 left-0 w-full h-full">
                 <YouTubeEmbed
                   videoid={artOfTeachingUrls.firstEdition}
-                  style="border-none"
+                  style="width:100%;height:100%;border:none;"
                   playlabel="true"
-                  params="disablekb=1&enablejsapi=1&playsinline=1"
+                  params="disablekb=1&enablejsapi=1&playsinline=1&modestbranding=1"
                 />
               </div>
             </div>

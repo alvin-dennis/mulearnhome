@@ -27,19 +27,21 @@ export default function Level3Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                Tool <span className="text-mulearn-trusty-blue">Mastery</span>
+                Tool <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Mastery</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
+                 <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                 The Explorer&apos;s Compass
+              </span>                
               </p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 At this point, tools become the{" "}
-                <span className="font-semibold text-mulearn-trusty-blue">
-                  compass
-                </span>
+              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              compass
+              </span>
                 . Knowledge transforms from abstract to actionable.
               </p>
 
