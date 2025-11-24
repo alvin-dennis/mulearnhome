@@ -164,7 +164,7 @@ export const events: {
       {
         title: "Office Hour",
         description:
-          "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
+          "A space where µLearn members connect, learn, and grow together. Office Hour is our community-driven learning zone — a place to ask questions, share progress, explore ideas, and get guidance from peers and mentors. Whether you're building projects, seeking clarity, or sharing what you’ve learned, Office Hour brings everyone together to empower growth, collaboration, and continuous learning.",
         link: "/events/office-hour",
         date: "Daily",
       },
