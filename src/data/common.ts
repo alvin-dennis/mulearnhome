@@ -31,7 +31,7 @@ export const navItems = [
           label: "NEWSLETTER",
           href: "https://online.fliphtml5.com/slydm/yljq/",
         },
-        { label: "ANNUAL REPORTS", href: "/report" },
+        //{ label: "ANNUAL REPORTS", href: "/report" },
         {
           label: "CONTACT US",
           href: "/contact",
@@ -55,7 +55,7 @@ export const navItems = [
         { label: "Company", href: "/be-a-part/company" },
         { label: "Campus", href: "/be-a-part/campus" },
         { label: "Enabler", href: "/be-a-part/enablers" },
-        { label: "Learners", href: "/be-a-part/learners" },
+        { label: "Learners", href: "/learners" },
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [

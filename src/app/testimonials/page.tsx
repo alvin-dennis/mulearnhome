@@ -9,6 +9,8 @@ import { VideoTestimonial, TextTestimonial } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Users, Star, TrendingUp, MessageCircle, Video } from "lucide-react";
 import MuLoader from "@/components/Loader";
+import { useRedirectToApp } from "@/lib/utils";
+import Link from "next/link";
 
 export default function TestimonialsPage() {
   const [videoTestimonialData, setVideoTestimonialData] = useState<
@@ -19,6 +21,12 @@ export default function TestimonialsPage() {
   >([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"video" | "text">("video");
+  const redirect = useRedirectToApp();
+  const [refreshToken, setRefreshToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    setRefreshToken(localStorage.getItem("refreshToken"));
+  }, []);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -214,15 +222,22 @@ export default function TestimonialsPage() {
               <Button
                 variant="mulearn"
                 className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                onClick={() =>
+                  refreshToken
+                    ? redirect("/dashboard/home")
+                    : redirect("/register")
+                }
               >
                 Join Our Community
               </Button>
-              <Button
-                variant="mulearn"
-                className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                Share Your Experience
-              </Button>
+              <Link href="/contact" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="mulearn"
+                  className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Share Your Experience
+                </Button>
+              </Link>
             </div>
           </MotionDiv>
         </div>
