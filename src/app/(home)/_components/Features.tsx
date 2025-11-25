@@ -146,6 +146,7 @@ export default function Features() {
                   }
                   height={120}
                   className="object-cover max-w-full h-auto"
+                  style={{ width: "auto" }}
                 />
               </div>
               <Link

@@ -53,6 +53,7 @@ export default function Opportunities() {
                   width={150}
                   height={150}
                   className="w-full h-auto"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </span>
 
