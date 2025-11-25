@@ -33,7 +33,7 @@ export default function ImpactStats() {
         <MotionH2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          className="text-4xl font-bold text-center text-mulearn-blackish mb-12 "
+          className="text-4xl font-bold text-center text-mulearn mb-12 "
         >
           Our Impact in Numbers
         </MotionH2>

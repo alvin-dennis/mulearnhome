@@ -122,7 +122,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-bold text-mulearn-blackish mb-2 line-clamp-2">
+        <h3 className="font-bold text-mulearn mb-2 line-clamp-2">
           {item.title}
         </h3>
         <p className="text-mulearn-gray-600 text-sm line-clamp-2">

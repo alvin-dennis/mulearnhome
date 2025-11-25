@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { GalleryItem } from "@/lib/types";
 import MuImage from "@/components/MuImage";
 import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface LightboxModalProps {
   item: GalleryItem;
@@ -42,15 +43,16 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
           className="relative bg-mulearn-whitish rounded-2xl max-w-4xl max-h-[90vh] overflow-hidden border border-mulearn-greyish"
           onClick={(e) => e.stopPropagation()}
         >
-          <button
+          <Button
+            variant={"mulearn"}
             onClick={onClose}
-            className="absolute top-0 right-0 text-mulearn-gray-600 hover:text-mulearn-blackish text-2xl p-2 transition-colors z-50"
+            className="absolute top-1 right-2 rounded-full text-2xl p-2 transition-colors z-50"
           >
-            <X />
-          </button>
+            <X className=""/>
+          </Button>
           <div className="flex justify-between items-center p-6 border-b border-mulearn-greyish">
             <div>
-              <h2 className="text-2xl font-bold text-mulearn-blackish ">
+              <h2 className="text-xl font-bold text-mulearn">
                 {item.title}
               </h2>
               <p className="text-mulearn-gray-600 mt-1 ">{item.description}</p>
