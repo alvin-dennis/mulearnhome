@@ -2,7 +2,7 @@
 
 import { officehourdata } from "@/data/events";
 import { OMEvent } from "@/lib/types";
-import { useState } from "react";
+
 import { Mic, Calendar, Users, PlayCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -36,11 +36,13 @@ export default function OpenMicPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
-              A platform where µLearn members perform, speak, express
-              creativity, and share unique stories or talents. Join our
-              community-driven stage for music, poetry, storytelling, and
-              innovative performances that celebrate youth expression and
-              creative voices.
+              A space where µLearn members connect, learn, and grow together.
+              Office Hour is our community-driven learning zone — a place to ask
+              questions, share progress, explore ideas, and get guidance from
+              peers and mentors. Whether you&apos;re building projects, seeking
+              clarity, or sharing what you&apos;ve learned, Office Hour brings
+              everyone together to empower growth, collaboration, and continuous
+              learning.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -105,32 +107,7 @@ export default function OpenMicPage() {
   );
 }
 
-function useReadMore(initialText: string, maxLength: number = 100) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const shouldTruncate = initialText.length > maxLength;
-  const displayText = isExpanded
-    ? initialText
-    : shouldTruncate
-      ? initialText.slice(0, maxLength) + "..."
-      : initialText;
-
-  const toggleExpand = () => setIsExpanded(!isExpanded);
-
-  return {
-    displayText,
-    isExpanded,
-    shouldTruncate,
-    toggleExpand,
-  };
-}
-
 function EventCard({ event }: { event: OMEvent }) {
-  const { displayText, isExpanded, shouldTruncate, toggleExpand } = useReadMore(
-    event.description,
-    120,
-  );
-
   return (
     <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
       <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative flex-shrink-0">
@@ -173,40 +150,20 @@ function EventCard({ event }: { event: OMEvent }) {
           {event.title}
         </CardTitle>
 
-        {event.performer && (
+        {/*{event.performer && (
           <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">
             <Users className="w-4 h-4 mr-2 text-mulearn-gray-500" />
             Featuring: {event.performer}
           </p>
-        )}
+        )}*/}
       </CardHeader>
 
-      <CardContent className="pt-0 flex flex-col flex-grow">
-        <div className="mb-4 flex-grow">
-          <p className="text-mulearn-gray-600 leading-relaxed">{displayText}</p>
-          {shouldTruncate && (
-            <Button
-              variant="link"
-              onClick={toggleExpand}
-              className="p-0 h-auto text-mulearn-trusty-blue hover:text-mulearn-duke-purple font-medium text-sm mt-2"
-            >
-              {isExpanded ? "Show Less" : "Read More"}
-            </Button>
-          )}
-        </div>
-
-        <div className="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto">
+      <CardContent className="pt-0 flex flex-col">
+        <div className="flex justify-between items-center pt-4 border-t border-gray-100">
           <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
             <Calendar className="w-4 h-4 mr-1" />
             {event.date}
           </span>
-          <Button
-            variant={event.isUpcoming ? "default" : "outline"}
-            className="gap-1 px-4 py-2 text-sm rounded-full"
-          >
-            <PlayCircle className="w-4 h-4" />
-            {event.isUpcoming ? "Register" : "Watch"}
-          </Button>
         </div>
       </CardContent>
     </Card>
