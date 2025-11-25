@@ -44,7 +44,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-mulearn-gray-600 hover:text-mulearn-blackish text-2xl p-2 transition-colors z-50"
+            className="absolute top-0 right-0 text-mulearn-gray-600 hover:text-mulearn-blackish text-2xl p-2 transition-colors z-50"
           >
             <X />
           </button>
