@@ -120,7 +120,7 @@ export default function PartnersPage() {
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Users className="w-7 h-7 sm:w-8 sm:h-8" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                        <Users className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                       </div>
                       <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
                         Community Partners
@@ -150,7 +150,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Community Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                     </div>
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export default function PartnersPage() {
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                       </div>
                       <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
                         Company Partners
@@ -209,7 +209,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Company Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                     </div>
                   </div>
                 </div>
@@ -265,8 +265,8 @@ export default function PartnersPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                 </div>
                 <h3 className="text-xl font-bold text-[#212121] mb-2">
                   {benefit.title}
@@ -316,13 +316,13 @@ export default function PartnersPage() {
                 <Link href="/be-a-part/company">
                   <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Company</span>
-                    <ArrowRight className="w-5 h-5" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                    <ArrowRight className="w-5 h-5" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
                   <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Community</span>
-                    <ArrowRight className="w-5 h-5" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                    <ArrowRight className="w-5 h-5" style={{ color: 'var(--mulearn-trusty-blue)' }} />
                   </button>
                 </Link>
               </div>
