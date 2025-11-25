@@ -100,12 +100,14 @@ export default function EventCard({ event }: Props) {
                 </DialogDescription>
               </DialogHeader>
               <DialogFooter>
+                <a href={event.link}>
                 <Button
                   variant="mulearn"
                   className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                 >
-                  <Link href={event.link}>Go to Event</Link>
+                  Go to Event
                 </Button>
+                </a>
               </DialogFooter>
             </DialogContent>
           </Dialog>
