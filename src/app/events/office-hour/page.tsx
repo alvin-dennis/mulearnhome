@@ -1,19 +1,83 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { officehourdata } from "@/data/events";
-import { OMEvent } from "@/lib/types";
-
-import { Mic, Calendar, Users, PlayCircle, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import MuImage from "@/components/MuImage";
+import { Mic, Clock, Calendar, PlayCircle, Users } from "lucide-react";
+import SearchAndFilter from "./_components/SearchAndFilter";
+import { Button } from "@/components/ui/button";
+import EventsGrid from "./_components/EventsGrid";
+import Pagination from "./_components/Pagination";
 
-export default function OpenMicPage() {
-  const upcomingEvents = officehourdata.events.filter(
-    (event) => event.isUpcoming,
+export default function OfficeHoursPage() {
+  const [search, setSearch] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [startDate, setStartDate] = useState<string | null>(null);
+  const [endDate, setEndDate] = useState<string | null>(null);
+
+  const [upcomingPage, setUpcomingPage] = useState(1);
+  const [pastPage, setPastPage] = useState(1);
+  const itemsPerPage = 6;
+
+  const allEvents = officehourdata.events;
+
+  const allTags = useMemo(
+    () => Array.from(new Set(allEvents.flatMap((e) => e.tags))),
+    [allEvents]
   );
-  const pastEvents = officehourdata.events.filter((event) => !event.isUpcoming);
+
+  const filteredEvents = useMemo(() => {
+    return allEvents
+      .filter((event) =>
+        event.title.toLowerCase().includes(search.toLowerCase())
+      )
+      .filter((event) =>
+        selectedTags.length === 0
+          ? true
+          : selectedTags.every((t) => event.tags.includes(t))
+      )
+      .filter((event) => {
+        if (!startDate && !endDate) return true;
+        if (!event.date) return false;
+        const evDate = new Date(event.date);
+        if (startDate) {
+          const s = new Date(startDate);
+          if (evDate < s) return false;
+        }
+        if (endDate) {
+          const e = new Date(endDate);
+          e.setHours(23, 59, 59, 999);
+          if (evDate > e) return false;
+        }
+        return true;
+      })
+      .sort((a, b) => {
+        const aDate = a.date ? new Date(a.date).getTime() : 0;
+        const bDate = b.date ? new Date(b.date).getTime() : 0;
+        return bDate - aDate;
+      });
+  }, [search, selectedTags, startDate, endDate, allEvents]);
+
+  const upcomingEvents = filteredEvents.filter((e) => e.isUpcoming);
+  const pastEvents = filteredEvents.filter((e) => !e.isUpcoming);
+
+  const paginatedUpcoming = useMemo(() => {
+    const start = (upcomingPage - 1) * itemsPerPage;
+    return upcomingEvents.slice(start, start + itemsPerPage);
+  }, [upcomingEvents, upcomingPage]);
+
+  const paginatedPast = useMemo(() => {
+    const start = (pastPage - 1) * itemsPerPage;
+    return pastEvents.slice(start, start + itemsPerPage);
+  }, [pastEvents, pastPage]);
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag)
+        ? prev.filter((t) => t !== tag)
+        : [...prev, tag]
+    );
+  };
 
   return (
     <div className="min-h-screen">
@@ -39,17 +103,17 @@ export default function OpenMicPage() {
               A space where µLearn members connect, learn, and grow together.
               Office Hour is our community-driven learning zone — a place to ask
               questions, share progress, explore ideas, and get guidance from
-              peers and mentors. Whether you&apos;re building projects, seeking
-              clarity, or sharing what you&apos;ve learned, Office Hour brings
-              everyone together to empower growth, collaboration, and continuous
-              learning.
+              peers and mentors.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button className="px-8 py-3 gap-2 text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+              <Button
+                className="px-8 py-3 gap-2 text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>
+
               <Button
                 variant="outline"
                 className="px-8 py-3 gap-2 text-base rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
@@ -62,110 +126,57 @@ export default function OpenMicPage() {
         </div>
       </section>
 
-      {upcomingEvents.length > 0 && (
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 flex items-center justify-center">
-                <Clock className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
-                Upcoming Sessions
-              </h2>
-              <p className="text-mulearn-gray-600 max-w-2xl mx-auto">
-                Don&apos;t miss these exciting upcoming Open Mic performances
-              </p>
-            </div>
+      <SearchAndFilter
+        search={search}
+        onSearchChange={setSearch}
+        selectedTags={selectedTags}
+        onTagToggle={toggleTag}
+        allTags={allTags}
+        startDate={startDate}
+        endDate={endDate}
+        onDateRangeChange={(s?: string | null, e?: string | null) => {
+          setStartDate(s || null);
+          setEndDate(e || null);
+        }}
+      />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {upcomingEvents.map((event) => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </div>
+      {upcomingEvents.length > 0 && (
+        <section className="py-12" id="upcoming-section">
+          <div className="max-w-7xl mx-auto px-4">
+            <EventsGrid
+              events={paginatedUpcoming}
+              title="Upcoming Sessions"
+              icon={<Clock className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />}
+            />
+
+            <Pagination
+              page={upcomingPage}
+              setPage={setUpcomingPage}
+              total={upcomingEvents.length}
+              perPage={itemsPerPage}
+              scrollToId="upcoming-section"
+            />
           </div>
         </section>
       )}
 
-      <section className="py-12 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 flex items-center justify-center">
-              <Calendar className="w-8 h-8 mr-3 text-mulearn-duke-purple" />
-              Performance Highlights
-            </h2>
-            <p className="text-mulearn-gray-600 max-w-2xl mx-auto">
-              Amazing performances and creative expressions from our community
-            </p>
-          </div>
+      <section className="py-12 pb-20" id="past-section">
+        <div className="max-w-7xl mx-auto px-4">
+          <EventsGrid
+            events={paginatedPast}
+            title="Performance Highlights"
+            icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-duke-purple" />}
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
+          <Pagination
+            page={pastPage}
+            setPage={setPastPage}
+            total={pastEvents.length}
+            perPage={itemsPerPage}
+            scrollToId="past-section"
+          />
         </div>
       </section>
     </div>
-  );
-}
-
-function EventCard({ event }: { event: OMEvent }) {
-  return (
-    <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
-      <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative flex-shrink-0">
-        {event.thumbnail ? (
-          <MuImage
-            src={event.thumbnail}
-            alt={`Open Mic performance: ${event.title}`}
-            width={400}
-            height={192}
-            className="object-cover w-full h-full"
-          />
-        ) : (
-          <Mic className="w-16 h-16 text-mulearn-trusty-blue" />
-        )}
-        <div className="absolute top-4 right-4">
-          <Badge
-            variant={event.isUpcoming ? "default" : "secondary"}
-            className="flex items-center"
-          >
-            <Clock className="w-3 h-3 mr-1" />
-            {event.isUpcoming ? "Upcoming" : "Past Event"}
-          </Badge>
-        </div>
-      </div>
-
-      <CardHeader className="pb-4 flex-grow">
-        <div className="flex flex-wrap gap-2 mb-3">
-          {event.tags.map((tag: string) => (
-            <Badge
-              key={tag}
-              variant="outline"
-              className="text-mulearn-trusty-blue bg-mulearn-trusty-blue/10"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
-
-        <CardTitle className="text-xl mb-2 line-clamp-2">
-          {event.title}
-        </CardTitle>
-
-        {/*{event.performer && (
-          <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">
-            <Users className="w-4 h-4 mr-2 text-mulearn-gray-500" />
-            Featuring: {event.performer}
-          </p>
-        )}*/}
-      </CardHeader>
-
-      <CardContent className="pt-0 flex flex-col">
-        <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-          <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
-            <Calendar className="w-4 h-4 mr-1" />
-            {event.date}
-          </span>
-        </div>
-      </CardContent>
-    </Card>
   );
 }

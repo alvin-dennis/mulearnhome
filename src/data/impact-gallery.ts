@@ -30,7 +30,7 @@ export const galleryData: GalleryItem[] = [
     title: "Victory Unlocked at ExploitX!",
     description:
       "A proud moment for the µLearn Cybersecurity community as our members clinch the 2nd Runner-up position at the National Level CTF ExploitX! Their hard work, skill, and passion for cybersecurity have earned them national recognition, along with exciting rewards and opportunities. A true testament to dedication and continuous learning!",
-    image: "/images/impact/company-summit.jpg",
+    image: "/assets/impact-gallery/00.png",
     category: "students",
     type: "image",
     // stats: {
@@ -42,7 +42,7 @@ export const galleryData: GalleryItem[] = [
     title: "Rising Beyond Limits",
     description:
       "Two inspiring mentors from the µLearn community have achieved a remarkable milestone as the founders of an AI startup incubated into Y Combinator. This moment marks a proud win for the entire ecosystem, showcasing the power of dedication, skill, and visionary thinking.",
-    image: "/public/assets/impact-gallery/Congratulations!.png",
+    image: "/assets/impact-gallery/Congratulations.png",
     category: "mentors",
     type: "image",
   },
@@ -60,7 +60,7 @@ export const galleryData: GalleryItem[] = [
     title: "Open Source Champions Rise!",
     description:
       "A proud moment for the µLearn community as our team earns official recognition from the Beckn ecosystem for their successful PR merge into the Beckn-onix repo. Their dedication, collaboration, and commitment to open-source innovation continue to showcase what passionate youth can achieve together!",
-    image: "/images/impact/success-story-1.jpg",
+    image: "/assets/impact-gallery/beckn-success.png",
     category: "events",
     type: "image",
   },
@@ -69,7 +69,7 @@ export const galleryData: GalleryItem[] = [
     title: "One Step Closer to Open-Source Greatness!",
     description:
       "A proud milestone as a µLearn member gets officially recognized as a Beckn open-source contributor with a successful PR merge into the Beckn-onix repository. A true example of consistency, learning, and community-driven growth. Here’s to many more wins ahead!",
-    image: "/images/impact/success-story-1.jpg",
+    image: "/assets/impact-gallery/Thanks.png",
     category: "companies",
     type: "image",
   },
@@ -78,7 +78,7 @@ export const galleryData: GalleryItem[] = [
     title: "Rising to the Global Stage!",
     description:
       "A proud moment for µLearn as our cybersecurity lead and his team break barriers at the Kaspersky CTF 2025, securing top positions across Asia, India, and the world. A true testament to relentless passion, skill, and teamwork—proof that consistent effort turns ambition into achievement.",
-    image: "/images/impact/success-story-1.jpg",
+    image: "/assets/impact-gallery/CTF.png",
     category: "impact-stories",
     type: "image",
   },
