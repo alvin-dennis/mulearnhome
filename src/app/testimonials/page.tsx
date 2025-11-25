@@ -5,7 +5,7 @@ import { MotionDiv, MotionP, MotionH1 } from "@/components/MuFramer";
 import VideoCarousel from "./_components/VideoCarousel";
 import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
 import { testimonials } from "@/data/testimonials";
-import { VideoTestimonial, TextTestimonial } from "@/lib/types";
+import { VideoTestimonial, TextTestimonial, Counts } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Users, Star, TrendingUp, MessageCircle, Video } from "lucide-react";
 import MuLoader from "@/components/Loader";
@@ -45,11 +45,72 @@ export default function TestimonialsPage() {
     fetchTestimonials();
   }, []);
 
-  const stats = [
-    { icon: Users, number: "50K+", label: "Active Learners" },
-    { icon: Star, number: "500+", label: "Expert Mentors" },
-    { icon: TrendingUp, number: "100+", label: "Partner Companies" },
-  ];
+  // Live counts websocket (same feed used by Stats.tsx) so numbers stay up-to-date
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useState<{ current: WebSocket | null }>({ current: null });
+
+  useEffect(() => {
+    if (!socketRef[0].current) {
+      try {
+        const socket = new WebSocket(
+          "wss://mulearn.org/ws/v1/public/landing-stats/"
+        );
+        socketRef[0].current = socket;
+        const handleMessage = (event: MessageEvent) => {
+          try {
+            setCounts(JSON.parse(event.data) as Counts);
+          } catch (e) {
+            void e;
+          }
+        };
+        const handleError = (ev: Event) => void ev;
+        socket.addEventListener("message", handleMessage);
+        socket.addEventListener("error", handleError);
+        return () => {
+          socket.removeEventListener("message", handleMessage);
+          socket.removeEventListener("error", handleError);
+          socket.close();
+          socketRef[0].current = null;
+        };
+      } catch (e) {
+        void e;
+      }
+    }
+  }, []);
+
+  const formatNumber = (n: number | undefined) => {
+    if (n == null) return "0";
+    if (n >= 1000000) return Math.floor(n / 1000000) + "M+";
+    if (n >= 1000) return n.toLocaleString() + "+";
+    return String(n) + "+";
+  };
+
+  const stats = counts
+    ? [
+        { icon: Users, number: formatNumber(counts.members), label: "Active Learners" },
+        {
+          icon: Star,
+          number: formatNumber(
+            counts.enablers_mentors_count?.reduce(
+              (s, r) => s + (r.role_count || 0),
+              0
+            ) || 0
+          ),
+          label: "Expert Mentors",
+        },
+        {
+          icon: TrendingUp,
+          number: formatNumber(
+            counts.org_type_counts?.reduce((s, o) => s + (o.org_count || 0), 0) || 0
+          ),
+          label: "Partner Companies",
+        },
+      ]
+    : [
+        { icon: Users, number: "50K+", label: "Active Learners" },
+        { icon: Star, number: "500+", label: "Expert Mentors" },
+        { icon: TrendingUp, number: "100+", label: "Partner Companies" },
+      ];
 
   return (
     <div className="min-h-screen">
@@ -219,17 +280,14 @@ export default function TestimonialsPage() {
               transforming education through collaborative learning
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button
+              <a href="https://app.mulearn.org"><Button
                 variant="mulearn"
                 className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() =>
-                  refreshToken
-                    ? redirect("/dashboard/home")
-                    : redirect("/register")
-                }
+                
               >
                 Join Our Community
               </Button>
+              </a>
               <Link href="/contact" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="mulearn"

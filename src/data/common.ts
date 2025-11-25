@@ -28,10 +28,9 @@ export const navItems = [
           href: "https://mulearn.org/r/mubook",
         },
         {
-          label: "NEWSLETTER",
-          href: "https://online.fliphtml5.com/slydm/yljq/",
+          label: "CAREER LABS",
+          href: "/careers",
         },
-        //{ label: "ANNUAL REPORTS", href: "/report" },
         {
           label: "CONTACT US",
           href: "/contact",
@@ -40,6 +39,9 @@ export const navItems = [
           label: "TESTIMONIALS",
           href: "/testimonials",
         },
+        // { label: "ANNUAL REPORTS", 
+        //   href: "/reports" 
+        // },
       ],
     },
   },
