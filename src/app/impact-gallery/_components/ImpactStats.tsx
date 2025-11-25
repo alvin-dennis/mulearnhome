@@ -2,7 +2,7 @@
 
 import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   Users,
   School,
@@ -11,8 +11,8 @@ import {
   GraduationCap,
   TrendingUp,
 } from "lucide-react";
-import { impactStats } from "@/data/impact-gallery";
-import { ImpactStat } from "@/lib/types";
+import { impactStats, impactStatsFromCounts } from "@/data/impact-gallery";
+import { ImpactStat, Counts } from "@/lib/types";
 
 const iconMap = {
   Users,
@@ -26,6 +26,35 @@ const iconMap = {
 export default function ImpactStats() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useRef<WebSocket | null>(null);
+
+  useEffect(() => {
+    if (!socketRef.current) {
+      try {
+        const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
+        socketRef.current = socket;
+        const handleMessage = (event: MessageEvent) => {
+          try {
+            setCounts(JSON.parse(event.data) as Counts);
+          } catch (e) {
+            void e;
+          }
+        };
+        const handleError = (event: Event) => void event;
+        socket.addEventListener("message", handleMessage);
+        socket.addEventListener("error", handleError);
+        return () => {
+          socket.removeEventListener("message", handleMessage);
+          socket.removeEventListener("error", handleError);
+          socket.close();
+          socketRef.current = null;
+        };
+      } catch (e) {
+        void e;
+      }
+    }
+  }, []);
 
   return (
     <section ref={ref} className="py-16 bg-mulearn-whitish">
@@ -39,7 +68,7 @@ export default function ImpactStats() {
         </MotionH2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {impactStats.map((stat: ImpactStat, index) => {
+          {(counts ? impactStatsFromCounts(counts) : impactStats).map((stat: ImpactStat, index) => {
             const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
 
             return (

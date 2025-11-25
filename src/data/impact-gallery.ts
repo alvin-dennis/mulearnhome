@@ -1,30 +1,6 @@
-import { GalleryItem, ImpactStat, AnnualReport } from "@/lib/types";
+import { GalleryItem, ImpactStat, AnnualReport, Counts } from "@/lib/types";
 
 export const galleryData: GalleryItem[] = [
-  // {
-  //   id: "1",
-  //   title: "Launchpad 2025",
-  //   description:
-  //     "Our biggest hiring fest with 5000+ participants from 200+ campuses",
-  //   image: "/images/impact/launchpad-2024.jpg",
-  //   category: "events",
-  //   type: "image",
-  //   stats: {
-  //     participants: 5000,
-  //     campuses: 200,
-  //   },
-  // },
-  // {
-  //   id: "2",
-  //   title: "Top 100 Coders",
-  //   description: "Celebrating the brightest minds from our coding community",
-  //   image: "/images/impact/top-100-coders.jpg",
-  //   category: "events",
-  //   type: "image",
-  //   stats: {
-  //     participants: 100,
-  //   },
-  // },
   {
     id: "1",
     title: "Victory Unlocked at ExploitX!",
@@ -122,6 +98,46 @@ export const impactStats: ImpactStat[] = [
   { number: "1,000+", label: "Mentors", icon: "GraduationCap" },
   { number: "100+", label: "Success Stories", icon: "TrendingUp" },
 ];
+
+// Helper: derive ImpactStat[] from live `Counts` (same source used in `Stats.tsx`).
+// This lets UI components use live numbers from an API or websocket rather
+// than the static fallback above. Fields that are not present in `Counts`
+// will fall back to reasonable defaults.
+export function impactStatsFromCounts(counts: Counts): ImpactStat[] {
+  const learners = counts.members ?? 0;
+  const institutions = counts.org_type_counts
+    ? counts.org_type_counts.reduce((s, o) => s + (o.org_count || 0), 0)
+    : 0;
+  const companyObj = counts.org_type_counts
+    ? counts.org_type_counts.find((o) =>
+        String(o.org_type).toLowerCase().includes("company")
+      )
+    : undefined;
+  const companyPartners = companyObj ? companyObj.org_count : 0;
+
+  const mentorsObj = counts.enablers_mentors_count
+    ? counts.enablers_mentors_count.find((r) =>
+        String(r.role__title).toLowerCase().includes("mentor")
+      )
+    : undefined;
+  const mentors = mentorsObj ? mentorsObj.role_count : 0;
+
+  // `Counts` does not currently expose `events` or `success stories` directly.
+  // Keep sensible fallbacks for those values.
+  const eventsHosted = 500;
+  const successStories = "100+";
+
+  const fmt = (n: number) => (typeof n === "number" ? n.toLocaleString() : String(n));
+
+  return [
+    { number: `${fmt(learners)}+`, label: "Learners", icon: "Users" },
+    { number: `${fmt(institutions)}+`, label: "Institutions", icon: "School" },
+    { number: `${eventsHosted}+`, label: "Events Hosted", icon: "Calendar" },
+    { number: `${fmt(companyPartners)}+`, label: "Company Partners", icon: "Handshake" },
+    { number: `${fmt(mentors)}+`, label: "Mentors", icon: "GraduationCap" },
+    { number: successStories, label: "Success Stories", icon: "TrendingUp" },
+  ];
+}
 
 export const annualReports: AnnualReport[] = [
   {
