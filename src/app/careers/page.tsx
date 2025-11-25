@@ -9,12 +9,16 @@ import { companies } from "@/data/company";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 import { NewHiringRole, PreviousHiringRole, Company } from "@/lib/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Careers() {
   const [newHiring, setNewHiring] = useState<NewHiringRole[]>([]);
   const [previousHiring, setPreviousHiring] = useState<PreviousHiringRole[]>(
     []
   );
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
   const companyData: Company[] = companies;
 
   useEffect(() => {
@@ -39,6 +43,48 @@ export default function Careers() {
         console.log(error);
       });
   }, []);
+
+  const totalPages = Math.ceil(previousHiring.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = previousHiring.slice(startIndex, endIndex);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    document.getElementById("previous-hiring")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  };
+
+  const goToPrevious = () => {
+    if (currentPage > 1) goToPage(currentPage - 1);
+  };
+
+  const goToNext = () => {
+    if (currentPage < totalPages) goToPage(currentPage + 1);
+  };
+
+  const getPageNumbers = () => {
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      const showPage =
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - 1 && i <= currentPage + 1);
+
+      const showEllipsis =
+        (i === currentPage - 2 && currentPage > 3) ||
+        (i === currentPage + 2 && currentPage < totalPages - 2);
+
+      if (showEllipsis) {
+        pages.push({ type: 'ellipsis', key: `ellipsis-${i}` });
+      } else if (showPage) {
+        pages.push({ type: 'page', number: i, key: i });
+      }
+    }
+    return pages;
+  };
 
   return (
     <div className="min-h-screen">
@@ -146,7 +192,7 @@ export default function Careers() {
         </div>
       )}
 
-      <div className="mx-auto mt-30 block max-w-[1300px]">
+      <div id="previous-hiring" className="mx-auto mt-30 block max-w-[1300px]">
         <div className="m-8">
           <h2 className="mt-8 text-center text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
             Previous Hiring Calls
@@ -155,8 +201,9 @@ export default function Careers() {
             Listed below are the list of hiring calls that were announced
             through career labs previously.
           </p>
+
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {previousHiring.map((role, idx) => (
+            {currentItems.map((role, idx) => (
               <ClosedCareersCard
                 key={idx}
                 title={role.title}
@@ -169,6 +216,64 @@ export default function Careers() {
               />
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <div className="mt-12 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  variant={"mulearn-outline"}
+                  onClick={goToPrevious}
+                  disabled={currentPage === 1}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label="Previous page"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                  <span className="text-sm font-medium">Previous</span>
+                </Button>
+
+                <div className="flex items-center gap-2">
+                  {getPageNumbers().map((item) => {
+                    if (item.type === 'ellipsis') {
+                      return (
+                        <span key={item.key} className="px-2 text-gray-400">
+                          ...
+                        </span>
+                      );
+                    }
+                    const pageNumber = item.number!;
+                    return (
+                      <Button
+                        variant={"mulearn-secondary"}
+                        key={item.key}
+                        onClick={() => goToPage(pageNumber)}
+                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${currentPage === pageNumber
+                          ? "bg-mulearn-trusty-blue text-white hover:bg-mulearn-duke-purple"
+                          : "border border-gray-300 bg-white hover:bg-gray-50"
+                          }`}
+                        aria-label={`Go to page ${pageNumber}`}
+                        aria-current={currentPage === pageNumber ? "page" : undefined}
+                      >
+                        {pageNumber}
+                      </Button>
+                    );
+                  })}
+                </div>
+                <Button
+                  variant={"mulearn-outline"}
+                  onClick={goToNext}
+                  disabled={currentPage === totalPages}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label="Next page"
+                >
+                  <span className="text-sm font-medium">Next</span>
+                  <ChevronRight className="w-5 h-5" />
+                </Button>
+              </div>
+              <p className="mt-4 text-center text-sm text-gray-600">
+                Showing {startIndex + 1}-{Math.min(endIndex, previousHiring.length)} of {previousHiring.length} positions
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

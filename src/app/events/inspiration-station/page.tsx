@@ -18,7 +18,7 @@ export default function InspirationStationPage() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-mulearn-gray-50 to-mulearn-whitish">
+    <div className="min-h-screen">
       <section className="relative overflow-hidden py-12 md:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">

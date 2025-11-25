@@ -4,6 +4,9 @@ import { AnimatePresence } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import { useEffect } from "react";
 import { GalleryItem } from "@/lib/types";
+import MuImage from "@/components/MuImage";
+import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface LightboxModalProps {
   item: GalleryItem;
@@ -24,23 +27,6 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
     };
   }, [onClose]);
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "events":
-        return "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple";
-      case "students":
-        return "bg-mulearn-duke-purple";
-      case "companies":
-        return "bg-mulearn-gray-600";
-      case "mentors":
-        return "bg-mulearn-blackish";
-      case "impact-stories":
-        return "bg-mulearn-trusty";
-      default:
-        return "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple";
-    }
-  };
-
   return (
     <AnimatePresence>
       <MotionDiv
@@ -54,32 +40,36 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
-          className="bg-mulearn-whitish rounded-2xl max-w-4xl max-h-[90vh] overflow-hidden border border-mulearn-greyish"
+          className="relative bg-mulearn-whitish rounded-2xl max-w-4xl max-h-[90vh] overflow-hidden border border-mulearn-greyish"
           onClick={(e) => e.stopPropagation()}
         >
+          <Button
+            variant={"mulearn"}
+            onClick={onClose}
+            className="absolute top-1 right-2 rounded-full text-2xl p-2 transition-colors z-50"
+          >
+            <X className=""/>
+          </Button>
           <div className="flex justify-between items-center p-6 border-b border-mulearn-greyish">
             <div>
-              <h2 className="text-2xl font-bold text-mulearn-blackish ">
+              <h2 className="text-xl font-bold text-mulearn">
                 {item.title}
               </h2>
               <p className="text-mulearn-gray-600 mt-1 ">{item.description}</p>
             </div>
-            <button
-              onClick={onClose}
-              className="text-mulearn-gray-600 hover:text-mulearn-blackish text-2xl p-2 transition-colors"
-            >
-              ✕
-            </button>
           </div>
 
           <div className="p-6">
-            <div
-              className="aspect-video rounded-lg mb-6 flex items-center justify-center"
-              style={{ background: "var(--mulearn-trusty)" }}
-            >
-              <span className="text-mulearn-whitish text-xl font-semibold ">
-                {item.title} - Image/Video Content
-              </span>
+            <div className="relative w-full h-[45vh] md:h-[65vh] rounded-lg mb-6">
+              <MuImage
+                src={item.image || ""}
+                alt={item.title}
+                fill
+                sizes="(max-width: 768px) 90vw,
+           (max-width: 1200px) 70vw,
+           60vw"
+                className="object-contain"
+              />
             </div>
 
             {item.stats && (
@@ -89,7 +79,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                     <div
                       className="text-2xl font-bold mb-1 "
                       style={{
-                        background: "var(--mulearn-trusty)",
+                        background: "bg-mulearn",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         backgroundClip: "text",
@@ -140,26 +130,6 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                 )}
               </div>
             )}
-
-            <div className="flex justify-between items-center">
-              <span
-                className={`px-4 py-2 rounded-full text-sm font-semibold text-mulearn-whitish ${getCategoryColor(
-                  item.category
-                )} `}
-              >
-                {item.category
-                  .split("-")
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ")}
-              </span>
-
-              <button
-                onClick={onClose}
-                className="px-6 py-2 bg-mulearn-greyish text-mulearn-blackish rounded-full hover:bg-mulearn-gray-600 hover:text-mulearn-whitish transition-colors "
-              >
-                Close
-              </button>
-            </div>
           </div>
         </MotionDiv>
       </MotionDiv>

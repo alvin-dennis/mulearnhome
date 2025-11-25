@@ -1,4 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { GalleryItem } from "@/lib/types";
 import {
   School,
@@ -31,7 +32,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       case "mentors":
         return "bg-mulearn-blackish";
       case "impact-stories":
-        return "bg-mulearn-trusty";
+        return "bg-mulearn-trusty-blue";
       default:
         return "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple";
     }
@@ -75,15 +76,24 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       onClick={onClick}
     >
       <div className="relative h-48 overflow-hidden">
-        {}
-        <div className="w-full h-full bg-mulearn-trusty flex items-center justify-center">
-          <span className="text-mulearn-whitish text-lg font-semibold text-center px-4">
-            {item.title}
-          </span>
-        </div>
+        {item.type === "image" && item.image ? (
+          <MuImage
+            src={item.image}
+            alt={item.title}
+            fill
+            style={{ objectFit: "cover" }}
+            className="w-full h-full z-0"
+          />
+        ) : (
+          <div className="w-full h-full bg-mulearn-trusty flex items-center justify-center">
+            <span className="text-mulearn-whitish text-lg font-semibold text-center px-4">
+              {item.title}
+            </span>
+          </div>
+        )}
 
-        {}
-        <div className="absolute top-3 left-3">
+        { }
+        <div className="absolute top-3 left-3 z-20">
           <span
             className={`px-3 py-1 rounded-full text-xs font-semibold text-mulearn-whitish ${getCategoryColor(
               item.category
@@ -97,8 +107,8 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
           </span>
         </div>
 
-        {}
-        <div className="absolute inset-0 bg-mulearn-blackish bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+        { }
+        <div className="absolute inset-0 bg-mulearn-blackish/0 group-hover:bg-mulearn-blackish/30 transition-all duration-300 flex items-center justify-center z-10">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             whileHover={{ opacity: 1, scale: 1 }}
@@ -112,16 +122,16 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-bold text-mulearn-blackish mb-2 line-clamp-2">
+        <h3 className="font-bold text-mulearn mb-2 line-clamp-2">
           {item.title}
         </h3>
         <p className="text-mulearn-gray-600 text-sm line-clamp-2">
           {item.description}
         </p>
 
-        {}
+        { }
         <div className="mt-3 flex flex-wrap gap-2">
-          {}
+          { }
           {item.stats &&
             Object.entries(item.stats).map(([key, value]) => (
               <span
@@ -133,7 +143,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
               </span>
             ))}
 
-          {}
+          { }
           <span className="text-xs bg-mulearn-whitish text-mulearn-gray-600 px-2 py-1 rounded border border-mulearn-greyish flex items-center gap-1">
             {getCategoryIcon(item.category)}
             {item.category
