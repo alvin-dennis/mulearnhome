@@ -24,20 +24,18 @@ export default function EventCard({ event }: Props) {
   return (
     <MotionDiv
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-      className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-    w-full h-auto sm:w-[380px] ${
-      event.image ? "h-[360px]" : "h-[280px]"
-    } flex flex-col`}
+      className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue w-full sm:w-[380px] h-[360px] flex flex-col`}
     >
       {event.image && (
-        <div className="w-full h-20">
+        <div className="relative w-full h-44 sm:h-52">
           <MuImage
             src={event.image}
             alt={event.title}
-            width={800}
-            height={400}
-            className="rounded-t-2xl object-cover w-full h-full"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover w-full h-full rounded-t-2xl"
           />
+          <div className="absolute inset-0 rounded-t-2xl pointer-events-none bg-gradient-to-t from-[rgba(0,0,0,0.22)] to-transparent" />
         </div>
       )}
 
