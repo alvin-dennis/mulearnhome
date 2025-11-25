@@ -36,13 +36,14 @@ export function TeamCard({
   return (
     <div className="flex flex-col sm:flex-row gap-4 mx-auto mt-4 max-w-md p-6 rounded-lg w-full shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)]">
       <div className="flex justify-center sm:justify-start">
-        <MuImage
-          src={image ? cdnUrl(image) : fallbackImage}
-          alt={name}
-          width={128}
-          height={128}
-          className="rounded-lg w-32 h-32 object-cover object-top"
-        />
+        <div className="relative w-32 h-32 rounded-lg overflow-hidden">
+          <MuImage
+            src={image ? cdnUrl(image) : fallbackImage}
+            alt={name}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col justify-between gap-2 w-full">

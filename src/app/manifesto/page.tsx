@@ -39,7 +39,8 @@ export default function Manifesto() {
           alt="Hand illustration"
           width={400}
           height={400}
-          className="absolute my-0 mx-auto -right-[5vw] md:right-[4vw] bottom-0 w-[30vw] md:w-[20vw] h-auto"
+          className="absolute my-0 mx-auto -right-[5vw] md:right-[4vw] bottom-0"
+          style={{ width: "auto", height: "auto", maxWidth: "30vw", maxHeight: "40vh" }}
         />
       </div>
 

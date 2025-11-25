@@ -125,7 +125,7 @@ export default function Features() {
               <div
                 className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center"
                 style={{
-                  transform: isCardActive(i) ? "scale(1.1)" : "scale(1)",
+                  transform: isCardActive(i) ? "scale(1.05)" : "scale(1)",
                 }}
               >
                 <MuImage
@@ -145,8 +145,8 @@ export default function Features() {
                       : 100
                   }
                   height={120}
-                  className="object-cover max-w-full h-auto"
-                  style={{ width: "auto" }}
+                  className="object-contain max-w-full h-auto"
+                  style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
               </div>
               <Link
