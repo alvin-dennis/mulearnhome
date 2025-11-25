@@ -1,4 +1,9 @@
-import { Testimonial, LearnerRoleTag, TopLearner, OnboardingStep } from "@/lib/types";
+import {
+  Testimonial,
+  LearnerRoleTag,
+  TopLearner,
+  OnboardingStep,
+} from "@/lib/types";
 
 export const learnerIdentityTags: LearnerRoleTag[] = [
   { label: "The Ambitious Student", id: "ambitious" },
@@ -61,17 +66,17 @@ export const topLearnersData: TopLearner[] = [
 
 export const testimonialsData: Testimonial[] = [
   {
-    name: "Soorya",
-    designation: "SWE",
+    name: "Aswanth V C",
+    designation: "Jr. SWE",
     quote:
-      "In a world that never stops changing, standing still isn't an option. Learning is how you keep up and get ahead. It's the key that unlocks new hobbies, better careers, and deeper connections.",
+      "My µLearn journey began at GTA Codestorm and grew through constant learning and support on Discord. Launchpad then opened the door to interviews, helping me land my role as a Junior Software Engineer.",
     imageUrl: "",
   },
   {
-    name: "Alex",
-    designation: "Product Designer",
+    name: "Ansan Johny",
+    designation: "Jr. SDET",
     quote:
-      "μLearn provided the real-world projects and mentorship I needed to switch careers. The focus on Karma Points kept me motivated to consistently build my portfolio.",
+      "I joined µLearn for karma points but soon found real skill-building and growth. Launchpad helped me turn that proof of work into my current role.",
     imageUrl: "",
   },
   {
