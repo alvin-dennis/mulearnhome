@@ -2,7 +2,6 @@ import { ClosedCareersCardProps } from "@/lib/types";
 
 const ClosedCareersCard = ({
   date,
-  title,
   location,
   qualifications,
   role,
@@ -12,8 +11,7 @@ const ClosedCareersCard = ({
   return (
     <div className="relative w-[350px] rounded-2xl bg-mulearn-whitish shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
       <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-4 text-center">
-        <h2 className="text-lg font-semibold text-mulearn-whitish">{title}</h2>
-        <p className="text-sm text-mulearn-whitish">Closed on {date}</p>
+        <h2 className="text-lg font-semibold text-mulearn-whitish">μLearn Hiring Call</h2>
       </div>
 
       <div className="p-5 space-y-2 text-mulearn-blackish text-sm">
@@ -40,6 +38,11 @@ const ClosedCareersCard = ({
         {qualifications && (
           <p>
             <strong>Qualifications:</strong> {qualifications}
+          </p>
+        )}
+        {date && (
+          <p>
+            <strong>Closed on:</strong> {date}
           </p>
         )}
       </div>
