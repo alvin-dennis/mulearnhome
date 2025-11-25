@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: "s3.ap-south-1.amazonaws.com",
         pathname: "/**",
       },
+      {
+        protocol: 'https',
+        hostname: 'www.propeers.in',
+        pathname: '/**',
+      },
     ],
   },
 };
