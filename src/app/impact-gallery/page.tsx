@@ -41,7 +41,7 @@ export default function ImpactGallery() {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-mulearn-blackish mb-4">
+            <h2 className="text-4xl font-bold text-mulearn mb-4">
               Our Impact in Action
             </h2>
             <p className="text-mulearn-gray-600 text-lg max-w-2xl mx-auto">

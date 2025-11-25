@@ -14,7 +14,7 @@ export default function OpenMicPage() {
   const pastEvents = openMicData.events.filter((event) => !event.isUpcoming);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-mulearn-gray-50 to-mulearn-whitish">
+    <div className="min-h-screen">
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
