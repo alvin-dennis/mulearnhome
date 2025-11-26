@@ -1,23 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { mailService, EmailData } from '@/services/mail';
 
-// Production-ready rate limiting with cleanup
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = parseInt(process.env.RATE_LIMIT_WINDOW_MS || '900000'); // 15 minutes
-const MAX_REQUESTS = parseInt(process.env.MAX_REQUESTS_PER_WINDOW || '10'); // 10 requests per window
+const RATE_LIMIT_CONFIG = {
+  windowMs: 15 * 60 * 1000,        // 15 minutes
+  maxRequests: 10,                 // 10 requests per window
+  cleanupIntervalMs: 60 * 60 * 1000, // 1 hour cleanup interval
+} as const;
 
-// Cleanup old entries every hour to prevent memory leaks
-setInterval(() => {
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+const cleanupExpiredEntries = () => {
   const now = Date.now();
   for (const [key, value] of rateLimitMap.entries()) {
     if (now > value.resetTime) {
       rateLimitMap.delete(key);
     }
   }
-}, 3600000); // 1 hour
+};
+
+const cleanupTimer = setInterval(cleanupExpiredEntries, RATE_LIMIT_CONFIG.cleanupIntervalMs);
+
+process.on('SIGTERM', () => clearInterval(cleanupTimer));
+process.on('SIGINT', () => clearInterval(cleanupTimer));
 
 function getClientIP(request: NextRequest): string {
-  // Production IP detection - handles various proxy headers
   const forwarded = request.headers.get('x-forwarded-for');
   const realIP = request.headers.get('x-real-ip');
   const cfConnectingIP = request.headers.get('cf-connecting-ip'); // Cloudflare
@@ -34,11 +40,14 @@ function isRateLimited(ip: string): boolean {
   const record = rateLimitMap.get(ip);
   
   if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    rateLimitMap.set(ip, { 
+      count: 1, 
+      resetTime: now + RATE_LIMIT_CONFIG.windowMs 
+    });
     return false;
   }
   
-  if (record.count >= MAX_REQUESTS) {
+  if (record.count >= RATE_LIMIT_CONFIG.maxRequests) {
     return true;
   }
   
@@ -49,7 +58,6 @@ function isRateLimited(ip: string): boolean {
 function validateEmailData(data: any): { isValid: boolean; errors: string[] } {
   const errors: string[] = [];
   
-  // Required fields with length limits
   if (!data.intent?.trim()) {
     errors.push('Intent is required');
   }
