@@ -5,12 +5,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-mulearn-gray-50 to-mulearn-whitish">
+    <div className="min-h-screen">
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-28 lg:pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-6 flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight whitespace-nowrap">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-mulearn-blackish leading-tight whitespace-nowrap">
                 {contactPage.hero.title.line1}{" "}
                 <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   {contactPage.hero.title.line2}
