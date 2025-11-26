@@ -61,7 +61,7 @@ export default function InspirationStationPage() {
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
                 <img
-                  src="/assets/isr/isr-hero.png"
+                  src="/assets/isr/isr.svg"
                   alt="Inspiration Station Radio Illustration"
                   className="w-full h-auto rounded-2xl"
                   loading="eager"
@@ -163,10 +163,6 @@ export default function InspirationStationPage() {
               to tell, then you can request them to come to the Inspiration
               Station Radio and share their story with our listeners.
             </p>
-            <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
-              <Users className="w-4 h-4 md:w-5 md:h-5" />
-              Apply Now
-            </Button>
           </div>
         </div>
       </section>

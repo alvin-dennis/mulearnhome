@@ -159,10 +159,6 @@ export default function SaltMangoTreePage() {
             <p className="text-base md:text-lg text-mulearn-gray-600 mb-6 md:mb-8">
               If you want to help others improve their English skills, or you know someone who can, then you can request them to come to the Salt Mango Tree session and share their knowledge with our learners.
             </p>
-            <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
-              <Users className="w-4 h-4 md:w-5 md:h-5" />
-              Apply Now
-            </Button>
           </div>
         </div>
       </section>
