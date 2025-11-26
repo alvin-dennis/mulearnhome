@@ -1,7 +1,7 @@
 "use client";
 
 import { weeklyTwitch } from "@/data/events";
-import { Radio, Calendar, Mic, PlayCircle, Users, Clock } from "lucide-react";
+import { Radio, Calendar, PlayCircle, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { EpisodeCard } from "./_components/EpisodeCard";
@@ -47,13 +47,6 @@ export default function InspirationStationPage() {
                 <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
                   <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                   Listen Live
-                </Button>
-                <Button
-                  variant="outline"
-                  className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full border-2 border-mulearn-trusty-blue text-mulearn-trusty-blue hover:bg-mulearn-trusty-blue/10 transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  <Mic className="w-4 h-4 md:w-5 md:h-5" />
-                  Become a Speaker
                 </Button>
               </div>
             </div>
@@ -148,21 +141,6 @@ export default function InspirationStationPage() {
                 </div>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 md:py-16 bg-linear-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-mulearn-blackish mb-3 md:mb-4">
-              Become Inspiration Station Radio Speaker
-            </h2>
-            <p className="text-base md:text-lg text-mulearn-gray-600 mb-6 md:mb-8">
-              If you have a story to tell, or you know someone who has a story
-              to tell, then you can request them to come to the Inspiration
-              Station Radio and share their story with our listeners.
-            </p>
           </div>
         </div>
       </section>
