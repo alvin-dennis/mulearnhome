@@ -4,10 +4,10 @@
     {
       "username": "Amith-Abey-Stephen",
       "commits": 0,
-      "prs_opened": 4,
+      "prs_opened": 5,
       "prs_merged": 4,
       "issues_opened": 17,
-      "issues_closed": 9,
+      "issues_closed": 11,
       "displayname": "Amith Abey Stephen"
     },
     {
@@ -29,6 +29,24 @@
       "displayname": "Nandakishore P"
     },
     {
+      "username": "alvin-dennis",
+      "commits": 0,
+      "prs_opened": 5,
+      "prs_merged": 3,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "salahudheenthajudheen",
+      "commits": 0,
+      "prs_opened": 6,
+      "prs_merged": 2,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Salahudheen Thajudheen"
+    },
+    {
       "username": "godlykmathews",
       "commits": 0,
       "prs_opened": 4,
@@ -36,24 +54,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Godly K Mathews"
-    },
-    {
-      "username": "salahudheenthajudheen",
-      "commits": 0,
-      "prs_opened": 6,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Salahudheen Thajudheen"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 0,
-      "prs_opened": 4,
-      "prs_merged": 2,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Alvin Dennis"
     },
     {
       "username": "thomasjacob0207-design",
