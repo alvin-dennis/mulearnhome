@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { mailService, EmailData } from '@/services/mail';
 
 const RATE_LIMIT_CONFIG = {
-  windowMs: 15 * 60 * 1000,        // 15 minutes
-  maxRequests: 10,                 // 10 requests per window
-  cleanupIntervalMs: 60 * 60 * 1000, // 1 hour cleanup interval
+  windowMs: 15 * 60 * 1000,
+  maxRequests: 10,
+  cleanupIntervalMs: 60 * 60 * 1000,
 } as const;
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -26,7 +26,7 @@ process.on('SIGINT', () => clearInterval(cleanupTimer));
 function getClientIP(request: NextRequest): string {
   const forwarded = request.headers.get('x-forwarded-for');
   const realIP = request.headers.get('x-real-ip');
-  const cfConnectingIP = request.headers.get('cf-connecting-ip'); // Cloudflare
+  const cfConnectingIP = request.headers.get('cf-connecting-ip');
   
   if (cfConnectingIP) return cfConnectingIP;
   if (realIP) return realIP;
@@ -71,7 +71,6 @@ function validateEmailData(data: any): { isValid: boolean; errors: string[] } {
   if (!data.email?.trim()) {
     errors.push('Email is required');
   } else {
-    // More robust email validation
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (!emailRegex.test(data.email) || data.email.length > 254) {
       errors.push('Invalid email format');
@@ -88,16 +87,13 @@ function validateEmailData(data: any): { isValid: boolean; errors: string[] } {
     errors.push('Consent is required');
   }
   
-  // Enhanced sanitization
   const sanitizeString = (str: string) => {
     return str
-      .replace(/<[^>]*>/g, '') // Remove HTML tags
-      .replace(/[<>"'&]/g, '') // Remove dangerous characters
+      .replace(/<[^>]*>/g, '')
+      .replace(/[<>"'&]/g, '')
       .trim()
-      .substring(0, 1000); // Limit length
+      .substring(0, 1000);
   };
-  
-  // Sanitize all string fields
   Object.keys(data).forEach(key => {
     if (typeof data[key] === 'string') {
       data[key] = sanitizeString(data[key]);
@@ -108,7 +104,6 @@ function validateEmailData(data: any): { isValid: boolean; errors: string[] } {
 }
 
 export async function POST(request: NextRequest) {
-  // Security headers
   const headers = {
     'X-Content-Type-Options': 'nosniff',
     'X-Frame-Options': 'DENY',
@@ -116,19 +111,15 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    // Environment validation
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.error('Email service configuration missing');
       return NextResponse.json(
         { success: false, message: 'Service temporarily unavailable.' },
         { status: 503, headers }
       );
     }
 
-    // Get client IP for rate limiting
     const ip = getClientIP(request);
     
-    // Check rate limiting
     if (isRateLimited(ip)) {
       return NextResponse.json(
         { 
@@ -139,10 +130,8 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Parse request body
     const body = await request.json();
     
-    // Validate the data
     const { isValid, errors } = validateEmailData(body);
     
     if (!isValid) {
@@ -154,6 +143,25 @@ export async function POST(request: NextRequest) {
         },
         { status: 400, headers }
       );
+    }
+    
+    let ticketId = '';
+    
+    try {
+      const datasheetResponse = await fetch(`${request.nextUrl.origin}/api/datasheet`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+      
+      if (datasheetResponse.ok) {
+        const datasheetResult = await datasheetResponse.json();
+        ticketId = datasheetResult.ticketId || '';
+      }
+    } catch (error) {
+      // Continue without ticket ID if datasheet fails
     }
     
     const emailData: EmailData = {
@@ -182,15 +190,14 @@ export async function POST(request: NextRequest) {
       outlet: body.outlet,
       deadline: body.deadline,
       issueCategory: body.issueCategory,
+      ticketId: ticketId,
     };
     
-    // Send both emails in parallel with timeout
     const emailPromises = [
       mailService.sendContactEmail(emailData),
       mailService.sendAutoReply(emailData)
     ];
     
-    // Add 30-second timeout
     const timeoutPromise = new Promise((_, reject) => 
       setTimeout(() => reject(new Error('Email timeout')), 30000)
     );
@@ -200,22 +207,19 @@ export async function POST(request: NextRequest) {
       Promise.race([emailPromises[1], timeoutPromise])
     ]);
     
-    // Check results with proper type checking
     const contactSuccess = contactResult.status === 'fulfilled' && 
       (contactResult.value as { success: boolean }).success;
     const autoReplySuccess = autoReplyResult.status === 'fulfilled' && 
       (autoReplyResult.value as { success: boolean }).success;
     
     if (contactSuccess) {
-      // Primary email sent successfully
       return NextResponse.json({
         success: true,
         message: 'Your message has been sent successfully! We\'ll get back to you soon.',
+        ticketId: ticketId,
         autoReplyStatus: autoReplySuccess ? 'sent' : 'failed'
       }, { headers });
     } else {
-      // Primary email failed - log error but don't expose details
-      console.error('Contact email delivery failed');
       return NextResponse.json(
         {
           success: false,
@@ -226,8 +230,6 @@ export async function POST(request: NextRequest) {
     }
     
   } catch (error) {
-    // Log error but don't expose sensitive details
-    console.error('Contact API error:', error instanceof Error ? error.message : 'Unknown error');
     return NextResponse.json(
       {
         success: false,
@@ -238,7 +240,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Handle unsupported methods with security headers
 const methodHeaders = {
   'Allow': 'POST',
   'X-Content-Type-Options': 'nosniff',
