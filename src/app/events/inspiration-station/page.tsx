@@ -44,10 +44,12 @@ export default function InspirationStationPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
-                  <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
-                  Listen Live
-                </Button>
+                <a href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
+                  <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
+                    <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
+                    Join
+                  </Button>
+                </a>
               </div>
             </div>
 
