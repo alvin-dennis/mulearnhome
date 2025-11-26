@@ -28,13 +28,13 @@ interface EmailData {
   outlet?: string;
   deadline?: string;
   issueCategory?: string;
+  ticketId?: string;
 }
 
 class MailService {
   private transporter: nodemailer.Transporter;
 
   constructor() {
-    // Try Gmail first, fallback to manual SMTP if needed
     const emailConfig = process.env.EMAIL_PROVIDER === 'outlook' 
       ? {
           host: 'smtp-mail.outlook.com',
@@ -67,7 +67,7 @@ class MailService {
 
       const mailOptions = {
         from: process.env.GMAIL_USER,
-        to: ['info@mulearn.org', 'sachin@mulearn.org'],
+        to: ['sachin@mulearn.org', 'info@mulearn.org'],
         subject,
         html,
         replyTo: data.email,
@@ -87,8 +87,6 @@ class MailService {
         message: 'Email sent successfully',
       };
     } catch (error) {
-      // Log error without exposing sensitive details
-      console.error('Failed to send contact email');
       return {
         success: false,
         message: 'Failed to send email',
@@ -103,7 +101,7 @@ class MailService {
       const autoReplyOptions = {
         from: process.env.GMAIL_USER,
         to: data.email,
-        subject: 'Thank you for contacting μLearn Foundation - We\'ll be in touch soon! 🚀',
+        subject: 'Your inquiry has been received - μLearn Foundation',
         html: autoReplyHtml,
         attachments: [
           {
@@ -121,8 +119,6 @@ class MailService {
         message: 'Auto-reply sent successfully',
       };
     } catch (error) {
-      // Log error without exposing sensitive details
-      console.error('Failed to send auto-reply email');
       return {
         success: false,
         message: 'Failed to send auto-reply',
