@@ -58,10 +58,12 @@ export default function SaltMangoTreePage() {
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-                {/* Placeholder for Salt Mango Tree Image */}
-                <div className="w-full h-64 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500">
-                    Salt Mango Tree Image
-                </div>
+                <img
+                  src="/assets/smt/smt.svg"
+                  alt="Salt Mango Tree Illustration"
+                  className="w-full h-auto rounded-2xl"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>
