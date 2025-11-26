@@ -17,5 +17,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/events/saltmangotree",
+        destination: "/events/salt-mango-tree",
+        permanent: true,
+      },
+    ];
+  },
 };
 export default nextConfig;

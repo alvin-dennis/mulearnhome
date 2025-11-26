@@ -1,5 +1,11 @@
 import { cdnUrl } from "@/services/cdn";
-import { Event, OMEvent, OfficeHours } from "@/lib/types";
+import {
+  Event,
+  OMEvent,
+  OfficeHours,
+  OfficeHoursData,
+  WeeklyTwitchData,
+} from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
@@ -186,7 +192,7 @@ export const events: {
         title: "Salt Mango Tree",
         description:
           "English! English! English! I avoid I don't like it, but English likes me, I can't avoid! Well since avoiding English isn't an option, let's try to work towards improving our knowledge of English, by practicing, together.",
-        link: "/events/saltmangotree",
+        link: "/events/salt-mango-tree",
         date: "Every Wednesday",
       },
     ],
@@ -351,10 +357,6 @@ export const openMicData: OpenMicData = {
   ],
 };
 
-export interface OfficeHoursData {
-  events: OfficeHours[];
-}
-
 export const officehourdata: OfficeHoursData = {
   events: [
     {
@@ -365,7 +367,6 @@ export const officehourdata: OfficeHoursData = {
         "Join us for a discussion on why audiences are moving away from traditional theatres.",
       date: "28/11/2025",
       tags: ["MUVIE"],
-      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
@@ -376,7 +377,6 @@ export const officehourdata: OfficeHoursData = {
         "Join us for an open discussion on Data Structures and Algorithms.",
       date: "27/11/2025",
       tags: ["Data Structures and Algorithms"],
-      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
@@ -387,7 +387,6 @@ export const officehourdata: OfficeHoursData = {
         "Join us for the third session of our Django web development series.",
       date: "26/11/2025",
       tags: ["Web Development"],
-      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
@@ -397,7 +396,6 @@ export const officehourdata: OfficeHoursData = {
       description: "Join us for a UI/UX design session with Deepika.",
       date: "25/11/2025",
       tags: ["UI/UX"],
-      thumbnail: "/assets/bmc.jpeg",
       isUpcoming: false,
     },
     {
@@ -1495,3 +1493,170 @@ export const yip = [
       "Finally the winners are announced and out of the total teams selected at state level the best of those teams are provided financial and mentoring support to implement their ideas.",
   },
 ];
+
+export const weeklyTwitch: WeeklyTwitchData = {
+  "salt mango tree": [
+    {
+      id: 1,
+      topic: "Can money buy happiness?",
+      campus: "Sahrdaya College of Engineering & Technology",
+      zone: "Central",
+      date: "2025-01-29",
+      description: "Can money buy happiness?",
+      isUpcoming: false,
+    },
+    {
+      id: 2,
+      topic: "Do We Control Technology or Does Technology Control Us?",
+      campus: "College of Engineering Aranmula",
+      zone: "South",
+      date: "2025-02-05",
+      description: "Do We Control Technology or Does Technology Control Us?",
+      isUpcoming: false,
+    },
+    {
+      id: 3,
+      topic: "Do schools kill creativity?",
+      campus: "College of Applied Science Kozhikkode",
+      zone: "North",
+      date: "2025-02-12",
+      description: "Do schools kill creativity?",
+      isUpcoming: false,
+    },
+    {
+      id: 4,
+      topic: "Is laziness the key to innovation?",
+      campus: "Muthoot Institute of Technology & Science",
+      zone: "Central",
+      date: "2025-02-19",
+      description: "Is laziness the key to innovation?",
+      isUpcoming: false,
+    },
+    {
+      id: 5,
+      topic: "Let's talk photography",
+      campus: "College of Engineering Perumon",
+      zone: "South",
+      date: "2025-02-26",
+      description: "Let's talk photography",
+      isUpcoming: false,
+    },
+    {
+      id: 6,
+      topic: "What’s worse: slow WiFi or a dying phone battery?",
+      campus: "LBS College of Engineering Kasaragod",
+      zone: "North",
+      date: "2025-03-05",
+      description: "What’s worse: slow WiFi or a dying phone battery?",
+      isUpcoming: false,
+    },
+    {
+      id: 7,
+      topic: "How much money is too much money?",
+      campus: "University College of Engineering",
+      zone: "Central",
+      date: "2025-03-12",
+      description: "How much money is too much money?",
+      isUpcoming: false,
+    },
+    {
+      id: 8,
+      topic: "What's scarier, failure or regret?",
+      campus: "College of Engineering Chengannur",
+      zone: "South",
+      date: "2025-03-19",
+      description: "What's scarier, failure or regret?",
+      isUpcoming: false,
+    },
+    {
+      id: 9,
+      topic: "Films that felt like a hug",
+      campus: "Sree Buddha College of Engineering",
+      zone: "South",
+      date: "2025-09-17",
+      description: "Films that felt like a hug",
+      isUpcoming: false,
+    },
+    {
+      id: 10,
+      topic: "Alternative universe",
+      campus: "Kristu Jyoti College of Management and Technology",
+      zone: "Central",
+      date: "2025-10-01",
+      description: "Alternative universe",
+      isUpcoming: false,
+    },
+  ],
+  "inspiration station radio": [
+    {
+      id: 1,
+      topic: "Inspiration Station Radio",
+      campus: "Sree Chithira Thirunal College of Engineering",
+      zone: "South",
+      date: "2025-01-29",
+      description:
+        "Inspiration Station Radio session at Sree Chithira Thirunal College of Engineering",
+      isUpcoming: false,
+    },
+    {
+      id: 2,
+      topic: "Inspiration Station Radio",
+      campus: "Sree Buddha College of Engineering",
+      zone: "South",
+      date: "2025-02-19",
+      description:
+        "Inspiration Station Radio session at Sree Buddha College of Engineering",
+      isUpcoming: false,
+    },
+    {
+      id: 3,
+      topic: "Inspiration Station Radio",
+      campus: "College of Engineering Thalassery",
+      zone: "North",
+      date: "2025-02-26",
+      description:
+        "Inspiration Station Radio session at College of Engineering Thalassery",
+      isUpcoming: false,
+    },
+    {
+      id: 4,
+      topic: "Inspiration Station Radio",
+      campus: "College of Engineering Aranmula",
+      zone: "South",
+      date: "2025-03-12",
+      description:
+        "Inspiration Station Radio session at College of Engineering Aranmula",
+      isUpcoming: false,
+    },
+    {
+      id: 5,
+      topic: "Inspiration Station Radio",
+      campus: "Adi Shankara College of Engineering",
+      zone: "Central",
+      date: "2025-09-17",
+      description:
+        "Inspiration Station Radio session at Adi Shankara College of Engineering",
+      isUpcoming: false,
+    },
+    {
+      id: 6,
+      topic: "Inspiration Station Radio",
+      campus: "University College of Engineering Kariavattom",
+      zone: "South",
+      date: "2025-09-24",
+      description:
+        "Inspiration Station Radio session at University College of Engineering Kariavattom",
+      isUpcoming: false,
+    },
+    {
+      id: 7,
+      topic: "Inspiration Station Radio",
+      campus: "College of Engineering, Thalassery",
+      zone: "North",
+      date: "2025-10-01",
+      description:
+        "Inspiration Station Radio session at College of Engineering, Thalassery",
+      isUpcoming: false,
+    },
+  ],
+};
