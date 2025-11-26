@@ -13,13 +13,13 @@ const LearnersHero = () => {
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div className="relative inline-block mb-6">
-          <div className="absolute -top-6 -left-12 lg:-left-16">
+          <div className="absolute -top-6 -left-8 lg:-left-4">
             <MuImage
               src="/assets/learners/graduation-cap.png"
               alt="Graduation Cap"
               width={64}
               height={64}
-              className="w-12 h-12 lg:w-16 lg:h-16 object-contain"
+              className="w-12 h-12 lg:w-32 lg:h-32 object-contain"
             />
           </div>
 

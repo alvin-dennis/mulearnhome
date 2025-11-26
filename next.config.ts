@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "s3.ap-south-1.amazonaws.com",
         pathname: "/**",
       },

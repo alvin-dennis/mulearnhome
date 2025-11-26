@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { testimonialsData, slideImages } from "@/data/learners";
+import { slideImages } from "@/data/learners";
+import { testimonials } from "@/data/testimonials";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 
@@ -17,6 +18,7 @@ const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
+  const learnerTestimonials = testimonials.text.filter((t) => t.type === "learner");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -114,7 +116,7 @@ const Testimonials: React.FC = () => {
             className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
           >
             <div className="scroll-content flex gap-6 pb-4 px-8">
-              {testimonialsData.map((testimonial, index) => (
+              {learnerTestimonials.map((testimonial, index) => (
                 <div
                   key={index}
                   className="mt-4 flex-shrink-0 w-80 relative h-[280px] rounded-[24px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(256,256,256,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)]"
@@ -127,11 +129,7 @@ const Testimonials: React.FC = () => {
                     </p>
                     <div className="flex items-center space-x-3">
                       <MuImage
-                        src={
-                          testimonial.imageUrl
-                            ? testimonial.imageUrl
-                            : fallbackImage
-                        }
+                        src={testimonial.profileImage ? testimonial.profileImage : fallbackImage}
                         alt={`${testimonial.name}'s profile`}
                         width={100}
                         height={100}
@@ -142,7 +140,9 @@ const Testimonials: React.FC = () => {
                           – {testimonial.name}
                         </p>
                         <p className="text-sm text-mulearn-whitish/90 font-medium drop-shadow">
-                          {testimonial.designation}
+                          {testimonial.role
+                            ? `${testimonial.role}${testimonial.company ? `, ${testimonial.company}` : ""}`
+                            : testimonial.company || ""}
                         </p>
                       </div>
                     </div>
