@@ -177,7 +177,8 @@ export class EmailTemplates {
               <h2 style="color: #1a1a1a; margin: 0 0 5px 0; font-size: 22px; font-weight: 600; font-family: 'CirceRounded', 'Plus Jakarta Sans', sans-serif;">
                 ${this.getIntentLabel(data.intent)}
               </h2>
-              <p style="color: #666771; margin: 0; font-size: 14px;">Received on ${currentDate}</p>
+              <p style="color: #666771; margin: 0 0 5px 0; font-size: 14px;">Received on ${currentDate}</p>
+              ${data.ticketId ? `<p style="color: #2E85FE; margin: 0; font-size: 14px; font-weight: 600;">Ticket ID: ${data.ticketId}</p>` : ''}
             </div>
             
             <!-- Contact Information -->
@@ -220,15 +221,13 @@ export class EmailTemplates {
           <div style="background: #ffffffff; padding: 30px; text-align: center;">
             <img src="cid:mulearn-logo" alt="μLearn Foundation" style="height: 40px; margin-bottom: 15px; filter: brightness(0) invert(1);">
             <p style="color: #1a1a1a; margin: 0 0 10px 0; font-size: 14px; font-weight: 300;">
-              μLearn Foundation | Copyright © ${new Date().getFullYear()} All rights reserved.
+             <b>μLearn Foundation | Copyright © ${new Date().getFullYear()} All rights reserved.</b>
             </p>
             <p style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 12px;">
-              Technopark Phase 1, Thiruvananthapuram, Kerala - 695581
+              <b>Technopark Phase 1, Thiruvananthapuram, Kerala - 695581</b>
             </p>
             <div style="margin: 15px 0;">
               <a href="mailto:info@mulearn.org" style="color: #2E85FE; text-decoration: none; margin: 0 10px; font-size: 12px;">info@mulearn.org</a>
-              <span style="color: #1a1a1a;">|</span>
-              <span style="color: #1a1a1a; margin: 0 10px; font-size: 12px;">+91 89436 47000</span>
               <span style="color: #1a1a1a;">|</span>
               <a href="https://www.mulearn.org" style="color: #2E85FE; text-decoration: none; margin: 0 10px; font-size: 12px;">www.mulearn.org</a>
             </div>
@@ -267,42 +266,40 @@ export class EmailTemplates {
           
           <!-- Content -->
           <div style="padding: 40px 30px;">
-            <div style="border-left: 4px solid #2E85FE; padding-left: 20px; margin-bottom: 30px;">
-              <h2 style="color: #1a1a1a; margin: 0 0 5px 0; font-size: 22px; font-weight: 600; font-family: 'CirceRounded', 'Plus Jakarta Sans', sans-serif;">
-                Hello ${data.name}
+            <div style="margin-bottom: 30px;">
+              <h2 style="color: #1a1a1a; margin: 0 0 10px 0; font-size: 24px; font-weight: 600; font-family: 'CirceRounded', 'Plus Jakarta Sans', sans-serif;">
+                Dear ${data.name},
               </h2>
-              <p style="color: #666771; margin: 0; font-size: 14px;">Your message has been received on ${currentDate}</p>
+              ${data.ticketId ? `<div style="background: #f8f9fa; border: 1px solid #e9ecef; color: #495057; padding: 12px 20px; border-radius: 8px; margin: 20px 0; text-align: center; font-size: 14px;"><strong>Reference ID: ${data.ticketId}</strong></div>` : ''}
             </div>
             
-            <p style="color: #666771; line-height: 1.7; font-size: 16px; margin-bottom: 25px;">
-              Thank you for contacting μLearn Foundation regarding <strong style="color: #2E85FE;">${this.getIntentLabel(data.intent).toLowerCase()}</strong>. 
-              We appreciate your interest in our mission to democratize quality education and build a tech-enabled learning ecosystem.
+            <p style="color: #333333; line-height: 1.8; font-size: 16px; margin-bottom: 25px;">
+              Thank you for reaching out to μLearn Foundation. We have received your inquiry regarding <strong>${this.getIntentLabel(data.intent).toLowerCase()}</strong> and appreciate your interest in our programs and initiatives.
             </p>
             
-            <!-- What's Next -->
-            <div style="background: #fefefe; border: 1px solid #c4c4c4; border-radius: 12px; padding: 25px; margin: 25px 0;">
-              <h3 style="color: #1a1a1a; margin: 0 0 20px 0; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'CirceRounded', 'Plus Jakarta Sans', sans-serif;">What happens next?</h3>
-              <div style="color: #666771; line-height: 1.6;">
-                <div style="margin: 10px 0;">
-                  • Our team will carefully review your inquiry within 24-48 hours
-                </div>
-                <div style="margin: 10px 0;">
-                  • You'll receive a personalized response from our relevant department
-                </div>
-                <div style="margin: 10px 0;">
-                  • We'll work together to address your needs and questions
-                </div>
-              </div>
+            <p style="color: #333333; line-height: 1.8; font-size: 16px; margin-bottom: 25px;">
+              Our team is committed to providing you with comprehensive information and support. We will carefully review your submission and ensure you receive the most relevant and helpful response.
+            </p>
+            
+            <div style="background: #f8f9fa; border-radius: 8px; padding: 25px; margin: 25px 0;">
+              <h3 style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; font-family: 'CirceRounded', 'Plus Jakarta Sans', sans-serif;">Next Steps</h3>
+              <p style="color: #495057; line-height: 1.6; margin: 0; font-size: 15px;">
+                Our dedicated team will review your submission and respond within 24-48 hours with detailed information tailored to your specific requirements. We look forward to discussing how μLearn Foundation can support your goals.
+              </p>
             </div>
             
-            <div style="margin: 30px 0; text-align: center;">
-              <a href="https://mulearn.org" style="display: inline-block; background: linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%); color: #fefefe; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; margin: 0 8px 8px 0;">Visit μLearn</a>
+            <div style="text-align: center; margin: 30px 0;">
+              <p style="color: #666771; font-size: 14px; margin-bottom: 15px;">
+                Stay connected with our latest updates and initiatives
+              </p>
+              <a href="https://mulearn.org" style="display: inline-block; background: linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%); color: #fefefe; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px;">Explore μLearn</a>
             </div>
             
-            <div style="border-top: 1px solid #c4c4c4; padding-top: 25px; margin-top: 30px;">
-              <p style="color: #666771; font-size: 14px; line-height: 1.6; margin: 0;">
-                Best regards,<br>
-                <strong style="color: #1a1a1a;">The μLearn Foundation Team</strong>
+            <div style="border-top: 1px solid #e9ecef; padding-top: 25px; margin-top: 35px;">
+              <p style="color: #495057; font-size: 15px; line-height: 1.6; margin: 0;">
+                Warm regards,<br><br>
+                <strong style="color: #1a1a1a;">The μLearn Foundation Team</strong><br>
+                <span style="color: #6c757d; font-size: 13px;">Empowering learners, building futures</span>
               </p>
             </div>
           </div>
@@ -311,15 +308,13 @@ export class EmailTemplates {
           <div style="background: #ffffffff; padding: 30px; text-align: center;">
             <img src="cid:mulearn-logo" alt="μLearn Foundation" style="height: 40px; margin-bottom: 15px; filter: brightness(0) invert(1);">
             <p style="color: #1a1a1a; margin: 0 0 10px 0; font-size: 14px; font-weight: 300;">
-              μLearn Foundation | Copyright © ${new Date().getFullYear()} All rights reserved.
+             <b>μLearn Foundation | Copyright © ${new Date().getFullYear()} All rights reserved.</b>
             </p>
             <p style="color: #1a1a1a; margin: 0 0 15px 0; font-size: 12px;">
-              Technopark Phase 1, Thiruvananthapuram, Kerala - 695581
+             <b>Technopark Phase 1, Thiruvananthapuram, Kerala - 695581</b>
             </p>
             <div style="margin: 15px 0;">
-              <a href="mailto:info@mulearn.org" style="color: #2E85FE; text-decoration: none; margin: 0 10px; font-size: 12px;">info@mulearn.org</a>
-              <span style="color: #1a1a1a;">|</span>
-              <span style="color: #1a1a1a; margin: 0 10px; font-size: 12px;">+91 89436 47000</span>
+              <a href="mailto:info@mulearn.org" style="color: #2E85FE; text-decoration: none; margin: 0 10px; font-size: 12px;">info@mulearn.org</a>      
               <span style="color: #1a1a1a;">|</span>
               <a href="https://www.mulearn.org" style="color: #2E85FE; text-decoration: none; margin: 0 10px; font-size: 12px;">www.mulearn.org</a>
             </div>
