@@ -46,6 +46,11 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
   const intents = [
     { value: "", label: "Select one", disabled: true },
@@ -123,61 +128,89 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
 
-    if (validateForm()) {
-      console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
 
-      const successMessages = {
-        student:
-          "Thank you! Our community team will contact you within 48 hours.",
-        partner:
-          "Thank you! Our partnerships team will contact you within 72 hours.",
-        program:
-          "Thank you! Our programs team will contact you within 72 hours.",
-        hiring:
-          "Thank you! Our Launchpad team will contact you within 48 hours.",
-        events: "Thank you! Our events team will contact you within 48 hours.",
-        media: "Thank you! Our media team will contact you within 24-48 hours.",
-        support:
-          "Thank you! Our support team will contact you within 24-48 hours.",
-        other: "Thank you! We'll get back to you as soon as possible.",
-      };
-
-      alert(
-        successMessages[formData.intent as keyof typeof successMessages] ||
-          "Thank you for your message!"
-      );
-
-      setFormData({
-        intent: "",
-        name: "",
-        email: "",
-        phone: "",
-        region: "",
-        message: "",
-        consent: false,
-        institution: "",
-        courseYear: "",
-        campusChapter: "",
-        interestGroups: "",
-        organization: "",
-        organizationType: "",
-        focusArea: "",
-        timeline: "",
-        budget: "",
-        programType: "",
-        targetCohort: "",
-        role: "",
-        skills: "",
-        numberOfHires: "",
-        eventName: "",
-        eventDate: "",
-        outlet: "",
-        deadline: "",
-        issueCategory: "",
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: data.message || 'Thank you for your message! We\'ll get back to you soon.',
+        });
+        
+        // Reset form on success
+        setFormData({
+          intent: "",
+          name: "",
+          email: "",
+          phone: "",
+          region: "",
+          message: "",
+          consent: false,
+          institution: "",
+          courseYear: "",
+          campusChapter: "",
+          interestGroups: "",
+          organization: "",
+          organizationType: "",
+          focusArea: "",
+          timeline: "",
+          budget: "",
+          programType: "",
+          targetCohort: "",
+          role: "",
+          skills: "",
+          numberOfHires: "",
+          eventName: "",
+          eventDate: "",
+          outlet: "",
+          deadline: "",
+          issueCategory: "",
+        });
+        setErrors({});
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.message || 'Something went wrong. Please try again.',
+        });
+        
+        // Handle validation errors
+        if (data.errors && Array.isArray(data.errors)) {
+          const errorMap: Record<string, string> = {};
+          data.errors.forEach((error: string) => {
+            if (error.toLowerCase().includes('name')) errorMap.name = error;
+            else if (error.toLowerCase().includes('email')) errorMap.email = error;
+            else if (error.toLowerCase().includes('message')) errorMap.message = error;
+            else if (error.toLowerCase().includes('intent')) errorMap.intent = error;
+            else if (error.toLowerCase().includes('consent')) errorMap.consent = error;
+          });
+          setErrors(errorMap);
+        }
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -677,12 +710,34 @@ export default function ContactForm() {
           )}
         </div>
 
+        {submitStatus.type && (
+          <div
+            className={`p-4 rounded-lg mb-4 ${
+              submitStatus.type === 'success'
+                ? 'bg-green-50 border border-green-200 text-green-800'
+                : 'bg-red-50 border border-red-200 text-red-800'
+            }`}
+          >
+            <p className="text-sm font-medium">{submitStatus.message}</p>
+          </div>
+        )}
+
         <Button
           type="submit"
-          className="w-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish py-3"
+          disabled={isSubmitting}
+          className="w-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish py-3 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <Send className="w-4 h-4 mr-2" />
-          Send Message
+          {isSubmitting ? (
+            <>
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <Send className="w-4 h-4 mr-2" />
+              Send Message
+            </>
+          )}
         </Button>
       </form>
     </div>
