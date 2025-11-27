@@ -11,6 +11,15 @@
       "displayname": "Amith Abey Stephen"
     },
     {
+      "username": "nanda-kshr",
+      "commits": 0,
+      "prs_opened": 6,
+      "prs_merged": 6,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Nandakishore P"
+    },
+    {
       "username": "awindsr",
       "commits": 0,
       "prs_opened": 5,
@@ -20,13 +29,13 @@
       "displayname": "Awindsr"
     },
     {
-      "username": "nanda-kshr",
+      "username": "salahudheenthajudheen",
       "commits": 0,
-      "prs_opened": 5,
-      "prs_merged": 5,
+      "prs_opened": 7,
+      "prs_merged": 2,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "Nandakishore P"
+      "displayname": "Salahudheen Thajudheen"
     },
     {
       "username": "alvin-dennis",
@@ -38,15 +47,6 @@
       "displayname": "Alvin Dennis"
     },
     {
-      "username": "salahudheenthajudheen",
-      "commits": 0,
-      "prs_opened": 6,
-      "prs_merged": 2,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Salahudheen Thajudheen"
-    },
-    {
       "username": "godlykmathews",
       "commits": 0,
       "prs_opened": 4,
@@ -54,6 +54,15 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Godly K Mathews"
+    },
+    {
+      "username": "AdarshDev9349",
+      "commits": 0,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Adarsh Dev"
     },
     {
       "username": "thomasjacob0207-design",
@@ -81,15 +90,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Vishal-Jobin"
-    },
-    {
-      "username": "Safwancs7",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Muhammad Safwan C S"
     }
   ],
   "overall": [
