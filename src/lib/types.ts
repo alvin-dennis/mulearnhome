@@ -321,3 +321,22 @@ export interface Testimonial {
   quote: string;
   imageUrl: string;
 }
+
+export interface OfficeHoursData {
+  events: OfficeHours[];
+}
+
+export interface WeeklyTwitchEvent {
+  id: number;
+  topic: string;
+  campus: string;
+  zone: string;
+  date: string;
+  description: string;
+  isUpcoming: boolean;
+}
+
+export interface WeeklyTwitchData {
+  "salt mango tree": WeeklyTwitchEvent[];
+  "inspiration station radio": WeeklyTwitchEvent[];
+}
