@@ -90,15 +90,6 @@ export const galleryCategories = [
   },
 ];
 
-export const impactStats: ImpactStat[] = [
-  { number: "59,000+", label: "Learners", icon: "Users" },
-  { number: "1,900+", label: "Institutions", icon: "School" },
-  { number: "500+", label: "Events Hosted", icon: "Calendar" },
-  { number: "50+", label: "Company Partners", icon: "Handshake" },
-  { number: "1,000+", label: "Mentors", icon: "GraduationCap" },
-  { number: "100+", label: "Success Stories", icon: "TrendingUp" },
-];
-
 // Helper: derive ImpactStat[] from live `Counts` (same source used in `Stats.tsx`).
 // This lets UI components use live numbers from an API or websocket rather
 // than the static fallback above. Fields that are not present in `Counts`

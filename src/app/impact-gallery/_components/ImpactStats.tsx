@@ -11,7 +11,7 @@ import {
   GraduationCap,
   TrendingUp,
 } from "lucide-react";
-import { impactStats, impactStatsFromCounts } from "@/data/impact-gallery";
+import { impactStatsFromCounts } from "@/data/impact-gallery";
 import { ImpactStat, Counts } from "@/lib/types";
 
 const iconMap = {
@@ -68,7 +68,7 @@ export default function ImpactStats() {
         </MotionH2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {(counts ? impactStatsFromCounts(counts) : impactStats).map((stat: ImpactStat, index) => {
+          {counts && impactStatsFromCounts(counts).map((stat: ImpactStat, index: number) => {
             const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
 
             return (

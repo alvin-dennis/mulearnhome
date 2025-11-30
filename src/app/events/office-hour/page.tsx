@@ -113,14 +113,6 @@ export default function OfficeHoursPage() {
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>
-
-              <Button
-                variant="outline"
-                className="px-8 py-3 gap-2 text-base rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <Users className="w-5 h-5" />
-                Watch Previous Events
-              </Button>
             </div>
           </div>
         </div>

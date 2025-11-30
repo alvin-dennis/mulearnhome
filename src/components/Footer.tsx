@@ -33,6 +33,7 @@ export default function Footer() {
                       width={200}
                       height={200}
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
                 </div>

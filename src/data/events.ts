@@ -114,7 +114,6 @@ export const events: {
         description:
           "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
         link: "https://permute.mulearn.org/",
-
         isLive: false,
       },
       {
