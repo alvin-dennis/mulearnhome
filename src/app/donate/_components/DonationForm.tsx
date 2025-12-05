@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { submitDonationForm } from "@/services/donation";
+import { submitDonationForm, submitSubscription } from "@/services/donation";
 
 type DonationType = "one-time" | "monthly" | "yearly";
 
@@ -38,10 +38,19 @@ const donationFormSchema = z
 
     panNumber: z
       .string()
-      .regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, {
-        message: "Invalid PAN format. Use format: ABCDE1234F",
-      })
-      .length(10, { message: "PAN must be exactly 10 characters" }),
+      .transform((val) => val.toUpperCase())
+      .pipe(
+        z.string()
+          .regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, {
+            message: "Invalid PAN format. Use format: ABCDE1234F",
+          })
+          .length(10, { message: "PAN must be exactly 10 characters" })
+      ),
+
+    address: z
+      .string()
+      .min(10, { message: "Address must be at least 10 characters" })
+      .max(500, { message: "Address must not exceed 500 characters" }),
 
     isOrganisation: z.boolean(),
 
@@ -96,6 +105,7 @@ export default function DonationForm() {
       email: "",
       phone: "",
       panNumber: "",
+      address: "",
       isOrganisation: false,
       organisationName: "",
       termsAccepted: false,
@@ -166,18 +176,30 @@ export default function DonationForm() {
 
   const onSubmit = async (data: DonationFormData) => {
     try {
-      toast.loading("Processing your donation...", { id: "donation-loading" });
+      const loadingMessage = data.donationType === "one-time"
+        ? "Processing your donation..."
+        : "Setting up your recurring donation...";
+      toast.loading(loadingMessage, { id: "donation-loading" });
 
-      await submitDonationForm({
+      const payload = {
         amount: data.donationAmount,
         name: data.name,
         email: data.email,
         mobile: data.phone,
         pan: data.panNumber,
+        address: data.address,
         donationType: data.donationType,
         isOrganisation: data.isOrganisation,
         organisationName: data.organisationName,
-      });
+      };
+
+      // Use submitSubscription for recurring donations (monthly/yearly)
+      // Use submitDonationForm for one-time donations
+      if (data.donationType === "one-time") {
+        await submitDonationForm(payload);
+      } else {
+        await submitSubscription(payload);
+      }
 
       toast.dismiss("donation-loading");
     } catch (error) {
@@ -206,9 +228,8 @@ export default function DonationForm() {
               type="text"
               placeholder="John Doe"
               {...register("name")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
-                errors.name ? "border-red-500" : ""
-              }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.name ? "border-red-500" : ""
+                }`}
             />
             {errors.name && (
               <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>
@@ -230,9 +251,8 @@ export default function DonationForm() {
               type="email"
               placeholder="john.doe@example.com"
               {...register("email")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
-                errors.email ? "border-red-500" : ""
-              }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.email ? "border-red-500" : ""
+                }`}
             />
             {errors.email && (
               <p className="text-xs text-red-500 mt-1">
@@ -256,9 +276,8 @@ export default function DonationForm() {
               type="tel"
               placeholder="+91 98765 43210"
               {...register("phone")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
-                errors.phone ? "border-red-500" : ""
-              }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.phone ? "border-red-500" : ""
+                }`}
             />
             {errors.phone && (
               <p className="text-xs text-red-500 mt-1">
@@ -287,9 +306,8 @@ export default function DonationForm() {
                 },
               })}
               maxLength={10}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
-                errors.panNumber ? "border-red-500" : ""
-              }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.panNumber ? "border-red-500" : ""
+                }`}
             />
             {errors.panNumber && (
               <p className="text-xs text-red-500 mt-1">
@@ -297,6 +315,31 @@ export default function DonationForm() {
               </p>
             )}
           </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label
+            htmlFor="address"
+            className="text-sm font-medium text-mulearn-gray-600"
+          >
+            Address{" "}
+            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              *
+            </span>
+          </Label>
+          <textarea
+            id="address"
+            placeholder="Enter your full address"
+            {...register("address")}
+            rows={3}
+            className={`w-full px-3 py-2 bg-mulearn-whitish border border-gray-200 dark:border-gray-700 rounded-md focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue focus:outline-none transition-all resize-none ${errors.address ? "border-red-500" : ""
+              }`}
+          />
+          {errors.address && (
+            <p className="text-xs text-red-500 mt-1">
+              {errors.address.message}
+            </p>
+          )}
         </div>
 
         <div className="flex items-center space-x-3 pt-2">
@@ -314,7 +357,7 @@ export default function DonationForm() {
           </Label>
         </div>
 
-        {}
+        { }
         {isOrganisation && (
           <div className="space-y-2 animate-in fade-in duration-200">
             <Label
@@ -331,9 +374,8 @@ export default function DonationForm() {
               type="text"
               placeholder="Enter organisation name"
               {...register("organisationName")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
-                errors.organisationName ? "border-red-500" : ""
-              }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.organisationName ? "border-red-500" : ""
+                }`}
             />
             {errors.organisationName && (
               <p className="text-xs text-red-500 mt-1">
@@ -370,11 +412,10 @@ export default function DonationForm() {
               <Label
                 key={option.id}
                 htmlFor={option.id}
-                className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${
-                  selectedAmount === option.id
-                    ? "border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple/5 ring-2 ring-mulearn-trusty-blue/20"
-                    : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
-                }`}
+                className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${selectedAmount === option.id
+                  ? "border-transparent bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple shadow-md"
+                  : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
+                  }`}
               >
                 <RadioGroupItem
                   value={option.id}
@@ -382,11 +423,10 @@ export default function DonationForm() {
                   className="sr-only"
                 />
                 <span
-                  className={`font-semibold text-base ${
-                    selectedAmount === option.id
-                      ? "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent"
-                      : "text-mulearn-blackish"
-                  }`}
+                  className={`font-semibold text-base ${selectedAmount === option.id
+                    ? "text-white"
+                    : "text-mulearn-blackish"
+                    }`}
                 >
                   {option.label}
                 </span>
@@ -397,11 +437,10 @@ export default function DonationForm() {
           <div className="mt-4">
             <Label
               htmlFor={donationAmounts[4].id}
-              className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${
-                selectedAmount === donationAmounts[4].id
-                  ? "border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple/5 ring-2 ring-mulearn-trusty-blue/20"
-                  : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
-              }`}
+              className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${selectedAmount === donationAmounts[4].id
+                ? "border-mulearn-trusty-blue bg-mulearn-trusty-blue/5 ring-2 ring-mulearn-trusty-blue/20"
+                : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
+                }`}
             >
               <RadioGroupItem
                 value={donationAmounts[4].id}
@@ -409,7 +448,10 @@ export default function DonationForm() {
                 className="mt-1"
               />
               <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                <span className="font-medium text-mulearn-blackish min-w-fit">
+                <span className={`font-medium min-w-fit ${selectedAmount === donationAmounts[4].id
+                  ? "text-mulearn-trusty-blue"
+                  : "text-mulearn-blackish"
+                  }`}>
                   Custom Amount
                 </span>
                 <Input
@@ -421,7 +463,7 @@ export default function DonationForm() {
                     setSelectedAmount(donationAmounts[4].id);
                   }}
                   onClick={() => setSelectedAmount(donationAmounts[4].id)}
-                  className="flex-1 h-10 bg-mulearn-whitish border-mulearn-gray-600/20 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all"
+                  className="flex-1 h-10 bg-white border-mulearn-gray-600/20 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all"
                 />
               </div>
             </Label>
@@ -494,11 +536,11 @@ export default function DonationForm() {
         </Tabs>
       </div>
 
-      {}
+      { }
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="border-t border-gray-200 dark:border-gray-800 bg-mulearn-whitish  px-6 sm:px-10 py-6">
           <div className="flex flex-col gap-5">
-            {}
+            { }
             <div className="flex items-start space-x-3">
               <input
                 type="checkbox"
@@ -544,20 +586,20 @@ export default function DonationForm() {
               </div>
             </div>
 
-            {}
+            { }
             {errors.donationAmount && (
               <p className="text-xs text-red-500">
                 {errors.donationAmount.message}
               </p>
             )}
 
-            {}
+            { }
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               <div>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
                   Donation Amount
                 </p>
-                <p className="text-3xl sm:text-4xl font-semibold text-mulearn-blackish dark:text-gray-50 tracking-tight">
+                <p className="text-3xl sm:text-4xl font-semibold !text-black dark:text-gray-50 tracking-tight">
                   ₹{totalAmount.toLocaleString("en-IN")}
                 </p>
               </div>
