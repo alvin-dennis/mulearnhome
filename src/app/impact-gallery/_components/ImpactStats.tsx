@@ -64,13 +64,7 @@ export default function ImpactStats() {
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                  className="text-3xl font-bold mb-2 "
-                  style={{
-                    background: "var(--mulearn-trusty)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  className="text-3xl font-bold mb-2 text-mulearn"
                 >
                   {stat.number}
                 </MotionDiv>

@@ -42,13 +42,13 @@ export default function OpenMicPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button className="px-8 py-3 gap-2 text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+              <Button variant="mulearn" className="px-8 py-3 gap-2 rounded-full">
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>
               <Button
-                variant="outline"
-                className="px-8 py-3 gap-2 text-base rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                variant="mulearn-outline"
+                className="px-8 py-3 gap-2 rounded-full"
               >
                 <Users className="w-5 h-5" />
                 Watch Previous Events
@@ -84,7 +84,7 @@ export default function OpenMicPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 flex items-center justify-center">
-              <Calendar className="w-8 h-8 mr-3 text-mulearn-duke-purple" />
+              <Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
               Performance Highlights
             </h2>
             <p className="text-mulearn-gray-600 max-w-2xl mx-auto">
@@ -199,7 +199,7 @@ function EventCard({ event }: { event: OMEvent }) {
             {event.date}
           </span>
           <Button
-            variant={event.isUpcoming ? "default" : "outline"}
+            variant={event.isUpcoming ? "mulearn" : "mulearn-outline"}
             className="gap-1 px-4 py-2 text-sm rounded-full"
           >
             <PlayCircle className="w-4 h-4" />

@@ -28,17 +28,20 @@ export default function EventCard({ event }: Props) {
     w-full h-auto sm:w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"
         } flex flex-col`}
     >
-      {event.image && (
-        <div className="w-full h-20">
+      <div className="w-full h-20 overflow-hidden">
+        {event.image ? (
           <MuImage
             src={event.image}
             alt={event.title}
             width={800}
             height={400}
-            className="rounded-t-2xl object-cover w-full h-full"
+            className="object-cover w-full h-full"
           />
-        </div>
-      )}
+        ) : (
+          <div className="w-full h-full bg-mulearn" />
+        )}
+      </div>
+
 
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div className="space-y-3">

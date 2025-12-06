@@ -4,8 +4,6 @@ import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
 import { events } from "@/data/events";
 import { Event } from "@/lib/types";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function Events() {
   const fadeInUp: Variants = {

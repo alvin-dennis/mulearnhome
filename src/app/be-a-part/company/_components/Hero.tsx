@@ -52,7 +52,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant={"mulearn"} className="font-semibold sm:px-4 sm:py-5">
+                <Button variant={"mulearn"} className="font-semibold px-6 py-3 md:px-8 md:py-4">
                 Join as a Company Partner
                 </Button>
               </Link>

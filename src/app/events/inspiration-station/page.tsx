@@ -46,7 +46,7 @@ export default function InspirationStationPage() {
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
                 <Link href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
-                  <Button variant={"mulearn"} className="px-6 py-2.5 md:px-8 md:py-3 gap-2 font-semibold">
+                  <Button variant={"mulearn"} className="px-6 py-2.5 gap-2 font-semibold">
                     <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                     Join
                   </Button>
@@ -79,27 +79,29 @@ export default function InspirationStationPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("upcoming")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${activeTab === "upcoming"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-md sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 font-semibold rounded-full ${activeTab === "upcoming"
+                    ? "sm:shadow-xl scale-105"
+                    : "text-gray-500"
                   }`}
               >
                 <Clock className="w-4 h-4 md:w-5 md:h-5" />
                 Upcoming
-              </button>
+              </Button>
 
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("past")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${activeTab === "past"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-md sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${activeTab === "past"
+                    ? "sm:shadow-xl scale-105"
+                    : "text-gray-500"
                   }`}
               >
                 <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                 Previous
-              </button>
+              </Button>
             </div>
           </div>
 
