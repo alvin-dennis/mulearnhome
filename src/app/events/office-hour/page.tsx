@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { officehourdata } from "@/data/events";
 import { Badge } from "@/components/ui/badge";
-import { Mic, Clock, Calendar, PlayCircle, Users } from "lucide-react";
+import { Mic, Clock, Calendar, PlayCircle } from "lucide-react";
 import SearchAndFilter from "./_components/SearchAndFilter";
 import { Button } from "@/components/ui/button";
 import EventsGrid from "./_components/EventsGrid";
@@ -12,8 +12,6 @@ import Pagination from "./_components/Pagination";
 export default function OfficeHoursPage() {
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [startDate, setStartDate] = useState<string | null>(null);
-  const [endDate, setEndDate] = useState<string | null>(null);
 
   const [upcomingPage, setUpcomingPage] = useState(1);
   const [pastPage, setPastPage] = useState(1);
@@ -36,27 +34,12 @@ export default function OfficeHoursPage() {
           ? true
           : selectedTags.every((t) => event.tags.includes(t))
       )
-      .filter((event) => {
-        if (!startDate && !endDate) return true;
-        if (!event.date) return false;
-        const evDate = new Date(event.date);
-        if (startDate) {
-          const s = new Date(startDate);
-          if (evDate < s) return false;
-        }
-        if (endDate) {
-          const e = new Date(endDate);
-          e.setHours(23, 59, 59, 999);
-          if (evDate > e) return false;
-        }
-        return true;
-      })
       .sort((a, b) => {
         const aDate = a.date ? new Date(a.date).getTime() : 0;
         const bDate = b.date ? new Date(b.date).getTime() : 0;
         return bDate - aDate;
       });
-  }, [search, selectedTags, startDate, endDate, allEvents]);
+  }, [search, selectedTags, allEvents]);
 
   const upcomingEvents = filteredEvents.filter((e) => e.isUpcoming);
   const pastEvents = filteredEvents.filter((e) => !e.isUpcoming);
@@ -108,7 +91,8 @@ export default function OfficeHoursPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
-                className="px-8 py-3 gap-2 text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                variant={"mulearn"}
+                className="px-8 py-3 gap-2 text-base rounded-full"
               >
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
@@ -124,12 +108,6 @@ export default function OfficeHoursPage() {
         selectedTags={selectedTags}
         onTagToggle={toggleTag}
         allTags={allTags}
-        startDate={startDate}
-        endDate={endDate}
-        onDateRangeChange={(s?: string | null, e?: string | null) => {
-          setStartDate(s || null);
-          setEndDate(e || null);
-        }}
       />
 
       {upcomingEvents.length > 0 && (
@@ -157,7 +135,7 @@ export default function OfficeHoursPage() {
           <EventsGrid
             events={paginatedPast}
             title="Performance Highlights"
-            icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-duke-purple" />}
+            icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />}
           />
 
           <Pagination
