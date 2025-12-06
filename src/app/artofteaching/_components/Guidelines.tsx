@@ -43,16 +43,6 @@ const Guidelines = () => {
     zIndex: 1,
   };
 
-  const mobilelineStyle: React.CSSProperties = {
-    width: "2px",
-    height: "40px",
-    backgroundColor: "var(--mulearn-trusty-blue)",
-    position: "absolute",
-    top: "42px",
-    left: "9px",
-    zIndex: 0,
-  };
-
   const contentStyle = {
     marginLeft: "20px",
     flex: 1,
@@ -69,7 +59,7 @@ const Guidelines = () => {
               </p>
               <h2 className="text-4xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
                 What is{" "}
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <span className="text-mulearn">
                   Art of Teaching???
                 </span>
               </h2>
@@ -90,7 +80,7 @@ const Guidelines = () => {
             <div className=" lg:block lg:w-1/2">
               <div className="bg-white rounded-lg p-8 max-w-2xl">
                 <h3 className="text-2xl font-semibold text-mulearn-blackish mb-6">
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <span className="text-mulearn">
                     Guidelines
                   </span>
                 </h3>
@@ -107,7 +97,7 @@ const Guidelines = () => {
                       <p className="text-lg">Task 1 - Video submission explaining a selected topic.</p>
                     </div>
                   </div>
-           
+
                   <div>
                     <h4 className="text-lg font-semibold text-mulearn-blackish mb-2 mt-4">
                       Level 2
@@ -132,7 +122,7 @@ const Guidelines = () => {
                         variant={"mulearn-trusty"}
                         className="border-none  px-4 py-2 text-base font-bold w-[180px] transition-colors"
                       >
-                        Download Pdf
+                        Download PDF
                       </Button>
                     </Link>
                   </div>

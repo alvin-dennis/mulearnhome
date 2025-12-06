@@ -24,7 +24,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "events":
-        return "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple";
+        return "bg-mulearn";
       case "students":
         return "bg-mulearn-duke-purple";
       case "companies":
@@ -34,7 +34,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       case "impact-stories":
         return "bg-mulearn-trusty-blue";
       default:
-        return "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple";
+        return "bg-mulearn";
     }
   };
 
@@ -108,7 +108,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
         </div>
 
         { }
-        <div className="absolute inset-0 bg-mulearn-blackish/0 group-hover:bg-mulearn-blackish/30 transition-all duration-300 flex items-center justify-center z-10">
+        <div className="absolute inset-0  group-hover:bg-mulearn-blackish/30 transition-all duration-300 flex items-center justify-center z-10">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             whileHover={{ opacity: 1, scale: 1 }}
@@ -129,9 +129,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
           {item.description}
         </p>
 
-        { }
         <div className="mt-3 flex flex-wrap gap-2">
-          { }
           {item.stats &&
             Object.entries(item.stats).map(([key, value]) => (
               <span

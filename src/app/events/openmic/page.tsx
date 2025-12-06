@@ -28,7 +28,7 @@ export default function OpenMicPage() {
 
             <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
               µLearn{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Open Mic
               </span>
             </h1>
@@ -110,8 +110,8 @@ function useReadMore(initialText: string, maxLength: number = 100) {
   const displayText = isExpanded
     ? initialText
     : shouldTruncate
-    ? initialText.slice(0, maxLength) + "..."
-    : initialText;
+      ? initialText.slice(0, maxLength) + "..."
+      : initialText;
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 

@@ -12,7 +12,7 @@ export default function ContactPage() {
             <div className="space-y-6 flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-mulearn-blackish leading-tight whitespace-nowrap">
                 {contactPage.hero.title.line1}{" "}
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <span className="text-mulearn">
                   {contactPage.hero.title.line2}
                 </span>
               </h1>
@@ -23,7 +23,7 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-3 gap-6 pt-6">
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
                     {contactPage.hero.stats[0].value}
                   </div>
                   <div className="text-sm text-mulearn-gray-600">
@@ -31,7 +31,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
                     {contactPage.hero.stats[1].value}
                   </div>
                   <div className="text-sm text-mulearn-gray-600">
@@ -39,7 +39,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
                     {contactPage.hero.stats[2].value}
                   </div>
                   <div className="text-sm text-mulearn-gray-600">
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                    <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                    <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                    <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                  <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                  <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purplerounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>
@@ -163,7 +163,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                  <div className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-mulearn-whitish" />
                   </div>
                   <div>

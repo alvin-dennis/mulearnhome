@@ -32,7 +32,7 @@ export default function SaltMangoTreePage() {
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
                 µLearn{" "}
-                <span className="block bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mt-2">
+                <span className="block text-mulearn mt-2">
                   Salt Mango Tree
                 </span>
               </h1>
@@ -76,11 +76,10 @@ export default function SaltMangoTreePage() {
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
               <button
                 onClick={() => setActiveTab("upcoming")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "upcoming"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${activeTab === "upcoming"
                     ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
                     : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
-                }`}
+                  }`}
               >
                 <Clock className="w-4 h-4 md:w-5 md:h-5" />
                 Upcoming
@@ -88,11 +87,10 @@ export default function SaltMangoTreePage() {
 
               <button
                 onClick={() => setActiveTab("past")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "past"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${activeTab === "past"
                     ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
                     : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
-                }`}
+                  }`}
               >
                 <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                 Previous

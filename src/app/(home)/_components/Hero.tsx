@@ -40,6 +40,7 @@ export default function Hero() {
   useEffect(() => {
     setRefreshToken(localStorage.getItem("refreshToken"));
   }, []);
+
   return (
     <MotionHeader
       id="home"
@@ -64,7 +65,7 @@ export default function Hero() {
             Your Ultimate Gateway
             <br />
             to{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Peer-Led Growth
             </span>
           </MotionH1>
@@ -89,7 +90,7 @@ export default function Hero() {
           >
             <Button
               variant={"mulearn"}
-              className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="px-6  py-3 sm:text-lg md:text-lg"
               onClick={() =>
                 refreshToken
                   ? redirect("/dashboard/home")

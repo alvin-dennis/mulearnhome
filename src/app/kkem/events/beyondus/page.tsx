@@ -124,7 +124,7 @@ export default function BeyondUs() {
       </div>
 
       <MotionDiv
-        className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple py-8 flex justify-center rounded-2xl"
+        className="bg-mulearn py-8 flex justify-center rounded-2xl"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

@@ -25,7 +25,7 @@ export default function Story() {
           <MotionDiv variants={fadeInUp}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center max-w-140 font-extrabold leading-normal">
               Understand μLearn with a{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Story
               </span>
             </h1>

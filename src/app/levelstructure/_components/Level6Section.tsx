@@ -25,7 +25,7 @@ export default function Level6Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                Build & <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Ship</span>
+                Build & <span className="text-mulearn">Ship</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
                 Proof-of-Impact & Real Users
@@ -34,9 +34,9 @@ export default function Level6Section() {
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <span className="text-mulearn">
                   Every hero must build their sword.
-              </span>{" "}
+                </span>{" "}
                 Here, they don&apos;t just make prototypes. They ship to real
                 users.
               </p>

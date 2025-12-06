@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { companyImages } from "@/data/company";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
             className="relative w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 lg:-ml-14"
           >
             <div className="relative w-full max-w-[650px] aspect-[512/400]">
-              <div className="absolute top-1/4 left-30 w-[236px] h-[283px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple blur-[200px] opacity-70 hidden sm:block" />
+              <div className="absolute top-1/4 left-30 w-[236px] h-[283px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block" />
 
               <MuImage
                 src={companyImages.hero}
@@ -36,25 +37,26 @@ export default function Hero() {
           >
             <h1 className="text-xl sm:text-lg md:text-xl lg:text-[40px] font-semibold leading-tight text-center lg:text-right max-w-[630px]">
               <span className="text-[#1A202C]">Partner with </span>
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">µLearn </span>
+              <span className="text-mulearn">µLearn </span>
               <span className="text-[#1A202C]">
                 to discover talent and spark innovation
               </span>
             </h1>
 
-            <MotionButton
+            <MotionDiv
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
             >
               <Link
                 href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <Button variant={"mulearn"} className="font-semibold sm:px-4 sm:py-5">
                 Join as a Company Partner
+                </Button>
               </Link>
-            </MotionButton>
+            </MotionDiv>
           </MotionDiv>
         </div>
       </div>

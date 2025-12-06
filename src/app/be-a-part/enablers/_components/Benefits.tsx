@@ -11,7 +11,7 @@ export default function Benefits() {
         transition={{ duration: 0.6 }}
       >
         <h2 className=" mb-12 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+          <span className="text-mulearn">
             Benefits
           </span>{" "}
           to the Enabler
@@ -77,9 +77,9 @@ export default function Benefits() {
             <ul className=" space-y-4">
               {enablers.benefits[1].items.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple/20">
+                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn/20">
                     <svg
-                      className="h-3 w-3 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
+                      className="h-3 w-3 bg-mulearn"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >

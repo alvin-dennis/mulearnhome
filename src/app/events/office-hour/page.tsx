@@ -94,7 +94,7 @@ export default function OfficeHoursPage() {
 
             <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
               µLearn{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Office Hour
               </span>
             </h1>
@@ -112,14 +112,6 @@ export default function OfficeHoursPage() {
               >
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
-              </Button>
-
-              <Button
-                variant="outline"
-                className="px-8 py-3 gap-2 text-base rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <Users className="w-5 h-5" />
-                Watch Previous Events
               </Button>
             </div>
           </div>

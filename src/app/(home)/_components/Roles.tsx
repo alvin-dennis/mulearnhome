@@ -45,7 +45,7 @@ export default function Roles() {
 
       <div className=" flex flex-col w-full mb-6 items-center justify-center sm:hidden">
         <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-          <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+          <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
             <SelectValue placeholder="Select Role" />
           </SelectTrigger>
           <SelectContent>
@@ -67,8 +67,8 @@ export default function Roles() {
             <li
               key={role.id}
               className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${activeRole === role.id
-                  ? "font-bold border-mulearn-blackish"
-                  : "border-transparent hover:text-mulearn-trusty-blue"
+                ? "font-bold border-mulearn-blackish"
+                : "border-transparent hover:text-mulearn-trusty-blue"
                 }`}
               onClick={() => setActiveRole(role.id)}
             >

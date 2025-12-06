@@ -56,7 +56,7 @@ export default function ImpactStats() {
               >
                 <MotionDiv
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="text-4xl mb-4 inline-block bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent"
+                  className="text-4xl mb-4 inline-block text-mulearn"
                 >
                   <IconComponent size={40} />
                 </MotionDiv>

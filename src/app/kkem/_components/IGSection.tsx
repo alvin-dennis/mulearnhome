@@ -31,7 +31,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
   return (
     <>
       <MotionDiv
-        className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl px-6 py-12 md:px-0 md:py-12"
+        className="bg-mulearn rounded-2xl px-6 py-12 md:px-0 md:py-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -118,9 +118,8 @@ const Card = ({
     <Link href={link} target="_blank" rel="noopener noreferrer">
       <div
         className={`flex flex-col items-start p-4 gap-4 w-[310px] h-[475px] bg-mulearn-whitish shadow-[8px_8px_28px_rgba(0,0,0,0.12)] rounded-[17px] mt-4 mb-4 transition-all duration-300 ease-in-out cursor-pointer
-        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${
-          largeImg ? "group" : ""
-        }`}
+        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${largeImg ? "group" : ""
+          }`}
       >
         <div className="flex justify-center items-center w-[278px] h-[214px] rounded-[17px] overflow-hidden">
           <MuImage
@@ -128,9 +127,8 @@ const Card = ({
             alt="domain images"
             width={188}
             height={200}
-            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${
-              largeImg ? "group-hover:object-bottom" : ""
-            }`}
+            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${largeImg ? "group-hover:object-bottom" : ""
+              }`}
           />
         </div>
 

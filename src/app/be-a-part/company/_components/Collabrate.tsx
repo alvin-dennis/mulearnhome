@@ -6,7 +6,7 @@ import { CompanyFeatures, companyImages } from "@/data/company";
 import MuImage from "@/components/MuImage";
 
 const NumberIcon = ({ num }: { num: number }) => (
-  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
+  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-mulearn"
   >
     <span className="text-2xl font-bold text-mulearn-whitish">
       {num}
@@ -71,24 +71,22 @@ export default function WhyCollaborate() {
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-gray-600/10 transition-all duration-100 ease-in-out ${
-                index === 0
-                  ? "rounded-l-[10px] border-r-0"
-                  : index === CompanyFeatures.length - 1
+              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-gray-600/10 transition-all duration-100 ease-in-out ${index === 0
+                ? "rounded-l-[10px] border-r-0"
+                : index === CompanyFeatures.length - 1
                   ? "rounded-r-[10px]"
                   : "border-r-0"
-              }`}
+                }`}
             >
-              <NumberIcon num={index}/>
+              <NumberIcon num={index} />
               <h3
-                className={`text-xl sm:text-2xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-center leading-tight transition-all duration-300`}
+                className={`text-xl sm:text-2xl font-bold text-mulearn text-center leading-tight transition-all duration-300`}
               >
                 {feature.title}
               </h3>
               <p
-                className={`text-center font-thin text-mulearn-blackish leading-relaxed transition-all duration-300 ${
-                  index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
-                }`}
+                className={`text-center font-thin text-mulearn-blackish leading-relaxed transition-all duration-300 ${index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
+                  }`}
               >
                 {feature.description}
               </p>

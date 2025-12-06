@@ -51,7 +51,7 @@ export default function Features() {
         <div className="pt-10 sm:pt-12">
           <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
             What{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               µLearn
             </span>{" "}
             offers
@@ -103,8 +103,8 @@ export default function Features() {
                     fontSize: isCardActive(i)
                       ? "1.4rem"
                       : isMobile
-                      ? "1rem"
-                      : "1.1rem",
+                        ? "1rem"
+                        : "1.1rem",
                   }}
                 >
                   {feature.title}
@@ -115,8 +115,8 @@ export default function Features() {
                     fontSize: isCardActive(i)
                       ? "1rem"
                       : isMobile
-                      ? "0.9rem"
-                      : "0.9rem",
+                        ? "0.9rem"
+                        : "0.9rem",
                   }}
                 >
                   {feature.description}
@@ -135,14 +135,14 @@ export default function Features() {
                     feature.title === "Community"
                       ? 150
                       : feature.title === "Mentors"
-                      ? 120
-                      : feature.title === "Interest Groups"
-                      ? 120
-                      : feature.title === "Roadmaps"
-                      ? 130
-                      : feature.title === "Challenges"
-                      ? 170
-                      : 100
+                        ? 120
+                        : feature.title === "Interest Groups"
+                          ? 120
+                          : feature.title === "Roadmaps"
+                            ? 130
+                            : feature.title === "Challenges"
+                              ? 170
+                              : 100
                   }
                   height={120}
                   className="object-cover max-w-full h-auto"

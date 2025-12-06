@@ -41,7 +41,7 @@ export default function Level7Section() {
           <div className="space-y-6">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-mulearn-blackish leading-tight">
               Welcome to the{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">μVerse</span>
+              <span className="text-mulearn">μVerse</span>
             </h2>
             <p className="text-xl md:text-2xl text-mulearn-gray-600 leading-relaxed max-w-3xl mx-auto">
               Where learning transforms into opportunity, and students become

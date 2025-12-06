@@ -242,7 +242,7 @@ export default function DonationForm() {
               className="text-sm font-medium text-mulearn-gray-600"
             >
               Email Address{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 *
               </span>
             </Label>
@@ -267,7 +267,7 @@ export default function DonationForm() {
               className="text-sm font-medium text-mulearn-gray-600"
             >
               Phone Number{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 *
               </span>
             </Label>
@@ -292,7 +292,7 @@ export default function DonationForm() {
               className="text-sm font-medium text-mulearn-gray-600"
             >
               PAN Number{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 *
               </span>
             </Label>
@@ -323,7 +323,7 @@ export default function DonationForm() {
             className="text-sm font-medium text-mulearn-gray-600"
           >
             Address{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               *
             </span>
           </Label>
@@ -365,7 +365,7 @@ export default function DonationForm() {
               className="text-sm font-medium text-mulearn-gray-600"
             >
               Organisation Name{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 *
               </span>
             </Label>

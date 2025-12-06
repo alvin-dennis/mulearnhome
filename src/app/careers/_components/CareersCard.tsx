@@ -34,7 +34,7 @@ const CareersCard = ({
         <h4 className="text-center text-lg font-semibold">{organization}</h4>
       )}
       {role && (
-        <h2 className="text-center text-3xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">{role}</h2>
+        <h2 className="text-center text-3xl font-bold text-mulearn">{role}</h2>
       )}
 
       <div className="flex flex-col items-center gap-2 text-sm text-mulearn-blackish">

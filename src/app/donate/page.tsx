@@ -16,7 +16,7 @@ export default function DonatePage() {
             Help us sustain
             <br />
             Our{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Mission
             </span>
           </h1>

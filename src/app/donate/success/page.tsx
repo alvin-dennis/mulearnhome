@@ -58,7 +58,7 @@ export default function DonateSuccessPage() {
         { }
         <div className="bg-mulearn-whitish rounded-2xl shadow-xl overflow-hidden">
           { }
-          <div className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-8 py-12 text-center">
+          <div className="bg-mulearn px-8 py-12 text-center">
             <div className="flex justify-center mb-4">
               <div className="bg-mulearn-whitish rounded-full p-3">
                 <CheckCircle2 className="w-16 h-16 text-green-500" />

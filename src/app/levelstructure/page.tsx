@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 import WelcomePage from "./_components/WelcomePage";
+import { Button } from "@/components/ui/button";
 
 export default function LevelStructure() {
   const smallRocks = cdnUrl("src/components/assests/NotFound/SmallRocks.webp");
@@ -325,9 +326,9 @@ export default function LevelStructure() {
                     </div>
                     <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 lg:order-1 order-2 px-4 sm:px-6 lg:px-0">
                       <div>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-mulearn-blackish mb-4 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
                           The{" "}
-                          <span className="text-transparent bg-clip-text bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple">
+                          <span className="text-mulearn">
                             μLearn
                           </span>
                           <br />
@@ -335,7 +336,7 @@ export default function LevelStructure() {
                             Learning Odyssey
                           </span>
                         </h1>
-                        <div className="h-1 w-24 sm:w-32 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:mx-0 mx-auto mb-6 rounded-full" />
+                        <div className="h-1 w-24 sm:w-32 bg-mulearn lg:mx-0 mx-auto mb-6 rounded-full" />
                       </div>
 
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-mulearn-gray-600 max-w-xs sm:max-w-lg md:max-w-2xl lg:mx-0 mx-auto leading-relaxed">
@@ -351,33 +352,26 @@ export default function LevelStructure() {
                       </p>
 
                       <div className="mt-6 sm:mt-8">
-                        <MotionButton
-                          onClick={handleBeginJourney}
-                          disabled={isAnimating}
-                          className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-m shadow-lg shadow-mulearn-trusty-blue/25 ${
-                            isAnimating ? "cursor-not-allowed opacity-80" : ""
-                          }`}
+                        <MotionDiv
                           whileHover={{
                             scale: 1.05,
-                            boxShadow:
-                              "0 25px 50px -12px rgba(59, 130, 246, 0.5)",
                           }}
                           whileTap={{ scale: 0.95 }}
                           animate={
                             isAnimating
                               ? {
-                                  scale: [1, 1.2, 1.4, 2, 5, 0],
-                                  rotate: [0, 10, -10, 5, -5, 0],
-                                  opacity: [1, 1, 1, 0.8, 0.3, 0],
-                                  filter: [
-                                    "brightness(1) blur(0px)",
-                                    "brightness(1.2) blur(0px)",
-                                    "brightness(1.5) blur(1px)",
-                                    "brightness(2) blur(2px)",
-                                    "brightness(3) blur(5px)",
-                                    "brightness(5) blur(10px)",
-                                  ],
-                                }
+                                scale: [1, 1.2, 1.4, 2, 5, 0],
+                                rotate: [0, 10, -10, 5, -5, 0],
+                                opacity: [1, 1, 1, 0.8, 0.3, 0],
+                                filter: [
+                                  "brightness(1) blur(0px)",
+                                  "brightness(1.2) blur(0px)",
+                                  "brightness(1.5) blur(1px)",
+                                  "brightness(2) blur(2px)",
+                                  "brightness(3) blur(5px)",
+                                  "brightness(5) blur(10px)",
+                                ],
+                              }
                               : {}
                           }
                           transition={{
@@ -389,9 +383,14 @@ export default function LevelStructure() {
                               ? [0, 0.2, 0.4, 0.6, 0.8, 1]
                               : undefined,
                           }}
-                        >
+                          >
+                            <Button variant="mulearn" onClick={handleBeginJourney}
+                              disabled={isAnimating}
+                              className={`px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold ${isAnimating ? "cursor-not-allowed opacity-80" : ""
+                                }`}>
                           Begin Your Journey
-                        </MotionButton>
+                        </Button>
+                        </MotionDiv>
                       </div>
                     </div>
                   </div>

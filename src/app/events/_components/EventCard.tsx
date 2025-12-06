@@ -1,4 +1,4 @@
-import { MotionButton, MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import Link from "next/link";
 
 import { ArrowRight, Calendar } from "lucide-react";
@@ -25,9 +25,8 @@ export default function EventCard({ event }: Props) {
     <MotionDiv
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-    w-full h-auto sm:w-[380px] ${
-      event.image ? "h-[360px]" : "h-[280px]"
-    } flex flex-col`}
+    w-full h-auto sm:w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"
+        } flex flex-col`}
     >
       {event.image && (
         <div className="w-full h-20">
@@ -44,7 +43,7 @@ export default function EventCard({ event }: Props) {
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div className="space-y-3">
           <div className="flex justify-between items-start">
-            <h3 className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 line-clamp-2 text-xl">
+            <h3 className="text-mulearn transition-colors duration-300 line-clamp-2 text-xl">
               {event.title}
             </h3>
             {event.date && (
@@ -60,7 +59,7 @@ export default function EventCard({ event }: Props) {
             style={{
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
-              WebkitLineClamp: "6",
+              WebkitLineClamp: "4",
             }}
           >
             {event.description}
@@ -70,13 +69,17 @@ export default function EventCard({ event }: Props) {
         {event.link && (
           <Dialog>
             <DialogTrigger asChild>
-              <MotionButton
+              <MotionDiv
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-4 w-full flex items-center justify-center gap-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:bg-mulearn-duke-purple text-mulearn-whitish rounded-xl px-4 py-3 font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                Check it out! <ArrowRight className="w-4 h-4" />
-              </MotionButton>
+                <div className="flex justify-center">
+                  <Button variant="mulearn" className="mt-2 flex items-center gap-2 px-5 py-3 font-semibold">
+                    Check it out!
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </div>
+              </MotionDiv>
             </DialogTrigger>
 
             <DialogContent className="max-w-lg rounded-2xl">

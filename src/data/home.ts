@@ -77,12 +77,12 @@ export const specialevents = [
   },
   {
     id: 3,
-    title: "Trivial Ideas",
+    title: "Perµte",
     description:
-      "Have an idea that's out-of-the-box crazy? This is your chance to turn it into a real product! ",
+      "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
     recurrence: "Monthly",
-    link: "https://mulearn.org/trivial-ideas",
-    image: cdnUrl("src/modules/Public/Home/assets/trivialideas.webp"),
+    link: "https://permute.mulearn.org/",
+    image: "/assets/home/permute.png",
     isLive: false,
   },
 ];

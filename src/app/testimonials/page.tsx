@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen">
-      {}
+      { }
       <div className="relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
           <MotionDiv
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Voices of{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Impact
               </span>
             </MotionH1>
@@ -83,7 +83,7 @@ export default function TestimonialsPage() {
               who are shaping the future of learning
             </MotionP>
 
-            {}
+            { }
             <MotionDiv
               className="flex justify-center items-center gap-8 mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function TestimonialsPage() {
                 const Icon = stat.icon;
                 return (
                   <div key={stat.label} className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-xl mx-auto mb-3">
+                    <div className="flex items-center justify-center w-12 h-12 bg-mulearn rounded-xl mx-auto mb-3">
                       <Icon className="w-6 h-6 text-mulearn-whitish" />
                     </div>
                     <div className=" text-2xl font-bold text-mulearn-blackish">
@@ -111,29 +111,27 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {}
+      { }
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="flex bg-mulearn-gray-100 rounded-2xl p-1 my-6">
               <button
                 onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "video"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
-                }`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${activeTab === "video"
+                  ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
+                  : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                  }`}
               >
                 <Video className="w-5 h-5" />
                 Video Testimonials
               </button>
               <button
                 onClick={() => setActiveTab("text")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "text"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
-                }`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${activeTab === "text"
+                  ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
+                  : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                  }`}
               >
                 <MessageCircle className="w-5 h-5" />
                 Community Feedback
@@ -158,19 +156,19 @@ export default function TestimonialsPage() {
           </div>
         ) : (
           <>
-            {}
+            { }
             {activeTab === "video" && videoTestimonialData.length > 0 && (
               <VideoCarousel testimonials={videoTestimonialData} />
             )}
 
-            {}
+            { }
             {activeTab === "text" && textTestimonialData.length > 0 && (
               <div className="max-w-7xl mx-auto px-6">
                 <TextTestimonialsGrid testimonials={textTestimonialData} />
               </div>
             )}
 
-            {}
+            { }
             {activeTab === "video" && videoTestimonialData.length === 0 && (
               <div className="max-w-2xl mx-auto px-6 text-center py-32">
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">

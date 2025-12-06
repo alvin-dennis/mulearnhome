@@ -24,7 +24,7 @@ export default function Newsletter() {
       >
         <MotionH2
           variants={fadeInUp}
-          className="text-2xl sm:text-[1.7rem] font-bold mb-5 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-center px-4"
+          className="text-2xl sm:text-[1.7rem] font-bold mb-5 text-mulearn text-center px-4"
         >
           Subscribe to our Newsletter
         </MotionH2>

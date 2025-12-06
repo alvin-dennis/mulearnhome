@@ -9,7 +9,7 @@ const FirstEdition = () => {
           <div className="lg:w-2/5">
             <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight">
               Art of Teaching{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 First Edition
               </span>
             </h2>

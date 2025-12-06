@@ -18,9 +18,9 @@ export default function PartnersPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#212121] leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-mulearn-blackish leading-tight">
                 Our{" "}
-                <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent relative">
+                <span className="text-mulearn relative">
                   Partners
                   <svg
                     className="absolute -bottom-2 left-0 w-full"
@@ -87,7 +87,7 @@ export default function PartnersPage() {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mulearn-blackish mb-4">
               Explore Our{" "}
-              <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Partnership Network
               </span>
             </h2>
@@ -119,10 +119,10 @@ export default function PartnersPage() {
 
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Users className="w-7 h-7 sm:w-8 sm:h-8" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Users className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
                         Community Partners
                       </h2>
                     </div>
@@ -135,22 +135,22 @@ export default function PartnersPage() {
 
                     <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Student communities & clubs
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Educational institutions
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Learning communities
                       </li>
                     </ul>
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
-                      <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Community Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <span className="text-mulearn">Explore Community Partners</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
                     </div>
                   </div>
                 </div>
@@ -173,15 +173,15 @@ export default function PartnersPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
-                   
+
                   </div>
 
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
                         Company Partners
                       </h2>
                     </div>
@@ -194,22 +194,22 @@ export default function PartnersPage() {
 
                     <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Technology companies
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Industry sponsors
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Corporate collaborators
                       </li>
                     </ul>
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
-                      <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Company Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                      <span className="text-mulearn">Explore Company Partners</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
                     </div>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export default function PartnersPage() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#212121] mb-4">
               Why{" "}
-              <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Partner
               </span>{" "}
               With Us?
@@ -265,8 +265,8 @@ export default function PartnersPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                <div className="w-12 h-12 rounded-lg bg-mulearn flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
                 </div>
                 <h3 className="text-xl font-bold text-[#212121] mb-2">
                   {benefit.title}
@@ -283,7 +283,7 @@ export default function PartnersPage() {
       <section className="px-4 sm:px-8 py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           <MotionDiv
-            className="bg-gradient-to-br from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.15)] p-8 sm:p-10 lg:p-12 relative overflow-hidden"
+            className="bg-mulearn rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.15)] p-8 sm:p-10 lg:p-12 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -315,14 +315,14 @@ export default function PartnersPage() {
               <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/be-a-part/company">
                   <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Company</span>
-                    <ArrowRight className="w-5 h-5" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                    <span className="text-mulearn">Join as Company</span>
+                    <ArrowRight className="w-5 h-5" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
                   <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Community</span>
-                    <ArrowRight className="w-5 h-5" style={{background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} />
+                    <span className="text-mulearn">Join as Community</span>
+                    <ArrowRight className="w-5 h-5" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
                   </button>
                 </Link>
               </div>

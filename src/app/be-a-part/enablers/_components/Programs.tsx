@@ -15,11 +15,11 @@ export default function Programs() {
         >
           <h2 className="mb-12 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
             Enablers{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Programs
             </span>{" "}
             &{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Project
             </span>
           </h2>
@@ -54,7 +54,7 @@ export default function Programs() {
               >
                 <h3 className=" mb-4 text-2xl font-bold text-mulearn-blackish md:text-3xl">
                   Art of Teaching -{" "}
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <span className="text-mulearn">
                     Teach contest
                   </span>
                 </h3>
@@ -67,12 +67,12 @@ export default function Programs() {
                 </p>
                 <div>
                   <Link href="https://mulearnfoundation.notion.site/artofteaching-guidelines" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="mulearn"
-                    className=" px-6 py-3 text-sm font-semibold md:text-base"
-                  >
-                    Know More
-                  </Button>
+                    <Button
+                      variant="mulearn"
+                      className=" px-6 py-3 text-sm font-semibold md:text-base"
+                    >
+                      Know More
+                    </Button>
                   </Link>
                 </div>
               </MotionDiv>

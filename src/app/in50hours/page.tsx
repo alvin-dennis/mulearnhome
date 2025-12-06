@@ -1,5 +1,6 @@
-import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { in50hrs } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 import Link from "next/link";
@@ -21,7 +22,7 @@ export default function In50Hours() {
         >
           <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] font-semibold leading-tight break-words">
             IN
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               50
             </span>
             HOURS
@@ -49,13 +50,16 @@ export default function In50Hours() {
               rel="noreferrer"
               href="https://www.makemypass.com/in50hours"
             >
-              <MotionButton
+              <MotionDiv
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish mt-2 sm:mt-4 px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-mulearn-duke-purple transition-colors duration-300 text-sm sm:text-base"
               >
+                <Button
+                  variant="mulearn"
+                  className=" mt-2 sm:mt-4 px-4 sm:px-6 py-2 font-semibold">
                 Register Now
-              </MotionButton>
+                </Button>
+              </MotionDiv>
             </Link>
           </div>
         </MotionDiv>
@@ -89,7 +93,7 @@ export default function In50Hours() {
             <h3 className="text-lg sm:text-[1.25rem] md:text-[1.5rem] font-semibold text-center sm:text-left mt-4 break-words">
               {feature.titleSpan === "GET" ? (
                 <>
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <span className="text-mulearn">
                     {feature.titleSpan}
                   </span>{" "}
                   FUNDED
@@ -97,7 +101,7 @@ export default function In50Hours() {
               ) : feature.titleSpan === "IT" ? (
                 <>
                   P
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <span className="text-mulearn">
                     {feature.titleSpan}
                   </span>
                   CH
@@ -105,7 +109,7 @@ export default function In50Hours() {
               ) : (
                 <>
                   PRO
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <span className="text-mulearn">
                     {feature.titleSpan}
                   </span>
                   TYPE
@@ -129,7 +133,7 @@ export default function In50Hours() {
         >
           <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.25rem] font-bold break-words">
             HOW{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               TO
             </span>{" "}
             JOIN
@@ -182,7 +186,7 @@ export default function In50Hours() {
           >
             <h3 className="text-lg sm:text-[1.25rem] md:text-[1.5rem] font-semibold text-center sm:text-left mt-4 break-words">
               STEP{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 {step.stepSpan}
               </span>
             </h3>
