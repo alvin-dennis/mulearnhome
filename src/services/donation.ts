@@ -1,6 +1,12 @@
 import { toast } from "sonner";
 import { publicGateway } from "./apiGateway";
 import { donationRoutes } from "./urls";
+import type {
+  DonationFormPayload,
+  RazorpayOrderResponse,
+  RazorpaySubscriptionResponse,
+  RazorpayErrorResponse,
+} from "@/lib/schemas/donation";
 
 declare global {
   interface Window {
@@ -9,18 +15,88 @@ declare global {
   }
 }
 
-export interface DonationFormPayload {
-  amount: number;
-  name: string;
-  email: string;
-  mobile: string;
-  pan: string;
-  address: string;
-  donationType: "one-time" | "monthly" | "yearly";
-  isOrganisation: boolean;
-  organisationName?: string;
-  currency?: string;
-}
+// Re-export for backwards compatibility
+export type { DonationFormPayload } from "@/lib/schemas/donation";
+
+// ============================================================================
+// Helper Functions
+// ============================================================================
+
+/**
+ * Creates common Razorpay options shared between one-time and subscription payments
+ */
+const createBaseRazorpayOptions = (data: DonationFormPayload, razorpayKey: string) => ({
+  key: razorpayKey,
+  name: "µLearn Foundation",
+  image: "/assets/logo.png",
+  prefill: {
+    name: data.name,
+    email: data.email,
+    contact: data.mobile,
+  },
+  notes: {
+    donation_type: data.donationType,
+    is_organisation: data.isOrganisation.toString(),
+    organisation_name: data.organisationName || "N/A",
+  },
+  theme: {
+    color: "#456ff6",
+  },
+});
+
+/**
+ * Handles successful payment verification and redirects to success page
+ */
+const handlePaymentSuccess = (
+  pdfData: Record<string, unknown>,
+  data: DonationFormPayload,
+  paymentId: string,
+  orderId?: string,
+  subscriptionId?: string
+) => {
+  localStorage.setItem(
+    "donationData",
+    JSON.stringify({
+      ...pdfData,
+      donationType: data.donationType,
+      amount: data.amount,
+      name: data.name,
+      email: data.email,
+      paymentId,
+      orderId,
+      subscriptionId,
+      isSubscription: !!subscriptionId,
+    })
+  );
+
+  const storeData = localStorage.getItem("donationData");
+  if (storeData) {
+    window.location.href = "/donate/success";
+  } else {
+    console.error("Failed to store donation data.");
+    toast.error("Payment successful but unable to load receipt.");
+  }
+};
+
+/**
+ * Handles Razorpay payment errors
+ */
+const handlePaymentError = (response: RazorpayErrorResponse) => {
+  toast.error(
+    response.error.description || "Payment failed. Please try again."
+  );
+  console.error("Payment failed:", response.error);
+};
+
+/**
+ * Extracts and formats error message from API response
+ */
+const getApiErrorMessage = (error: unknown, defaultMessage: string): string => {
+  return (
+    (error as { response?: { data?: { message?: { general?: string[] } } } })
+      ?.response?.data?.message?.general?.[0] || defaultMessage
+  );
+};
 
 // Helper function to load Razorpay script
 const loadRazorpayScript = async (): Promise<void> => {
@@ -73,20 +149,15 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
 
     const razorpayKey = getRazorpayKey();
 
+    const baseOptions = createBaseRazorpayOptions(data, razorpayKey);
+
     const options = {
-      key: razorpayKey,
+      ...baseOptions,
       amount: paymentAmount,
       currency: currency,
-      name: "µLearn Foundation",
-      description: `Donation - ${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)
-        }`,
-      image: "/assets/logo.png",
+      description: `Donation - ${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)}`,
       order_id: paymentId,
-      handler: function (response: {
-        razorpay_order_id: string;
-        razorpay_payment_id: string;
-        razorpay_signature: string;
-      }) {
+      handler: function (response: RazorpayOrderResponse) {
         publicGateway
           .post(donationRoutes.verify, {
             razorpay_order_id: response.razorpay_order_id,
@@ -98,49 +169,17 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
               res?.data?.message?.general?.[0] ||
               "Payment Successful! Thank you for your donation."
             );
-
-            const pdfData = res?.data;
-            localStorage.setItem(
-              "donationData",
-              JSON.stringify({
-                ...pdfData,
-                donationType: data.donationType,
-                amount: data.amount,
-                name: data.name,
-                email: data.email,
-                paymentId: response.razorpay_payment_id,
-                orderId: response.razorpay_order_id,
-              })
+            handlePaymentSuccess(
+              res?.data,
+              data,
+              response.razorpay_payment_id,
+              response.razorpay_order_id
             );
-
-            const storeData = localStorage.getItem("donationData");
-            if (storeData) {
-              window.location.href = "/donate/success";
-            } else {
-              console.error("Failed to store donation data.");
-              toast.error("Payment successful but unable to load receipt.");
-            }
           })
           .catch((error) => {
             console.error("Payment verification error:", error);
-            toast.error(
-              error?.response?.data?.message?.general?.[0] ||
-              "Error in validating payment. Please contact support."
-            );
+            toast.error(getApiErrorMessage(error, "Error in validating payment. Please contact support."));
           });
-      },
-      prefill: {
-        name: data.name,
-        email: data.email,
-        contact: data.mobile,
-      },
-      notes: {
-        donation_type: data.donationType,
-        is_organisation: data.isOrganisation.toString(),
-        organisation_name: data.organisationName || "N/A",
-      },
-      theme: {
-        color: "#456ff6",
       },
       modal: {
         ondismiss: function () {
@@ -150,37 +189,12 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
     };
 
     const rzp1 = new window.Razorpay(options);
-
-    rzp1.on(
-      "payment.failed",
-      function (response: {
-        error: {
-          code: string;
-          description: string;
-          source: string;
-          step: string;
-          reason: string;
-          metadata: {
-            order_id: string;
-            payment_id: string;
-          };
-        };
-      }) {
-        toast.error(
-          response.error.description || "Payment failed. Please try again."
-        );
-        console.error("Payment failed:", response.error);
-      }
-    );
+    rzp1.on("payment.failed", handlePaymentError);
 
     rzp1.open();
   } catch (error: unknown) {
     console.error("Donation submission error:", error);
-    const errorMessage =
-      (error as { response?: { data?: { message?: { general?: string[] } } } })
-        ?.response?.data?.message?.general?.[0] ||
-      "Error in processing donation. Please try again.";
-    toast.error(errorMessage);
+    toast.error(getApiErrorMessage(error, "Error in processing donation. Please try again."));
     throw error;
   }
 };
@@ -212,18 +226,13 @@ export const submitSubscription = async (data: DonationFormPayload) => {
 
     const razorpayKey = getRazorpayKey();
 
+    const baseOptions = createBaseRazorpayOptions(data, razorpayKey);
+
     const options = {
-      key: razorpayKey,
+      ...baseOptions,
       subscription_id: subscriptionId,
-      name: "µLearn Foundation",
-      description: `${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)
-        } Recurring Donation - ₹${(amount / 100).toLocaleString("en-IN")}`,
-      image: "/assets/logo.png",
-      handler: function (response: {
-        razorpay_subscription_id: string;
-        razorpay_payment_id: string;
-        razorpay_signature: string;
-      }) {
+      description: `${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)} Recurring Donation - ₹${(amount / 100).toLocaleString("en-IN")}`,
+      handler: function (response: RazorpaySubscriptionResponse) {
         publicGateway
           .post(donationRoutes.subscriptionVerify, {
             razorpay_subscription_id: response.razorpay_subscription_id,
@@ -235,50 +244,18 @@ export const submitSubscription = async (data: DonationFormPayload) => {
               res?.data?.message?.general?.[0] ||
               "Subscription Successful! Thank you for your recurring donation."
             );
-
-            const pdfData = res?.data;
-            localStorage.setItem(
-              "donationData",
-              JSON.stringify({
-                ...pdfData,
-                donationType: data.donationType,
-                amount: data.amount,
-                name: data.name,
-                email: data.email,
-                isSubscription: true,
-                paymentId: response.razorpay_payment_id,
-                subscriptionId: response.razorpay_subscription_id,
-              })
+            handlePaymentSuccess(
+              res?.data,
+              data,
+              response.razorpay_payment_id,
+              undefined,
+              response.razorpay_subscription_id
             );
-
-            const storeData = localStorage.getItem("donationData");
-            if (storeData) {
-              window.location.href = "/donate/success";
-            } else {
-              console.error("Failed to store donation data.");
-              toast.error("Subscription successful but unable to load receipt.");
-            }
           })
           .catch((error) => {
             console.error("Subscription verification error:", error);
-            toast.error(
-              error?.response?.data?.message?.general?.[0] ||
-              "Error in validating subscription. Please contact support."
-            );
+            toast.error(getApiErrorMessage(error, "Error in validating subscription. Please contact support."));
           });
-      },
-      prefill: {
-        name: data.name,
-        email: data.email,
-        contact: data.mobile,
-      },
-      notes: {
-        donation_type: data.donationType,
-        is_organisation: data.isOrganisation.toString(),
-        organisation_name: data.organisationName || "N/A",
-      },
-      theme: {
-        color: "#456ff6",
       },
       modal: {
         ondismiss: function () {
@@ -288,37 +265,12 @@ export const submitSubscription = async (data: DonationFormPayload) => {
     };
 
     const rzp1 = new window.Razorpay(options);
-
-    rzp1.on(
-      "payment.failed",
-      function (response: {
-        error: {
-          code: string;
-          description: string;
-          source: string;
-          step: string;
-          reason: string;
-          metadata: {
-            order_id: string;
-            payment_id: string;
-          };
-        };
-      }) {
-        toast.error(
-          response.error.description || "Subscription payment failed. Please try again."
-        );
-        console.error("Subscription payment failed:", response.error);
-      }
-    );
+    rzp1.on("payment.failed", handlePaymentError);
 
     rzp1.open();
   } catch (error: unknown) {
     console.error("Subscription submission error:", error);
-    const errorMessage =
-      (error as { response?: { data?: { message?: { general?: string[] } } } })
-        ?.response?.data?.message?.general?.[0] ||
-      "Error in processing subscription. Please try again.";
-    toast.error(errorMessage);
+    toast.error(getApiErrorMessage(error, "Error in processing subscription. Please try again."));
     throw error;
   }
 };

@@ -1,57 +1,32 @@
 import nodemailer from 'nodemailer';
 import { EmailTemplates } from './emailtemplate/emailTemplates';
 import path from 'path';
+import type { EmailData } from '@/lib/schemas/contact';
 
-interface EmailData {
-  intent: string;
-  name: string;
-  email: string;
-  phone?: string;
-  region?: string;
-  message: string;
-  institution?: string;
-  courseYear?: string;
-  campusChapter?: string;
-  interestGroups?: string;
-  organization?: string;
-  organizationType?: string;
-  focusArea?: string;
-  timeline?: string;
-  budget?: string;
-  programType?: string;
-  targetCohort?: string;
-  role?: string;
-  skills?: string;
-  numberOfHires?: string;
-  eventName?: string;
-  eventDate?: string;
-  outlet?: string;
-  deadline?: string;
-  issueCategory?: string;
-  ticketId?: string;
-}
+// Re-export for backwards compatibility
+export type { EmailData } from '@/lib/schemas/contact';
 
 class MailService {
   private transporter: nodemailer.Transporter;
 
   constructor() {
-    const emailConfig = process.env.EMAIL_PROVIDER === 'outlook' 
+    const emailConfig = process.env.EMAIL_PROVIDER === 'outlook'
       ? {
-          host: 'smtp-mail.outlook.com',
-          port: 587,
-          secure: false,
-          auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_APP_PASSWORD,
-          },
-        }
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASSWORD,
+        },
+      }
       : {
-          service: 'gmail',
-          auth: {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_APP_PASSWORD,
-          },
-        };
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASSWORD,
+        },
+      };
 
     this.transporter = nodemailer.createTransport({
       ...emailConfig,
@@ -81,7 +56,7 @@ class MailService {
       };
 
       await this.transporter.sendMail(mailOptions);
-      
+
       return {
         success: true,
         message: 'Email sent successfully',
@@ -113,7 +88,7 @@ class MailService {
       };
 
       await this.transporter.sendMail(autoReplyOptions);
-      
+
       return {
         success: true,
         message: 'Auto-reply sent successfully',
@@ -128,4 +103,3 @@ class MailService {
 }
 
 export const mailService = new MailService();
-export type { EmailData };

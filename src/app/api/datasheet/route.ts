@@ -1,32 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { contactFormSchema, type EmailData } from '@/lib/schemas/contact';
 
-export interface DatasheetData {
+// DatasheetData extends EmailData with additional fields for tracking
+export interface DatasheetData extends EmailData {
   ticketId: string;
-  intent: string;
-  name: string;
-  email: string;
-  phone?: string;
-  region?: string;
-  message: string;
-  institution?: string;
-  courseYear?: string;
-  campusChapter?: string;
-  interestGroups?: string;
-  organization?: string;
-  organizationType?: string;
-  focusArea?: string;
-  timeline?: string;
-  budget?: string;
-  programType?: string;
-  targetCohort?: string;
-  role?: string;
-  skills?: string;
-  numberOfHires?: string;
-  eventName?: string;
-  eventDate?: string;
-  outlet?: string;
-  deadline?: string;
-  issueCategory?: string;
   submittedAt: string;
 }
 
@@ -37,7 +14,7 @@ function generateTicketId(): string {
   const day = String(now.getDate()).padStart(2, '0');
   const hours = String(now.getHours()).padStart(2, '0');
   const minutes = String(now.getMinutes()).padStart(2, '0');
-  
+
   return `MU${year}${month}${day}${hours}${minutes}`;
 }
 
@@ -45,19 +22,18 @@ function sanitizeString(str: string): string {
   return str.replace(/<[^>]*>/g, '').replace(/[<>"'&]/g, '').trim().substring(0, 1000);
 }
 
-function validateDatasheetData(data: any): { isValid: boolean; errors: string[] } {
-  const errors: string[] = [];
-  
-  if (!data.intent?.trim()) errors.push('Intent is required');
-  if (!data.name?.trim()) errors.push('Name is required');
-  if (!data.email?.trim()) errors.push('Email is required');
-  if (!data.message?.trim()) errors.push('Message is required');
-  
-  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    errors.push('Invalid email format');
+/**
+ * Validates datasheet data using Zod schema
+ */
+function validateDatasheetData(data: unknown): { isValid: boolean; errors: string[] } {
+  const result = contactFormSchema.safeParse(data);
+
+  if (!result.success) {
+    const errors = result.error.issues.map((e: { message: string }) => e.message);
+    return { isValid: false, errors };
   }
-  
-  return { isValid: errors.length === 0, errors };
+
+  return { isValid: true, errors: [] };
 }
 
 export async function POST(request: NextRequest) {
@@ -76,9 +52,9 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    
+
     const { isValid, errors } = validateDatasheetData(body);
-    
+
     if (!isValid) {
       return NextResponse.json(
         { success: false, message: 'Invalid data provided' },
@@ -88,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     const ticketId = generateTicketId();
     const submittedAt = new Date().toISOString();
-    
+
     const datasheetData: DatasheetData = {
       ticketId,
       intent: sanitizeString(body.intent || ''),

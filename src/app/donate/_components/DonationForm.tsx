@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -11,79 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { submitDonationForm, submitSubscription } from "@/services/donation";
-
-type DonationType = "one-time" | "monthly" | "yearly";
-
-const donationFormSchema = z
-  .object({
-    name: z
-      .string()
-      .min(2, { message: "Name must be at least 2 characters" })
-      .max(100, { message: "Name must not exceed 100 characters" })
-      .regex(/^[a-zA-Z\s]+$/, {
-        message: "Name can only contain letters and spaces",
-      }),
-
-    email: z
-      .string()
-      .email({ message: "Please enter a valid email address" })
-      .min(5, { message: "Email is required" }),
-
-    phone: z
-      .string()
-      .regex(/^(\+91[\s]?)?[0-9]{10}$/, {
-        message: "Please enter a valid 10-digit phone number",
-      })
-      .min(10, { message: "Phone number must be 10 digits" }),
-
-    panNumber: z
-      .string()
-      .transform((val) => val.toUpperCase())
-      .pipe(
-        z.string()
-          .regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, {
-            message: "Invalid PAN format. Use format: ABCDE1234F",
-          })
-          .length(10, { message: "PAN must be exactly 10 characters" })
-      ),
-
-    address: z
-      .string()
-      .min(10, { message: "Address must be at least 10 characters" })
-      .max(500, { message: "Address must not exceed 500 characters" }),
-
-    isOrganisation: z.boolean(),
-
-    organisationName: z.string().optional(),
-
-    termsAccepted: z.boolean().refine((val) => val === true, {
-      message: "You must accept the terms and conditions",
-    }),
-
-    donationAmount: z
-      .number()
-      .min(1, { message: "Please select or enter a donation amount" })
-      .positive({ message: "Donation amount must be positive" }),
-
-    donationType: z.enum(["one-time", "monthly", "yearly"]),
-  })
-  .refine(
-    (data) => {
-      if (
-        data.isOrganisation &&
-        (!data.organisationName || data.organisationName.trim() === "")
-      ) {
-        return false;
-      }
-      return true;
-    },
-    {
-      message: "Organisation name is required when paying as an organisation",
-      path: ["organisationName"],
-    }
-  );
-
-type DonationFormData = z.infer<typeof donationFormSchema>;
+import { donationFormSchema, type DonationType, type DonationFormData } from "@/lib/schemas/donation";
 
 export default function DonationForm() {
   const [mounted, setMounted] = useState(false);
