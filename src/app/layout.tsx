@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import MuLoader from "@components/Loader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
 
@@ -72,7 +72,7 @@ export default function RootLayout({
         <Navbar />
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
-        <Toaster />
+        <Toaster reverseOrder={true} position="top-center" />
         <div className="fixed bottom-4 right-4 z-50">
           <BackToTop />
         </div>
