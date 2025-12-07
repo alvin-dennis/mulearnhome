@@ -4,12 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const LearnersHero = () => {
   return (
-    <div
-      className="relative overflow-hidden pt-20 pb-48 lg:pt-28 lg:pb-56"
-      style={{
-        background: "linear-gradient(180deg, var(--mulearn-whitish) 0%, #F0F7FF 40%, #E3F0FF 100%)",
-      }}
-    >
+    <div className="relative overflow-hidden pt-20 pb-48 lg:pt-28 lg:pb-56 bg-gradient-to-b from-[var(--mulearn-whitish)] via-[#F0F7FF] to-[#E3F0FF]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div className="relative inline-block mb-6">
           <div className="absolute -top-6 -left-12 lg:-left-16">
@@ -80,10 +75,7 @@ const LearnersHero = () => {
           <div className="absolute bottom-0 left-0 right-0 h-5 bg-linear-to-l from-blue-600 to-blue-100"></div>
         </div>
 
-        <div
-          className="absolute inset-0 transform -skew-y-3 origin-bottom-left bg-mulearn-whitish shadow-lg"
-          style={{ top: "8px", bottom: "8px" }}
-        />
+        <div className="absolute inset-0 transform -skew-y-3 origin-bottom-left bg-mulearn-whitish shadow-lg top-2 bottom-2" />
 
         <div className="absolute inset-0 flex justify-around items-center max-w-7xl mx-auto px-4 transform -skew-y-3 origin-bottom-left">
           <RibbonItem text="Learn by Doing" />

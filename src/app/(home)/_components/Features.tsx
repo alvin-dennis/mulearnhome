@@ -81,36 +81,33 @@ export default function Features() {
                 sm:min-w-[240px]
                 md:min-w-[250px]
                 lg:min-w-[360px]
+                ${isCardActive(i) ? "flex-[2]" : "flex-1"}
+                ${isMobile ? "h-auto" : "h-[300px]"}
                 `}
               style={{
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
-                flex: isCardActive(i) ? 2 : 1,
-                height: isMobile ? "auto" : "300px",
               }}
             >
               <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
                 <h3
-                  className="font-semibold mb-1 sm:mb-2 transition-all duration-300"
-                  style={{
-                    fontSize: isCardActive(i) ? "1.4rem" : isMobile ? "1rem" : "1.1rem",
-                  }}
+                  className={`font-semibold mb-1 sm:mb-2 transition-all duration-300 ${
+                    isCardActive(i) ? "text-[1.4rem]" : isMobile ? "text-base" : "text-[1.1rem]"
+                  }`}
                 >
                   {feature.title}
                 </h3>
                 <p
-                  className="transition-all duration-300 text-mulearn-blackish leading-tight"
-                  style={{
-                    fontSize: isCardActive(i) ? "1rem" : isMobile ? "0.9rem" : "0.9rem",
-                  }}
+                  className={`transition-all duration-300 text-mulearn-blackish leading-tight ${
+                    isCardActive(i) ? "text-base" : "text-[0.9rem]"
+                  }`}
                 >
                   {feature.description}
                 </p>
               </div>
               <div
-                className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center"
-                style={{
-                  transform: isCardActive(i) ? "scale(1.1)" : "scale(1)",
-                }}
+                className={`relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center ${
+                  isCardActive(i) ? "scale-110" : "scale-100"
+                }`}
               >
                 <MuImage
                   src={feature.image}

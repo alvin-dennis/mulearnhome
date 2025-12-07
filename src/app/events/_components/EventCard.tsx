@@ -54,14 +54,7 @@ export default function EventCard({ event }: Props) {
             )}
           </div>
 
-          <p
-            className="text-mulearn-blackish text-sm leading-relaxed overflow-hidden"
-            style={{
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: "4",
-            }}
-          >
+          <p className="text-mulearn-blackish text-sm leading-relaxed overflow-hidden line-clamp-4">
             {event.description}
           </p>
         </div>

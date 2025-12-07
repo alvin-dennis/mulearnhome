@@ -19,10 +19,7 @@ const Paragraph = ({ text }: { text: string }) => (
 );
 
 const SubsectionList = ({ subsections }: { subsections: string[] }) => (
-  <ol
-    className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify"
-    style={{ listStyleType: "lower-roman" }}
-  >
+  <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify list-[lower-roman]">
     {subsections.map((subsection, index) => (
       <li key={index} className="pl-2 leading-relaxed">
         {subsection}

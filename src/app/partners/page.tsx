@@ -138,15 +138,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Community Partners</span>
-                      <ArrowRight
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        style={{
-                          background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }}
-                      />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>
@@ -204,15 +196,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Company Partners</span>
-                      <ArrowRight
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        style={{
-                          background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }}
-                      />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>
@@ -308,29 +292,13 @@ export default function PartnersPage() {
                 <Link href="/be-a-part/company">
                   <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="text-mulearn">Join as Company</span>
-                    <ArrowRight
-                      className="w-5 h-5"
-                      style={{
-                        background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    />
+                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
                   <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="text-mulearn">Join as Community</span>
-                    <ArrowRight
-                      className="w-5 h-5"
-                      style={{
-                        background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    />
+                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                   </button>
                 </Link>
               </div>

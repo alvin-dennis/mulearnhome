@@ -9,12 +9,7 @@ const StripesBackground = ({ className = "" }: { className?: string }) => (
     src="/assets/logo-template/stripes (1).svg"
     alt="Stripes Background"
     fill
-    className={`object-cover ${className}`}
-    style={{
-      opacity: 0.7,
-      pointerEvents: "none",
-      zIndex: 1,
-    }}
+    className={`object-cover opacity-70 pointer-events-none z-[1] ${className}`}
   />
 );
 
@@ -57,10 +52,7 @@ const MuLearnLogo = ({
           alt="MuLearn Logo"
           width={width}
           height={height}
-          className="w-full h-full absolute inset-0"
-          style={{
-            filter: "brightness(0) invert(1)",
-          }}
+          className="w-full h-full absolute inset-0 brightness-0 invert"
         />
         <div
           className="absolute inset-0 w-full h-full"
@@ -271,10 +263,7 @@ export default function CampusLogoGenerator() {
   };
 
   return (
-    <div
-      className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex"
-      style={{ fontFamily: "var(--font-plus-jakarta)" }}
-    >
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-[var(--font-plus-jakarta)]">
       <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish">
         <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto">
           <div

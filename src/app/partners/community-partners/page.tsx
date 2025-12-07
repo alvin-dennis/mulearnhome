@@ -67,14 +67,7 @@ export default function CommmunityPartners() {
             width={0}
             height={0}
             alt="Coding Workshop Animation"
-            className="block mt-6 md:mt-0 w-[90vw] max-w-xl md:w-full md:max-w-152 h-auto md:h-104 object-cover rounded-2xl "
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              maxWidth: "38rem",
-              height: "auto",
-              borderRadius: "1.5rem",
-            }}
+            className="block mt-6 md:mt-0 w-full max-w-[38rem] h-auto object-cover rounded-3xl"
             preload
           />
         </MotionDiv>

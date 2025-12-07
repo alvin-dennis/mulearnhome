@@ -17,10 +17,7 @@ const FirstEdition = () => {
             </p>
           </div>
           <div className="w-full lg:w-2/5 mt-8 lg:mt-0">
-            <div
-              className="relative w-full rounded-lg overflow-hidden"
-              style={{ paddingBottom: "56.25%", height: 0 }}
-            >
+            <div className="relative w-full rounded-lg overflow-hidden aspect-video">
               <div className="absolute top-0 left-0 w-full h-full">
                 <YouTubeEmbed
                   videoid={artOfTeachingUrls.firstEdition}

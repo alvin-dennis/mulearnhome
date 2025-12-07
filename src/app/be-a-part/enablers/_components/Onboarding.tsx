@@ -29,10 +29,7 @@ export default function Onboarding() {
               className="relative flex flex-col items-center"
             >
               {idx < enablers.onboarding.length - 1 && (
-                <div
-                  className="absolute left-[calc(50%+3rem)] top-12 hidden h-0.5 w-[calc(100%-6rem)] border-t-2 border-dashed border-mulearn-blackish/30 md:block"
-                  style={{ zIndex: 0 }}
-                />
+                <div className="absolute left-[calc(50%+3rem)] top-12 hidden h-0.5 w-[calc(100%-6rem)] border-t-2 border-dashed border-mulearn-blackish/30 md:block z-0" />
               )}
 
               <div className="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-linear-to-br from-mulearn-trusty-blue to-mulearn-duke-purple shadow-lg">

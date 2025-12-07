@@ -14,7 +14,6 @@ export default function WelcomePage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       className="min-h-screen w-full bg-mulearn-whitish relative z-50 overflow-x-hidden"
-      style={{ minHeight: "100vh" }}
     >
       <Level1Section />
       <Level2Section />

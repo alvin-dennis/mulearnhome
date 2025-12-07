@@ -81,8 +81,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
             src={item.image}
             alt={item.title}
             fill
-            style={{ objectFit: "cover" }}
-            className="w-full h-full z-0"
+            className="w-full h-full z-0 object-cover"
           />
         ) : (
           <div className="w-full h-full bg-mulearn-trusty flex items-center justify-center">

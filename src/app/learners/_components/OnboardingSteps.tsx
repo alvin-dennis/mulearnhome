@@ -42,7 +42,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
             </div>
 
             {index < data.length - 1 && (
-              <div className="flex items-center" style={{ marginTop: "64px" }}>
+              <div className="flex items-center mt-16">
                 <div className="w-20 h-1 bg-black"></div>
               </div>
             )}

@@ -73,10 +73,7 @@ export default async function RefundPolicy() {
               </div>
 
               {section.subsections.length > 0 && (
-                <ol
-                  className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish"
-                  style={{ listStyleType: "lower-roman" }}
-                >
+                <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish list-[lower-roman]">
                   {section.subsections.map((subsection, subIndex) => (
                     <li key={subIndex} className="pl-2 leading-relaxed">
                       <span

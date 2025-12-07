@@ -171,10 +171,7 @@ export default function InterestGroups() {
           </MotionDiv>
 
           <div className="hidden md:block relative">
-            <div
-              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full"
-              style={{ top: 0, height: "calc(100% - 96px)" }}
-            />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full top-0 h-[calc(100%-96px)]" />
 
             {workflowSteps.map((step, index) => {
               const Icon = step.icon;

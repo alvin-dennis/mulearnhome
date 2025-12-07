@@ -42,10 +42,8 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
             <div className="rounded-lg overflow-hidden max-w-[400px] w-[90%] max-h-[600px] bg-mulearn-whitish">
               <div className="relative h-[180px] overflow-hidden">
                 <div
-                  className="bg-cover bg-center absolute top-0 left-0 right-0 bottom-0 w-full h-full"
-                  style={{
-                    backgroundImage: `url(${specialevent.image})`,
-                  }}
+                  className="bg-cover bg-center absolute inset-0 w-full h-full"
+                  style={{ backgroundImage: `url(${specialevent.image})` }}
                 />
                 <div
                   className="absolute top-3 right-3 w-5 h-5 text-mulearn-whitish cursor-pointer p-1 rounded-full transition-colors duration-200"

@@ -25,11 +25,7 @@ export default function HowToJoin() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative"
-                style={{
-                  height: "170px",
-                  marginBottom: index < companySteps.length - 1 ? "-10px" : "0",
-                }}
+                className={`relative h-[170px] ${index < companySteps.length - 1 ? "-mb-2.5" : ""}`}
               >
                 {step.align === "left" ? (
                   <div className="flex items-center relative h-full">
@@ -96,15 +92,9 @@ export default function HowToJoin() {
 
                 {index < companySteps.length - 1 && (
                   <div
-                    className={`absolute z-10 ${
+                    className={`absolute z-10 top-[168px] w-px h-2.5 bg-[#D9D9D9] ${
                       step.align === "left" ? "left-[87px]" : "right-[87px]"
                     }`}
-                    style={{
-                      top: "168px",
-                      width: "1px",
-                      height: "10px",
-                      backgroundColor: "#D9D9D9",
-                    }}
                   />
                 )}
               </MotionDiv>

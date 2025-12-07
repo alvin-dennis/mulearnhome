@@ -74,15 +74,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 {item.stats.participants && (
                   <div className="text-center p-4 bg-mulearn-whitish rounded-lg border border-mulearn-greyish">
-                    <div
-                      className="text-2xl font-bold mb-1 "
-                      style={{
-                        background: "bg-mulearn",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    >
+                    <div className="text-2xl font-bold mb-1 bg-mulearn bg-clip-text text-transparent">
                       {item.stats.participants}+
                     </div>
                     <div className="text-sm text-mulearn-gray-600 ">Participants</div>
@@ -90,15 +82,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                 )}
                 {item.stats.campuses && (
                   <div className="text-center p-4 bg-mulearn-whitish rounded-lg border border-mulearn-greyish">
-                    <div
-                      className="text-2xl font-bold mb-1 "
-                      style={{
-                        background: "var(--mulearn-trusty)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    >
+                    <div className="text-2xl font-bold mb-1 bg-[var(--mulearn-trusty)] bg-clip-text text-transparent">
                       {item.stats.campuses}+
                     </div>
                     <div className="text-sm text-mulearn-gray-600 ">Campuses</div>
@@ -106,15 +90,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                 )}
                 {item.stats.companies && (
                   <div className="text-center p-4 bg-mulearn-whitish rounded-lg border border-mulearn-greyish">
-                    <div
-                      className="text-2xl font-bold mb-1 "
-                      style={{
-                        background: "var(--mulearn-trusty)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
-                    >
+                    <div className="text-2xl font-bold mb-1 bg-[var(--mulearn-trusty)] bg-clip-text text-transparent">
                       {item.stats.companies}+
                     </div>
                     <div className="text-sm text-mulearn-gray-600 ">Companies</div>

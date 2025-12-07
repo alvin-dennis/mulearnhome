@@ -73,7 +73,7 @@ export default function Navbar() {
               width={170}
               height={170}
               preload
-              style={{ height: "auto" }}
+              className="h-auto"
             />
           </Link>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
                 width={170}
                 height={170}
                 preload
-                style={{ height: "auto" }}
+                className="h-auto"
               />
             </Link>
             <MotionDiv
