@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { features } from "@/data/home";
 
 export default function Features() {
@@ -33,11 +33,7 @@ export default function Features() {
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
   const isCardActive = (index: number) =>
-    !isMobile && !isTablet
-      ? isHovering
-        ? expandedIndex === index
-        : index === 0
-      : false;
+    !isMobile && !isTablet ? (isHovering ? expandedIndex === index : index === 0) : false;
 
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 w-full text-center flex flex-col items-center justify-center gap-4">
@@ -50,17 +46,13 @@ export default function Features() {
       >
         <div className="pt-10 sm:pt-12">
           <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
-            What{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              µLearn
-            </span>{" "}
-            offers
+            What <span className="text-mulearn">µLearn</span> offers
           </h1>
         </div>
         <h6 className="font-normal max-w-[800px] text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
-          µLearn offers a wide range of features and opportunities that help you
-          learn, grow, and upskill yourself in a fun and engaging way. Here are
-          some of the key features that µLearn offers.
+          µLearn offers a wide range of features and opportunities that help you learn, grow, and
+          upskill yourself in a fun and engaging way. Here are some of the key features that µLearn
+          offers.
         </h6>
 
         <MotionDiv
@@ -72,6 +64,7 @@ export default function Features() {
           onMouseLeave={() => setIsHovering(false)}
         >
           {features.map((feature, i) => (
+            <>
             <MotionDiv
               key={i}
               variants={fadeInUp}
@@ -89,44 +82,34 @@ export default function Features() {
                 sm:min-w-[240px]
                 md:min-w-[250px]
                 lg:min-w-[360px]
+                ${isCardActive(i) ? "flex-[2]" : "flex-1"}
+                ${isMobile ? "h-auto" : "h-[300px]"}
                 `}
               style={{
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
-                // avoid changing flex to prevent layout shifts of sibling cards
-                // use transform to visually highlight without reflow
-                transform: isCardActive(i) ? "scale(1.03)" : "scale(1)",
-                zIndex: isCardActive(i) ? 20 : 1,
-                height: isMobile ? "auto" : "300px",
               }}
             >
               <div className="flex flex-col items-center text-center transition-transform duration-300 px-2 flex-1">
                 <h3
-                  className="font-semibold mb-1 sm:mb-2 transition-all duration-300"
-                  style={{
-                    fontSize: isCardActive(i)
-                      ? "1.4rem"
-                      : isMobile
-                      ? "1rem"
-                      : "1.1rem",
-                  }}
+                  className={`font-semibold mb-1 sm:mb-2 transition-all duration-300 ${
+                    isCardActive(i) ? "text-[1.4rem]" : isMobile ? "text-base" : "text-[1.1rem]"
+                  }`}
                 >
                   {feature.title}
                 </h3>
                 <p
-                  className="transition-all duration-300 text-mulearn-blackish leading-tight"
-                  style={{
-                    fontSize: isCardActive(i)
-                      ? "1rem"
-                      : isMobile
-                      ? "0.9rem"
-                      : "0.9rem",
-                  }}
+                  className={`transition-all duration-300 text-mulearn-blackish leading-tight ${
+                    isCardActive(i) ? "text-base" : "text-[0.9rem]"
+                  }`}
                 >
                   {feature.description}
                 </p>
               </div>
-              <div className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center">
-                <div style={{ transform: isCardActive(i) ? "scale(1.05)" : "scale(1)" }} className="w-full flex justify-center">
+              <div
+                className={`relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center ${
+                  isCardActive(i) ? "scale-110" : "scale-100"
+                }`}
+              >
                 <MuImage
                   src={feature.image}
                   alt={feature.title}
@@ -134,30 +117,30 @@ export default function Features() {
                     feature.title === "Community"
                       ? 150
                       : feature.title === "Mentors"
-                      ? 120
-                      : feature.title === "Interest Groups"
-                      ? 120
-                      : feature.title === "Roadmaps"
-                      ? 130
-                      : feature.title === "Challenges"
-                      ? 170
-                      : 100
+                        ? 120
+                        : feature.title === "Interest Groups"
+                          ? 120
+                          : feature.title === "Roadmaps"
+                            ? 130
+                            : feature.title === "Challenges"
+                              ? 170
+                              : 100
                   }
                   height={120}
                   className="object-contain max-w-full h-auto"
                   style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
                 </div>
-              </div>
-              <div className="w-full flex justify-center pt-3">
-                <Link href={feature.url} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button variant="mulearn" className="px-4 py-2 font-semibold w-full sm:w-auto !hover:scale-100 !transform-none">
-                    {feature.cta}
-                  </Button>
-                </Link>
-              </div>
-            </MotionDiv>
-          ))}
+              </MotionDiv>
+              <Link href={feature.url} target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="mulearn"
+                  className="mt-auto px-4 py-2 font-semibold w-full sm:w-auto"
+                >
+                  {feature.cta}
+                </Button>
+              </Link>
+            </>))}
         </MotionDiv>
       </MotionSection>
     </div>

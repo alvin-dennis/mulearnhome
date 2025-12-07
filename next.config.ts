@@ -21,20 +21,17 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
       {
+        protocol: "https",
+        hostname: "cdn.mulearn",
+        pathname: "/**",
+      },
+      {
         protocol: 'https',
         hostname: 'www.propeers.in',
         pathname: '/**',
-      },
+      }
     ],
   },
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: "/events/saltmangotree",
-  //       destination: "/events/salt-mango-tree",
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  
 };
 export default nextConfig;

@@ -1,5 +1,5 @@
+import Image, { type ImageProps } from "next/image";
 import React from "react";
-import Image, { ImageProps } from "next/image";
 
 /**
  * MuImage: A wrapper for Next.js Image that ensures aspect ratio is preserved.
@@ -98,44 +98,27 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   }
 
   const alt = rest.alt ?? "";
-  // If the src is a remote CDN that may resolve to private IPs from the
-  // dev server, skip Next's image optimizer and let the browser fetch the
-  // image directly. This avoids server-side DNS resolution that triggers
-  // the "resolved to private ip" logs and fetch failures.
+  // Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
+  // and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
   let shouldUnoptimized = false;
   try {
-    const srcVal = (props as any).src;
-    if (typeof srcVal === "string" && srcVal.startsWith("http")) {
-      const url = new URL(srcVal);
-      const host = url.hostname;
-      // Determine host patterns from env var `NEXT_PUBLIC_UNOPTIMIZED_HOSTS`
-      // (comma-separated) so you can update hosts without editing code.
-      const envList = (process.env.NEXT_PUBLIC_UNOPTIMIZED_HOSTS || "").split(",").map((s) => s.trim()).filter(Boolean);
-      const defaultList = [
-        "s3.ap-south-1.amazonaws.com",
-        "cdn.mulearn",
-        "i.ibb.co",
-        "propeers.in",
-      ];
-      const patterns = envList.length ? envList : defaultList;
-      if (patterns.some((p) => host.includes(p))) {
+    const srcVal = (rest as any).src;
+    if (typeof srcVal === "string" && /^https?:\/\//.test(srcVal)) {
+      const parsed = new URL(srcVal);
+      const host = parsed.hostname;
+      if (
+        host === "s3.ap-south-1.amazonaws.com" ||
+        host.endsWith("cdn.mulearn") ||
+        host.includes("cdn.mulearn")
+      ) {
         shouldUnoptimized = true;
       }
     }
   } catch (e) {
-    // noop - fall back to default behavior
+    /* ignore parsing errors */
   }
 
-  const finalUnoptimized = (rest as any).unoptimized || shouldUnoptimized;
-
-  // If `fill` is used, Next.js requires that the image uses width:100%/height:100%
-  // and forbids overriding `width` or `height` via inline style. Remove any
-  // inline width/height to avoid the runtime warning/error.
-  const isFillProp = (props as any).fill === true;
-  if (isFillProp) {
-    if ((newStyle as any).width != null) delete (newStyle as any).width;
-    if ((newStyle as any).height != null) delete (newStyle as any).height;
-  }
+  const imageProps = { ...(rest as object), unoptimized: shouldUnoptimized || (rest as any).unoptimized } as ImageProps;
 
   return (
     <Image
@@ -143,8 +126,7 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
       width={width}
       height={height}
       style={newStyle}
-      {...rest}
-      unoptimized={finalUnoptimized}
+      {...imageProps}
       alt={alt}
     />
   );

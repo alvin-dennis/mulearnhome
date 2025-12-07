@@ -1,21 +1,21 @@
 import {
-  Users,
-  Sparkle,
-  Trophy,
-  Code,
-  Smartphone,
-  Database,
-  Zap,
-  Globe,
-  Palette,
-  MessageCircle,
-  BookOpen,
-  Target,
-  Calendar,
-  Clock,
-  CheckCircle,
   Award,
+  BookOpen,
+  Calendar,
+  CheckCircle,
+  Clock,
+  Code,
+  Database,
+  Globe,
+  MessageCircle,
+  Palette,
+  Smartphone,
+  Sparkle,
+  Target,
   TrendingUp,
+  Trophy,
+  Users,
+  Zap,
 } from "lucide-react";
 
 export const learningCircleData = {
@@ -60,14 +60,12 @@ export const learningCircleData = {
 
   learningDomains: {
     title: "Explore Learning Domains",
-    subtitle:
-      "Choose from a wide range of specialized learning areas and find your perfect circle",
+    subtitle: "Choose from a wide range of specialized learning areas and find your perfect circle",
     domains: [
       {
         icon: Code,
         title: "Web Development",
-        description:
-          "Frontend, Backend, Full-stack development with modern technologies",
+        description: "Frontend, Backend, Full-stack development with modern technologies",
       },
       {
         icon: Smartphone,
@@ -77,8 +75,7 @@ export const learningCircleData = {
       {
         icon: Palette,
         title: "UI/UX Design",
-        description:
-          "User interface design, user experience, and design thinking",
+        description: "User interface design, user experience, and design thinking",
       },
       {
         icon: Database,
@@ -142,20 +139,17 @@ export const learningCircleData = {
 
   benefits: {
     title: "The Benefits?",
-    subtitle:
-      "Discover the unique advantages of collaborative learning at µLearn",
+    subtitle: "Discover the unique advantages of collaborative learning at µLearn",
     benefits: [
       {
         icon: MessageCircle,
         title: "Peer Learning",
-        description:
-          "Learn from diverse perspectives and experiences of your fellow learners",
+        description: "Learn from diverse perspectives and experiences of your fellow learners",
       },
       {
         icon: CheckCircle,
         title: "Structured Learning",
-        description:
-          "Follow curated learning paths with clear milestones and progress tracking",
+        description: "Follow curated learning paths with clear milestones and progress tracking",
       },
       {
         icon: Calendar,
@@ -166,8 +160,7 @@ export const learningCircleData = {
       {
         icon: Award,
         title: "Portfolio Building",
-        description:
-          "Work on real-world projects that enhance your professional portfolio",
+        description: "Work on real-world projects that enhance your professional portfolio",
       },
       {
         icon: Users,

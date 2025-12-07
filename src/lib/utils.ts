@@ -1,29 +1,22 @@
-import { clsx, type ClassValue } from "clsx"
+import { type ClassValue, clsx } from "clsx";
 import { useCallback } from "react";
-import { twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge";
+import { clientEnv } from "@/lib/env/env.client";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const useRedirectToApp = () => {
   return useCallback((path: string, { open = false, replace = false } = {}) => {
     if (open) {
-      window.open(
-        `${process.env.NEXT_PUBLIC_APP_URL}${path.replace(/^\/+/, "")}`,
-        "_blank"
-      );
+      window.open(`${clientEnv.NEXT_PUBLIC_APP_URL}${path.replace(/^\/+/, "")}`, "_blank");
       return;
     }
     if (replace) {
-      window.location.replace(
-        `${process.env.NEXT_PUBLIC_APP_URL}${path.replace(/^\/+/, "")}`
-      );
+      window.location.replace(`${clientEnv.NEXT_PUBLIC_APP_URL}${path.replace(/^\/+/, "")}`);
       return;
     }
-    window.location.href = `${process.env.NEXT_PUBLIC_APP_URL}${path.replace(
-      /^\/+/,
-      ""
-    )}`;
+    window.location.href = `${clientEnv.NEXT_PUBLIC_APP_URL}${path.replace(/^\/+/, "")}`;
   }, []);
 };

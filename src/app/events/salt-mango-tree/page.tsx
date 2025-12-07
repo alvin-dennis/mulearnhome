@@ -1,11 +1,12 @@
 "use client";
 
-import { weeklyTwitch } from "@/data/events";
-import { Radio, Calendar, PlayCircle, Users, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { EpisodeCard } from "./_components/EpisodeCard";
+import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { weeklyTwitch } from "@/data/events";
+import { EpisodeCard } from "./_components/EpisodeCard";
 
 export default function SaltMangoTreePage() {
   const events = weeklyTwitch["salt mango tree"];
@@ -31,18 +32,17 @@ export default function SaltMangoTreePage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                µLearn{" "}
-                <span className="block bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mt-2">
-                  Salt Mango Tree
-                </span>
+                µLearn <span className="block text-mulearn mt-2">Salt Mango Tree</span>
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-mulearn-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                English! English! English! I don&apos;t like it, I avoid it. But English likes me, I can&apos;t avoid it! Since avoiding English isn&apos;t an option, let&apos;s work together to improve our skills by practicing.
+                English! English! English! I don&apos;t like it, I avoid it. But English likes me, I
+                can&apos;t avoid it! Since avoiding English isn&apos;t an option, let&apos;s work
+                together to improve our skills by practicing.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
+                <Button variant="mulearn" className="px-6 py-2.5 md:px-8 md:py-3 gap-2">
                   <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                   Join Session
                 </Button>
@@ -51,11 +51,13 @@ export default function SaltMangoTreePage() {
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-                <img
+                <Image
                   src="/assets/smt/smt.svg"
                   alt="Salt Mango Tree Illustration"
+                  width={500}
+                  height={500}
                   className="w-full h-auto rounded-2xl"
-                  loading="eager"
+                  priority
                 />
               </div>
             </div>
@@ -74,29 +76,27 @@ export default function SaltMangoTreePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("upcoming")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "upcoming"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${
+                  activeTab === "upcoming" ? "sm:shadow-xl scale-105" : "text-gray-500"
                 }`}
               >
                 <Clock className="w-4 h-4 md:w-5 md:h-5" />
                 Upcoming
-              </button>
+              </Button>
 
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("past")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "past"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${
+                  activeTab === "past" ? "sm:shadow-xl scale-105" : "text-gray-500"
                 }`}
               >
                 <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                 Previous
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -127,9 +127,8 @@ export default function SaltMangoTreePage() {
               <div>
                 <div className="text-center mb-6 md:mb-8">
                   <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-                    Listed below are the speakers who came to the inspiration
-                    stations and inspired our listeners with their stories and
-                    experiences.
+                    Listed below are the speakers who came to the inspiration stations and inspired
+                    our listeners with their stories and experiences.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

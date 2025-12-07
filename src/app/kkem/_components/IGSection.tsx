@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import type { Variants } from "framer-motion";
+import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { MotionDiv } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import type { cardProps, IGSectionProps } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
-import { cardProps, IGSectionProps } from "@/lib/types";
-import MuImage from "@/components/MuImage";
-import { SquareArrowOutUpRight } from "lucide-react";
-import { Variants } from "framer-motion";
-import { MotionDiv } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -32,7 +32,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
   return (
     <>
       <MotionDiv
-        className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl px-6 py-12 md:px-0 md:py-12"
+        className="bg-mulearn rounded-2xl px-6 py-12 md:px-0 md:py-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -55,17 +55,13 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               Introducing Learning Circles
             </h3>
             <p className="text-mulearn-whitish font-normal text-base md:text-lg leading-7 md:leading-8 mb-4 md:mb-0 md:max-w-[45rem]">
-              An informal mechanism for bringing together learners who are
-              interested in the same topic from across different fields and
-              disciplines. A fantastic way to spend a small amount of time
-              learning about new things with a group of people with same
-              interests!
+              An informal mechanism for bringing together learners who are interested in the same
+              topic from across different fields and disciplines. A fantastic way to spend a small
+              amount of time learning about new things with a group of people with same interests!
             </p>
             <Button
               className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish cursor-pointer rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
-              onClick={() =>
-                redirect?.(refreshToken ? "/dashboard/home" : "/register")
-              }
+              onClick={() => redirect?.(refreshToken ? "/dashboard/home" : "/register")}
             >
               Get Started
             </Button>

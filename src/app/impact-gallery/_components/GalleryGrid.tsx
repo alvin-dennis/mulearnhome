@@ -1,18 +1,15 @@
 import { AnimatePresence } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
-import MediaCard from "./MediaCard";
 import { galleryData } from "@/data/impact-gallery";
-import { GalleryItem } from "@/lib/types";
+import type { GalleryItem } from "@/lib/types";
+import MediaCard from "./MediaCard";
 
 interface GalleryGridProps {
   activeFilter: string;
   onItemClick: (item: GalleryItem) => void;
 }
 
-export default function GalleryGrid({
-  activeFilter,
-  onItemClick,
-}: GalleryGridProps) {
+export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridProps) {
   const filteredItems =
     activeFilter === "all"
       ? galleryData
@@ -58,9 +55,7 @@ export default function GalleryGrid({
 
       {filteredItems.length === 0 && (
         <div className="col-span-full text-center py-12">
-          <p className="text-mulearn-gray-600 text-lg ">
-            No items found for this category.
-          </p>
+          <p className="text-mulearn-gray-600 text-lg ">No items found for this category.</p>
         </div>
       )}
     </MotionDiv>

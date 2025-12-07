@@ -1,12 +1,12 @@
 "use client";
 
-import { type Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
+import { Calendar, ChevronRight, Download, FileText } from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
-import { AnnualReport } from "@/lib/types";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Download, Calendar, FileText, ChevronRight } from "lucide-react";
-import MuImage from "@/components/MuImage";
+import type { AnnualReport } from "@/lib/types";
 
 interface ReportCardProps {
   report: AnnualReport;
@@ -53,17 +53,15 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 />
               ) : (
                 <div className="text-center p-8">
-                  <FileText className="w-16 h-16 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-mulearn-blackish mb-2">
-                    {report.year}
-                  </h3>
+                  <FileText className="w-16 h-16 text-mulearn mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-mulearn-blackish mb-2">{report.year}</h3>
                   <p className="text-mulearn-gray-600">Annual Report</p>
                 </div>
               )}
             </div>
 
             {}
-            <div className="absolute top-4 left-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            <div className="absolute top-4 left-4 bg-mulearn text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
               {report.year}
             </div>
 
@@ -79,7 +77,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 <span>Published {formatDate(report.publishedDate)}</span>
               </div>
 
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:text-mulearn transition-colors duration-300">
                 {report.title}
               </h3>
 
@@ -95,16 +93,13 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                   </h4>
                   <ul className="space-y-2">
                     {report.highlights.slice(0, 3).map((highlight, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-mulearn-gray-600"
-                      >
-                        <ChevronRight className="w-4 h-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mt-0.5 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-2 text-mulearn-gray-600">
+                        <ChevronRight className="w-4 h-4 text-mulearn mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{highlight}</span>
                       </li>
                     ))}
                     {report.highlights.length > 3 && (
-                      <li className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-sm font-medium">
+                      <li className="text-mulearn text-sm font-medium">
                         +{report.highlights.length - 3} more highlights
                       </li>
                     )}

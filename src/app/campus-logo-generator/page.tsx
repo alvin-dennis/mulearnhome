@@ -12,20 +12,12 @@ const StripesBackground = ({ className = "" }: { className?: string }) => (
     src="/assets/logo-template/stripes (1).svg"
     alt="Stripes Background"
     fill
-    className={`object-cover ${className}`}
-    style={{
-      opacity: 0.7,
-      pointerEvents: "none",
-      zIndex: 1,
-    }}
+    className={`object-cover opacity-70 pointer-events-none z-[1] ${className}`}
   />
 );
 
 const colorToFilter = (color: string): string => {
-  if (
-    color.startsWith("linear-gradient") ||
-    color.includes("--mulearn-trusty)")
-  ) {
+  if (color.startsWith("linear-gradient") || color.includes("--mulearn-trusty)")) {
     return "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(1180%) hue-rotate(200deg) brightness(95%) contrast(101%)"; // Default to blue for gradient
   }
 
@@ -47,8 +39,7 @@ const MuLearnLogo = ({
   width?: number;
   height?: number;
 }) => {
-  const isGradient =
-    color.startsWith("linear-gradient") || color.includes("--mulearn-trusty)");
+  const isGradient = color.startsWith("linear-gradient") || color.includes("--mulearn-trusty)");
 
   if (isGradient) {
     return (
@@ -64,10 +55,7 @@ const MuLearnLogo = ({
           alt="MuLearn Logo"
           width={width}
           height={height}
-          className="w-full h-full absolute inset-0"
-          style={{
-            filter: "brightness(0) invert(1)",
-          }}
+          className="w-full h-full absolute inset-0 brightness-0 invert"
         />
         <div
           className="absolute inset-0 w-full h-full"
@@ -199,8 +187,7 @@ export default function CampusLogoGenerator() {
       const config = {
         backgroundColor:
           formData.logoType === "YIP"
-            ? yipVariants.find((v) => v.value === formData.yipVariant)
-                ?.bgColor || "#FFFFFF"
+            ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
             : formData.logoVariant === "Transparent Bg"
               ? "transparent"
               : formData.backgroundColor,
@@ -237,9 +224,7 @@ export default function CampusLogoGenerator() {
       console.log("Image generated successfully");
 
       const link = document.createElement("a");
-      link.download = `${
-        formData.campusCode || "mulearn"
-      }-logo.${formData.fileType.toLowerCase()}`;
+      link.download = `${formData.campusCode || "mulearn"}-logo.${formData.fileType.toLowerCase()}`;
       link.href = dataUrl;
 
       document.body.appendChild(link);
@@ -254,8 +239,7 @@ export default function CampusLogoGenerator() {
           quality: 1.0,
           backgroundColor:
             formData.logoType === "YIP"
-              ? yipVariants.find((v) => v.value === formData.yipVariant)
-                  ?.bgColor || "#FFFFFF"
+              ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
               : formData.backgroundColor,
         };
 
@@ -282,10 +266,7 @@ export default function CampusLogoGenerator() {
   };
 
   return (
-    <div
-      className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex"
-      style={{ fontFamily: "var(--font-plus-jakarta)" }}
-    >
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-[var(--font-plus-jakarta)]">
       <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish">
         <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto">
           <div
@@ -304,26 +285,19 @@ export default function CampusLogoGenerator() {
                     className="w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden shadow-2xl"
                     style={{
                       backgroundColor:
-                        yipVariants.find((v) => v.value === formData.yipVariant)
-                          ?.bgColor || "#FFFFFF",
+                        yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor ||
+                        "#FFFFFF",
                     }}
                   >
                     <div className="relative w-full h-full flex items-center justify-center z-10">
                       <div className="transition-all duration-300">
                         <div className="flex flex-col items-center gap-3">
-                          <YIPLogo
-                            variant={formData.yipVariant}
-                            width={220}
-                            height={145}
-                          />
+                          <YIPLogo variant={formData.yipVariant} width={220} height={145} />
                           <div className="text-center">
                             <div
                               className="text-2xl lg:text-3xl opacity-90"
                               style={{
-                                color:
-                                  formData.yipVariant === "dark"
-                                    ? "#FFFFFF"
-                                    : "#000000",
+                                color: formData.yipVariant === "dark" ? "#FFFFFF" : "#000000",
                                 fontFamily: "var(--font-plus-jakarta)",
                                 fontWeight: 400,
                               }}
@@ -341,26 +315,19 @@ export default function CampusLogoGenerator() {
                   className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-mulearn-whitish relative overflow-hidden shadow-2xl"
                   style={{
                     backgroundColor:
-                      yipVariants.find((v) => v.value === formData.yipVariant)
-                        ?.bgColor || "#FFFFFF",
+                      yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor ||
+                      "#FFFFFF",
                   }}
                 >
                   <div className="relative w-full h-full flex items-center justify-center z-10">
                     <div className="transition-all duration-300">
                       <div className="flex flex-col items-center gap-2 lg:gap-1">
-                        <YIPLogo
-                          variant={formData.yipVariant}
-                          width={160}
-                          height={135}
-                        />
+                        <YIPLogo variant={formData.yipVariant} width={160} height={135} />
                         <div className="text-center">
                           <div
                             className="text-lg opacity-90"
                             style={{
-                              color:
-                                formData.yipVariant === "dark"
-                                  ? "#FFFFFF"
-                                  : "#000000",
+                              color: formData.yipVariant === "dark" ? "#FFFFFF" : "#000000",
                               fontFamily: "var(--font-plus-jakarta)",
                               fontWeight: 400,
                             }}
@@ -379,9 +346,7 @@ export default function CampusLogoGenerator() {
                   <div
                     ref={squareLogoRef}
                     className={`w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden ${
-                      formData.logoVariant === "Transparent Bg"
-                        ? ""
-                        : "shadow-2xl"
+                      formData.logoVariant === "Transparent Bg" ? "" : "shadow-2xl"
                     }`}
                     style={{
                       backgroundColor:
@@ -390,17 +355,11 @@ export default function CampusLogoGenerator() {
                           : formData.backgroundColor,
                     }}
                   >
-                    {formData.logoVariant !== "Transparent Bg" && (
-                      <StripesBackground />
-                    )}
+                    {formData.logoVariant !== "Transparent Bg" && <StripesBackground />}
                     <div className="relative w-full h-full flex items-center justify-center z-10">
                       <div className="transition-all duration-300">
                         <div className="flex flex-col items-center">
-                          <MuLearnLogo
-                            color={formData.foregroundColor}
-                            width={180}
-                            height={45}
-                          />
+                          <MuLearnLogo color={formData.foregroundColor} width={180} height={45} />
                           <div className="relative w-full">
                             <div
                               className="text-2xl lg:text-3xl opacity-90 absolute right-0"
@@ -427,11 +386,7 @@ export default function CampusLogoGenerator() {
                     <div className="relative w-full h-full flex items-center justify-center z-10">
                       <div className="transition-all duration-300">
                         <div className="flex flex-col items-center">
-                          <MuLearnLogo
-                            color={formData.foregroundColor}
-                            width={140}
-                            height={35}
-                          />
+                          <MuLearnLogo color={formData.foregroundColor} width={140} height={35} />
                           <div className="relative w-full">
                             <div
                               className="text-base mt-2 opacity-90 absolute right-0"
@@ -628,9 +583,7 @@ export default function CampusLogoGenerator() {
                         style={{
                           background: color.value,
                         }}
-                        onClick={() =>
-                          handleInputChange("foregroundColor", color.value)
-                        }
+                        onClick={() => handleInputChange("foregroundColor", color.value)}
                       />
                     ))}
                   </div>
@@ -639,9 +592,7 @@ export default function CampusLogoGenerator() {
                 <div>
                   <label
                     className={`block font-medium mb-3 ${
-                      formData.logoVariant === "Transparent Bg"
-                        ? "opacity-50"
-                        : ""
+                      formData.logoVariant === "Transparent Bg" ? "opacity-50" : ""
                     }`}
                     style={{
                       fontFamily: "var(--font-plus-jakarta)",
@@ -669,9 +620,7 @@ export default function CampusLogoGenerator() {
                         style={{
                           backgroundColor: color.value,
                         }}
-                        onClick={() =>
-                          handleInputChange("backgroundColor", color.value)
-                        }
+                        onClick={() => handleInputChange("backgroundColor", color.value)}
                       />
                     ))}
                   </div>

@@ -1,14 +1,13 @@
-import MuImage from "@/components/MuImage";
 import Link from "next/link";
-import { yip } from "@/data/events";
-import { cdnUrl } from "@/services/cdn";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { yip } from "@/data/events";
+import { cdnUrl } from "@/services/cdn";
 
 export const metadata = {
   title: "YIP | µLearn",
-  description:
-    "Young Innovators Programme (YIP 5.0) by Kerala Government, K-DISC and µLearn.",
+  description: "Young Innovators Programme (YIP 5.0) by Kerala Government, K-DISC and µLearn.",
 };
 
 export default function YipPage() {
@@ -24,12 +23,9 @@ export default function YipPage() {
             newResult.push(p);
             if (idx < parts.length - 1) {
               newResult.push(
-                <strong
-                  key={`${phrase}-${idx}`}
-                  className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent"
-                >
+                <strong key={`${phrase}-${idx}`} className="text-mulearn">
                   {phrase}
-                </strong>
+                </strong>,
               );
             }
           });
@@ -43,18 +39,14 @@ export default function YipPage() {
     return result;
   };
 
-  const renderDescription = (
-    description: string,
-    link?: string,
-    index?: number
-  ) => {
+  const renderDescription = (description: string, link?: string, index?: number) => {
     if (index === 0 && link) {
       const parts = description.split("Click Here");
       return (
         <>
           {parts[0]}
           <Link href={link} target="_blank" rel="noopener noreferrer">
-            <span className="hover:text-chart-5 transition-colors bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="hover:text-chart-5 transition-colors text-mulearn">
               <strong>Click Here</strong>
             </span>
           </Link>
@@ -70,7 +62,7 @@ export default function YipPage() {
         <>
           {parts[0]}
           <Link href={link} target="_blank" rel="noopener noreferrer">
-            <span className="hover:text-mulearn-duke-purple bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors">
+            <span className="hover:text-mulearn-duke-purple text-mulearn transition-colors">
               <strong>Click Here to Login</strong>
             </span>
           </Link>
@@ -80,11 +72,7 @@ export default function YipPage() {
     }
 
     if (index === 2) {
-      const boldPhrases = [
-        "Voice of Stakeholder(VOS Module)",
-        "#yip5.0-vos",
-        "400 Karma Points",
-      ];
+      const boldPhrases = ["Voice of Stakeholder(VOS Module)", "#yip5.0-vos", "400 Karma Points"];
       return <>{makeBold(description, boldPhrases)}</>;
     }
 
@@ -129,36 +117,32 @@ export default function YipPage() {
       case "type1":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type2":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type3":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       default:
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
     }
   };
 
   return (
-    <main role="main" className="min-h-screen w-full text-mulearn-blackish">
+    <main className="min-h-screen w-full text-mulearn-blackish">
       <section className="max-w-[1600px] mx-auto">
         <div className="flex flex-row justify-center items-stretch mt-8 mx-4 flex-wrap relative">
           <Card className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
@@ -167,7 +151,7 @@ export default function YipPage() {
               <div className="p-8">
                 <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
                   Kerala&apos;s Biggest{" "}
-                  <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <strong className="font-bold text-mulearn">
                     Innovation Celebration is here!
                   </strong>
                 </h2>
@@ -179,7 +163,7 @@ export default function YipPage() {
                   height={30}
                   className="mt-[-3rem] max-w-[15rem] h-auto"
                 />
-                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
                   Young Innovators Programme 5.0
                 </p>
               </div>
@@ -190,12 +174,8 @@ export default function YipPage() {
                 height={288}
                 className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
               />
-              </div>
-              <Link
-              href="https://yip.kerala.gov.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </div>
+            <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant={"mulearn"}
                 className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
@@ -206,23 +186,17 @@ export default function YipPage() {
               <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
                 <p>
                 YIP 5.0 is here and{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <strong className="font-bold text-mulearn">
                   it&apos;s bigger and more impactful than ever before!
                 </strong>{" "}
                 Backed by the Kerala government.
                 <br />
                 <br />
-                This year&apos;s initiative provides an incredible opportunity
-                for{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                  college and university students
-                </strong>{" "}
+                This year&apos;s initiative provides an incredible opportunity for{" "}
+                <strong className="font-bold text-mulearn">college and university students</strong>{" "}
                 to showcase their innovation skills and create{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                  real-world impact
-                </strong>
-                .
-                </p>
+                <strong className="font-bold text-mulearn">real-world impact</strong>.
+              </p>
               </div>
             </CardContent>
           </Card>
@@ -252,38 +226,34 @@ export default function YipPage() {
               </CardContent>
             </Card>
 
-            <Card className="max-w-[538px] rounded-[25px] m-4 transition-all duration-300 shadow-[0px_0px_23px_rgba(130,177,255,0.22)]">
-              <CardContent className="p-8 flex flex-col items-center">
-                <h3 className="font-medium text-[2.25rem] leading-[36px] capitalize text-mulearn-blackish max-[768px]:text-[1.75rem]">
-                  Brainstorm, Collaborate, And Create
-                </h3>
-                <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/bllines.png")}
-                  alt="Decorative blue lines"
-                  width={240}
-                  height={30}
-                  className="mt-[-20px] mb-[10px] h-auto"
-                />
-                <MuImage
-                  src={cdnUrl(
-                    "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png"
-                  )}
-                  alt="Students collaborating illustration"
-                  width={320}
-                  height={192}
-                  className="mt-[-3rem] h-[12rem] w-auto max-[460px]:h-[8rem]"
-                />
-              </CardContent>
-            </Card>
+            <div className="max-w-[538px] p-8 shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 flex flex-col items-center transition-all duration-300">
+              <h3 className="font-medium text-[2.25rem] leading-[36px] capitalize text-mulearn-blackish max-[768px]:text-[1.75rem]">
+                Brainstorm, Collaborate, And Create
+              </h3>
+              <MuImage
+                src={cdnUrl("src/modules/Public/yip/assets/bllines.png")}
+                alt="Decorative blue lines"
+                width={240}
+                height={30}
+                className="mt-[-20px] mb-[10px] h-auto"
+              />
+              <MuImage
+                src={cdnUrl(
+                  "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png",
+                )}
+                alt="Students collaborating illustration"
+                width={320}
+                height={192}
+                className="mt-[-3rem] h-[12rem] w-auto max-[460px]:h-[8rem]"
+              />
+            </div>
           </div>
 
-          <div className="flex flex-row justify-between items-center flex-wrap bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-8 m-4 w-full rounded-[25px]">
+          <div className="flex flex-row justify-between items-center flex-wrap bg-mulearn p-8 m-4 w-full rounded-[25px]">
             <div className="font-light text-[1.75rem] leading-[36px] max-w-[38rem] text-mulearn-whitish max-[768px]:text-[1.35rem] max-[768px]:leading-[24px]">
               Pitch your{" "}
-              <strong className="font-bold">
-                ideas and work alongside industry experts
-              </strong>{" "}
-              to solve real-life problems.
+              <strong className="font-bold">ideas and work alongside industry experts</strong> to
+              solve real-life problems.
               <br />
               <br />
               Get valuable{" "}
@@ -320,58 +290,48 @@ export default function YipPage() {
                   }`}
                 >
                   <div className="hidden lg:block w-full">
-                    <Card className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
-                      <CardContent className="p-0">
+                    <div className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
+                      <div
+                        className={`flex items-center ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
+                      >
                         <div
-                          className={`flex items-center ${
-                            index % 2 === 0 ? "flex-row-reverse" : ""
-                          }`}
+                          className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}
                         >
-                          <div
-                            className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}
-                          >
-                            <MuImage
-                              src={event.icon}
-                              alt={`${event.title} icon`}
-                              width={80}
-                              height={80}
-                              className="w-20 h-20 object-contain"
-                            />
-                          </div>
-                          <div
-                            className={`flex-shrink-0 px-8 py-6 rounded-full text-mulearn-whitish font-bold text-lg min-w-[200px] flex items-center justify-center ${colors.labelBg}`}
-                          >
-                            <div className="text-center">
-                              {event.phaseLabel.split("\n").map((line, i) => (
-                                <span key={i} className="block">
-                                  {line}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="flex-1 p-6">
-                            <div
-                              className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
-                            >
-                              {event.title}
-                            </div>
-                            <div className="text-mulearn-blackish">
-                              {renderDescription(
-                                event.description,
-                                event.link,
-                                index
-                              )}
-                            </div>
+                          <MuImage
+                            src={event.icon}
+                            alt={`${event.title} icon`}
+                            width={80}
+                            height={80}
+                            className="w-20 h-20 object-contain"
+                          />
+                        </div>
+                        <div
+                          className={`flex-shrink-0 px-8 py-6 rounded-full text-mulearn-whitish font-bold text-lg min-w-[200px] flex items-center justify-center ${colors.labelBg}`}
+                        >
+                          <div className="text-center">
+                            {event.phaseLabel.split("\n").map((line, i) => (
+                              <span key={i} className="block">
+                                {line}
+                              </span>
+                            ))}
                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
+                        <div className="flex-1 p-6">
+                          <div
+                            className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
+                          >
+                            {event.title}
+                          </div>
+                          <div className="text-mulearn-blackish">
+                            {renderDescription(event.description, event.link, index)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="lg:hidden w-full">
-                    <div
-                      className={`h-32 flex items-center justify-center ${colors.iconBg}`}
-                    >
+                    <div className={`h-32 flex items-center justify-center ${colors.iconBg}`}>
                       <MuImage
                         src={event.icon}
                         alt={`${event.title} icon`}
@@ -391,22 +351,16 @@ export default function YipPage() {
                         ))}
                       </div>
                     </div>
-                    <Card className="mt-4 rounded-2xl border shadow-md bg-mulearn-whitish">
-                      <CardContent className="p-6">
-                        <div
-                          className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
-                        >
-                          {event.title}
-                        </div>
-                        <div className="text-mulearn-blackish">
-                          {renderDescription(
-                            event.description,
-                            event.link,
-                            index
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="bg-mulearn-whitish mt-4 p-6 shadow-md rounded-2xl border">
+                      <div
+                        className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
+                      >
+                        {event.title}
+                      </div>
+                      <div className="text-mulearn-blackish">
+                        {renderDescription(event.description, event.link, index)}
+                      </div>
+                    </div>
                   </div>
                 </div>
               );

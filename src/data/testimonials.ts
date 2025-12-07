@@ -1,4 +1,4 @@
-import { TextTestimonial, VideoTestimonial } from "@/lib/types";
+import type { TextTestimonial, VideoTestimonial } from "@/lib/types";
 
 export const videoTestimonials: VideoTestimonial[] = [
   {

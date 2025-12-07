@@ -1,6 +1,6 @@
 import { MotionDiv } from "@/components/MuFramer";
+import type { Event } from "@/lib/types";
 import EventCard from "./EventCard";
-import { Event } from "@/lib/types";
 
 interface Props {
   events: Event[];

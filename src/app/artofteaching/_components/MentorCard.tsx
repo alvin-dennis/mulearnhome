@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
-import { FaLinkedin } from "react-icons/fa";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card"
 
 interface MentorCardProps {
   name: string;
@@ -11,13 +11,7 @@ interface MentorCardProps {
   linkedIn?: string;
 }
 
-
-const MentorCard = ({
-  name,
-  designation,
-  image,
-  linkedIn,
-}: MentorCardProps) => {
+const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => {
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
   // const mentorImage = image ? image : fallbackImage;
   const mentorImage = image ?  fallbackImage: undefined;
@@ -37,23 +31,17 @@ const MentorCard = ({
             />
           </div>
         )}
-
-        <div className="w-full mt-4">
-          <h3 className="text-lg font-semibold text-mulearn-blackish">{name}</h3>
-          <p className="text-sm text-gray-600 leading-relaxed mt-1">{designation}</p>
+        <div className="flex flex-col items-end">
+          {linkedIn && linkedIn !== "" && (
+            <Link href={linkedIn} target="_blank" rel="noopener noreferrer" className="mt-2 group">
+              <FaLinkedin className="w-7 h-7 rounded overflow-hidden hover:scale-110 transition-transform duration-300 hover:shadow-lg" />
+            </Link>
+          )}
         </div>
-
-        {linkedIn && linkedIn !== "" && (
-          <Link
-            href={linkedIn}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center justify-center"
-          >
-            <FaLinkedin className="w-6 h-6 text-mulearn-trusty-blue hover:scale-110 transition-transform duration-300" />
-          </Link>
-        )}
       </CardContent>
+
+      <h3 className="text-lg font-semibold text-mulearn-blackish mt-4 mb-2">{name}</h3>
+      <p className="text-sm text-gray-600 leading-relaxed">{designation}</p>
     </Card>
   );
 };

@@ -1,17 +1,9 @@
 "use client";
 
+import { Building, Calendar, FileText, HelpCircle, School, Send, Users } from "lucide-react";
 import { useState } from "react";
-import {
-  Send,
-  Building,
-  School,
-  Users,
-  Calendar,
-  FileText,
-  HelpCircle,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -56,9 +48,9 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
+    type: "success" | "error" | null;
     message: string;
-  }>({ type: null, message: '' });
+  }>({ type: null, message: "" });
 
   const intents = [
     { value: "", label: "Select one", disabled: true },
@@ -138,19 +130,19 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
+    setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -159,10 +151,10 @@ export default function ContactForm() {
 
       if (data.success) {
         setSubmitStatus({
-          type: 'success',
-          message: data.message || 'Thank you for your message! We\'ll get back to you soon.',
+          type: "success",
+          message: data.message || "Thank you for your message! We'll get back to you soon.",
         });
-        
+
         // Reset form on success
         setFormData({
           intent: "",
@@ -195,27 +187,27 @@ export default function ContactForm() {
         setErrors({});
       } else {
         setSubmitStatus({
-          type: 'error',
-          message: data.message || 'Something went wrong. Please try again.',
+          type: "error",
+          message: data.message || "Something went wrong. Please try again.",
         });
-        
+
         // Handle validation errors
         if (data.errors && Array.isArray(data.errors)) {
           const errorMap: Record<string, string> = {};
           data.errors.forEach((error: string) => {
-            if (error.toLowerCase().includes('name')) errorMap.name = error;
-            else if (error.toLowerCase().includes('email')) errorMap.email = error;
-            else if (error.toLowerCase().includes('message')) errorMap.message = error;
-            else if (error.toLowerCase().includes('intent')) errorMap.intent = error;
-            else if (error.toLowerCase().includes('consent')) errorMap.consent = error;
+            if (error.toLowerCase().includes("name")) errorMap.name = error;
+            else if (error.toLowerCase().includes("email")) errorMap.email = error;
+            else if (error.toLowerCase().includes("message")) errorMap.message = error;
+            else if (error.toLowerCase().includes("intent")) errorMap.intent = error;
+            else if (error.toLowerCase().includes("consent")) errorMap.consent = error;
           });
           setErrors(errorMap);
         }
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
-        type: 'error',
-        message: 'Network error. Please check your connection and try again.',
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -223,13 +215,10 @@ export default function ContactForm() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value, type } = e.target;
-    const checked =
-      type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
+    const checked = type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
 
     setFormData((prev) => ({
       ...prev,
@@ -649,9 +638,7 @@ export default function ContactForm() {
                 placeholder="Enter your full name"
                 className={errors.name ? "border-red-500" : ""}
               />
-              {errors.name && (
-                <p className="text-sm text-red-600">{errors.name}</p>
-              )}
+              {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
             </div>
 
             <div className="space-y-2">
@@ -665,9 +652,7 @@ export default function ContactForm() {
                 placeholder="Enter your email address"
                 className={errors.email ? "border-red-500" : ""}
               />
-              {errors.email && (
-                <p className="text-sm text-red-600">{errors.email}</p>
-              )}
+              {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
             </div>
           </div>
 
@@ -710,9 +695,7 @@ export default function ContactForm() {
               errors.message ? "border-red-500" : ""
             }`}
           />
-          {errors.message && (
-            <p className="text-sm text-red-600">{errors.message}</p>
-          )}
+          {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}
         </div>
 
         <div className="space-y-2">
@@ -736,9 +719,9 @@ export default function ContactForm() {
         {submitStatus.type && (
           <div
             className={`p-4 rounded-lg mb-4 ${
-              submitStatus.type === 'success'
-                ? 'bg-green-50 border border-green-200 text-green-800'
-                : 'bg-red-50 border border-red-200 text-red-800'
+              submitStatus.type === "success"
+                ? "bg-green-50 border border-green-200 text-green-800"
+                : "bg-red-50 border border-red-200 text-red-800"
             }`}
           >
             <p className="text-sm font-medium">{submitStatus.message}</p>
@@ -748,7 +731,7 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-mulearn text-mulearn-whitish py-3 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

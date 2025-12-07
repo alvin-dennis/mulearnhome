@@ -1,6 +1,5 @@
+import type { Metadata } from "next";
 import { refundPolicy } from "@/data/legal";
-
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Refund Policy | µLearn Foundation",
@@ -23,8 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Refund Policy | µLearn Foundation",
-    description:
-      "Learn about µLearn Foundation's donation refund policy and terms.",
+    description: "Learn about µLearn Foundation's donation refund policy and terms.",
   },
 };
 
@@ -35,7 +33,7 @@ export default async function RefundPolicy() {
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(
         /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-        '<a href="mailto:$1" class="font-medium text-mulearn-trusty-blue underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>'
+        '<a href="mailto:$1" class="font-medium text-mulearn-trusty-blue underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>',
       );
   return (
     <main className="min-h-screen bg[var(--mulearn-whitish)]">
@@ -44,9 +42,7 @@ export default async function RefundPolicy() {
           <h1 className="mb-3 text-3xl sm:text-4xl font-extrabold text-mulearn-blackish tracking-tight uppercase">
             {refundPolicy.title}
           </h1>
-          <p className="text-sm text-mulearn-gray-600">
-            Last Updated: {refundPolicy.lastUpdated}
-          </p>
+          <p className="text-sm text-mulearn-gray-600">Last Updated: {refundPolicy.lastUpdated}</p>
         </header>
 
         <div className="mb-12 space-y-6">
@@ -77,10 +73,7 @@ export default async function RefundPolicy() {
               </div>
 
               {section.subsections.length > 0 && (
-                <ol
-                  className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish"
-                  style={{ listStyleType: "lower-roman" }}
-                >
+                <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish list-[lower-roman]">
                   {section.subsections.map((subsection, subIndex) => (
                     <li key={subIndex} className="pl-2 leading-relaxed">
                       <span

@@ -12,10 +12,7 @@ export default function Onboarding() {
         transition={{ duration: 0.6 }}
       >
         <h2 className=" mb-16 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
-          Onboarding{" "}
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-            Process
-          </span>
+          Onboarding <span className="text-mulearn">Process</span>
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3 md:gap-6">
@@ -32,10 +29,7 @@ export default function Onboarding() {
               className="relative flex flex-col items-center"
             >
               {idx < enablers.onboarding.length - 1 && (
-                <div
-                  className="absolute left-[calc(50%+3rem)] top-12 hidden h-0.5 w-[calc(100%-6rem)] border-t-2 border-dashed border-mulearn-blackish/30 md:block"
-                  style={{ zIndex: 0 }}
-                />
+                <div className="absolute left-[calc(50%+3rem)] top-12 hidden h-0.5 w-[calc(100%-6rem)] border-t-2 border-dashed border-mulearn-blackish/30 md:block z-0" />
               )}
 
               <div className="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-linear-to-br from-mulearn-trusty-blue to-mulearn-duke-purple shadow-lg">
@@ -55,12 +49,8 @@ export default function Onboarding() {
               </div>
 
               <div className="text-center">
-                <h3 className=" mb-3 text-xl font-bold text-mulearn-blackish">
-                  {step.title}
-                </h3>
-                <p className=" text-sm leading-relaxed text-mulearn-gray-600">
-                  {step.description}
-                </p>
+                <h3 className=" mb-3 text-xl font-bold text-mulearn-blackish">{step.title}</h3>
+                <p className=" text-sm leading-relaxed text-mulearn-gray-600">{step.description}</p>
               </div>
             </MotionDiv>
           ))}

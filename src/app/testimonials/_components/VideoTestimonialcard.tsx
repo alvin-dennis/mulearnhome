@@ -6,10 +6,7 @@ interface VideoTestimonialCardProps {
   testimonial: VideoTestimonial;
 }
 
-export default function VideoTestimonialCard({
-  testimonial,
-}: VideoTestimonialCardProps) {
-
+export default function VideoTestimonialCard({ testimonial }: VideoTestimonialCardProps) {
   return (
     <Card className="rounded-2xl overflow-hidden">
       <CardContent className="p-0">

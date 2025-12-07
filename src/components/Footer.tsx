@@ -1,8 +1,8 @@
-import { MotionFooter } from "@/components/MuFramer";
+import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import { MotionFooter } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { footer, socials, contactInfo } from "@/data/common";
-import { Mail, Phone, Globe } from "lucide-react";
+import { contactInfo, footer, socials } from "@/data/common";
 
 export default function Footer() {
   return (
@@ -39,9 +39,8 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-mulearn-gray-600 text-sm text-justify leading-relaxed max-w-md">
-                Empowering learners through community-driven education and
-                innovative learning pathways. Join us in shaping the future of
-                education.
+                Empowering learners through community-driven education and innovative learning
+                pathways. Join us in shaping the future of education.
               </p>
               <div className="flex flex-col space-y-3">
                 <h3 className="text-sm font-semibold text-mulearn-blackish uppercase tracking-wide">
@@ -55,7 +54,7 @@ export default function Footer() {
                         key={social.label}
                         href={social.url}
                         aria-label={social.label}
-                        className="w-10 h-10 rounded-lg bg-mulearn-whitish border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:text-mulearn-whitish hover:shadow-lg hover:scale-105"
+                        className="w-10 h-10 rounded-lg bg-mulearn-whitish border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-mulearn hover:text-mulearn-whitish hover:shadow-lg hover:scale-105"
                       >
                         <Icon />
                       </Link>
@@ -70,9 +69,7 @@ export default function Footer() {
             <div
               key={section.title}
               className={`space-y-4 text-center lg:text-left ${
-                ["Quick Links", "Legal", "Be Part of Us"].includes(
-                  section.title
-                )
+                ["Quick Links", "Legal", "Be Part of Us"].includes(section.title)
                   ? "mt-8 lg:mt-12"
                   : ""
               }`}
@@ -102,9 +99,7 @@ export default function Footer() {
             <div className="text-sm text-mulearn-blakish-600 font-medium">
               {contactInfo.copyright}
             </div>
-            <div className="text-xs text-mulearn-gray-500 mt-1">
-              {contactInfo.address}
-            </div>
+            <div className="text-xs text-mulearn-gray-500 mt-1">{contactInfo.address}</div>
           </div>
 
           <div className="flex flex-wrap justify-center lg:justify-end items-center gap-4 text-sm">

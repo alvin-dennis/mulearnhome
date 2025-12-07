@@ -19,10 +19,9 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
         </h2>
 
         <p className="text-[20px] md:text-[20px] leading-[1.45] font-normal text-mulearn-gray-600 mx-auto max-w-[1119px]">
-          A Learner is a doer — driven students and professionals who build real
-          projects, solve problems, and collaborate with peers and mentors. They
-          grow by shipping, iterating, and sharing their work, turning curiosity
-          into a portfolio that opens opportunities.
+          A Learner is a doer — driven students and professionals who build real projects, solve
+          problems, and collaborate with peers and mentors. They grow by shipping, iterating, and
+          sharing their work, turning curiosity into a portfolio that opens opportunities.
         </p>
 
         {}
@@ -49,10 +48,9 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
           Why <span className="text-mulearn-trusty-blue">μLearn?</span>
         </h3>
         <p className="text-base sm:text-lg text-mulearn-gray-600 leading-relaxed">
-          In a world that never stops changing, learning consistently is how you
-          stay ahead. μLearn helps learners build practical skills through
-          projects, mentorship, and community — investing in your future and
-          your ability to create impact.
+          In a world that never stops changing, learning consistently is how you stay ahead. μLearn
+          helps learners build practical skills through projects, mentorship, and community —
+          investing in your future and your ability to create impact.
         </p>
       </div>
     </section>

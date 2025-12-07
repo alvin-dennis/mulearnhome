@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,9 +20,7 @@ export default function Level5Section() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.85 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.6 }}
             className="relative flex items-center justify-center lg:justify-start"
           >
@@ -45,22 +43,16 @@ export default function Level5Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                The Global{" "}
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Arena</span>
+                The Global <span className="text-mulearn">Arena</span>
               </h2>
-              <p className="text-xl text-mulearn-gray-600">
-                Challenges, Hackathons & Competitions
-              </p>
+              <p className="text-xl text-mulearn-gray-600">Challenges, Hackathons & Competitions</p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 The student now steps onto{" "}
-               <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                global battlegrounds
-              </span>
-                . Facing global peers raises the bar, sharpens skills, and
-                builds recognition.
+                <span className="text-mulearn">global battlegrounds</span>. Facing global peers
+                raises the bar, sharpens skills, and builds recognition.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -83,8 +75,7 @@ export default function Level5Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Civil Engineers:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;Sustainable city models in design
-                      challenges.&rdquo;
+                      &ldquo;Sustainable city models in design challenges.&rdquo;
                     </span>
                   </p>
                 </div>

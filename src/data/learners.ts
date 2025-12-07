@@ -1,9 +1,4 @@
-import {
-  Testimonial,
-  LearnerRoleTag,
-  TopLearner,
-  OnboardingStep,
-} from "@/lib/types";
+import type { LearnerRoleTag, OnboardingStep, Testimonial, TopLearner } from "@/lib/types";
 
 export const learnerIdentityTags: LearnerRoleTag[] = [
   { label: "The Ambitious Student", id: "ambitious" },

@@ -1,6 +1,7 @@
+import { existsSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import axios from "axios";
-import { writeFileSync, existsSync } from "fs";
-import path from "path";  
+import { serverEnv } from "@/lib/env/env.server";
 
 interface ContributorStats {
   username: string;
@@ -12,7 +13,7 @@ interface ContributorStats {
   issues_closed: number;
 }
 
-const TOKEN = process.env.GH_TOKEN;
+const TOKEN = serverEnv.GH_TOKEN;
 if (!TOKEN) throw new Error("GITHUB_TOKEN is required to run");
 
 function sleep(ms: number) {
@@ -21,7 +22,7 @@ function sleep(ms: number) {
 
 async function paginatedGet<T>(
   url: string,
-  params: Record<string, string | number> = {}
+  params: Record<string, string | number> = {},
 ): Promise<T[]> {
   let page = 1;
   const results: T[] = [];
@@ -51,16 +52,12 @@ async function paginatedGet<T>(
 function getMonth(dateStr: string | null) {
   if (!dateStr) return null;
   const d = new Date(dateStr);
-  return `${d.getUTCFullYear()}-${(d.getUTCMonth() + 1)
-    .toString()
-    .padStart(2, "0")}`;
+  return `${d.getUTCFullYear()}-${(d.getUTCMonth() + 1).toString().padStart(2, "0")}`;
 }
 
 export async function getLeaderboard() {
   const currentMonth = new Date();
-  const currentMonthStr = `${currentMonth.getUTCFullYear()}-${(
-    currentMonth.getUTCMonth() + 1
-  )
+  const currentMonthStr = `${currentMonth.getUTCFullYear()}-${(currentMonth.getUTCMonth() + 1)
     .toString()
     .padStart(2, "0")}`;
 
@@ -71,18 +68,16 @@ export async function getLeaderboard() {
 
   const repos = await paginatedGet<{ name: string }>(
     `https://api.github.com/orgs/gtech-mulearn/repos`,
-    { type: "all", sort: "updated" }
+    { type: "all", sort: "updated" },
   );
 
-  const contributorsMap: Record<
-    string,
-    { overall: ContributorStats; monthly: ContributorStats }
-  > = {};
+  const contributorsMap: Record<string, { overall: ContributorStats; monthly: ContributorStats }> =
+    {};
 
   const repoPromises = repos.map(async (repo) => {
     const [contributors, prs, issues] = await Promise.all([
       paginatedGet<{ login: string; contributions: number }>(
-        `https://api.github.com/repos/gtech-mulearn/${repo.name}/contributors`
+        `https://api.github.com/repos/gtech-mulearn/${repo.name}/contributors`,
       ),
       paginatedGet<{
         user: { login: string } | null;
@@ -179,7 +174,7 @@ export async function getLeaderboard() {
             issues_closed: 0,
           },
           monthly: {
-              username: login,
+            username: login,
             commits: 0,
             prs_opened: 0,
             prs_merged: 0,
@@ -189,13 +184,11 @@ export async function getLeaderboard() {
         };
       }
       contributorsMap[login].overall.issues_opened += 1;
-      contributorsMap[login].overall.issues_closed +=
-        issue.state === "closed" ? 1 : 0;
+      contributorsMap[login].overall.issues_closed += issue.state === "closed" ? 1 : 0;
 
       if (getMonth(issue.created_at) === currentMonthStr) {
         contributorsMap[login].monthly.issues_opened += 1;
-        contributorsMap[login].monthly.issues_closed +=
-          issue.state === "closed" ? 1 : 0;
+        contributorsMap[login].monthly.issues_closed += issue.state === "closed" ? 1 : 0;
       }
     }
   }
@@ -205,12 +198,9 @@ export async function getLeaderboard() {
       (a, b) =>
         Object.values(b.overall).reduce(
           (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0
+          0,
         ) -
-        Object.values(a.overall).reduce(
-          (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0
-        )
+        Object.values(a.overall).reduce((sum, val) => sum + (typeof val === "number" ? val : 0), 0),
     )
     .slice(0, 10)
     .map((c) => c.overall);
@@ -220,12 +210,9 @@ export async function getLeaderboard() {
       (a, b) =>
         Object.values(b.monthly).reduce(
           (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0
+          0,
         ) -
-        Object.values(a.monthly).reduce(
-          (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0
-        )
+        Object.values(a.monthly).reduce((sum, val) => sum + (typeof val === "number" ? val : 0), 0),
     )
     .slice(0, 10)
     .map((c) => c.monthly);
@@ -234,21 +221,18 @@ export async function getLeaderboard() {
     return Promise.all(
       list.map(async (contributor) => {
         try {
-          const { data } = await axios.get(
-            `https://api.github.com/users/${contributor.username}`,
-            {
-              headers: {
-                Authorization: `token ${TOKEN}`,
-              },
-            }
-          );
+          const { data } = await axios.get(`https://api.github.com/users/${contributor.username}`, {
+            headers: {
+              Authorization: `token ${TOKEN}`,
+            },
+          });
 
           contributor.displayname = data.name || contributor.username;
         } catch {
           contributor.displayname = contributor.username;
         }
         return contributor;
-      })
+      }),
     );
   }
 
@@ -267,12 +251,7 @@ export async function getLeaderboard() {
   try {
     const data = await getLeaderboard();
 
-    const outputPath = path.join(
-      process.cwd(),
-      "src",
-      "data",
-      "leaderboard.json"
-    );
+    const outputPath = path.join(process.cwd(), "src", "data", "leaderboard.json");
 
     if (existsSync(outputPath)) {
       console.log(`✏️ Updating existing file: ${outputPath}`);

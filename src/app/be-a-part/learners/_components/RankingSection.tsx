@@ -56,9 +56,7 @@ const SmallLearnerCard: React.FC<{
       />
 
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">
-          {name}
-        </p>
+        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">{name}</p>
         <p className="text-xs font-medium text-mulearn-whitish/90 drop-shadow">
           {kp.toLocaleString()} <span className="font-bold">KP</span>
         </p>

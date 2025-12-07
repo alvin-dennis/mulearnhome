@@ -1,8 +1,8 @@
-import { MotionDiv } from "@/components/MuFramer";
-import { VideoTestimonial } from "@/lib/types";
-import VideoTestimonialCard from "./VideoTestimonialcard";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { MotionDiv } from "@/components/MuFramer";
+import type { VideoTestimonial } from "@/lib/types";
+import VideoTestimonialCard from "./VideoTestimonialcard";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

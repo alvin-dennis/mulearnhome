@@ -1,6 +1,6 @@
 "use client";
-import { Star, MessageCircle, Twitter, Linkedin, Users } from "lucide-react";
-import { TextTestimonial } from "@/lib/types";
+import { Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
@@ -8,14 +8,11 @@ interface TextTestimonialCardProps {
   testimonial: TextTestimonial;
 }
 
-export default function TextTestimonialCard({
-  testimonial,
-}: TextTestimonialCardProps) {
+export default function TextTestimonialCard({ testimonial }: TextTestimonialCardProps) {
   const getSocialIcon = (socialProof?: string) => {
     if (!socialProof) return <MessageCircle className="w-4 h-4" />;
 
-    if (socialProof.includes("LinkedIn"))
-      return <Linkedin className="w-4 h-4" />;
+    if (socialProof.includes("LinkedIn")) return <Linkedin className="w-4 h-4" />;
     if (socialProof.includes("Twitter")) return <Twitter className="w-4 h-4" />;
     if (socialProof.includes("Community")) return <Users className="w-4 h-4" />;
 
@@ -59,9 +56,7 @@ export default function TextTestimonialCard({
           key={i}
           className={cn(
             "w-4 h-4",
-            i < rating
-              ? "fill-yellow-400 text-yellow-400"
-              : "fill-gray-300 text-gray-300"
+            i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300",
           )}
         />
       ))}
@@ -77,44 +72,41 @@ export default function TextTestimonialCard({
   };
 
   return (
-    <Card className="rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 h-full bg-mulearn-whitish border border-mulearn-gray-200">
-      <CardContent className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden bg-mulearn-gray-200">
-              <img
-                src={testimonial.profileImage}
-                alt={testimonial.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className=" font-semibold text-mulearn-blackish">
-                {testimonial.name}
-              </h3>
-              <p className="text-sm text-mulearn-gray-600 ">
-                {testimonial.role}
-                {testimonial.company && ` • ${testimonial.company}`}
-              </p>
-            </div>
+    <div className="bg-mulearn-whitish rounded-2xl border border-mulearn-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      {}
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-mulearn-gray-200">
+            <img
+              src={testimonial.profileImage}
+              alt={testimonial.name}
+              className="w-full h-full object-cover"
+            />
           </div>
-
-          <div
-            className={cn(
-              "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide",
-              getTypeColor(testimonial.type)
-            )}
-          >
-            {getTypeLabel(testimonial.type)}
+          <div>
+            <h3 className=" font-semibold text-mulearn-blackish">{testimonial.name}</h3>
+            <p className="text-sm text-mulearn-gray-600 ">
+              {testimonial.role}
+              {testimonial.company && ` • ${testimonial.company}`}
+            </p>
           </div>
         </div>
 
-        <blockquote className="mb-4">
-          <p className="text-mulearn-gray-700  leading-relaxed">
-            &quot;{testimonial.quote}&quot;
-          </p>
-        </blockquote>
-      </CardContent>
+        {}
+        <div
+          className={cn(
+            "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide",
+            getTypeColor(testimonial.type),
+          )}
+        >
+          {getTypeLabel(testimonial.type)}
+        </div>
+      </div>
+
+      {}
+      <blockquote className="mb-4">
+        <p className="text-mulearn-gray-700  leading-relaxed">&quot;{testimonial.quote}&quot;</p>
+      </blockquote>
 
       <CardFooter className="pt-0">
         <div className="flex items-center justify-between pt-4 border-t border-mulearn-gray-100">
@@ -131,6 +123,6 @@ export default function TextTestimonialCard({
           </div>
         </div>
       </CardFooter>
-    </Card>
+    </div>
   );
 }

@@ -1,5 +1,5 @@
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv } from "@/components/MuFramer";
+import type { Variants } from "framer-motion";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { opportunities } from "@/data/home";
 
@@ -27,10 +27,9 @@ export default function Opportunities() {
             At The End Of a μLearners Journey
           </h1>
           <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
-            At the end of a μLearner&apos;s journey, they are equipped with a
-            plethora of opportunities to choose from. They can choose to work in
-            a job, freelance, research, start their own venture, or work for a
-            social cause.
+            At the end of a μLearner&apos;s journey, they are equipped with a plethora of
+            opportunities to choose from. They can choose to work in a job, freelance, research,
+            start their own venture, or work for a social cause.
           </h6>
         </MotionDiv>
 
@@ -57,9 +56,7 @@ export default function Opportunities() {
                 />
               </span>
 
-              <h6 className="text-xl font-semibold text-center mt-auto">
-                {opportunity.name}
-              </h6>
+              <h6 className="text-xl font-semibold text-center mt-auto">{opportunity.name}</h6>
             </MotionDiv>
           ))}
         </MotionDiv>

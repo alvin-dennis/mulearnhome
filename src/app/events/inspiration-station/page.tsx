@@ -1,11 +1,13 @@
 "use client";
 
-import { weeklyTwitch } from "@/data/events";
-import { Radio, Calendar, PlayCircle, Users, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { EpisodeCard } from "./_components/EpisodeCard";
+import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { weeklyTwitch } from "@/data/events";
+import { EpisodeCard } from "./_components/EpisodeCard";
 
 export default function InspirationStationPage() {
   const events = weeklyTwitch["inspiration station radio"];
@@ -31,35 +33,33 @@ export default function InspirationStationPage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                µLearn{" "}
-                <span className="block bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mt-2">
-                  Inspiration Station Radio
-                </span>
+                µLearn <span className="block text-mulearn mt-2">Inspiration Station Radio</span>
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-mulearn-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                µLearn&apos;s storytelling-driven radio experience featuring
-                real journeys, insights, and life-changing moments from the
-                community.
+                µLearn&apos;s storytelling-driven radio experience featuring real journeys,
+                insights, and life-changing moments from the community.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <a href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
-                  <Button className="px-6 py-2.5 md:px-8 md:py-3 gap-2 text-sm md:text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-[linear-gradient(135deg,#2E85FE_0%,#AF2EE6_100%)] text-mulearn-whitish hover:brightness-110">
+                <Link href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
+                  <Button variant={"mulearn"} className="px-6 py-2.5 gap-2 font-semibold">
                     <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                     Join
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-                <img
+                <Image
                   src="/assets/isr/isr.svg"
                   alt="Inspiration Station Radio Illustration"
+                  width={500}
+                  height={500}
                   className="w-full h-auto rounded-2xl"
-                  loading="eager"
+                  priority
                 />
               </div>
             </div>
@@ -78,29 +78,27 @@ export default function InspirationStationPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("upcoming")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "upcoming"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 font-semibold rounded-full ${
+                  activeTab === "upcoming" ? "sm:shadow-xl scale-105" : "text-gray-500"
                 }`}
               >
                 <Clock className="w-4 h-4 md:w-5 md:h-5" />
                 Upcoming
-              </button>
+              </Button>
 
-              <button
+              <Button
+                variant={"mulearn-outline"}
                 onClick={() => setActiveTab("past")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 border-2 ${
-                  activeTab === "past"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue border-mulearn-trusty-blue shadow-lg sm:shadow-xl scale-105"
-                    : "text-gray-500 border-transparent hover:text-mulearn-trusty-blue hover:border-mulearn-trusty-blue/30 hover:bg-mulearn-whitish/50"
+                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${
+                  activeTab === "past" ? "sm:shadow-xl scale-105" : "text-gray-500"
                 }`}
               >
                 <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                 Previous
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -131,9 +129,8 @@ export default function InspirationStationPage() {
               <div>
                 <div className="text-center mb-6 md:mb-8">
                   <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-                    Listed below are the speakers who came to the inspiration
-                    stations and inspired our listeners with their stories and
-                    experiences.
+                    Listed below are the speakers who came to the inspiration stations and inspired
+                    our listeners with their stories and experiences.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

@@ -1,13 +1,13 @@
 "use client";
 
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { MotionDiv } from "@/components/MuFramer";
 import EventCard from "./EventCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Event } from "@/lib/types";
+import type { Event } from "@/lib/types";
 
 interface Props {
   events: Event[];

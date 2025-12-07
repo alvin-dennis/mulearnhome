@@ -1,6 +1,6 @@
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import type { Variants } from "framer-motion";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -24,16 +24,12 @@ export default function Story() {
         <div>
           <MotionDiv variants={fadeInUp}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center max-w-140 font-extrabold leading-normal">
-              Understand μLearn with a{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                Story
-              </span>
+              Understand μLearn with a <span className="text-mulearn">Story</span>
             </h1>
             <h6 className="font-normal my-4 mb-8 max-w-[800px] text-lg sm:text-xl text-justify text-mulearn-gray-600">
-              Meet Aami, an eager learner hungry for growth! Join her voyage
-              through the captivating µVerse, where she seizes opportunities,
-              builds learning circles, and immerses herself in events, emerging
-              industry-ready with newfound skills and confidence.
+              Meet Aami, an eager learner hungry for growth! Join her voyage through the captivating
+              µVerse, where she seizes opportunities, builds learning circles, and immerses herself
+              in events, emerging industry-ready with newfound skills and confidence.
             </h6>
           </MotionDiv>
         </div>

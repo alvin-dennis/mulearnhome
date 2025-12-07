@@ -1,7 +1,7 @@
 ﻿"use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
@@ -28,22 +28,17 @@ export default function Level3Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                Tool <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Mastery</span>
+                Tool <span className="text-mulearn">Mastery</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
-                 <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                The Explorer&apos;s Compass
-              </span>                
+                <span className="text-mulearn">The Explorer&apos;s Compass</span>
               </p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
-                At this point, tools become the{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              compass
-              </span>
-                . Knowledge transforms from abstract to actionable.
+                At this point, tools become the <span className="text-mulearn">compass</span>.
+                Knowledge transforms from abstract to actionable.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -51,8 +46,7 @@ export default function Level3Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Web Dev Student:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;GitHub, hosting, and Figma become my
-                      workflow.&rdquo;
+                      &ldquo;GitHub, hosting, and Figma become my workflow.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -61,8 +55,7 @@ export default function Level3Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> AI Student:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;HuggingFace and ChatGPT streamline my
-                      workflows.&rdquo;
+                      &ldquo;HuggingFace and ChatGPT streamline my workflows.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -71,8 +64,7 @@ export default function Level3Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Film Student:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;DaVinci Resolve and AI editing tools unlock
-                      creativity.&rdquo;
+                      &ldquo;DaVinci Resolve and AI editing tools unlock creativity.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -81,8 +73,7 @@ export default function Level3Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Civil Engineer:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;AutoCAD + Project Management tools bring ideas to
-                      life.&rdquo;
+                      &ldquo;AutoCAD + Project Management tools bring ideas to life.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -107,9 +98,7 @@ export default function Level3Section() {
 
           <MotionDiv
             initial={{ opacity: 0, scale: 0.85 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.6 }}
             className="relative hidden lg:flex items-center justify-center lg:justify-end"
           >
@@ -161,18 +150,9 @@ export default function Level3Section() {
                     fill="#f24e1e"
                     d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z"
                   />
-                  <path
-                    fill="#a259ff"
-                    d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z"
-                  />
-                  <path
-                    fill="#ff7262"
-                    d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z"
-                  />
-                  <path
-                    fill="#1abcfe"
-                    d="M12 8h4c2.208 0 4-1.792 4-4s-1.792-4-4-4h-4v8z"
-                  />
+                  <path fill="#a259ff" d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z" />
+                  <path fill="#ff7262" d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z" />
+                  <path fill="#1abcfe" d="M12 8h4c2.208 0 4-1.792 4-4s-1.792-4-4-4h-4v8z" />
                   <path
                     fill="#0acf83"
                     d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z"

@@ -1,14 +1,8 @@
 "use client";
 
-import { type Variants } from "framer-motion";
-import {
-  MotionDiv,
-  MotionSection,
-  MotionH1,
-  MotionP,
-} from "@/components/MuFramer";
-import { Card, CardContent } from "@/components/ui/card";
-import { FileText, TrendingUp, Users, Target } from "lucide-react";
+import type { Variants } from "framer-motion";
+import { FileText, Target, TrendingUp, Users } from "lucide-react";
+import { MotionDiv, MotionH1, MotionP, MotionSection } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -81,10 +75,7 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn-blackish mb-6 leading-tight"
           >
-            Annual{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              Reports
-            </span>
+            Annual <span className="text-mulearn">Reports</span>
           </MotionH1>
 
           <MotionP
@@ -95,9 +86,8 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-mulearn-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
           >
-            Discover our journey of growth, impact, and community building
-            through comprehensive annual reports. We believe in transparency and
-            accountability to our community.
+            Discover our journey of growth, impact, and community building through comprehensive
+            annual reports. We believe in transparency and accountability to our community.
           </MotionP>
 
           <MotionP
@@ -108,8 +98,8 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-base md:text-lg text-mulearn-gray-600 max-w-2xl mx-auto font-medium"
           >
-            µLearn is committed to open and transparent reporting of our
-            progress, milestones, and community impact.
+            µLearn is committed to open and transparent reporting of our progress, milestones, and
+            community impact.
           </MotionP>
         </div>
 
@@ -131,19 +121,11 @@ export default function ReportHero() {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <Card className="rounded-2xl p-4 bg-mulearn-whitish/90 shadow-sm">
-                <CardContent className="p-0">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-mulearn-trusty-blue">
-                    <value.icon className="w-8 h-8 text-mulearn-whitish" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-mulearn-gray-600 leading-relaxed">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-[#2E85FE]">
+                <value.icon className="w-8 h-8 text-mulearn-whitish" />
+              </div>
+              <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">{value.title}</h3>
+              <p className="text-sm text-mulearn-gray-600 leading-relaxed">{value.description}</p>
             </MotionDiv>
           ))}
         </MotionDiv>

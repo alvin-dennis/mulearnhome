@@ -1,4 +1,4 @@
-import { GalleryItem, ImpactStat, AnnualReport, Counts } from "@/lib/types";
+import type { AnnualReport, GalleryItem, ImpactStat, Counts } from "@/lib/types";
 
 export const galleryData: GalleryItem[] = [
   {
@@ -85,8 +85,7 @@ export const galleryCategories = [
   {
     id: "impact-stories",
     label: "Impact Stories",
-    count: galleryData.filter((item) => item.category === "impact-stories")
-      .length,
+    count: galleryData.filter((item) => item.category === "impact-stories").length,
   },
 ];
 

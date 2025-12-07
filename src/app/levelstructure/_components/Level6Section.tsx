@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,20 +26,15 @@ export default function Level6Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                Build & <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Ship</span>
+                Build & <span className="text-mulearn">Ship</span>
               </h2>
-              <p className="text-xl text-mulearn-gray-600">
-                Proof-of-Impact & Real Users
-              </p>
+              <p className="text-xl text-mulearn-gray-600">Proof-of-Impact & Real Users</p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                  Every hero must build their sword.
-              </span>{" "}
-                Here, they don&apos;t just make prototypes. They ship to real
-                users.
+                <span className="text-mulearn">Every hero must build their sword.</span> Here, they
+                don&apos;t just make prototypes. They ship to real users.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -47,8 +42,7 @@ export default function Level6Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> AI Team:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;Mental wellness chatbot → deployed in
-                      colleges.&rdquo;
+                      &ldquo;Mental wellness chatbot → deployed in colleges.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -75,8 +69,7 @@ export default function Level6Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Film + Comics:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;Gamified storytelling series → shared in
-                      schools.&rdquo;
+                      &ldquo;Gamified storytelling series → shared in schools.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -135,9 +128,7 @@ export default function Level6Section() {
 
           <MotionDiv
             initial={{ opacity: 0, scale: 0.85 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.6 }}
             className="relative flex items-center justify-center lg:justify-end"
           >

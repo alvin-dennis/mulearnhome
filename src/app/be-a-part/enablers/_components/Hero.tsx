@@ -1,7 +1,7 @@
+import { GraduationCap } from "lucide-react";
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { GraduationCap } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -12,10 +12,7 @@ export default function Hero() {
           "linear-gradient(180deg, var(--mulearn-whitish) 0%, rgba(46,133,254,0.04) 55%, rgba(175,46,230,0.05) 100%)",
       }}
     >
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden
-      >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute left-16 top-[60%] text-mulearn-blackish/80">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
@@ -52,7 +49,7 @@ export default function Hero() {
             <span className="block">Polish your skills through</span>
 
             <span className="relative block">
-              <span className="relative inline-block align-middle bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="relative inline-block align-middle text-mulearn">
                 µLearn
                 <span
                   className="absolute -left-6 -top-0.5 hidden md:block"
@@ -92,10 +89,7 @@ export default function Hero() {
             </span>
 
             <span className="relative mt-2 inline-block">
-              <span
-                className="absolute -left-8 -bottom-1 hidden h-12 w-6 md:block"
-                aria-hidden
-              >
+              <span className="absolute -left-8 -bottom-1 hidden h-12 w-6 md:block" aria-hidden>
                 <svg
                   viewBox="0 0 24 48"
                   fill="none"
@@ -107,16 +101,8 @@ export default function Hero() {
                     d="M12 14c6 0 7 10 7 16v12H5V30c0-6 1-16 7-16Z"
                     fill="var(--mulearn-blackish)"
                   />
-                  <path
-                    d="M5 30h14"
-                    stroke="var(--mulearn-blackish)"
-                    strokeWidth="5"
-                  />
-                  <path
-                    d="M16 16l6-4"
-                    stroke="var(--mulearn-blackish)"
-                    strokeWidth="4"
-                  />
+                  <path d="M5 30h14" stroke="var(--mulearn-blackish)" strokeWidth="5" />
+                  <path d="M16 16l6-4" stroke="var(--mulearn-blackish)" strokeWidth="4" />
                 </svg>
               </span>
               <span>industry ready</span>
@@ -136,53 +122,39 @@ export default function Hero() {
                 />
                 <defs>
                   <linearGradient id="u" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "var(--mulearn-trusty-blue)" }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "var(--mulearn-duke-purple)" }}
-                    />
+                    <stop offset="0%" style={{ stopColor: "var(--mulearn-trusty-blue)" }} />
+                    <stop offset="100%" style={{ stopColor: "var(--mulearn-duke-purple)" }} />
                   </linearGradient>
                 </defs>
               </svg>
             </span>
           </h1>
 
-          <Button asChild>
-            <a
-              href="https://app.mulearn.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
+          <Link href="https://app.mulearn.org/" target="_blank" className="inline-block">
+            <Button
+              variant="mulearn"
+              className=" mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
             >
               Join µLearn
-            </a>
-          </Button>
+            </Button>
+          </Link>
         </MotionDiv>
       </div>
 
-      <div
-        className="relative mx-auto mb-8 mt-10 h-24 w-full overflow-visible"
-        aria-hidden="true"
-      >
+      <div className="relative mx-auto mb-8 mt-10 h-24 w-full overflow-visible" aria-hidden="true">
         <div className="absolute left-1/2 top-1/2 w-[170%] -translate-x-1/2 -translate-y-1/2">
-          <div
-            className="relative mx-auto w-full"
-            style={{ transform: "rotate(-4deg)" }}
-          >
+          <div className="relative mx-auto w-full" style={{ transform: "rotate(-4deg)" }}>
             <div
               className="absolute left-0 right-0 -top-2 h-2 rounded-full"
               style={{
-                backgroundColor: "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+                backgroundColor: "bg-mulearn",
                 boxShadow: "0 2px 8px rgba(46,133,254,0.25)",
               }}
             />
             <div
               className="absolute left-0 right-0 -bottom-3 h-4 rounded-full"
               style={{
-                backgroundColor: "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+                backgroundColor: "bg-mulearn",
                 boxShadow: "0 6px 14px rgba(46,133,254,0.25)",
               }}
             />
@@ -195,7 +167,7 @@ export default function Hero() {
                 boxShadow: "0 8px 30px rgba(46,133,254,0.15)",
               }}
             >
-              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
                 Build Brighter Futures
               </span>
               <svg
@@ -206,7 +178,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
                 Make Learning Accessible
               </span>
               <svg
@@ -217,7 +189,7 @@ export default function Hero() {
               >
                 <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
               </svg>
-              <span className=" text-sm font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent md:text-base whitespace-nowrap">
+              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
                 Transform Education Today
               </span>
             </div>

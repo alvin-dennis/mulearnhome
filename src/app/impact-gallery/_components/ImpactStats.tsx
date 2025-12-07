@@ -1,18 +1,11 @@
 "use client";
 
-import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import {
-  Users,
-  School,
-  Calendar,
-  Handshake,
-  GraduationCap,
-  TrendingUp,
-} from "lucide-react";
+import { Calendar, GraduationCap, Handshake, School, TrendingUp, Users } from "lucide-react";
+import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { impactStatsFromCounts } from "@/data/impact-gallery";
-import { ImpactStat, Counts } from "@/lib/types";
+import type { ImpactStat, Counts } from "@/lib/types";
 
 const iconMap = {
   Users,
@@ -75,17 +68,13 @@ export default function ImpactStats() {
               <MotionDiv
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={
-                  isInView
-                    ? { opacity: 1, scale: 1 }
-                    : { opacity: 0, scale: 0.5 }
-                }
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-center group"
               >
                 <MotionDiv
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="text-4xl mb-4 inline-block bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent"
+                  className="text-4xl mb-4 inline-block text-mulearn"
                 >
                   <IconComponent size={40} />
                 </MotionDiv>
@@ -93,19 +82,11 @@ export default function ImpactStats() {
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                  className="text-3xl font-bold mb-2 "
-                  style={{
-                    background: "var(--mulearn-trusty)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  className="text-3xl font-bold mb-2 text-mulearn"
                 >
                   {stat.number}
                 </MotionDiv>
-                <div className="text-mulearn-gray-600 font-semibold ">
-                  {stat.label}
-                </div>
+                <div className="text-mulearn-gray-600 font-semibold ">{stat.label}</div>
               </MotionDiv>
             );
           })}

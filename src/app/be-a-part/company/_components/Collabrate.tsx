@@ -2,18 +2,14 @@
 
 import { useState } from "react";
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
-import { CompanyFeatures, companyImages } from "@/data/company";
 import MuImage from "@/components/MuImage";
+import { CompanyFeatures, companyImages } from "@/data/company";
 
 const NumberIcon = ({ num }: { num: number }) => (
-  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
-  >
-    <span className="text-2xl font-bold text-mulearn-whitish">
-      {num}
-    </span>
+  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-mulearn">
+    <span className="text-2xl font-bold text-mulearn-whitish">{num}</span>
   </div>
 );
-
 
 export default function WhyCollaborate() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -52,9 +48,9 @@ export default function WhyCollaborate() {
           transition={{ delay: 0.2 }}
           className="text-center text-gray-600 text-base sm:text-lg max-w-3xl mx-auto mb-16 font-light"
         >
-          Join forces with a thriving community of learners and innovators.
-          Together, we create meaningful impact through talent development,
-          innovation, and collaborative growth opportunities.
+          Join forces with a thriving community of learners and innovators. Together, we create
+          meaningful impact through talent development, innovation, and collaborative growth
+          opportunities.
         </MotionP>
 
         <div className="hidden lg:flex items-stretch justify-center gap-0">
@@ -75,13 +71,13 @@ export default function WhyCollaborate() {
                 index === 0
                   ? "rounded-l-[10px] border-r-0"
                   : index === CompanyFeatures.length - 1
-                  ? "rounded-r-[10px]"
-                  : "border-r-0"
+                    ? "rounded-r-[10px]"
+                    : "border-r-0"
               }`}
             >
-              <NumberIcon num={index}/>
+              <NumberIcon num={index} />
               <h3
-                className={`text-xl sm:text-2xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-center leading-tight transition-all duration-300`}
+                className={`text-xl sm:text-2xl font-bold text-mulearn text-center leading-tight transition-all duration-300`}
               >
                 {feature.title}
               </h3>
@@ -107,10 +103,9 @@ export default function WhyCollaborate() {
               whileHover={{ scale: 1.02 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="flex flex-col items-center justify-start gap-5 p-6 border-2 border-mulearn-gray-600/10 rounded-lg transition-all duration-300 ease-in-out"
-              style={{
-                backgroundColor: hoveredIndex === index ? "#E7F2FF" : "#FFF",
-              }}
+              className={`flex flex-col items-center justify-start gap-5 p-6 border-2 border-mulearn-gray-600/10 rounded-lg transition-all duration-300 ease-in-out ${
+                hoveredIndex === index ? "bg-[#E7F2FF]" : "bg-white"
+              }`}
             >
               <NumberIcon num={index + 1} />
               <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">

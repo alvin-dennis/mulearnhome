@@ -1,17 +1,13 @@
-import MuImage from "@/components/MuImage";
-import Link from "next/link";
 import { cdnUrl } from "@services/cdn";
+import Link from "next/link";
+import MuImage from "@/components/MuImage";
 
 export default function NotFoundPage() {
   const stone = cdnUrl("src/components/assests/NotFound/Stone.webp");
   const ufo = cdnUrl("src/components/assests/NotFound/UFO.webp");
-  const fourNotFour = cdnUrl(
-    "src/components/assests/NotFound/FourNotFour.webp"
-  );
+  const fourNotFour = cdnUrl("src/components/assests/NotFound/FourNotFour.webp");
   const smallRocks = cdnUrl("src/components/assests/NotFound/SmallRocks.webp");
-  const marsSurface = cdnUrl(
-    "src/components/assests/NotFound/NoBgFourNotFour.webp"
-  );
+  const marsSurface = cdnUrl("src/components/assests/NotFound/NoBgFourNotFour.webp");
   return (
     <div className="relative w-full h-screen overflow-hidden bg-mulearn-whitish">
       <div className="absolute flex flex-col items-center left-6 top-12 sm:left-10 sm:top-16 md:left-20 md:top-20">
@@ -58,7 +54,7 @@ export default function NotFoundPage() {
         />
         <Link
           href="/"
-          className="mt-6 px-6 py-3 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-semibold rounded-2xl shadow-lg hover:bg-mulearn-duke-purple transition-all duration-300"
+          className="mt-6 px-6 py-3 bg-mulearn text-mulearn-whitish font-semibold rounded-2xl shadow-lg hover:bg-mulearn-duke-purple transition-all duration-300"
         >
           Back to Home
         </Link>

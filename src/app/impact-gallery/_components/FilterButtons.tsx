@@ -1,24 +1,17 @@
 import { MotionDiv } from "@/components/MuFramer";
-import { galleryCategories } from "@/data/impact-gallery";
 import { Button } from "@/components/ui/button";
+import { galleryCategories } from "@/data/impact-gallery";
 
 interface FilterButtonsProps {
   activeFilter: string;
   onFilterChange: (filter: string) => void;
 }
 
-export default function FilterButtons({
-  activeFilter,
-  onFilterChange,
-}: FilterButtonsProps) {
+export default function FilterButtons({ activeFilter, onFilterChange }: FilterButtonsProps) {
   return (
     <div className="flex flex-wrap justify-center gap-3 mb-12">
       {galleryCategories.map((category) => (
-        <MotionDiv
-          key={category.id}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <MotionDiv key={category.id} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
             variant={activeFilter === category.id ? "mulearn" : "outline"}
             onClick={() => onFilterChange(category.id)}

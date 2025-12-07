@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { MotionDiv } from "@/components/MuFramer";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { MotionDiv } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 
 export default function Apply() {
   return (
@@ -10,7 +11,7 @@ export default function Apply() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-3xl bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-12 text-center shadow-xl lg:p-16"
+        className="rounded-3xl bg-mulearn p-12 text-center shadow-xl lg:p-16"
       >
         <h2 className="mb-4 font-serif text-4xl font-bold text-primary-foreground lg:text-5xl">
           Ready to Start?
@@ -18,19 +19,16 @@ export default function Apply() {
         <p className="mb-8 text-xl text-primary-foreground/90">
           Join the movement. Build your community. Create impact.
         </p>
-        <Button
-          asChild
-          className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto"
+        <Link
+          href="https://airtable.com/appFdefxOwIVlTv1b/shrmtngt3zopg8eVh"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <a
-            href="https://airtable.com/appFdefxOwIVlTv1b/shrmtngt3zopg8eVh"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Button className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto">
             Apply to Start a Chapter
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </a>
-        </Button>
+          </Button>
+          </Link>
       </MotionDiv>
     </section>
   );

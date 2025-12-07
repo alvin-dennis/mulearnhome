@@ -1,11 +1,13 @@
+import MuLoader from "@components/Loader";
 import type { Metadata } from "next";
-import React, { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import MuLoader from "@components/Loader";
-import Navbar from "@/components/Navbar";
+import type React from "react";
+import { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/Navbar";
+import { clientEnv } from "@/lib/env/env.client";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
 
@@ -47,7 +49,7 @@ const retro = localFont({
   display: "swap",
 });
 
-const cdnurl = process.env.NEXT_PUBLIC_CDN_URL;
+const cdnurl = clientEnv.NEXT_PUBLIC_CDN_URL;
 
 export default function RootLayout({
   children,
@@ -61,14 +63,18 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${circe.variable} ${retro.variable}`}
     >
       <head>
-        <link rel="preconnect" href={cdnurl} crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href={cdnurl} />
+        {cdnurl && (
+          <>
+            <link rel="preconnect" href={cdnurl} crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href={cdnurl} />
+          </>
+        )}
       </head>
       <body className="font-sans antialiased">
         <Navbar />
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
-        <Toaster />
+        <Toaster reverseOrder={true} position="top-center" />
         <div className="fixed bottom-4 right-4 z-50">
           <BackToTop />
         </div>

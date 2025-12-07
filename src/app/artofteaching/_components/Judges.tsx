@@ -1,5 +1,5 @@
-import MentorCard from "./MentorCard";
 import { artOfTeachingMentors } from "@/data/events";
+import MentorCard from "./MentorCard";
 
 const Judges = () => {
   return (
@@ -7,15 +7,11 @@ const Judges = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
-            The Former{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              Judging Panel
-            </span>
+            The Former <span className="text-mulearn">Judging Panel</span>
           </h2>
           <p className="text-base lg:text-lg text-gray-600 lg:w-2/5">
-            We needed some really creative people with amazing mentoring skills
-            to judge all your submissions. Listed below were our judges for the
-            first edition of Art of Teaching.
+            We needed some really creative people with amazing mentoring skills to judge all your
+            submissions. Listed below were our judges for the first edition of Art of Teaching.
           </p>
         </div>
 

@@ -1,23 +1,16 @@
+import type { Variants } from "framer-motion";
+import { SquareArrowOutUpRight } from "lucide-react";
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import Link from "next/link";
-import { cardProps, IGSectionProps } from "@/lib/types";
-import { SquareArrowOutUpRight } from "lucide-react";
-import { Variants  } from "framer-motion";
+import type { cardProps, IGSectionProps } from "@/lib/types";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1]  } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } },
 };
 
-const Card = ({
-  name,
-  image,
-  link,
-  description,
-  largeImg,
-  date,
-}: cardProps) => {
+const Card = ({ name, image, link, description, largeImg, date }: cardProps) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer">
       <MotionDiv
@@ -48,15 +41,11 @@ const Card = ({
 
         {link !== "#" ? (
           <div className="flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
-            <span className="uppercase font-medium text-[16px] leading-[22px]">
-              Explore More
-            </span>
+            <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
             <SquareArrowOutUpRight />
           </div>
         ) : (
-          <span className="uppercase font-medium text-[16px] leading-[22px]">
-            Coming Soon!
-          </span>
+          <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
         )}
       </MotionDiv>
     </Link>
@@ -81,12 +70,7 @@ const IGEvents = ({ cards, heading, largeImg }: IGSectionProps) => {
       <div className="px-4 md:px-12 my-6 md:my-12 flex justify-center">
         <div className="flex flex-col md:flex-row md:flex-wrap md:justify-evenly items-center gap-6 md:gap-8 w-full">
           {cards.map((card) => (
-            <Card
-              {...card}
-              key={card.name}
-              link={card.link}
-              largeImg={largeImg}
-            />
+            <Card {...card} key={card.name} link={card.link} largeImg={largeImg} />
           ))}
         </div>
       </div>

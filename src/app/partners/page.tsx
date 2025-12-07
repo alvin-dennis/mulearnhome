@@ -1,6 +1,6 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { ArrowRight, Building2, Rocket, Target, Users } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Users, Building2, Target, Rocket } from "lucide-react";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
@@ -19,9 +19,9 @@ export default function PartnersPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#212121] leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-mulearn-blackish leading-tight">
                 Our{" "}
-                <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent relative">
+                <span className="text-mulearn relative">
                   Partners
                   <svg
                     className="absolute -bottom-2 left-0 w-full"
@@ -29,13 +29,7 @@ export default function PartnersPage() {
                     fill="none"
                   >
                     <defs>
-                      <linearGradient
-                        id="trustyGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                      >
+                      <linearGradient id="trustyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#2E85FE" />
                         <stop offset="100%" stopColor="#AF2EE6" />
                       </linearGradient>
@@ -51,8 +45,8 @@ export default function PartnersPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-mulearn-blackish max-w-2xl mx-auto lg:mx-0">
-                Collaborating with incredible organizations and communities to
-                empower learners and drive innovation across the ecosystem.
+                Collaborating with incredible organizations and communities to empower learners and
+                drive innovation across the ecosystem.
               </p>
             </MotionDiv>
 
@@ -87,14 +81,10 @@ export default function PartnersPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mulearn-blackish mb-4">
-              Explore Our{" "}
-              <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                Partnership Network
-              </span>
+              Explore Our <span className="text-mulearn">Partnership Network</span>
             </h2>
             <p className="text-mulearn-blackish text-lg max-w-2xl mx-auto">
-              Discover the communities and companies that make our ecosystem
-              thrive
+              Discover the communities and companies that make our ecosystem thrive
             </p>
           </MotionDiv>
 
@@ -115,43 +105,41 @@ export default function PartnersPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
-
                   </div>
 
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Users className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: 'var(--mulearn-trusty-blue)' }} />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Users className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
                         Community Partners
                       </h2>
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
-                      Educational institutions, student communities, and
-                      learning groups that share our vision of accessible,
-                      peer-driven education and collaborative growth.
+                      Educational institutions, student communities, and learning groups that share
+                      our vision of accessible, peer-driven education and collaborative growth.
                     </p>
 
                     <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Student communities & clubs
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Educational institutions
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Learning communities
                       </li>
                     </ul>
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
-                      <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Community Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--mulearn-trusty-blue)' }} />
+                      <span className="text-mulearn">Explore Community Partners</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>
@@ -174,43 +162,42 @@ export default function PartnersPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
-                   
                   </div>
 
                   <div className="p-6 sm:p-8 space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8" style={{ color: 'var(--mulearn-trusty-blue)' }} />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Building2 className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-[#212121]">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
                         Company Partners
                       </h2>
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
-                      Industry leaders, startups, and organizations providing
-                      real-world opportunities, mentorship, and resources to
-                      help learners succeed in their careers.
+                      Industry leaders, startups, and organizations providing real-world
+                      opportunities, mentorship, and resources to help learners succeed in their
+                      careers.
                     </p>
 
                     <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Technology companies
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Industry sponsors
                       </li>
                       <li className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Corporate collaborators
                       </li>
                     </ul>
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
-                      <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Explore Company Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--mulearn-trusty-blue)' }} />
+                      <span className="text-mulearn">Explore Company Partners</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>
@@ -230,11 +217,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#212121] mb-4">
-              Why{" "}
-              <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                Partner
-              </span>{" "}
-              With Us?
+              Why <span className="text-mulearn">Partner</span> With Us?
             </h2>
           </MotionDiv>
 
@@ -243,14 +226,12 @@ export default function PartnersPage() {
               {
                 icon: Users,
                 title: "Engaged Community",
-                description:
-                  "Access to thousands of motivated learners eager to grow",
+                description: "Access to thousands of motivated learners eager to grow",
               },
               {
                 icon: Target,
                 title: "Real Impact",
-                description:
-                  "Create meaningful change in the education ecosystem",
+                description: "Create meaningful change in the education ecosystem",
               },
               {
                 icon: Rocket,
@@ -266,15 +247,11 @@ export default function PartnersPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6" style={{ color: 'var(--mulearn-trusty-blue)' }} />
+                <div className="w-12 h-12 rounded-lg bg-mulearn flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
                 </div>
-                <h3 className="text-xl font-bold text-[#212121] mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-mulearn-blackish text-sm">
-                  {benefit.description}
-                </p>
+                <h3 className="text-xl font-bold text-[#212121] mb-2">{benefit.title}</h3>
+                <p className="text-mulearn-blackish text-sm">{benefit.description}</p>
               </MotionDiv>
             ))}
           </div>
@@ -284,7 +261,7 @@ export default function PartnersPage() {
       <section className="px-4 sm:px-8 py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           <MotionDiv
-            className="bg-gradient-to-br from-mulearn-trusty-blue to-mulearn-duke-purple rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.15)] p-8 sm:p-10 lg:p-12 relative overflow-hidden"
+            className="bg-mulearn rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.15)] p-8 sm:p-10 lg:p-12 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -309,23 +286,22 @@ export default function PartnersPage() {
                 Interested in Partnering?
               </h2>
               <p className="text-mulearn-whitish/90 text-base sm:text-lg">
-                Join our growing network of partners and help us create
-                impactful learning experiences for thousands of learners
-                worldwide.
+                Join our growing network of partners and help us create impactful learning
+                experiences for thousands of learners worldwide.
               </p>
-              <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">                 
-                  <Button asChild className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto" >
-                    <Link href="/be-a-part/company">
-                    Join as Company
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                  <Button asChild className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto" >
-                    <Link href="/be-a-part/campus">
-                    Join as Community
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
+              <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
+                <Link href="/be-a-part/company">
+                  <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                    <span className="text-mulearn">Join as Company</span>
+                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
+                  </button>
+                </Link>
+                <Link href="/be-a-part/campus">
+                  <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
+                    <span className="text-mulearn">Join as Community</span>
+                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
+                  </button>
+                </Link>
               </div>
             </div>
           </MotionDiv>

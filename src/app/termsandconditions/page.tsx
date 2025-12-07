@@ -9,10 +9,7 @@ const Paragraph = ({ text }: { text: string }) => (
 );
 
 const SubsectionList = ({ subsections }: { subsections: string[] }) => (
-  <ol
-    className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify"
-    style={{ listStyleType: "lower-roman" }}
-  >
+  <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify list-[lower-roman]">
     {subsections.map((subsection, index) => (
       <li key={index} className="pl-2 leading-relaxed">
         {subsection}
@@ -35,11 +32,9 @@ export default async function TermsAndConditions() {
         </header>
 
         <div className="mb-12 space-y-6 text-justify">
-          {termsAndConditions.introduction
-            .split("\n\n")
-            .map((paragraph, index) => (
-              <Paragraph key={index} text={paragraph} />
-            ))}
+          {termsAndConditions.introduction.split("\n\n").map((paragraph, index) => (
+            <Paragraph key={index} text={paragraph} />
+          ))}
         </div>
 
         <div className="space-y-12">
@@ -57,9 +52,7 @@ export default async function TermsAndConditions() {
                       ))
                     : section.content
                         .split("\n\n")
-                        .map((paragraph, pIndex) => (
-                          <Paragraph key={pIndex} text={paragraph} />
-                        )))}
+                        .map((paragraph, pIndex) => <Paragraph key={pIndex} text={paragraph} />))}
               </div>
 
               {section.subsections.length > 0 && (

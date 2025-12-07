@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { comparisons } from "@/data/home";
 
@@ -21,10 +21,7 @@ export default function Comparison() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <MotionDiv
-          className="flex flex-col justify-center items-center"
-          variants={fadeInUp}
-        >
+        <MotionDiv className="flex flex-col justify-center items-center" variants={fadeInUp}>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] text-mulearn-blackish font-extrabold mb-16 text-center">
             μLearn is here to solve all your learning problems
           </h1>
@@ -49,9 +46,7 @@ export default function Comparison() {
                       <td className="py-8 px-4 text-right pr-8">{problem}</td>
                       <td className="py-8 px-4 text-left pl-8 border-l border-mulearn-greyish">
                         {before}
-                        <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent font-bold">
-                          {highlight}
-                        </span>
+                        <span className="text-mulearn font-bold">{highlight}</span>
                         {after}
                       </td>
                     </tr>

@@ -11,11 +11,7 @@ export default function Activities() {
         transition={{ duration: 0.6 }}
       >
         <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
-          What Chapters{" "}
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-            Do
-          </span>
-          ?
+          What Chapters <span className="text-mulearn">Do</span>?
         </h2>
         <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-mulearn-gray-600">
           Regular activities that build skills and community
@@ -34,19 +30,15 @@ export default function Activities() {
                 className="rounded-2xl p-6 text-center shadow-sm transition-all border hover:scale-105 hover:shadow-md"
               >
                 <div className="mb-3">
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-mulearn">
                     <Icon className="h-8 w-8 text-mulearn-whitish" />
                   </div>
                 </div>
                 <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-mulearn-gray-600">
                   {activity.title}
                 </div>
-                <div className="mb-1 text-lg font-bold text-mulearn-blackish">
-                  {activity.desc}
-                </div>
-                <div className="text-sm text-mulearn-gray-600">
-                  {activity.detail}
-                </div>
+                <div className="mb-1 text-lg font-bold text-mulearn-blackish">{activity.desc}</div>
+                <div className="text-sm text-mulearn-gray-600">{activity.detail}</div>
               </MotionDiv>
             );
           })}

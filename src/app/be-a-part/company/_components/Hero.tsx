@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
-import { Button } from "@/components/ui/button";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { companyImages } from "@/data/company";
 
 export default function Hero() {
@@ -16,7 +16,7 @@ export default function Hero() {
             className="relative w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1 lg:-ml-14"
           >
             <div className="relative w-full max-w-[650px] aspect-[512/400]">
-              <div className="absolute top-1/4 left-30 w-[236px] h-[283px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple blur-[200px] opacity-70 hidden sm:block" />
+              <div className="absolute top-1/4 left-30 w-[236px] h-[283px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block" />
 
               <MuImage
                 src={companyImages.hero}
@@ -37,22 +37,20 @@ export default function Hero() {
           >
             <h1 className="text-xl sm:text-lg md:text-xl lg:text-[40px] font-semibold leading-tight text-center lg:text-right max-w-[630px]">
               <span className="text-[#1A202C]">Partner with </span>
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">µLearn </span>
-              <span className="text-[#1A202C]">
-                to discover talent and spark innovation
-              </span>
+              <span className="text-mulearn">µLearn </span>
+              <span className="text-[#1A202C]">to discover talent and spark innovation</span>
             </h1>
 
-            <MotionDiv
-              initial={{ opacity: 0 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.25 }}
-              className=""
-            >
-              <Button asChild className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md">
-                <a href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1" target="_blank" rel="noopener noreferrer">Join as a Company Partner</a>
-              </Button>
+            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant={"mulearn"} className="font-semibold px-6 py-3 md:px-8 md:py-4">
+                  Join as a Company Partner
+                </Button>
+              </Link>
             </MotionDiv>
           </MotionDiv>
         </div>

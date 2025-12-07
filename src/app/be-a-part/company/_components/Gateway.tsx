@@ -11,7 +11,7 @@ export default function Gateway() {
           className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-[44px] font-bold text-center leading-tight tracking-tight"
         >
           <span className="-mulearn-blackish">Your gateway to the </span>
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">µLearn </span>
+          <span className="text-mulearn">µLearn </span>
           <span className="text-mulearn-blackish">talent pool</span>
         </MotionH2>
       </div>

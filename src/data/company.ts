@@ -17,8 +17,7 @@ export const CompanyPartner = [
     name: "Zerone Consulting Pvt. Ltd",
     logo: "/src/modules/Public/CompanyPartners/assets/companies/Zerone.webp",
     website: "https://www.zerone-consulting.com/",
-    descritpion:
-      "A software engineering firm delivering custom cloud and AI-driven solutions.",
+    descritpion: "A software engineering firm delivering custom cloud and AI-driven solutions.",
   },
   {
     name: "Travancore Analytics",
@@ -166,23 +165,19 @@ export const CompanyFeatures = [
 export const companyDo = [
   {
     title: "Post Internships & Job Roles",
-    description:
-      "Connect with skilled learners ready to contribute from day one.",
+    description: "Connect with skilled learners ready to contribute from day one.",
   },
   {
     title: "Collaborate on Programs & Events",
-    description:
-      "Co-create hackathons, workshops, and learning tracks that inspire talent.",
+    description: "Co-create hackathons, workshops, and learning tracks that inspire talent.",
   },
   {
     title: "Track Engagement & Impact",
-    description:
-      "Measure applications, participation, and outcomes with clear analytics.",
+    description: "Measure applications, participation, and outcomes with clear analytics.",
   },
   {
     title: "Launch Proof-of-Work Challenges",
-    description:
-      "Connect with skilled learners ready to contribute from day one.",
+    description: "Connect with skilled learners ready to contribute from day one.",
   },
 ];
 
@@ -220,8 +215,7 @@ export const companySteps = [
   {
     number: "06",
     title: "Track Impact",
-    description:
-      "Monitor applications, participation, and analytics in real time.",
+    description: "Monitor applications, participation, and analytics in real time.",
     align: "right",
   },
 ];

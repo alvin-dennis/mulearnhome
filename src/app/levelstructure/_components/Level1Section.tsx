@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,32 +26,25 @@ export default function Level1Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                The First{" "}
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-               Hello
-              </span>
+                The First <span className="text-mulearn">Hello</span>
               </h2>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 Every explorer in μLearn&apos;s galaxy starts by saying:{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                 &ldquo;Here I am.&rdquo;
-              </span>
+                <span className="text-mulearn">&ldquo;Here I am.&rdquo;</span>
               </p>
 
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                This is not a roll call. It&apos;s an act of visibility—letting
-                peers, mentors, and opportunities discover you.
+                This is not a roll call. It&apos;s an act of visibility—letting peers, mentors, and
+                opportunities discover you.
               </p>
 
               <div className="space-y-3 pt-4">
                 <div className="pl-4 border-l-2 border-mulearn-trusty-blue">
                   <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold">
-                      Civil Engineering Student:
-                    </span>{" "}
+                    <span className="font-semibold">Civil Engineering Student:</span>{" "}
                     <span className="text-mulearn-gray-600">
                       &ldquo;curious about green buildings.&rdquo;
                     </span>
@@ -62,8 +55,7 @@ export default function Level1Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold">Mechanical Engineer:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;I sketch machines but want to learn 3D
-                      modeling.&rdquo;
+                      &ldquo;I sketch machines but want to learn 3D modeling.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -98,9 +90,7 @@ export default function Level1Section() {
 
           <MotionDiv
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6 }}
             className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2"
           >

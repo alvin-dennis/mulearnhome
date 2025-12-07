@@ -12,8 +12,8 @@ export default function Quote() {
           className="text-center"
         >
           <p className="mb-6 text-3xl font-medium leading-relaxed text-mulearn-blackish lg:text-4xl">
-            &quot;A Campus Chapter isn&apos;t about events. It&apos;s about
-            building a culture of learning by doing.&quot;
+            &quot;A Campus Chapter isn&apos;t about events. It&apos;s about building a culture of
+            learning by doing.&quot;
           </p>
           <footer className="text-lg font-semibold text-mulearn-blackish">
             Start small. Stay consistent. The impact compounds.

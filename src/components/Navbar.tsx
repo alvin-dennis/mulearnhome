@@ -1,22 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import MuImage from "@/components/MuImage";
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv, MotionButton, MotionLi } from "./MuFramer";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import MuImage from "@/components/MuImage";
 import { navItems } from "@/data/common";
-import { SubItem } from "@/lib/types";
+import type { SubItem } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
+import { MotionDiv, MotionLi } from "./MuFramer";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
-  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<number | null>(
-    null
-  );
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<number | null>(null);
   const redirect = useRedirectToApp();
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
@@ -30,8 +29,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow =
-      isMobileView && isMenuOpen ? "hidden" : "unset";
+    document.body.style.overflow = isMobileView && isMenuOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -47,25 +45,6 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     if (!isMobileView) setActiveSubmenu(null);
-  };
-
-  const renderLink = (href?: string, label?: string) => {
-    if (!href) return <span>{label}</span>;
-    const handleClick = () => {
-      setActiveSubmenu(null);
-    };
-    if (href.startsWith("http")) {
-      return (
-        <Link href={href} target="_blank" rel="noopener noreferrer">
-          {label}
-        </Link>
-      );
-    }
-    return (
-      <Link href={href} prefetch onClick={handleClick}>
-        {label}
-      </Link>
-    );
   };
 
   const getGridClass = (item: (typeof navItems)[number]) => {
@@ -94,7 +73,7 @@ export default function Navbar() {
               width={170}
               height={170}
               preload
-              style={{ height: "auto" }}
+              className="h-auto"
             />
           </Link>
 
@@ -108,7 +87,13 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {renderLink(item.href, item.label)}
+                <Link
+                  href={item.href ?? "#"}
+                  className="flex items-center w-full h-full"
+                  onClick={() => setActiveSubmenu(null)}
+                >
+                  {item.label}
+                </Link>
 
                 <AnimatePresence>
                   {activeSubmenu === index && item.submenu && (
@@ -120,30 +105,30 @@ export default function Navbar() {
                       transition={{ duration: 0.2 }}
                     >
                       <div className={`p-6 grid gap-8 ${getGridClass(item)}`}>
-                        {Object.entries(item.submenu).map(
-                          ([category, items]) => (
-                            <div
-                              key={category}
-                              className="submenu-section flex flex-col gap-3"
-                            >
-                              <h4 className="text-xs font-bold uppercase text-mulearn-gray-600 tracking-wider m-0 pb-2 border-b border-mulearn-greyish">
-                                {category}
-                              </h4>
-                              <ul className="list-none m-0 p-0 flex flex-col gap-0.5 lg:gap-0">
-                                {items.map(
-                                  (subItem: SubItem, subIndex: number) => (
-                                    <li
-                                      key={subIndex}
-                                      className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1 leading-snug relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
-                                    >
-                                      {renderLink(subItem.href, subItem.label)}
-                                    </li>
-                                  )
-                                )}
-                              </ul>
-                            </div>
-                          )
-                        )}
+                        {Object.entries(item.submenu).map(([category, items]) => (
+                          <div key={category} className="submenu-section flex flex-col gap-3">
+                            <h4 className="text-xs font-bold uppercase text-mulearn-gray-600 tracking-wider m-0 pb-2 border-b border-mulearn-greyish">
+                              {category}
+                            </h4>
+                            <ul className="list-none m-0 p-0 flex flex-col gap-0.5 lg:gap-0">
+                              {items.map((subItem: SubItem, subIndex: number) => (
+                                <li
+                                  key={subIndex}
+                                  className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1 leading-snug relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
+                                >
+                                  <Link
+                                    href={subItem.href}
+                                    prefetch
+                                    className="flex w-full h-full items-center"
+                                    onClick={() => setActiveSubmenu(null)}
+                                  >
+                                    {subItem.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </MotionDiv>
                   )}
@@ -152,16 +137,15 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <MotionButton
-            className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none py-3 px-6 rounded-[50px] font-semibold text-[0.9rem] cursor-pointer shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:py-2.5 lg:px-5 lg:text-[0.85rem]"
-            onClick={() =>
-              refreshToken ? redirect("/dashboard/home") : redirect("/login")
-            }
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {refreshToken ? "Dashboard" : "Login"}
-          </MotionButton>
+          <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant={"mulearn"}
+              className="w-full p-4 font-semibold"
+              onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/login"))}
+            >
+              {refreshToken ? "Dashboard" : "Login"}
+            </Button>
+          </MotionDiv>
         </MotionDiv>
       )}
 
@@ -175,10 +159,10 @@ export default function Navbar() {
                 width={170}
                 height={170}
                 preload
-                style={{ height: "auto" }}
+                className="h-auto"
               />
             </Link>
-            <MotionButton
+            <MotionDiv
               className="cursor-pointer flex items-center justify-center w-8 h-8 z-2001"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
@@ -186,7 +170,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Menu size={30} />
-            </MotionButton>
+            </MotionDiv>
           </div>
 
           <AnimatePresence>
@@ -208,7 +192,7 @@ export default function Navbar() {
                   exit={{ x: "100%" }}
                   transition={{ duration: 0.4 }}
                 >
-                  <MotionButton
+                  <MotionDiv
                     className="absolute top-6 right-4 cursor-pointer text-mulearn-gray-600 w-10 h-10 flex items-center justify-center"
                     onClick={() => setIsMenuOpen(false)}
                     aria-label="Close menu"
@@ -216,7 +200,7 @@ export default function Navbar() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <X size={30} />
-                  </MotionButton>
+                  </MotionDiv>
 
                   <ul className="list-none mt-16 mb-8 p-0 flex-1">
                     {activeMobileSubmenu === null ? (
@@ -230,10 +214,7 @@ export default function Navbar() {
                               : window.location.assign(item.href!)
                           }
                         >
-                          {item.label}{" "}
-                          {item.submenu && (
-                            <span className="float-right">{">"}</span>
-                          )}
+                          {item.label} {item.submenu && <span className="float-right">{">"}</span>}
                         </li>
                       ))
                     ) : (
@@ -244,46 +225,41 @@ export default function Navbar() {
                         >
                           {"< Back"}
                         </li>
-                        {Object.entries(
-                          navItems[activeMobileSubmenu].submenu!
-                        ).map(([category, items]) => (
-                          <div key={category} className="mb-4">
-                            <div className="font-semibold text-sm my-2 text-mulearn-gray-600">
-                              {category}
-                            </div>
-                            <ul className="pl-4 list-none">
-                              {items.map(
-                                (subItem: SubItem, subIndex: number) => (
+                        {Object.entries(navItems[activeMobileSubmenu].submenu!).map(
+                          ([category, items]) => (
+                            <div key={category} className="mb-4">
+                              <div className="font-semibold text-sm my-2 text-mulearn-gray-600">
+                                {category}
+                              </div>
+                              <ul className="pl-4 list-none">
+                                {items.map((subItem: SubItem, subIndex: number) => (
                                   <li
                                     key={subIndex}
                                     className="py-2 text-mulearn-gray-600 cursor-pointer hover:text-mulearn-duke-purple hover:pl-2"
-                                    onClick={() =>
-                                      window.location.assign(subItem.href!)
-                                    }
+                                    onClick={() => window.location.assign(subItem.href!)}
                                   >
                                     {subItem.label}
                                   </li>
-                                )
-                              )}
-                            </ul>
-                          </div>
-                        ))}
+                                ))}
+                              </ul>
+                            </div>
+                          ),
+                        )}
                       </>
                     )}
                   </ul>
 
-                  <MotionButton
-                    className="w-full p-4 mb-20 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none rounded-[50px] font-semibold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
-                    onClick={() =>
-                      refreshToken
-                        ? redirect("/dashboard/home")
-                        : redirect("/login")
-                    }
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {refreshToken ? "Dashboard" : "Login"}
-                  </MotionButton>
+                  <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      variant={"mulearn"}
+                      className="w-full p-4 mb-20"
+                      onClick={() =>
+                        refreshToken ? redirect("/dashboard/home") : redirect("/login")
+                      }
+                    >
+                      {refreshToken ? "Dashboard" : "Login"}
+                    </Button>
+                  </MotionDiv>
                 </MotionDiv>
               </>
             )}

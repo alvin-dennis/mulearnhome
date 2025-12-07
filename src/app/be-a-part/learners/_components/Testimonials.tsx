@@ -45,9 +45,7 @@ const Testimonials: React.FC = () => {
     const scrollDelay = 20;
 
     const scrollInterval = setInterval(() => {
-      const scrollContent = container.querySelector(
-        ".scroll-content"
-      ) as HTMLDivElement;
+      const scrollContent = container.querySelector(".scroll-content") as HTMLDivElement;
       if (!scrollContent) return;
 
       const singleSetWidth = scrollContent.scrollWidth / 2;

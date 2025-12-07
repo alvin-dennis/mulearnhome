@@ -1,19 +1,17 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { officehourdata } from "@/data/events";
+import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
+import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Mic, Clock, Calendar, PlayCircle, Users } from "lucide-react";
-import SearchAndFilter from "./_components/SearchAndFilter";
 import { Button } from "@/components/ui/button";
+import { officehourdata } from "@/data/events";
 import EventsGrid from "./_components/EventsGrid";
 import Pagination from "./_components/Pagination";
+import SearchAndFilter from "./_components/SearchAndFilter";
 
 export default function OfficeHoursPage() {
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [startDate, setStartDate] = useState<string | null>(null);
-  const [endDate, setEndDate] = useState<string | null>(null);
 
   const [upcomingPage, setUpcomingPage] = useState(1);
   const [pastPage, setPastPage] = useState(1);
@@ -21,42 +19,20 @@ export default function OfficeHoursPage() {
 
   const allEvents = officehourdata.events;
 
-  const allTags = useMemo(
-    () => Array.from(new Set(allEvents.flatMap((e) => e.tags))),
-    [allEvents]
-  );
+  const allTags = useMemo(() => Array.from(new Set(allEvents.flatMap((e) => e.tags))), [allEvents]);
 
   const filteredEvents = useMemo(() => {
     return allEvents
+      .filter((event) => event.title.toLowerCase().includes(search.toLowerCase()))
       .filter((event) =>
-        event.title.toLowerCase().includes(search.toLowerCase())
+        selectedTags.length === 0 ? true : selectedTags.every((t) => event.tags.includes(t)),
       )
-      .filter((event) =>
-        selectedTags.length === 0
-          ? true
-          : selectedTags.every((t) => event.tags.includes(t))
-      )
-      .filter((event) => {
-        if (!startDate && !endDate) return true;
-        if (!event.date) return false;
-        const evDate = new Date(event.date);
-        if (startDate) {
-          const s = new Date(startDate);
-          if (evDate < s) return false;
-        }
-        if (endDate) {
-          const e = new Date(endDate);
-          e.setHours(23, 59, 59, 999);
-          if (evDate > e) return false;
-        }
-        return true;
-      })
       .sort((a, b) => {
         const aDate = a.date ? new Date(a.date).getTime() : 0;
         const bDate = b.date ? new Date(b.date).getTime() : 0;
         return bDate - aDate;
       });
-  }, [search, selectedTags, startDate, endDate, allEvents]);
+  }, [search, selectedTags, allEvents]);
 
   const upcomingEvents = filteredEvents.filter((e) => e.isUpcoming);
   const pastEvents = filteredEvents.filter((e) => !e.isUpcoming);
@@ -73,9 +49,7 @@ export default function OfficeHoursPage() {
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
-      prev.includes(tag)
-        ? prev.filter((t) => t !== tag)
-        : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -93,23 +67,17 @@ export default function OfficeHoursPage() {
             </Badge>
 
             <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
-              µLearn{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                Office Hour
-              </span>
+              µLearn <span className="text-mulearn">Office Hour</span>
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
-              A space where µLearn members connect, learn, and grow together.
-              Office Hour is our community-driven learning zone — a place to ask
-              questions, share progress, explore ideas, and get guidance from
-              peers and mentors.
+              A space where µLearn members connect, learn, and grow together. Office Hour is our
+              community-driven learning zone — a place to ask questions, share progress, explore
+              ideas, and get guidance from peers and mentors.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                className="px-8 py-3 gap-2 text-base rounded-full hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-              >
+              <Button variant={"mulearn"} className="px-8 py-3 gap-2 text-base rounded-full">
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>
@@ -124,12 +92,6 @@ export default function OfficeHoursPage() {
         selectedTags={selectedTags}
         onTagToggle={toggleTag}
         allTags={allTags}
-        startDate={startDate}
-        endDate={endDate}
-        onDateRangeChange={(s?: string | null, e?: string | null) => {
-          setStartDate(s || null);
-          setEndDate(e || null);
-        }}
       />
 
       {upcomingEvents.length > 0 && (
@@ -157,7 +119,7 @@ export default function OfficeHoursPage() {
           <EventsGrid
             events={paginatedPast}
             title="Performance Highlights"
-            icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-duke-purple" />}
+            icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />}
           />
 
           <Pagination

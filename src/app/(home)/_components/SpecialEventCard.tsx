@@ -1,15 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FiCalendar, FiClock, FiX } from "react-icons/fi";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import { FiCalendar, FiClock, FiX } from "react-icons/fi";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { SpecialEvent } from "@/lib/types";
+import type { SpecialEvent } from "@/lib/types";
 
-const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
-  specialevent,
-}) => {
+const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialevent }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,7 +24,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
         <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-0 transition-transform duration-300 ease-in-out">
           <Button
             variant={"mulearn"}
-            className="border-none py-3 px-8 text-base font-medium ease-in-out flex items-center justify-center w-full hover:shadow-[0_6px_20px_rgba(0,123,255,0.4)]"
+            className="py-3 px-8 flex items-center justify-center w-full font-semibold"
             onClick={() => setIsOpen(true)}
           >
             Read More
@@ -44,10 +42,8 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
             <div className="rounded-lg overflow-hidden max-w-[400px] w-[90%] max-h-[600px] bg-mulearn-whitish">
               <div className="relative h-[180px] overflow-hidden">
                 <div
-                  className="bg-cover bg-center absolute top-0 left-0 right-0 bottom-0 w-full h-full"
-                  style={{
-                    backgroundImage: `url(${specialevent.image})`,
-                  }}
+                  className="bg-cover bg-center absolute inset-0 w-full h-full"
+                  style={{ backgroundImage: `url(${specialevent.image})` }}
                 />
                 <div
                   className="absolute top-3 right-3 w-5 h-5 text-mulearn-whitish cursor-pointer p-1 rounded-full transition-colors duration-200"
@@ -59,23 +55,19 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
 
               <div className="pt-6 pb-4 px-6">
                 <div className="flex flex-col items-start gap-5">
-                  <p className="text-mulearn-gray-600 text-base">
-                    {specialevent.description}
-                  </p>
+                  <p className="text-mulearn-gray-600 text-base">{specialevent.description}</p>
                   <div className="flex flex-col items-start gap-4 w-full">
                     {specialevent.date && (
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-greyish/50 text-mulearn-blackish">
                           <FiCalendar className="w-5 h-5" />
                         </div>
-                        <p className="font-medium text-base">
-                          {specialevent.date}
-                        </p>
+                        <p className="font-medium text-base">{specialevent.date}</p>
                       </div>
                     )}
                     {specialevent.time && (
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-whitish bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent]">
+                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-whitish text-mulearn]">
                           <FiClock className="w-5 h-5" />
                         </div>
                         <p className="text-base">{specialevent.time}</p>
@@ -96,7 +88,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({
               <div className="pt-2 pb-6 px-6">
                 <Button
                   variant="mulearn"
-                  className="font-semibold rounded-md py-3 px-6 h-[50px] w-full border-none cursor-pointer"
+                  className="font-semibold py-3 px-6"
                   onClick={() => window.open(specialevent.link, "_blank")}
                 >
                   Explore More

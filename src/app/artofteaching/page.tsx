@@ -1,8 +1,8 @@
-import Hero from "./_components/Hero";
-import Guidelines from "./_components/Guidelines";
-import FirstEdition from "./_components/FirstEdition";
-import Judges from "./_components/Judges";
 import Archives from "./_components/Archives";
+import FirstEdition from "./_components/FirstEdition";
+import Guidelines from "./_components/Guidelines";
+import Hero from "./_components/Hero";
+import Judges from "./_components/Judges";
 
 const ArtOfTeaching = () => {
   return (

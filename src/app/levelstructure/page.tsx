@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { useEffect, useState } from "react";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { cdnUrl } from "@/services/cdn";
 import WelcomePage from "./_components/WelcomePage";
 
@@ -90,9 +91,7 @@ export default function LevelStructure() {
     document.head.appendChild(style);
 
     return () => {
-      const styleEl = document.getElementById(
-        "levelstructure-mulearn-whitish-theme"
-      );
+      const styleEl = document.getElementById("levelstructure-mulearn-whitish-theme");
       if (styleEl) styleEl.remove();
     };
   }, []);
@@ -274,8 +273,7 @@ export default function LevelStructure() {
                             height={160}
                             className="w-full h-full object-contain animate-spin  [animation-duration:30s]"
                             style={{
-                              filter:
-                                "drop-shadow(0 0 20px rgba(46, 133, 254, 0.4))",
+                              filter: "drop-shadow(0 0 20px rgba(46, 133, 254, 0.4))",
                             }}
                           />
                         </div>
@@ -316,8 +314,7 @@ export default function LevelStructure() {
                             height={90}
                             className="w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-26 lg:h-26 xl:w-30 xl:h-30 object-contain rocket-thrust"
                             style={{
-                              filter:
-                                "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8))",
+                              filter: "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8))",
                             }}
                           />
                         </div>
@@ -325,17 +322,14 @@ export default function LevelStructure() {
                     </div>
                     <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 lg:order-1 order-2 px-4 sm:px-6 lg:px-0">
                       <div>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-mulearn-blackish mb-4 leading-tight">
-                          The{" "}
-                          <span className="text-transparent bg-clip-text bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple">
-                            μLearn
-                          </span>
+                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
+                          The <span className="text-mulearn">μLearn</span>
                           <br />
                           <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
                             Learning Odyssey
                           </span>
                         </h1>
-                        <div className="h-1 w-24 sm:w-32 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:mx-0 mx-auto mb-6 rounded-full" />
+                        <div className="h-1 w-24 sm:w-32 bg-mulearn lg:mx-0 mx-auto mb-6 rounded-full" />
                       </div>
 
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-mulearn-gray-600 max-w-xs sm:max-w-lg md:max-w-2xl lg:mx-0 mx-auto leading-relaxed">
@@ -351,16 +345,9 @@ export default function LevelStructure() {
                       </p>
 
                       <div className="mt-6 sm:mt-8">
-                        <MotionButton
-                          onClick={handleBeginJourney}
-                          disabled={isAnimating}
-                          className={`bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-m shadow-lg shadow-mulearn-trusty-blue/25 ${
-                            isAnimating ? "cursor-not-allowed opacity-80" : ""
-                          }`}
+                        <MotionDiv
                           whileHover={{
                             scale: 1.05,
-                            boxShadow:
-                              "0 25px 50px -12px rgba(59, 130, 246, 0.5)",
                           }}
                           whileTap={{ scale: 0.95 }}
                           animate={
@@ -382,16 +369,21 @@ export default function LevelStructure() {
                           }
                           transition={{
                             duration: isAnimating ? 1.5 : 0.2,
-                            ease: isAnimating
-                              ? [0.25, 0.46, 0.45, 0.94]
-                              : "easeOut",
-                            times: isAnimating
-                              ? [0, 0.2, 0.4, 0.6, 0.8, 1]
-                              : undefined,
+                            ease: isAnimating ? [0.25, 0.46, 0.45, 0.94] : "easeOut",
+                            times: isAnimating ? [0, 0.2, 0.4, 0.6, 0.8, 1] : undefined,
                           }}
                         >
-                          Begin Your Journey
-                        </MotionButton>
+                          <Button
+                            variant="mulearn"
+                            onClick={handleBeginJourney}
+                            disabled={isAnimating}
+                            className={`px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold ${
+                              isAnimating ? "cursor-not-allowed opacity-80" : ""
+                            }`}
+                          >
+                            Begin Your Journey
+                          </Button>
+                        </MotionDiv>
                       </div>
                     </div>
                   </div>

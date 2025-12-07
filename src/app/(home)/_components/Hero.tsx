@@ -1,14 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Variants } from "framer-motion";
-import {
-  MotionHeader,
-  MotionDiv,
-  MotionH1,
-  MotionP,
-} from "@/components/MuFramer";
 import { cdnUrl } from "@services/cdn";
+import type { Variants } from "framer-motion";
+import { useEffect, useState } from "react";
+import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
@@ -40,13 +35,13 @@ export default function Hero() {
   useEffect(() => {
     setRefreshToken(localStorage.getItem("refreshToken"));
   }, []);
+
   return (
     <MotionHeader
       id="home"
       className="relative flex flex-col items-center justify-start overflow-hidden"
       style={{
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #f1f2f7 30%, #dce0f4 100%)",
+        background: "linear-gradient(180deg, #ffffff 0%, #f1f2f7 30%, #dce0f4 100%)",
       }}
       variants={fadeInUp}
       viewport={{ once: true, amount: 0.3 }}
@@ -63,10 +58,7 @@ export default function Hero() {
           >
             Your Ultimate Gateway
             <br />
-            to{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-              Peer-Led Growth
-            </span>
+            to <span className="text-mulearn">Peer-Led Growth</span>
           </MotionH1>
 
           <MotionP
@@ -89,12 +81,8 @@ export default function Hero() {
           >
             <Button
               variant={"mulearn"}
-              className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg hover:shadow-xl hover:scale-105 active:scale-95"
-              onClick={() =>
-                refreshToken
-                  ? redirect("/dashboard/home")
-                  : redirect("/register")
-              }
+              className="px-6  py-3 sm:text-lg md:text-lg"
+              onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
             >
               Join µLearn
             </Button>
