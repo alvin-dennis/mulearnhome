@@ -24,7 +24,7 @@ mulearnhome/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx        # Main layout (global styles, Navbar)
-│   │   ├── page.tsx          # Home page (/)
+│   │   ├── (home)/page.tsx   # Home page (/)
 │   │   ├── team/page.tsx     # /team route
 │   │   ├── about/page.tsx    # /about route
 │   │   ├── donation/page.tsx # /donation route
@@ -130,11 +130,13 @@ console.log(clientEnv.NEXT_PUBLIC_MY_API_URL);
 #### 2. For **Server-Side** Secrets (Never Expose)
 
 **Step 1:** Add to `.env.local` WITHOUT `NEXT_PUBLIC_` prefix:
+
 ```bash
 MY_SECRET_KEY=super-secret-value
 ```
 
 **Step 2:** Add to `src/lib/env/env.server.ts`:
+
 ```ts
 const serverEnvSchema = z.object({
   // ... existing fields
@@ -143,6 +145,7 @@ const serverEnvSchema = z.object({
 ```
 
 **Step 3:** Use in server code only:
+
 ```ts
 import { serverEnv } from "@/lib/env";
 console.log(serverEnv.MY_SECRET_KEY); // ✅ Works in API routes
@@ -189,15 +192,18 @@ z.string().transform((val) => val.toUpperCase())
 ### Troubleshooting
 
 **Error: "Invalid server environment variables"**
+
 - Check your `.env.local` file
 - Ensure all required variables are set
 - Check that values match validation rules (e.g., valid URLs)
 
 **Error: "serverEnv was imported on the client side!"**
+
 - You're importing `serverEnv` in a client component
 - Use `clientEnv` instead, or move the logic to an API route
 
 **Biome error: "Direct access to process.env is not allowed"**
+
 - Replace `process.env.VAR_NAME` with `serverEnv.VAR_NAME` or `clientEnv.NEXT_PUBLIC_VAR_NAME`
 - Import from `@/lib/env`
 
@@ -215,13 +221,13 @@ z.string().transform((val) => val.toUpperCase())
 2. **Install dependencies:**
 
    ```bash
-   npm install
+   bun install
    ```
 
 3. **Run the development server:**
 
    ```bash
-   npm run dev
+   bun run dev
    ```
 
 4. **Open your browser:**

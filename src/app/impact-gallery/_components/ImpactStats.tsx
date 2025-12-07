@@ -1,68 +1,116 @@
 "use client";
 
-import { useInView } from "framer-motion";
-import { Calendar, GraduationCap, Handshake, School, TrendingUp, Users } from "lucide-react";
-import { useRef } from "react";
-import { MotionDiv, MotionH2 } from "@/components/MuFramer";
-import { impactStats } from "@/data/impact-gallery";
-import type { ImpactStat } from "@/lib/types";
+import type { Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
+import { MotionDiv, MotionH1, MotionSection } from "@/components/MuFramer";
+import type { Counts } from "@/lib/types";
 
-const iconMap = {
-  Users,
-  School,
-  Calendar,
-  Handshake,
-  GraduationCap,
-  TrendingUp,
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
-export default function ImpactStats() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+export default function Stats() {
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useRef<WebSocket | null>(null);
+
+  useEffect(() => {
+    if (!socketRef.current) {
+      const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
+      socketRef.current = socket;
+      const handleMessage = (event: MessageEvent) => {
+        setCounts(JSON.parse(event.data) as Counts);
+      };
+      const handleError = (event: Event) => {
+        void event;
+      };
+      socket.addEventListener("message", handleMessage);
+      socket.addEventListener("error", handleError);
+      return () => {
+        socket.removeEventListener("message", handleMessage);
+        socket.removeEventListener("error", handleError);
+        socket.close();
+        socketRef.current = null;
+      };
+    }
+  }, []);
+
+  if (!counts) {
+    return (
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+        <div className="text-center">Loading statistics...</div>
+      </div>
+    );
+  }
 
   return (
-    <section ref={ref} className="py-16 bg-mulearn-whitish">
-      <div className="container mx-auto px-4">
-        <MotionH2
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          className="text-4xl font-bold text-center text-mulearn mb-12 "
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
+      <MotionSection
+        className="flex flex-col justify-center py-24 items-center"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <MotionH1
+          className="flex flex-1 flex-col sm:flex-row justify-center items-center gap-8 w-full text-4xl sm:text-5xl lg:text-[3.2rem] text-center font-extrabold leading-normal min-w-0 sm:min-w-[400px]"
+          variants={fadeInUp}
         >
-          Our Impact in Numbers
-        </MotionH2>
+              The Impact of <span className="text-mulearn">μLearn</span>
+        </MotionH1>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {impactStats.map((stat: ImpactStat, index) => {
-            const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
+        <MotionDiv variants={fadeInUp} className="w-full">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 px-4 sm:px-8">
+            <StatCard value={counts.members} label="Members" />
+            {counts.org_type_counts.map((org) => (
+              <StatCard
+                key={org.org_type}
+                value={org.org_count}
+                label={
+                  org.org_type.endsWith("y")
+                    ? `${org.org_type.slice(0, -1)}ies`
+                    : `${org.org_type}s`
+                }
+              />
+            ))}
+            <StatCard value={200} label="Events Hosted" />
+            <StatCard value="100" label="Success Stories" isString />
+          </div>
+        </MotionDiv>
+      </MotionSection>
+    </div>
+  );
+}
 
-            return (
-              <MotionDiv
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center group"
-              >
-                <MotionDiv
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="text-4xl mb-4 inline-block text-mulearn"
-                >
-                  <IconComponent size={40} />
-                </MotionDiv>
-                <MotionDiv
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
-                  className="text-3xl font-bold mb-2 text-mulearn"
-                >
-                  {stat.number}
-                </MotionDiv>
-                <div className="text-mulearn-gray-600 font-semibold ">{stat.label}</div>
-              </MotionDiv>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+function StatCard({
+  value,
+  label,
+  isString = false,
+}: {
+  value: number | string;
+  label: string;
+  isString?: boolean;
+}) {
+  return (
+    <div className="flex flex-col justify-center items-center p-4">
+      <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
+        {isString ? (
+          value + "+"
+        ) : (
+          <CountUp
+            end={value as number}
+            duration={5}
+            separator=","
+            suffix="+"
+          />
+        )}
+      </p>
+      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
+    </div>
   );
 }
