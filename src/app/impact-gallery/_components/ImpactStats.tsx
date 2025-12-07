@@ -3,7 +3,7 @@
 import type { Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
-import { MotionDiv, MotionH1, MotionH2, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionH1, MotionSection } from "@/components/MuFramer";
 import type { Counts } from "@/lib/types";
 
 const fadeInUp: Variants = {
