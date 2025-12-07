@@ -39,9 +39,14 @@ class MailService {
       const subject = EmailTemplates.generateEmailSubject(data.intent, data.name);
       const html = EmailTemplates.generateContactEmailTemplate(data);
 
+      const recipients = process.env.CONTACT_EMAIL_RECIPIENTS?.split(",").map((e) => e.trim()) || [
+        "sachin@mulearn.org",
+        "info@mulearn.org",
+      ];
+
       const mailOptions = {
         from: process.env.GMAIL_USER,
-        to: ["sachin@mulearn.org", "info@mulearn.org"],
+        to: recipients,
         subject,
         html,
         replyTo: data.email,
