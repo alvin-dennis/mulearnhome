@@ -43,6 +43,14 @@
       }
     }
   },
+  "overrides": [
+    {
+      "includes": ["src/lib/env/**"],
+      "linter": {
+        "enabled": true
+      }
+    }
+  ],
   "javascript": {
     "formatter": {
       "quoteStyle": "double"

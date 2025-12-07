@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { clientEnv } from "@/lib/env/env.client";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
 
@@ -48,7 +49,7 @@ const retro = localFont({
   display: "swap",
 });
 
-const cdnurl = process.env.NEXT_PUBLIC_CDN_URL;
+const cdnurl = clientEnv.NEXT_PUBLIC_CDN_URL;
 
 export default function RootLayout({
   children,

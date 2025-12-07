@@ -1,7 +1,8 @@
 import axios from "axios";
+import { clientEnv } from "@/lib/env/env.client";
 
 export const publicGateway = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://dev.mulearn.org/api/v1",
+  baseURL: clientEnv.NEXT_PUBLIC_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

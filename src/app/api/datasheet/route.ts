@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { serverEnv } from "@/lib/env/env.server";
 import { contactFormSchema, type EmailData } from "@/lib/schemas/contact";
 
 // DatasheetData extends EmailData with additional fields for tracking
@@ -27,7 +28,7 @@ const securityHeaders = {
 export async function POST(request: NextRequest) {
   try {
     // Check required environment variables
-    if (!process.env.GOOGLE_APPS_SCRIPT_URL || !process.env.GOOGLE_APPS_SCRIPT_SECRET) {
+    if (!serverEnv.GOOGLE_APPS_SCRIPT_URL || !serverEnv.GOOGLE_APPS_SCRIPT_SECRET) {
       return NextResponse.json(
         { success: false, message: "Datasheet service not configured." },
         { status: 503, headers: securityHeaders },
@@ -81,10 +82,10 @@ export async function POST(request: NextRequest) {
       issueCategory: validatedData.issueCategory || "",
     };
 
-    const appsScriptUrl = new URL(process.env.GOOGLE_APPS_SCRIPT_URL);
+    const appsScriptUrl = new URL(serverEnv.GOOGLE_APPS_SCRIPT_URL);
     appsScriptUrl.searchParams.append(
       "authorization",
-      `Bearer ${process.env.GOOGLE_APPS_SCRIPT_SECRET}`,
+      `Bearer ${serverEnv.GOOGLE_APPS_SCRIPT_SECRET}`,
     );
 
     const appsScriptResponse = await fetch(appsScriptUrl.toString(), {

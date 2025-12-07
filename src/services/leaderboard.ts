@@ -1,6 +1,7 @@
 import { existsSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import axios from "axios";
+import { serverEnv } from "@/lib/env/env.server";
 
 interface ContributorStats {
   username: string;
@@ -12,7 +13,7 @@ interface ContributorStats {
   issues_closed: number;
 }
 
-const TOKEN = process.env.GH_TOKEN;
+const TOKEN = serverEnv.GH_TOKEN;
 if (!TOKEN) throw new Error("GITHUB_TOKEN is required to run");
 
 function sleep(ms: number) {

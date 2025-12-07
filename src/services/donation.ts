@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+import { clientEnv } from "@/lib/env/env.client";
 import type {
   DonationFormPayload,
   RazorpayErrorResponse,
@@ -112,7 +113,7 @@ const loadRazorpayScript = async (): Promise<void> => {
 
 // Helper function to get Razorpay key
 const getRazorpayKey = (): string => {
-  const razorpayKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+  const razorpayKey = clientEnv.NEXT_PUBLIC_RAZORPAY_KEY_ID;
   if (!razorpayKey) {
     toast.error("Payment configuration error. Please contact support.");
     console.error("NEXT_PUBLIC_RAZORPAY_KEY_ID is not configured");

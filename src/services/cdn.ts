@@ -1,5 +1,7 @@
+import { clientEnv } from "@/lib/env/env.client";
+
 export function cdnUrl(path: string): string {
-  const base = process.env.NEXT_PUBLIC_CDN_URL?.replace(/\/$/, "") || "";
+  const base = clientEnv.NEXT_PUBLIC_CDN_URL;
   const cleanPath = path.replace(/^\/+/, "");
   return `${base}/${cleanPath}`;
 }

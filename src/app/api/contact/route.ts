@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { serverEnv } from "@/lib/env/env.server";
 import { contactFormSchema, type EmailData } from "@/lib/schemas/contact";
 import { mailService } from "@/services/mail";
 
@@ -100,7 +101,7 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+    if (!serverEnv.GMAIL_USER || !serverEnv.GMAIL_APP_PASSWORD) {
       return NextResponse.json(
         { success: false, message: "Service temporarily unavailable." },
         { status: 503, headers },

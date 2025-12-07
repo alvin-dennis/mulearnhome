@@ -1,5 +1,6 @@
 import path from "node:path";
 import nodemailer from "nodemailer";
+import { serverEnv } from "@/lib/env/env.server";
 import type { EmailData } from "@/lib/schemas/contact";
 import { EmailTemplates } from "./emailtemplate/emailTemplates";
 
@@ -11,21 +12,21 @@ class MailService {
 
   constructor() {
     const emailConfig =
-      process.env.EMAIL_PROVIDER === "outlook"
+      serverEnv.EMAIL_PROVIDER === "outlook"
         ? {
             host: "smtp-mail.outlook.com",
             port: 587,
             secure: false,
             auth: {
-              user: process.env.GMAIL_USER,
-              pass: process.env.GMAIL_APP_PASSWORD,
+              user: serverEnv.GMAIL_USER,
+              pass: serverEnv.GMAIL_APP_PASSWORD,
             },
           }
         : {
             service: "gmail",
             auth: {
-              user: process.env.GMAIL_USER,
-              pass: process.env.GMAIL_APP_PASSWORD,
+              user: serverEnv.GMAIL_USER,
+              pass: serverEnv.GMAIL_APP_PASSWORD,
             },
           };
 
@@ -39,13 +40,10 @@ class MailService {
       const subject = EmailTemplates.generateEmailSubject(data.intent, data.name);
       const html = EmailTemplates.generateContactEmailTemplate(data);
 
-      const recipients = process.env.CONTACT_EMAIL_RECIPIENTS?.split(",").map((e) => e.trim()) || [
-        "sachin@mulearn.org",
-        "info@mulearn.org",
-      ];
+      const recipients = serverEnv.CONTACT_EMAIL_RECIPIENTS;
 
       const mailOptions = {
-        from: process.env.GMAIL_USER,
+        from: serverEnv.GMAIL_USER,
         to: recipients,
         subject,
         html,
@@ -78,7 +76,7 @@ class MailService {
       const autoReplyHtml = EmailTemplates.generateAutoReplyTemplate(data);
 
       const autoReplyOptions = {
-        from: process.env.GMAIL_USER,
+        from: serverEnv.GMAIL_USER,
         to: data.email,
         subject: "Your inquiry has been received - μLearn Foundation",
         html: autoReplyHtml,
