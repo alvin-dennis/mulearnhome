@@ -22,6 +22,10 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     newStyle.width = newStyle.width ?? "auto";
   }
 
+  // Determine if `fill` is used — for `fill`, Next/Image controls sizing via the parent
+  // and we must not set inline width/height styles (Next will error if style.width is set).
+  const isFill = (props as any).fill === true;
+
   // If the caller provided an explicit style that changes one dimension
   // (e.g. `style={{ height: 'auto' }}`), ensure the complementary
   // dimension is set to 'auto' when a numeric prop exists. This handles
@@ -98,6 +102,13 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   }
 
   const alt = rest.alt ?? "";
+
+  // If `fill` is used, remove any inline width/height styling — Next.js expects
+  // the parent to control dimensions and will error if `style.width` is provided.
+  if (isFill) {
+    if (newStyle.hasOwnProperty("width")) delete (newStyle as any).width;
+    if (newStyle.hasOwnProperty("height")) delete (newStyle as any).height;
+  }
   // Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
   // and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
   let shouldUnoptimized = false;

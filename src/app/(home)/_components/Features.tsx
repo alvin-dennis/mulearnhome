@@ -64,7 +64,6 @@ export default function Features() {
           onMouseLeave={() => setIsHovering(false)}
         >
           {features.map((feature, i) => (
-            <>
             <MotionDiv
               key={i}
               variants={fadeInUp}
@@ -131,7 +130,7 @@ export default function Features() {
                   style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
                 </div>
-              </MotionDiv>
+
               <Link href={feature.url} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="mulearn"
@@ -140,7 +139,8 @@ export default function Features() {
                   {feature.cta}
                 </Button>
               </Link>
-            </>))}
+            </MotionDiv>
+          ))}
         </MotionDiv>
       </MotionSection>
     </div>
