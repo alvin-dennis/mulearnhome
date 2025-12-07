@@ -4,8 +4,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { cdnUrl } from "@/services/cdn";
 import { Card, CardContent } from "@/components/ui/card";
+import { cdnUrl } from "@/services/cdn";
 
 export default function Level3Section() {
   const sectionRef = useRef(null);
@@ -82,14 +82,10 @@ export default function Level3Section() {
 
             <Card className="bg-mulearn-gray-50 rounded-2xl">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-mulearn-blackish">
-                  The Impact
-                </h3>
+                <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
                 <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                  Students move from passive learners to active creators. They {" "}
-                  <span className="font-semibold text-mulearn-blackish">
-                    command technology
-                  </span>{" "}
+                  Students move from passive learners to active creators. They{" "}
+                  <span className="font-semibold text-mulearn-blackish">command technology</span>{" "}
                   instead of being commanded by it.
                 </p>
               </CardContent>

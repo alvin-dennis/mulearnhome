@@ -28,7 +28,7 @@ export default function Apply() {
             Apply to Start a Chapter
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
-          </Link>
+        </Link>
       </MotionDiv>
     </section>
   );

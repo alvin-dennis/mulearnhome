@@ -103,14 +103,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
 
 export default IGSection;
 
-const CardItem = ({
-  name,
-  image,
-  link,
-  description,
-  largeImg,
-  date,
-}: cardProps) => {
+const CardItem = ({ name, image, link, description, largeImg, date }: cardProps) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer">
       <Card
@@ -137,16 +130,12 @@ const CardItem = ({
 
           {link !== "#" ? (
             <div className="mt-auto flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
-              <span className="uppercase font-medium text-[16px] leading-[22px]">
-                Explore More
-              </span>
+              <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
               <SquareArrowOutUpRight />
             </div>
           ) : (
             <div className="mt-auto">
-              <span className="uppercase font-medium text-[16px] leading-[22px]">
-                Coming Soon!
-              </span>
+              <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
             </div>
           )}
         </CardContent>

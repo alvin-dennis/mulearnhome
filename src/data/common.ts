@@ -40,8 +40,8 @@ export const navItems = [
           label: "TESTIMONIALS",
           href: "/testimonials",
         },
-        // { label: "ANNUAL REPORTS", 
-        //   href: "/reports" 
+        // { label: "ANNUAL REPORTS",
+        //   href: "/reports"
         // },
       ],
     },

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 import type { CommunityCardProps } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
-import { Card, CardContent } from "@/components/ui/card";
 
 const CommunityCard: React.FC<CommunityCardProps> = ({ name, image, link, customlink }) => {
   return (
@@ -50,6 +50,6 @@ const CommunityCard: React.FC<CommunityCardProps> = ({ name, image, link, custom
       </div>
     </div>
   );
-}
+};
 
 export default CommunityCard;

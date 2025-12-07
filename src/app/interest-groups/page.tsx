@@ -357,8 +357,15 @@ export default function InterestGroups() {
             for the careers of tomorrow.
           </p>
           <div>
-            <Button asChild className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300">
-              <a href="https://app.mulearn.org/dashboard/profile" target="_blank" rel="noopener noreferrer">
+            <Button
+              asChild
+              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
+            >
+              <a
+                href="https://app.mulearn.org/dashboard/profile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Join an Interest Group <ArrowRight className="w-5 h-5" />
               </a>
             </Button>

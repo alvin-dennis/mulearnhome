@@ -3,8 +3,7 @@ import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CareersCardProps } from "@/lib/types";
-
+import type { CareersCardProps } from "@/lib/types";
 
 const CareersCard = ({
   role,
@@ -70,25 +69,43 @@ const CareersCard = ({
 
       <CardContent className="mt-auto flex flex-col gap-2 w-full">
         {jdlink && (
-          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+          <Button
+            asChild
+            variant="mulearn"
+            className="w-full flex items-center justify-center gap-1 px-4 py-2"
+          >
             <a href={jdlink} target="_blank" rel="noopener noreferrer">
               <File /> View JD
             </a>
           </Button>
         )}
         {applylink && (
-          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
-            <a href={applylink} target="_blank" rel="noopener noreferrer">Apply Now</a>
+          <Button
+            asChild
+            variant="mulearn"
+            className="w-full flex items-center justify-center gap-1 px-4 py-2"
+          >
+            <a href={applylink} target="_blank" rel="noopener noreferrer">
+              Apply Now
+            </a>
           </Button>
         )}
         {jdlink && (
           <Button asChild variant="mulearn" className="px-5 py-2 font-semibold">
-            <a href={jdlink} target="_blank" rel="noopener noreferrer">View JD</a>
+            <a href={jdlink} target="_blank" rel="noopener noreferrer">
+              View JD
+            </a>
           </Button>
         )}
         {extraButton && (
-          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
-            <a href={extraButton} target="_blank" rel="noopener noreferrer">View Challenge</a>
+          <Button
+            asChild
+            variant="mulearn"
+            className="w-full flex items-center justify-center gap-1 px-4 py-2"
+          >
+            <a href={extraButton} target="_blank" rel="noopener noreferrer">
+              View Challenge
+            </a>
           </Button>
         )}
       </CardContent>

@@ -1,8 +1,8 @@
-import LearnersHero from "@/app/be-a-part/learners/_components/LearnersHero";
 import LearnerIntro from "@/app/be-a-part/learners/_components/LearnerIntro";
-import Testimonials from "@/app/be-a-part/learners/_components/Testimonials";
+import LearnersHero from "@/app/be-a-part/learners/_components/LearnersHero";
 // import RankingSection from "@/app/be-a-part/learners/_components/RankingSection";
 import OnboardingSteps from "@/app/be-a-part/learners/_components/OnboardingSteps";
+import Testimonials from "@/app/be-a-part/learners/_components/Testimonials";
 
 import { learnerIdentityTags, onboardingSteps } from "@/data/learners";
 

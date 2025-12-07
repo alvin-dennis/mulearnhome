@@ -78,16 +78,13 @@ export default function Level4Section() {
 
             <Card className="bg-mulearn-gray-50 rounded-2xl">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-mulearn-blackish">
-                  The Impact
-                </h3>
+                <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
                 <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                  Learners start building {" "}
+                  Learners start building{" "}
                   <span className="font-semibold text-mulearn-blackish">
                     portfolios of proof-of-work
                   </span>{" "}
-                  within their chosen interest group. No more drifting through
-                  scattered learning.
+                  within their chosen interest group. No more drifting through scattered learning.
                 </p>
               </CardContent>
             </Card>

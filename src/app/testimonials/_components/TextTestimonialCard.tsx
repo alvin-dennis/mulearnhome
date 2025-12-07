@@ -1,8 +1,8 @@
 "use client";
 import { Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;

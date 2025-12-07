@@ -1,5 +1,5 @@
-import { ClosedCareersCardProps } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
+import type { ClosedCareersCardProps } from "@/lib/types";
 
 const ClosedCareersCard = ({
   date,

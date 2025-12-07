@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/services/cdn";
-import { Card, CardContent } from "@/components/ui/card"
 
 interface MentorCardProps {
   name: string;
@@ -14,7 +14,7 @@ interface MentorCardProps {
 const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => {
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
   // const mentorImage = image ? image : fallbackImage;
-  const mentorImage = image ?  fallbackImage: undefined;
+  const mentorImage = image ? fallbackImage : undefined;
 
   return (
     <Card className="mx-auto mt-4 max-w-sm w-full overflow-hidden">

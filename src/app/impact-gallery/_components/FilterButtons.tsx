@@ -20,9 +20,7 @@ export default function FilterButtons({ activeFilter, onFilterChange }: FilterBu
             {category.label}
             <span
               className={`ml-2 sm:text-xs md:text-sm ${
-                activeFilter === category.id
-                  ? "text-mulearn-whitish/80"
-                  : "text-mulearn-gray-600"
+                activeFilter === category.id ? "text-mulearn-whitish/80" : "text-mulearn-gray-600"
               }`}
             >
               ({category.count})

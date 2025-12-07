@@ -81,7 +81,6 @@ export const specialevents = [
     image: "/assets/home/permute.png",
     isLive: false,
   },
-        
 ];
 
 export const opportunities = [

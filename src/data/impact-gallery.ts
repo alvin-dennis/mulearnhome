@@ -1,4 +1,4 @@
-import type { AnnualReport, GalleryItem, ImpactStat, Counts } from "@/lib/types";
+import type { AnnualReport, Counts, GalleryItem, ImpactStat } from "@/lib/types";
 
 export const galleryData: GalleryItem[] = [
   {
@@ -99,15 +99,13 @@ export function impactStatsFromCounts(counts: Counts): ImpactStat[] {
     ? counts.org_type_counts.reduce((s, o) => s + (o.org_count || 0), 0)
     : 0;
   const companyObj = counts.org_type_counts
-    ? counts.org_type_counts.find((o) =>
-        String(o.org_type).toLowerCase().includes("company")
-      )
+    ? counts.org_type_counts.find((o) => String(o.org_type).toLowerCase().includes("company"))
     : undefined;
   const companyPartners = companyObj ? companyObj.org_count : 0;
 
   const mentorsObj = counts.enablers_mentors_count
     ? counts.enablers_mentors_count.find((r) =>
-        String(r.role__title).toLowerCase().includes("mentor")
+        String(r.role__title).toLowerCase().includes("mentor"),
       )
     : undefined;
   const mentors = mentorsObj ? mentorsObj.role_count : 0;

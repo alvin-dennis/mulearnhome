@@ -7,7 +7,7 @@ import MuLoader from "@/components/Loader";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
-import type { TextTestimonial, VideoTestimonial, Counts } from "@/lib/types";
+import type { Counts, TextTestimonial, VideoTestimonial } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
 import VideoCarousel from "./_components/VideoCarousel";
@@ -48,9 +48,7 @@ export default function TestimonialsPage() {
   useEffect(() => {
     if (!socketRef[0].current) {
       try {
-        const socket = new WebSocket(
-          "wss://mulearn.org/ws/v1/public/landing-stats/"
-        );
+        const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
         socketRef[0].current = socket;
         const handleMessage = (event: MessageEvent) => {
           try {
@@ -89,8 +87,8 @@ export default function TestimonialsPage() {
           number: formatNumber(
             counts.enablers_mentors_count?.reduce(
               (s: number, r: { role_count?: number }) => s + (r.role_count || 0),
-              0
-            ) || 0
+              0,
+            ) || 0,
           ),
           label: "Expert Mentors",
         },
@@ -99,8 +97,8 @@ export default function TestimonialsPage() {
           number: formatNumber(
             counts.org_type_counts?.reduce(
               (s: number, o: { org_count?: number }) => s + (o.org_count || 0),
-              0
-            ) || 0
+              0,
+            ) || 0,
           ),
           label: "Partner Companies",
         },

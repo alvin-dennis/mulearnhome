@@ -3,16 +3,16 @@
 import { Building, Calendar, FileText, HelpCircle, School, Send, Users } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
-  SelectTrigger,
   SelectContent,
   SelectItem,
+  SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -318,8 +318,7 @@ export default function ContactForm() {
                   value={formData.organizationType}
                   onValueChange={(value) => {
                     setFormData((prev) => ({ ...prev, organizationType: value }));
-                    if (errors.organizationType)
-                      setErrors((p) => ({ ...p, organizationType: "" }));
+                    if (errors.organizationType) setErrors((p) => ({ ...p, organizationType: "" }));
                   }}
                 >
                   <SelectTrigger className="w-full">
@@ -609,19 +608,17 @@ export default function ContactForm() {
             <SelectTrigger className={`w-full ${errors.intent ? "border-red-500" : ""}`}>
               <SelectValue placeholder="Select one" />
             </SelectTrigger>
-                  <SelectContent>
-                    {intents
-                      .filter((option) => option.value !== "")
-                      .map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                  </SelectContent>
+            <SelectContent>
+              {intents
+                .filter((option) => option.value !== "")
+                .map((option) => (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+            </SelectContent>
           </Select>
-          {errors.intent && (
-            <p className="text-sm text-red-600">{errors.intent}</p>
-          )}
+          {errors.intent && <p className="text-sm text-red-600">{errors.intent}</p>}
         </div>
 
         {formData.intent && renderConditionalFields()}
@@ -711,9 +708,7 @@ export default function ContactForm() {
               I agree to the privacy policy and to be contacted about my query. *
             </label>
           </div>
-          {errors.consent && (
-            <p className="text-sm text-red-600">{errors.consent}</p>
-          )}
+          {errors.consent && <p className="text-sm text-red-600">{errors.consent}</p>}
         </div>
 
         {submitStatus.type && (

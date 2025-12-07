@@ -1,6 +1,6 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
-import { VideoTestimonial } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
+import type { VideoTestimonial } from "@/lib/types";
 
 interface VideoTestimonialCardProps {
   testimonial: VideoTestimonial;

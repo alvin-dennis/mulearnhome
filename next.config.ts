@@ -26,12 +26,11 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'www.propeers.in',
-        pathname: '/**',
-      }
+        protocol: "https",
+        hostname: "www.propeers.in",
+        pathname: "/**",
+      },
     ],
   },
-  
 };
 export default nextConfig;

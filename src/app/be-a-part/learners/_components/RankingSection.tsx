@@ -1,6 +1,6 @@
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
-import { TopLearner, Testimonial } from "@/lib/types";
+import type { Testimonial, TopLearner } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
 interface RankingSectionProps {
@@ -10,11 +10,7 @@ interface RankingSectionProps {
 
 const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
-const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({
-  name,
-  kp,
-  imageUrl,
-}) => (
+const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({ name, kp, imageUrl }) => (
   <Card className="text-center group relative flex flex-col items-center bg-transparent shadow-none">
     <CardContent className="relative p-0">
       <div className="relative">

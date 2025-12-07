@@ -106,8 +106,8 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   // If `fill` is used, remove any inline width/height styling — Next.js expects
   // the parent to control dimensions and will error if `style.width` is provided.
   if (isFill) {
-    if (newStyle.hasOwnProperty("width")) delete (newStyle as any).width;
-    if (newStyle.hasOwnProperty("height")) delete (newStyle as any).height;
+    if (Object.hasOwn(newStyle, "width")) delete (newStyle as any).width;
+    if (Object.hasOwn(newStyle, "height")) delete (newStyle as any).height;
   }
   // Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
   // and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
@@ -129,17 +129,13 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     /* ignore parsing errors */
   }
 
-  const imageProps = { ...(rest as object), unoptimized: shouldUnoptimized || (rest as any).unoptimized } as ImageProps;
+  const imageProps = {
+    ...(rest as object),
+    unoptimized: shouldUnoptimized || (rest as any).unoptimized,
+  } as ImageProps;
 
   return (
-    <Image
-      ref={ref}
-      width={width}
-      height={height}
-      style={newStyle}
-      {...imageProps}
-      alt={alt}
-    />
+    <Image ref={ref} width={width} height={height} style={newStyle} {...imageProps} alt={alt} />
   );
 });
 

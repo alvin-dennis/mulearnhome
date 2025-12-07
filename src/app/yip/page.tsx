@@ -148,55 +148,57 @@ export default function YipPage() {
           <Card className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
             <CardContent className="p-0">
               <div className="bg-mulearn-whitish flex flex-row z-0 rounded-[25px] relative">
-              <div className="p-8">
-                <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
-                  Kerala&apos;s Biggest{" "}
-                  <strong className="font-bold text-mulearn">
-                    Innovation Celebration is here!
-                  </strong>
-                </h2>
-                <br />
+                <div className="p-8">
+                  <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
+                    Kerala&apos;s Biggest{" "}
+                    <strong className="font-bold text-mulearn">
+                      Innovation Celebration is here!
+                    </strong>
+                  </h2>
+                  <br />
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/lines.png")}
+                    alt="Decorative lines"
+                    width={240}
+                    height={30}
+                    className="mt-[-3rem] max-w-[15rem] h-auto"
+                  />
+                  <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
+                    Young Innovators Programme 5.0
+                  </p>
+                </div>
                 <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/lines.png")}
-                  alt="Decorative lines"
-                  width={240}
-                  height={30}
-                  className="mt-[-3rem] max-w-[15rem] h-auto"
+                  src={cdnUrl("src/modules/Public/yip/assets/boxoneimg.png")}
+                  alt="YIP celebration graphic"
+                  width={380}
+                  height={288}
+                  className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
                 />
-                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
-                  Young Innovators Programme 5.0
-                </p>
               </div>
-              <MuImage
-                src={cdnUrl("src/modules/Public/yip/assets/boxoneimg.png")}
-                alt="YIP celebration graphic"
-                width={380}
-                height={288}
-                className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
-              />
-            </div>
-            <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant={"mulearn"}
-                className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
-              >
-                Apply Now
-              </Button>
-            </Link>
+              <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant={"mulearn"}
+                  className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
+                >
+                  Apply Now
+                </Button>
+              </Link>
               <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
                 <p>
-                YIP 5.0 is here and{" "}
-                <strong className="font-bold text-mulearn">
-                  it&apos;s bigger and more impactful than ever before!
-                </strong>{" "}
-                Backed by the Kerala government.
-                <br />
-                <br />
-                This year&apos;s initiative provides an incredible opportunity for{" "}
-                <strong className="font-bold text-mulearn">college and university students</strong>{" "}
-                to showcase their innovation skills and create{" "}
-                <strong className="font-bold text-mulearn">real-world impact</strong>.
-              </p>
+                  YIP 5.0 is here and{" "}
+                  <strong className="font-bold text-mulearn">
+                    it&apos;s bigger and more impactful than ever before!
+                  </strong>{" "}
+                  Backed by the Kerala government.
+                  <br />
+                  <br />
+                  This year&apos;s initiative provides an incredible opportunity for{" "}
+                  <strong className="font-bold text-mulearn">
+                    college and university students
+                  </strong>{" "}
+                  to showcase their innovation skills and create{" "}
+                  <strong className="font-bold text-mulearn">real-world impact</strong>.
+                </p>
               </div>
             </CardContent>
           </Card>

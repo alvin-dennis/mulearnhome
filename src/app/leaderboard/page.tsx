@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -11,7 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Card, CardContent } from "@/components/ui/card";
 import leaderboardData from "@/data/leaderboard.json";
 import type { Score } from "@/lib/types";
 
@@ -45,56 +45,58 @@ export default function LeaderBoard() {
           </h1>
 
           <Table className="min-w-[800px] w-full">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-              Rank
-            </TableHead>
-            <TableHead className="text-left text-sm md:text-base text-mulearn-blackish">
-              Name
-            </TableHead>
-            <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-              Commits
-            </TableHead>
-            <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-              PRs
-              <div className="text-xs font-normal text-mulearn-gray-600">(Open / Merged)</div>
-            </TableHead>
-            <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-              Issues
-              <div className="text-xs font-normal text-mulearn-gray-600">(Open / Closed)</div>
-            </TableHead>
-          </TableRow>
-        </TableHeader>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
+                  Rank
+                </TableHead>
+                <TableHead className="text-left text-sm md:text-base text-mulearn-blackish">
+                  Name
+                </TableHead>
+                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
+                  Commits
+                </TableHead>
+                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
+                  PRs
+                  <div className="text-xs font-normal text-mulearn-gray-600">(Open / Merged)</div>
+                </TableHead>
+                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
+                  Issues
+                  <div className="text-xs font-normal text-mulearn-gray-600">(Open / Closed)</div>
+                </TableHead>
+              </TableRow>
+            </TableHeader>
 
-        <TableBody>
-          {scores.map((score, index) => (
-            <TableRow
-              key={score.username}
-              className={index < 3 ? "bg-mulearn text-mulearn-whitish font-bold" : ""}
-            >
-              <TableCell className="text-center text-sm md:text-base">{index + 1}</TableCell>
-              <TableCell className="text-left text-sm md:text-base">
-                <Link
-                  href={`https://github.com/${score.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-mulearn-primary"
+            <TableBody>
+              {scores.map((score, index) => (
+                <TableRow
+                  key={score.username}
+                  className={index < 3 ? "bg-mulearn text-mulearn-whitish font-bold" : ""}
                 >
-                  {score.displayname}
-                </Link>
-              </TableCell>
-              <TableCell className="text-center text-sm md:text-base">{score.commits}</TableCell>
-              <TableCell className="text-center text-sm md:text-base">
-                {score.prs_opened}/{score.prs_merged}
-              </TableCell>
-              <TableCell className="text-center text-sm md:text-base">
-                {score.issues_opened}/{score.issues_closed}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                  <TableCell className="text-center text-sm md:text-base">{index + 1}</TableCell>
+                  <TableCell className="text-left text-sm md:text-base">
+                    <Link
+                      href={`https://github.com/${score.username}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline text-mulearn-primary"
+                    >
+                      {score.displayname}
+                    </Link>
+                  </TableCell>
+                  <TableCell className="text-center text-sm md:text-base">
+                    {score.commits}
+                  </TableCell>
+                  <TableCell className="text-center text-sm md:text-base">
+                    {score.prs_opened}/{score.prs_merged}
+                  </TableCell>
+                  <TableCell className="text-center text-sm md:text-base">
+                    {score.issues_opened}/{score.issues_closed}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </CardContent>
       </Card>
     </MotionDiv>

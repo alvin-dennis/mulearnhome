@@ -129,7 +129,7 @@ export default function Features() {
                   className="object-contain max-w-full h-auto"
                   style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
-                </div>
+              </div>
 
               <Link href={feature.url} target="_blank" rel="noopener noreferrer">
                 <Button

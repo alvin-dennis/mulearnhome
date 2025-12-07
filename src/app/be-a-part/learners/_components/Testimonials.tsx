@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { slideImages } from "@/data/learners";
-import { testimonials } from "@/data/testimonials";
+import { useEffect, useRef, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { slideImages } from "@/data/learners";
+import { testimonials } from "@/data/testimonials";
 import { cdnUrl } from "@/services/cdn";
 
 interface SlideImage {

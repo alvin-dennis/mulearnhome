@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import * as htmlToImage from "html-to-image";
+import { useRef, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import * as htmlToImage from "html-to-image";
 
 const StripesBackground = ({ className = "" }: { className?: string }) => (
   <MuImage
@@ -425,12 +425,25 @@ export default function CampusLogoGenerator() {
             </div>
 
             <div>
-              <Label className="block mb-2" style={{ fontFamily: "var(--font-plus-jakarta)", color: "var(  --mulearn-blackish-normal)", fontSize: "var(--font-size-body)", fontWeight: 500 }}>Campus Code</Label>
+              <Label
+                className="block mb-2"
+                style={{
+                  fontFamily: "var(--font-plus-jakarta)",
+                  color: "var(  --mulearn-blackish-normal)",
+                  fontSize: "var(--font-size-body)",
+                  fontWeight: 500,
+                }}
+              >
+                Campus Code
+              </Label>
               <Input
                 type="text"
                 placeholder="Enter Campus Code"
                 className="w-full p-3 border-0 bg-gray-50 focus:bg-mulearn-whitish transition-all duration-200"
-                style={{ fontFamily: "var(--font-plus-jakarta)", fontSize: "var(--font-size-body)" }}
+                style={{
+                  fontFamily: "var(--font-plus-jakarta)",
+                  fontSize: "var(--font-size-body)",
+                }}
                 value={formData.campusCode}
                 onChange={(e) => handleInputChange("campusCode", e.target.value)}
               />
@@ -456,9 +469,13 @@ export default function CampusLogoGenerator() {
                   variant={formData.logoType === "MuLearn" ? undefined : "outline"}
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoType === "MuLearn" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                   style={{
-                    backgroundColor: formData.logoType === "MuLearn" ? "var(--mulearn-trusty-blue )" : undefined,
+                    backgroundColor:
+                      formData.logoType === "MuLearn" ? "var(--mulearn-trusty-blue )" : undefined,
                     fontFamily: "var(--font-plus-jakarta)",
-                    color: formData.logoType !== "MuLearn" ? "var(  --mulearn-blackish-normal)" : undefined,
+                    color:
+                      formData.logoType !== "MuLearn"
+                        ? "var(  --mulearn-blackish-normal)"
+                        : undefined,
                     fontWeight: 500,
                   }}
                   onClick={() => handleInputChange("logoType", "MuLearn")}
@@ -469,9 +486,11 @@ export default function CampusLogoGenerator() {
                   variant={formData.logoType === "YIP" ? undefined : "outline"}
                   className={`flex-1 rounded-lg p-3 font-medium transition-all ${formData.logoType === "YIP" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                   style={{
-                    backgroundColor: formData.logoType === "YIP" ? "var(  --mulearn-trusty-blue )" : undefined,
+                    backgroundColor:
+                      formData.logoType === "YIP" ? "var(  --mulearn-trusty-blue )" : undefined,
                     fontFamily: "var(--font-plus-jakarta)",
-                    color: formData.logoType !== "YIP" ? "var(  --mulearn-blackish-normal)" : undefined,
+                    color:
+                      formData.logoType !== "YIP" ? "var(  --mulearn-blackish-normal)" : undefined,
                     fontWeight: 500,
                   }}
                   onClick={() => handleInputChange("logoType", "YIP")}
@@ -501,9 +520,15 @@ export default function CampusLogoGenerator() {
                       variant={formData.yipVariant === variant.value ? undefined : "outline"}
                       className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.yipVariant === variant.value ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                       style={{
-                        backgroundColor: formData.yipVariant === variant.value ? "var(  --mulearn-trusty-blue )" : undefined,
+                        backgroundColor:
+                          formData.yipVariant === variant.value
+                            ? "var(  --mulearn-trusty-blue )"
+                            : undefined,
                         fontFamily: "var(--font-plus-jakarta)",
-                        color: formData.yipVariant !== variant.value ? "var(  --mulearn-blackish-normal)" : undefined,
+                        color:
+                          formData.yipVariant !== variant.value
+                            ? "var(  --mulearn-blackish-normal)"
+                            : undefined,
                         fontWeight: 500,
                       }}
                       onClick={() => handleInputChange("yipVariant", variant.value)}
@@ -531,9 +556,15 @@ export default function CampusLogoGenerator() {
                     variant={formData.logoVariant === "Profile Pic" ? undefined : "outline"}
                     className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoVariant === "Profile Pic" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                     style={{
-                      backgroundColor: formData.logoVariant === "Profile Pic" ? "var(  --mulearn-trusty-blue )" : undefined,
+                      backgroundColor:
+                        formData.logoVariant === "Profile Pic"
+                          ? "var(  --mulearn-trusty-blue )"
+                          : undefined,
                       fontFamily: "var(--font-plus-jakarta)",
-                      color: formData.logoVariant !== "Profile Pic" ? "var(  --mulearn-blackish-normal)" : undefined,
+                      color:
+                        formData.logoVariant !== "Profile Pic"
+                          ? "var(  --mulearn-blackish-normal)"
+                          : undefined,
                       fontWeight: 500,
                     }}
                     onClick={() => handleInputChange("logoVariant", "Profile Pic")}
@@ -544,9 +575,15 @@ export default function CampusLogoGenerator() {
                     variant={formData.logoVariant === "Transparent Bg" ? undefined : "outline"}
                     className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoVariant === "Transparent Bg" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                     style={{
-                      backgroundColor: formData.logoVariant === "Transparent Bg" ? "var(  --mulearn-trusty-blue )" : undefined,
+                      backgroundColor:
+                        formData.logoVariant === "Transparent Bg"
+                          ? "var(  --mulearn-trusty-blue )"
+                          : undefined,
                       fontFamily: "var(--font-plus-jakarta)",
-                      color: formData.logoVariant !== "Transparent Bg" ? "var(  --mulearn-blackish-normal)" : undefined,
+                      color:
+                        formData.logoVariant !== "Transparent Bg"
+                          ? "var(  --mulearn-blackish-normal)"
+                          : undefined,
                       fontWeight: 500,
                     }}
                     onClick={() => handleInputChange("logoVariant", "Transparent Bg")}
@@ -645,9 +682,11 @@ export default function CampusLogoGenerator() {
                   variant={formData.fileType === "PNG" ? undefined : "outline"}
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.fileType === "PNG" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                   style={{
-                    backgroundColor: formData.fileType === "PNG" ? "var(  --mulearn-trusty-blue )" : undefined,
+                    backgroundColor:
+                      formData.fileType === "PNG" ? "var(  --mulearn-trusty-blue )" : undefined,
                     fontFamily: "var(--font-plus-jakarta)",
-                    color: formData.fileType !== "PNG" ? "var(  --mulearn-blackish-normal)" : undefined,
+                    color:
+                      formData.fileType !== "PNG" ? "var(  --mulearn-blackish-normal)" : undefined,
                     fontWeight: 500,
                   }}
                   onClick={() => handleInputChange("fileType", "PNG")}
@@ -658,9 +697,11 @@ export default function CampusLogoGenerator() {
                   variant={formData.fileType === "SVG" ? undefined : "outline"}
                   className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.fileType === "SVG" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
                   style={{
-                    backgroundColor: formData.fileType === "SVG" ? "var(  --mulearn-trusty-blue )" : undefined,
+                    backgroundColor:
+                      formData.fileType === "SVG" ? "var(  --mulearn-trusty-blue )" : undefined,
                     fontFamily: "var(--font-plus-jakarta)",
-                    color: formData.fileType !== "SVG" ? "var(  --mulearn-blackish-normal)" : undefined,
+                    color:
+                      formData.fileType !== "SVG" ? "var(  --mulearn-blackish-normal)" : undefined,
                     fontWeight: 500,
                   }}
                   onClick={() => handleInputChange("fileType", "SVG")}

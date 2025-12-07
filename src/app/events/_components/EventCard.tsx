@@ -75,41 +75,41 @@ export default function EventCard({ event }: Props) {
               </MotionDiv>
             </DialogTrigger>
 
-              <DialogContent className="max-w-lg rounded-2xl">
-                <DialogHeader>
-                  <DialogTitle>{event.title}</DialogTitle>
-                  {event.date && (
-                    <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{event.date}</span>
-                    </div>
-                  )}
-                  {event.image && (
-                    <MuImage
-                      src={event.image}
-                      alt={event.title}
-                      width={800}
-                      height={400}
-                      className="rounded-lg object-cover w-full mb-4"
-                    />
-                  )}
-                  <DialogDescription className="text-mulearn-blackish text-sm leading-relaxed">
-                    {event.description}
-                  </DialogDescription>
-                </DialogHeader>
-                <DialogFooter>
-                  <Button
-                    asChild
-                    variant="mulearn"
-                    className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
-                  >
-                    <a href={event.link}>Go to Event</a>
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
+            <DialogContent className="max-w-lg rounded-2xl">
+              <DialogHeader>
+                <DialogTitle>{event.title}</DialogTitle>
+                {event.date && (
+                  <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>{event.date}</span>
+                  </div>
+                )}
+                {event.image && (
+                  <MuImage
+                    src={event.image}
+                    alt={event.title}
+                    width={800}
+                    height={400}
+                    className="rounded-lg object-cover w-full mb-4"
+                  />
+                )}
+                <DialogDescription className="text-mulearn-blackish text-sm leading-relaxed">
+                  {event.description}
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button
+                  asChild
+                  variant="mulearn"
+                  className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
+                >
+                  <a href={event.link}>Go to Event</a>
+                </Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
-          )}
-        </div>
+        )}
+      </div>
     </MotionDiv>
   );
 }
