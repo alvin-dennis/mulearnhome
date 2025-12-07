@@ -173,7 +173,7 @@ export default function Team() {
               alt="Team Illustration"
               width={512}
               height={512}
-              className="w-full h-auto max-w-[32rem]"
+              className="w-full h-auto md:max-w-[32rem] sm:max-w-[24rem]"
               preload
             />
           </MotionDiv>

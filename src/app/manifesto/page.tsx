@@ -72,7 +72,7 @@ export default function Manifesto() {
             transform
           </span>{" "}
           failures into stepping stones, and together we{" "}
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent]">
+          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
             redefine
           </span>{" "}
           learning.

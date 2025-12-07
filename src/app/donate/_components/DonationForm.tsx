@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { submitDonationForm } from "@/services/donation";
 
 type DonationType = "one-time" | "monthly" | "yearly";
@@ -300,12 +301,7 @@ export default function DonationForm() {
         </div>
 
         <div className="flex items-center space-x-3 pt-2">
-          <input
-            type="checkbox"
-            id="isOrganisation"
-            {...register("isOrganisation")}
-            className="w-4 h-4 text-mulearn-trusty-blue border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-mulearn-trusty-blue focus:ring-offset-0 transition-all cursor-pointer"
-          />
+          <Checkbox id="isOrganisation" {...register("isOrganisation")} className="mt-0.5" />
           <Label
             htmlFor="isOrganisation"
             className="text-sm font-medium text-mulearn-gray-600 cursor-pointer"
@@ -500,12 +496,7 @@ export default function DonationForm() {
           <div className="flex flex-col gap-5">
             {}
             <div className="flex items-start space-x-3">
-              <input
-                type="checkbox"
-                id="termsAccepted"
-                {...register("termsAccepted")}
-                className="w-4 h-4 mt-0.5 text-mulearn-trusty-blue border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-mulearn-trusty-blue focus:ring-offset-0 transition-all cursor-pointer"
-              />
+              <Checkbox id="termsAccepted" {...register("termsAccepted")} className="mt-0.5" />
               <div className="flex-1">
                 <Label
                   htmlFor="termsAccepted"

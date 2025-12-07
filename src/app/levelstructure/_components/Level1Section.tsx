@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level1Section() {
   const sectionRef = useRef(null);
@@ -78,19 +79,21 @@ export default function Level1Section() {
               </div>
             </div>
 
-            <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
-              <h3 className="text-lg font-bold text-mulearn-blackish">
-                The Impact
-              </h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                Students realize that their journey begins not with skills, but
-                with{" "}
-                <span className="font-semibold text-mulearn-blackish">
-                  identity and courage to show up
-                </span>
-                .
-              </p>
-            </div>
+            <Card className="bg-mulearn-gray-50 rounded-2xl">
+              <CardContent className="p-6 space-y-3">
+                <h3 className="text-lg font-bold text-mulearn-blackish">
+                  The Impact
+                </h3>
+                <p className="text-base text-mulearn-gray-600 leading-relaxed">
+                  Students realize that their journey begins not with skills, but
+                  with {" "}
+                  <span className="font-semibold text-mulearn-blackish">
+                    identity and courage to show up
+                  </span>
+                  .
+                </p>
+              </CardContent>
+            </Card>
           </MotionDiv>
 
           <MotionDiv

@@ -2,6 +2,7 @@ import { MotionDiv } from "@/components/MuFramer";
 import Link from "next/link";
 import { ArrowRight, Users, Building2, Target, Rocket } from "lucide-react";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 
 export default function PartnersPage() {
   return (
@@ -312,19 +313,19 @@ export default function PartnersPage() {
                 impactful learning experiences for thousands of learners
                 worldwide.
               </p>
-              <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
-                <Link href="/be-a-part/company">
-                  <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Company</span>
-                    <ArrowRight className="w-5 h-5" style={{ color: 'var(--mulearn-trusty-blue)' }} />
-                  </button>
-                </Link>
-                <Link href="/be-a-part/campus">
-                  <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">Join as Community</span>
-                    <ArrowRight className="w-5 h-5" style={{ color: 'var(--mulearn-trusty-blue)' }} />
-                  </button>
-                </Link>
+              <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">                 
+                  <Button asChild className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto" >
+                    <Link href="/be-a-part/company">
+                    Join as Company
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                  <Button asChild className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto" >
+                    <Link href="/be-a-part/campus">
+                    Join as Community
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
               </div>
             </div>
           </MotionDiv>

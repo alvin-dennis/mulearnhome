@@ -82,7 +82,7 @@ export default function Features() {
                   setIsHovering(true);
                 }
               }}
-              className={`flex flex-col items-center justify-between p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300
+              className={`flex flex-col items-center p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300 transform-gpu
                 rounded-xl
                 grow
                 min-w-[200px]
@@ -92,11 +92,14 @@ export default function Features() {
                 `}
               style={{
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
-                flex: isCardActive(i) ? 2 : 1,
+                // avoid changing flex to prevent layout shifts of sibling cards
+                // use transform to visually highlight without reflow
+                transform: isCardActive(i) ? "scale(1.03)" : "scale(1)",
+                zIndex: isCardActive(i) ? 20 : 1,
                 height: isMobile ? "auto" : "300px",
               }}
             >
-              <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 px-2 flex-1">
                 <h3
                   className="font-semibold mb-1 sm:mb-2 transition-all duration-300"
                   style={{
@@ -122,12 +125,8 @@ export default function Features() {
                   {feature.description}
                 </p>
               </div>
-              <div
-                className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center"
-                style={{
-                  transform: isCardActive(i) ? "scale(1.05)" : "scale(1)",
-                }}
-              >
+              <div className="relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center">
+                <div style={{ transform: isCardActive(i) ? "scale(1.05)" : "scale(1)" }} className="w-full flex justify-center">
                 <MuImage
                   src={feature.image}
                   alt={feature.title}
@@ -148,19 +147,15 @@ export default function Features() {
                   className="object-contain max-w-full h-auto"
                   style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
+                </div>
               </div>
-              <Link
-                href={feature.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="mulearn"
-                  className="mt-auto px-4 py-2 font-semibold w-full sm:w-auto"
-                >
-                  {feature.cta}
-                </Button>
-              </Link>
+              <div className="w-full flex justify-center pt-3">
+                <Link href={feature.url} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button variant="mulearn" className="px-4 py-2 font-semibold w-full sm:w-auto !hover:scale-100 !transform-none">
+                    {feature.cta}
+                  </Button>
+                </Link>
+              </div>
             </MotionDiv>
           ))}
         </MotionDiv>

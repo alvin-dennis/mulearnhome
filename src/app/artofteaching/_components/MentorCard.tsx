@@ -2,6 +2,7 @@ import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 import { FaLinkedin } from "react-icons/fa";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface MentorCardProps {
   name: string;
@@ -22,8 +23,8 @@ const MentorCard = ({
   const mentorImage = image ?  fallbackImage: undefined;
 
   return (
-    <div className="mx-auto mt-4 max-w-sm w-full shadow-lg rounded-lg bg-white border border-gray-100 overflow-hidden">
-      <div className="p-6 flex flex-col items-center text-center">
+    <Card className="mx-auto mt-4 max-w-sm w-full overflow-hidden">
+      <CardContent className="flex flex-col items-center text-center">
         {mentorImage && (
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-gray-50">
             <MuImage
@@ -52,8 +53,8 @@ const MentorCard = ({
             <FaLinkedin className="w-6 h-6 text-mulearn-trusty-blue hover:scale-110 transition-transform duration-300" />
           </Link>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

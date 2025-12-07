@@ -13,6 +13,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -268,17 +276,20 @@ export default function ContactForm() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="campusChapter">Campus Chapter Status</Label>
-                <select
-                  id="campusChapter"
-                  name="campusChapter"
+                <Select
                   value={formData.campusChapter}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, campusChapter: value }))
+                  }
                 >
-                  <option value="">Select status</option>
-                  <option value="existing">Existing chapter</option>
-                  <option value="starting">Starting new chapter</option>
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="existing">Existing chapter</SelectItem>
+                    <SelectItem value="starting">Starting new chapter</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="interestGroups">Interest Groups</Label>
@@ -314,43 +325,50 @@ export default function ContactForm() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="organizationType">Organization Type</Label>
-                <select
-                  id="organizationType"
-                  name="organizationType"
+                <Select
                   value={formData.organizationType}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
+                  onValueChange={(value) => {
+                    setFormData((prev) => ({ ...prev, organizationType: value }));
+                    if (errors.organizationType)
+                      setErrors((p) => ({ ...p, organizationType: "" }));
+                  }}
                 >
-                  {organizationTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select organization type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {organizationTypes
+                      .filter((option) => option.value !== "")
+                      .map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="focusArea">Focus Area</Label>
-                <select
-                  id="focusArea"
-                  name="focusArea"
+                <Select
                   value={formData.focusArea}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
+                  onValueChange={(value) => {
+                    setFormData((prev) => ({ ...prev, focusArea: value }));
+                    if (errors.focusArea) setErrors((p) => ({ ...p, focusArea: "" }));
+                  }}
                 >
-                  {focusAreas.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select focus area" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {focusAreas
+                      .filter((option) => option.value !== "")
+                      .map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="timeline">Timeline</Label>
@@ -376,23 +394,26 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="programType">Program Type</Label>
-                <select
-                  id="programType"
-                  name="programType"
+                <Select
                   value={formData.programType}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
+                  onValueChange={(value) => {
+                    setFormData((prev) => ({ ...prev, programType: value }));
+                    if (errors.programType) setErrors((p) => ({ ...p, programType: "" }));
+                  }}
                 >
-                  {programTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select program type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {programTypes
+                      .filter((option) => option.value !== "")
+                      .map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="targetCohort">Target Cohort</Label>
@@ -553,23 +574,26 @@ export default function ContactForm() {
             </h4>
             <div className="space-y-2">
               <Label htmlFor="issueCategory">Issue Category</Label>
-              <select
-                id="issueCategory"
-                name="issueCategory"
+              <Select
                 value={formData.issueCategory}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
+                onValueChange={(value) => {
+                  setFormData((prev) => ({ ...prev, issueCategory: value }));
+                  if (errors.issueCategory) setErrors((p) => ({ ...p, issueCategory: "" }));
+                }}
               >
-                {issueCategories.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                    disabled={option.value === ""}
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select issue category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {issueCategories
+                    .filter((option) => option.value !== "")
+                    .map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         );
@@ -586,26 +610,26 @@ export default function ContactForm() {
           <Label htmlFor="intent" className="text-base font-semibold">
             I am here to...
           </Label>
-          <select
-            id="intent"
-            name="intent"
+          <Select
             value={formData.intent}
-            onChange={handleChange}
-            required
-            className={`w-full px-3 py-3 border rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent text-base ${
-              errors.intent ? "border-red-500" : "border-mulearn-gray-300"
-            }`}
+            onValueChange={(value) => {
+              setFormData((prev) => ({ ...prev, intent: value }));
+              if (errors.intent) setErrors((p) => ({ ...p, intent: "" }));
+            }}
           >
-            {intents.map((option) => (
-              <option
-                key={option.value}
-                value={option.value}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </option>
-            ))}
-          </select>
+            <SelectTrigger className={`w-full ${errors.intent ? "border-red-500" : ""}`}>
+              <SelectValue placeholder="Select one" />
+            </SelectTrigger>
+                  <SelectContent>
+                    {intents
+                      .filter((option) => option.value !== "")
+                      .map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+          </Select>
           {errors.intent && (
             <p className="text-sm text-red-600">{errors.intent}</p>
           )}
@@ -692,19 +716,18 @@ export default function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <label className="flex items-start space-x-3">
-            <input
-              type="checkbox"
+          <div className="flex items-start space-x-3">
+            <Checkbox
+              id="consent"
               name="consent"
               checked={formData.consent}
               onChange={handleChange}
-              className="mt-1 rounded border-mulearn-gray-300 text-mulearn-trusty-blue focus:ring-mulearn-trusty-blue"
+              className="mt-1"
             />
-            <span className="text-sm text-mulearn-gray-700">
-              I agree to the privacy policy and to be contacted about my query.
-              *
-            </span>
-          </label>
+            <label htmlFor="consent" className="text-sm text-mulearn-gray-700">
+              I agree to the privacy policy and to be contacted about my query. *
+            </label>
+          </div>
           {errors.consent && (
             <p className="text-sm text-red-600">{errors.consent}</p>
           )}

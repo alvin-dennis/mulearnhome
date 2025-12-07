@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 import { YouTubeEmbed } from "@next/third-parties/google";
@@ -88,13 +89,16 @@ const Guidelines = () => {
             </div>
 
             <div className=" lg:block lg:w-1/2">
-              <div className="bg-white rounded-lg p-8 max-w-2xl">
-                <h3 className="text-2xl font-semibold text-mulearn-blackish mb-6">
-                  <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                    Guidelines
-                  </span>
-                </h3>
-                <div style={timelineStyle}>
+              <Card className="max-w-2xl">
+                <CardHeader>
+                  <CardTitle>
+                    <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                      Guidelines
+                    </span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div style={timelineStyle}>
                   <div>
                     <h4 className="text-lg font-semibold text-mulearn-blackish mb-2">
                       Level 1
@@ -136,8 +140,9 @@ const Guidelines = () => {
                       </Button>
                     </Link>
                   </div>
-                </div>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

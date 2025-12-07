@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import leaderboardData from "@/data/leaderboard.json";
 import { Score } from "@/lib/types";
@@ -31,17 +32,19 @@ export default function LeaderBoard() {
 
   const renderTable = (title: string, scores: Score[]) => (
     <MotionDiv
-      className="m-3 p-5 rounded-2xl shadow-md w-full max-w-5xl overflow-x-auto bg-mulearn-bg"
+      className="m-3 w-full max-w-5xl"
       variants={fadeInUp}
       initial="hidden"
       animate="visible"
     >
-      <h1 className="text-center text-2xl md:text-2xl font-bold mb-5 text-mulearn-primary">
-        {title}
-        {title === "Monthly Leaderboard" && ` — ${date}`}
-      </h1>
+      <Card className="rounded-2xl shadow-md bg-mulearn-bg">
+        <CardContent className="p-5 overflow-x-auto">
+          <h1 className="text-center text-2xl md:text-2xl font-bold mb-5 text-mulearn-primary">
+            {title}
+            {title === "Monthly Leaderboard" && ` — ${date}`}
+          </h1>
 
-      <Table className="min-w-[800px] w-full">
+          <Table className="min-w-[800px] w-full">
         <TableHeader>
           <TableRow>
             <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
@@ -104,6 +107,8 @@ export default function LeaderBoard() {
           ))}
         </TableBody>
       </Table>
+        </CardContent>
+      </Card>
     </MotionDiv>
   );
 

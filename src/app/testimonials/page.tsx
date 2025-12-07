@@ -112,11 +112,24 @@ export default function TestimonialsPage() {
         { icon: TrendingUp, number: "100+", label: "Partner Companies" },
       ];
 
+  const formatMobileNumber = (raw: string) => {
+    // extract digits from string like "62,783+" or "1990+" or "50K+"
+    const digitsStr = (raw || "").replace(/[^0-9]/g, "");
+    const n = parseInt(digitsStr || "0", 10);
+    if (!n) return raw;
+    if (n >= 1000) {
+      // if >=10,000 show rounded k (no decimals), else show one decimal place
+      if (n >= 10000) return Math.round(n / 1000) + "k+";
+      return Math.round(n / 100) / 10 + "k+";
+    }
+    return raw;
+  };
+
   return (
     <div className="min-h-screen">
       {}
       <div className="relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-32 pb-12 sm:pb-24">
           <MotionDiv
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +137,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.8 }}
           >
             <MotionH1
-              className=" text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
+              className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -135,7 +148,7 @@ export default function TestimonialsPage() {
               </span>
             </MotionH1>
             <MotionP
-              className="text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-8"
+              className="text-base sm:text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -146,7 +159,7 @@ export default function TestimonialsPage() {
 
             {}
             <MotionDiv
-              className="flex justify-center items-center gap-8 mt-12"
+              className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -159,8 +172,9 @@ export default function TestimonialsPage() {
                       <Icon className="w-6 h-6 text-mulearn-whitish" />
                     </div>
                     <div className=" text-2xl font-bold text-mulearn-blackish">
-                      {stat.number}
-                    </div>
+                          <span className="block sm:hidden">{formatMobileNumber(String(stat.number))}</span>
+                          <span className="hidden sm:block">{stat.number}</span>
+                        </div>
                     <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide">
                       {stat.label}
                     </div>
@@ -176,35 +190,33 @@ export default function TestimonialsPage() {
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
-            <div className="flex bg-mulearn-gray-100 rounded-2xl p-1 my-6">
-              <button
+            <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 my-6 max-w-full">
+              <Button
                 onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "video"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                variant={activeTab === "video" ? "mulearn" : "ghost"}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
+                  activeTab === "video" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
               >
                 <Video className="w-5 h-5" />
                 Video Testimonials
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => setActiveTab("text")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "text"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                variant={activeTab === "text" ? "mulearn" : "ghost"}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
+                  activeTab === "text" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
               >
                 <MessageCircle className="w-5 h-5" />
                 Community Feedback
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="py-20">
+      <div className="py-12 sm:py-20">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32">
             <MuLoader />
@@ -264,8 +276,8 @@ export default function TestimonialsPage() {
         )}
       </div>
 
-      <div className="py-20 mb-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="py-12 sm:py-20 mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,19 +291,19 @@ export default function TestimonialsPage() {
               Join thousands of learners, mentors, and partners who are
               transforming education through collaborative learning
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a href="https://app.mulearn.org"><Button
-                variant="mulearn"
-                className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                
-              >
-                Join Our Community
-              </Button>
-              </a>
-              <Link href="/contact" target="_blank" rel="noopener noreferrer">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-xl mx-auto px-4">
+              <a href="https://app.mulearn.org" className="w-full sm:w-auto">
                 <Button
                   variant="mulearn"
-                  className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="border-2 border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                >
+                  Join Our Community
+                </Button>
+              </a>
+              <Link href="https://airtable.com/appzJZWzMWidJ0KHo/pagqcMn08HSvFjj7R/form" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button
+                  variant="mulearn"
+                  className="border-2 border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 >
                   Share Your Experience
                 </Button>

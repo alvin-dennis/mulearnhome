@@ -63,15 +63,15 @@ export default function CompanyPartners() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish)] text-center lg:text-left mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish text-center lg:text-left mb-3 sm:mb-4">
               Company{" "}
               <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                 Onboardings
               </span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-mulearn-blackish text-center lg:text-left max-w-3xl">
-              µLearn has partnered with multiple Companies to provide the
-              student the best Resources and Opportunities possible
+              µLearn has partnered with multiple companies to provide the
+              student the best resources and opportunities possible
             </p>
           </MotionDiv>
 

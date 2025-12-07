@@ -51,7 +51,7 @@ export default function Hero() {
       variants={fadeInUp}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-28 lg:pt-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-18 ">
         <div className="flex flex-col items-center justify-center text-center">
           <MotionH1
             custom={1}
@@ -59,7 +59,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight mb-4 sm:mb-6 max-w-3xl sm:max-w-4xl"
+            className=" sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight mb-4 sm:mb-6 max-w-3xl sm:max-w-4xl"
           >
             Your Ultimate Gateway
             <br />
@@ -108,7 +108,7 @@ export default function Hero() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={textVariant}
-        className="relative w-full mt-8 sm:mt-12 md:mt-16 flex justify-center"
+        className="relative w-full sm:mt-12 md:-mt-12  flex justify-center"
       >
         <MuImage
           src={illustration}

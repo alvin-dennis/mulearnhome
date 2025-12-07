@@ -1,5 +1,6 @@
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { CareersCardProps } from "@/lib/types";
 import { Clock, MapPin, File } from "lucide-react";
@@ -20,7 +21,7 @@ const CareersCard = ({
   organization,
 }: CareersCardProps) => {
   return (
-    <div className="w-80 rounded-2xl border border-mulearn-trusty-blue bg-mulearn-whitish p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center gap-4">
+    <Card className="w-80 rounded-2xl border border-mulearn-trusty-blue bg-mulearn-whitish p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center gap-4">
       {logo && (
         <MuImage
           src={logo}
@@ -70,37 +71,31 @@ const CareersCard = ({
         )}
       </div>
 
-      <div className="mt-auto flex flex-col gap-2 w-full">
+      <CardContent className="mt-auto flex flex-col gap-2 w-full">
         {jdlink && (
-          <Link href={jdlink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <a href={jdlink} target="_blank" rel="noopener noreferrer">
               <File /> View JD
-            </Button>
-          </Link>
+            </a>
+          </Button>
         )}
         {applylink && (
-          <Link href={applylink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
-              Apply Now
-            </Button>
-          </Link>
+          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <a href={applylink} target="_blank" rel="noopener noreferrer">Apply Now</a>
+          </Button>
         )}
         {jdlink && (
-          <Link href={jdlink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="px-5 py-2 font-semibold">
-              View JD
-            </Button>
-          </Link>
+          <Button asChild variant="mulearn" className="px-5 py-2 font-semibold">
+            <a href={jdlink} target="_blank" rel="noopener noreferrer">View JD</a>
+          </Button>
         )}
         {extraButton && (
-          <Link href={extraButton} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
-              View Challenge
-            </Button>
-          </Link>
+          <Button asChild variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <a href={extraButton} target="_blank" rel="noopener noreferrer">View Challenge</a>
+          </Button>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

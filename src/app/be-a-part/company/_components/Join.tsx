@@ -146,18 +146,9 @@ export default function HowToJoin() {
           viewport={{ once: true }}
           className="flex justify-center mt-12"
         >
-          <Link
-            href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              variant={"mulearn"}
-              className="cursor-pointer hover:opacity-90 text-mulearn-whitish px-4 py-3 text-md font-bold transition-all"
-            >
-              Join as a Company Partner
-            </Button>
-          </Link>
+          <Button asChild variant={"mulearn"} className="cursor-pointer hover:opacity-90 text-mulearn-whitish px-6 py-3 text-md font-bold transition-all">
+            <a href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1" target="_blank" rel="noopener noreferrer">Join as a Company Partner</a>
+          </Button>
         </MotionDiv>
       </div>
     </section>

@@ -66,14 +66,11 @@ export default function Programs() {
                   winners with cash prizes.
                 </p>
                 <div>
-                  <Link href="https://mulearnfoundation.notion.site/artofteaching-guidelines" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="mulearn"
-                    className=" px-6 py-3 text-sm font-semibold md:text-base"
-                  >
-                    Know More
+                  <Button asChild variant="mulearn" className=" px-6 py-3 text-sm font-semibold md:text-base">
+                    <a href="https://mulearnfoundation.notion.site/artofteaching-guidelines" target="_blank" rel="noopener noreferrer">
+                      Know More
+                    </a>
                   </Button>
-                  </Link>
                 </div>
               </MotionDiv>
             </div>

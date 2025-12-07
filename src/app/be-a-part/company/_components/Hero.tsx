@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 import MuImage from "@/components/MuImage";
 import { companyImages } from "@/data/company";
 
@@ -42,19 +43,17 @@ export default function Hero() {
               </span>
             </h1>
 
-            <MotionButton
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md"
+            <MotionDiv
+              initial={{ opacity: 0 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              className=""
             >
-              <Link
-                href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Join as a Company Partner
-              </Link>
-            </MotionButton>
+              <Button asChild className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-medium text-base sm:text-sm lg:text-sm px-2 sm:px-4 py-2 sm:py-5 rounded-[20px] transition-all hover:opacity-90 shadow-md">
+                <a href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1" target="_blank" rel="noopener noreferrer">Join as a Company Partner</a>
+              </Button>
+            </MotionDiv>
           </MotionDiv>
         </div>
       </div>

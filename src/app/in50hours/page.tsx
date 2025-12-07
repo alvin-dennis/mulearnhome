@@ -1,4 +1,5 @@
 import { MotionDiv, MotionButton } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 import MuImage from "@/components/MuImage";
 import { in50hrs } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
@@ -44,19 +45,11 @@ export default function In50Hours() {
             />
           </div>
           <div className="flex justify-center md:justify-start">
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.makemypass.com/in50hours"
-            >
-              <MotionButton
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish mt-2 sm:mt-4 px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-mulearn-duke-purple transition-colors duration-300 text-sm sm:text-base"
-              >
-                Register Now
-              </MotionButton>
-            </Link>
+            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button asChild className="mt-2 sm:mt-4 px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish hover:bg-mulearn-duke-purple transition-colors duration-300">
+                <a target="_blank" rel="noreferrer" href="https://www.makemypass.com/in50hours">Register Now</a>
+              </Button>
+            </MotionDiv>
           </div>
         </MotionDiv>
 

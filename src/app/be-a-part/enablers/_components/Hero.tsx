@@ -150,18 +150,16 @@ export default function Hero() {
             </span>
           </h1>
 
-          <Link
-            href="https://app.mulearn.org/"
-            target="_blank"
-            className="inline-block"
-          >
-            <Button
-              variant="mulearn"
-              className=" mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
+          <Button asChild>
+            <a
+              href="https://app.mulearn.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
             >
               Join µLearn
-            </Button>
-          </Link>
+            </a>
+          </Button>
         </MotionDiv>
       </div>
 

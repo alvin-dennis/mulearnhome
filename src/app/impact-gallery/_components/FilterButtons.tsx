@@ -22,11 +22,11 @@ export default function FilterButtons({
           <Button
             variant={activeFilter === category.id ? "mulearn" : "outline"}
             onClick={() => onFilterChange(category.id)}
-            className="px-6 py-3 rounded-full font-semibold"
+            className="px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold"
           >
             {category.label}
             <span
-              className={`ml-2 text-sm ${
+              className={`ml-2 sm:text-xs md:text-sm ${
                 activeFilter === category.id
                   ? "text-mulearn-whitish/80"
                   : "text-mulearn-gray-600"

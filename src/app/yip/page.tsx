@@ -3,6 +3,7 @@ import Link from "next/link";
 import { yip } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
   title: "YIP | µLearn",
@@ -160,8 +161,9 @@ export default function YipPage() {
     <main role="main" className="min-h-screen w-full text-mulearn-blackish">
       <section className="max-w-[1600px] mx-auto">
         <div className="flex flex-row justify-center items-stretch mt-8 mx-4 flex-wrap relative">
-          <div className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
-            <div className="bg-mulearn-whitish flex flex-row z-0 rounded-[25px] relative">
+          <Card className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
+            <CardContent className="p-0">
+              <div className="bg-mulearn-whitish flex flex-row z-0 rounded-[25px] relative">
               <div className="p-8">
                 <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
                   Kerala&apos;s Biggest{" "}
@@ -188,8 +190,8 @@ export default function YipPage() {
                 height={288}
                 className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
               />
-            </div>
-            <Link
+              </div>
+              <Link
               href="https://yip.kerala.gov.in/"
               target="_blank"
               rel="noopener noreferrer"
@@ -201,8 +203,8 @@ export default function YipPage() {
                 Apply Now
               </Button>
             </Link>
-            <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
-              <p>
+              <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
+                <p>
                 YIP 5.0 is here and{" "}
                 <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
                   it&apos;s bigger and more impactful than ever before!
@@ -220,54 +222,59 @@ export default function YipPage() {
                   real-world impact
                 </strong>
                 .
-              </p>
-            </div>
-          </div>
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
           <div className="max-[1460px]:flex max-[1460px]:flex-row max-[1460px]:justify-between max-[1460px]:flex-wrap max-[1048px]:flex-col max-[1048px]:items-center max-[1048px]:justify-center">
-            <div className="max-w-[538px] min-w-[20rem] p-8 shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 flex flex-col justify-stretch transition-all duration-300">
-              <h3 className="font-medium text-[2.25rem] leading-[47px] tracking-[0.02em] capitalize ml-4 text-right max-[490px]:text-center">
-                Download the <br /> YIP App Now!
-              </h3>
-              <div className="flex flex-row-reverse justify-between flex-wrap max-[490px]:flex-col max-[490px]:items-center">
-                <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/qrcode.png")}
-                  alt="YIP App QR code"
-                  width={192}
-                  height={192}
-                  className="h-[12rem] w-auto max-[490px]:mt-8"
-                />
-                <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/cat.png")}
-                  alt="Mascot"
-                  width={192}
-                  height={192}
-                  className="h-[12rem] scale-x-[-1] w-auto max-[460px]:hidden"
-                />
-              </div>
-            </div>
+            <Card className="max-w-[538px] min-w-[20rem] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 transition-all duration-300">
+              <CardContent className="p-8 flex flex-col justify-stretch">
+                <h3 className="font-medium text-[2.25rem] leading-[47px] tracking-[0.02em] capitalize ml-4 text-right max-[490px]:text-center">
+                  Download the <br /> YIP App Now!
+                </h3>
+                <div className="flex flex-row-reverse justify-between flex-wrap max-[490px]:flex-col max-[490px]:items-center">
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/qrcode.png")}
+                    alt="YIP App QR code"
+                    width={192}
+                    height={192}
+                    className="h-[12rem] w-auto max-[490px]:mt-8"
+                  />
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/cat.png")}
+                    alt="Mascot"
+                    width={192}
+                    height={192}
+                    className="h-[12rem] scale-x-[-1] w-auto max-[460px]:hidden"
+                  />
+                </div>
+              </CardContent>
+            </Card>
 
-            <div className="max-w-[538px] p-8 shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 flex flex-col items-center transition-all duration-300">
-              <h3 className="font-medium text-[2.25rem] leading-[36px] capitalize text-mulearn-blackish max-[768px]:text-[1.75rem]">
-                Brainstorm, Collaborate, And Create
-              </h3>
-              <MuImage
-                src={cdnUrl("src/modules/Public/yip/assets/bllines.png")}
-                alt="Decorative blue lines"
-                width={240}
-                height={30}
-                className="mt-[-20px] mb-[10px] h-auto"
-              />
-              <MuImage
-                src={cdnUrl(
-                  "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png"
-                )}
-                alt="Students collaborating illustration"
-                width={320}
-                height={192}
-                className="mt-[-3rem] h-[12rem] w-auto max-[460px]:h-[8rem]"
-              />
-            </div>
+            <Card className="max-w-[538px] rounded-[25px] m-4 transition-all duration-300 shadow-[0px_0px_23px_rgba(130,177,255,0.22)]">
+              <CardContent className="p-8 flex flex-col items-center">
+                <h3 className="font-medium text-[2.25rem] leading-[36px] capitalize text-mulearn-blackish max-[768px]:text-[1.75rem]">
+                  Brainstorm, Collaborate, And Create
+                </h3>
+                <MuImage
+                  src={cdnUrl("src/modules/Public/yip/assets/bllines.png")}
+                  alt="Decorative blue lines"
+                  width={240}
+                  height={30}
+                  className="mt-[-20px] mb-[10px] h-auto"
+                />
+                <MuImage
+                  src={cdnUrl(
+                    "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png"
+                  )}
+                  alt="Students collaborating illustration"
+                  width={320}
+                  height={192}
+                  className="mt-[-3rem] h-[12rem] w-auto max-[460px]:h-[8rem]"
+                />
+              </CardContent>
+            </Card>
           </div>
 
           <div className="flex flex-row justify-between items-center flex-wrap bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-8 m-4 w-full rounded-[25px]">
@@ -313,50 +320,52 @@ export default function YipPage() {
                   }`}
                 >
                   <div className="hidden lg:block w-full">
-                    <div className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
-                      <div
-                        className={`flex items-center ${
-                          index % 2 === 0 ? "flex-row-reverse" : ""
-                        }`}
-                      >
+                    <Card className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
+                      <CardContent className="p-0">
                         <div
-                          className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}
+                          className={`flex items-center ${
+                            index % 2 === 0 ? "flex-row-reverse" : ""
+                          }`}
                         >
-                          <MuImage
-                            src={event.icon}
-                            alt={`${event.title} icon`}
-                            width={80}
-                            height={80}
-                            className="w-20 h-20 object-contain"
-                          />
-                        </div>
-                        <div
-                          className={`flex-shrink-0 px-8 py-6 rounded-full text-mulearn-whitish font-bold text-lg min-w-[200px] flex items-center justify-center ${colors.labelBg}`}
-                        >
-                          <div className="text-center">
-                            {event.phaseLabel.split("\n").map((line, i) => (
-                              <span key={i} className="block">
-                                {line}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="flex-1 p-6">
                           <div
-                            className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
+                            className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}
                           >
-                            {event.title}
+                            <MuImage
+                              src={event.icon}
+                              alt={`${event.title} icon`}
+                              width={80}
+                              height={80}
+                              className="w-20 h-20 object-contain"
+                            />
                           </div>
-                          <div className="text-mulearn-blackish">
-                            {renderDescription(
-                              event.description,
-                              event.link,
-                              index
-                            )}
+                          <div
+                            className={`flex-shrink-0 px-8 py-6 rounded-full text-mulearn-whitish font-bold text-lg min-w-[200px] flex items-center justify-center ${colors.labelBg}`}
+                          >
+                            <div className="text-center">
+                              {event.phaseLabel.split("\n").map((line, i) => (
+                                <span key={i} className="block">
+                                  {line}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="flex-1 p-6">
+                            <div
+                              className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
+                            >
+                              {event.title}
+                            </div>
+                            <div className="text-mulearn-blackish">
+                              {renderDescription(
+                                event.description,
+                                event.link,
+                                index
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   </div>
 
                   <div className="lg:hidden w-full">
@@ -382,20 +391,22 @@ export default function YipPage() {
                         ))}
                       </div>
                     </div>
-                    <div className="bg-mulearn-whitish mt-4 p-6 shadow-md rounded-2xl border">
-                      <div
-                        className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
-                      >
-                        {event.title}
-                      </div>
-                      <div className="text-mulearn-blackish">
-                        {renderDescription(
-                          event.description,
-                          event.link,
-                          index
-                        )}
-                      </div>
-                    </div>
+                    <Card className="mt-4 rounded-2xl border shadow-md bg-mulearn-whitish">
+                      <CardContent className="p-6">
+                        <div
+                          className={`text-[1.2rem] uppercase font-semibold tracking-[1.5px] mb-3 ${colors.textColor}`}
+                        >
+                          {event.title}
+                        </div>
+                        <div className="text-mulearn-blackish">
+                          {renderDescription(
+                            event.description,
+                            event.link,
+                            index
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               );

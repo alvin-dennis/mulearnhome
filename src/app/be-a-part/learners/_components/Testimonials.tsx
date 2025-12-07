@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { slideImages } from "@/data/learners";
 import { testimonials } from "@/data/testimonials";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/services/cdn";
 
 interface SlideImage {
@@ -76,30 +78,31 @@ const Testimonials: React.FC = () => {
             />
           ))}
 
-          <button
+          <Button
             onClick={goToPrevSlide}
+            variant="ghost"
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Previous slide"
           >
             &#10094;
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={goToNextSlide}
+            variant="ghost"
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60 text-mulearn-blackish rounded-full p-2 transition"
             aria-label="Next slide"
           >
             &#10095;
-          </button>
+          </Button>
 
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slides.map((_, index) => (
-              <button
+              <Button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
+                variant={index === currentSlide ? "mulearn" : "ghost"}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentSlide
-                    ? "bg-mulearn-whitish w-8"
-                    : "bg-mulearn-whitish/40 hover:bg-mulearn-whitish/60"
+                  index === currentSlide ? "w-8" : "bg-mulearn-whitish/40"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -114,16 +117,17 @@ const Testimonials: React.FC = () => {
           <div
             ref={scrollRef}
             className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+            style={{ WebkitOverflowScrolling: "touch" }}
           >
-            <div className="scroll-content flex gap-6 pb-4 px-8">
+            <div className="scroll-content flex flex-nowrap items-stretch gap-6 pb-4 px-8">
               {learnerTestimonials.map((testimonial, index) => (
-                <div
+                <Card
                   key={index}
                   className="mt-4 flex-shrink-0 w-80 relative h-[280px] rounded-[24px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(256,256,256,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)]"
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-[#4A7FE8] via-[#5B8FF5] to-[#6BA5FF]" />
                   <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />
-                  <div className="relative h-full p-6 flex flex-col justify-between">
+                  <CardContent className="relative h-full p-6 flex flex-col justify-between">
                     <p className="text-sm text-mulearn-whitish leading-relaxed italic mb-4 drop-shadow-sm">
                       &quot;{testimonial.quote}&quot;
                     </p>
@@ -146,9 +150,9 @@ const Testimonials: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </CardContent>
                   <div className="absolute inset-0 rounded-[24px] border border-mulearn-whitish/20 pointer-events-none" />
-                </div>
+                </Card>
               ))}
             </div>
           </div>

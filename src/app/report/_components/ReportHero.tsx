@@ -7,6 +7,7 @@ import {
   MotionH1,
   MotionP,
 } from "@/components/MuFramer";
+import { Card, CardContent } from "@/components/ui/card";
 import { FileText, TrendingUp, Users, Target } from "lucide-react";
 
 const fadeInUp: Variants = {
@@ -130,18 +131,19 @@ export default function ReportHero() {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300"
-                style={{ backgroundColor: "#2E85FE" }}
-              >
-                <value.icon className="w-8 h-8 text-mulearn-whitish" />
-              </div>
-              <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
-                {value.title}
-              </h3>
-              <p className="text-sm text-mulearn-gray-600 leading-relaxed">
-                {value.description}
-              </p>
+              <Card className="rounded-2xl p-4 bg-mulearn-whitish/90 shadow-sm">
+                <CardContent className="p-0">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-mulearn-trusty-blue">
+                    <value.icon className="w-8 h-8 text-mulearn-whitish" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-mulearn-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </CardContent>
+              </Card>
             </MotionDiv>
           ))}
         </MotionDiv>
