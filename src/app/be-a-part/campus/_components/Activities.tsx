@@ -11,11 +11,7 @@ export default function Activities() {
         transition={{ duration: 0.6 }}
       >
         <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
-          What Chapters{" "}
-          <span className="text-mulearn">
-            Do
-          </span>
-          ?
+          What Chapters <span className="text-mulearn">Do</span>?
         </h2>
         <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-mulearn-gray-600">
           Regular activities that build skills and community
@@ -41,12 +37,8 @@ export default function Activities() {
                 <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-mulearn-gray-600">
                   {activity.title}
                 </div>
-                <div className="mb-1 text-lg font-bold text-mulearn-blackish">
-                  {activity.desc}
-                </div>
-                <div className="text-sm text-mulearn-gray-600">
-                  {activity.detail}
-                </div>
+                <div className="mb-1 text-lg font-bold text-mulearn-blackish">{activity.desc}</div>
+                <div className="text-sm text-mulearn-gray-600">{activity.detail}</div>
               </MotionDiv>
             );
           })}

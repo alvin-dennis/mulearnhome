@@ -1,27 +1,22 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
-import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const teachingGif = cdnUrl(
-    "/src/modules/Public/ArtOfTeaching/assets/Teaching.gif"
-  );
+  const teachingGif = cdnUrl("/src/modules/Public/ArtOfTeaching/assets/Teaching.gif");
 
   return (
     <div className="px-8 py-8 lg:px-12 lg:py-12">
       <div className="flex flex-col-reverse lg:flex-row items-center p-4 justify-between max-w-7xl mx-auto">
         <div className="text-center  lg:text-left lg:w-1/2">
           <h1 className="text-5xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
-            <span className="text-mulearn">
-              µLearn Art
-            </span>{" "}
-            of Teaching 4.0
+            <span className="text-mulearn">µLearn Art</span> of Teaching 4.0
           </h1>
           <p className="mt-2 text-base lg:text-lg text-gray-600 lg:w-4/5">
-            µLearn is returning with Art of Teaching to pay tribute to educators
-            who shape the next generation.
+            µLearn is returning with Art of Teaching to pay tribute to educators who shape the next
+            generation.
           </p>
 
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full max-w-xs">

@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { cdnUrl } from "@/services/cdn";
 import WelcomePage from "./_components/WelcomePage";
-import { Button } from "@/components/ui/button";
 
 export default function LevelStructure() {
   const smallRocks = cdnUrl("src/components/assests/NotFound/SmallRocks.webp");
@@ -91,9 +91,7 @@ export default function LevelStructure() {
     document.head.appendChild(style);
 
     return () => {
-      const styleEl = document.getElementById(
-        "levelstructure-mulearn-whitish-theme"
-      );
+      const styleEl = document.getElementById("levelstructure-mulearn-whitish-theme");
       if (styleEl) styleEl.remove();
     };
   }, []);
@@ -275,8 +273,7 @@ export default function LevelStructure() {
                             height={160}
                             className="w-full h-full object-contain animate-spin  [animation-duration:30s]"
                             style={{
-                              filter:
-                                "drop-shadow(0 0 20px rgba(46, 133, 254, 0.4))",
+                              filter: "drop-shadow(0 0 20px rgba(46, 133, 254, 0.4))",
                             }}
                           />
                         </div>
@@ -317,8 +314,7 @@ export default function LevelStructure() {
                             height={90}
                             className="w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-26 lg:h-26 xl:w-30 xl:h-30 object-contain rocket-thrust"
                             style={{
-                              filter:
-                                "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8))",
+                              filter: "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8))",
                             }}
                           />
                         </div>
@@ -327,10 +323,7 @@ export default function LevelStructure() {
                     <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 lg:order-1 order-2 px-4 sm:px-6 lg:px-0">
                       <div>
                         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
-                          The{" "}
-                          <span className="text-mulearn">
-                            μLearn
-                          </span>
+                          The <span className="text-mulearn">μLearn</span>
                           <br />
                           <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
                             Learning Odyssey
@@ -360,36 +353,36 @@ export default function LevelStructure() {
                           animate={
                             isAnimating
                               ? {
-                                scale: [1, 1.2, 1.4, 2, 5, 0],
-                                rotate: [0, 10, -10, 5, -5, 0],
-                                opacity: [1, 1, 1, 0.8, 0.3, 0],
-                                filter: [
-                                  "brightness(1) blur(0px)",
-                                  "brightness(1.2) blur(0px)",
-                                  "brightness(1.5) blur(1px)",
-                                  "brightness(2) blur(2px)",
-                                  "brightness(3) blur(5px)",
-                                  "brightness(5) blur(10px)",
-                                ],
-                              }
+                                  scale: [1, 1.2, 1.4, 2, 5, 0],
+                                  rotate: [0, 10, -10, 5, -5, 0],
+                                  opacity: [1, 1, 1, 0.8, 0.3, 0],
+                                  filter: [
+                                    "brightness(1) blur(0px)",
+                                    "brightness(1.2) blur(0px)",
+                                    "brightness(1.5) blur(1px)",
+                                    "brightness(2) blur(2px)",
+                                    "brightness(3) blur(5px)",
+                                    "brightness(5) blur(10px)",
+                                  ],
+                                }
                               : {}
                           }
                           transition={{
                             duration: isAnimating ? 1.5 : 0.2,
-                            ease: isAnimating
-                              ? [0.25, 0.46, 0.45, 0.94]
-                              : "easeOut",
-                            times: isAnimating
-                              ? [0, 0.2, 0.4, 0.6, 0.8, 1]
-                              : undefined,
+                            ease: isAnimating ? [0.25, 0.46, 0.45, 0.94] : "easeOut",
+                            times: isAnimating ? [0, 0.2, 0.4, 0.6, 0.8, 1] : undefined,
                           }}
+                        >
+                          <Button
+                            variant="mulearn"
+                            onClick={handleBeginJourney}
+                            disabled={isAnimating}
+                            className={`px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold ${
+                              isAnimating ? "cursor-not-allowed opacity-80" : ""
+                            }`}
                           >
-                            <Button variant="mulearn" onClick={handleBeginJourney}
-                              disabled={isAnimating}
-                              className={`px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold ${isAnimating ? "cursor-not-allowed opacity-80" : ""
-                                }`}>
-                          Begin Your Journey
-                        </Button>
+                            Begin Your Journey
+                          </Button>
                         </MotionDiv>
                       </div>
                     </div>

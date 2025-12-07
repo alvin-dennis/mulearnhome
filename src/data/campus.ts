@@ -1,4 +1,4 @@
-import { Calendar, Clock, Zap, PartyPopper, Users, Target, Sparkle, Trophy } from "lucide-react";
+import { Calendar, Clock, PartyPopper, Sparkle, Target, Trophy, Users, Zap } from "lucide-react";
 
 export const campusChapter = {
   journey: [

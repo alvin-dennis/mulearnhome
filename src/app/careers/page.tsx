@@ -1,31 +1,27 @@
 "use client";
 
+import axios from "axios";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import CareersCard from "@/app/careers/_components/CareersCard";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
-import axios from "axios";
+import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import LogoLoop from "@/components/ui/LogoLoop";
 import { companies } from "@/data/company";
-import MuImage from "@/components/MuImage";
+import type { Company, NewHiringRole, PreviousHiringRole } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
-import { NewHiringRole, PreviousHiringRole, Company } from "@/lib/types";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function Careers() {
   const [newHiring, setNewHiring] = useState<NewHiringRole[]>([]);
-  const [previousHiring, setPreviousHiring] = useState<PreviousHiringRole[]>(
-    []
-  );
+  const [previousHiring, setPreviousHiring] = useState<PreviousHiringRole[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
   const companyData: Company[] = companies;
 
   useEffect(() => {
     axios
-      .get(
-        "https://opensheet.elk.sh/1Afdbru7Neywhh8S2f0ACv7NJBKvoLKrcFf0eajYpmOo/careersOld"
-      )
+      .get("https://opensheet.elk.sh/1Afdbru7Neywhh8S2f0ACv7NJBKvoLKrcFf0eajYpmOo/careersOld")
       .then((response) => {
         setPreviousHiring(response.data);
       })
@@ -33,9 +29,7 @@ export default function Careers() {
         console.log(error);
       });
     axios
-      .get(
-        "https://opensheet.elk.sh/1Afdbru7Neywhh8S2f0ACv7NJBKvoLKrcFf0eajYpmOo/careersNew"
-      )
+      .get("https://opensheet.elk.sh/1Afdbru7Neywhh8S2f0ACv7NJBKvoLKrcFf0eajYpmOo/careersNew")
       .then((response) => {
         setNewHiring(response.data);
       })
@@ -53,7 +47,7 @@ export default function Careers() {
     setCurrentPage(page);
     document.getElementById("previous-hiring")?.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   };
 
@@ -69,18 +63,16 @@ export default function Careers() {
     const pages = [];
     for (let i = 1; i <= totalPages; i++) {
       const showPage =
-        i === 1 ||
-        i === totalPages ||
-        (i >= currentPage - 1 && i <= currentPage + 1);
+        i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1);
 
       const showEllipsis =
         (i === currentPage - 2 && currentPage > 3) ||
         (i === currentPage + 2 && currentPage < totalPages - 2);
 
       if (showEllipsis) {
-        pages.push({ type: 'ellipsis', key: `ellipsis-${i}` });
+        pages.push({ type: "ellipsis", key: `ellipsis-${i}` });
       } else if (showPage) {
-        pages.push({ type: 'page', number: i, key: i });
+        pages.push({ type: "page", number: i, key: i });
       }
     }
     return pages;
@@ -92,15 +84,12 @@ export default function Careers() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="text-center lg:text-left">
             <h2 className="text-5xl sm:text-5xl lg:text-7xl font-semibold mb-5 sm:mb-12 text-mulearn-blackish">
-              µLearn{" "}
-              <span className="text-mulearn">
-                Career Labs
-              </span>
+              µLearn <span className="text-mulearn">Career Labs</span>
             </h2>
 
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-mulearn-gray-600 mb-6 sm:mb-8">
-              In search of a job opportunity / internship? µLearn Career Labs
-              helps you connect with opportunities from the industry.
+              In search of a job opportunity / internship? µLearn Career Labs helps you connect with
+              opportunities from the industry.
             </p>
 
             <div className="mt-4 sm:mt-6 flex flex-wrap justify-center lg:justify-start gap-6">
@@ -117,9 +106,7 @@ export default function Careers() {
                 <span className="text-base">Companies</span>
               </div>
               <div className="flex flex-col items-center lg:items-start">
-                <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-                  60+
-                </span>
+                <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">60+</span>
                 <span className="text-base">Hiring Calls</span>
               </div>
             </div>
@@ -142,9 +129,7 @@ export default function Careers() {
         <LogoLoop
           logos={companyData.map((company) => ({
             ...company,
-            src: company.src?.startsWith("http")
-              ? company.src
-              : cdnUrl(company.src),
+            src: company.src?.startsWith("http") ? company.src : cdnUrl(company.src),
           }))}
           speed={30}
           direction="left"
@@ -165,8 +150,8 @@ export default function Careers() {
               New Hiring Calls
             </h2>
             <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
-              Unlock your potential and accelerate your career growth with the
-              endless opportunities available on Career Labs
+              Unlock your potential and accelerate your career growth with the endless opportunities
+              available on Career Labs
             </p>
             <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
               {newHiring.map((role, idx) => (
@@ -198,8 +183,8 @@ export default function Careers() {
             Previous Hiring Calls
           </h2>
           <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
-            Listed below are the list of hiring calls that were announced
-            through career labs previously.
+            Listed below are the list of hiring calls that were announced through career labs
+            previously.
           </p>
 
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
@@ -233,23 +218,24 @@ export default function Careers() {
 
                 <div className="flex items-center gap-2">
                   {getPageNumbers().map((item) => {
-                    if (item.type === 'ellipsis') {
+                    if (item.type === "ellipsis" || item.number === undefined) {
                       return (
                         <span key={item.key} className="px-2 text-gray-400">
                           ...
                         </span>
                       );
                     }
-                    const pageNumber = item.number!;
+                    const pageNumber = item.number;
                     return (
                       <Button
                         variant={"mulearn-secondary"}
                         key={item.key}
                         onClick={() => goToPage(pageNumber)}
-                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${currentPage === pageNumber
-                          ? "bg-mulearn-trusty-blue text-white hover:bg-mulearn-duke-purple"
-                          : "border border-gray-300 bg-white hover:bg-gray-50"
-                          }`}
+                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                          currentPage === pageNumber
+                            ? "bg-mulearn-trusty-blue text-white hover:bg-mulearn-duke-purple"
+                            : "border border-gray-300 bg-white hover:bg-gray-50"
+                        }`}
                         aria-label={`Go to page ${pageNumber}`}
                         aria-current={currentPage === pageNumber ? "page" : undefined}
                       >
@@ -270,7 +256,8 @@ export default function Careers() {
                 </Button>
               </div>
               <p className="mt-4 text-center text-sm text-gray-600">
-                Showing {startIndex + 1}-{Math.min(endIndex, previousHiring.length)} of {previousHiring.length} positions
+                Showing {startIndex + 1}-{Math.min(endIndex, previousHiring.length)} of{" "}
+                {previousHiring.length} positions
               </p>
             </div>
           )}

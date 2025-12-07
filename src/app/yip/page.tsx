@@ -1,13 +1,12 @@
-import MuImage from "@/components/MuImage";
 import Link from "next/link";
+import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { yip } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
-import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: "YIP | µLearn",
-  description:
-    "Young Innovators Programme (YIP 5.0) by Kerala Government, K-DISC and µLearn.",
+  description: "Young Innovators Programme (YIP 5.0) by Kerala Government, K-DISC and µLearn.",
 };
 
 export default function YipPage() {
@@ -23,12 +22,9 @@ export default function YipPage() {
             newResult.push(p);
             if (idx < parts.length - 1) {
               newResult.push(
-                <strong
-                  key={`${phrase}-${idx}`}
-                  className="text-mulearn"
-                >
+                <strong key={`${phrase}-${idx}`} className="text-mulearn">
                   {phrase}
-                </strong>
+                </strong>,
               );
             }
           });
@@ -42,11 +38,7 @@ export default function YipPage() {
     return result;
   };
 
-  const renderDescription = (
-    description: string,
-    link?: string,
-    index?: number
-  ) => {
+  const renderDescription = (description: string, link?: string, index?: number) => {
     if (index === 0 && link) {
       const parts = description.split("Click Here");
       return (
@@ -79,11 +71,7 @@ export default function YipPage() {
     }
 
     if (index === 2) {
-      const boldPhrases = [
-        "Voice of Stakeholder(VOS Module)",
-        "#yip5.0-vos",
-        "400 Karma Points",
-      ];
+      const boldPhrases = ["Voice of Stakeholder(VOS Module)", "#yip5.0-vos", "400 Karma Points"];
       return <>{makeBold(description, boldPhrases)}</>;
     }
 
@@ -128,36 +116,32 @@ export default function YipPage() {
       case "type1":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-mulearn",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type2":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-mulearn",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type3":
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-mulearn",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       default:
         return {
           iconBg: "bg-transparent",
-          labelBg:
-            "bg-mulearn",
+          labelBg: "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
     }
   };
 
   return (
-    <main role="main" className="min-h-screen w-full text-mulearn-blackish">
+    <main className="min-h-screen w-full text-mulearn-blackish">
       <section className="max-w-[1600px] mx-auto">
         <div className="flex flex-row justify-center items-stretch mt-8 mx-4 flex-wrap relative">
           <div className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
@@ -189,11 +173,7 @@ export default function YipPage() {
                 className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
               />
             </div>
-            <Link
-              href="https://yip.kerala.gov.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant={"mulearn"}
                 className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
@@ -210,16 +190,10 @@ export default function YipPage() {
                 Backed by the Kerala government.
                 <br />
                 <br />
-                This year&apos;s initiative provides an incredible opportunity
-                for{" "}
-                <strong className="font-bold text-mulearn">
-                  college and university students
-                </strong>{" "}
+                This year&apos;s initiative provides an incredible opportunity for{" "}
+                <strong className="font-bold text-mulearn">college and university students</strong>{" "}
                 to showcase their innovation skills and create{" "}
-                <strong className="font-bold text-mulearn">
-                  real-world impact
-                </strong>
-                .
+                <strong className="font-bold text-mulearn">real-world impact</strong>.
               </p>
             </div>
           </div>
@@ -260,7 +234,7 @@ export default function YipPage() {
               />
               <MuImage
                 src={cdnUrl(
-                  "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png"
+                  "src/modules/Public/yip/assets/Starting%20a%20business%20project-amico.png",
                 )}
                 alt="Students collaborating illustration"
                 width={320}
@@ -273,10 +247,8 @@ export default function YipPage() {
           <div className="flex flex-row justify-between items-center flex-wrap bg-mulearn p-8 m-4 w-full rounded-[25px]">
             <div className="font-light text-[1.75rem] leading-[36px] max-w-[38rem] text-mulearn-whitish max-[768px]:text-[1.35rem] max-[768px]:leading-[24px]">
               Pitch your{" "}
-              <strong className="font-bold">
-                ideas and work alongside industry experts
-              </strong>{" "}
-              to solve real-life problems.
+              <strong className="font-bold">ideas and work alongside industry experts</strong> to
+              solve real-life problems.
               <br />
               <br />
               Get valuable{" "}
@@ -308,14 +280,14 @@ export default function YipPage() {
               return (
                 <div
                   key={index}
-                  className={`timeline-event mb-5 relative flex my-5 rounded-md self-center w-[50vw] max-[786px]:w-full max-[786px]:flex-col ${index % 2 === 0 ? "flex-row-reverse" : ""
-                    }`}
+                  className={`timeline-event mb-5 relative flex my-5 rounded-md self-center w-[50vw] max-[786px]:w-full max-[786px]:flex-col ${
+                    index % 2 === 0 ? "flex-row-reverse" : ""
+                  }`}
                 >
                   <div className="hidden lg:block w-full">
                     <div className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
                       <div
-                        className={`flex items-center ${index % 2 === 0 ? "flex-row-reverse" : ""
-                          }`}
+                        className={`flex items-center ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
                       >
                         <div
                           className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}
@@ -346,11 +318,7 @@ export default function YipPage() {
                             {event.title}
                           </div>
                           <div className="text-mulearn-blackish">
-                            {renderDescription(
-                              event.description,
-                              event.link,
-                              index
-                            )}
+                            {renderDescription(event.description, event.link, index)}
                           </div>
                         </div>
                       </div>
@@ -358,9 +326,7 @@ export default function YipPage() {
                   </div>
 
                   <div className="lg:hidden w-full">
-                    <div
-                      className={`h-32 flex items-center justify-center ${colors.iconBg}`}
-                    >
+                    <div className={`h-32 flex items-center justify-center ${colors.iconBg}`}>
                       <MuImage
                         src={event.icon}
                         alt={`${event.title} icon`}
@@ -387,11 +353,7 @@ export default function YipPage() {
                         {event.title}
                       </div>
                       <div className="text-mulearn-blackish">
-                        {renderDescription(
-                          event.description,
-                          event.link,
-                          index
-                        )}
+                        {renderDescription(event.description, event.link, index)}
                       </div>
                     </div>
                   </div>

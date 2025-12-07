@@ -1,13 +1,13 @@
+import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { CompanyPartner } from "@/data/company";
-import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
 import { cdnUrl } from "@/services/cdn";
 
 export default function CompanyPartners() {
   const companies = CompanyPartner;
   const Connecting_teams = cdnUrl(
-    "/src/modules/Public/CompanyPartners/assets/Connecting teams.gif"
+    "/src/modules/Public/CompanyPartners/assets/Connecting teams.gif",
   );
   return (
     <div className="min-h-screen bg-mulearn-whitish">
@@ -21,16 +21,13 @@ export default function CompanyPartners() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-color-mulearn-blackish leading-tight mb-4">
-                <span className="text-mulearn">
-                  µLearn Partnered
-                </span>
+                <span className="text-mulearn">µLearn Partnered</span>
                 <br />
                 Companies
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-mulearn-blackish max-w-2xl mx-auto lg:mx-0 lg:w-[90%]">
-                There are multiple opportunities around you right now. All you
-                have to do is look out for the best one that suits you as well
-                as your passion and skills.
+                There are multiple opportunities around you right now. All you have to do is look
+                out for the best one that suits you as well as your passion and skills.
               </p>
             </MotionDiv>
 
@@ -64,14 +61,11 @@ export default function CompanyPartners() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish)] text-center lg:text-left mb-3 sm:mb-4">
-              Company{" "}
-              <span className="text-mulearn">
-                Onboardings
-              </span>
+              Company <span className="text-mulearn">Onboardings</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-mulearn-blackish text-center lg:text-left max-w-3xl">
-              µLearn has partnered with multiple Companies to provide the
-              student the best Resources and Opportunities possible
+              µLearn has partnered with multiple Companies to provide the student the best Resources
+              and Opportunities possible
             </p>
           </MotionDiv>
 

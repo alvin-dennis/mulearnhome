@@ -1,12 +1,12 @@
 import { toast } from "sonner";
-import { publicGateway } from "./apiGateway";
-import { donationRoutes } from "./urls";
 import type {
   DonationFormPayload,
+  RazorpayErrorResponse,
   RazorpayOrderResponse,
   RazorpaySubscriptionResponse,
-  RazorpayErrorResponse,
 } from "@/lib/schemas/donation";
+import { publicGateway } from "./apiGateway";
+import { donationRoutes } from "./urls";
 
 declare global {
   interface Window {
@@ -52,7 +52,7 @@ const handlePaymentSuccess = (
   data: DonationFormPayload,
   paymentId: string,
   orderId?: string,
-  subscriptionId?: string
+  subscriptionId?: string,
 ) => {
   localStorage.setItem(
     "donationData",
@@ -66,7 +66,7 @@ const handlePaymentSuccess = (
       orderId,
       subscriptionId,
       isSubscription: !!subscriptionId,
-    })
+    }),
   );
 
   const storeData = localStorage.getItem("donationData");
@@ -82,9 +82,7 @@ const handlePaymentSuccess = (
  * Handles Razorpay payment errors
  */
 const handlePaymentError = (response: RazorpayErrorResponse) => {
-  toast.error(
-    response.error.description || "Payment failed. Please try again."
-  );
+  toast.error(response.error.description || "Payment failed. Please try again.");
   console.error("Payment failed:", response.error);
 };
 
@@ -93,8 +91,8 @@ const handlePaymentError = (response: RazorpayErrorResponse) => {
  */
 const getApiErrorMessage = (error: unknown, defaultMessage: string): string => {
   return (
-    (error as { response?: { data?: { message?: { general?: string[] } } } })
-      ?.response?.data?.message?.general?.[0] || defaultMessage
+    (error as { response?: { data?: { message?: { general?: string[] } } } })?.response?.data
+      ?.message?.general?.[0] || defaultMessage
   );
 };
 
@@ -157,7 +155,7 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
       currency: currency,
       description: `Donation - ${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)}`,
       order_id: paymentId,
-      handler: function (response: RazorpayOrderResponse) {
+      handler: (response: RazorpayOrderResponse) => {
         publicGateway
           .post(donationRoutes.verify, {
             razorpay_order_id: response.razorpay_order_id,
@@ -167,22 +165,24 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
           .then((res) => {
             toast.success(
               res?.data?.message?.general?.[0] ||
-              "Payment Successful! Thank you for your donation."
+                "Payment Successful! Thank you for your donation.",
             );
             handlePaymentSuccess(
               res?.data,
               data,
               response.razorpay_payment_id,
-              response.razorpay_order_id
+              response.razorpay_order_id,
             );
           })
           .catch((error) => {
             console.error("Payment verification error:", error);
-            toast.error(getApiErrorMessage(error, "Error in validating payment. Please contact support."));
+            toast.error(
+              getApiErrorMessage(error, "Error in validating payment. Please contact support."),
+            );
           });
       },
       modal: {
-        ondismiss: function () {
+        ondismiss: () => {
           toast.error("Payment cancelled");
         },
       },
@@ -222,7 +222,7 @@ export const submitSubscription = async (data: DonationFormPayload) => {
 
     const subscriptionId: string = response.data.response.subscription_id;
     const amount: number = response.data.response.amount;
-    const currency: string = response.data.response.currency;
+    const _currency: string = response.data.response.currency;
 
     const razorpayKey = getRazorpayKey();
 
@@ -232,7 +232,7 @@ export const submitSubscription = async (data: DonationFormPayload) => {
       ...baseOptions,
       subscription_id: subscriptionId,
       description: `${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)} Recurring Donation - ₹${(amount / 100).toLocaleString("en-IN")}`,
-      handler: function (response: RazorpaySubscriptionResponse) {
+      handler: (response: RazorpaySubscriptionResponse) => {
         publicGateway
           .post(donationRoutes.subscriptionVerify, {
             razorpay_subscription_id: response.razorpay_subscription_id,
@@ -242,23 +242,28 @@ export const submitSubscription = async (data: DonationFormPayload) => {
           .then((res) => {
             toast.success(
               res?.data?.message?.general?.[0] ||
-              "Subscription Successful! Thank you for your recurring donation."
+                "Subscription Successful! Thank you for your recurring donation.",
             );
             handlePaymentSuccess(
               res?.data,
               data,
               response.razorpay_payment_id,
               undefined,
-              response.razorpay_subscription_id
+              response.razorpay_subscription_id,
             );
           })
           .catch((error) => {
             console.error("Subscription verification error:", error);
-            toast.error(getApiErrorMessage(error, "Error in validating subscription. Please contact support."));
+            toast.error(
+              getApiErrorMessage(
+                error,
+                "Error in validating subscription. Please contact support.",
+              ),
+            );
           });
       },
       modal: {
-        ondismiss: function () {
+        ondismiss: () => {
           toast.error("Subscription cancelled");
         },
       },

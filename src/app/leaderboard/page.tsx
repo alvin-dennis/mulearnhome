@@ -1,5 +1,8 @@
-import { Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { MotionDiv, MotionH2 } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -8,11 +11,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ArrowRight } from "lucide-react";
 import leaderboardData from "@/data/leaderboard.json";
-import { Score } from "@/lib/types";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import type { Score } from "@/lib/types";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -55,15 +55,11 @@ export default function LeaderBoard() {
             </TableHead>
             <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
               PRs
-              <div className="text-xs font-normal text-mulearn-gray-600">
-                (Open / Merged)
-              </div>
+              <div className="text-xs font-normal text-mulearn-gray-600">(Open / Merged)</div>
             </TableHead>
             <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
               Issues
-              <div className="text-xs font-normal text-mulearn-gray-600">
-                (Open / Closed)
-              </div>
+              <div className="text-xs font-normal text-mulearn-gray-600">(Open / Closed)</div>
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -72,15 +68,9 @@ export default function LeaderBoard() {
           {scores.map((score, index) => (
             <TableRow
               key={score.username}
-              className={
-                index < 3
-                  ? "bg-mulearn text-mulearn-whitish font-bold"
-                  : ""
-              }
+              className={index < 3 ? "bg-mulearn text-mulearn-whitish font-bold" : ""}
             >
-              <TableCell className="text-center text-sm md:text-base">
-                {index + 1}
-              </TableCell>
+              <TableCell className="text-center text-sm md:text-base">{index + 1}</TableCell>
               <TableCell className="text-left text-sm md:text-base">
                 <Link
                   href={`https://github.com/${score.username}`}
@@ -91,9 +81,7 @@ export default function LeaderBoard() {
                   {score.displayname}
                 </Link>
               </TableCell>
-              <TableCell className="text-center text-sm md:text-base">
-                {score.commits}
-              </TableCell>
+              <TableCell className="text-center text-sm md:text-base">{score.commits}</TableCell>
               <TableCell className="text-center text-sm md:text-base">
                 {score.prs_opened}/{score.prs_merged}
               </TableCell>
@@ -115,9 +103,7 @@ export default function LeaderBoard() {
         initial="hidden"
         animate="visible"
       >
-        <span className="text-mulearn">
-          μLearn{" "}
-        </span>
+        <span className="text-mulearn">μLearn </span>
         Contribution Leaderboard
       </MotionH2>
 

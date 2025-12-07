@@ -1,8 +1,8 @@
+import { Clock, File, MapPin } from "lucide-react";
+import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { CareersCardProps } from "@/lib/types";
-import { Clock, MapPin, File } from "lucide-react";
+import type { CareersCardProps } from "@/lib/types";
 
 const CareersCard = ({
   role,
@@ -30,12 +30,8 @@ const CareersCard = ({
           height={70}
         />
       )}
-      {organization && (
-        <h4 className="text-center text-lg font-semibold">{organization}</h4>
-      )}
-      {role && (
-        <h2 className="text-center text-3xl font-bold text-mulearn">{role}</h2>
-      )}
+      {organization && <h4 className="text-center text-lg font-semibold">{organization}</h4>}
+      {role && <h2 className="text-center text-3xl font-bold text-mulearn">{role}</h2>}
 
       <div className="flex flex-col items-center gap-2 text-sm text-mulearn-blackish">
         {duration && (
@@ -73,14 +69,20 @@ const CareersCard = ({
       <div className="mt-auto flex flex-col gap-2 w-full">
         {jdlink && (
           <Link href={jdlink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <Button
+              variant="mulearn"
+              className="w-full flex items-center justify-center gap-1 px-4 py-2"
+            >
               <File /> View JD
             </Button>
           </Link>
         )}
         {applylink && (
           <Link href={applylink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <Button
+              variant="mulearn"
+              className="w-full flex items-center justify-center gap-1 px-4 py-2"
+            >
               Apply Now
             </Button>
           </Link>
@@ -94,7 +96,10 @@ const CareersCard = ({
         )}
         {extraButton && (
           <Link href={extraButton} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn" className="w-full flex items-center justify-center gap-1 px-4 py-2">
+            <Button
+              variant="mulearn"
+              className="w-full flex items-center justify-center gap-1 px-4 py-2"
+            >
               View Challenge
             </Button>
           </Link>

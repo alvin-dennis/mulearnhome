@@ -1,9 +1,8 @@
+import Link from "next/link";
 import { MotionH1, MotionH2 } from "@/components/MuFramer";
-import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-
-import Link from "next/link";
+import { cdnUrl } from "@/services/cdn";
 
 const bglogo = cdnUrl("/src/modules/Public/Manifesto/assets/µ.png");
 const handimg = cdnUrl("src/modules/Public/Manifesto/assets/hand.png");
@@ -45,36 +44,23 @@ export default function Manifesto() {
 
       <div className="px-2 py-[1.2rem] sm:py-8 sm:px-4 md:px-20 md:py-16 text-center">
         <p className="text-[1.1rem] sm:text-[1.8rem] md:text-[2rem] tracking-wide">
-          <span className="font-semibold">We, the Unbound, the Unbowed</span>, a
-          tribe of relentless learners, rise from the ashes of a broken
-          education system.
+          <span className="font-semibold">We, the Unbound, the Unbowed</span>, a tribe of relentless
+          learners, rise from the ashes of a broken education system.
           <span className="font-semibold">
             We are the mavericks who dared to question the status quo
           </span>
-          , the misfits who refused to be cogs in the machine of rote
-          memorization. Too long have we wandered in the stale corridors of
-          conformity — <span className="font-semibold">not anymore!</span>
+          , the misfits who refused to be cogs in the machine of rote memorization. Too long have we
+          wandered in the stale corridors of conformity —{" "}
+          <span className="font-semibold">not anymore!</span>
         </p>
       </div>
 
       <div className="px-2 sm:px-4 md:px-24 text-center">
         <p className="text-[1.1rem] sm:text-[1.8rem] md:text-[2rem] tracking-wide">
-          <span className="text-mulearn font-medium">
-            µLearn is our revolution.
-          </span>{" "}
-          Here, curiosity{" "}
-          <span className="text-mulearn">
-            reigns
-          </span>
-          , and collaboration is our strongest weapon. We{" "}
-          <span className="text-mulearn">
-            transform
-          </span>{" "}
-          failures into stepping stones, and together we{" "}
-          <span className="text-mulearn]">
-            redefine
-          </span>{" "}
-          learning.
+          <span className="text-mulearn font-medium">µLearn is our revolution.</span> Here,
+          curiosity <span className="text-mulearn">reigns</span>, and collaboration is our strongest
+          weapon. We <span className="text-mulearn">transform</span> failures into stepping stones,
+          and together we <span className="text-mulearn]">redefine</span> learning.
         </p>
       </div>
 
@@ -91,9 +77,7 @@ export default function Manifesto() {
         </MotionH2>
 
         <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
-          <Button
-            className="bg-mulearn-whitish text-mulearn-trusty-blue py-2 px-6 sm:px-8 sm:py-3 font-semibold hover:bg-mulearn-whitish rounded-full"
-          >
+          <Button className="bg-mulearn-whitish text-mulearn-trusty-blue py-2 px-6 sm:px-8 sm:py-3 font-semibold hover:bg-mulearn-whitish rounded-full">
             Join µLearn
           </Button>
         </Link>

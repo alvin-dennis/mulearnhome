@@ -1,7 +1,7 @@
+import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv } from "@/components/MuFramer";
 import SpecialEventCard from "@/app/(home)/_components/SpecialEventCard";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { specialevents } from "@/data/home";
 
@@ -28,17 +28,13 @@ export default function SpecialEvents() {
             Special Events
           </h1>
           <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
-            Discover exclusive events designed to inspire innovation, enhance
-            skills, and foster meaningful connections across technology,
-            management, and creativity.
+            Discover exclusive events designed to inspire innovation, enhance skills, and foster
+            meaningful connections across technology, management, and creativity.
           </h6>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 justify-items-center">
             {specialevents.map((specialevent) => (
-              <SpecialEventCard
-                key={specialevent.id}
-                specialevent={specialevent}
-              />
+              <SpecialEventCard key={specialevent.id} specialevent={specialevent} />
             ))}
           </div>
           <div className="mt-12">

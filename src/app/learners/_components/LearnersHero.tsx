@@ -1,5 +1,5 @@
-import MuImage from "@/components/MuImage";
 import { Sparkle } from "lucide-react";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
 const LearnersHero = () => {
@@ -7,8 +7,7 @@ const LearnersHero = () => {
     <div
       className="relative overflow-hidden pt-20 pb-48 lg:pt-28 lg:pb-56"
       style={{
-        background:
-          "linear-gradient(180deg, var(--mulearn-whitish) 0%, #F0F7FF 40%, #E3F0FF 100%)",
+        background: "linear-gradient(180deg, var(--mulearn-whitish) 0%, #F0F7FF 40%, #E3F0FF 100%)",
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
@@ -62,11 +61,7 @@ const LearnersHero = () => {
           className="px-8 py-3 font-semibold shadow-lg hover:shadow-xl text-base rounded-full transform hover:scale-105 transition-all duration-300"
           asChild
         >
-          <a
-            href="https://app.mulearn.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://app.mulearn.org" target="_blank" rel="noopener noreferrer">
             Join μLearn
           </a>
         </Button>

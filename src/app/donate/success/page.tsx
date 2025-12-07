@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ArrowLeft, CheckCircle2, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Mail, ArrowLeft } from "lucide-react";
 
 interface DonationData {
   donationType: string;
@@ -33,7 +33,6 @@ export default function DonateSuccessPage() {
     }
   }, [router]);
 
-
   const formatDonationType = (type: string) => {
     return type
       .split("-")
@@ -55,24 +54,20 @@ export default function DonateSuccessPage() {
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-50 via-mulearn-whitish to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        { }
+        {}
         <div className="bg-mulearn-whitish rounded-2xl shadow-xl overflow-hidden">
-          { }
+          {}
           <div className="bg-mulearn px-8 py-12 text-center">
             <div className="flex justify-center mb-4">
               <div className="bg-mulearn-whitish rounded-full p-3">
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-mulearn-whitish mb-2">
-              Thank You!
-            </h1>
-            <p className="text-white text-lg">
-              Your donation has been received successfully
-            </p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-mulearn-whitish mb-2">Thank You!</h1>
+            <p className="text-white text-lg">Your donation has been received successfully</p>
           </div>
 
-          { }
+          {}
           <div className="px-8 py-10">
             <div className="bg-gray-50 rounded-xl p-6 mb-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -90,9 +85,7 @@ export default function DonateSuccessPage() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Donor Name</p>
-                  <p className="text-lg font-medium text-mulearn-blackish">
-                    {donationData.name}
-                  </p>
+                  <p className="text-lg font-medium text-mulearn-blackish">{donationData.name}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Email</p>
@@ -103,21 +96,19 @@ export default function DonateSuccessPage() {
               </div>
             </div>
 
-            { }
+            {}
             <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
               <div className="flex items-start gap-4">
                 <div className="bg-green-100 rounded-full p-2 flex-shrink-0">
                   <Mail className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-green-800 mb-1">
-                    Confirmation Email Sent!
-                  </h3>
+                  <h3 className="font-semibold text-green-800 mb-1">Confirmation Email Sent!</h3>
                   <p className="text-sm text-green-700 leading-relaxed">
                     We&apos;ve sent a confirmation email to{" "}
-                    <span className="font-semibold">{donationData.email}</span>{" "}
-                    with your <span className="font-semibold">donation invoice attached</span>.
-                    Please check your inbox (and spam folder, just in case).
+                    <span className="font-semibold">{donationData.email}</span> with your{" "}
+                    <span className="font-semibold">donation invoice attached</span>. Please check
+                    your inbox (and spam folder, just in case).
                   </p>
                 </div>
               </div>
@@ -135,13 +126,12 @@ export default function DonateSuccessPage() {
               </Button>
             </div>
 
-            { }
+            {}
             <div className="mt-10 text-center">
               <p className="text-gray-600 leading-relaxed">
-                Your generous contribution helps us empower thousands of
-                learners across India. Together, we&apos;re building a vibrant
-                learning community that breaks barriers and creates
-                opportunities.
+                Your generous contribution helps us empower thousands of learners across India.
+                Together, we&apos;re building a vibrant learning community that breaks barriers and
+                creates opportunities.
               </p>
               <p className="mt-4 text-sm text-gray-500">
                 If you have any questions, please contact us at{" "}

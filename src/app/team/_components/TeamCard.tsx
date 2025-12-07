@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import { cdnUrl } from "@/services/cdn";
-import { cn } from "@/lib/utils";
-import MuImage from "@/components/MuImage";
 import Link from "next/link";
-import { TeamCardProps } from "@/lib/types";
+import { useState } from "react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import MuImage from "@/components/MuImage";
+import type { TeamCardProps } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import { cdnUrl } from "@/services/cdn";
 
 const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
@@ -49,16 +49,14 @@ export function TeamCard({
         <div>
           {name && <h3 className="text-2xl font-semibold">{name}</h3>}
           {(lead || designation) && (
-            <p className="text-sm text-mulearn-gray-600">
-              {lead ? `${lead} Lead` : designation}
-            </p>
+            <p className="text-sm text-mulearn-gray-600">{lead ? `${lead} Lead` : designation}</p>
           )}
           {muid && <p className="text-[10px] text-mulearn-gray-600">{muid}</p>}
           {teamRoles.length > 0 && (
             <ul
               className={cn(
                 "flex flex-wrap justify-center sm:justify-end gap-1.5 mt-2 p-0 list-none overflow-hidden transition-all duration-300",
-                showAllRoles ? "max-h-none" : "max-h-[58px]"
+                showAllRoles ? "max-h-none" : "max-h-[58px]",
               )}
             >
               {displayedRoles.map((role, index) => (

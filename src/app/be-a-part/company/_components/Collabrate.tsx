@@ -2,18 +2,14 @@
 
 import { useState } from "react";
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
-import { CompanyFeatures, companyImages } from "@/data/company";
 import MuImage from "@/components/MuImage";
+import { CompanyFeatures, companyImages } from "@/data/company";
 
 const NumberIcon = ({ num }: { num: number }) => (
-  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-mulearn"
-  >
-    <span className="text-2xl font-bold text-mulearn-whitish">
-      {num}
-    </span>
+  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-mulearn">
+    <span className="text-2xl font-bold text-mulearn-whitish">{num}</span>
   </div>
 );
-
 
 export default function WhyCollaborate() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -52,9 +48,9 @@ export default function WhyCollaborate() {
           transition={{ delay: 0.2 }}
           className="text-center text-gray-600 text-base sm:text-lg max-w-3xl mx-auto mb-16 font-light"
         >
-          Join forces with a thriving community of learners and innovators.
-          Together, we create meaningful impact through talent development,
-          innovation, and collaborative growth opportunities.
+          Join forces with a thriving community of learners and innovators. Together, we create
+          meaningful impact through talent development, innovation, and collaborative growth
+          opportunities.
         </MotionP>
 
         <div className="hidden lg:flex items-stretch justify-center gap-0">
@@ -71,12 +67,13 @@ export default function WhyCollaborate() {
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-gray-600/10 transition-all duration-100 ease-in-out ${index === 0
-                ? "rounded-l-[10px] border-r-0"
-                : index === CompanyFeatures.length - 1
-                  ? "rounded-r-[10px]"
-                  : "border-r-0"
-                }`}
+              className={`flex flex-col items-center justify-start gap-5 py-8 px-4 border-2 border-mulearn-gray-600/10 transition-all duration-100 ease-in-out ${
+                index === 0
+                  ? "rounded-l-[10px] border-r-0"
+                  : index === CompanyFeatures.length - 1
+                    ? "rounded-r-[10px]"
+                    : "border-r-0"
+              }`}
             >
               <NumberIcon num={index} />
               <h3
@@ -85,8 +82,9 @@ export default function WhyCollaborate() {
                 {feature.title}
               </h3>
               <p
-                className={`text-center font-thin text-mulearn-blackish leading-relaxed transition-all duration-300 ${index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
-                  }`}
+                className={`text-center font-thin text-mulearn-blackish leading-relaxed transition-all duration-300 ${
+                  index === 0 ? "text-sm sm:text-sm" : "text-xs sm:text-sm"
+                }`}
               >
                 {feature.description}
               </p>

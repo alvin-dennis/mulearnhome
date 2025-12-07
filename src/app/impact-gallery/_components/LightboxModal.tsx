@@ -1,12 +1,12 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv } from "@/components/MuFramer";
-import { useEffect } from "react";
-import { GalleryItem } from "@/lib/types";
-import MuImage from "@/components/MuImage";
 import { X } from "lucide-react";
+import { useEffect } from "react";
+import { MotionDiv } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import type { GalleryItem } from "@/lib/types";
 
 interface LightboxModalProps {
   item: GalleryItem;
@@ -48,13 +48,11 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
             onClick={onClose}
             className="absolute top-1 right-2 rounded-full text-2xl p-2 transition-colors z-50"
           >
-            <X className=""/>
+            <X className="" />
           </Button>
           <div className="flex justify-between items-center p-6 border-b border-mulearn-greyish">
             <div>
-              <h2 className="text-xl font-bold text-mulearn">
-                {item.title}
-              </h2>
+              <h2 className="text-xl font-bold text-mulearn">{item.title}</h2>
               <p className="text-mulearn-gray-600 mt-1 ">{item.description}</p>
             </div>
           </div>
@@ -87,9 +85,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                     >
                       {item.stats.participants}+
                     </div>
-                    <div className="text-sm text-mulearn-gray-600 ">
-                      Participants
-                    </div>
+                    <div className="text-sm text-mulearn-gray-600 ">Participants</div>
                   </div>
                 )}
                 {item.stats.campuses && (
@@ -105,9 +101,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                     >
                       {item.stats.campuses}+
                     </div>
-                    <div className="text-sm text-mulearn-gray-600 ">
-                      Campuses
-                    </div>
+                    <div className="text-sm text-mulearn-gray-600 ">Campuses</div>
                   </div>
                 )}
                 {item.stats.companies && (
@@ -123,9 +117,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
                     >
                       {item.stats.companies}+
                     </div>
-                    <div className="text-sm text-mulearn-gray-600 ">
-                      Companies
-                    </div>
+                    <div className="text-sm text-mulearn-gray-600 ">Companies</div>
                   </div>
                 )}
               </div>

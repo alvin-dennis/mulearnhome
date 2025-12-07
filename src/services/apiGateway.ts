@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const publicGateway = axios.create({
-  baseURL:
-    process.env.NEXT_PUBLIC_API_BASE_URL || "https://dev.mulearn.org/api/v1",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://dev.mulearn.org/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
@@ -14,7 +13,7 @@ publicGateway.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 publicGateway.interceptors.response.use(
@@ -23,5 +22,5 @@ publicGateway.interceptors.response.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );

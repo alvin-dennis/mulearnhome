@@ -1,18 +1,11 @@
 "use client";
 
-import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { useInView } from "framer-motion";
+import { Calendar, GraduationCap, Handshake, School, TrendingUp, Users } from "lucide-react";
 import { useRef } from "react";
-import {
-  Users,
-  School,
-  Calendar,
-  Handshake,
-  GraduationCap,
-  TrendingUp,
-} from "lucide-react";
+import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import { impactStats } from "@/data/impact-gallery";
-import { ImpactStat } from "@/lib/types";
+import type { ImpactStat } from "@/lib/types";
 
 const iconMap = {
   Users,
@@ -46,11 +39,7 @@ export default function ImpactStats() {
               <MotionDiv
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={
-                  isInView
-                    ? { opacity: 1, scale: 1 }
-                    : { opacity: 0, scale: 0.5 }
-                }
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-center group"
               >
@@ -68,9 +57,7 @@ export default function ImpactStats() {
                 >
                   {stat.number}
                 </MotionDiv>
-                <div className="text-mulearn-gray-600 font-semibold ">
-                  {stat.label}
-                </div>
+                <div className="text-mulearn-gray-600 font-semibold ">{stat.label}</div>
               </MotionDiv>
             );
           })}

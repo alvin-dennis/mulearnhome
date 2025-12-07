@@ -1,13 +1,8 @@
 "use client";
 
-import { type Variants } from "framer-motion";
-import {
-  MotionDiv,
-  MotionSection,
-  MotionH1,
-  MotionP,
-} from "@/components/MuFramer";
-import { FileText, TrendingUp, Users, Target } from "lucide-react";
+import type { Variants } from "framer-motion";
+import { FileText, Target, TrendingUp, Users } from "lucide-react";
+import { MotionDiv, MotionH1, MotionP, MotionSection } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -80,10 +75,7 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn-blackish mb-6 leading-tight"
           >
-            Annual{" "}
-            <span className="text-mulearn">
-              Reports
-            </span>
+            Annual <span className="text-mulearn">Reports</span>
           </MotionH1>
 
           <MotionP
@@ -94,9 +86,8 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-mulearn-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
           >
-            Discover our journey of growth, impact, and community building
-            through comprehensive annual reports. We believe in transparency and
-            accountability to our community.
+            Discover our journey of growth, impact, and community building through comprehensive
+            annual reports. We believe in transparency and accountability to our community.
           </MotionP>
 
           <MotionP
@@ -107,8 +98,8 @@ export default function ReportHero() {
             viewport={{ once: true }}
             className="text-base md:text-lg text-mulearn-gray-600 max-w-2xl mx-auto font-medium"
           >
-            µLearn is committed to open and transparent reporting of our
-            progress, milestones, and community impact.
+            µLearn is committed to open and transparent reporting of our progress, milestones, and
+            community impact.
           </MotionP>
         </div>
 
@@ -136,12 +127,8 @@ export default function ReportHero() {
               >
                 <value.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
-              <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">
-                {value.title}
-              </h3>
-              <p className="text-sm text-mulearn-gray-600 leading-relaxed">
-                {value.description}
-              </p>
+              <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">{value.title}</h3>
+              <p className="text-sm text-mulearn-gray-600 leading-relaxed">{value.description}</p>
             </MotionDiv>
           ))}
         </MotionDiv>

@@ -1,9 +1,9 @@
-import { Variants } from "framer-motion";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import { cdnUrl } from "@/services/cdn";
-import MuImage from "@/components/MuImage";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { cdnUrl } from "@/services/cdn";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -31,21 +31,14 @@ export default function Community() {
           variants={fadeInUp}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-center max-w-[40rem] mb-5 leading-normal">
-            Learn and Grow{" "}
-            <span className="text-mulearn">
-              Together
-            </span>{" "}
-            as a{" "}
-            <span className="text-mulearn">
-              Community
-            </span>
+            Learn and Grow <span className="text-mulearn">Together</span> as a{" "}
+            <span className="text-mulearn">Community</span>
           </h1>
           <h6 className="font-normal mb-8 max-w-[800px] text-jusify text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
-            Are you ready to learn, grow, and upskill yourself to the next
-            level? Come, be a part of the community, and let&apos;s start
-            learning in a new, better way. Call your friends as well because
-            things are going to change once you experience it, and it is more
-            effective when done in a group.
+            Are you ready to learn, grow, and upskill yourself to the next level? Come, be a part of
+            the community, and let&apos;s start learning in a new, better way. Call your friends as
+            well because things are going to change once you experience it, and it is more effective
+            when done in a group.
           </h6>
 
           <Link
@@ -55,15 +48,12 @@ export default function Community() {
             className="self-center sm:self-auto"
           >
             <Button variant="mulearn" className="font-semibold px-6 py-3">
-            Join The Community
-          </Button>
+              Join The Community
+            </Button>
           </Link>
         </MotionDiv>
 
-        <MotionDiv
-          variants={fadeInUp}
-          className="flex justify-center items-center"
-        >
+        <MotionDiv variants={fadeInUp} className="flex justify-center items-center">
           <MuImage
             src={community}
             alt="Join community"

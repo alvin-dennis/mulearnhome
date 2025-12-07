@@ -28,8 +28,7 @@ At µLearn Foundation, we are committed to transparency and accountability in al
     },
     {
       heading: "Non-Refundable Circumstances",
-      content:
-        "The following circumstances are explicitly considered non-refundable:",
+      content: "The following circumstances are explicitly considered non-refundable:",
       subsections: [
         "Change of mind after the donation has been processed.",
         "Financial hardship or personal circumstances that arise after making the donation.",
@@ -63,8 +62,7 @@ At µLearn Foundation, we are committed to transparency and accountability in al
     },
     {
       heading: "Tax Deductibility and Refunds",
-      content:
-        "Important considerations regarding tax implications of donations and refunds:",
+      content: "Important considerations regarding tax implications of donations and refunds:",
       subsections: [
         "If you have claimed a tax deduction for your donation and subsequently receive a refund, you are responsible for amending your tax returns accordingly.",
         "µLearn Foundation will provide updated donation receipts reflecting any refunds processed.",
@@ -94,8 +92,7 @@ At µLearn Foundation, we are committed to transparency and accountability in al
     },
     {
       heading: "Dispute Resolution",
-      content:
-        "If you are not satisfied with our response to your refund request, you may:",
+      content: "If you are not satisfied with our response to your refund request, you may:",
       subsections: [
         "Request an escalation to senior management for further review.",
         "Seek mediation through appropriate consumer protection channels.",

@@ -1,9 +1,8 @@
+import Link from "next/link";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import Link from "next/link";
-
-import { learningCircleData } from "@/data/lc-ig";
 import { Button } from "@/components/ui/button";
+import { learningCircleData } from "@/data/lc-ig";
 
 export default function LearningCirclePage() {
   const {
@@ -29,10 +28,7 @@ export default function LearningCirclePage() {
           className="flex-1 text-center md:text-left"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4 ">
-            Join a{" "}
-            <span className="text-mulearn">
-              Learning Circle
-            </span>
+            Join a <span className="text-mulearn">Learning Circle</span>
           </h1>
           {subtitle && (
             <h2 className="text-xl md:text-2xl text-mulearn-blackish font-medium mb-4 ">
@@ -100,13 +96,11 @@ export default function LearningCirclePage() {
               transition={{ duration: 0.2, delay: index * 0.1 }}
               whileHover={{
                 y: -8,
-                boxShadow:
-                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+                boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
               }}
               className="bg-mulearn-whitish text-mulearn-blackish p-8 rounded-2xl shadow-lg border border-mulearn-greyish/20 flex flex-col items-center"
             >
-              <div
-                className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-mulearn">
+              <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-mulearn">
                 <feature.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
               <h3 className="text-xl font-bold text-mulearn mb-3  h-14 flex items-center">
@@ -144,13 +138,11 @@ export default function LearningCirclePage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{
                 y: -8,
-                boxShadow:
-                  "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+                boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
               }}
               className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border border-mulearn-greyish/20 hover:border-mulearn-trusty-blue/30 transition-all duration-300 items-center justify-center text-center"
             >
-              <div
-                className="w-12 h-12 mb-4 mx-auto flex items-center justify-center rounded-full bg-mulearn ">
+              <div className="w-12 h-12 mb-4 mx-auto flex items-center justify-center rounded-full bg-mulearn ">
                 <domain.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
               <h3 className="text-xl font-bold items-center justify-center text-mulearn mb-3 ">
@@ -172,9 +164,7 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">
-            {howItWorks.title}
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">{howItWorks.title}</h2>
           <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">
             {howItWorks.subtitle}
           </p>
@@ -188,19 +178,16 @@ export default function LearningCirclePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative text-center ${index === 4 ? "md:col-start-2" : ""
-                } ${index === 5 ? "md:col-start-3" : ""}`}
+              className={`relative text-center ${
+                index === 4 ? "md:col-start-2" : ""
+              } ${index === 5 ? "md:col-start-3" : ""}`}
             >
               <div className="bg-mulearn text-mulearn-whitish w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 ">
                 {step.step}
               </div>
               <step.icon className="w-8 h-8 text-mulearn mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-mulearn-blackish mb-3 ">
-                {step.title}
-              </h3>
-              <p className="text-mulearn-blackish/70  text-sm">
-                {step.description}
-              </p>
+              <h3 className="text-lg font-bold text-mulearn-blackish mb-3 ">{step.title}</h3>
+              <p className="text-mulearn-blackish/70  text-sm">{step.description}</p>
             </MotionDiv>
           ))}
         </div>
@@ -214,12 +201,8 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">
-            {benefits.title}
-          </h2>
-          <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">
-            {benefits.subtitle}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">{benefits.title}</h2>
+          <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">{benefits.subtitle}</p>
         </MotionDiv>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -232,8 +215,7 @@ export default function LearningCirclePage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{
                 y: -5,
-                boxShadow:
-                  "0 15px 20px -5px rgb(0 0 0 / 0.1), 0 6px 8px -6px rgb(0 0 0 / 0.1)",
+                boxShadow: "0 15px 20px -5px rgb(0 0 0 / 0.1), 0 6px 8px -6px rgb(0 0 0 / 0.1)",
               }}
               className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border border-mulearn-greyish/20 flex items-start gap-4"
             >
@@ -241,12 +223,8 @@ export default function LearningCirclePage() {
                 <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-mulearn mb-2 ">
-                  {benefit.title}
-                </h3>
-                <p className="text-mulearn-blackish/70  text-sm">
-                  {benefit.description}
-                </p>
+                <h3 className="text-lg font-bold text-mulearn mb-2 ">{benefit.title}</h3>
+                <p className="text-mulearn-blackish/70  text-sm">{benefit.description}</p>
               </div>
             </MotionDiv>
           ))}
@@ -259,22 +237,12 @@ export default function LearningCirclePage() {
         transition={{ duration: 0.5 }}
         className="w-full mt-16 bg-mulearn text-mulearn-whitish p-10 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 ">
-          {ctaSection.title}
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 ">{ctaSection.title}</h2>
         <p className="text-lg mb-8 text-mulearn-whitish  max-w-2xl mx-auto">
           {ctaSection.description}
         </p>
-        <MotionDiv
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block"
-        >
-          <Link
-            href={ctaSection.buttonLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+          <Link href={ctaSection.buttonLink} target="_blank" rel="noopener noreferrer">
             <Button className="bg-mulearn-whitish text-mulearn-trusty-blue rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl px-6 py-3 hover:bg-mulearn-whitish/90">
               {ctaSection.buttonText}
             </Button>

@@ -1,21 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { useScroll, useTransform } from "framer-motion";
-import { MotionSection, MotionDiv, MotionA } from "@/components/MuFramer";
-import {
-  Search,
-  ArrowRight,
-  Users,
-  Target,
-  BookOpen,
-  Lightbulb,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Lightbulb, Search, Target, TrendingUp, Users } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+import { MotionA, MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { interestGroups } from "@/data/lc-ig";
-import Link from "next/link";
 
 const workflowSteps = [
   {
@@ -77,7 +69,7 @@ export default function InterestGroups() {
   const filteredGroups = interestGroups.filter(
     (group) =>
       group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      group.tagline.toLowerCase().includes(searchTerm.toLowerCase())
+      group.tagline.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -111,19 +103,14 @@ export default function InterestGroups() {
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-whitish/80 max-w-3xl mx-auto leading-relaxed">
-              Join communities where learners explore specific domains,
-              collaborate on projects, and grow together through shared
-              curiosity and hands-on learning.
+              Join communities where learners explore specific domains, collaborate on projects, and
+              grow together through shared curiosity and hands-on learning.
             </p>
           </MotionDiv>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1440 120"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-auto"
-          >
+          <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
             <path
               d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
               className="fill-current text-mulearn-whitish/95"
@@ -159,9 +146,7 @@ export default function InterestGroups() {
               className="text-center p-8 rounded-2xl bg-mulearn-whitish shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/20"
             >
               <div className="text-5xl mb-4">{value.icon}</div>
-              <h3 className="text-xl font-bold text-mulearn-blackish mb-2 ">
-                {value.title}
-              </h3>
+              <h3 className="text-xl font-bold text-mulearn-blackish mb-2 ">{value.title}</h3>
               <p className="text-gray-600">{value.description}</p>
             </MotionDiv>
           ))}
@@ -204,27 +189,18 @@ export default function InterestGroups() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="relative mb-24 last:mb-0 z-10"
                 >
-                  <div
-                    className={`flex items-center ${isLeft ? "justify-end" : "justify-start"
-                      }`}
-                  >
-                    <div
-                      className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"
-                        }`}
-                    >
+                  <div className={`flex items-center ${isLeft ? "justify-end" : "justify-start"}`}>
+                    <div className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"}`}>
                       <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border border-mulearn-greyish/20 hover:shadow-xl transition-shadow duration-300">
                         <div
-                          className={`flex items-center gap-3 mb-3 ${isLeft ? "justify-end" : "justify-start"
-                            }`}
+                          className={`flex items-center gap-3 mb-3 ${
+                            isLeft ? "justify-end" : "justify-start"
+                          }`}
                         >
                           <Icon className="w-6 h-6 text-mulearn" />
-                          <h3 className="text-xl font-bold text-mulearn-blackish ">
-                            {step.title}
-                          </h3>
+                          <h3 className="text-xl font-bold text-mulearn-blackish ">{step.title}</h3>
                         </div>
-                        <p className="text-gray-600 leading-relaxed">
-                          {step.description}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </div>
@@ -269,12 +245,8 @@ export default function InterestGroups() {
                   </div>
 
                   <div className="bg-mulearn-whitish p-6 rounded-xl shadow-md border border-mulearn-greyish/20">
-                    <h3 className="text-lg font-bold text-mulearn-blackish mb-2 ">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {step.description}
-                    </p>
+                    <h3 className="text-lg font-bold text-mulearn-blackish mb-2 ">{step.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
                   </div>
                 </MotionDiv>
               );
@@ -295,8 +267,7 @@ export default function InterestGroups() {
             Explore Interest Groups
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Choose a domain that excites you and start your learning journey
-            today
+            Choose a domain that excites you and start your learning journey today
           </p>
 
           <div className="max-w-md mx-auto relative">
@@ -340,18 +311,14 @@ export default function InterestGroups() {
                   <h3 className="text-xl font-bold mb-2 text-mulearn transition-colors duration-300 ">
                     {group.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4 flex-grow">
-                    {group.tagline}
-                  </p>
+                  <p className="text-sm text-gray-600 mb-4 flex-grow">{group.tagline}</p>
 
                   <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
 
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl bg-mulearn"
-                >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl bg-mulearn">
                   <p className="text-mulearn-whitish text-sm leading-relaxed text-center">
                     {group.description}
                   </p>
@@ -371,9 +338,7 @@ export default function InterestGroups() {
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
-            <p className="text-gray-500 text-lg">
-              No interest groups found matching your search.
-            </p>
+            <p className="text-gray-500 text-lg">No interest groups found matching your search.</p>
           </MotionDiv>
         )}
       </section>
@@ -390,8 +355,8 @@ export default function InterestGroups() {
             Ready to Start Your Journey?
           </h2>
           <p className="text-lg text-mulearn-whitish/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of learners who are building skills, making
-            connections, and preparing for the careers of tomorrow.
+            Join thousands of learners who are building skills, making connections, and preparing
+            for the careers of tomorrow.
           </p>
           <Link
             href="https://app.mulearn.org/dashboard/profile"

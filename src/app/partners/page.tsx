@@ -1,6 +1,6 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { ArrowRight, Building2, Rocket, Target, Users } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Users, Building2, Target, Rocket } from "lucide-react";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
 export default function PartnersPage() {
@@ -28,13 +28,7 @@ export default function PartnersPage() {
                     fill="none"
                   >
                     <defs>
-                      <linearGradient
-                        id="trustyGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                      >
+                      <linearGradient id="trustyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" stopColor="#2E85FE" />
                         <stop offset="100%" stopColor="#AF2EE6" />
                       </linearGradient>
@@ -50,8 +44,8 @@ export default function PartnersPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-mulearn-blackish max-w-2xl mx-auto lg:mx-0">
-                Collaborating with incredible organizations and communities to
-                empower learners and drive innovation across the ecosystem.
+                Collaborating with incredible organizations and communities to empower learners and
+                drive innovation across the ecosystem.
               </p>
             </MotionDiv>
 
@@ -86,14 +80,10 @@ export default function PartnersPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mulearn-blackish mb-4">
-              Explore Our{" "}
-              <span className="text-mulearn">
-                Partnership Network
-              </span>
+              Explore Our <span className="text-mulearn">Partnership Network</span>
             </h2>
             <p className="text-mulearn-blackish text-lg max-w-2xl mx-auto">
-              Discover the communities and companies that make our ecosystem
-              thrive
+              Discover the communities and companies that make our ecosystem thrive
             </p>
           </MotionDiv>
 
@@ -114,7 +104,6 @@ export default function PartnersPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
-
                   </div>
 
                   <div className="p-6 sm:p-8 space-y-6">
@@ -128,9 +117,8 @@ export default function PartnersPage() {
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
-                      Educational institutions, student communities, and
-                      learning groups that share our vision of accessible,
-                      peer-driven education and collaborative growth.
+                      Educational institutions, student communities, and learning groups that share
+                      our vision of accessible, peer-driven education and collaborative growth.
                     </p>
 
                     <ul className="space-y-2 text-sm text-gray-600">
@@ -150,7 +138,15 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Community Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+                      <ArrowRight
+                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        style={{
+                          background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -173,7 +169,6 @@ export default function PartnersPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                     />
-
                   </div>
 
                   <div className="p-6 sm:p-8 space-y-6">
@@ -187,9 +182,9 @@ export default function PartnersPage() {
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
-                      Industry leaders, startups, and organizations providing
-                      real-world opportunities, mentorship, and resources to
-                      help learners succeed in their careers.
+                      Industry leaders, startups, and organizations providing real-world
+                      opportunities, mentorship, and resources to help learners succeed in their
+                      careers.
                     </p>
 
                     <ul className="space-y-2 text-sm text-gray-600">
@@ -209,7 +204,15 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Company Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+                      <ArrowRight
+                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        style={{
+                          background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -229,11 +232,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#212121] mb-4">
-              Why{" "}
-              <span className="text-mulearn">
-                Partner
-              </span>{" "}
-              With Us?
+              Why <span className="text-mulearn">Partner</span> With Us?
             </h2>
           </MotionDiv>
 
@@ -242,14 +241,12 @@ export default function PartnersPage() {
               {
                 icon: Users,
                 title: "Engaged Community",
-                description:
-                  "Access to thousands of motivated learners eager to grow",
+                description: "Access to thousands of motivated learners eager to grow",
               },
               {
                 icon: Target,
                 title: "Real Impact",
-                description:
-                  "Create meaningful change in the education ecosystem",
+                description: "Create meaningful change in the education ecosystem",
               },
               {
                 icon: Rocket,
@@ -268,12 +265,8 @@ export default function PartnersPage() {
                 <div className="w-12 h-12 rounded-lg bg-mulearn flex items-center justify-center mb-4">
                   <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
                 </div>
-                <h3 className="text-xl font-bold text-[#212121] mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-mulearn-blackish text-sm">
-                  {benefit.description}
-                </p>
+                <h3 className="text-xl font-bold text-[#212121] mb-2">{benefit.title}</h3>
+                <p className="text-mulearn-blackish text-sm">{benefit.description}</p>
               </MotionDiv>
             ))}
           </div>
@@ -308,21 +301,36 @@ export default function PartnersPage() {
                 Interested in Partnering?
               </h2>
               <p className="text-mulearn-whitish/90 text-base sm:text-lg">
-                Join our growing network of partners and help us create
-                impactful learning experiences for thousands of learners
-                worldwide.
+                Join our growing network of partners and help us create impactful learning
+                experiences for thousands of learners worldwide.
               </p>
               <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/be-a-part/company">
                   <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="text-mulearn">Join as Company</span>
-                    <ArrowRight className="w-5 h-5" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+                    <ArrowRight
+                      className="w-5 h-5"
+                      style={{
+                        background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    />
                   </button>
                 </Link>
                 <Link href="/be-a-part/campus">
                   <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
                     <span className="text-mulearn">Join as Community</span>
-                    <ArrowRight className="w-5 h-5" style={{ background: 'linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+                    <ArrowRight
+                      className="w-5 h-5"
+                      style={{
+                        background: "linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    />
                   </button>
                 </Link>
               </div>

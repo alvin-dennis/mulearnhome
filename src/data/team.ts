@@ -222,8 +222,7 @@ export const team = [
           },
           {
             name: "Joel Basil Kurian",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Joel Basil Kurian.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Joel Basil Kurian.jpeg",
             muid: "joelbasilkurian@mulearn",
             linkedin: "",
             x: "",
@@ -233,8 +232,7 @@ export const team = [
           },
           {
             name: "Jyothsna P Nair",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Jyothsna P Nair.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Jyothsna P Nair.jpeg",
             muid: "jyothsnapnair-1@mulearn",
             linkedin: "https://linkedin.com/in/jyothsna-p-nair-11b734273",
             x: "",
@@ -656,8 +654,7 @@ export const team = [
         members: [
           {
             name: "Chethas L Pramod",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/Chethas L Pramod.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/Chethas L Pramod.jpeg",
             muid: "chethaslpramod@mulearn",
             linkedin: "https://linkedin.com/in/chethaslp",
             x: "",
@@ -667,8 +664,7 @@ export const team = [
           },
           {
             name: "Sharon Aliyas Johnson",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/Sharon Aliyas Johnson.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/Sharon Aliyas Johnson.jpeg",
             muid: "sharonaliyasjohnson@mulearn",
             linkedin: "https://linkedin.com/in/sharonaliyas/",
             x: "",
@@ -698,8 +694,7 @@ export const team = [
           },
           {
             name: "Kethan Krishna P K",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/Kethan Krishna P K.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/Kethan Krishna P K.jpeg",
             muid: "kethankrishnapk@mulearn",
             linkedin: "https://linkedin.com/in/kethan-krishna-6a4226262/",
             x: "",
@@ -709,8 +704,7 @@ export const team = [
           },
           {
             name: "Dilshad Mohammed",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/Dilshad Mohammed.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/Dilshad Mohammed.jpeg",
             muid: "dilshadmohammed@mulearn",
             linkedin: "https://linkedin.com/in/dilshad-mohammed",
             x: "",
@@ -720,8 +714,7 @@ export const team = [
           },
           {
             name: "ALFRIN POULOSE",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/ALFRIN POULOSE.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/ALFRIN POULOSE.jpeg",
             muid: "alfrinpoulose@mulearn",
             linkedin: "https://linkedin.com/in/alfrinpoulose/",
             x: "",
@@ -741,8 +734,7 @@ export const team = [
           },
           {
             name: "ABHIJITH K R",
-            image:
-              "public/assets/team/2024/Interns/Backend Developer/ABHIJITH K R.jpeg",
+            image: "public/assets/team/2024/Interns/Backend Developer/ABHIJITH K R.jpeg",
             muid: "abhijithkr-1@mulearn",
             linkedin: "https://linkedin.com/in/abhijith-k-r-0a181a236/",
             x: "",
@@ -752,8 +744,7 @@ export const team = [
           },
           {
             name: "Noyal Joseph",
-            image:
-              "public/assets/team/2024/Interns/Bot Developer/Noyal Joseph.jpeg",
+            image: "public/assets/team/2024/Interns/Bot Developer/Noyal Joseph.jpeg",
             muid: "noyaljoseph@mulearn",
             linkedin: "https://linkedin.com/in/stdestiny",
             x: "",
@@ -913,11 +904,9 @@ export const team = [
           },
           {
             name: "Alan Francis Santhosh",
-            image:
-              "public/assets/team/2024/Interns/Frontend Developer/Alan Francis Santhosh.jpeg",
+            image: "public/assets/team/2024/Interns/Frontend Developer/Alan Francis Santhosh.jpeg",
             muid: "alanfrancissanthosh-1@mulearn",
-            linkedin:
-              "https://linkedin.com/in/alan-francis-santhosh-92811b298/",
+            linkedin: "https://linkedin.com/in/alan-francis-santhosh-92811b298/",
             x: "",
             github: "https://github.com/alanfrancis442",
             team: "Frontend Developer",
@@ -985,8 +974,7 @@ export const team = [
           },
           {
             name: "ABIKRISHNA S",
-            image:
-              "public/assets/team/2024/Interns/Graphic Designer/ABIKRISHNA S.jpeg",
+            image: "public/assets/team/2024/Interns/Graphic Designer/ABIKRISHNA S.jpeg",
             muid: "abikrishnas-1@mulearn",
             linkedin: "https://linkedin.com/in/abi-krishna-s-70303323b/",
             x: "",
@@ -996,8 +984,7 @@ export const team = [
           },
           {
             name: "Muhammed Sinan N",
-            image:
-              "public/assets/team/2024/Interns/Graphic Designer/Muhammed Sinan N.jpeg",
+            image: "public/assets/team/2024/Interns/Graphic Designer/Muhammed Sinan N.jpeg",
             muid: "muhammedsinan-5@mulearn",
             linkedin: "https://linkedin.com/in/muhammed-sinan-n-0112a12a3",
             x: "",
@@ -1019,8 +1006,7 @@ export const team = [
             name: "Sreedev Vp",
             image: "public/assets/team/Sreedev Vp.jpeg",
             muid: "sreedevvp@mulearn",
-            linkedin:
-              "https://linkedin.com/in/sreedev-vp-65517a267&utm_medium=ios_app",
+            linkedin: "https://linkedin.com/in/sreedev-vp-65517a267&utm_medium=ios_app",
             x: "",
             github: "",
             team: "UI Designer",
@@ -1118,8 +1104,7 @@ export const team = [
           },
           {
             name: "Niranjan Biju",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Niranjan Biju.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Niranjan Biju.jpeg",
             muid: "niranjanbiju@mulearn",
             linkedin: "https://linkedin.com/in/niranjan-biju-573957284",
             x: "",
@@ -1149,8 +1134,7 @@ export const team = [
           },
           {
             name: "Jyothsna P Nair",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Jyothsna P Nair.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Jyothsna P Nair.jpeg",
             muid: "jyothsnapnair-1@mulearn",
             linkedin: "https://linkedin.com/in/jyothsna-p-nair-11b734273",
             x: "",
@@ -1160,8 +1144,7 @@ export const team = [
           },
           {
             name: "Akash A",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Akash A.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Akash A.jpeg",
             muid: "akasha@mulearn",
             linkedin: "https://linkedin.com/in/ecoholic",
             x: "https://x.com/ecoholic84",
@@ -1173,8 +1156,7 @@ export const team = [
             name: "Marvin Varghese Mathew",
             image: "public/assets/team/Marvin Varghese Mathew.jpg",
             muid: "marvinmathew@mulearn",
-            linkedin:
-              "https://linkedin.com/in/marvin-v-mathew-881446255&utm_medium=ios_app",
+            linkedin: "https://linkedin.com/in/marvin-v-mathew-881446255&utm_medium=ios_app",
             x: "",
             github: "",
             team: "Digital Marketing",
@@ -1192,8 +1174,7 @@ export const team = [
           },
           {
             name: "Betcy Rajan",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Betcy Rajan.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Betcy Rajan.jpeg",
             muid: "betcyrajan@mulearn",
             linkedin: "https://linkedin.com/in/betcy-rajan",
             x: "",
@@ -1263,8 +1244,7 @@ export const team = [
           },
           {
             name: "Anna Jaison",
-            image:
-              "public/assets/team/2024/Interns/Public Relation/Anna Jaison.jpeg",
+            image: "public/assets/team/2024/Interns/Public Relation/Anna Jaison.jpeg",
             muid: "annajaison@mulearn",
             linkedin: "https://linkedin.com/in/anna-jaison-/",
             x: "https://x.com/anna_jaiso19448",
@@ -1286,8 +1266,7 @@ export const team = [
             name: "Shreerag Namboothiri K H",
             image: "public/assets/team/Shreerag Namboothiri K H.jpeg",
             muid: "shreeragnamboothirikh@mulearn",
-            linkedin:
-              "https://linkedin.com/in/shreerag-namboothiri-k-h-2014b6243",
+            linkedin: "https://linkedin.com/in/shreerag-namboothiri-k-h-2014b6243",
             x: "",
             github: "https://github.com/shreeragkh",
             team: "QA Tester",
@@ -1305,8 +1284,7 @@ export const team = [
           },
           {
             name: "Aiswarya Muralidharan",
-            image:
-              "public/assets/team/2024/Interns/QA Tester/Aiswarya Muralidharan.jpeg",
+            image: "public/assets/team/2024/Interns/QA Tester/Aiswarya Muralidharan.jpeg",
             muid: "aiswarya-5@mulearn",
             linkedin: "https://linkedin.com/in/aiswary a-m-5b4b91296/",
             x: "",
@@ -1316,8 +1294,7 @@ export const team = [
           },
           {
             name: "Vidhya Vijayakumar",
-            image:
-              "public/assets/team/2024/Interns/QA Tester/Vidhya Vijayakumar.jpeg",
+            image: "public/assets/team/2024/Interns/QA Tester/Vidhya Vijayakumar.jpeg",
             muid: "vidhyavijayakumar@mulearn",
             linkedin: "https://linkedin.com/in/vidhya-vijayakumar-15a502226",
             x: "",
@@ -1347,8 +1324,7 @@ export const team = [
           },
           {
             name: "EDWIN SHAJU MALAKARAN",
-            image:
-              "public/assets/team/2024/Interns/UI Designer/EDWIN SHAJU MALAKARAN.jpeg",
+            image: "public/assets/team/2024/Interns/UI Designer/EDWIN SHAJU MALAKARAN.jpeg",
             muid: "edwinshaju@mulearn",
             linkedin: "https://linkedin.com/in/edwinlegend",
             x: "",
@@ -1370,8 +1346,7 @@ export const team = [
             name: "George Emmanuel Thomas",
             image: "public/assets/team/George Emmanuel Thomas.jpeg",
             muid: "georgeemmanuelthomas@mulearn",
-            linkedin:
-              "https://linkedin.com/in/george-emmanuel-thomas-518060202/",
+            linkedin: "https://linkedin.com/in/george-emmanuel-thomas-518060202/",
             x: "",
             github: "https://github.com/GeorgeET15",
             team: "Frontend Developer",
@@ -1391,8 +1366,7 @@ export const team = [
             name: "Nobin Sijo",
             image: "public/assets/team/Nobin Sijo.jpg",
             muid: "nobinsijo@mulearn",
-            linkedin:
-              "https://linkedin.com/in/nobin-sijo-a22711291/?originalSubdomain=in",
+            linkedin: "https://linkedin.com/in/nobin-sijo-a22711291/?originalSubdomain=in",
             x: "",
             github: "https://github.com/WhiteCode77T/",
             team: "UI Designer",
@@ -1400,8 +1374,7 @@ export const team = [
           },
           {
             name: "Sneha Mariam Mani",
-            image:
-              "public/assets/team/2024/Interns/UX Designer/Sneha Mariam Mani.jpeg",
+            image: "public/assets/team/2024/Interns/UX Designer/Sneha Mariam Mani.jpeg",
             muid: "snehamariammani@mulearn",
             linkedin: "https://linkedin.com/in/sneha-mariam-mani-9367a0204/",
             x: "",
@@ -1411,8 +1384,7 @@ export const team = [
           },
           {
             name: "Niveditha Deepak",
-            image:
-              "public/assets/team/2024/Interns/UX Designer/Niveditha Deepak.jpeg",
+            image: "public/assets/team/2024/Interns/UX Designer/Niveditha Deepak.jpeg",
             muid: "nivedithadeepak@mulearn",
             linkedin: "https://linkedin.com/in/niveditha-deepak-68550121b/",
             x: "",
@@ -1462,8 +1434,7 @@ export const team = [
           },
           {
             name: "BISWAS SEKHAR",
-            image:
-              "public/assets/team/2024/Interns/Graphic Designer/BISWAS SEKHAR.jpeg",
+            image: "public/assets/team/2024/Interns/Graphic Designer/BISWAS SEKHAR.jpeg",
             muid: "biswassekhar@mulearn",
             linkedin: "https://linkedin.com/in/biswas-sekhar",
             x: "",
@@ -1503,8 +1474,7 @@ export const team = [
           },
           {
             name: "Abinson Suresh",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Abinson Suresh.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Abinson Suresh.jpeg",
             muid: "abinsonsuresh@mulearn",
             linkedin: "",
             x: "",
@@ -1514,8 +1484,7 @@ export const team = [
           },
           {
             name: "Reny Mathew",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Reny Mathew.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Reny Mathew.jpeg",
             muid: "renymathew@mulearn",
             linkedin: "",
             x: "",
@@ -1525,8 +1494,7 @@ export const team = [
           },
           {
             name: "Sona Ponnachen",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Sona Ponnachen.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Sona Ponnachen.jpeg",
             muid: "sonaponnachen@mulearn",
             linkedin: "",
             x: "",
@@ -1547,8 +1515,7 @@ export const team = [
           },
           {
             name: "Anandha Krishnan S",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Anandha Krishnan.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Anandha Krishnan.jpeg",
             muid: "anandhakrishnans@mulearn",
             linkedin: "",
             x: "",
@@ -1558,8 +1525,7 @@ export const team = [
           },
           {
             name: "Nijin K Varghese",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Nijin K Varghese.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Nijin K Varghese.jpeg",
             muid: "nijinkvarghese@mulearn",
             linkedin: "",
             x: "",
@@ -1569,8 +1535,7 @@ export const team = [
           },
           {
             name: "Basil Vazhathottathil",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Basil Vazhathottathil.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Basil Vazhathottathil.jpeg",
             muid: "basilvazhathottathil@mulearn",
             linkedin: "",
             x: "",
@@ -1580,8 +1545,7 @@ export const team = [
           },
           {
             name: "Anamika C",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Anamika C.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Anamika C.jpeg",
             muid: "anamikac@mulearn",
             linkedin: "",
             x: "",
@@ -1591,8 +1555,7 @@ export const team = [
           },
           {
             name: "Mohammed Ameen",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Mohammed Ameen.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Mohammed Ameen.jpeg",
             muid: "mohammedameen@mulearn",
             linkedin: "",
             x: "",
@@ -1612,8 +1575,7 @@ export const team = [
           },
           {
             name: "Naslu KK",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Naslu kk.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Naslu kk.jpeg",
             muid: "naslukk@mulearn",
             linkedin: "",
             x: "",
@@ -1623,8 +1585,7 @@ export const team = [
           },
           {
             name: "Joel Basil Kurian",
-            image:
-              "public/assets/team/2024/Interns/Campus Management/Joel Basil Kurian.jpeg",
+            image: "public/assets/team/2024/Interns/Campus Management/Joel Basil Kurian.jpeg",
             muid: "joelbasilkurian@mulearn",
             linkedin: "",
             x: "",
@@ -1673,8 +1634,7 @@ export const team = [
           },
           {
             name: "Aron shaji",
-            image:
-              "public/assets/team/2024/Interns/Interest Group Management/Aaron Shaji.jpeg",
+            image: "public/assets/team/2024/Interns/Interest Group Management/Aaron Shaji.jpeg",
             muid: "Aaronshaji@mulearn",
             linkedin: "",
             x: "",
@@ -1684,8 +1644,7 @@ export const team = [
           },
           {
             name: "Jeeva Vinod",
-            image:
-              "public/assets/team/2024/Interns/Interest Group Management/Jeeva Vinod.jpeg",
+            image: "public/assets/team/2024/Interns/Interest Group Management/Jeeva Vinod.jpeg",
             muid: "jeevavinod@mulearn",
             linkedin: "",
             x: "",
@@ -1706,8 +1665,7 @@ export const team = [
           },
           {
             name: "Dany Koshy P",
-            image:
-              "public/assets/team/2024/Interns/Interest Group Management/Dany Koshy P.jpeg",
+            image: "public/assets/team/2024/Interns/Interest Group Management/Dany Koshy P.jpeg",
             muid: "danykoshyp@mulearn",
             linkedin: "",
             x: "",
@@ -1717,8 +1675,7 @@ export const team = [
           },
           {
             name: "Ardra p",
-            image:
-              "public/assets/team/2024/Interns/Operation Manager/Ardra p.jpeg",
+            image: "public/assets/team/2024/Interns/Operation Manager/Ardra p.jpeg",
             muid: "ardrap-1@mulearn",
             linkedin: "",
             x: "",
@@ -1728,8 +1685,7 @@ export const team = [
           },
           {
             name: "SUSAN SERAH KOSHY",
-            image:
-              "public/assets/team/2024/Interns/Partner Engagement/SUSAN SERAH KOSHY.jpeg",
+            image: "public/assets/team/2024/Interns/Partner Engagement/SUSAN SERAH KOSHY.jpeg",
             muid: "susanserahkoshy@mulearn",
             linkedin: "",
             x: "",
@@ -1769,8 +1725,7 @@ export const team = [
           },
           {
             name: "Nandana Pradeep",
-            image:
-              "public/assets/team/2024/Interns/Frontend Developer/Nandana Pradeep.jpeg",
+            image: "public/assets/team/2024/Interns/Frontend Developer/Nandana Pradeep.jpeg",
             muid: "nandanapradeep@mulearn",
             linkedin: "",
             x: "",
@@ -4112,8 +4067,7 @@ export const team = [
                 id: 6,
                 name: "Finu Muhammed Shameem",
                 designation: "Joint Director, Community",
-                image:
-                  "public/assets/team/muteam/core/Finu Muhammed Shameem.webp",
+                image: "public/assets/team/muteam/core/Finu Muhammed Shameem.webp",
               },
               {
                 id: 7,
@@ -4160,8 +4114,7 @@ export const team = [
                 id: 0,
                 name: "Albin Mathews Joseph",
                 designation: "Zonal Head South Zone",
-                image:
-                  "public/assets/team/muteam/zonal/Albin Mathews Joseph.webp",
+                image: "public/assets/team/muteam/zonal/Albin Mathews Joseph.webp",
               },
               {
                 id: 1,
@@ -4238,8 +4191,7 @@ export const team = [
                 id: 3,
                 name: "Adith V Mohanan",
                 designation: "Kozhikode District Head",
-                image:
-                  "public/assets/team/muteam/district/Adith V Mohanan.webp",
+                image: "public/assets/team/muteam/district/Adith V Mohanan.webp",
               },
               {
                 id: 4,
@@ -4269,8 +4221,7 @@ export const team = [
                 id: 8,
                 name: "Ameena Nuwaira Thwahir Ameen",
                 designation: "Wayanad District Head",
-                image:
-                  "public/assets/team/muteam/district/Ameena Nuwaira Thwahir Ameen.webp",
+                image: "public/assets/team/muteam/district/Ameena Nuwaira Thwahir Ameen.webp",
               },
               {
                 id: 9,
@@ -4282,8 +4233,7 @@ export const team = [
                 id: 10,
                 name: "Ananthakrishnan",
                 designation: "District Head",
-                image:
-                  "public/assets/team/muteam/district/Ananthakrishnan.webp",
+                image: "public/assets/team/muteam/district/Ananthakrishnan.webp",
               },
               {
                 id: 11,
@@ -4313,8 +4263,7 @@ export const team = [
                 id: 15,
                 name: "Henna Jelwa U K",
                 designation: "Malappuram District Head",
-                image:
-                  "public/assets/team/muteam/district/Henna Jelwa U K.webp",
+                image: "public/assets/team/muteam/district/Henna Jelwa U K.webp",
               },
               {
                 id: 16,
@@ -4338,8 +4287,7 @@ export const team = [
                 id: 19,
                 name: "Jesin Vengilatt",
                 designation: "Wayanad District Head",
-                image:
-                  "public/assets/team/muteam/district/Jesin Vengilatt.webp",
+                image: "public/assets/team/muteam/district/Jesin Vengilatt.webp",
               },
               {
                 id: 20,
@@ -4369,8 +4317,7 @@ export const team = [
                 id: 24,
                 name: "Muhammed Nabeel T K",
                 designation: "Kasaragod District Head",
-                image:
-                  "public/assets/team/muteam/district/Muhammed Nabeel T K.webp",
+                image: "public/assets/team/muteam/district/Muhammed Nabeel T K.webp",
               },
               {
                 id: 25,
@@ -4406,15 +4353,13 @@ export const team = [
                 id: 30,
                 name: "Saieedha Mol N K",
                 designation: "Malappuram District Head",
-                image:
-                  "public/assets/team/muteam/district/Saieedha Mol N K.webp",
+                image: "public/assets/team/muteam/district/Saieedha Mol N K.webp",
               },
               {
                 id: 31,
                 name: "Sandra Krishnan",
                 designation: "Kottayam District Head",
-                image:
-                  "public/assets/team/muteam/district/Sandra Krishnan.webp",
+                image: "public/assets/team/muteam/district/Sandra Krishnan.webp",
               },
               {
                 id: 32,
@@ -4456,8 +4401,7 @@ export const team = [
                 id: 38,
                 name: "Terrance Johnson",
                 designation: "Thrissur District Head",
-                image:
-                  "public/assets/team/muteam/district/Terrance Johnson.webp",
+                image: "public/assets/team/muteam/district/Terrance Johnson.webp",
               },
               {
                 id: 39,
@@ -4469,8 +4413,7 @@ export const team = [
                 id: 40,
                 name: "Gowrishankar V. V",
                 designation: "Alappuzha District Head",
-                image:
-                  "public/assets/team/muteam/district/Gowrishankar V. V.webp",
+                image: "public/assets/team/muteam/district/Gowrishankar V. V.webp",
               },
             ],
           },
@@ -4583,8 +4526,7 @@ export const team = [
                 id: 17,
                 name: "Ameena Nuwaira Thwahir Ameen",
                 designation: "GEC Wayanad",
-                image:
-                  "public/assets/team/muteam/ca/Ameena Nuwaira Thwahir Ameen.webp",
+                image: "public/assets/team/muteam/ca/Ameena Nuwaira Thwahir Ameen.webp",
               },
               {
                 id: 18,

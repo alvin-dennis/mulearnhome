@@ -1,18 +1,18 @@
 "use client";
 
+import type { Variants } from "framer-motion";
 import { useState } from "react";
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv, MotionNav } from "@/components/MuFramer";
+import { MotionDiv, MotionNav, MotionSection } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import {
   Select,
-  SelectTrigger,
-  SelectValue,
   SelectContent,
   SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
-import { rolesTitle, rolesContent } from "@/data/home";
-import { Role, RoleItem } from "@/lib/types";
-import MuImage from "@/components/MuImage";
+import { rolesContent, rolesTitle } from "@/data/home";
+import type { Role, RoleItem } from "@/lib/types";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -58,18 +58,16 @@ export default function Roles() {
         </Select>
       </div>
 
-      <MotionNav
-        className="hidden sm:flex justify-center mb-10"
-        variants={fadeInUp}
-      >
+      <MotionNav className="hidden sm:flex justify-center mb-10" variants={fadeInUp}>
         <ul className="list-none flex gap-5 p-0 m-0">
           {rolesTitle.map((role: Role) => (
             <li
               key={role.id}
-              className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${activeRole === role.id
-                ? "font-bold border-mulearn-blackish"
-                : "border-transparent hover:text-mulearn-trusty-blue"
-                }`}
+              className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${
+                activeRole === role.id
+                  ? "font-bold border-mulearn-blackish"
+                  : "border-transparent hover:text-mulearn-trusty-blue"
+              }`}
               onClick={() => setActiveRole(role.id)}
             >
               {role.label}
@@ -95,9 +93,7 @@ export default function Roles() {
               height={200}
               className="w-full min-h-[220px] mb-2.5 object-cover"
             />
-            <h6 className="text-[1.1rem] font-bold text-mulearn-blackish m-0 mb-2">
-              {item.name}
-            </h6>
+            <h6 className="text-[1.1rem] font-bold text-mulearn-blackish m-0 mb-2">{item.name}</h6>
             <p className="text-[0.85rem] font-normal text-center text-mulearn-gray-600">
               {item.description}
             </p>

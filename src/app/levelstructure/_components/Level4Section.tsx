@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
@@ -25,21 +25,15 @@ export default function Level4Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                The Path of{" "}
-                <span className="text-mulearn">Choice</span>
+                The Path of <span className="text-mulearn">Choice</span>
               </h2>
-              <p className="text-xl text-mulearn-gray-600">
-                Choose Your Interest Group
-              </p>
+              <p className="text-xl text-mulearn-gray-600">Choose Your Interest Group</p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
-                This is where the hero chooses their{" "}
-                <span className="text-mulearn">
-                  tribe
-                </span>
-                . Students anchor under mentors & industry-aligned pathways.
+                This is where the hero chooses their <span className="text-mulearn">tribe</span>.
+                Students anchor under mentors & industry-aligned pathways.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -82,25 +76,20 @@ export default function Level4Section() {
             </div>
 
             <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
-              <h3 className="text-lg font-bold text-mulearn-blackish">
-                The Impact
-              </h3>
+              <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
                 Learners start building{" "}
                 <span className="font-semibold text-mulearn-blackish">
                   portfolios of proof-of-work
                 </span>{" "}
-                within their chosen interest group. No more drifting through
-                scattered learning.
+                within their chosen interest group. No more drifting through scattered learning.
               </p>
             </div>
           </MotionDiv>
 
           <MotionDiv
             initial={{ opacity: 0, scale: 0.85 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.8 }}
             className="relative flex items-center justify-center lg:justify-end"
           >

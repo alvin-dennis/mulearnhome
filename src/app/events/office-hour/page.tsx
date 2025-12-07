@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { officehourdata } from "@/data/events";
+import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
+import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Mic, Clock, Calendar, PlayCircle } from "lucide-react";
-import SearchAndFilter from "./_components/SearchAndFilter";
 import { Button } from "@/components/ui/button";
+import { officehourdata } from "@/data/events";
 import EventsGrid from "./_components/EventsGrid";
 import Pagination from "./_components/Pagination";
+import SearchAndFilter from "./_components/SearchAndFilter";
 
 export default function OfficeHoursPage() {
   const [search, setSearch] = useState("");
@@ -19,20 +19,13 @@ export default function OfficeHoursPage() {
 
   const allEvents = officehourdata.events;
 
-  const allTags = useMemo(
-    () => Array.from(new Set(allEvents.flatMap((e) => e.tags))),
-    [allEvents]
-  );
+  const allTags = useMemo(() => Array.from(new Set(allEvents.flatMap((e) => e.tags))), [allEvents]);
 
   const filteredEvents = useMemo(() => {
     return allEvents
+      .filter((event) => event.title.toLowerCase().includes(search.toLowerCase()))
       .filter((event) =>
-        event.title.toLowerCase().includes(search.toLowerCase())
-      )
-      .filter((event) =>
-        selectedTags.length === 0
-          ? true
-          : selectedTags.every((t) => event.tags.includes(t))
+        selectedTags.length === 0 ? true : selectedTags.every((t) => event.tags.includes(t)),
       )
       .sort((a, b) => {
         const aDate = a.date ? new Date(a.date).getTime() : 0;
@@ -56,9 +49,7 @@ export default function OfficeHoursPage() {
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
-      prev.includes(tag)
-        ? prev.filter((t) => t !== tag)
-        : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -76,24 +67,17 @@ export default function OfficeHoursPage() {
             </Badge>
 
             <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
-              µLearn{" "}
-              <span className="text-mulearn">
-                Office Hour
-              </span>
+              µLearn <span className="text-mulearn">Office Hour</span>
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
-              A space where µLearn members connect, learn, and grow together.
-              Office Hour is our community-driven learning zone — a place to ask
-              questions, share progress, explore ideas, and get guidance from
-              peers and mentors.
+              A space where µLearn members connect, learn, and grow together. Office Hour is our
+              community-driven learning zone — a place to ask questions, share progress, explore
+              ideas, and get guidance from peers and mentors.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                variant={"mulearn"}
-                className="px-8 py-3 gap-2 text-base rounded-full"
-              >
+              <Button variant={"mulearn"} className="px-8 py-3 gap-2 text-base rounded-full">
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>

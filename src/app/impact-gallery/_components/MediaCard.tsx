@@ -1,19 +1,19 @@
+import {
+  Award,
+  Briefcase,
+  Building2,
+  Calendar,
+  Eye,
+  GraduationCap,
+  School,
+  Sparkles,
+  Target,
+  Users2,
+  UsersRound,
+} from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { GalleryItem } from "@/lib/types";
-import {
-  School,
-  Building2,
-  Eye,
-  UsersRound,
-  Calendar,
-  Target,
-  Award,
-  Users2,
-  Briefcase,
-  GraduationCap,
-  Sparkles,
-} from "lucide-react";
+import type { GalleryItem } from "@/lib/types";
 
 interface MediaCardProps {
   item: GalleryItem;
@@ -92,11 +92,11 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
           </div>
         )}
 
-        { }
+        {}
         <div className="absolute top-3 left-3 z-20">
           <span
             className={`px-3 py-1 rounded-full text-xs font-semibold text-mulearn-whitish ${getCategoryColor(
-              item.category
+              item.category,
             )} flex items-center gap-1`}
           >
             {getCategoryIcon(item.category)}
@@ -107,7 +107,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
           </span>
         </div>
 
-        { }
+        {}
         <div className="absolute inset-0  group-hover:bg-mulearn-blackish/30 transition-all duration-300 flex items-center justify-center z-10">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
@@ -122,12 +122,8 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
       </div>
 
       <div className="p-4">
-        <h3 className="font-bold text-mulearn mb-2 line-clamp-2">
-          {item.title}
-        </h3>
-        <p className="text-mulearn-gray-600 text-sm line-clamp-2">
-          {item.description}
-        </p>
+        <h3 className="font-bold text-mulearn mb-2 line-clamp-2">{item.title}</h3>
+        <p className="text-mulearn-gray-600 text-sm line-clamp-2">{item.description}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
           {item.stats &&
@@ -141,7 +137,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
               </span>
             ))}
 
-          { }
+          {}
           <span className="text-xs bg-mulearn-whitish text-mulearn-gray-600 px-2 py-1 rounded border border-mulearn-greyish flex items-center gap-1">
             {getCategoryIcon(item.category)}
             {item.category

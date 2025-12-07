@@ -1,14 +1,9 @@
-import { cdnUrl } from "@/services/cdn";
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
-import { CommunityCardProps } from "@/lib/types";
+import type { CommunityCardProps } from "@/lib/types";
+import { cdnUrl } from "@/services/cdn";
 
-const CommunityCard: React.FC<CommunityCardProps> = ({
-  name,
-  image,
-  link,
-  customlink,
-}) => {
+const CommunityCard: React.FC<CommunityCardProps> = ({ name, image, link, customlink }) => {
   return (
     <div className="my-4 max-w-xs shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] p-4 rounded-xl h-24 flex items-center justify-evenly bg-mulearn-whitish">
       <div>

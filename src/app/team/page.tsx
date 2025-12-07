@@ -1,8 +1,10 @@
 "use client";
 
+import type { Variants } from "framer-motion";
 import { useState } from "react";
-import { Variants } from "framer-motion";
+import { TeamCard } from "@/app/team/_components/TeamCard";
 import { MotionDiv } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import {
   Select,
   SelectContent,
@@ -10,11 +12,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { TeamCard } from "@/app/team/_components/TeamCard";
 import { team } from "@/data/team";
-import { YearData, Teams } from "@/lib/types";
+import type { Teams, YearData } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
-import MuImage from "@/components/MuImage";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -56,13 +56,11 @@ type YearType = "2025" | "2024" | "2023" | "2022";
 export default function Team() {
   const [activeYear, setActiveYear] = useState<YearType>("2025");
 
-  const muTeamData = team.find(
-    (item) => item.year === "Executive Committee"
-  ) as YearData | undefined;
-
-  const selectedYearData = team.find((item) => item.year === activeYear) as
+  const muTeamData = team.find((item) => item.year === "Executive Committee") as
     | YearData
     | undefined;
+
+  const selectedYearData = team.find((item) => item.year === activeYear) as YearData | undefined;
 
   const renderTeamGrid = (teams: Teams[]) =>
     teams.map((team, teamIndex) => (
@@ -74,28 +72,42 @@ export default function Team() {
         viewport={{ once: true }}
       >
         <div className="mb-24 w-full">
-          <h2 className="text-5xl font-semibold mb-2 text-mulearn text-center">
-            {team.type}
-          </h2>
+          <h2 className="text-5xl font-semibold mb-2 text-mulearn text-center">{team.type}</h2>
           {team.description && (
-            <p className="text-lg text-center text-mulearn-gray-600 mb-6">
-              {team.description}
-            </p>
+            <p className="text-lg text-center text-mulearn-gray-600 mb-6">{team.description}</p>
           )}
 
           {team.subteams
             ? team.subteams.map((subTeam, subIndex) => (
-              <div key={subIndex} className="mb-24">
-                <h3 className="text-3xl font-semibold mb-1 text-center text-mulearn-blackish">
-                  {subTeam.type}
-                </h3>
-                {subTeam.description && (
-                  <p className="text-md text-center text-mulearn-gray-600 mb-4">
-                    {subTeam.description}
-                  </p>
-                )}
+                <div key={subIndex} className="mb-24">
+                  <h3 className="text-3xl font-semibold mb-1 text-center text-mulearn-blackish">
+                    {subTeam.type}
+                  </h3>
+                  {subTeam.description && (
+                    <p className="text-md text-center text-mulearn-gray-600 mb-4">
+                      {subTeam.description}
+                    </p>
+                  )}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+                    {subTeam.members.map((member, memberIndex) => (
+                      <TeamCard
+                        key={memberIndex}
+                        name={member.name}
+                        muid={member.muid}
+                        image={member.image}
+                        team={member.team}
+                        lead={member.lead}
+                        linkedin={member.linkedin}
+                        github={member.github}
+                        x={member.x}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))
+            : team.members && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-                  {subTeam.members.map((member, memberIndex) => (
+                  {team.members.map((member, memberIndex) => (
                     <TeamCard
                       key={memberIndex}
                       name={member.name}
@@ -109,25 +121,7 @@ export default function Team() {
                     />
                   ))}
                 </div>
-              </div>
-            ))
-            : team.members && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-                {team.members.map((member, memberIndex) => (
-                  <TeamCard
-                    key={memberIndex}
-                    name={member.name}
-                    muid={member.muid}
-                    image={member.image}
-                    team={member.team}
-                    lead={member.lead}
-                    linkedin={member.linkedin}
-                    github={member.github}
-                    x={member.x}
-                  />
-                ))}
-              </div>
-            )}
+              )}
         </div>
       </MotionDiv>
     ));
@@ -149,16 +143,11 @@ export default function Team() {
             className="flex-1 text-center md:text-left"
           >
             <h2 className="text-5xl md:text-[4.2rem] font-bold text-mulearn-blackish leading-tight">
-              The{" "}
-              <span className="font-semibold text-mulearn">
-                Gears
-              </span>{" "}
-              Behind The Machine.
+              The <span className="font-semibold text-mulearn">Gears</span> Behind The Machine.
             </h2>
             <p className="text-xl md:text-2xl my-8 text-justify md:text-left text-mulearn-gray-600">
-              The &apos;µLearn&apos; community&apos;s growth to this moment
-              would not have been possible without the team&apos;s soul and
-              heart...
+              The &apos;µLearn&apos; community&apos;s growth to this moment would not have been
+              possible without the team&apos;s soul and heart...
             </p>
           </MotionDiv>
           <MotionDiv
@@ -181,17 +170,12 @@ export default function Team() {
       </div>
 
       {muTeamData && (
-        <div className="mb-20 mt-10 max-w-7xl mx-auto px-4">
-          {renderTeamGrid(muTeamData.teams)}
-        </div>
+        <div className="mb-20 mt-10 max-w-7xl mx-auto px-4">{renderTeamGrid(muTeamData.teams)}</div>
       )}
 
       <div className="flex flex-col items-center mt-20 max-w-7xl mx-auto px-4">
         <div className="mt-6 mb-12 flex justify-center">
-          <Select
-            value={activeYear}
-            onValueChange={(value) => setActiveYear(value as YearType)}
-          >
+          <Select value={activeYear} onValueChange={(value) => setActiveYear(value as YearType)}>
             <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
               <SelectValue placeholder="Select year" />
             </SelectTrigger>

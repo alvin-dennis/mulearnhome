@@ -1,5 +1,5 @@
 import MuImage from "@/components/MuImage";
-import { TopLearner, Testimonial } from "@/lib/types";
+import type { Testimonial, TopLearner } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
 interface RankingSectionProps {
@@ -9,11 +9,7 @@ interface RankingSectionProps {
 
 const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
-const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({
-  name,
-  kp,
-  imageUrl,
-}) => (
+const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({ name, kp, imageUrl }) => (
   <div className="text-center group relative flex flex-col items-center">
     <div className="relative">
       <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-mulearn-whitish-300 rounded-xl   " />
@@ -53,9 +49,7 @@ const SmallLearnerCard: React.FC<{
       />
 
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">
-          {name}
-        </p>
+        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">{name}</p>
         <p className="text-xs font-medium text-mulearn-whitish/90 drop-shadow">
           {kp.toLocaleString()} <span className="font-bold">KP</span>
         </p>

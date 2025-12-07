@@ -1,11 +1,5 @@
+import type { Event, OfficeHoursData, OMEvent, WeeklyTwitchData } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
-import {
-  Event,
-  OMEvent,
-  OfficeHours,
-  OfficeHoursData,
-  WeeklyTwitchData,
-} from "@/lib/types";
 
 export const events: {
   latestEvents: Event[];
@@ -206,8 +200,7 @@ export const in50hrs = {
     {
       title: "PITCH",
       titleSpan: "IT",
-      description:
-        "Pitch your boldest ideas and captivate them all in just minutes.",
+      description: "Pitch your boldest ideas and captivate them all in just minutes.",
     },
     {
       title: "PROTOTYPE",
@@ -218,8 +211,7 @@ export const in50hrs = {
     {
       title: "GET FUNDED",
       titleSpan: "GET",
-      description:
-        "Pitch your boldest ideas and captivate them all in just minutes.",
+      description: "Pitch your boldest ideas and captivate them all in just minutes.",
     },
   ],
   steps: [
@@ -373,8 +365,7 @@ export const officehourdata: OfficeHoursData = {
       id: 2,
       title: "General Discussion",
       performer: "",
-      description:
-        "Join us for an open discussion on Data Structures and Algorithms.",
+      description: "Join us for an open discussion on Data Structures and Algorithms.",
       date: "27/11/2025",
       tags: ["Data Structures and Algorithms"],
       isUpcoming: false,
@@ -383,8 +374,7 @@ export const officehourdata: OfficeHoursData = {
       id: 3,
       title: "Django Series - Part 3",
       performer: "",
-      description:
-        "Join us for the third session of our Django web development series.",
+      description: "Join us for the third session of our Django web development series.",
       date: "26/11/2025",
       tags: ["Web Development"],
       isUpcoming: false,
@@ -402,8 +392,7 @@ export const officehourdata: OfficeHoursData = {
       id: 5,
       title: "General Discussion",
       performer: "",
-      description:
-        "Join us for an open discussion on IoT technologies and trends.",
+      description: "Join us for an open discussion on IoT technologies and trends.",
       date: "23/11/2025",
       tags: ["IOT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -433,8 +422,7 @@ export const officehourdata: OfficeHoursData = {
       id: 8,
       title: "What Gave Rise to OTT Platforms?",
       performer: "",
-      description:
-        "Join us to explore the evolution and rise of OTT platforms.",
+      description: "Join us to explore the evolution and rise of OTT platforms.",
       date: "21/11/2025",
       tags: ["MUVIE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -444,8 +432,7 @@ export const officehourdata: OfficeHoursData = {
       id: 9,
       title: "Scenario-Based Questions",
       performer: "",
-      description:
-        "Join us to practice scenario-based DSA questions and problem-solving.",
+      description: "Join us to practice scenario-based DSA questions and problem-solving.",
       date: "20/11/2025",
       tags: ["Data Structures and Algorithms"],
       thumbnail: "/assets/bmc.jpeg",
@@ -455,8 +442,7 @@ export const officehourdata: OfficeHoursData = {
       id: 10,
       title: "Django Series - Part 2",
       performer: "",
-      description:
-        "Join us for the second session of our Django web development series.",
+      description: "Join us for the second session of our Django web development series.",
       date: "19/11/2025",
       tags: ["Web Development"],
       thumbnail: "/assets/bmc.jpeg",
@@ -476,8 +462,7 @@ export const officehourdata: OfficeHoursData = {
       id: 12,
       title: "General Discussion",
       performer: "",
-      description:
-        "Join us for an open discussion on IoT technologies and applications.",
+      description: "Join us for an open discussion on IoT technologies and applications.",
       date: "16/11/2025",
       tags: ["IOT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -487,8 +472,7 @@ export const officehourdata: OfficeHoursData = {
       id: 13,
       title: "MythBusters - Episode 7",
       performer: "",
-      description:
-        "Join us for the seventh episode of our space MythBusters series.",
+      description: "Join us for the seventh episode of our space MythBusters series.",
       date: "15/11/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -498,8 +482,7 @@ export const officehourdata: OfficeHoursData = {
       id: 14,
       title: "The Early Days of Cinema",
       performer: "",
-      description:
-        "Join us to explore the history and evolution of early cinema.",
+      description: "Join us to explore the history and evolution of early cinema.",
       date: "14/11/2025",
       tags: ["MUVIE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -509,8 +492,7 @@ export const officehourdata: OfficeHoursData = {
       id: 15,
       title: "Pattern Printing",
       performer: "",
-      description:
-        "Join us to learn pattern printing techniques and algorithms.",
+      description: "Join us to learn pattern printing techniques and algorithms.",
       date: "13/11/2025",
       tags: ["Data Structures and Algorithms"],
       thumbnail: "/assets/bmc.jpeg",
@@ -520,8 +502,7 @@ export const officehourdata: OfficeHoursData = {
       id: 16,
       title: "Catch the Bugs Before They Bite",
       performer: "Vivek Harikumar",
-      description:
-        "Join us for Catch the Bugs Before They Bite with Vivek Harikumar.",
+      description: "Join us for Catch the Bugs Before They Bite with Vivek Harikumar.",
       date: "12/11/2025",
       tags: ["Cloud and DevOps"],
       thumbnail: "/assets/bmc.jpeg",
@@ -551,8 +532,7 @@ export const officehourdata: OfficeHoursData = {
       id: 19,
       title: "Rasha Hasoon, Project Management: Facts & Myths",
       performer: "",
-      description:
-        "Join us for Rasha Hasoon, Project Management: Facts & Myths.",
+      description: "Join us for Rasha Hasoon, Project Management: Facts & Myths.",
       date: "10/11/2025",
       tags: ["PROJECT MANAGEMENT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -562,8 +542,7 @@ export const officehourdata: OfficeHoursData = {
       id: 20,
       title: "General Discussion",
       performer: "",
-      description:
-        "Join us for an open discussion on IoT concepts and innovations.",
+      description: "Join us for an open discussion on IoT concepts and innovations.",
       date: "09/11/2025",
       tags: ["IOT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -573,8 +552,7 @@ export const officehourdata: OfficeHoursData = {
       id: 21,
       title: "Alien Worlds",
       performer: "Ekta Krishna",
-      description:
-        "Join us for a fascinating session on alien worlds with Ekta Krishna.",
+      description: "Join us for a fascinating session on alien worlds with Ekta Krishna.",
       date: "08/11/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -594,8 +572,7 @@ export const officehourdata: OfficeHoursData = {
       id: 23,
       title: "Customer-Centric Thinking",
       performer: "Karthik",
-      description:
-        "Join us for a session on customer-centric thinking with Karthik.",
+      description: "Join us for a session on customer-centric thinking with Karthik.",
       date: "08/11/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -635,8 +612,7 @@ export const officehourdata: OfficeHoursData = {
       id: 27,
       title: "OpenCV for AI",
       performer: "",
-      description:
-        "Join us to explore OpenCV applications in artificial intelligence.",
+      description: "Join us to explore OpenCV applications in artificial intelligence.",
       date: "06/11/2025",
       tags: ["AI"],
       thumbnail: "/assets/bmc.jpeg",
@@ -656,8 +632,7 @@ export const officehourdata: OfficeHoursData = {
       id: 29,
       title: "Linux Foundation: Fueling the Future",
       performer: "Joswin Emmanuel",
-      description:
-        "Join us for Linux Foundation: Fueling the Future with Joswin Emmanuel.",
+      description: "Join us for Linux Foundation: Fueling the Future with Joswin Emmanuel.",
       date: "05/11/2025",
       tags: ["Cloud and DevOps"],
       thumbnail: "/assets/bmc.jpeg",
@@ -688,8 +663,7 @@ export const officehourdata: OfficeHoursData = {
       id: 32,
       title: "Project Management Session",
       performer: "",
-      description:
-        "Join us for a project management discussion and learning session.",
+      description: "Join us for a project management discussion and learning session.",
       date: "03/11/2025",
       tags: ["PROJECT MANAGEMENT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -699,8 +673,7 @@ export const officehourdata: OfficeHoursData = {
       id: 33,
       title: "Cybersecurity in IoT",
       performer: "",
-      description:
-        "Join us to explore cybersecurity challenges and solutions in IoT.",
+      description: "Join us to explore cybersecurity challenges and solutions in IoT.",
       date: "02/11/2025",
       tags: ["IOT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -721,8 +694,7 @@ export const officehourdata: OfficeHoursData = {
       id: 35,
       title: "AR/VR/MR Session",
       performer: "Interest Group Leads",
-      description:
-        "Join us for an AR/VR/MR session with our Interest Group Leads.",
+      description: "Join us for an AR/VR/MR session with our Interest Group Leads.",
       date: "01/11/2025",
       tags: ["AR/VR/MR"],
       thumbnail: "/assets/bmc.jpeg",
@@ -742,8 +714,7 @@ export const officehourdata: OfficeHoursData = {
       id: 37,
       title: "What is BMC (Business Model Canvas)?",
       performer: "Karthik & Diya Bhatt A",
-      description:
-        "Join us to learn about Business Model Canvas with Karthik and Diya Bhatt A.",
+      description: "Join us to learn about Business Model Canvas with Karthik and Diya Bhatt A.",
       date: "01/11/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -753,8 +724,7 @@ export const officehourdata: OfficeHoursData = {
       id: 38,
       title: "ASB HR (Whistle Blowing)",
       performer: "Israth Ramsana S S",
-      description:
-        "Join us for ASB HR (Whistle Blowing) with Israth Ramsana S S.",
+      description: "Join us for ASB HR (Whistle Blowing) with Israth Ramsana S S.",
       date: "29/10/2025",
       tags: ["HR"],
       thumbnail: "/assets/bmc.jpeg",
@@ -764,8 +734,7 @@ export const officehourdata: OfficeHoursData = {
       id: 39,
       title: "Competitor Audits",
       performer: "",
-      description:
-        "Join us to learn how to conduct effective competitor audits in UI/UX.",
+      description: "Join us to learn how to conduct effective competitor audits in UI/UX.",
       date: "28/10/2025",
       tags: ["UI/UX"],
       thumbnail: "/assets/bmc.jpeg",
@@ -775,8 +744,7 @@ export const officehourdata: OfficeHoursData = {
       id: 40,
       title: "Biohacking and IoT Devices",
       performer: "Geo Mathew",
-      description:
-        "Join us to explore biohacking and IoT device security with Geo Mathew.",
+      description: "Join us to explore biohacking and IoT device security with Geo Mathew.",
       date: "27/10/2025",
       tags: ["Cybersecurity"],
       thumbnail: "/assets/bmc.jpeg",
@@ -786,8 +754,7 @@ export const officehourdata: OfficeHoursData = {
       id: 41,
       title: "Space Exploration Speaker Session",
       performer: "",
-      description:
-        "Join us for a special speaker session on space exploration.",
+      description: "Join us for a special speaker session on space exploration.",
       date: "25/10/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -807,8 +774,7 @@ export const officehourdata: OfficeHoursData = {
       id: 43,
       title: "Tell Your Story",
       performer: "",
-      description:
-        "Join us for a creative storytelling session where you can share your stories.",
+      description: "Join us for a creative storytelling session where you can share your stories.",
       date: "25/10/2025",
       tags: ["COMICS"],
       thumbnail: "/assets/bmc.jpeg",
@@ -818,8 +784,7 @@ export const officehourdata: OfficeHoursData = {
       id: 44,
       title: "Entrepreneurship Development 2",
       performer: "Diya Bhatt A",
-      description:
-        "Join us for Entrepreneurship Development 2 with Diya Bhatt A.",
+      description: "Join us for Entrepreneurship Development 2 with Diya Bhatt A.",
       date: "25/10/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -829,8 +794,7 @@ export const officehourdata: OfficeHoursData = {
       id: 45,
       title: "Story-Driven Games vs Gameplay-Driven Games",
       performer: "",
-      description:
-        "Join us for a discussion comparing story-driven and gameplay-driven games.",
+      description: "Join us for a discussion comparing story-driven and gameplay-driven games.",
       date: "24/10/2025",
       tags: ["Game Development"],
       thumbnail: "/assets/bmc.jpeg",
@@ -840,8 +804,7 @@ export const officehourdata: OfficeHoursData = {
       id: 46,
       title: "Is Nostalgia the New Marketing Strategy?",
       performer: "",
-      description:
-        "Join us to explore how nostalgia is used as a marketing strategy in cinema.",
+      description: "Join us to explore how nostalgia is used as a marketing strategy in cinema.",
       date: "24/10/2025",
       tags: ["MUVIE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -851,8 +814,7 @@ export const officehourdata: OfficeHoursData = {
       id: 47,
       title: "MobileNet-SSD",
       performer: "",
-      description:
-        "Join us to learn about MobileNet-SSD and its applications in data science.",
+      description: "Join us to learn about MobileNet-SSD and its applications in data science.",
       date: "23/10/2025",
       tags: ["Data Science"],
       thumbnail: "/assets/bmc.jpeg",
@@ -873,8 +835,7 @@ export const officehourdata: OfficeHoursData = {
       id: 49,
       title: "Scenario-Based Questions",
       performer: "",
-      description:
-        "Join us to practice scenario-based DSA questions and problem-solving.",
+      description: "Join us to practice scenario-based DSA questions and problem-solving.",
       date: "23/10/2025",
       tags: ["Data Structures and Algorithms"],
       thumbnail: "/assets/bmc.jpeg",
@@ -884,8 +845,7 @@ export const officehourdata: OfficeHoursData = {
       id: 50,
       title: "From Windows to Linux: A Smooth Start",
       performer: "Aibel Bin Zacariah",
-      description:
-        "Join us for From Windows to Linux: A Smooth Start with Aibel Bin Zacariah.",
+      description: "Join us for From Windows to Linux: A Smooth Start with Aibel Bin Zacariah.",
       date: "22/10/2025",
       tags: ["Cloud and DevOps"],
       thumbnail: "/assets/bmc.jpeg",
@@ -916,8 +876,7 @@ export const officehourdata: OfficeHoursData = {
       id: 53,
       title: "From Wireframe to UI",
       performer: "",
-      description:
-        "Join us to learn the process of transforming wireframes into user interfaces.",
+      description: "Join us to learn the process of transforming wireframes into user interfaces.",
       date: "21/10/2025",
       tags: ["UI/UX"],
       thumbnail: "/assets/bmc.jpeg",
@@ -947,8 +906,7 @@ export const officehourdata: OfficeHoursData = {
       id: 56,
       title: "MythBusters",
       performer: "",
-      description:
-        "Join us for another episode of our space MythBusters series.",
+      description: "Join us for another episode of our space MythBusters series.",
       date: "18/10/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -958,8 +916,7 @@ export const officehourdata: OfficeHoursData = {
       id: 57,
       title: "Interaction in Unity",
       performer: "",
-      description:
-        "Join us to learn about creating interactive experiences in Unity.",
+      description: "Join us to learn about creating interactive experiences in Unity.",
       date: "18/10/2025",
       tags: ["AR/VR/MR"],
       thumbnail: "/assets/bmc.jpeg",
@@ -969,8 +926,7 @@ export const officehourdata: OfficeHoursData = {
       id: 58,
       title: "Sketch, Snicker, Storyboard",
       performer: "",
-      description:
-        "Join us for a creative session on sketching and storyboarding.",
+      description: "Join us for a creative session on sketching and storyboarding.",
       date: "18/10/2025",
       tags: ["COMICS"],
       thumbnail: "/assets/bmc.jpeg",
@@ -980,8 +936,7 @@ export const officehourdata: OfficeHoursData = {
       id: 59,
       title: "Entrepreneurship Development 1 - Quiz",
       performer: "Diya Bhatt A",
-      description:
-        "Join us for a quiz session on Entrepreneurship Development with Diya Bhatt A.",
+      description: "Join us for a quiz session on Entrepreneurship Development with Diya Bhatt A.",
       date: "18/10/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -989,8 +944,7 @@ export const officehourdata: OfficeHoursData = {
     },
     {
       id: 60,
-      title:
-        "Next-Gen Game Tech: How Nanite, Lumen & AI Are Changing Game Development",
+      title: "Next-Gen Game Tech: How Nanite, Lumen & AI Are Changing Game Development",
       performer: "",
       description:
         "Join us to explore how next-generation technologies like Nanite, Lumen, and AI are transforming game development.",
@@ -1003,8 +957,7 @@ export const officehourdata: OfficeHoursData = {
       id: 61,
       title: "The Art of Visual Storytelling",
       performer: "",
-      description:
-        "Join us to explore the art and techniques of visual storytelling in cinema.",
+      description: "Join us to explore the art and techniques of visual storytelling in cinema.",
       date: "17/10/2025",
       tags: ["MUVIE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1036,8 +989,7 @@ export const officehourdata: OfficeHoursData = {
       id: 64,
       title: "Pattern Printing",
       performer: "",
-      description:
-        "Join us to master pattern printing techniques and algorithms.",
+      description: "Join us to master pattern printing techniques and algorithms.",
       date: "16/10/2025",
       tags: ["Data Structures and Algorithms"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1057,8 +1009,7 @@ export const officehourdata: OfficeHoursData = {
       id: 66,
       title: "Choosing the right web framework",
       performer: "Sreehari",
-      description:
-        "Join us for Choosing the right web framework with Sreehari.",
+      description: "Join us for Choosing the right web framework with Sreehari.",
       date: "15/10/2025",
       tags: ["Web Development"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1078,8 +1029,7 @@ export const officehourdata: OfficeHoursData = {
       id: 68,
       title: "Offensive or Defensive Security: Which Is for You?",
       performer: "Dany",
-      description:
-        "Join us to explore offensive and defensive security approaches with Dany.",
+      description: "Join us to explore offensive and defensive security approaches with Dany.",
       date: "13/10/2025",
       tags: ["Cybersecurity"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1089,8 +1039,7 @@ export const officehourdata: OfficeHoursData = {
       id: 69,
       title: "How to Get Started with notion",
       performer: "Rasha Hasoon",
-      description:
-        "Join us for How to Get Started with notion with Rasha Hasoon.",
+      description: "Join us for How to Get Started with notion with Rasha Hasoon.",
       date: "13/10/2025",
       tags: ["PROJECT MANAGEMENT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1100,8 +1049,7 @@ export const officehourdata: OfficeHoursData = {
       id: 70,
       title: "UnoQ Roundtable General Discussion",
       performer: "",
-      description:
-        "Join us for an open roundtable discussion on IoT technologies.",
+      description: "Join us for an open roundtable discussion on IoT technologies.",
       date: "12/10/2025",
       tags: ["IOT"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1111,8 +1059,7 @@ export const officehourdata: OfficeHoursData = {
       id: 71,
       title: "Good Night Oppy - Documentary Live Screening",
       performer: "",
-      description:
-        "Join us for a live screening of the documentary 'Good Night Oppy'.",
+      description: "Join us for a live screening of the documentary 'Good Night Oppy'.",
       date: "11/10/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1122,8 +1069,7 @@ export const officehourdata: OfficeHoursData = {
       id: 72,
       title: "Write, Design, Repeat",
       performer: "",
-      description:
-        "Join us for an iterative creative session on writing and designing comics.",
+      description: "Join us for an iterative creative session on writing and designing comics.",
       date: "11/10/2025",
       tags: ["COMICS"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1133,8 +1079,7 @@ export const officehourdata: OfficeHoursData = {
       id: 73,
       title: "Entrepreneurship Development 1",
       performer: "Diya Bhatt A",
-      description:
-        "Join us for Entrepreneurship Development 1 with Diya Bhatt A.",
+      description: "Join us for Entrepreneurship Development 1 with Diya Bhatt A.",
       date: "11/10/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1142,8 +1087,7 @@ export const officehourdata: OfficeHoursData = {
     },
     {
       id: 74,
-      title:
-        "Remakes, Remasters, and Nostalgia: Are We Running Out of New Ideas?",
+      title: "Remakes, Remasters, and Nostalgia: Are We Running Out of New Ideas?",
       performer: "",
       description:
         "Join us to discuss why the gaming industry keeps re-releasing classics and the role of nostalgia.",
@@ -1156,8 +1100,7 @@ export const officehourdata: OfficeHoursData = {
       id: 75,
       title: "Budget Allocation in Modern Cinema",
       performer: "",
-      description:
-        "Join us to explore how budgets are allocated in modern cinema production.",
+      description: "Join us to explore how budgets are allocated in modern cinema production.",
       date: "10/10/2025",
       tags: ["MUVIE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1217,8 +1160,7 @@ export const officehourdata: OfficeHoursData = {
     },
     {
       id: 81,
-      title:
-        "Evaluating Employee Performance Through Effective Appraisal Techniques",
+      title: "Evaluating Employee Performance Through Effective Appraisal Techniques",
       performer: "Dr. Ebe Robert E",
       description:
         "Join us for a session on employee performance evaluation with Dr. Ebe Robert E, Associate Professor of OB & HRM.",
@@ -1231,8 +1173,7 @@ export const officehourdata: OfficeHoursData = {
       id: 82,
       title: "What's a Case Study & Why It Matters",
       performer: "",
-      description:
-        "Join us to learn about case studies and their importance in UI/UX design.",
+      description: "Join us to learn about case studies and their importance in UI/UX design.",
       date: "07/10/2025",
       tags: ["UI/UX"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1264,8 +1205,7 @@ export const officehourdata: OfficeHoursData = {
       id: 85,
       title: "NASA SAC 2025",
       performer: "",
-      description:
-        "Join us for a discussion about NASA's Space Apps Challenge 2025.",
+      description: "Join us for a discussion about NASA's Space Apps Challenge 2025.",
       date: "04/10/2025",
       tags: ["SPACE"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1286,8 +1226,7 @@ export const officehourdata: OfficeHoursData = {
       id: 87,
       title: "The Ones That Connect",
       performer: "",
-      description:
-        "Join us for a creative session on storytelling connections in comics.",
+      description: "Join us for a creative session on storytelling connections in comics.",
       date: "04/10/2025",
       tags: ["COMICS"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1297,8 +1236,7 @@ export const officehourdata: OfficeHoursData = {
       id: 88,
       title: "Open Discussion About Entrepreneurship",
       performer: "Diya Bhatt A",
-      description:
-        "Join us for an open discussion about entrepreneurship with Diya Bhatt A.",
+      description: "Join us for an open discussion about entrepreneurship with Diya Bhatt A.",
       date: "04/10/2025",
       tags: ["ENTREPRENEURSHIP"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1308,8 +1246,7 @@ export const officehourdata: OfficeHoursData = {
       id: 89,
       title: "Game Piracy and Indie Developers: A Double-Edged Sword",
       performer: "",
-      description:
-        "Join us to discuss the impact of game piracy on indie developers.",
+      description: "Join us to discuss the impact of game piracy on indie developers.",
       date: "03/10/2025",
       tags: ["Game Development"],
       thumbnail: "/assets/bmc.jpeg",
@@ -1396,11 +1333,9 @@ export const officehourdata: OfficeHoursData = {
 export const artOfTeachingMentors = [
   {
     name: "Dr T M George",
-    designation:
-      "Former Principal at Mar Baselios College of Engineering and Technology",
+    designation: "Former Principal at Mar Baselios College of Engineering and Technology",
     image: "/public/assets/dpm.webp",
-    linkedIn:
-      "https://www.linkedin.com/in/dr-t-m-george-87b86028/?originalSubdomain=in",
+    linkedIn: "https://www.linkedin.com/in/dr-t-m-george-87b86028/?originalSubdomain=in",
   },
   {
     name: "Ann Andrews",
@@ -1484,9 +1419,7 @@ export const yip = [
   },
   {
     type: "type1",
-    icon: cdnUrl(
-      "src/modules/Public/yip/assets/procedure/winner%20annoucement.webp",
-    ),
+    icon: cdnUrl("src/modules/Public/yip/assets/procedure/winner%20annoucement.webp"),
     phaseLabel: "Winner\nAnnouncement",
     title: "Step Eight",
     description:
@@ -1604,8 +1537,7 @@ export const weeklyTwitch: WeeklyTwitchData = {
       campus: "Sree Buddha College of Engineering",
       zone: "South",
       date: "2025-02-19",
-      description:
-        "Inspiration Station Radio session at Sree Buddha College of Engineering",
+      description: "Inspiration Station Radio session at Sree Buddha College of Engineering",
       isUpcoming: false,
     },
     {
@@ -1614,8 +1546,7 @@ export const weeklyTwitch: WeeklyTwitchData = {
       campus: "College of Engineering Thalassery",
       zone: "North",
       date: "2025-02-26",
-      description:
-        "Inspiration Station Radio session at College of Engineering Thalassery",
+      description: "Inspiration Station Radio session at College of Engineering Thalassery",
       isUpcoming: false,
     },
     {
@@ -1624,8 +1555,7 @@ export const weeklyTwitch: WeeklyTwitchData = {
       campus: "College of Engineering Aranmula",
       zone: "South",
       date: "2025-03-12",
-      description:
-        "Inspiration Station Radio session at College of Engineering Aranmula",
+      description: "Inspiration Station Radio session at College of Engineering Aranmula",
       isUpcoming: false,
     },
     {
@@ -1634,8 +1564,7 @@ export const weeklyTwitch: WeeklyTwitchData = {
       campus: "Adi Shankara College of Engineering",
       zone: "Central",
       date: "2025-09-17",
-      description:
-        "Inspiration Station Radio session at Adi Shankara College of Engineering",
+      description: "Inspiration Station Radio session at Adi Shankara College of Engineering",
       isUpcoming: false,
     },
     {
@@ -1654,8 +1583,7 @@ export const weeklyTwitch: WeeklyTwitchData = {
       campus: "College of Engineering, Thalassery",
       zone: "North",
       date: "2025-10-01",
-      description:
-        "Inspiration Station Radio session at College of Engineering, Thalassery",
+      description: "Inspiration Station Radio session at College of Engineering, Thalassery",
       isUpcoming: false,
     },
   ],

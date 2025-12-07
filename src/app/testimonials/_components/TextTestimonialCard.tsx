@@ -1,20 +1,17 @@
 "use client";
-import { Star, MessageCircle, Twitter, Linkedin, Users } from "lucide-react";
-import { TextTestimonial } from "@/lib/types";
+import { Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;
 }
 
-export default function TextTestimonialCard({
-  testimonial,
-}: TextTestimonialCardProps) {
+export default function TextTestimonialCard({ testimonial }: TextTestimonialCardProps) {
   const getSocialIcon = (socialProof?: string) => {
     if (!socialProof) return <MessageCircle className="w-4 h-4" />;
 
-    if (socialProof.includes("LinkedIn"))
-      return <Linkedin className="w-4 h-4" />;
+    if (socialProof.includes("LinkedIn")) return <Linkedin className="w-4 h-4" />;
     if (socialProof.includes("Twitter")) return <Twitter className="w-4 h-4" />;
     if (socialProof.includes("Community")) return <Users className="w-4 h-4" />;
 
@@ -58,9 +55,7 @@ export default function TextTestimonialCard({
           key={i}
           className={cn(
             "w-4 h-4",
-            i < rating
-              ? "fill-yellow-400 text-yellow-400"
-              : "fill-gray-300 text-gray-300"
+            i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300",
           )}
         />
       ))}
@@ -88,9 +83,7 @@ export default function TextTestimonialCard({
             />
           </div>
           <div>
-            <h3 className=" font-semibold text-mulearn-blackish">
-              {testimonial.name}
-            </h3>
+            <h3 className=" font-semibold text-mulearn-blackish">{testimonial.name}</h3>
             <p className="text-sm text-mulearn-gray-600 ">
               {testimonial.role}
               {testimonial.company && ` • ${testimonial.company}`}
@@ -102,7 +95,7 @@ export default function TextTestimonialCard({
         <div
           className={cn(
             "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide",
-            getTypeColor(testimonial.type)
+            getTypeColor(testimonial.type),
           )}
         >
           {getTypeLabel(testimonial.type)}
@@ -111,9 +104,7 @@ export default function TextTestimonialCard({
 
       {}
       <blockquote className="mb-4">
-        <p className="text-mulearn-gray-700  leading-relaxed">
-          &quot;{testimonial.quote}&quot;
-        </p>
+        <p className="text-mulearn-gray-700  leading-relaxed">&quot;{testimonial.quote}&quot;</p>
       </blockquote>
 
       {}

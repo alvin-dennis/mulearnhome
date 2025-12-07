@@ -1,7 +1,7 @@
-import { MotionDiv } from "@/components/MuFramer";
-import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import Link from "next/link";
+import { MotionDiv } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 
 export default function Programs() {
   return (
@@ -14,14 +14,8 @@ export default function Programs() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-12 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
-            Enablers{" "}
-            <span className="text-mulearn">
-              Programs
-            </span>{" "}
-            &{" "}
-            <span className="text-mulearn">
-              Project
-            </span>
+            Enablers <span className="text-mulearn">Programs</span> &{" "}
+            <span className="text-mulearn">Project</span>
           </h2>
 
           <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-mulearn-greyish bg-blue-50/50 p-6 shadow-lg md:p-8">
@@ -53,20 +47,20 @@ export default function Programs() {
                 className="flex flex-col justify-center"
               >
                 <h3 className=" mb-4 text-2xl font-bold text-mulearn-blackish md:text-3xl">
-                  Art of Teaching -{" "}
-                  <span className="text-mulearn">
-                    Teach contest
-                  </span>
+                  Art of Teaching - <span className="text-mulearn">Teach contest</span>
                 </h3>
                 <p className=" mb-6 text-sm leading-relaxed text-mulearn-gray-600 md:text-base">
-                  Art of Teaching is an annual event that spotlights
-                  enablers&apos; teaching talents. They can showcase their
-                  skills through videos, simplifying concepts for students. In
-                  the last edition, we received 150+ video entries and rewarded
-                  winners with cash prizes.
+                  Art of Teaching is an annual event that spotlights enablers&apos; teaching
+                  talents. They can showcase their skills through videos, simplifying concepts for
+                  students. In the last edition, we received 150+ video entries and rewarded winners
+                  with cash prizes.
                 </p>
                 <div>
-                  <Link href="https://mulearnfoundation.notion.site/artofteaching-guidelines" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://mulearnfoundation.notion.site/artofteaching-guidelines"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       variant="mulearn"
                       className=" px-6 py-3 text-sm font-semibold md:text-base"

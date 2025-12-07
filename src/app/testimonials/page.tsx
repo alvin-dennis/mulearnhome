@@ -1,24 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { MotionDiv, MotionP, MotionH1 } from "@/components/MuFramer";
-import VideoCarousel from "./_components/VideoCarousel";
-import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
-import { testimonials } from "@/data/testimonials";
-import { VideoTestimonial, TextTestimonial } from "@/lib/types";
-import { Button } from "@/components/ui/button";
-import { Users, Star, TrendingUp, MessageCircle, Video } from "lucide-react";
-import MuLoader from "@/components/Loader";
-import { useRedirectToApp } from "@/lib/utils";
+import { MessageCircle, Star, TrendingUp, Users, Video } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import MuLoader from "@/components/Loader";
+import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
+import { testimonials } from "@/data/testimonials";
+import type { TextTestimonial, VideoTestimonial } from "@/lib/types";
+import { useRedirectToApp } from "@/lib/utils";
+import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
+import VideoCarousel from "./_components/VideoCarousel";
 
 export default function TestimonialsPage() {
-  const [videoTestimonialData, setVideoTestimonialData] = useState<
-    VideoTestimonial[]
-  >([]);
-  const [textTestimonialData, setTextTestimonialData] = useState<
-    TextTestimonial[]
-  >([]);
+  const [videoTestimonialData, setVideoTestimonialData] = useState<VideoTestimonial[]>([]);
+  const [textTestimonialData, setTextTestimonialData] = useState<TextTestimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"video" | "text">("video");
   const redirect = useRedirectToApp();
@@ -53,7 +49,7 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen">
-      { }
+      {}
       <div className="relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
           <MotionDiv
@@ -68,10 +64,7 @@ export default function TestimonialsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Voices of{" "}
-              <span className="text-mulearn">
-                Impact
-              </span>
+              Voices of <span className="text-mulearn">Impact</span>
             </MotionH1>
             <MotionP
               className="text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-8"
@@ -79,11 +72,11 @@ export default function TestimonialsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Discover authentic stories and feedback from our community members
-              who are shaping the future of learning
+              Discover authentic stories and feedback from our community members who are shaping the
+              future of learning
             </MotionP>
 
-            { }
+            {}
             <MotionDiv
               className="flex justify-center items-center gap-8 mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -97,9 +90,7 @@ export default function TestimonialsPage() {
                     <div className="flex items-center justify-center w-12 h-12 bg-mulearn rounded-xl mx-auto mb-3">
                       <Icon className="w-6 h-6 text-mulearn-whitish" />
                     </div>
-                    <div className=" text-2xl font-bold text-mulearn-blackish">
-                      {stat.number}
-                    </div>
+                    <div className=" text-2xl font-bold text-mulearn-blackish">{stat.number}</div>
                     <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide">
                       {stat.label}
                     </div>
@@ -111,27 +102,29 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      { }
+      {}
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="flex bg-mulearn-gray-100 rounded-2xl p-1 my-6">
               <button
                 onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${activeTab === "video"
-                  ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                  : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
-                  }`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
+                  activeTab === "video"
+                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
+                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                }`}
               >
                 <Video className="w-5 h-5" />
                 Video Testimonials
               </button>
               <button
                 onClick={() => setActiveTab("text")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${activeTab === "text"
-                  ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                  : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
-                  }`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
+                  activeTab === "text"
+                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
+                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                }`}
               >
                 <MessageCircle className="w-5 h-5" />
                 Community Feedback
@@ -156,19 +149,19 @@ export default function TestimonialsPage() {
           </div>
         ) : (
           <>
-            { }
+            {}
             {activeTab === "video" && videoTestimonialData.length > 0 && (
               <VideoCarousel testimonials={videoTestimonialData} />
             )}
 
-            { }
+            {}
             {activeTab === "text" && textTestimonialData.length > 0 && (
               <div className="max-w-7xl mx-auto px-6">
                 <TextTestimonialsGrid testimonials={textTestimonialData} />
               </div>
             )}
 
-            { }
+            {}
             {activeTab === "video" && videoTestimonialData.length === 0 && (
               <div className="max-w-2xl mx-auto px-6 text-center py-32">
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -178,8 +171,7 @@ export default function TestimonialsPage() {
                   No Video Testimonials Available
                 </h3>
                 <p className="text-mulearn-gray-500  text-lg">
-                  Check back soon for video testimonials from our community
-                  members.
+                  Check back soon for video testimonials from our community members.
                 </p>
               </div>
             )}
@@ -213,18 +205,14 @@ export default function TestimonialsPage() {
               Ready to Share Your Story?
             </h2>
             <p className="text-xl text-mulearn-gray-600 mb-10  max-w-3xl mx-auto leading-relaxed">
-              Join thousands of learners, mentors, and partners who are
-              transforming education through collaborative learning
+              Join thousands of learners, mentors, and partners who are transforming education
+              through collaborative learning
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 variant="mulearn"
                 className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() =>
-                  refreshToken
-                    ? redirect("/dashboard/home")
-                    : redirect("/register")
-                }
+                onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
               >
                 Join Our Community
               </Button>

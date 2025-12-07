@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
@@ -19,9 +19,7 @@ export default function Level2Section() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <MotionDiv
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }
-            }
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6 }}
             className="relative flex items-center justify-center lg:justify-start"
           >
@@ -44,40 +42,25 @@ export default function Level2Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
-                The Mindset{" "}
-                <span className="text-mulearn">
-                  Shift
-                </span>
+                The Mindset <span className="text-mulearn">Shift</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
-                From{" "}
-                <span className="text-mulearn">
-                  Fixed
-                </span>{" "}
-                →{" "}
-                <span className="text-mulearn">
-                  Growth
-                </span>{" "}
-                →{" "}
-                <span className="text-mulearn">
-                  Abundance
-                </span>
+                From <span className="text-mulearn">Fixed</span> →{" "}
+                <span className="text-mulearn">Growth</span> →{" "}
+                <span className="text-mulearn">Abundance</span>
               </p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 Most students walk into μLearn trapped in{" "}
-                <span className="text-mulearn">
-                  invisble cages
-                </span>
-
+                <span className="text-mulearn">invisble cages</span>
               </p>
 
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                μLearn rewires these narratives. Through experiences, reflection
-                spaces, and peer nudges, a fixed mindset stretches into a growth
-                mindset… and finally into abundance thinking.
+                μLearn rewires these narratives. Through experiences, reflection spaces, and peer
+                nudges, a fixed mindset stretches into a growth mindset… and finally into abundance
+                thinking.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -85,8 +68,7 @@ export default function Level2Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold">Web Dev Student:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;I&apos;ll never be good enough to compete
-                      globally.&rdquo;
+                      &ldquo;I&apos;ll never be good enough to compete globally.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -95,8 +77,7 @@ export default function Level2Section() {
                   <p className="text-sm text-mulearn-blackish">
                     <span className="font-semibold"> Comics Artist:</span>{" "}
                     <span className="text-mulearn-gray-600">
-                      &ldquo;I doubt whether my passion has career
-                      potential.&rdquo;
+                      &ldquo;I doubt whether my passion has career potential.&rdquo;
                     </span>
                   </p>
                 </div>
@@ -113,12 +94,10 @@ export default function Level2Section() {
             </div>
 
             <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
-              <h3 className="text-lg font-bold text-mulearn-blackish">
-                The Impact
-              </h3>
+              <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
               <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                Students internalize grit, self-learning, and peer
-                collaboration. Failure becomes feedback.{" "}
+                Students internalize grit, self-learning, and peer collaboration. Failure becomes
+                feedback.{" "}
                 <span className="font-semibold text-mulearn-blackish">
                   Peers become allies, not competitors
                 </span>

@@ -1,13 +1,13 @@
 "use client";
 
-import { openMicData } from "@/data/events";
-import { OMEvent } from "@/lib/types";
+import { Calendar, Clock, Mic, PlayCircle, Users } from "lucide-react";
 import { useState } from "react";
-import { Mic, Calendar, Users, PlayCircle, Clock } from "lucide-react";
+import MuImage from "@/components/MuImage";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import MuImage from "@/components/MuImage";
+import { openMicData } from "@/data/events";
+import type { OMEvent } from "@/lib/types";
 
 export default function OpenMicPage() {
   const upcomingEvents = openMicData.events.filter((event) => event.isUpcoming);
@@ -27,18 +27,13 @@ export default function OpenMicPage() {
             </Badge>
 
             <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
-              µLearn{" "}
-              <span className="text-mulearn">
-                Open Mic
-              </span>
+              µLearn <span className="text-mulearn">Open Mic</span>
             </h1>
 
             <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
-              A platform where µLearn members perform, speak, express
-              creativity, and share unique stories or talents. Join our
-              community-driven stage for music, poetry, storytelling, and
-              innovative performances that celebrate youth expression and
-              creative voices.
+              A platform where µLearn members perform, speak, express creativity, and share unique
+              stories or talents. Join our community-driven stage for music, poetry, storytelling,
+              and innovative performances that celebrate youth expression and creative voices.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -46,10 +41,7 @@ export default function OpenMicPage() {
                 <PlayCircle className="w-5 h-5" />
                 Join Next Session
               </Button>
-              <Button
-                variant="mulearn-outline"
-                className="px-8 py-3 gap-2 rounded-full"
-              >
+              <Button variant="mulearn-outline" className="px-8 py-3 gap-2 rounded-full">
                 <Users className="w-5 h-5" />
                 Watch Previous Events
               </Button>
@@ -110,7 +102,7 @@ function useReadMore(initialText: string, maxLength: number = 100) {
   const displayText = isExpanded
     ? initialText
     : shouldTruncate
-      ? initialText.slice(0, maxLength) + "..."
+      ? `${initialText.slice(0, maxLength)}...`
       : initialText;
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
@@ -126,7 +118,7 @@ function useReadMore(initialText: string, maxLength: number = 100) {
 function EventCard({ event }: { event: OMEvent }) {
   const { displayText, isExpanded, shouldTruncate, toggleExpand } = useReadMore(
     event.description,
-    120
+    120,
   );
 
   return (
@@ -144,10 +136,7 @@ function EventCard({ event }: { event: OMEvent }) {
           <Mic className="w-16 h-16 text-mulearn-trusty-blue" />
         )}
         <div className="absolute top-4 right-4">
-          <Badge
-            variant={event.isUpcoming ? "default" : "secondary"}
-            className="flex items-center"
-          >
+          <Badge variant={event.isUpcoming ? "default" : "secondary"} className="flex items-center">
             <Clock className="w-3 h-3 mr-1" />
             {event.isUpcoming ? "Upcoming" : "Past Event"}
           </Badge>
@@ -167,9 +156,7 @@ function EventCard({ event }: { event: OMEvent }) {
           ))}
         </div>
 
-        <CardTitle className="text-xl mb-2 line-clamp-2">
-          {event.title}
-        </CardTitle>
+        <CardTitle className="text-xl mb-2 line-clamp-2">{event.title}</CardTitle>
 
         {event.performer && (
           <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">

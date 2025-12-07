@@ -1,6 +1,6 @@
+import type { Variants } from "framer-motion";
+import { MotionDiv, MotionH2, MotionSection } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv, MotionH2 } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -55,10 +55,7 @@ export default function Newsletter() {
             />
           </MotionDiv>
 
-          <MotionDiv
-            variants={fadeInUp}
-            className="flex items-center gap-2 mb-4 text-base px-4"
-          >
+          <MotionDiv variants={fadeInUp} className="flex items-center gap-2 mb-4 text-base px-4">
             <input
               id="a1ef1"
               type="checkbox"
@@ -66,17 +63,11 @@ export default function Newsletter() {
               defaultChecked
               value="a1ef1095-7430-4b91-973f-8826ac7c79d7"
             />
-            <label htmlFor="a1ef1">
-              I agree to subscribe to the μPulse Newsletter
-            </label>
+            <label htmlFor="a1ef1">I agree to subscribe to the μPulse Newsletter</label>
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp}>
-            <Button
-              type="submit"
-              variant="mulearn"
-              className="py-3 px-8 mb-8 font-bold"
-            >
+            <Button type="submit" variant="mulearn" className="py-3 px-8 mb-8 font-bold">
               Subscribe
             </Button>
           </MotionDiv>

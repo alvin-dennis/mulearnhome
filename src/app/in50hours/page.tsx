@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { in50hrs } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
-import Link from "next/link";
 
 const heroimg = cdnUrl("src/modules/Public/In50Hours/heroimg.png");
 const supporters = cdnUrl("src/modules/Public/In50Hours/supporters.png");
@@ -22,15 +22,12 @@ export default function In50Hours() {
         >
           <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] font-semibold leading-tight break-words">
             IN
-            <span className="text-mulearn">
-              50
-            </span>
+            <span className="text-mulearn">50</span>
             HOURS
           </h1>
           <p className=" text-mulearn-gray-600 text-sm sm:text-base font-normal -mt-2 sm:-mt-4 max-w-full sm:max-w-[30rem] mx-auto md:mx-0">
-            Get ready to hack your way to success in just 50 hours at In50Hr!
-            Dive into a whirlwind of innovation, collaboration, and
-            caffeine-fueled brilliance!
+            Get ready to hack your way to success in just 50 hours at In50Hr! Dive into a whirlwind
+            of innovation, collaboration, and caffeine-fueled brilliance!
           </p>
           <p className="text-base sm:text-[1.05rem] font-semibold mt-3 sm:mt-4 mb-2">
             Organized By
@@ -45,19 +42,10 @@ export default function In50Hours() {
             />
           </div>
           <div className="flex justify-center md:justify-start">
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.makemypass.com/in50hours"
-            >
-              <MotionDiv
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  variant="mulearn"
-                  className=" mt-2 sm:mt-4 px-4 sm:px-6 py-2 font-semibold">
-                Register Now
+            <Link target="_blank" rel="noreferrer" href="https://www.makemypass.com/in50hours">
+              <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button variant="mulearn" className=" mt-2 sm:mt-4 px-4 sm:px-6 py-2 font-semibold">
+                  Register Now
                 </Button>
               </MotionDiv>
             </Link>
@@ -93,25 +81,17 @@ export default function In50Hours() {
             <h3 className="text-lg sm:text-[1.25rem] md:text-[1.5rem] font-semibold text-center sm:text-left mt-4 break-words">
               {feature.titleSpan === "GET" ? (
                 <>
-                  <span className="text-mulearn">
-                    {feature.titleSpan}
-                  </span>{" "}
-                  FUNDED
+                  <span className="text-mulearn">{feature.titleSpan}</span> FUNDED
                 </>
               ) : feature.titleSpan === "IT" ? (
                 <>
-                  P
-                  <span className="text-mulearn">
-                    {feature.titleSpan}
-                  </span>
+                  P<span className="text-mulearn">{feature.titleSpan}</span>
                   CH
                 </>
               ) : (
                 <>
                   PRO
-                  <span className="text-mulearn">
-                    {feature.titleSpan}
-                  </span>
+                  <span className="text-mulearn">{feature.titleSpan}</span>
                   TYPE
                 </>
               )}
@@ -132,20 +112,13 @@ export default function In50Hours() {
           className="flex-1 w-full text-center md:text-left px-2"
         >
           <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3.25rem] font-bold break-words">
-            HOW{" "}
-            <span className="text-mulearn">
-              TO
-            </span>{" "}
-            JOIN
+            HOW <span className="text-mulearn">TO</span> JOIN
           </h2>
           <p className="text-sm sm:text-base font-normal mb-4 max-w-full mx-auto md:mx-0">
-            If you are already into level 5, you can participate in the event
-            completely free of cost. If you are not, you can still participate
-            by paying a nominal fee of INR 1000.
+            If you are already into level 5, you can participate in the event completely free of
+            cost. If you are not, you can still participate by paying a nominal fee of INR 1000.
           </p>
-          <p className="text-base sm:text-[1.05rem] font-semibold mt-4 mb-2">
-            Ticketing Partner
-          </p>
+          <p className="text-base sm:text-[1.05rem] font-semibold mt-4 mb-2">Ticketing Partner</p>
           <div className="flex justify-center md:justify-start">
             <MuImage
               src={makemypass}
@@ -185,10 +158,7 @@ export default function In50Hours() {
             className="w-full sm:w-[20rem] flex-1 px-2 sm:px-4"
           >
             <h3 className="text-lg sm:text-[1.25rem] md:text-[1.5rem] font-semibold text-center sm:text-left mt-4 break-words">
-              STEP{" "}
-              <span className="text-mulearn">
-                {step.stepSpan}
-              </span>
+              STEP <span className="text-mulearn">{step.stepSpan}</span>
             </h3>
             <p className="text-sm sm:text-base font-normal text-center sm:text-left mt-2 mb-4 break-words">
               {step.description}

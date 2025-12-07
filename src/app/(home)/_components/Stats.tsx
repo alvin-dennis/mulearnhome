@@ -1,10 +1,10 @@
 "use client";
 
-import { Variants } from "framer-motion";
-import { MotionSection, MotionDiv } from "@/components/MuFramer";
-import { useEffect, useState, useRef } from "react";
+import type { Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
-import { Counts } from "@/lib/types";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import type { Counts } from "@/lib/types";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -21,9 +21,7 @@ export default function Stats() {
 
   useEffect(() => {
     if (!socketRef.current) {
-      const socket = new WebSocket(
-        "wss://mulearn.org/ws/v1/public/landing-stats/"
-      );
+      const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
       socketRef.current = socket;
       const handleMessage = (event: MessageEvent) => {
         setCounts(JSON.parse(event.data) as Counts);
@@ -65,18 +63,14 @@ export default function Stats() {
         >
           <div className="flex-1">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] text-center font-extrabold leading-normal min-w-0 sm:min-w-[400px]">
-              The Impact of{" "}
-              <span className="text-mulearn">
-                μLearn
-              </span>
+              The Impact of <span className="text-mulearn">μLearn</span>
             </h1>
           </div>
           <div className="flex-1">
             <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
-              Over the last year, we as a community have made an impact on a
-              significant number of students, mentors, and facilitators,
-              enabling them to gain more knowledge about the ecosystem of
-              learning and upskill themselves.
+              Over the last year, we as a community have made an impact on a significant number of
+              students, mentors, and facilitators, enabling them to gain more knowledge about the
+              ecosystem of learning and upskill themselves.
             </h6>
           </div>
         </MotionDiv>
@@ -84,31 +78,22 @@ export default function Stats() {
         <MotionDiv variants={fadeInUp} className="w-full">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 px-4 sm:px-8">
             <StatCard value={counts.members} label="Members" />
-            <StatCard
-              value={counts.learning_circle_count}
-              label="Learning Circles"
-            />
+            <StatCard value={counts.learning_circle_count} label="Learning Circles" />
             {counts.org_type_counts.map((org) => (
               <StatCard
                 key={org.org_type}
                 value={org.org_count}
                 label={
                   org.org_type.endsWith("y")
-                    ? org.org_type.slice(0, -1) + "ies"
-                    : org.org_type + "s"
+                    ? `${org.org_type.slice(0, -1)}ies`
+                    : `${org.org_type}s`
                 }
               />
             ))}
             <StatCard value={200} label="Events" />
             <StatCard value={counts.ig_count} label="Interest Groups" />
-            <StatCard
-              value={counts.karma_pow_count.karma_count}
-              label="Total Karma Mined"
-            />
-            <StatCard
-              value={counts.karma_pow_count.pow_count}
-              label="Number of Proof of Works"
-            />
+            <StatCard value={counts.karma_pow_count.karma_count} label="Total Karma Mined" />
+            <StatCard value={counts.karma_pow_count.pow_count} label="Number of Proof of Works" />
             <StatCard value={2000} label="Number of Internships" />
             <StatCard value={1000} label="Jobs" />
             <StatCard value={100} label="Products" />
@@ -117,7 +102,7 @@ export default function Stats() {
               <StatCard
                 key={role.role__title}
                 value={role.role_count}
-                label={role.role__title + "s"}
+                label={`${role.role__title}s`}
               />
             ))}
           </div>
@@ -139,15 +124,9 @@ function StatCard({
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
-        {isString ? (
-          value
-        ) : (
-          <CountUp end={value as number} duration={5} separator="," />
-        )}
+        {isString ? value : <CountUp end={value as number} duration={5} separator="," />}
       </p>
-      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">
-        {label}
-      </p>
+      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
     </div>
   );
 }

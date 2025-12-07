@@ -1,14 +1,12 @@
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
-import { TextTestimonial } from "@/lib/types";
+import type { TextTestimonial } from "@/lib/types";
 import TextTestimonialCard from "./TextTestimonialCard";
 
 interface TextTestimonialsGridProps {
   testimonials: TextTestimonial[];
 }
 
-export default function TextTestimonialsGrid({
-  testimonials,
-}: TextTestimonialsGridProps) {
+export default function TextTestimonialsGrid({ testimonials }: TextTestimonialsGridProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,8 +51,7 @@ export default function TextTestimonialsGrid({
           variants={itemVariants}
           transition={itemTransition}
         >
-          Read what our community members are saying about their µLearn
-          experience
+          Read what our community members are saying about their µLearn experience
         </MotionP>
       </div>
 

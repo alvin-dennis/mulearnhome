@@ -8,7 +8,7 @@ const formatText = (text: string) =>
     .replace(/\*(.*?)\*/g, "<em>$1</em>")
     .replace(
       /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-      '<a href="mailto:$1" class="font-medium text-mulearn underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>'
+      '<a href="mailto:$1" class="font-medium text-mulearn underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>',
     );
 
 const Paragraph = ({ text }: { text: string }) => (
@@ -39,9 +39,7 @@ export default async function PrivacyPolicy() {
           <h1 className="mb-3 text-3xl sm:text-4xl font-extrabold text-mulearn-blackish tracking-tight uppercase">
             {privacyPolicy.title}
           </h1>
-          <p className="text-sm text-mulearn-gray-600">
-            Last Updated: {privacyPolicy.lastUpdated}
-          </p>
+          <p className="text-sm text-mulearn-gray-600">Last Updated: {privacyPolicy.lastUpdated}</p>
         </header>
 
         <div className="mb-12 space-y-6 text-justify">

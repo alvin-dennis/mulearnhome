@@ -1,17 +1,9 @@
 "use client";
 
+import { Building, Calendar, FileText, HelpCircle, School, Send, Users } from "lucide-react";
 import { useState } from "react";
-import {
-  Send,
-  Building,
-  School,
-  Users,
-  Calendar,
-  FileText,
-  HelpCircle,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function ContactForm() {
@@ -48,9 +40,9 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
+    type: "success" | "error" | null;
     message: string;
-  }>({ type: null, message: '' });
+  }>({ type: null, message: "" });
 
   const intents = [
     { value: "", label: "Select one", disabled: true },
@@ -136,13 +128,13 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
+    setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -151,8 +143,8 @@ export default function ContactForm() {
 
       if (data.success) {
         setSubmitStatus({
-          type: 'success',
-          message: data.message || 'Thank you for your message! We\'ll get back to you soon.',
+          type: "success",
+          message: data.message || "Thank you for your message! We'll get back to you soon.",
         });
 
         // Reset form on success
@@ -187,27 +179,27 @@ export default function ContactForm() {
         setErrors({});
       } else {
         setSubmitStatus({
-          type: 'error',
-          message: data.message || 'Something went wrong. Please try again.',
+          type: "error",
+          message: data.message || "Something went wrong. Please try again.",
         });
 
         // Handle validation errors
         if (data.errors && Array.isArray(data.errors)) {
           const errorMap: Record<string, string> = {};
           data.errors.forEach((error: string) => {
-            if (error.toLowerCase().includes('name')) errorMap.name = error;
-            else if (error.toLowerCase().includes('email')) errorMap.email = error;
-            else if (error.toLowerCase().includes('message')) errorMap.message = error;
-            else if (error.toLowerCase().includes('intent')) errorMap.intent = error;
-            else if (error.toLowerCase().includes('consent')) errorMap.consent = error;
+            if (error.toLowerCase().includes("name")) errorMap.name = error;
+            else if (error.toLowerCase().includes("email")) errorMap.email = error;
+            else if (error.toLowerCase().includes("message")) errorMap.message = error;
+            else if (error.toLowerCase().includes("intent")) errorMap.intent = error;
+            else if (error.toLowerCase().includes("consent")) errorMap.consent = error;
           });
           setErrors(errorMap);
         }
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus({
-        type: 'error',
-        message: 'Network error. Please check your connection and try again.',
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -215,13 +207,10 @@ export default function ContactForm() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value, type } = e.target;
-    const checked =
-      type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
+    const checked = type === "checkbox" ? (e.target as HTMLInputElement).checked : undefined;
 
     setFormData((prev) => ({
       ...prev,
@@ -322,11 +311,7 @@ export default function ContactForm() {
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
                   {organizationTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -342,11 +327,7 @@ export default function ContactForm() {
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
                   {focusAreas.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -384,11 +365,7 @@ export default function ContactForm() {
                   className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
                 >
                   {programTypes.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                      disabled={option.value === ""}
-                    >
+                    <option key={option.value} value={option.value} disabled={option.value === ""}>
                       {option.label}
                     </option>
                   ))}
@@ -561,11 +538,7 @@ export default function ContactForm() {
                 className="w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent"
               >
                 {issueCategories.map((option) => (
-                  <option
-                    key={option.value}
-                    value={option.value}
-                    disabled={option.value === ""}
-                  >
+                  <option key={option.value} value={option.value} disabled={option.value === ""}>
                     {option.label}
                   </option>
                 ))}
@@ -592,22 +565,17 @@ export default function ContactForm() {
             value={formData.intent}
             onChange={handleChange}
             required
-            className={`w-full px-3 py-3 border rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent text-base ${errors.intent ? "border-red-500" : "border-mulearn-gray-300"
-              }`}
+            className={`w-full px-3 py-3 border rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent text-base ${
+              errors.intent ? "border-red-500" : "border-mulearn-gray-300"
+            }`}
           >
             {intents.map((option) => (
-              <option
-                key={option.value}
-                value={option.value}
-                disabled={option.disabled}
-              >
+              <option key={option.value} value={option.value} disabled={option.disabled}>
                 {option.label}
               </option>
             ))}
           </select>
-          {errors.intent && (
-            <p className="text-sm text-red-600">{errors.intent}</p>
-          )}
+          {errors.intent && <p className="text-sm text-red-600">{errors.intent}</p>}
         </div>
 
         {formData.intent && renderConditionalFields()}
@@ -624,9 +592,7 @@ export default function ContactForm() {
                 placeholder="Enter your full name"
                 className={errors.name ? "border-red-500" : ""}
               />
-              {errors.name && (
-                <p className="text-sm text-red-600">{errors.name}</p>
-              )}
+              {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
             </div>
 
             <div className="space-y-2">
@@ -640,9 +606,7 @@ export default function ContactForm() {
                 placeholder="Enter your email address"
                 className={errors.email ? "border-red-500" : ""}
               />
-              {errors.email && (
-                <p className="text-sm text-red-600">{errors.email}</p>
-              )}
+              {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
             </div>
           </div>
 
@@ -681,12 +645,11 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Tell us about your query or provide a brief description..."
             rows={5}
-            className={`w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent transition-all duration-300 resize-none text-sm ${errors.message ? "border-red-500" : ""
-              }`}
+            className={`w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent transition-all duration-300 resize-none text-sm ${
+              errors.message ? "border-red-500" : ""
+            }`}
           />
-          {errors.message && (
-            <p className="text-sm text-red-600">{errors.message}</p>
-          )}
+          {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}
         </div>
 
         <div className="space-y-2">
@@ -699,21 +662,19 @@ export default function ContactForm() {
               className="mt-1 rounded border-mulearn-gray-300 text-mulearn-trusty-blue focus:ring-mulearn-trusty-blue"
             />
             <span className="text-sm text-mulearn-gray-700">
-              I agree to the privacy policy and to be contacted about my query.
-              *
+              I agree to the privacy policy and to be contacted about my query. *
             </span>
           </label>
-          {errors.consent && (
-            <p className="text-sm text-red-600">{errors.consent}</p>
-          )}
+          {errors.consent && <p className="text-sm text-red-600">{errors.consent}</p>}
         </div>
 
         {submitStatus.type && (
           <div
-            className={`p-4 rounded-lg mb-4 ${submitStatus.type === 'success'
-                ? 'bg-green-50 border border-green-200 text-green-800'
-                : 'bg-red-50 border border-red-200 text-red-800'
-              }`}
+            className={`p-4 rounded-lg mb-4 ${
+              submitStatus.type === "success"
+                ? "bg-green-50 border border-green-200 text-green-800"
+                : "bg-red-50 border border-red-200 text-red-800"
+            }`}
           >
             <p className="text-sm font-medium">{submitStatus.message}</p>
           </div>

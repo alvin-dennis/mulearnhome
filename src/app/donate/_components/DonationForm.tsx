@@ -1,16 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  type DonationFormData,
+  type DonationType,
+  donationFormSchema,
+} from "@/lib/schemas/donation";
 import { submitDonationForm, submitSubscription } from "@/services/donation";
-import { donationFormSchema, type DonationType, type DonationFormData } from "@/lib/schemas/donation";
 
 export default function DonationForm() {
   const [mounted, setMounted] = useState(false);
@@ -59,7 +63,6 @@ export default function DonationForm() {
           { id: "amount-2500000", label: "₹25,00,000", amount: 2500000 },
           { id: "amount-custom", label: "Custom Amount", isCustom: true },
         ];
-      case "one-time":
       default:
         return [
           { id: "amount-50000", label: "₹50,000", amount: 50000 },
@@ -103,9 +106,10 @@ export default function DonationForm() {
 
   const onSubmit = async (data: DonationFormData) => {
     try {
-      const loadingMessage = data.donationType === "one-time"
-        ? "Processing your donation..."
-        : "Setting up your recurring donation...";
+      const loadingMessage =
+        data.donationType === "one-time"
+          ? "Processing your donation..."
+          : "Setting up your recurring donation...";
       toast.loading(loadingMessage, { id: "donation-loading" });
 
       const payload = {
@@ -144,10 +148,7 @@ export default function DonationForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="space-y-2">
-            <Label
-              htmlFor="name"
-              className="text-sm font-medium text-mulearn-gray-600"
-            >
+            <Label htmlFor="name" className="text-sm font-medium text-mulearn-gray-600">
               Full Name <span className="text-mulearn-trusty-blue">*</span>
             </Label>
             <Input
@@ -155,73 +156,48 @@ export default function DonationForm() {
               type="text"
               placeholder="John Doe"
               {...register("name")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.name ? "border-red-500" : ""
-                }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+                errors.name ? "border-red-500" : ""
+              }`}
             />
-            {errors.name && (
-              <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>
-            )}
+            {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>}
           </div>
 
           <div className="space-y-2">
-            <Label
-              htmlFor="email"
-              className="text-sm font-medium text-mulearn-gray-600"
-            >
-              Email Address{" "}
-              <span className="text-mulearn">
-                *
-              </span>
+            <Label htmlFor="email" className="text-sm font-medium text-mulearn-gray-600">
+              Email Address <span className="text-mulearn">*</span>
             </Label>
             <Input
               id="email"
               type="email"
               placeholder="john.doe@example.com"
               {...register("email")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.email ? "border-red-500" : ""
-                }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+                errors.email ? "border-red-500" : ""
+              }`}
             />
-            {errors.email && (
-              <p className="text-xs text-red-500 mt-1">
-                {errors.email.message}
-              </p>
-            )}
+            {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
           </div>
 
           <div className="space-y-2">
-            <Label
-              htmlFor="phone"
-              className="text-sm font-medium text-mulearn-gray-600"
-            >
-              Phone Number{" "}
-              <span className="text-mulearn">
-                *
-              </span>
+            <Label htmlFor="phone" className="text-sm font-medium text-mulearn-gray-600">
+              Phone Number <span className="text-mulearn">*</span>
             </Label>
             <Input
               id="phone"
               type="tel"
               placeholder="+91 98765 43210"
               {...register("phone")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.phone ? "border-red-500" : ""
-                }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+                errors.phone ? "border-red-500" : ""
+              }`}
             />
-            {errors.phone && (
-              <p className="text-xs text-red-500 mt-1">
-                {errors.phone.message}
-              </p>
-            )}
+            {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone.message}</p>}
           </div>
 
           <div className="space-y-2">
-            <Label
-              htmlFor="pan"
-              className="text-sm font-medium text-mulearn-gray-600"
-            >
-              PAN Number{" "}
-              <span className="text-mulearn">
-                *
-              </span>
+            <Label htmlFor="pan" className="text-sm font-medium text-mulearn-gray-600">
+              PAN Number <span className="text-mulearn">*</span>
             </Label>
             <Input
               id="pan"
@@ -233,40 +209,30 @@ export default function DonationForm() {
                 },
               })}
               maxLength={10}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.panNumber ? "border-red-500" : ""
-                }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+                errors.panNumber ? "border-red-500" : ""
+              }`}
             />
             {errors.panNumber && (
-              <p className="text-xs text-red-500 mt-1">
-                {errors.panNumber.message}
-              </p>
+              <p className="text-xs text-red-500 mt-1">{errors.panNumber.message}</p>
             )}
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label
-            htmlFor="address"
-            className="text-sm font-medium text-mulearn-gray-600"
-          >
-            Address{" "}
-            <span className="text-mulearn">
-              *
-            </span>
+          <Label htmlFor="address" className="text-sm font-medium text-mulearn-gray-600">
+            Address <span className="text-mulearn">*</span>
           </Label>
           <textarea
             id="address"
             placeholder="Enter your full address"
             {...register("address")}
             rows={3}
-            className={`w-full px-3 py-2 bg-mulearn-whitish border border-gray-200 dark:border-gray-700 rounded-md focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue focus:outline-none transition-all resize-none ${errors.address ? "border-red-500" : ""
-              }`}
+            className={`w-full px-3 py-2 bg-mulearn-whitish border border-gray-200 dark:border-gray-700 rounded-md focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue focus:outline-none transition-all resize-none ${
+              errors.address ? "border-red-500" : ""
+            }`}
           />
-          {errors.address && (
-            <p className="text-xs text-red-500 mt-1">
-              {errors.address.message}
-            </p>
-          )}
+          {errors.address && <p className="text-xs text-red-500 mt-1">{errors.address.message}</p>}
         </div>
 
         <div className="flex items-center space-x-3 pt-2">
@@ -284,39 +250,30 @@ export default function DonationForm() {
           </Label>
         </div>
 
-        { }
+        {}
         {isOrganisation && (
           <div className="space-y-2 animate-in fade-in duration-200">
-            <Label
-              htmlFor="organisationName"
-              className="text-sm font-medium text-mulearn-gray-600"
-            >
-              Organisation Name{" "}
-              <span className="text-mulearn">
-                *
-              </span>
+            <Label htmlFor="organisationName" className="text-sm font-medium text-mulearn-gray-600">
+              Organisation Name <span className="text-mulearn">*</span>
             </Label>
             <Input
               id="organisationName"
               type="text"
               placeholder="Enter organisation name"
               {...register("organisationName")}
-              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${errors.organisationName ? "border-red-500" : ""
-                }`}
+              className={`h-11 bg-mulearn-whitish  border-gray-200 dark:border-gray-700 focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue transition-all ${
+                errors.organisationName ? "border-red-500" : ""
+              }`}
             />
             {errors.organisationName && (
-              <p className="text-xs text-red-500 mt-1">
-                {errors.organisationName.message}
-              </p>
+              <p className="text-xs text-red-500 mt-1">{errors.organisationName.message}</p>
             )}
           </div>
         )}
       </div>
 
       <div className="space-y-6 pt-4">
-        <h3 className="text-lg font-medium text-mulearn-blackish tracking-tight">
-          Select Amount
-        </h3>
+        <h3 className="text-lg font-medium text-mulearn-blackish tracking-tight">Select Amount</h3>
 
         <RadioGroup
           value={selectedAmount}
@@ -339,21 +296,17 @@ export default function DonationForm() {
               <Label
                 key={option.id}
                 htmlFor={option.id}
-                className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${selectedAmount === option.id
-                  ? "border-transparent bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple shadow-md"
-                  : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
-                  }`}
+                className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${
+                  selectedAmount === option.id
+                    ? "border-transparent bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple shadow-md"
+                    : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
+                }`}
               >
-                <RadioGroupItem
-                  value={option.id}
-                  id={option.id}
-                  className="sr-only"
-                />
+                <RadioGroupItem value={option.id} id={option.id} className="sr-only" />
                 <span
-                  className={`font-semibold text-base ${selectedAmount === option.id
-                    ? "text-white"
-                    : "text-mulearn-blackish"
-                    }`}
+                  className={`font-semibold text-base ${
+                    selectedAmount === option.id ? "text-white" : "text-mulearn-blackish"
+                  }`}
                 >
                   {option.label}
                 </span>
@@ -364,10 +317,11 @@ export default function DonationForm() {
           <div className="mt-4">
             <Label
               htmlFor={donationAmounts[4].id}
-              className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${selectedAmount === donationAmounts[4].id
-                ? "border-mulearn-trusty-blue bg-mulearn-trusty-blue/5 ring-2 ring-mulearn-trusty-blue/20"
-                : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
-                }`}
+              className={`flex items-center gap-3 p-4 rounded-lg border cursor-pointer transition-all ${
+                selectedAmount === donationAmounts[4].id
+                  ? "border-mulearn-trusty-blue bg-mulearn-trusty-blue/5 ring-2 ring-mulearn-trusty-blue/20"
+                  : "border-mulearn-gray-600/20 bg-mulearn-whitish hover:border-mulearn-trusty-blue/50"
+              }`}
             >
               <RadioGroupItem
                 value={donationAmounts[4].id}
@@ -375,10 +329,13 @@ export default function DonationForm() {
                 className="mt-1"
               />
               <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                <span className={`font-medium min-w-fit ${selectedAmount === donationAmounts[4].id
-                  ? "text-mulearn-trusty-blue"
-                  : "text-mulearn-blackish"
-                  }`}>
+                <span
+                  className={`font-medium min-w-fit ${
+                    selectedAmount === donationAmounts[4].id
+                      ? "text-mulearn-trusty-blue"
+                      : "text-mulearn-blackish"
+                  }`}
+                >
                   Custom Amount
                 </span>
                 <Input
@@ -432,10 +389,7 @@ export default function DonationForm() {
           </p>
         </div>
 
-        <Tabs
-          value={donationType}
-          onValueChange={(v) => setDonationType(v as DonationType)}
-        >
+        <Tabs value={donationType} onValueChange={(v) => setDonationType(v as DonationType)}>
           <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-mulearn-greyish/20 p-1 text-mulearn-gray-600 mb-2">
             <TabsTrigger
               value="one-time"
@@ -463,11 +417,11 @@ export default function DonationForm() {
         </Tabs>
       </div>
 
-      { }
+      {}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="border-t border-gray-200 dark:border-gray-800 bg-mulearn-whitish  px-6 sm:px-10 py-6">
           <div className="flex flex-col gap-5">
-            { }
+            {}
             <div className="flex items-start space-x-3">
               <input
                 type="checkbox"
@@ -485,6 +439,7 @@ export default function DonationForm() {
                     href="/termsandconditions"
                     target="_blank"
                     className="text-mulearn-trusty-blue hover:underline"
+                    rel="noopener"
                   >
                     Terms and Conditions
                   </a>
@@ -493,6 +448,7 @@ export default function DonationForm() {
                     href="/privacypolicy"
                     target="_blank"
                     className="text-mulearn-trusty-blue hover:underline"
+                    rel="noopener"
                   >
                     Privacy Policy
                   </a>{" "}
@@ -501,31 +457,26 @@ export default function DonationForm() {
                     href="/refundpolicy"
                     target="_blank"
                     className="text-mulearn-trusty-blue hover:underline"
+                    rel="noopener"
                   >
                     Refund Policy
                   </a>
                 </Label>
                 {errors.termsAccepted && (
-                  <p className="text-xs text-red-500 mt-1">
-                    {errors.termsAccepted.message}
-                  </p>
+                  <p className="text-xs text-red-500 mt-1">{errors.termsAccepted.message}</p>
                 )}
               </div>
             </div>
 
-            { }
+            {}
             {errors.donationAmount && (
-              <p className="text-xs text-red-500">
-                {errors.donationAmount.message}
-              </p>
+              <p className="text-xs text-red-500">{errors.donationAmount.message}</p>
             )}
 
-            { }
+            {}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">
-                  Donation Amount
-                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-500 mb-1">Donation Amount</p>
                 <p className="text-3xl sm:text-4xl font-semibold !text-black dark:text-gray-50 tracking-tight">
                   ₹{totalAmount.toLocaleString("en-IN")}
                 </p>

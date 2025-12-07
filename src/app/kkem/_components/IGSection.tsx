@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import type { Variants } from "framer-motion";
+import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { MotionDiv } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import type { cardProps, IGSectionProps } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
-import { cardProps, IGSectionProps } from "@/lib/types";
-import MuImage from "@/components/MuImage";
-import { SquareArrowOutUpRight } from "lucide-react";
-import { Variants } from "framer-motion";
-import { MotionDiv } from "@/components/MuFramer";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -54,17 +54,13 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               Introducing Learning Circles
             </h3>
             <p className="text-mulearn-whitish font-normal text-base md:text-lg leading-7 md:leading-8 mb-4 md:mb-0 md:max-w-[45rem]">
-              An informal mechanism for bringing together learners who are
-              interested in the same topic from across different fields and
-              disciplines. A fantastic way to spend a small amount of time
-              learning about new things with a group of people with same
-              interests!
+              An informal mechanism for bringing together learners who are interested in the same
+              topic from across different fields and disciplines. A fantastic way to spend a small
+              amount of time learning about new things with a group of people with same interests!
             </p>
             <Button
               className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish cursor-pointer rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
-              onClick={() =>
-                redirect?.(refreshToken ? "/dashboard/home" : "/register")
-              }
+              onClick={() => redirect?.(refreshToken ? "/dashboard/home" : "/register")}
             >
               Get Started
             </Button>
@@ -106,20 +102,14 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
 
 export default IGSection;
 
-const Card = ({
-  name,
-  image,
-  link,
-  description,
-  largeImg,
-  date,
-}: cardProps) => {
+const Card = ({ name, image, link, description, largeImg, date }: cardProps) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer">
       <div
         className={`flex flex-col items-start p-4 gap-4 w-[310px] h-[475px] bg-mulearn-whitish shadow-[8px_8px_28px_rgba(0,0,0,0.12)] rounded-[17px] mt-4 mb-4 transition-all duration-300 ease-in-out cursor-pointer
-        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${largeImg ? "group" : ""
-          }`}
+        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${
+          largeImg ? "group" : ""
+        }`}
       >
         <div className="flex justify-center items-center w-[278px] h-[214px] rounded-[17px] overflow-hidden">
           <MuImage
@@ -127,8 +117,9 @@ const Card = ({
             alt="domain images"
             width={188}
             height={200}
-            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${largeImg ? "group-hover:object-bottom" : ""
-              }`}
+            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${
+              largeImg ? "group-hover:object-bottom" : ""
+            }`}
           />
         </div>
 
@@ -138,15 +129,11 @@ const Card = ({
 
         {link !== "#" ? (
           <div className="flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
-            <span className="uppercase font-medium text-[16px] leading-[22px]">
-              Explore More
-            </span>
+            <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
             <SquareArrowOutUpRight />
           </div>
         ) : (
-          <span className="uppercase font-medium text-[16px] leading-[22px]">
-            Coming Soon!
-          </span>
+          <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
         )}
       </div>
     </Link>

@@ -1,20 +1,19 @@
-import { MotionDiv } from "@/components/MuFramer";
-import Link from "next/link";
-
 import { ArrowRight, Calendar } from "lucide-react";
-import { Event } from "@/lib/types";
+import Link from "next/link";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogTrigger,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
   DialogDescription,
   DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import type { Event } from "@/lib/types";
 
 interface Props {
   event: Event;
@@ -25,8 +24,7 @@ export default function EventCard({ event }: Props) {
     <MotionDiv
       transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={`group relative bg-mulearn-whitish rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-mulearn-trusty-blue
-    w-full h-auto sm:w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"
-        } flex flex-col`}
+    w-full h-auto sm:w-[380px] ${event.image ? "h-[360px]" : "h-[280px]"} flex flex-col`}
     >
       <div className="w-full h-20 overflow-hidden">
         {event.image ? (
@@ -41,7 +39,6 @@ export default function EventCard({ event }: Props) {
           <div className="w-full h-full bg-mulearn" />
         )}
       </div>
-
 
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div className="space-y-3">
@@ -72,12 +69,12 @@ export default function EventCard({ event }: Props) {
         {event.link && (
           <Dialog>
             <DialogTrigger asChild>
-              <MotionDiv
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+              <MotionDiv whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <div className="flex justify-center">
-                  <Button variant="mulearn" className="mt-2 flex items-center gap-2 px-5 py-3 font-semibold">
+                  <Button
+                    variant="mulearn"
+                    className="mt-2 flex items-center gap-2 px-5 py-3 font-semibold"
+                  >
                     Check it out!
                     <ArrowRight className="w-4 h-4" />
                   </Button>

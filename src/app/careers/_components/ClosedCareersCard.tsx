@@ -1,4 +1,4 @@
-import { ClosedCareersCardProps } from "@/lib/types";
+import type { ClosedCareersCardProps } from "@/lib/types";
 
 const ClosedCareersCard = ({
   date,

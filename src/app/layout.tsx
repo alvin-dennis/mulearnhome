@@ -1,11 +1,12 @@
+import MuLoader from "@components/Loader";
 import type { Metadata } from "next";
-import React, { Suspense } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import MuLoader from "@components/Loader";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import type React from "react";
+import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
 

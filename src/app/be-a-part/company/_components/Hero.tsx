@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { companyImages } from "@/data/company";
 import { Button } from "@/components/ui/button";
+import { companyImages } from "@/data/company";
 
 export default function Hero() {
   return (
@@ -38,22 +38,17 @@ export default function Hero() {
             <h1 className="text-xl sm:text-lg md:text-xl lg:text-[40px] font-semibold leading-tight text-center lg:text-right max-w-[630px]">
               <span className="text-[#1A202C]">Partner with </span>
               <span className="text-mulearn">µLearn </span>
-              <span className="text-[#1A202C]">
-                to discover talent and spark innovation
-              </span>
+              <span className="text-[#1A202C]">to discover talent and spark innovation</span>
             </h1>
 
-            <MotionDiv
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button variant={"mulearn"} className="font-semibold px-6 py-3 md:px-8 md:py-4">
-                Join as a Company Partner
+                  Join as a Company Partner
                 </Button>
               </Link>
             </MotionDiv>

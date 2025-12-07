@@ -1,7 +1,7 @@
-import { Fragment } from "react";
-import { OnboardingStep } from "@/lib/types";
 import { Lightbulb } from "lucide-react";
+import { Fragment } from "react";
 import { FaDiscord } from "react-icons/fa";
+import type { OnboardingStep } from "@/lib/types";
 
 interface OnboardingStepsProps {
   data: OnboardingStep[];
@@ -37,12 +37,8 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-mulearn-blackish mb-3">
-                {step.title}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {step.description}
-              </p>
+              <h3 className="text-xl font-bold text-mulearn-blackish mb-3">{step.title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
             </div>
 
             {index < data.length - 1 && (
@@ -67,20 +63,13 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-mulearn-blackish mb-2">
-                {step.title}
-              </h3>
+              <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.description}</p>
             </div>
 
             {index < data.length - 1 && (
               <div className="text-mulearn-blackish">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

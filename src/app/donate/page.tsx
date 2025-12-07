@@ -1,8 +1,8 @@
 "use client";
 
-import MuImage from "@/components/MuImage";
 import DonateCounters from "@/app/donate/_components/DonateCounters";
 import DonationForm from "@/app/donate/_components/DonationForm";
+import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 
 const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
@@ -15,14 +15,11 @@ export default function DonatePage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Help us sustain
             <br />
-            Our{" "}
-            <span className="text-mulearn">
-              Mission
-            </span>
+            Our <span className="text-mulearn">Mission</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-            Foster an innovation culture, introduce new technologies, and
-            develop skilled entrepreneurs.
+            Foster an innovation culture, introduce new technologies, and develop skilled
+            entrepreneurs.
           </p>
 
           <div className="mt-6 w-full flex justify-center md:justify-start">

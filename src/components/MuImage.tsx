@@ -1,5 +1,5 @@
+import Image, { type ImageProps } from "next/image";
 import React from "react";
-import Image, { ImageProps } from "next/image";
 
 /**
  * MuImage: A wrapper for Next.js Image that ensures aspect ratio is preserved.
@@ -16,16 +16,7 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   }
 
   const alt = rest.alt ?? "";
-  return (
-    <Image
-      ref={ref}
-      width={width}
-      height={height}
-      style={newStyle}
-      {...rest}
-      alt={alt}
-    />
-  );
+  return <Image ref={ref} width={width} height={height} style={newStyle} {...rest} alt={alt} />;
 });
 
 MuImage.displayName = "MuImage";

@@ -12,10 +12,7 @@ export default function Onboarding() {
         transition={{ duration: 0.6 }}
       >
         <h2 className=" mb-16 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
-          Onboarding{" "}
-          <span className="text-mulearn">
-            Process
-          </span>
+          Onboarding <span className="text-mulearn">Process</span>
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3 md:gap-6">
@@ -55,12 +52,8 @@ export default function Onboarding() {
               </div>
 
               <div className="text-center">
-                <h3 className=" mb-3 text-xl font-bold text-mulearn-blackish">
-                  {step.title}
-                </h3>
-                <p className=" text-sm leading-relaxed text-mulearn-gray-600">
-                  {step.description}
-                </p>
+                <h3 className=" mb-3 text-xl font-bold text-mulearn-blackish">{step.title}</h3>
+                <p className=" text-sm leading-relaxed text-mulearn-gray-600">{step.description}</p>
               </div>
             </MotionDiv>
           ))}

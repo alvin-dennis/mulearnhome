@@ -1,9 +1,9 @@
 "use client";
 
-import { Calendar, Clock, Radio, MapPin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar, Clock, MapPin, Radio } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { WeeklyTwitchEvent } from "@/lib/types";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { WeeklyTwitchEvent } from "@/lib/types";
 
 interface EpisodeCardProps {
   event: WeeklyTwitchEvent;
@@ -31,17 +31,12 @@ export function EpisodeCard({ event }: EpisodeCardProps) {
 
       <CardHeader className="pb-4 flex-grow">
         <div className="flex flex-wrap gap-2 mb-3">
-          <Badge
-            variant="outline"
-            className="text-mulearn-trusty-blue bg-mulearn-trusty-blue/10"
-          >
+          <Badge variant="outline" className="text-mulearn-trusty-blue bg-mulearn-trusty-blue/10">
             {event.zone}
           </Badge>
         </div>
 
-        <CardTitle className="text-xl mb-2 line-clamp-2">
-          {event.topic}
-        </CardTitle>
+        <CardTitle className="text-xl mb-2 line-clamp-2">{event.topic}</CardTitle>
 
         {event.campus && (
           <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">

@@ -1,13 +1,11 @@
+import type { Role, RolesContent } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
-import { Role, RolesContent } from "@/lib/types";
 
 export const features = [
   {
     title: "Community",
     description: "Join 60,000+ learners & innovators.",
-    image: cdnUrl(
-      "public/assets/landing/College Project Concept Illustration.png"
-    ),
+    image: cdnUrl("public/assets/landing/College Project Concept Illustration.png"),
     bgColor: "#9bc8ff",
     cta: "Join Community",
     url: "https://app.mulearn.org",
@@ -23,9 +21,7 @@ export const features = [
   {
     title: "Interest Groups",
     description: "Connect with like-minded people who share your interests",
-    image: cdnUrl(
-      "public/assets/landing/Content Team Concept Illustration.png"
-    ),
+    image: cdnUrl("public/assets/landing/Content Team Concept Illustration.png"),
     bgColor: "#5ce5c9",
     cta: "Explore IGs",
     url: "/interest-groups",
@@ -106,9 +102,7 @@ export const opportunities = [
   {
     id: 4,
     name: "Entrepreneurship",
-    icon: cdnUrl(
-      "public/assets/landing/College Project Concept Illustration.png"
-    ),
+    icon: cdnUrl("public/assets/landing/College Project Concept Illustration.png"),
   },
   {
     id: 5,
@@ -220,24 +214,21 @@ export const rolesContent: RolesContent = {
       name: "Resource Provision",
       description:
         "Facilitate access to cutting-edge tools and technologies, empowering learners with the resources they need to succeed.",
-      image:
-        "https://img.freepik.com/free-vector/digital-transformation_23-2148804417.jpg",
+      image: "https://img.freepik.com/free-vector/digital-transformation_23-2148804417.jpg",
     },
     {
       id: 2,
       name: "Skill Bridging",
       description:
         "Bridge the gap between academic learning and industry demands by providing practical, hands-on training modules.",
-      image:
-        "https://img.freepik.com/free-vector/technology-innovation_23-2148812878.jpg",
+      image: "https://img.freepik.com/free-vector/technology-innovation_23-2148812878.jpg",
     },
     {
       id: 3,
       name: "Innovative Platforms",
       description:
         "Deploy innovative platforms that support creative learning, foster collaboration, and drive digital transformation.",
-      image:
-        "https://img.freepik.com/free-vector/businessman-using-digital-tablet_74855-6340.jpg",
+      image: "https://img.freepik.com/free-vector/businessman-using-digital-tablet_74855-6340.jpg",
     },
     {
       id: 4,

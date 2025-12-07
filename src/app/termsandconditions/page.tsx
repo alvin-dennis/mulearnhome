@@ -35,11 +35,9 @@ export default async function TermsAndConditions() {
         </header>
 
         <div className="mb-12 space-y-6 text-justify">
-          {termsAndConditions.introduction
-            .split("\n\n")
-            .map((paragraph, index) => (
-              <Paragraph key={index} text={paragraph} />
-            ))}
+          {termsAndConditions.introduction.split("\n\n").map((paragraph, index) => (
+            <Paragraph key={index} text={paragraph} />
+          ))}
         </div>
 
         <div className="space-y-12">
@@ -57,9 +55,7 @@ export default async function TermsAndConditions() {
                       ))
                     : section.content
                         .split("\n\n")
-                        .map((paragraph, pIndex) => (
-                          <Paragraph key={pIndex} text={paragraph} />
-                        )))}
+                        .map((paragraph, pIndex) => <Paragraph key={pIndex} text={paragraph} />))}
               </div>
 
               {section.subsections.length > 0 && (

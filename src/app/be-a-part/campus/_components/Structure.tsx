@@ -12,10 +12,7 @@ export default function Structure() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
-            Chapter{" "}
-            <span className="text-mulearn">
-              Structure
-            </span>
+            Chapter <span className="text-mulearn">Structure</span>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-mulearn-gray-600">
             A simple, effective framework for peer-led learning
@@ -31,12 +28,8 @@ export default function Structure() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="rounded-2xl p-6 text-center shadow-sm transition-all border hover:scale-105 hover:shadow-md"
               >
-                <div className="mb-2 text-3xl font-bold text-mulearn">
-                  {item.value}
-                </div>
-                <div className="mb-1 font-semibold text-mulearn-blackish">
-                  {item.label}
-                </div>
+                <div className="mb-2 text-3xl font-bold text-mulearn">{item.value}</div>
+                <div className="mb-1 font-semibold text-mulearn-blackish">{item.label}</div>
                 <div className="text-sm text-mulearn-gray-600">{item.desc}</div>
               </MotionDiv>
             ))}

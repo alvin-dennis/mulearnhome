@@ -1,4 +1,4 @@
-import { MotionH2, MotionDiv } from "@/components/MuFramer";
+import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { companyDo, companyImages } from "@/data/company";
 
@@ -28,13 +28,8 @@ export default function WhatYouCanDo() {
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-mulearn-blackish hidden md:block" />
 
               {companyDo.map((action, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center p-6 gap-4"
-                >
-                  <h3 className="text-xl font-bold text-mulearn leading-tight">
-                    {action.title}
-                  </h3>
+                <div key={index} className="flex flex-col items-center text-center p-6 gap-4">
+                  <h3 className="text-xl font-bold text-mulearn leading-tight">{action.title}</h3>
                   <p className="text-lg text-mulearn-blackish leading-snug max-w-[400px]">
                     {action.description}
                   </p>

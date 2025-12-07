@@ -1,5 +1,5 @@
-import { artOfTeachingUrls } from "@/data/events";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { artOfTeachingUrls } from "@/data/events";
 
 const Archives = () => {
   return (
@@ -7,14 +7,11 @@ const Archives = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
-            Art of Teaching{" "}
-            <span className="text-mulearn">
-              Archives
-            </span>
+            Art of Teaching <span className="text-mulearn">Archives</span>
           </h2>
           <p className="text-base lg:text-lg text-mulearn-gray-600 lg:w-2/5">
-            Take a look at the top submissions by the teachers from the first
-            edition of The Art of Teaching.
+            Take a look at the top submissions by the teachers from the first edition of The Art of
+            Teaching.
           </p>
         </div>
 

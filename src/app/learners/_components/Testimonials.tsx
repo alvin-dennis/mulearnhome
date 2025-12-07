@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { testimonialsData, slideImages } from "@/data/learners";
+import { useEffect, useRef, useState } from "react";
 import MuImage from "@/components/MuImage";
+import { slideImages, testimonialsData } from "@/data/learners";
 import { cdnUrl } from "@/services/cdn";
 
 interface SlideImage {
@@ -41,9 +41,7 @@ const Testimonials: React.FC = () => {
     const scrollDelay = 20;
 
     const scrollInterval = setInterval(() => {
-      const scrollContent = container.querySelector(
-        ".scroll-content"
-      ) as HTMLDivElement;
+      const scrollContent = container.querySelector(".scroll-content") as HTMLDivElement;
       if (!scrollContent) return;
 
       const singleSetWidth = scrollContent.scrollWidth / 2;
@@ -127,11 +125,7 @@ const Testimonials: React.FC = () => {
                     </p>
                     <div className="flex items-center space-x-3">
                       <MuImage
-                        src={
-                          testimonial.imageUrl
-                            ? testimonial.imageUrl
-                            : fallbackImage
-                        }
+                        src={testimonial.imageUrl ? testimonial.imageUrl : fallbackImage}
                         alt={`${testimonial.name}'s profile`}
                         width={100}
                         height={100}
