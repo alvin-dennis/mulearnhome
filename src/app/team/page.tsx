@@ -74,7 +74,7 @@ export default function Team() {
         viewport={{ once: true }}
       >
         <div className="mb-24 w-full">
-          <h2 className="text-5xl font-semibold mb-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-center">
+          <h2 className="text-5xl font-semibold mb-2 text-mulearn text-center">
             {team.type}
           </h2>
           {team.description && (
@@ -85,35 +85,17 @@ export default function Team() {
 
           {team.subteams
             ? team.subteams.map((subTeam, subIndex) => (
-                <div key={subIndex} className="mb-24">
-                  <h3 className="text-3xl font-semibold mb-1 text-center text-mulearn-blackish">
-                    {subTeam.type}
-                  </h3>
-                  {subTeam.description && (
-                    <p className="text-md text-center text-mulearn-gray-600 mb-4">
-                      {subTeam.description}
-                    </p>
-                  )}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-                    {subTeam.members.map((member, memberIndex) => (
-                      <TeamCard
-                        key={memberIndex}
-                        name={member.name}
-                        muid={member.muid}
-                        image={member.image}
-                        team={member.team}
-                        lead={member.lead}
-                        linkedin={member.linkedin}
-                        github={member.github}
-                        x={member.x}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))
-            : team.members && (
+              <div key={subIndex} className="mb-24">
+                <h3 className="text-3xl font-semibold mb-1 text-center text-mulearn-blackish">
+                  {subTeam.type}
+                </h3>
+                {subTeam.description && (
+                  <p className="text-md text-center text-mulearn-gray-600 mb-4">
+                    {subTeam.description}
+                  </p>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-                  {team.members.map((member, memberIndex) => (
+                  {subTeam.members.map((member, memberIndex) => (
                     <TeamCard
                       key={memberIndex}
                       name={member.name}
@@ -127,7 +109,25 @@ export default function Team() {
                     />
                   ))}
                 </div>
-              )}
+              </div>
+            ))
+            : team.members && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+                {team.members.map((member, memberIndex) => (
+                  <TeamCard
+                    key={memberIndex}
+                    name={member.name}
+                    muid={member.muid}
+                    image={member.image}
+                    team={member.team}
+                    lead={member.lead}
+                    linkedin={member.linkedin}
+                    github={member.github}
+                    x={member.x}
+                  />
+                ))}
+              </div>
+            )}
         </div>
       </MotionDiv>
     ));
@@ -150,7 +150,7 @@ export default function Team() {
           >
             <h2 className="text-5xl md:text-[4.2rem] font-bold text-mulearn-blackish leading-tight">
               The{" "}
-              <span className="font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="font-semibold text-mulearn">
                 Gears
               </span>{" "}
               Behind The Machine.
@@ -192,7 +192,7 @@ export default function Team() {
             value={activeYear}
             onValueChange={(value) => setActiveYear(value as YearType)}
           >
-            <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
               <SelectValue placeholder="Select year" />
             </SelectTrigger>
             <SelectContent>

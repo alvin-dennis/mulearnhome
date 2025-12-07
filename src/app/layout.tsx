@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
-
+import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import MuLoader from "@components/Loader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
 
@@ -27,6 +27,13 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://mulearn.org/"),
 };
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 const circe = localFont({
   src: "../components/fonts/CirceRounded-Bold.otf",
@@ -51,19 +58,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${circe.variable} ${retro.variable}`}
+      className={`${plusJakarta.variable} ${circe.variable} ${retro.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        />
         {cdnurl && (
           <>
             <link rel="preconnect" href={cdnurl} crossOrigin="anonymous" />
@@ -75,7 +72,7 @@ export default function RootLayout({
         <Navbar />
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
-        <Toaster />
+        <Toaster reverseOrder={true} position="top-center" />
         <div className="fixed bottom-4 right-4 z-50">
           <BackToTop />
         </div>

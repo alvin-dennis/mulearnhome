@@ -54,7 +54,7 @@
 //           >
 //             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4">
 //               Our{" "}
-//               <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+//               <span className="text-mulearn">
 //                 Annual Reports
 //               </span>
 //             </h2>
@@ -62,7 +62,7 @@
 //               Explore our journey of growth, impact, and community building
 //               through our comprehensive annual reports.
 //             </p>
-//             <div className="w-20 h-1 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple mx-auto rounded-full mt-6" />
+//             <div className="w-20 h-1 bg-mulearn mx-auto rounded-full mt-6" />
 //           </MotionDiv>
 
 //           <MotionDiv

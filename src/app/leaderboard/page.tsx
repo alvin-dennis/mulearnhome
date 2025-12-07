@@ -74,7 +74,7 @@ export default function LeaderBoard() {
               key={score.username}
               className={
                 index < 3
-                  ? "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish font-bold"
+                  ? "bg-mulearn text-mulearn-whitish font-bold"
                   : ""
               }
             >
@@ -115,7 +115,7 @@ export default function LeaderBoard() {
         initial="hidden"
         animate="visible"
       >
-        <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+        <span className="text-mulearn">
           μLearn{" "}
         </span>
         Contribution Leaderboard

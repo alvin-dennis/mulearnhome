@@ -13,7 +13,7 @@ export default function Onboarding() {
       >
         <h2 className=" mb-16 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
           Onboarding{" "}
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+          <span className="text-mulearn">
             Process
           </span>
         </h2>

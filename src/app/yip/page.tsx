@@ -25,7 +25,7 @@ export default function YipPage() {
               newResult.push(
                 <strong
                   key={`${phrase}-${idx}`}
-                  className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent"
+                  className="text-mulearn"
                 >
                   {phrase}
                 </strong>
@@ -53,7 +53,7 @@ export default function YipPage() {
         <>
           {parts[0]}
           <Link href={link} target="_blank" rel="noopener noreferrer">
-            <span className="hover:text-chart-5 transition-colors bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="hover:text-chart-5 transition-colors text-mulearn">
               <strong>Click Here</strong>
             </span>
           </Link>
@@ -69,7 +69,7 @@ export default function YipPage() {
         <>
           {parts[0]}
           <Link href={link} target="_blank" rel="noopener noreferrer">
-            <span className="hover:text-mulearn-duke-purple bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors">
+            <span className="hover:text-mulearn-duke-purple text-mulearn transition-colors">
               <strong>Click Here to Login</strong>
             </span>
           </Link>
@@ -129,28 +129,28 @@ export default function YipPage() {
         return {
           iconBg: "bg-transparent",
           labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+            "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type2":
         return {
           iconBg: "bg-transparent",
           labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+            "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       case "type3":
         return {
           iconBg: "bg-transparent",
           labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+            "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
       default:
         return {
           iconBg: "bg-transparent",
           labelBg:
-            "bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple",
+            "bg-mulearn",
           textColor: "text-mulearn-blackish",
         };
     }
@@ -165,7 +165,7 @@ export default function YipPage() {
               <div className="p-8">
                 <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
                   Kerala&apos;s Biggest{" "}
-                  <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                  <strong className="font-bold text-mulearn">
                     Innovation Celebration is here!
                   </strong>
                 </h2>
@@ -177,7 +177,7 @@ export default function YipPage() {
                   height={30}
                   className="mt-[-3rem] max-w-[15rem] h-auto"
                 />
-                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
                   Young Innovators Programme 5.0
                 </p>
               </div>
@@ -204,7 +204,7 @@ export default function YipPage() {
             <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
               <p>
                 YIP 5.0 is here and{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <strong className="font-bold text-mulearn">
                   it&apos;s bigger and more impactful than ever before!
                 </strong>{" "}
                 Backed by the Kerala government.
@@ -212,11 +212,11 @@ export default function YipPage() {
                 <br />
                 This year&apos;s initiative provides an incredible opportunity
                 for{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <strong className="font-bold text-mulearn">
                   college and university students
                 </strong>{" "}
                 to showcase their innovation skills and create{" "}
-                <strong className="font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <strong className="font-bold text-mulearn">
                   real-world impact
                 </strong>
                 .
@@ -270,7 +270,7 @@ export default function YipPage() {
             </div>
           </div>
 
-          <div className="flex flex-row justify-between items-center flex-wrap bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-8 m-4 w-full rounded-[25px]">
+          <div className="flex flex-row justify-between items-center flex-wrap bg-mulearn p-8 m-4 w-full rounded-[25px]">
             <div className="font-light text-[1.75rem] leading-[36px] max-w-[38rem] text-mulearn-whitish max-[768px]:text-[1.35rem] max-[768px]:leading-[24px]">
               Pitch your{" "}
               <strong className="font-bold">
@@ -308,16 +308,14 @@ export default function YipPage() {
               return (
                 <div
                   key={index}
-                  className={`timeline-event mb-5 relative flex my-5 rounded-md self-center w-[50vw] max-[786px]:w-full max-[786px]:flex-col ${
-                    index % 2 === 0 ? "flex-row-reverse" : ""
-                  }`}
+                  className={`timeline-event mb-5 relative flex my-5 rounded-md self-center w-[50vw] max-[786px]:w-full max-[786px]:flex-col ${index % 2 === 0 ? "flex-row-reverse" : ""
+                    }`}
                 >
                   <div className="hidden lg:block w-full">
                     <div className="bg-mulearn-whitish rounded-lg shadow-md overflow-hidden">
                       <div
-                        className={`flex items-center ${
-                          index % 2 === 0 ? "flex-row-reverse" : ""
-                        }`}
+                        className={`flex items-center ${index % 2 === 0 ? "flex-row-reverse" : ""
+                          }`}
                       >
                         <div
                           className={`flex-shrink-0 w-32 h-32 flex items-center justify-center ${colors.iconBg}`}

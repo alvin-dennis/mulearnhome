@@ -130,7 +130,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -154,7 +154,7 @@ export default function ContactForm() {
           type: 'success',
           message: data.message || 'Thank you for your message! We\'ll get back to you soon.',
         });
-        
+
         // Reset form on success
         setFormData({
           intent: "",
@@ -190,7 +190,7 @@ export default function ContactForm() {
           type: 'error',
           message: data.message || 'Something went wrong. Please try again.',
         });
-        
+
         // Handle validation errors
         if (data.errors && Array.isArray(data.errors)) {
           const errorMap: Record<string, string> = {};
@@ -592,9 +592,8 @@ export default function ContactForm() {
             value={formData.intent}
             onChange={handleChange}
             required
-            className={`w-full px-3 py-3 border rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent text-base ${
-              errors.intent ? "border-red-500" : "border-mulearn-gray-300"
-            }`}
+            className={`w-full px-3 py-3 border rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent text-base ${errors.intent ? "border-red-500" : "border-mulearn-gray-300"
+              }`}
           >
             {intents.map((option) => (
               <option
@@ -682,9 +681,8 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Tell us about your query or provide a brief description..."
             rows={5}
-            className={`w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent transition-all duration-300 resize-none text-sm ${
-              errors.message ? "border-red-500" : ""
-            }`}
+            className={`w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent transition-all duration-300 resize-none text-sm ${errors.message ? "border-red-500" : ""
+              }`}
           />
           {errors.message && (
             <p className="text-sm text-red-600">{errors.message}</p>
@@ -712,11 +710,10 @@ export default function ContactForm() {
 
         {submitStatus.type && (
           <div
-            className={`p-4 rounded-lg mb-4 ${
-              submitStatus.type === 'success'
+            className={`p-4 rounded-lg mb-4 ${submitStatus.type === 'success'
                 ? 'bg-green-50 border border-green-200 text-green-800'
                 : 'bg-red-50 border border-red-200 text-red-800'
-            }`}
+              }`}
           >
             <p className="text-sm font-medium">{submitStatus.message}</p>
           </div>
@@ -725,7 +722,7 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-mulearn text-mulearn-whitish py-3 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

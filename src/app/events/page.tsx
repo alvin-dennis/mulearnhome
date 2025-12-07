@@ -4,8 +4,6 @@ import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
 import { events } from "@/data/events";
 import { Event } from "@/lib/types";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function Events() {
   const fadeInUp: Variants = {
@@ -53,7 +51,7 @@ export default function Events() {
             className="flex-1 w-full text-center px-2 sm:px-0"
           >
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] text-mulearn-blackish font-bold leading-tight mb-6">
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 µLearn
               </span>{" "}
               Events
@@ -81,7 +79,7 @@ export default function Events() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl mb-1">
                   {formatSectionTitle(type)}
                 </h2>
-                <div className="w-20 h-1 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple mx-auto md:mx-0 rounded-full" />
+                <div className="w-20 h-1 bg-mulearn mx-auto md:mx-0 rounded-full" />
               </div>
 
               {shouldUseCarousel(events) ? (

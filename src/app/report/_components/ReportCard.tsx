@@ -40,7 +40,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
     <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
       <Card className="overflow-hidden bg-mulearn-whitish border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
-          {}
+          { }
           <div className="lg:w-1/3 relative overflow-hidden">
             <div className="aspect-[4/3] lg:aspect-square bg-linear-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
               {report.imageUrl ? (
@@ -53,7 +53,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 />
               ) : (
                 <div className="text-center p-8">
-                  <FileText className="w-16 h-16 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mx-auto mb-4" />
+                  <FileText className="w-16 h-16 text-mulearn mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-mulearn-blackish mb-2">
                     {report.year}
                   </h3>
@@ -62,16 +62,16 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {}
-            <div className="absolute top-4 left-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+            { }
+            <div className="absolute top-4 left-4 bg-mulearn text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
               {report.year}
             </div>
 
-            {}
+            { }
             <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          {}
+          { }
           <div className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-mulearn-gray-600 text-sm mb-3">
@@ -79,7 +79,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 <span>Published {formatDate(report.publishedDate)}</span>
               </div>
 
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:text-mulearn transition-colors duration-300">
                 {report.title}
               </h3>
 
@@ -87,7 +87,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 {report.summary}
               </p>
 
-              {}
+              { }
               {report.highlights && report.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-mulearn-blackish mb-3">
@@ -99,12 +99,12 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                         key={idx}
                         className="flex items-start gap-2 text-mulearn-gray-600"
                       >
-                        <ChevronRight className="w-4 h-4 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="w-4 h-4 text-mulearn mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{highlight}</span>
                       </li>
                     ))}
                     {report.highlights.length > 3 && (
-                      <li className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent text-sm font-medium">
+                      <li className="text-mulearn text-sm font-medium">
                         +{report.highlights.length - 3} more highlights
                       </li>
                     )}
@@ -113,7 +113,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {}
+            { }
             <div className="flex justify-start">
               <Button
                 onClick={onDownload}

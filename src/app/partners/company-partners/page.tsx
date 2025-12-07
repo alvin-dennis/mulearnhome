@@ -21,7 +21,7 @@ export default function CompanyPartners() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-color-mulearn-blackish leading-tight mb-4">
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+                <span className="text-mulearn">
                   µLearn Partnered
                 </span>
                 <br />
@@ -65,7 +65,7 @@ export default function CompanyPartners() {
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish)] text-center lg:text-left mb-3 sm:mb-4">
               Company{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Onboardings
               </span>
             </h2>

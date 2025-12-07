@@ -43,7 +43,7 @@ export default function SpecialEvents() {
           </div>
           <div className="mt-12">
             <Link href="/events">
-              <Button variant={"mulearn"} className="px-8 py-3 text-lg">
+              <Button variant={"mulearn"} className="px-8 py-3 font-semibold">
                 View All Events
               </Button>
             </Link>

@@ -1,8 +1,7 @@
-import { Search, Filter, Calendar } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import {
     Command,
@@ -30,9 +29,6 @@ export default function SearchAndFilter({
     selectedTags,
     onTagToggle,
     allTags,
-    startDate,
-    endDate,
-    onDateRangeChange,
 }: SearchAndFilterProps) {
     return (
         <div className="max-w-7xl mx-auto justify-center items-center px-4 mt-10 mb-6">
@@ -77,45 +73,6 @@ export default function SearchAndFilter({
                                     </CommandGroup>
                                 </CommandList>
                             </Command>
-                        </PopoverContent>
-                    </Popover>
-
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button
-                                variant="mulearn-outline"
-                                className="w-12 h-12 p-0 rounded-full flex items-center justify-center gap-2"
-                            >
-                                <Calendar className="w-4 h-4" />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-80 p-4">
-                            <div className="text-sm font-medium mb-3">Filter by Date Range</div>
-                            <CalendarComponent
-                                mode="range"
-                                selected={
-                                    startDate || endDate
-                                        ? {
-                                            from: startDate ? new Date(startDate) : undefined,
-                                            to: endDate ? new Date(endDate) : undefined,
-                                        }
-                                        : undefined
-                                }
-                                onSelect={(range) => {
-                                    const fromStr = range?.from
-                                        ? range.from.toISOString().split("T")[0]
-                                        : null;
-                                    const toStr = range?.to ? range.to.toISOString().split("T")[0] : null;
-                                    onDateRangeChange?.(fromStr, toStr);
-                                }}
-                                disabled={(date) => date > new Date()}
-                                className="w-full"
-                            />
-                            <div className="flex justify-end mt-3">
-                                <Button variant="mulearn-ghost" onClick={() => onDateRangeChange?.(null, null)}>
-                                    Clear
-                                </Button>
-                            </div>
                         </PopoverContent>
                     </Popover>
                 </div>

@@ -26,18 +26,18 @@ export default function Level1Section() {
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
                 The First{" "}
-                <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-               Hello
-              </span>
+                <span className="text-mulearn">
+                  Hello
+                </span>
               </h2>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-mulearn-blackish leading-relaxed">
                 Every explorer in μLearn&apos;s galaxy starts by saying:{" "}
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-                 &ldquo;Here I am.&rdquo;
-              </span>
+                <span className="text-mulearn">
+                  &ldquo;Here I am.&rdquo;
+                </span>
               </p>
 
               <p className="text-base text-mulearn-gray-600 leading-relaxed">

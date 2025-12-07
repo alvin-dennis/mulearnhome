@@ -3,6 +3,7 @@ import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { cdnUrl } from "@/services/cdn";
 import MuImage from "@/components/MuImage";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -31,11 +32,11 @@ export default function Community() {
         >
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-center max-w-[40rem] mb-5 leading-normal">
             Learn and Grow{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Together
             </span>{" "}
             as a{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Community
             </span>
           </h1>
@@ -51,9 +52,11 @@ export default function Community() {
             href="https://discord.com/invite/gtech-mulearn-771670169691881483"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-center sm:self-auto bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple px-6 py-4 text-mulearn-whitish rounded-[10px] hover:opacity-90 hover:bg-mulearn-duke-purple transition-all duration-300 text-center"
+            className="self-center sm:self-auto"
           >
+            <Button variant="mulearn" className="font-semibold px-6 py-3">
             Join The Community
+          </Button>
           </Link>
         </MotionDiv>
 

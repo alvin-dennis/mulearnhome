@@ -85,17 +85,6 @@ const MotionBQ = React.forwardRef<
   );
 });
 
-const MotionButton = React.forwardRef<
-  HTMLButtonElement,
-  HTMLMotionProps<"button">
->(function MotionButton({ children, ...props }, ref) {
-  return (
-    <motion.button ref={ref} {...props}>
-      {children}
-    </motion.button>
-  );
-});
-
 const MotionFooter = React.forwardRef<HTMLElement, HTMLMotionProps<"footer">>(
   function MotionFooter({ children, ...props }, ref) {
     return (
@@ -135,7 +124,6 @@ export {
   MotionP,
   MotionNav,
   MotionBQ,
-  MotionButton,
   MotionFooter,
   MotionA,
   MotionLi

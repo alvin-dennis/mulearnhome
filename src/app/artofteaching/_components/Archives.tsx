@@ -8,7 +8,7 @@ const Archives = () => {
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
             Art of Teaching{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Archives
             </span>
           </h2>

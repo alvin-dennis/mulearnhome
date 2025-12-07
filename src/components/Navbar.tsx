@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv, MotionButton, MotionLi } from "./MuFramer";
+import { MotionDiv, MotionLi } from "./MuFramer";
 import { Menu, X } from "lucide-react";
 import { navItems } from "@/data/common";
 import { SubItem } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,25 +48,6 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     if (!isMobileView) setActiveSubmenu(null);
-  };
-
-  const renderLink = (href?: string, label?: string) => {
-    if (!href) return <span>{label}</span>;
-    const handleClick = () => {
-      setActiveSubmenu(null);
-    };
-    if (href.startsWith("http")) {
-      return (
-        <Link href={href} target="_blank" rel="noopener noreferrer">
-          {label}
-        </Link>
-      );
-    }
-    return (
-      <Link href={href} prefetch onClick={handleClick}>
-        {label}
-      </Link>
-    );
   };
 
   const getGridClass = (item: (typeof navItems)[number]) => {
@@ -108,7 +90,13 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {renderLink(item.href, item.label)}
+                <Link
+                  href={item.href ?? "#"}
+                  className="flex items-center w-full h-full"
+                  onClick={() => setActiveSubmenu(null)}
+                >
+                  {item.label}
+                </Link>
 
                 <AnimatePresence>
                   {activeSubmenu === index && item.submenu && (
@@ -136,7 +124,14 @@ export default function Navbar() {
                                       key={subIndex}
                                       className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1 leading-snug relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
                                     >
-                                      {renderLink(subItem.href, subItem.label)}
+                                      <Link
+                                        href={subItem.href}
+                                        prefetch
+                                        className="flex w-full h-full items-center"
+                                        onClick={() => setActiveSubmenu(null)}
+                                      >
+                                        {subItem.label}
+                                      </Link>
                                     </li>
                                   )
                                 )}
@@ -152,16 +147,19 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <MotionButton
-            className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none py-3 px-6 rounded-[50px] font-semibold text-[0.9rem] cursor-pointer shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple lg:py-2.5 lg:px-5 lg:text-[0.85rem]"
-            onClick={() =>
-              refreshToken ? redirect("/dashboard/home") : redirect("/login")
-            }
+          <MotionDiv
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {refreshToken ? "Dashboard" : "Login"}
-          </MotionButton>
+            <Button
+              variant={"mulearn"}
+              className="w-full p-4 font-semibold"
+              onClick={() =>
+              refreshToken ? redirect("/dashboard/home") : redirect("/login")
+            }>
+              {refreshToken ? "Dashboard" : "Login"}
+            </Button>
+          </MotionDiv>
         </MotionDiv>
       )}
 
@@ -178,7 +176,7 @@ export default function Navbar() {
                 style={{ height: "auto" }}
               />
             </Link>
-            <MotionButton
+            <MotionDiv
               className="cursor-pointer flex items-center justify-center w-8 h-8 z-2001"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
@@ -186,7 +184,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Menu size={30} />
-            </MotionButton>
+            </MotionDiv>
           </div>
 
           <AnimatePresence>
@@ -208,7 +206,7 @@ export default function Navbar() {
                   exit={{ x: "100%" }}
                   transition={{ duration: 0.4 }}
                 >
-                  <MotionButton
+                  <MotionDiv
                     className="absolute top-6 right-4 cursor-pointer text-mulearn-gray-600 w-10 h-10 flex items-center justify-center"
                     onClick={() => setIsMenuOpen(false)}
                     aria-label="Close menu"
@@ -216,7 +214,7 @@ export default function Navbar() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <X size={30} />
-                  </MotionButton>
+                  </MotionDiv>
 
                   <ul className="list-none mt-16 mb-8 p-0 flex-1">
                     {activeMobileSubmenu === null ? (
@@ -272,18 +270,20 @@ export default function Navbar() {
                     )}
                   </ul>
 
-                  <MotionButton
-                    className="w-full p-4 mb-20 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish border-none rounded-[50px] font-semibold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(49,130,206,0.3)] hover:bg-mulearn-duke-purple active:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple"
-                    onClick={() =>
-                      refreshToken
-                        ? redirect("/dashboard/home")
-                        : redirect("/login")
-                    }
+                  <MotionDiv
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {refreshToken ? "Dashboard" : "Login"}
-                  </MotionButton>
+                    <Button
+                      variant={"mulearn"}
+                      className="w-full p-4 mb-20"
+                      onClick={() =>
+                        refreshToken ? redirect("/dashboard/home") : redirect("/login")
+                      }
+                    >
+                      {refreshToken ? "Dashboard" : "Login"}
+                    </Button>
+                  </MotionDiv>
                 </MotionDiv>
               </>
             )}

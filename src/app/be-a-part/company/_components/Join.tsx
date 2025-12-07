@@ -46,7 +46,7 @@ export default function HowToJoin() {
                       />
                     </svg>
                     <div className="relative z-20 flex-shrink-0 ml-[22px]">
-                      <div className="w-[90px] h-[90px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
+                      <div className="w-[90px] h-[90px] rounded-full bg-mulearn flex items-center justify-center">
                         <span className="text-mulearn-whitish text-5xl font-bold">
                           {step.number}
                         </span>
@@ -78,7 +78,7 @@ export default function HowToJoin() {
                     </svg>
 
                     <div className="relative z-20 flex-shrink-0 mr-[22px]">
-                      <div className="w-[90px] h-[90px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
+                      <div className="w-[90px] h-[90px] rounded-full bg-mulearn flex items-center justify-center">
                         <span className="text-mulearn-whitish text-5xl font-bold">
                           {step.number}
                         </span>
@@ -98,9 +98,8 @@ export default function HowToJoin() {
 
                 {index < companySteps.length - 1 && (
                   <div
-                    className={`absolute z-10 ${
-                      step.align === "left" ? "left-[87px]" : "right-[87px]"
-                    }`}
+                    className={`absolute z-10 ${step.align === "left" ? "left-[87px]" : "right-[87px]"
+                      }`}
                     style={{
                       top: "168px",
                       width: "1px",
@@ -123,13 +122,13 @@ export default function HowToJoin() {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center text-center gap-4 p-6 border-2 border-mulearn-whitish rounded-lg bg-mulearn-whitish"
               >
-                <div className="w-[100px] h-[100px] rounded-full bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple flex items-center justify-center">
+                <div className="w-[100px] h-[100px] rounded-full bg-mulearn flex items-center justify-center">
                   <span className="text-mulearn-whitish text-4xl font-bold">
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent leading-tight">
+                <h3 className="text-2xl font-bold text-mulearn leading-tight">
                   {step.title}
                 </h3>
                 <p className="text-lg text-mulearn-blackish leading-snug">
@@ -153,7 +152,7 @@ export default function HowToJoin() {
           >
             <Button
               variant={"mulearn"}
-              className="cursor-pointer hover:opacity-90 text-mulearn-whitish px-4 py-3 text-md font-bold transition-all"
+              className="px-4 py-3"
             >
               Join as a Company Partner
             </Button>

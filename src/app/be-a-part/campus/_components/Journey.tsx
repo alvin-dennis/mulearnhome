@@ -13,7 +13,7 @@ export default function Journey() {
         >
           <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
             Your Chapter{" "}
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               Journey
             </span>
           </h2>
@@ -38,20 +38,17 @@ export default function Journey() {
                   className="relative mb-24 last:mb-0"
                 >
                   <div
-                    className={`flex items-center ${
-                      isLeft ? "justify-end" : "justify-start"
-                    }`}
+                    className={`flex items-center ${isLeft ? "justify-end" : "justify-start"
+                      }`}
                   >
                     <div
-                      className={`w-5/12 ${
-                        isLeft ? "pr-12 text-right" : "pl-12 text-left"
-                      }`}
+                      className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"
+                        }`}
                     >
                       <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-sm border hover:shadow-md transition-shadow duration-300">
                         <div
-                          className={`flex items-center gap-3 mb-3 ${
-                            isLeft ? "justify-end" : "justify-start"
-                          }`}
+                          className={`flex items-center gap-3 mb-3 ${isLeft ? "justify-end" : "justify-start"
+                            }`}
                         >
                           <h3 className="text-xl font-bold text-mulearn-blackish">
                             {step.title}
@@ -70,7 +67,7 @@ export default function Journey() {
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                      className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center shadow-lg"
+                      className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center shadow-lg"
                     >
                       <span className="text-mulearn-whitish font-bold text-lg">
                         {stepNumber}
@@ -96,11 +93,11 @@ export default function Journey() {
                   className="relative pl-12"
                 >
                   {index < campusChapter.journey.length - 1 && (
-                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple transform -translate-x-1/2" />
+                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-mulearn transform -translate-x-1/2" />
                   )}
 
                   <div className="absolute left-0 top-0">
-                    <div className="w-10 h-10 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center shadow-md text-mulearn-whitish font-bold">
+                    <div className="w-10 h-10 bg-mulearn rounded-full flex items-center justify-center shadow-md text-mulearn-whitish font-bold">
                       {stepNumber}
                     </div>
                   </div>

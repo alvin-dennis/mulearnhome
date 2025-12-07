@@ -1,16 +1,16 @@
 import { MotionDiv, MotionP } from "@/components/MuFramer";
 import Image from "next/image";
-import { Variants  } from "framer-motion";
+import { Variants } from "framer-motion";
 import { cdnUrl } from "@/services/cdn";
 
 const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1]  } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } },
 };
 
 const slideInRight: Variants = {
   hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1]  } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } },
 };
 
 export default function IGAbout() {
@@ -27,7 +27,7 @@ export default function IGAbout() {
         viewport={{ once: true }}
       >
         <h1 className="text-mulearn-blackish font-semibold leading-[111.5%] mb-12 text-4xl lg:text-[4.25rem]">
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-transparent bg-clip-text">
+          <span className="text-mulearn">
             μLearn{" "}
           </span>
           Interest Groups

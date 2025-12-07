@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="flex flex-col-reverse lg:flex-row items-center p-4 justify-between max-w-7xl mx-auto">
         <div className="text-center  lg:text-left lg:w-1/2">
           <h1 className="text-5xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
-            <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+            <span className="text-mulearn">
               µLearn Art
             </span>{" "}
             of Teaching 4.0

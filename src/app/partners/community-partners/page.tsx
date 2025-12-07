@@ -46,7 +46,7 @@ export default function CommmunityPartners() {
             className="text-center md:text-left md:w-1/3 mx-4 md:mx-0"
           >
             <h1 className="text-5xl font-semibold text-mulearn-blackish md:text-7xl inline-block xl:inline-block lg:inline-block md:hidden md:w-[50%] md:leading-tight">
-              <span className="font-semibold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="font-semibold text-mulearn">
                 µLearn Community
               </span>{" "}
               Partners
@@ -95,7 +95,7 @@ export default function CommmunityPartners() {
             className="lg:w-2/3 flex flex-col text-center md:text-left mx-4 md:mx-0 pt-20 lg:pt-32"
           >
             <h4 className="text-3xl md:text-5xl lg:ml-10 xl:ml-0 font-semibold">
-              <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+              <span className="text-mulearn">
                 Community
               </span>{" "}
               Partners

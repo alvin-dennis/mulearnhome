@@ -11,7 +11,7 @@ export default function Apply() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-3xl bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple p-12 text-center shadow-xl lg:p-16"
+        className="rounded-3xl bg-mulearn p-12 text-center shadow-xl lg:p-16"
       >
         <h2 className="mb-4 font-serif text-4xl font-bold text-primary-foreground lg:text-5xl">
           Ready to Start?

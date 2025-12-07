@@ -84,7 +84,7 @@ export default function InterestGroups() {
     <div className="bg-linear-to-b from-mulearn-greyish/10 to-mulearn-whitish min-h-screen">
       <MotionSection
         style={{ y: heroY, opacity: heroOpacity }}
-        className="relative overflow-hidden bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple pt-20 pb-32 md:pt-32 md:pb-40"
+        className="relative overflow-hidden bg-mulearn pt-20 pb-32 md:pt-32 md:pb-40"
       >
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
@@ -187,7 +187,7 @@ export default function InterestGroups() {
 
           <div className="hidden md:block relative">
             <div
-              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple/40 rounded-full"
+              className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full"
               style={{ top: 0, height: "calc(100% - 96px)" }}
             />
 
@@ -205,22 +205,19 @@ export default function InterestGroups() {
                   className="relative mb-24 last:mb-0 z-10"
                 >
                   <div
-                    className={`flex items-center ${
-                      isLeft ? "justify-end" : "justify-start"
-                    }`}
+                    className={`flex items-center ${isLeft ? "justify-end" : "justify-start"
+                      }`}
                   >
                     <div
-                      className={`w-5/12 ${
-                        isLeft ? "pr-12 text-right" : "pl-12 text-left"
-                      }`}
+                      className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"
+                        }`}
                     >
                       <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-lg border border-mulearn-greyish/20 hover:shadow-xl transition-shadow duration-300">
                         <div
-                          className={`flex items-center gap-3 mb-3 ${
-                            isLeft ? "justify-end" : "justify-start"
-                          }`}
+                          className={`flex items-center gap-3 mb-3 ${isLeft ? "justify-end" : "justify-start"
+                            }`}
                         >
-                          <Icon className="w-6 h-6 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent" />
+                          <Icon className="w-6 h-6 text-mulearn" />
                           <h3 className="text-xl font-bold text-mulearn-blackish ">
                             {step.title}
                           </h3>
@@ -238,7 +235,7 @@ export default function InterestGroups() {
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                      className="w-12 h-12 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center shadow-lg"
+                      className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center shadow-lg"
                     >
                       <div className="w-6 h-6 bg-mulearn-whitish rounded-full" />
                     </MotionDiv>
@@ -262,11 +259,11 @@ export default function InterestGroups() {
                   className="relative pl-12"
                 >
                   {index < workflowSteps.length - 1 && (
-                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple/30 transform -translate-x-1/2" />
+                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-mulearn/30 transform -translate-x-1/2" />
                   )}
 
                   <div className="absolute left-0 top-0">
-                    <div className="w-10 h-10 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple rounded-full flex items-center justify-center shadow-md">
+                    <div className="w-10 h-10 bg-mulearn rounded-full flex items-center justify-center shadow-md">
                       <Icon className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                   </div>
@@ -340,25 +337,28 @@ export default function InterestGroups() {
                 </div>
 
                 <div className="relative z-10 flex flex-col p-6">
-                  <h3 className="text-xl font-bold mb-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent transition-colors duration-300 ">
+                  <h3 className="text-xl font-bold mb-2 text-mulearn transition-colors duration-300 ">
                     {group.name}
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 flex-grow">
                     {group.tagline}
                   </p>
 
-                  <div className="flex items-center gap-2 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent font-medium text-sm group-hover:gap-3 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
 
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl"
-                  style={{ background: "var(--mulearn-trusty)" }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl bg-mulearn"
                 >
                   <p className="text-mulearn-whitish text-sm leading-relaxed text-center">
                     {group.description}
                   </p>
+
+                  <div className="flex items-center gap-2 font-medium text-sm group-hover:gap-3 transition-all duration-300">
+                    Explore <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             </MotionA>
@@ -378,7 +378,7 @@ export default function InterestGroups() {
         )}
       </section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-mulearn">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -398,7 +398,7 @@ export default function InterestGroups() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300">
+            <Button className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-trusty-blue rounded-xl font-semibold hover:bg-mulearn-whitish ">
               Join an Interest Group <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

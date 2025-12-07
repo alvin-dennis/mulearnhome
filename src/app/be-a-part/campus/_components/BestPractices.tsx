@@ -12,7 +12,7 @@ export default function BestPractices() {
       >
         <h2 className="mb-16 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
           Best{" "}
-          <span className="bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
+          <span className="text-mulearn">
             Practices
           </span>
         </h2>
@@ -29,7 +29,7 @@ export default function BestPractices() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="rounded-2xl bg-card p-6 shadow-sm border transition-all hover:scale-105 hover:shadow-md"
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-primary">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-mulearn text-primary">
                   {typeof Icon === "string" ? (
                     <span className="text-2xl text-mulearn-whitish">
                       {Icon}

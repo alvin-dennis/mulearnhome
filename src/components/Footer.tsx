@@ -54,7 +54,7 @@ export default function Footer() {
                         key={social.label}
                         href={social.url}
                         aria-label={social.label}
-                        className="w-10 h-10 rounded-lg bg-mulearn-whitish border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple hover:text-mulearn-whitish hover:shadow-lg hover:scale-105"
+                        className="w-10 h-10 rounded-lg bg-mulearn-whitish border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-mulearn hover:text-mulearn-whitish hover:shadow-lg hover:scale-105"
                       >
                         <Icon />
                       </Link>
@@ -68,13 +68,12 @@ export default function Footer() {
           {footer.map((section) => (
             <div
               key={section.title}
-              className={`space-y-4 text-center lg:text-left ${
-                ["Quick Links", "Legal", "Be Part of Us"].includes(
-                  section.title
-                )
+              className={`space-y-4 text-center lg:text-left ${["Quick Links", "Legal", "Be Part of Us"].includes(
+                section.title
+              )
                   ? "mt-8 lg:mt-12"
                   : ""
-              }`}
+                }`}
             >
               <h3 className="text-sm font-semibold text-mulearn-gray-900 uppercase">
                 {section.title}
