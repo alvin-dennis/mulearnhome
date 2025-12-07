@@ -13,7 +13,7 @@ const fadeInUp: Variants = {
 
 export default function Newsletter() {
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full" suppressHydrationWarning>
       <MotionSection
         id="newsletter"
         className="bg-mulearn-greyish/20 rounded-2xl py-8 my-8 mx-auto max-w-[1000px] shadow-[0_2px_16px_0_rgba(0,0,0,0.02)] flex flex-col items-center gap-4"
@@ -21,6 +21,7 @@ export default function Newsletter() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        suppressHydrationWarning
       >
         <MotionH2
           variants={fadeInUp}
