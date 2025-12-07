@@ -18,85 +18,67 @@ function generateTicketId(): string {
   return `MU${year}${month}${day}${hours}${minutes}`;
 }
 
-function sanitizeString(str: string): string {
-  return str
-    .replace(/<[^>]*>/g, "")
-    .replace(/[<>"'&]/g, "")
-    .trim()
-    .substring(0, 1000);
-}
-
-/**
- * Validates datasheet data using Zod schema
- */
-function validateDatasheetData(data: unknown): { isValid: boolean; errors: string[] } {
-  const result = contactFormSchema.safeParse(data);
-
-  if (!result.success) {
-    const errors = result.error.issues.map((e: { message: string }) => e.message);
-    return { isValid: false, errors };
-  }
-
-  return { isValid: true, errors: [] };
-}
+const securityHeaders = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "X-XSS-Protection": "1; mode=block",
+};
 
 export async function POST(request: NextRequest) {
-  const headers = {
-    "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "DENY",
-    "X-XSS-Protection": "1; mode=block",
-  };
-
   try {
+    // Check required environment variables
     if (!process.env.GOOGLE_APPS_SCRIPT_URL || !process.env.GOOGLE_APPS_SCRIPT_SECRET) {
       return NextResponse.json(
         { success: false, message: "Datasheet service not configured." },
-        { status: 503, headers },
+        { status: 503, headers: securityHeaders },
       );
     }
 
     const body = await request.json();
 
-    const { isValid } = validateDatasheetData(body);
+    // Zod handles validation AND sanitization - no manual sanitizeString needed
+    const result = contactFormSchema.safeParse(body);
 
-    if (!isValid) {
+    if (!result.success) {
       return NextResponse.json(
         { success: false, message: "Invalid data provided" },
-        { status: 400, headers },
+        { status: 400, headers: securityHeaders },
       );
     }
 
+    const validatedData = result.data;
     const ticketId = generateTicketId();
     const submittedAt = new Date().toISOString();
 
+    // Build datasheet data from validated Zod output
     const datasheetData: DatasheetData = {
       ticketId,
-      intent: sanitizeString(body.intent || ""),
-      name: sanitizeString(body.name || ""),
-      email: sanitizeString(body.email || ""),
-      phone: sanitizeString(body.phone || ""),
-      region: sanitizeString(body.region || ""),
-      message: sanitizeString(body.message || ""),
-      institution: sanitizeString(body.institution || ""),
-      courseYear: sanitizeString(body.courseYear || ""),
-      campusChapter: sanitizeString(body.campusChapter || ""),
-      interestGroups: sanitizeString(body.interestGroups || ""),
-      organization: sanitizeString(body.organization || ""),
-      organizationType: sanitizeString(body.organizationType || ""),
-      focusArea: sanitizeString(body.focusArea || ""),
-      timeline: sanitizeString(body.timeline || ""),
-      budget: sanitizeString(body.budget || ""),
-      programType: sanitizeString(body.programType || ""),
-      targetCohort: sanitizeString(body.targetCohort || ""),
-      role: sanitizeString(body.role || ""),
-      skills: sanitizeString(body.skills || ""),
-      numberOfHires: sanitizeString(body.numberOfHires || ""),
-      eventName: sanitizeString(body.eventName || ""),
-      eventDate: sanitizeString(body.eventDate || ""),
-      outlet: sanitizeString(body.outlet || ""),
-      deadline: sanitizeString(body.deadline || ""),
-      issueCategory: sanitizeString(body.issueCategory || ""),
       submittedAt,
+      intent: validatedData.intent,
+      name: validatedData.name,
+      email: validatedData.email,
+      phone: validatedData.phone || "",
+      region: validatedData.region || "",
+      message: validatedData.message || "",
+      institution: validatedData.institution || "",
+      courseYear: validatedData.courseYear || "",
+      campusChapter: validatedData.campusChapter || "",
+      interestGroups: validatedData.interestGroups || "",
+      organization: validatedData.organization || "",
+      organizationType: validatedData.organizationType || "",
+      focusArea: validatedData.focusArea || "",
+      timeline: validatedData.timeline || "",
+      budget: validatedData.budget || "",
+      programType: validatedData.programType || "",
+      targetCohort: validatedData.targetCohort || "",
+      role: validatedData.role || "",
+      skills: validatedData.skills || "",
+      numberOfHires: validatedData.numberOfHires || "",
+      eventName: validatedData.eventName || "",
+      eventDate: validatedData.eventDate || "",
+      outlet: validatedData.outlet || "",
+      deadline: validatedData.deadline || "",
+      issueCategory: validatedData.issueCategory || "",
     };
 
     const appsScriptUrl = new URL(process.env.GOOGLE_APPS_SCRIPT_URL);
@@ -107,9 +89,7 @@ export async function POST(request: NextRequest) {
 
     const appsScriptResponse = await fetch(appsScriptUrl.toString(), {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(datasheetData),
     });
 
@@ -117,54 +97,20 @@ export async function POST(request: NextRequest) {
       throw new Error("External service error");
     }
 
-    const result = await appsScriptResponse.json();
+    const responseData = await appsScriptResponse.json();
 
-    if (result.success) {
+    if (responseData.success) {
       return NextResponse.json(
-        {
-          success: true,
-          ticketId,
-          message: "Data saved to sheet successfully",
-        },
-        { headers },
+        { success: true, ticketId, message: "Data saved to sheet successfully" },
+        { headers: securityHeaders },
       );
-    } else {
-      throw new Error(result.message || "Failed to save data to sheet");
     }
+
+    throw new Error(responseData.message || "Failed to save data to sheet");
   } catch (_error) {
     return NextResponse.json(
-      {
-        success: false,
-        message: "Service temporarily unavailable",
-      },
-      { status: 500, headers },
+      { success: false, message: "Service temporarily unavailable" },
+      { status: 500, headers: securityHeaders },
     );
   }
-}
-
-const methodHeaders = {
-  Allow: "POST",
-  "X-Content-Type-Options": "nosniff",
-  "X-Frame-Options": "DENY",
-};
-
-export async function GET() {
-  return NextResponse.json(
-    { message: "Method not allowed" },
-    { status: 405, headers: methodHeaders },
-  );
-}
-
-export async function PUT() {
-  return NextResponse.json(
-    { message: "Method not allowed" },
-    { status: 405, headers: methodHeaders },
-  );
-}
-
-export async function DELETE() {
-  return NextResponse.json(
-    { message: "Method not allowed" },
-    { status: 405, headers: methodHeaders },
-  );
 }
