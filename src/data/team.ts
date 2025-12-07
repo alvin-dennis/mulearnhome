@@ -71,9 +71,9 @@ export const team = [
     year: "2025",
     teams: [
       {
-        type: "µLearn HQ",
+        type: "µLearn Core Team",
         description:
-          "The HQ members are the ones who are the backbone of the community. They are the ones who are responsible for the smooth functioning of different teams and the community as a whole.",
+          "The Core Team members are the backbone of the community. They are responsible for the smooth functioning of different teams and the community as a whole.",
         members: [
           {
             name: "Sachin Raj M",
@@ -85,13 +85,6 @@ export const team = [
             team: "Program Manager",
             lead: "",
           },
-        ],
-      },
-      {
-        type: "µLearn Fellows",
-        description:
-          "The Fellows are the ones who are responsible for the smooth functioning of different teams and the community as a whole.",
-        members: [
           {
             name: "Muhammed Ziyan Ummalil",
             image: "public/assets/team/Muhammed Ziyan Ummalil.jpg",
@@ -122,13 +115,6 @@ export const team = [
             team: "Graphic Design",
             lead: "",
           },
-        ],
-      },
-      {
-        type: "µLearn Associates",
-        description:
-          "The Associates are the ones who are responsible for the smooth functioning of different teams and the community as a whole.",
-        members: [
           {
             name: "Mehbin A C",
             image: "public/assets/team/Mehbin A C.jpg",
