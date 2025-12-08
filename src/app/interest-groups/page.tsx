@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MotionA, MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { interestGroups } from "@/data/lc-ig";
 
@@ -167,7 +168,7 @@ export default function InterestGroups() {
           </MotionDiv>
 
           <div className="hidden md:block relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full top-0 h-[calc(100%-96px)]" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full inset-y-0" />
 
             {workflowSteps.map((step, index) => {
               const Icon = step.icon;
@@ -287,8 +288,11 @@ export default function InterestGroups() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="group block"
             >
-              <div className="relative h-full bg-mulearn-whitish rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-mulearn-greyish/20">
-                <div className="relative h-48 overflow-hidden rounded-t-2xl">
+              <Card
+                variant="hoverable"
+                className="relative h-full bg-mulearn-whitish border-mulearn-greyish/20"
+              >
+                <div className="relative h-48 overflow-hidden">
                   <MuImage
                     src={group.image}
                     alt={group.name}
@@ -298,25 +302,25 @@ export default function InterestGroups() {
                   />
                 </div>
 
-                <div className="relative z-10 flex flex-col p-6">
-                  <h3 className="mb-2 text-mulearn transition-colors duration-300">{group.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4 flex-grow">{group.tagline}</p>
+                <CardContent className="p-6">
+                  <CardTitle className="mb-2 text-mulearn">{group.name}</CardTitle>
+                  <CardDescription className="text-gray-600 mb-4">{group.tagline}</CardDescription>
 
                   <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
-                </div>
+                </CardContent>
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 z-20 rounded-2xl bg-mulearn">
-                  <p className="text-mulearn-whitish text-sm leading-relaxed text-center">
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-mulearn opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 rounded-2xl">
+                  <p className="text-mulearn-whitish text-sm leading-relaxed text-center mb-4">
                     {group.description}
                   </p>
-
-                  <div className="flex items-center gap-2 font-medium text-sm group-hover:gap-3 transition-all duration-300">
+                  <div className="flex items-center gap-2 text-mulearn-whitish font-medium text-sm">
                     Explore <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </div>
+              </Card>
             </MotionA>
           ))}
         </div>
@@ -346,16 +350,13 @@ export default function InterestGroups() {
             for the careers of tomorrow.
           </p>
           <div>
-            <Button
-              asChild
-              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
-            >
+            <Button asChild variant="mulearn-inverted" className="px-8 py-4 text-lg">
               <a
                 href="https://app.mulearn.org/dashboard/profile"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Join an Interest Group <ArrowRight className="w-5 h-5" />
+                Join an Interest Group <ArrowRight className="w-5 h-5 !text-mulearn-trusty-blue" />
               </a>
             </Button>
           </div>
