@@ -2,6 +2,7 @@ import { ArrowRight, Building2, Rocket, Target, Users } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 
 export default function PartnersPage() {
   return (
@@ -284,16 +285,16 @@ export default function PartnersPage() {
               </p>
               <div className="flex flex-col items-center sm:flex-row gap-4 justify-center pt-4">
                 <Link href="/be-a-part/company">
-                  <button className="px-8 py-4 cursor-pointer bg-mulearn-whitish font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="text-mulearn">Join as Company</span>
-                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
-                  </button>
+                  <Button type="button" variant="mulearn-inverted" className="px-8 py-4">
+                    Join as Company
+                    <ArrowRight className="w-5 h-5 text-mulearn !text-mulearn-trusty-blue" />
+                  </Button>
                 </Link>
                 <Link href="/be-a-part/campus">
-                  <button className="px-6 py-4 bg-mulearn-whitish cursor-pointer font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105">
-                    <span className="text-mulearn">Join as Community</span>
-                    <ArrowRight className="w-5 h-5 bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
-                  </button>
+                  <Button type="button" variant="mulearn-inverted" className="px-6 py-4">
+                    Join as Community
+                    <ArrowRight className="w-5 h-5 text-mulearn !text-mulearn-trusty-blue" />
+                  </Button>
                 </Link>
               </div>
             </div>
