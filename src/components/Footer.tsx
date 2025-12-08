@@ -7,7 +7,7 @@ import { contactInfo, footer, socials } from "@/data/common";
 export default function Footer() {
   return (
     <MotionFooter
-      className="bg-mulearn-whitish text-mulearn-blackish px-6 py-12 border-t border-mulearn-gray-200"
+      className="bg-mulearn-whitish text-mulearn-blackish px-4 sm:px-6 py-8 sm:py-6 border-t border-mulearn-gray-200"
       variants={{
         hidden: { opacity: 0, y: 20 },
         visible: {
@@ -21,19 +21,18 @@ export default function Footer() {
       viewport={{ once: true }}
     >
       <div className="max-w-full mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-4 lg:gap-6 mb-6 md:mb-4">
           <div className="lg:col-span-2">
-            <div className="flex flex-col md:items-start items-center justify-center space-y-4">
-              <div className="flex items-center space-x-4">
+            <div className="flex flex-col md:items-start items-center justify-center space-y-4 md:space-y-3">
+              <div className="flex items-center space-x-3">
                 <div className="flex items-center justify-center">
-                  <div className="w-[200px] h-[200px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden flex items-center justify-center">
+                  <div className=" rounded-xl overflow-hidden flex items-center justify-center">
                     <MuImage
-                      src="/assets/loader/MuLoader.gif"
+                      src="/assets/logo.png"
                       alt="µLearn Logo"
-                      width={200}
-                      height={200}
-                      className="object-cover"
-                      unoptimized
+                      width={180}
+                      height={0}
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -42,8 +41,8 @@ export default function Footer() {
                 Empowering learners through community-driven education and innovative learning
                 pathways. Join us in shaping the future of education.
               </p>
-              <div className="flex flex-col space-y-3">
-                <h3 className="text-sm font-semibold text-mulearn-blackish uppercase tracking-wide">
+              <div className="flex flex-col space-y-2">
+                <h3 className="text-sm font-semibold text-mulearn-blackish uppercase tracking-wide text-center md:text-left">
                   Connect With Us
                 </h3>
                 <div className="flex space-x-3">
@@ -77,7 +76,7 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-mulearn-gray-900 uppercase">
                 {section.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 md:space-y-2">
                 {section.links.map((link) => (
                   <li key={link.title}>
                     <Link
@@ -93,8 +92,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-mulearn-gray-200 my-8"></div>
-        <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+        <div className="border-t border-mulearn-gray-200 my-6 md:my-4"></div>
+        <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 md:space-y-4 lg:space-y-0">
           <div className="text-center lg:text-left">
             <div className="text-sm text-mulearn-blakish-600 font-medium">
               {contactInfo.copyright}
