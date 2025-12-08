@@ -156,10 +156,10 @@ export default function Navbar() {
               <MuImage
                 src="/assets/logo.png"
                 alt="Mulearn Brand"
-                width={170}
-                height={170}
+                width={120}
+                height={40}
                 preload
-                className="h-auto"
+                className="h-auto w-auto max-w-[120px]"
               />
             </Link>
             <MotionDiv

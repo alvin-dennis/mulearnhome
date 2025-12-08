@@ -39,14 +39,14 @@ export default function Hero() {
   return (
     <MotionHeader
       id="home"
-      className="relative flex flex-col items-center justify-start overflow-hidden"
+      className="relative flex flex-col items-center justify-between min-h-[calc(100vh-80px)] lg:min-h-screen overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #ffffff 0%, #f1f2f7 30%, #dce0f4 100%)",
       }}
       variants={fadeInUp}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 md:pt-18 ">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex-1 flex flex-col justify-center">
         <div className="flex flex-col items-center justify-center text-center">
           <MotionH1
             custom={1}
@@ -54,7 +54,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className=" sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight mb-4 sm:mb-6 max-w-3xl sm:max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight mb-4 sm:mb-6 max-w-3xl sm:max-w-4xl"
           >
             Your Ultimate Gateway
             <br />
@@ -67,7 +67,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-base sm:text-lg md:text-xl text-mulearn-gray-600 mt-4 sm:mt-6 mb-6 sm:mb-8 max-w-xl sm:max-w-2xl font-normal"
+            className="text-sm sm:text-lg md:text-xl text-mulearn-gray-600 mt-2 sm:mt-4 mb-4 sm:mb-6 max-w-xs sm:max-w-xl md:max-w-2xl font-normal"
           >
             An open community for learners, makers, and innovators
           </MotionP>
@@ -81,7 +81,7 @@ export default function Hero() {
           >
             <Button
               variant={"mulearn"}
-              className="px-6  py-3 sm:text-lg md:text-lg"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
             >
               Join µLearn
@@ -96,17 +96,17 @@ export default function Hero() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={textVariant}
-        className="relative w-full sm:mt-12 md:-mt-12  flex justify-center"
+        className="relative w-full mt-auto flex justify-center items-end"
       >
         <MuImage
           src={illustration}
           alt="Community illustration"
           width={1300}
           height={900}
-          className="object-cover h-auto"
+          className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           preload
           fetchPriority="high"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 70vw, (max-width: 1280px) 60vw, 50vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, 70vw"
         />
       </MotionDiv>
     </MotionHeader>
