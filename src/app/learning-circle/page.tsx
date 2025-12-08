@@ -158,7 +158,7 @@ export default function LearningCirclePage() {
           </p>
         </MotionDiv>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {howItWorks.steps.map((step, index) => (
             <MotionDiv
               key={step.step}
