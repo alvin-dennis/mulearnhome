@@ -9,9 +9,9 @@ const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
 
 export default function DonatePage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 min-h-screen">
-      <div className="flex flex-col md:justify-start lg:justify-center lg:-mt-15 items-center md:items-center md:col-span-1">
-        <div className="p-4 text-center md:text-center md:max-w-md">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 md:p-8 min-h-screen">
+      <div className="flex flex-col lg:justify-center lg:-mt-15 items-center lg:col-span-1">
+        <div className="p-4 text-center lg:text-left lg:max-w-md">
           <h1>
             Help us sustain
             <br />
@@ -22,7 +22,7 @@ export default function DonatePage() {
             entrepreneurs.
           </p>
 
-          <div className="mt-6 w-full flex justify-center md:justify-start">
+          <div className="mt-6 w-full flex justify-center lg:justify-start">
             <MuImage
               src={heroImg}
               alt="Donate"
@@ -39,7 +39,7 @@ export default function DonatePage() {
         </div>
       </div>
 
-      <div className="col-span-1 md:col-span-2">
+      <div className="col-span-1 lg:col-span-2">
         <DonationForm />
       </div>
     </div>
