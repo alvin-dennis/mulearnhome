@@ -27,14 +27,10 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.7 }}
           className="flex-1 text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4 ">
+          <h1 className="mb-4">
             Join a <span className="text-mulearn">Learning Circle</span>
           </h1>
-          {subtitle && (
-            <h2 className="text-xl md:text-2xl text-mulearn-blackish font-medium mb-4 ">
-              {subtitle}
-            </h2>
-          )}
+          {subtitle && <h2 className="mb-4">{subtitle}</h2>}
           <p className="leading-relaxed mb-8 ">{description}</p>
 
           <MotionDiv
@@ -78,9 +74,7 @@ export default function LearningCirclePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.2 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">
-            {introduction.title}
-          </h2>
+          <h2 className="text-mulearn mb-4">{introduction.title}</h2>
           <p className="max-w-3xl mx-auto leading-relaxed mb-12  whitespace-pre-line">
             {introduction.description}
           </p>
@@ -103,9 +97,7 @@ export default function LearningCirclePage() {
               <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-mulearn">
                 <feature.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
-              <h3 className="text-xl font-bold text-mulearn mb-3  h-14 flex items-center">
-                {feature.title}
-              </h3>
+              <h3 className="text-mulearn mb-3 h-14 flex items-center">{feature.title}</h3>
               <p className="">{feature.description}</p>
             </MotionDiv>
           ))}
@@ -120,9 +112,7 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">
-            {learningDomains.title}
-          </h2>
+          <h2 className="text-mulearn mb-4">{learningDomains.title}</h2>
           <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">
             {learningDomains.subtitle}
           </p>
@@ -145,9 +135,7 @@ export default function LearningCirclePage() {
               <div className="w-12 h-12 mb-4 mx-auto flex items-center justify-center rounded-full bg-mulearn ">
                 <domain.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
-              <h3 className="text-xl font-bold items-center justify-center text-mulearn mb-3 ">
-                {domain.title}
-              </h3>
+              <h3 className="items-center justify-center text-mulearn mb-3">{domain.title}</h3>
               <p className="text-mulearn-blackish/70 items-center justify-center text-sm">
                 {domain.description}
               </p>
@@ -164,7 +152,7 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">{howItWorks.title}</h2>
+          <h2 className="text-mulearn mb-4">{howItWorks.title}</h2>
           <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">
             {howItWorks.subtitle}
           </p>
@@ -186,7 +174,7 @@ export default function LearningCirclePage() {
                 {step.step}
               </div>
               <step.icon className="w-8 h-8 text-mulearn mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-mulearn-blackish mb-3 ">{step.title}</h3>
+              <h3 className="mb-3">{step.title}</h3>
               <p className="text-mulearn-blackish/70  text-sm">{step.description}</p>
             </MotionDiv>
           ))}
@@ -201,7 +189,7 @@ export default function LearningCirclePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn mb-4 ">{benefits.title}</h2>
+          <h2 className="text-mulearn mb-4">{benefits.title}</h2>
           <p className="text-lg text-mulearn-blackish/70  max-w-2xl mx-auto">{benefits.subtitle}</p>
         </MotionDiv>
 
@@ -223,7 +211,7 @@ export default function LearningCirclePage() {
                 <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-mulearn mb-2 ">{benefit.title}</h3>
+                <h3 className="text-mulearn mb-2">{benefit.title}</h3>
                 <p className="text-mulearn-blackish/70  text-sm">{benefit.description}</p>
               </div>
             </MotionDiv>
@@ -237,13 +225,13 @@ export default function LearningCirclePage() {
         transition={{ duration: 0.5 }}
         className="w-full mt-16 bg-mulearn text-mulearn-whitish p-10 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 ">{ctaSection.title}</h2>
+        <h2 className="mb-4">{ctaSection.title}</h2>
         <p className="text-lg mb-8 text-mulearn-whitish  max-w-2xl mx-auto">
           {ctaSection.description}
         </p>
         <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
           <Link href={ctaSection.buttonLink} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-mulearn-whitish text-mulearn-trusty-blue rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl px-6 py-3 hover:bg-mulearn-whitish/90">
+            <Button variant="mulearn-inverted" className="text-lg px-6 py-3">
               {ctaSection.buttonText}
             </Button>
           </Link>

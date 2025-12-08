@@ -39,7 +39,7 @@ export default function LeaderBoard() {
     >
       <Card className="rounded-2xl shadow-md bg-mulearn-bg">
         <CardContent className="p-5 overflow-x-auto">
-          <h1 className="text-center text-2xl md:text-2xl font-bold mb-5 text-mulearn-primary">
+          <h1 className="text-center mb-5 text-mulearn-primary">
             {title}
             {title === "Monthly Leaderboard" && ` — ${date}`}
           </h1>

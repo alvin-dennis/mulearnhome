@@ -30,7 +30,7 @@ export default function Community() {
           className="flex flex-col items-start sm:items-center justify-center max-w-[40rem]"
           variants={fadeInUp}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-center max-w-[40rem] mb-5 leading-normal">
+          <h1 className="text-center max-w-[40rem] mb-5">
             Learn and Grow <span className="text-mulearn">Together</span> as a{" "}
             <span className="text-mulearn">Community</span>
           </h1>

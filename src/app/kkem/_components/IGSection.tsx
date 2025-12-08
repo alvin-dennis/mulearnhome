@@ -60,7 +60,8 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               amount of time learning about new things with a group of people with same interests!
             </p>
             <Button
-              className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish cursor-pointer rounded-full mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1  mx-auto md:mx-0"
+              variant="mulearn-inverted"
+              className="cursor-pointer mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1 mx-auto md:mx-0"
               onClick={() => redirect?.(refreshToken ? "/dashboard/home" : "/register")}
             >
               Get Started

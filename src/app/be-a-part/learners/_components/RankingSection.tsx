@@ -76,7 +76,7 @@ const RankingSection: React.FC<RankingSectionProps> = ({ topLearners }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-center text-4xl sm:text-5xl font-extrabold mb-16 text-mulearn-blackish">
+      <h2 className="text-center mb-16">
         Top <span className="text-mulearn-trusty-blue">Learners</span>
       </h2>
 

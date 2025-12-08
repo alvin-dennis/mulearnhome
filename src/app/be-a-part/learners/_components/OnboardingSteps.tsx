@@ -37,7 +37,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-mulearn-blackish mb-3">{step.title}</h3>
+              <h3 className="mb-3">{step.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
             </div>
 
@@ -63,7 +63,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
+              <h3 className="mb-2">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.description}</p>
             </div>
 

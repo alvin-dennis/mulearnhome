@@ -32,7 +32,7 @@ export default function InspirationStationPage() {
                 </Badge>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h1>
                 µLearn <span className="block text-mulearn mt-2">Inspiration Station Radio</span>
               </h1>
 
@@ -70,9 +70,7 @@ export default function InspirationStationPage() {
       <section className="py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-mulearn-blackish mb-3 md:mb-4">
-              Inspiration Station Episodes
-            </h2>
+            <h2 className="mb-3 md:mb-4">Inspiration Station Episodes</h2>
             <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-base md:text-lg mb-6 md:mb-8">
               Discover inspiring stories from our community
             </p>

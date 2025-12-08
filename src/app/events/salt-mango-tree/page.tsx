@@ -31,7 +31,7 @@ export default function SaltMangoTreePage() {
                 </Badge>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h1>
                 µLearn <span className="block text-mulearn mt-2">Salt Mango Tree</span>
               </h1>
 
@@ -68,9 +68,7 @@ export default function SaltMangoTreePage() {
       <section className="py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-mulearn-blackish mb-3 md:mb-4">
-              Salt Mango Tree Sessions
-            </h2>
+            <h2 className="mb-3 md:mb-4">Salt Mango Tree Sessions</h2>
             <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-base md:text-lg mb-6 md:mb-8">
               Improve your English skills with our community
             </p>

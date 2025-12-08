@@ -34,7 +34,7 @@ export default function Level7Section() {
           className="text-center space-y-16"
         >
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-mulearn-blackish leading-tight">
+            <h2>
               Welcome to the <span className="text-mulearn">μVerse</span>
             </h2>
             <p className="text-xl md:text-2xl text-mulearn-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -44,23 +44,23 @@ export default function Level7Section() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-gray-600">Access</h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <h3 className="text-mulearn-gray-600">Access</h3>
+              <p className="text-mulearn-gray-600">
                 Direct pathways to fellowships, startups, and global opportunities curated for your
                 journey.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-gray-600">Network</h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <h3 className="text-mulearn-gray-600">Network</h3>
+              <p className="text-mulearn-gray-600">
                 Connect with mentors, industry leaders, and peers who accelerate your growth.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-mulearn-gray-600">Impact</h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <h3 className="text-mulearn-gray-600">Impact</h3>
+              <p className="text-mulearn-gray-600">
                 Build solutions that matter, ship to real users, and contribute to meaningful
                 projects.
               </p>
@@ -71,7 +71,7 @@ export default function Level7Section() {
             <h3 className="text-3xl font-bold text-mulearn-blackish">Where Learners Go</h3>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="border-t-4 border-t-mulearn-trusty-blue w-full h-58 flex flex-col">
+              <Card variant="accent" className="w-full h-58 flex flex-col">
                 <CardHeader className="flex-1 flex flex-col justify-center p-4">
                   <CardTitle className="text-mulearn-blackish text-xl">
                     Global Fellowship Programs
@@ -82,7 +82,7 @@ export default function Level7Section() {
                 </CardHeader>
               </Card>
 
-              <Card className="border-t-4 border-t-mulearn-trusty-blue w-full h-58 flex flex-col">
+              <Card variant="accent" className="w-full h-58 flex flex-col">
                 <CardHeader className="flex-1 flex flex-col justify-center p-4">
                   <CardTitle className="text-mulearn-blackish text-xl">
                     Fast-Scaling Startups
@@ -93,7 +93,7 @@ export default function Level7Section() {
                 </CardHeader>
               </Card>
 
-              <Card className="border-t-4 border-t-mulearn-trusty-blue w-full h-58 flex flex-col">
+              <Card variant="accent" className="w-full h-58 flex flex-col">
                 <CardHeader className="flex-1 flex flex-col justify-center p-4">
                   <CardTitle className="text-mulearn-blackish text-xl">
                     Entrepreneurial Ventures
@@ -104,7 +104,7 @@ export default function Level7Section() {
                 </CardHeader>
               </Card>
 
-              <Card className="border-t-4 border-t-mulearn-trusty-blue w-full h-58 flex flex-col">
+              <Card variant="accent" className="w-full h-58 flex flex-col">
                 <CardHeader className="flex-1 flex flex-col justify-center p-4">
                   <CardTitle className="text-mulearn-blackish text-xl">
                     Industry Leadership

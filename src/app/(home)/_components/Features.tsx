@@ -45,7 +45,7 @@ export default function Features() {
         viewport={{ once: true }}
       >
         <div className="pt-10 sm:pt-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
+          <h1 className="text-left max-w-140">
             What <span className="text-mulearn">µLearn</span> offers
           </h1>
         </div>

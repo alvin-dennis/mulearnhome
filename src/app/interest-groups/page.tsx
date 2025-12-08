@@ -97,7 +97,7 @@ export default function InterestGroups() {
               </span>
             </MotionDiv>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-mulearn-whitish mb-6 leading-tight ">
+            <h1 className="text-mulearn-whitish mb-6">
               Find Your Tribe,
               <br />
               <span className="text-mulearn-whitish">Grow Together</span>
@@ -128,9 +128,7 @@ export default function InterestGroups() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 ">
-            Built on Community Values
-          </h2>
+          <h2 className="mb-4">Built on Community Values</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             At µLearn, we believe in the power of learning together
           </p>
@@ -147,7 +145,7 @@ export default function InterestGroups() {
               className="text-center p-8 rounded-2xl bg-mulearn-whitish shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/20"
             >
               <div className="text-5xl mb-4">{value.icon}</div>
-              <h3 className="text-xl font-bold text-mulearn-blackish mb-2 ">{value.title}</h3>
+              <h3 className="mb-2">{value.title}</h3>
               <p className="text-gray-600">{value.description}</p>
             </MotionDiv>
           ))}
@@ -163,9 +161,7 @@ export default function InterestGroups() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 ">
-              Your Learning Journey
-            </h2>
+            <h2 className="mb-4">Your Learning Journey</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               From curiosity to career readiness in five simple steps
             </p>
@@ -196,7 +192,7 @@ export default function InterestGroups() {
                           }`}
                         >
                           <Icon className="w-6 h-6 text-mulearn" />
-                          <h3 className="text-xl font-bold text-mulearn-blackish ">{step.title}</h3>
+                          <h3>{step.title}</h3>
                         </div>
                         <p className="text-gray-600 leading-relaxed">{step.description}</p>
                       </div>
@@ -243,7 +239,7 @@ export default function InterestGroups() {
                   </div>
 
                   <div className="bg-mulearn-whitish p-6 rounded-xl shadow-md border border-mulearn-greyish/20">
-                    <h3 className="text-lg font-bold text-mulearn-blackish mb-2 ">{step.title}</h3>
+                    <h3 className="mb-2">{step.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
                   </div>
                 </MotionDiv>
@@ -261,9 +257,7 @@ export default function InterestGroups() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 ">
-            Explore Interest Groups
-          </h2>
+          <h2 className="mb-4">Explore Interest Groups</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
             Choose a domain that excites you and start your learning journey today
           </p>
@@ -306,9 +300,7 @@ export default function InterestGroups() {
                 </div>
 
                 <div className="relative z-10 flex flex-col p-6">
-                  <h3 className="text-xl font-bold mb-2 text-mulearn transition-colors duration-300 ">
-                    {group.name}
-                  </h3>
+                  <h3 className="mb-2 text-mulearn transition-colors duration-300">{group.name}</h3>
                   <p className="text-sm text-gray-600 mb-4 flex-grow">{group.tagline}</p>
 
                   <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
@@ -349,9 +341,7 @@ export default function InterestGroups() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-mulearn-whitish mb-6 ">
-            Ready to Start Your Journey?
-          </h2>
+          <h2 className="text-mulearn-whitish mb-6">Ready to Start Your Journey?</h2>
           <p className="text-lg text-mulearn-whitish/90 mb-8 max-w-2xl mx-auto">
             Join thousands of learners who are building skills, making connections, and preparing
             for the careers of tomorrow.

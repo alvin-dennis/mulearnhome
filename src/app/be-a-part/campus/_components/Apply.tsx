@@ -24,7 +24,10 @@ export default function Apply() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button className="bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base font-semibold sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto">
+          <Button
+            variant="mulearn-inverted"
+            className="rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto"
+          >
             Apply to Start a Chapter
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>

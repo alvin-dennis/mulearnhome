@@ -66,7 +66,7 @@ export default function OfficeHoursPage() {
               Community Platform
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
+            <h1 className="mb-6">
               µLearn <span className="text-mulearn">Office Hour</span>
             </h1>
 

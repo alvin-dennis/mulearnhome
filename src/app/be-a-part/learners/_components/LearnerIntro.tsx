@@ -44,7 +44,7 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
 
       {}
       <div className="text-center max-w-3xl mx-auto mt-16">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 leading-tight ">
+        <h3 className="mb-4 leading-tight">
           Why <span className="text-mulearn-trusty-blue">μLearn?</span>
         </h3>
         <p className="text-base sm:text-lg text-mulearn-gray-600 leading-relaxed">

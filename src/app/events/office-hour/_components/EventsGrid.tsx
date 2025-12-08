@@ -22,10 +22,7 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {events.map((event) => (
-          <Card
-            key={event.id}
-            className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col"
-          >
+          <Card key={event.id} variant="hoverable" className="h-full flex flex-col">
             <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative shrink-0">
               {event.thumbnail ? (
                 <MuImage

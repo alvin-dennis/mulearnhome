@@ -80,9 +80,7 @@ export default function BeyondUs() {
           viewport={{ once: true }}
           variants={slideInLeft}
         >
-          <h1 className="text-4xl md:text-5xl font-semibold text-mulearn-blackish mb-4">
-            Beyond Us
-          </h1>
+          <h1 className="mb-4">Beyond Us</h1>
           <p className="text-lg md:text-xl font-medium text-mulearn-blackish mb-2">
             A hackathon like never before in association with Kerala Knowledge Economy Mission as a
             part of Kerala Skill Express wherein your skills of technical knowledge and problem
@@ -139,9 +137,7 @@ export default function BeyondUs() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-3xl md:text-4xl font-semibold text-mulearn-blackish text-center mb-8">
-          Winners: Design Domain
-        </h2>
+        <h2 className="text-center mb-8">Winners: Design Domain</h2>
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {kkem.winnersDesign.map(renderCard)}
         </div>
@@ -154,9 +150,7 @@ export default function BeyondUs() {
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <h2 className="text-3xl md:text-4xl font-semibold text-mulearn-blackish text-center mb-8">
-          Winners: Software Domain
-        </h2>
+        <h2 className="text-center mb-8">Winners: Software Domain</h2>
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {kkem.winnersSoftware.map(renderCard)}
         </div>

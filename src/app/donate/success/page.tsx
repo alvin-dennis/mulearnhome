@@ -63,7 +63,7 @@ export default function DonateSuccessPage() {
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-mulearn-whitish mb-2">Thank You!</h1>
+            <h1 className="text-mulearn-whitish mb-2">Thank You!</h1>
             <p className="text-white text-lg">Your donation has been received successfully</p>
           </div>
 

@@ -26,7 +26,7 @@ export default function IGAbout() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h1 className="text-mulearn-blackish font-semibold leading-[111.5%] mb-12 text-4xl lg:text-[4.25rem]">
+        <h1 className="mb-12">
           <span className="text-mulearn">μLearn </span>
           Interest Groups
         </h1>

@@ -23,9 +23,7 @@ export default function Opportunities() {
         viewport={{ once: true }}
       >
         <MotionDiv className="text-center" variants={fadeInUp}>
-          <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold">
-            At The End Of a μLearners Journey
-          </h1>
+          <h1>At The End Of a μLearners Journey</h1>
           <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             At the end of a μLearner&apos;s journey, they are equipped with a plethora of
             opportunities to choose from. They can choose to work in a job, freelance, research,

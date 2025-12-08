@@ -25,7 +25,7 @@ export default function Level1Section() {
             className="space-y-8 order-2 lg:order-1"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h2>
                 The First <span className="text-mulearn">Hello</span>
               </h2>
             </div>
@@ -36,7 +36,7 @@ export default function Level1Section() {
                 <span className="text-mulearn">&ldquo;Here I am.&rdquo;</span>
               </p>
 
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <p className="text-mulearn-gray-600">
                 This is not a roll call. It&apos;s an act of visibility—letting peers, mentors, and
                 opportunities discover you.
               </p>
@@ -71,10 +71,10 @@ export default function Level1Section() {
               </div>
             </div>
 
-            <Card className="bg-mulearn-gray-50 rounded-2xl">
+            <Card variant="muted">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-                <p className="text-base text-mulearn-gray-600 leading-relaxed">
+                <h3>The Impact</h3>
+                <p className="text-mulearn-gray-600">
                   Students realize that their journey begins not with skills, but with{" "}
                   <span className="font-semibold text-mulearn-blackish">
                     identity and courage to show up

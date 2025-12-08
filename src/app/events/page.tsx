@@ -71,7 +71,7 @@ export default function Events() {
             className="mb-12"
           >
             <div className="mb-3 text-center md:text-left">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl mb-1">{formatSectionTitle(type)}</h2>
+              <h2 className="mb-1">{formatSectionTitle(type)}</h2>
               <div className="w-20 h-1 bg-mulearn mx-auto md:mx-0 rounded-full" />
             </div>
 

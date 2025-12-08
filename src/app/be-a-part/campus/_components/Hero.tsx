@@ -12,7 +12,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 sm:mb-8 tracking-wide text-mulearn-blackish">
+            <h2 className="mb-6 sm:mb-8 tracking-wide">
               <span className="text-mulearn">µLearn</span> Campus Chapter
             </h2>
 

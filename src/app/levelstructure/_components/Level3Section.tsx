@@ -27,7 +27,7 @@ export default function Level3Section() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h2>
                 Tool <span className="text-mulearn">Mastery</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
@@ -83,7 +83,7 @@ export default function Level3Section() {
             <Card className="bg-mulearn-gray-50 rounded-2xl">
               <CardContent className="p-6 space-y-3">
                 <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-                <p className="text-base text-mulearn-gray-600 leading-relaxed">
+                <p className="text-mulearn-gray-600">
                   Students move from passive learners to active creators. They{" "}
                   <span className="font-semibold text-mulearn-blackish">command technology</span>{" "}
                   instead of being commanded by it.

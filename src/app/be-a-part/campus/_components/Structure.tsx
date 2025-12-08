@@ -11,7 +11,7 @@ export default function Structure() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-6 text-center text-4xl font-bold text-mulearn-blackish lg:text-5xl">
+          <h2 className="mb-6 text-center">
             Chapter <span className="text-mulearn">Structure</span>
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-lg text-mulearn-gray-600">

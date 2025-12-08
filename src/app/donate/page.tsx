@@ -12,7 +12,7 @@ export default function DonatePage() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 min-h-screen">
       <div className="flex flex-col md:justify-start lg:justify-center lg:-mt-15 items-center md:items-center md:col-span-1">
         <div className="p-4 text-center md:text-center md:max-w-md">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          <h1>
             Help us sustain
             <br />
             Our <span className="text-mulearn">Mission</span>

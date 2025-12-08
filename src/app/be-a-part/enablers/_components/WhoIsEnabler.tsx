@@ -10,7 +10,7 @@ export default function WhoIsEnabler() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className=" mb-6 text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
+        <h2 className="mb-6">
           Who is an <span className="text-mulearn">Enabler</span>?
         </h2>
         <p className=" mx-auto max-w-3xl text-base leading-relaxed text-mulearn-gray-600 md:text-lg">

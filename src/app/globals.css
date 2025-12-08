@@ -70,6 +70,7 @@ h5 {
 
 @layer utilities {
     @keyframes floatY {
+
         0%,
         100% {
             transform: translateY(0%);
@@ -81,6 +82,7 @@ h5 {
     }
 
     @keyframes rocks {
+
         0%,
         100% {
             transform: translateY(0%);
@@ -92,6 +94,7 @@ h5 {
     }
 
     @keyframes ufoFloat {
+
         0%,
         100% {
             transform: translateY(0%);
@@ -193,24 +196,52 @@ h5 {
     * {
         @apply border-border outline-ring/50;
     }
+
     body {
         font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
         @apply bg-background text-foreground;
     }
+
     .font-sans {
         font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
+    }
+
+    /* Global Typography - Responsive heading styles */
+    h1 {
+        @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight;
+    }
+
+    h2 {
+        @apply text-2xl sm:text-3xl md:text-4xl font-bold text-mulearn-blackish leading-snug;
+    }
+
+    h3 {
+        @apply text-xl md:text-2xl font-semibold text-mulearn-blackish;
+    }
+
+    h4 {
+        @apply text-lg font-semibold text-mulearn-blackish;
+    }
+
+    h5,
+    h6 {
+        @apply text-base font-medium text-mulearn-blackish;
+    }
+
+    p {
+        @apply text-base leading-relaxed;
     }
 }
 
 .text-mulearn {
-  background: linear-gradient(to right, #6366f1, #2E85FE);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, #6366f1, #2E85FE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .bg-mulearn {
-  background: linear-gradient(to right, #6366f1, #2E85FE);
+    background: linear-gradient(to right, #6366f1, #2E85FE);
 }
 
 .swiper-pagination-bullet {

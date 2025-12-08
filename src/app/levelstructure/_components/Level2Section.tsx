@@ -42,7 +42,7 @@ export default function Level2Section() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h2>
                 The Mindset <span className="text-mulearn">Shift</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">
@@ -58,7 +58,7 @@ export default function Level2Section() {
                 <span className="text-mulearn">invisble cages</span>
               </p>
 
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <p className="text-mulearn-gray-600">
                 μLearn rewires these narratives. Through experiences, reflection spaces, and peer
                 nudges, a fixed mindset stretches into a growth mindset… and finally into abundance
                 thinking.
@@ -96,7 +96,7 @@ export default function Level2Section() {
 
             <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
               <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
+              <p className="text-mulearn-gray-600">
                 Students internalize grit, self-learning, and peer collaboration. Failure becomes
                 feedback.{" "}
                 <span className="font-semibold text-mulearn-blackish">

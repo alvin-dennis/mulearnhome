@@ -25,7 +25,7 @@ export default function LearnersPage() {
         />
       </section>*/}
       <section id="onboarding" className="py-12 md:py-16 container mx-auto px-4">
-        <h2 className="text-center text-4xl font-bold mb-8 md:mb-12">
+        <h2 className="text-center mb-8 md:mb-12">
           Onboarding <span className="text-mulearn-trusty-blue">Process</span>
         </h2>
         <OnboardingSteps data={onboardingSteps} />

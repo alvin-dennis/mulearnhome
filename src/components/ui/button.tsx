@@ -31,6 +31,8 @@ const buttonVariants = cva(
           "bg-linear-to-r from-[#6366f1] to-[#2E85FE] text-[#fefefe] hover:from-[#5856eb] hover:to-[#1d4ed8] shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300",
         "mulearn-blue":
           "bg-mulearn-trusty-blue text-mulearn-whitish rounded-full text-base hover:bg-mulearn-duke-purple active:bg-mulearn-trusty-blue transition-all duration-300 rounded-full cursor-pointer",
+        "mulearn-inverted":
+          "bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish/90 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300",
       },
     },
     defaultVariants: {

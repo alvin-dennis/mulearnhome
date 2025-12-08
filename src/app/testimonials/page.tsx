@@ -274,9 +274,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className=" text-4xl md:text-5xl font-bold text-mulearn-blackish mb-6">
-              Ready to Share Your Story?
-            </h2>
+            <h2 className="mb-6">Ready to Share Your Story?</h2>
             <p className="text-xl text-mulearn-gray-600 mb-10  max-w-3xl mx-auto leading-relaxed">
               Join thousands of learners, mentors, and partners who are transforming education
               through collaborative learning

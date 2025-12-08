@@ -358,9 +358,7 @@ export default function DonationForm() {
       <div className="w-full bg-mulearn-whitish dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-8 sm:py-10 min-h-0">
           <div className="mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-mulearn-blackish dark:text-gray-50 tracking-tight">
-              Make a Donation
-            </h2>
+            <h2 className="mb-2 tracking-tight">Make a Donation</h2>
             <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
               Support our mission to empower students through education
             </p>
@@ -377,9 +375,7 @@ export default function DonationForm() {
     <div className="w-full bg-mulearn-whitish rounded-lg border border-mulearn-gray-600/20 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
       <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-8 sm:py-10 min-h-0">
         <div className="mb-10">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-mulearn-blackish tracking-tight">
-            Make a Donation
-          </h2>
+          <h2 className="mb-2 tracking-tight">Make a Donation</h2>
           <p className="text-gray-500 text-sm sm:text-base">
             Support our mission to empower students through education
           </p>

@@ -7,7 +7,7 @@ const FirstEdition = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-2/5">
-            <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight">
+            <h2 className="leading-tight">
               Art of Teaching <span className="text-mulearn">First Edition</span>
             </h2>
             <p className="mt-4 text-base lg:text-lg text-mulearn-gray-600 lg:w-1/1">

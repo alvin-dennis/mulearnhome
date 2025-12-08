@@ -11,7 +11,7 @@ interface EpisodeCardProps {
 
 export function EpisodeCard({ event }: EpisodeCardProps) {
   return (
-    <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
+    <Card variant="hoverable" className="h-full flex flex-col">
       {/* Thumbnail Section */}
       <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative flex-shrink-0">
         <Radio className="w-16 h-16 text-mulearn-trusty-blue" />

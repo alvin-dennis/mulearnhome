@@ -20,7 +20,7 @@ export default function CompanyPartners() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold text-color-mulearn-blackish leading-tight mb-4">
+              <h1 className="mb-4">
                 <span className="text-mulearn">µLearn Partnered</span>
                 <br />
                 Companies

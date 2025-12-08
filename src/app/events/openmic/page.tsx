@@ -26,11 +26,11 @@ export default function OpenMicPage() {
               Community Platform
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl font-black text-mulearn-blackish mb-6 leading-tight">
+            <h1 className="mb-6">
               µLearn <span className="text-mulearn">Open Mic</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-mulearn-gray-600 leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-mulearn-gray-600 mb-8">
               A platform where µLearn members perform, speak, express creativity, and share unique
               stories or talents. Join our community-driven stage for music, poetry, storytelling,
               and innovative performances that celebrate youth expression and creative voices.
@@ -54,7 +54,7 @@ export default function OpenMicPage() {
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 flex items-center justify-center">
+              <h2 className="mb-4 flex items-center justify-center">
                 <Clock className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
                 Upcoming Sessions
               </h2>
@@ -75,7 +75,7 @@ export default function OpenMicPage() {
       <section className="py-12 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-mulearn-blackish mb-4 flex items-center justify-center">
+            <h2 className="mb-4 flex items-center justify-center">
               <Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
               Performance Highlights
             </h2>
@@ -122,7 +122,7 @@ function EventCard({ event }: { event: OMEvent }) {
   );
 
   return (
-    <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
+    <Card variant="hoverable" className="h-full flex flex-col">
       <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative flex-shrink-0">
         {event.thumbnail ? (
           <MuImage

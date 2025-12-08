@@ -44,7 +44,7 @@ export default function CommmunityPartners() {
           variants={fadeInLeft}
           className="text-center md:text-left md:w-1/3 mx-4 md:mx-0"
         >
-          <h1 className="text-5xl font-semibold text-mulearn-blackish md:text-7xl inline-block xl:inline-block lg:inline-block md:hidden md:w-[50%] md:leading-tight">
+          <h1 className="inline-block xl:inline-block lg:inline-block md:hidden md:w-[50%]">
             <span className="font-semibold text-mulearn">µLearn Community</span> Partners
           </h1>
 

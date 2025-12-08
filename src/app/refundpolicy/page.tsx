@@ -39,9 +39,7 @@ export default async function RefundPolicy() {
     <main className="min-h-screen bg[var(--mulearn-whitish)]">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 xl:px-12">
         <header className="mb-10 text-center">
-          <h1 className="mb-3 text-3xl sm:text-4xl font-extrabold text-mulearn-blackish tracking-tight uppercase">
-            {refundPolicy.title}
-          </h1>
+          <h1 className="mb-3 tracking-tight uppercase">{refundPolicy.title}</h1>
           <p className="text-sm text-mulearn-gray-600">Last Updated: {refundPolicy.lastUpdated}</p>
         </header>
 

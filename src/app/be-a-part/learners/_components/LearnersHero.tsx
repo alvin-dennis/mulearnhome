@@ -17,7 +17,7 @@ const LearnersHero = () => {
             />
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-3xl leading-tight">
+          <h1 className="tracking-tight max-w-3xl">
             <span className="text-mulearn-blackish">Unlock Your</span>
             <br />
             <span className="text-mulearn-blackish">Potential with</span>

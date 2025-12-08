@@ -322,7 +322,7 @@ export default function LevelStructure() {
                     </div>
                     <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 lg:order-1 order-2 px-4 sm:px-6 lg:px-0">
                       <div>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold mb-4 leading-tight">
+                        <h1 className="mb-4">
                           The <span className="text-mulearn">μLearn</span>
                           <br />
                           <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl">

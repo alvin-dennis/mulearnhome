@@ -23,7 +23,7 @@ export default function Story() {
       >
         <div>
           <MotionDiv variants={fadeInUp}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-center max-w-140 font-extrabold leading-normal">
+            <h1 className="text-center max-w-140">
               Understand μLearn with a <span className="text-mulearn">Story</span>
             </h1>
             <h6 className="font-normal my-4 mb-8 max-w-[800px] text-lg sm:text-xl text-justify text-mulearn-gray-600">

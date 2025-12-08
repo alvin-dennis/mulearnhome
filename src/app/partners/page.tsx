@@ -19,7 +19,7 @@ export default function PartnersPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-mulearn-blackish leading-tight">
+              <h1>
                 Our{" "}
                 <span className="text-mulearn relative">
                   Partners
@@ -80,7 +80,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mulearn-blackish mb-4">
+            <h2 className="mb-4">
               Explore Our <span className="text-mulearn">Partnership Network</span>
             </h2>
             <p className="text-mulearn-blackish text-lg max-w-2xl mx-auto">
@@ -112,9 +112,7 @@ export default function PartnersPage() {
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <Users className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
-                        Community Partners
-                      </h2>
+                      <h2>Community Partners</h2>
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
@@ -169,9 +167,7 @@ export default function PartnersPage() {
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-mulearn flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <Building2 className="w-7 h-7 sm:w-8 sm:h-8 text-mulearn-whitish" />
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-mulearn-blackish">
-                        Company Partners
-                      </h2>
+                      <h2>Company Partners</h2>
                     </div>
 
                     <p className="text-mulearn-blackish leading-relaxed text-sm sm:text-base">
@@ -216,7 +212,7 @@ export default function PartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#212121] mb-4">
+            <h2 className="mb-4">
               Why <span className="text-mulearn">Partner</span> With Us?
             </h2>
           </MotionDiv>
@@ -250,7 +246,7 @@ export default function PartnersPage() {
                 <div className="w-12 h-12 rounded-lg bg-mulearn flex items-center justify-center mb-4">
                   <benefit.icon className="w-6 h-6 text-mulearn-whitish" />
                 </div>
-                <h3 className="text-xl font-bold text-[#212121] mb-2">{benefit.title}</h3>
+                <h3 className="mb-2">{benefit.title}</h3>
                 <p className="text-mulearn-blackish text-sm">{benefit.description}</p>
               </MotionDiv>
             ))}
@@ -282,9 +278,7 @@ export default function PartnersPage() {
                 </div>
               </MotionDiv>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-whitish">
-                Interested in Partnering?
-              </h2>
+              <h2 className="text-mulearn-whitish">Interested in Partnering?</h2>
               <p className="text-mulearn-whitish/90 text-base sm:text-lg">
                 Join our growing network of partners and help us create impactful learning
                 experiences for thousands of learners worldwide.

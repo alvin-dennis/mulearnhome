@@ -70,7 +70,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-whitish text-mulearn]">
                           <FiClock className="w-5 h-5" />
                         </div>
-                        <p className="text-base">{specialevent.time}</p>
+                        <p>{specialevent.time}</p>
                       </div>
                     )}
                     {specialevent.location && (
@@ -78,7 +78,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-whitish text-mulearn-duke-purple">
                           <FaMapMarkerAlt className="w-5 h-5" />
                         </div>
-                        <p className="text-base">{specialevent.location}</p>
+                        <p>{specialevent.location}</p>
                       </div>
                     )}
                   </div>

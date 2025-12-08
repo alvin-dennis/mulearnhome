@@ -25,7 +25,7 @@ export default function Level4Section() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight">
+              <h2>
                 The Path of <span className="text-mulearn">Choice</span>
               </h2>
               <p className="text-xl text-mulearn-gray-600">Choose Your Interest Group</p>
@@ -78,8 +78,8 @@ export default function Level4Section() {
 
             <Card className="bg-mulearn-gray-50 rounded-2xl">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-                <p className="text-base text-mulearn-gray-600 leading-relaxed">
+                <h3>The Impact</h3>
+                <p className="text-mulearn-gray-600">
                   Learners start building{" "}
                   <span className="font-semibold text-mulearn-blackish">
                     portfolios of proof-of-work
