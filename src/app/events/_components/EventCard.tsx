@@ -1,5 +1,4 @@
 import { ArrowRight, Calendar } from "lucide-react";
-import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";

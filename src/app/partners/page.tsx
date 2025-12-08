@@ -2,7 +2,6 @@ import { ArrowRight, Building2, Rocket, Target, Users } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { Button } from "@/components/ui/button";
 
 export default function PartnersPage() {
   return (

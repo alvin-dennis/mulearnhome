@@ -2,7 +2,6 @@
 
 import { useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, Lightbulb, Search, Target, TrendingUp, Users } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { MotionA, MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";

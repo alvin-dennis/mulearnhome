@@ -50,7 +50,7 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
       hasH = tokens.some((t) => t.startsWith("h-"));
       hasW = tokens.some((t) => t.startsWith("w-"));
     }
-  } catch (e) {
+  } catch (_e) {
     /* ignore */
   }
 
@@ -125,7 +125,7 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
         shouldUnoptimized = true;
       }
     }
-  } catch (e) {
+  } catch (_e) {
     /* ignore parsing errors */
   }
 

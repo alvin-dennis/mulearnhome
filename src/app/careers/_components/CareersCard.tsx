@@ -1,5 +1,4 @@
 import { Clock, File, MapPin } from "lucide-react";
-import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
