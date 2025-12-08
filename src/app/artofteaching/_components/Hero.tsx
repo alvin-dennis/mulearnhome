@@ -19,7 +19,7 @@ const Hero = () => {
             generation.
           </p>
 
-          <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full max-w-xs">
+          <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full ">
             <Link href={artOfTeachingUrls.registerNow} className="no-underline w-full">
               <Button
                 variant={"mulearn-trusty"}
