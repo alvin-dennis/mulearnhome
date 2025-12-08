@@ -60,6 +60,7 @@ export default function Community() {
             height={640}
             width={640}
             className="h-[40rem] w-auto max-w-full object-contain"
+            style={{ width: "auto" }}
           />
         </MotionDiv>
       </MotionSection>

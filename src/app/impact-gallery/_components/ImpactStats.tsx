@@ -61,7 +61,7 @@ export default function Stats() {
           className="flex flex-1 flex-col sm:flex-row justify-center items-center gap-8 w-full text-4xl sm:text-5xl lg:text-[3.2rem] text-center font-extrabold leading-normal min-w-0 sm:min-w-[400px]"
           variants={fadeInUp}
         >
-              The Impact of <span className="text-mulearn">μLearn</span>
+          The Impact of <span className="text-mulearn">μLearn</span>
         </MotionH1>
 
         <MotionDiv variants={fadeInUp} className="w-full">
@@ -102,12 +102,7 @@ function StatCard({
         {isString ? (
           value + "+"
         ) : (
-          <CountUp
-            end={value as number}
-            duration={5}
-            separator=","
-            suffix="+"
-          />
+          <CountUp end={value as number} duration={5} separator="," suffix="+" />
         )}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>

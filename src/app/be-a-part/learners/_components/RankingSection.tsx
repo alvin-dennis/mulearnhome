@@ -1,4 +1,5 @@
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 import type { Testimonial, TopLearner } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
@@ -10,25 +11,27 @@ interface RankingSectionProps {
 const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
 const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({ name, kp, imageUrl }) => (
-  <div className="text-center group relative flex flex-col items-center">
-    <div className="relative">
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-mulearn-whitish-300 rounded-xl   " />
-      <MuImage
-        src={imageUrl ? imageUrl : fallbackImage}
-        alt={`${name}'s profile`}
-        fill
-        className="object-contain object-top"
-      />
-    </div>
+  <Card className="text-center group relative flex flex-col items-center bg-transparent shadow-none">
+    <CardContent className="relative p-0">
+      <div className="relative">
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-mulearn-whitish-300 rounded-xl" />
+        <MuImage
+          src={imageUrl ? imageUrl : fallbackImage}
+          alt={`${name}'s profile`}
+          fill
+          className="object-contain object-top"
+        />
+      </div>
 
-    <div className="mt-4">
-      <p className="text-lg font-bold text-mulearn-blackish mb-1">{name}</p>
-      <p className="text-xl font-extrabold text-mulearn-blackish">
-        {kp.toLocaleString()}
-        <span className="text-mulearn-trusty-blue">KP</span>
-      </p>
-    </div>
-  </div>
+      <div className="mt-4">
+        <p className="text-lg font-bold text-mulearn-blackish mb-1">{name}</p>
+        <p className="text-xl font-extrabold text-mulearn-blackish">
+          {kp.toLocaleString()}
+          <span className="text-mulearn-trusty-blue">KP</span>
+        </p>
+      </div>
+    </CardContent>
+  </Card>
 );
 
 const SmallLearnerCard: React.FC<{
@@ -36,10 +39,10 @@ const SmallLearnerCard: React.FC<{
   kp: number;
   imageUrl: string;
 }> = ({ name, kp, imageUrl }) => (
-  <div className="relative w-44 sm:w-60 h-18 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+  <Card className="relative w-44 sm:w-60 h-18 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
     <div className="absolute inset-0 bg-linear-to-br from-blue-500 via-blue-600 to-blue-700" />
     <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />
-    <div className="relative h-full flex items-center px-3 gap-3">
+    <CardContent className="relative h-full flex items-center px-3 gap-3 p-0">
       <MuImage
         src={imageUrl ? imageUrl : fallbackImage}
         alt={`${name}'s profile`}
@@ -54,10 +57,10 @@ const SmallLearnerCard: React.FC<{
           {kp.toLocaleString()} <span className="font-bold">KP</span>
         </p>
       </div>
-    </div>
+    </CardContent>
 
     <div className="absolute inset-0 rounded-xl border border-mulearn-whitish/20 pointer-events-none" />
-  </div>
+  </Card>
 );
 
 const RankingSection: React.FC<RankingSectionProps> = ({ topLearners }) => {

@@ -4,6 +4,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level6Section() {
   const sectionRef = useRef(null);
@@ -102,22 +103,24 @@ export default function Level6Section() {
               </div>
             </div>
 
-            <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
-              <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-              <p className="text-base text-mulearn-gray-600 leading-relaxed">
-                <span className="font-semibold text-mulearn-blackish">
-                  Shipping builds accountability
-                </span>
-                , feedback flow, and real-world value. Proof-of-work matures into proof-of-impact.
-              </p>
-              <p className="text-sm text-mulearn-gray-600 leading-relaxed">
-                Students grow into{" "}
-                <span className="font-semibold text-mulearn-blackish">
-                  builders & interdisciplinary collaborators
-                </span>{" "}
-                who create things that others use.
-              </p>
-            </div>
+            <Card className="bg-mulearn-gray-50 rounded-2xl">
+              <CardContent className="p-6 space-y-3">
+                <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
+                <p className="text-base text-mulearn-gray-600 leading-relaxed">
+                  <span className="font-semibold text-mulearn-blackish">
+                    Shipping builds accountability
+                  </span>
+                  , feedback flow, and real-world value. Proof-of-work matures into proof-of-impact.
+                </p>
+                <p className="text-sm text-mulearn-gray-600 leading-relaxed">
+                  Students grow into{" "}
+                  <span className="font-semibold text-mulearn-blackish">
+                    builders & interdisciplinary collaborators
+                  </span>{" "}
+                  who create things that others use.
+                </p>
+              </CardContent>
+            </Card>
           </MotionDiv>
 
           <MotionDiv
@@ -132,7 +135,7 @@ export default function Level6Section() {
                 alt="Build & Ship - Connect"
                 width={384}
                 height={384}
-                className="w-full h-auto"
+                className="w-48 md:w-64 lg:w-80 h-auto"
               />
             </div>
           </MotionDiv>

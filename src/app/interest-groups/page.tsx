@@ -7,6 +7,7 @@ import { useState } from "react";
 import { MotionA, MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { interestGroups } from "@/data/lc-ig";
 
 const workflowSteps = [
@@ -269,7 +270,7 @@ export default function InterestGroups() {
 
           <div className="max-w-md mx-auto relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
+            <Input
               type="text"
               placeholder="Search interest groups..."
               value={searchTerm}
@@ -355,15 +356,20 @@ export default function InterestGroups() {
             Join thousands of learners who are building skills, making connections, and preparing
             for the careers of tomorrow.
           </p>
-          <Link
-            href="https://app.mulearn.org/dashboard/profile"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-trusty-blue rounded-xl font-semibold hover:bg-mulearn-whitish ">
-              Join an Interest Group <ArrowRight className="w-5 h-5" />
+          <div>
+            <Button
+              asChild
+              className="inline-flex items-center gap-2 px-8 py-4  bg-mulearn-whitish text-mulearn-duke-purple rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-mulearn-duke-purple hover:text-mulearn-whitish transition-all duration-300"
+            >
+              <a
+                href="https://app.mulearn.org/dashboard/profile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join an Interest Group <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
-          </Link>
+          </div>
         </MotionDiv>
       </section>
     </div>

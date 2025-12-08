@@ -74,7 +74,7 @@ export default function Features() {
                   setIsHovering(true);
                 }
               }}
-              className={`flex flex-col items-center justify-between p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300
+              className={`flex flex-col items-center p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300 transform-gpu
                 rounded-xl
                 grow
                 min-w-[200px]
@@ -88,7 +88,7 @@ export default function Features() {
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
               }}
             >
-              <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
+              <div className="flex flex-col items-center text-center transition-transform duration-300 px-2 flex-1">
                 <h3
                   className={`font-semibold mb-1 sm:mb-2 transition-all duration-300 ${
                     isCardActive(i) ? "text-[1.4rem]" : isMobile ? "text-base" : "text-[1.1rem]"
@@ -126,9 +126,11 @@ export default function Features() {
                               : 100
                   }
                   height={120}
-                  className="object-cover max-w-full h-auto"
+                  className="object-contain max-w-full h-auto"
+                  style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
                 />
               </div>
+
               <Link href={feature.url} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="mulearn"

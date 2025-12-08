@@ -4,6 +4,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level2Section() {
   const sectionRef = useRef<HTMLElement>(null);

@@ -45,13 +45,14 @@ export default function Opportunities() {
              cursor-pointer min-h-[250px]"
               variants={fadeInUp}
             >
-              <span className="w-full max-w-[150px]">
+              <span className="w-full flex justify-center max-w-[220px] mx-auto">
                 <MuImage
                   src={opportunity.icon}
                   alt={opportunity.name}
-                  width={150}
-                  height={150}
-                  className="w-full h-auto"
+                  width={200}
+                  height={200}
+                  className="w-auto h-auto mx-auto"
+                  style={{ width: "auto", height: "auto", maxHeight: "150px" }}
                 />
               </span>
 

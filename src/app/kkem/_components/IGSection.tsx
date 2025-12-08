@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import type { cardProps, IGSectionProps } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
@@ -91,7 +92,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               variants={fadeInUp}
               transition={{ delay: index * 0.1 }}
             >
-              <Card {...card} link={card.link} largeImg={largeImg} />
+              <CardItem {...card} link={card.link} largeImg={largeImg} />
             </MotionDiv>
           ))}
         </div>
@@ -102,40 +103,43 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
 
 export default IGSection;
 
-const Card = ({ name, image, link, description, largeImg, date }: cardProps) => {
+const CardItem = ({ name, image, link, description, largeImg, date }: cardProps) => {
   return (
     <Link href={link} target="_blank" rel="noopener noreferrer">
-      <div
-        className={`flex flex-col items-start p-4 gap-4 w-[310px] h-[475px] bg-mulearn-whitish shadow-[8px_8px_28px_rgba(0,0,0,0.12)] rounded-[17px] mt-4 mb-4 transition-all duration-300 ease-in-out cursor-pointer
-        hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${
+      <Card
+        className={`flex flex-col items-start gap-4 w-80 h-118 mt-4 mb-4 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:shadow-[10px_10px_30px_rgba(0,0,0,0.15)] ${
           largeImg ? "group" : ""
         }`}
       >
-        <div className="flex justify-center items-center w-[278px] h-[214px] rounded-[17px] overflow-hidden">
-          <MuImage
-            src={image}
-            alt="domain images"
-            width={188}
-            height={200}
-            className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${
-              largeImg ? "group-hover:object-bottom" : ""
-            }`}
-          />
-        </div>
-
-        <p className="font-medium text-[26px] leading-10">{name}</p>
-        <p className="font-light text-[16px] leading-[22px]">{date}</p>
-        <p className="font-light text-[16px] leading-[22px]">{description}</p>
-
-        {link !== "#" ? (
-          <div className="flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
-            <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
-            <SquareArrowOutUpRight />
+        <CardContent className="p-4 pb-12 bg-mulearn-whitish shadow-[8px_8px_28px_rgba(0,0,0,0.12)] rounded-[17px] h-full flex flex-col">
+          <div className="flex justify-center items-center w-[278px] h-[214px] rounded-[17px] overflow-hidden">
+            <MuImage
+              src={image}
+              alt="domain images"
+              width={188}
+              height={200}
+              className={`object-cover w-full h-full object-top transition-all duration-300 ease-in-out ${
+                largeImg ? "group-hover:object-bottom" : ""
+              }`}
+            />
           </div>
-        ) : (
-          <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
-        )}
-      </div>
+
+          <p className="font-medium text-[26px] leading-10">{name}</p>
+          <p className="font-light text-[16px] leading-[22px]">{date}</p>
+          <p className="font-light text-[16px] leading-[22px]">{description}</p>
+
+          {link !== "#" ? (
+            <div className="mt-auto flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
+              <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
+              <SquareArrowOutUpRight />
+            </div>
+          ) : (
+            <div className="mt-auto">
+              <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </Link>
   );
 };

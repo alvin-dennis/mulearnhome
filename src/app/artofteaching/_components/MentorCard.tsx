@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/services/cdn";
 
 interface MentorCardProps {
@@ -12,20 +13,23 @@ interface MentorCardProps {
 
 const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => {
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
+  // const mentorImage = image ? image : fallbackImage;
   const mentorImage = image ? fallbackImage : undefined;
 
   return (
-    <div className="mx-auto mt-4 max-w-sm w-full shadow-lg rounded-lg p-6 bg-white border border-gray-100">
-      <div className="flex justify-between items-start mb-4">
+    <Card className="mx-auto mt-4 max-w-sm w-full overflow-hidden">
+      <CardContent className="flex flex-col items-center text-center">
         {mentorImage && (
-          <MuImage
-            src={mentorImage}
-            alt={`${name} profile`}
-            width={80}
-            height={80}
-            className="object-cover w-20 h-20 rounded-md"
-            loading="lazy"
-          />
+          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-gray-50">
+            <MuImage
+              src={mentorImage}
+              alt={`${name} profile`}
+              width={128}
+              height={128}
+              className="object-cover w-full h-full"
+              loading="lazy"
+            />
+          </div>
         )}
         <div className="flex flex-col items-end">
           {linkedIn && linkedIn !== "" && (
@@ -34,11 +38,11 @@ const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => 
             </Link>
           )}
         </div>
-      </div>
+      </CardContent>
 
       <h3 className="text-lg font-semibold text-mulearn-blackish mt-4 mb-2">{name}</h3>
       <p className="text-sm text-gray-600 leading-relaxed">{designation}</p>
-    </div>
+    </Card>
   );
 };
 

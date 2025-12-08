@@ -1,5 +1,6 @@
 "use client";
 import { Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -107,20 +108,21 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
         <p className="text-mulearn-gray-700  leading-relaxed">&quot;{testimonial.quote}&quot;</p>
       </blockquote>
 
-      {}
-      <div className="flex items-center justify-between pt-4 border-t border-mulearn-gray-100">
-        <StarRating rating={testimonial.rating} />
+      <CardFooter className="pt-0">
+        <div className="flex items-center justify-between pt-4 border-t border-mulearn-gray-100">
+          <StarRating rating={testimonial.rating} />
 
-        <div className="flex items-center gap-2 text-sm text-mulearn-gray-500">
-          {testimonial.socialProof && (
-            <>
-              {getSocialIcon(testimonial.socialProof)}
-              <span className="">{testimonial.socialProof}</span>
-            </>
-          )}
-          <span className="">{formatDate(testimonial.date)}</span>
+          <div className="flex items-center gap-2 text-sm text-mulearn-gray-500">
+            {testimonial.socialProof && (
+              <>
+                {getSocialIcon(testimonial.socialProof)}
+                <span className="">{testimonial.socialProof}</span>
+              </>
+            )}
+            <span className="">{formatDate(testimonial.date)}</span>
+          </div>
         </div>
-      </div>
+      </CardFooter>
     </div>
   );
 }

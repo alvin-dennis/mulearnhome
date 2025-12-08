@@ -7,7 +7,7 @@ import MuLoader from "@/components/Loader";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
-import type { TextTestimonial, VideoTestimonial } from "@/lib/types";
+import type { Counts, TextTestimonial, VideoTestimonial } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
 import VideoCarousel from "./_components/VideoCarousel";
@@ -41,17 +41,92 @@ export default function TestimonialsPage() {
     fetchTestimonials();
   }, []);
 
-  const stats = [
-    { icon: Users, number: "50K+", label: "Active Learners" },
-    { icon: Star, number: "500+", label: "Expert Mentors" },
-    { icon: TrendingUp, number: "100+", label: "Partner Companies" },
-  ];
+  // Live counts websocket (same feed used by Stats.tsx) so numbers stay up-to-date
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useState<{ current: WebSocket | null }>({ current: null });
+
+  useEffect(() => {
+    if (!socketRef[0].current) {
+      try {
+        const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
+        socketRef[0].current = socket;
+        const handleMessage = (event: MessageEvent) => {
+          try {
+            setCounts(JSON.parse(event.data) as Counts);
+          } catch (e) {
+            void e;
+          }
+        };
+        const handleError = (ev: Event) => void ev;
+        socket.addEventListener("message", handleMessage);
+        socket.addEventListener("error", handleError);
+        return () => {
+          socket.removeEventListener("message", handleMessage);
+          socket.removeEventListener("error", handleError);
+          socket.close();
+          socketRef[0].current = null;
+        };
+      } catch (e) {
+        void e;
+      }
+    }
+  }, []);
+
+  const formatNumber = (n: number | undefined) => {
+    if (n == null) return "0";
+    if (n >= 1000000) return Math.floor(n / 1000000) + "M+";
+    if (n >= 1000) return n.toLocaleString() + "+";
+    return String(n) + "+";
+  };
+
+  const stats = counts
+    ? [
+        { icon: Users, number: formatNumber(counts.members), label: "Active Learners" },
+        {
+          icon: Star,
+          number: formatNumber(
+            counts.enablers_mentors_count?.reduce(
+              (s: number, r: { role_count?: number }) => s + (r.role_count || 0),
+              0,
+            ) || 0,
+          ),
+          label: "Expert Mentors",
+        },
+        {
+          icon: TrendingUp,
+          number: formatNumber(
+            counts.org_type_counts?.reduce(
+              (s: number, o: { org_count?: number }) => s + (o.org_count || 0),
+              0,
+            ) || 0,
+          ),
+          label: "Partner Companies",
+        },
+      ]
+    : [
+        { icon: Users, number: "50K+", label: "Active Learners" },
+        { icon: Star, number: "500+", label: "Expert Mentors" },
+        { icon: TrendingUp, number: "100+", label: "Partner Companies" },
+      ];
+
+  const formatMobileNumber = (raw: string) => {
+    // extract digits from string like "62,783+" or "1990+" or "50K+"
+    const digitsStr = (raw || "").replace(/[^0-9]/g, "");
+    const n = parseInt(digitsStr || "0", 10);
+    if (!n) return raw;
+    if (n >= 1000) {
+      // if >=10,000 show rounded k (no decimals), else show one decimal place
+      if (n >= 10000) return Math.round(n / 1000) + "k+";
+      return Math.round(n / 100) / 10 + "k+";
+    }
+    return raw;
+  };
 
   return (
     <div className="min-h-screen">
       {}
       <div className="relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-32 pb-12 sm:pb-24">
           <MotionDiv
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -59,7 +134,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.8 }}
           >
             <MotionH1
-              className=" text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
+              className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -67,7 +142,7 @@ export default function TestimonialsPage() {
               Voices of <span className="text-mulearn">Impact</span>
             </MotionH1>
             <MotionP
-              className="text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-8"
+              className="text-base sm:text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -78,7 +153,7 @@ export default function TestimonialsPage() {
 
             {}
             <MotionDiv
-              className="flex justify-center items-center gap-8 mt-12"
+              className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -106,35 +181,33 @@ export default function TestimonialsPage() {
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
-            <div className="flex bg-mulearn-gray-100 rounded-2xl p-1 my-6">
-              <button
+            <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 my-6 max-w-full">
+              <Button
                 onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "video"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                variant={activeTab === "video" ? "mulearn" : "ghost"}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
+                  activeTab === "video" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
               >
                 <Video className="w-5 h-5" />
                 Video Testimonials
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={() => setActiveTab("text")}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl  font-medium transition-all duration-300 ${
-                  activeTab === "text"
-                    ? "bg-mulearn-whitish text-mulearn-trusty-blue shadow-sm"
-                    : "text-mulearn-gray-600 hover:text-mulearn-trusty-blue"
+                variant={activeTab === "text" ? "mulearn" : "ghost"}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
+                  activeTab === "text" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
               >
                 <MessageCircle className="w-5 h-5" />
                 Community Feedback
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="py-20">
+      <div className="py-12 sm:py-20">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32">
             <MuLoader />
@@ -193,8 +266,8 @@ export default function TestimonialsPage() {
         )}
       </div>
 
-      <div className="py-20 mb-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="py-12 sm:py-20 mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +292,7 @@ export default function TestimonialsPage() {
               <Link href="/contact" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="mulearn"
-                  className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="border-2 border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 >
                   Share Your Experience
                 </Button>

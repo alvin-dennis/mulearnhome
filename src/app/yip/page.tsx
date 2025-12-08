@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { yip } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 
@@ -144,82 +145,88 @@ export default function YipPage() {
     <main className="min-h-screen w-full text-mulearn-blackish">
       <section className="max-w-[1600px] mx-auto">
         <div className="flex flex-row justify-center items-stretch mt-8 mx-4 flex-wrap relative">
-          <div className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
-            <div className="bg-mulearn-whitish flex flex-row z-0 rounded-[25px] relative">
-              <div className="p-8">
-                <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
-                  Kerala&apos;s Biggest{" "}
-                  <strong className="font-bold text-mulearn">
-                    Innovation Celebration is here!
-                  </strong>
-                </h2>
-                <br />
+          <Card className="max-w-[855px] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 relative">
+            <CardContent className="p-0">
+              <div className="bg-mulearn-whitish flex flex-row z-0 rounded-[25px] relative">
+                <div className="p-8">
+                  <h2 className="text-[2.5rem] leading-[47px] max-w-[28rem] tracking-[0.02em] capitalize text-mulearn-blackish">
+                    Kerala&apos;s Biggest{" "}
+                    <strong className="font-bold text-mulearn">
+                      Innovation Celebration is here!
+                    </strong>
+                  </h2>
+                  <br />
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/lines.png")}
+                    alt="Decorative lines"
+                    width={240}
+                    height={30}
+                    className="mt-[-3rem] max-w-[15rem] h-auto"
+                  />
+                  <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
+                    Young Innovators Programme 5.0
+                  </p>
+                </div>
                 <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/lines.png")}
-                  alt="Decorative lines"
-                  width={240}
-                  height={30}
-                  className="mt-[-3rem] max-w-[15rem] h-auto"
+                  src={cdnUrl("src/modules/Public/yip/assets/boxoneimg.png")}
+                  alt="YIP celebration graphic"
+                  width={380}
+                  height={288}
+                  className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
                 />
-                <p className="mt-[-2rem] mb-8 font-medium text-[1.5rem] max-w-[20rem] leading-[33px] capitalize text-mulearn">
-                  Young Innovators Programme 5.0
+              </div>
+              <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant={"mulearn"}
+                  className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
+                >
+                  Apply Now
+                </Button>
+              </Link>
+              <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
+                <p>
+                  YIP 5.0 is here and{" "}
+                  <strong className="font-bold text-mulearn">
+                    it&apos;s bigger and more impactful than ever before!
+                  </strong>{" "}
+                  Backed by the Kerala government.
+                  <br />
+                  <br />
+                  This year&apos;s initiative provides an incredible opportunity for{" "}
+                  <strong className="font-bold text-mulearn">
+                    college and university students
+                  </strong>{" "}
+                  to showcase their innovation skills and create{" "}
+                  <strong className="font-bold text-mulearn">real-world impact</strong>.
                 </p>
               </div>
-              <MuImage
-                src={cdnUrl("src/modules/Public/yip/assets/boxoneimg.png")}
-                alt="YIP celebration graphic"
-                width={380}
-                height={288}
-                className="absolute right-4 bottom-0 h-[18rem] rounded-[0_0_25px_0] w-auto max-[685px]:hidden"
-              />
-            </div>
-            <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant={"mulearn"}
-                className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
-              >
-                Apply Now
-              </Button>
-            </Link>
-            <div className="mt-8 p-8 text-[1.35rem] leading-[30px]">
-              <p>
-                YIP 5.0 is here and{" "}
-                <strong className="font-bold text-mulearn">
-                  it&apos;s bigger and more impactful than ever before!
-                </strong>{" "}
-                Backed by the Kerala government.
-                <br />
-                <br />
-                This year&apos;s initiative provides an incredible opportunity for{" "}
-                <strong className="font-bold text-mulearn">college and university students</strong>{" "}
-                to showcase their innovation skills and create{" "}
-                <strong className="font-bold text-mulearn">real-world impact</strong>.
-              </p>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           <div className="max-[1460px]:flex max-[1460px]:flex-row max-[1460px]:justify-between max-[1460px]:flex-wrap max-[1048px]:flex-col max-[1048px]:items-center max-[1048px]:justify-center">
-            <div className="max-w-[538px] min-w-[20rem] p-8 shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 flex flex-col justify-stretch transition-all duration-300">
-              <h3 className="font-medium text-[2.25rem] leading-[47px] tracking-[0.02em] capitalize ml-4 text-right max-[490px]:text-center">
-                Download the <br /> YIP App Now!
-              </h3>
-              <div className="flex flex-row-reverse justify-between flex-wrap max-[490px]:flex-col max-[490px]:items-center">
-                <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/qrcode.png")}
-                  alt="YIP App QR code"
-                  width={192}
-                  height={192}
-                  className="h-[12rem] w-auto max-[490px]:mt-8"
-                />
-                <MuImage
-                  src={cdnUrl("src/modules/Public/yip/assets/cat.png")}
-                  alt="Mascot"
-                  width={192}
-                  height={192}
-                  className="h-[12rem] scale-x-[-1] w-auto max-[460px]:hidden"
-                />
-              </div>
-            </div>
+            <Card className="max-w-[538px] min-w-[20rem] shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 transition-all duration-300">
+              <CardContent className="p-8 flex flex-col justify-stretch">
+                <h3 className="font-medium text-[2.25rem] leading-[47px] tracking-[0.02em] capitalize ml-4 text-right max-[490px]:text-center">
+                  Download the <br /> YIP App Now!
+                </h3>
+                <div className="flex flex-row-reverse justify-between flex-wrap max-[490px]:flex-col max-[490px]:items-center">
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/qrcode.png")}
+                    alt="YIP App QR code"
+                    width={192}
+                    height={192}
+                    className="h-[12rem] w-auto max-[490px]:mt-8"
+                  />
+                  <MuImage
+                    src={cdnUrl("src/modules/Public/yip/assets/cat.png")}
+                    alt="Mascot"
+                    width={192}
+                    height={192}
+                    className="h-[12rem] scale-x-[-1] w-auto max-[460px]:hidden"
+                  />
+                </div>
+              </CardContent>
+            </Card>
 
             <div className="max-w-[538px] p-8 shadow-[0px_0px_23px_rgba(130,177,255,0.22)] rounded-[25px] m-4 flex flex-col items-center transition-all duration-300">
               <h3 className="font-medium text-[2.25rem] leading-[36px] capitalize text-mulearn-blackish max-[768px]:text-[1.75rem]">

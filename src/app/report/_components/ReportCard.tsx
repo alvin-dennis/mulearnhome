@@ -5,7 +5,7 @@ import { Calendar, ChevronRight, Download, FileText } from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import type { AnnualReport } from "@/lib/types";
 
 interface ReportCardProps {
@@ -70,7 +70,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
           </div>
 
           {}
-          <div className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">
+          <CardContent className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-mulearn-gray-600 text-sm mb-3">
                 <Calendar className="w-4 h-4" />
@@ -109,17 +109,19 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
             </div>
 
             {}
-            <div className="flex justify-start">
-              <Button
-                onClick={onDownload}
-                variant="mulearn"
-                className="group/btn px-6 py-3 text-base font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
-              >
-                <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
-                Download PDF
-              </Button>
-            </div>
-          </div>
+            <CardFooter className="p-0">
+              <div className="flex justify-start">
+                <Button
+                  onClick={onDownload}
+                  variant="mulearn"
+                  className="group/btn px-6 py-3 text-base font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
+                >
+                  <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
+                  Download PDF
+                </Button>
+              </div>
+            </CardFooter>
+          </CardContent>
         </div>
       </Card>
     </MotionDiv>

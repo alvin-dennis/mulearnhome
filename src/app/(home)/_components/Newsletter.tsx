@@ -1,6 +1,7 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MotionH2, MotionSection } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -41,18 +42,18 @@ export default function Newsletter() {
             variants={fadeInUp}
             className="flex flex-col gap-4 w-full mb-4 flex-wrap justify-center items-center px-4"
           >
-            <input
+            <Input
               type="email"
               name="email"
               required
               placeholder="E-mail"
-              className="py-3 px-4 border border-mulearn-gray-600 rounded-lg text-base max-w-[500px] w-full sm:w-[400px] bg-mulearn-whitish transition-all duration-200 focus:border-[1.5px] focus:border-mulearn-trusty-blue focus:outline-none"
+              className="max-w-[500px] w-full sm:w-[400px]"
             />
-            <input
+            <Input
               type="text"
               name="name"
               placeholder="Name (optional)"
-              className="py-3 px-4 border border-mulearn-gray-600 rounded-lg text-base max-w-[500px] w-full sm:w-[400px] bg-mulearn-whitish transition-all duration-200 focus:border-[1.5px] focus:border-mulearn-trusty-blue focus:outline-none"
+              className="max-w-[500px] w-full sm:w-[400px]"
             />
           </MotionDiv>
 
