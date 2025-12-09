@@ -1,6 +1,7 @@
 import { Lightbulb } from "lucide-react";
 import { Fragment } from "react";
 import { FaDiscord } from "react-icons/fa";
+import { Card, CardContent } from "@/components/ui/card";
 import type { OnboardingStep } from "@/lib/types";
 
 interface OnboardingStepsProps {
@@ -26,20 +27,25 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
       <div className="hidden lg:flex justify-center items-start relative gap-8">
         {data.map((step, index) => (
           <Fragment key={step.step}>
-            <div className="flex flex-col items-center flex-1 max-w-sm text-center px-4 relative z-10">
-              <div className="relative mb-6">
-                <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                  {getStepIcon(step.step)}
+            <Card
+              variant="hoverable"
+              className="flex-1 max-w-sm border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+            >
+              <CardContent className="flex flex-col items-center text-center p-6">
+                <div className="relative mb-6">
+                  <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    {getStepIcon(step.step)}
+                  </div>
+
+                  <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
+                    0{step.step}
+                  </span>
                 </div>
 
-                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
-                  0{step.step}
-                </span>
-              </div>
-
-              <h3 className="mb-3">{step.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-            </div>
+                <h3 className="mb-3">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+              </CardContent>
+            </Card>
 
             {index < data.length - 1 && (
               <div className="flex items-center mt-16">
@@ -53,19 +59,21 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
       <div className="lg:hidden flex flex-col items-center space-y-8">
         {data.map((step, index) => (
           <Fragment key={step.step}>
-            <div className="flex flex-col items-center max-w-md text-center">
-              <div className="relative mb-4">
-                <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                  {getStepIcon(step.step)}
+            <Card className="max-w-md border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5">
+              <CardContent className="flex flex-col items-center text-center p-6">
+                <div className="relative mb-4">
+                  <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    {getStepIcon(step.step)}
+                  </div>
+                  <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
+                    0{step.step}
+                  </span>
                 </div>
-                <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
-                  0{step.step}
-                </span>
-              </div>
 
-              <h3 className="mb-2">{step.title}</h3>
-              <p className="text-sm text-gray-600">{step.description}</p>
-            </div>
+                <h3 className="mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-600">{step.description}</p>
+              </CardContent>
+            </Card>
 
             {index < data.length - 1 && (
               <div className="text-mulearn-blackish">

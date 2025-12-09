@@ -1,4 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
+import { Card, CardContent } from "@/components/ui/card";
 import { campusChapter } from "@/data/campus";
 
 export default function Structure() {
@@ -26,11 +27,17 @@ export default function Structure() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="rounded-2xl p-6 text-center shadow-sm transition-all border hover:scale-105 hover:shadow-md"
               >
-                <div className="mb-2 text-3xl font-bold text-mulearn">{item.value}</div>
-                <div className="mb-1 font-semibold text-mulearn-blackish">{item.label}</div>
-                <div className="text-sm text-mulearn-gray-600">{item.desc}</div>
+                <Card
+                  variant="interactive"
+                  className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-2 text-3xl font-bold text-mulearn">{item.value}</div>
+                    <div className="mb-1 font-semibold text-mulearn-blackish">{item.label}</div>
+                    <div className="text-sm text-mulearn-gray-600">{item.desc}</div>
+                  </CardContent>
+                </Card>
               </MotionDiv>
             ))}
           </div>

@@ -13,10 +13,10 @@ export default function Apply() {
         transition={{ duration: 0.6 }}
         className="rounded-3xl bg-mulearn p-12 text-center shadow-xl lg:p-16"
       >
-        <h2 className="mb-4 font-serif text-4xl font-bold text-primary-foreground lg:text-5xl">
+        <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-primary-foreground lg:text-5xl">
           Ready to Start?
         </h2>
-        <p className="mb-8 text-xl text-primary-foreground/90">
+        <p className="mb-8 text-lg sm:text-xl text-primary-foreground/90">
           Join the movement. Build your community. Create impact.
         </p>
         <Link
@@ -26,7 +26,7 @@ export default function Apply() {
         >
           <Button
             variant="mulearn-inverted"
-            className="rounded-2xl group inline-flex items-center text-center justify-center gap-2 px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto"
+            className="rounded-xl group inline-flex items-center text-center justify-center gap-2 px-4 py-3 text-base md:px-8 w-auto"
           >
             Apply to Start a Chapter
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

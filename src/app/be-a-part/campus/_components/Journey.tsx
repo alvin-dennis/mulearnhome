@@ -1,4 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
+import { Card, CardContent } from "@/components/ui/card";
 import { campusChapter } from "@/data/campus";
 
 export default function Journey() {
@@ -36,16 +37,23 @@ export default function Journey() {
                 >
                   <div className={`flex items-center ${isLeft ? "justify-end" : "justify-start"}`}>
                     <div className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"}`}>
-                      <div className="bg-mulearn-whitish p-6 rounded-2xl shadow-sm border hover:shadow-md transition-shadow duration-300">
-                        <div
-                          className={`flex items-center gap-3 mb-3 ${
-                            isLeft ? "justify-end" : "justify-start"
-                          }`}
-                        >
-                          <h3 className="text-xl font-bold text-mulearn-blackish">{step.title}</h3>
-                        </div>
-                        <p className="text-mulearn-gray-600 leading-relaxed">{step.desc}</p>
-                      </div>
+                      <Card
+                        variant="hoverable"
+                        className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+                      >
+                        <CardContent className="p-6">
+                          <div
+                            className={`flex items-center gap-3 mb-3 ${
+                              isLeft ? "justify-end" : "justify-start"
+                            }`}
+                          >
+                            <h3 className="text-xl font-bold text-mulearn-blackish">
+                              {step.title}
+                            </h3>
+                          </div>
+                          <p className="text-mulearn-gray-600 leading-relaxed">{step.desc}</p>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
 
@@ -88,10 +96,12 @@ export default function Journey() {
                     </div>
                   </div>
 
-                  <div className="bg-mulearn-whitish p-6 rounded-xl shadow-sm border">
-                    <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
-                    <p className="text-mulearn-gray-600 text-sm leading-relaxed">{step.desc}</p>
-                  </div>
+                  <Card className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5">
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
+                      <p className="text-mulearn-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                    </CardContent>
+                  </Card>
                 </MotionDiv>
               );
             })}

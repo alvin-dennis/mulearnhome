@@ -2,6 +2,7 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Programs() {
   return (
@@ -18,60 +19,62 @@ export default function Programs() {
             <span className="text-mulearn">Project</span>
           </h2>
 
-          <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-mulearn-greyish bg-blue-50/50 p-6 shadow-lg md:p-8">
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <MotionDiv
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative"
-              >
-                <div className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-linear-to-br from-amber-100 to-amber-50 shadow-md">
-                  <div className="relative aspect-video overflow-hidden rounded-xl shadow-md">
-                    <YouTubeEmbed
-                      videoid="r5izRx-4j68"
-                      style="border-none"
-                      playlabel="true"
-                      params="disablekb=1&enablejsapi=1&playsinline=1"
-                    />
+          <Card className="mx-auto max-w-5xl overflow-hidden border-mulearn/20 bg-gradient-to-br from-blue-50/50 to-mulearn/5 shadow-lg">
+            <CardContent className="p-6 md:p-8">
+              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                <MotionDiv
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative"
+                >
+                  <div className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-linear-to-br from-amber-100 to-amber-50 shadow-md">
+                    <div className="relative aspect-video overflow-hidden rounded-xl shadow-md">
+                      <YouTubeEmbed
+                        videoid="r5izRx-4j68"
+                        style="border-none"
+                        playlabel="true"
+                        params="disablekb=1&enablejsapi=1&playsinline=1"
+                      />
+                    </div>
                   </div>
-                </div>
-              </MotionDiv>
+                </MotionDiv>
 
-              <MotionDiv
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="flex flex-col justify-center"
-              >
-                <h3 className=" mb-4 text-2xl font-bold text-mulearn-blackish md:text-3xl">
-                  Art of Teaching - <span className="text-mulearn">Teach contest</span>
-                </h3>
-                <p className=" mb-6 text-sm leading-relaxed text-mulearn-gray-600 md:text-base">
-                  Art of Teaching is an annual event that spotlights enablers&apos; teaching
-                  talents. They can showcase their skills through videos, simplifying concepts for
-                  students. In the last edition, we received 150+ video entries and rewarded winners
-                  with cash prizes.
-                </p>
-                <div>
-                  <Link
-                    href="https://mulearnfoundation.notion.site/artofteaching-guidelines"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      variant="mulearn"
-                      className=" px-6 py-3 text-sm font-semibold md:text-base"
+                <MotionDiv
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="flex flex-col justify-center"
+                >
+                  <h3 className=" mb-4 text-2xl font-bold text-mulearn-blackish md:text-3xl">
+                    Art of Teaching - <span className="text-mulearn">Teach contest</span>
+                  </h3>
+                  <p className=" mb-6 text-sm leading-relaxed text-mulearn-gray-600 md:text-base">
+                    Art of Teaching is an annual event that spotlights enablers&apos; teaching
+                    talents. They can showcase their skills through videos, simplifying concepts for
+                    students. In the last edition, we received 150+ video entries and rewarded
+                    winners with cash prizes.
+                  </p>
+                  <div>
+                    <Link
+                      href="https://mulearnfoundation.notion.site/artofteaching-guidelines"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Know More
-                    </Button>
-                  </Link>
-                </div>
-              </MotionDiv>
-            </div>
-          </div>
+                      <Button
+                        variant="mulearn"
+                        className=" px-6 py-3 text-sm font-semibold md:text-base"
+                      >
+                        Know More
+                      </Button>
+                    </Link>
+                  </div>
+                </MotionDiv>
+              </div>
+            </CardContent>
+          </Card>
         </MotionDiv>
       </div>
     </section>
