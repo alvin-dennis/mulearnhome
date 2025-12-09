@@ -1,4 +1,5 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { Card } from "@/components/ui/card";
 import { artOfTeachingUrls } from "@/data/events";
 
 const FirstEdition = () => {
@@ -17,16 +18,18 @@ const FirstEdition = () => {
             </p>
           </div>
           <div className="w-full lg:w-2/5 mt-8 lg:mt-0">
-            <div className="relative w-full rounded-lg overflow-hidden aspect-video">
-              <div className="absolute top-0 left-0 w-full h-full">
-                <YouTubeEmbed
-                  videoid={artOfTeachingUrls.firstEdition}
-                  style="width:100%;height:100%;border:none;"
-                  playlabel="true"
-                  params="disablekb=1&enablejsapi=1&playsinline=1&modestbranding=1"
-                />
+            <Card variant="hoverable" className="overflow-hidden border-mulearn/10 shadow-lg">
+              <div className="relative w-full aspect-video">
+                <div className="absolute top-0 left-0 w-full h-full">
+                  <YouTubeEmbed
+                    videoid={artOfTeachingUrls.firstEdition}
+                    style="width:100%;height:100%;border:none;"
+                    playlabel="true"
+                    params="disablekb=1&enablejsapi=1&playsinline=1&modestbranding=1"
+                  />
+                </div>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>
