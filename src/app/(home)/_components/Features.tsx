@@ -45,7 +45,7 @@ export default function Features() {
         viewport={{ once: true }}
       >
         <div className="pt-10 sm:pt-12">
-          <h1 className="text-left max-w-140">
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
             What <span className="text-mulearn">µLearn</span> offers
           </h1>
         </div>
@@ -74,40 +74,45 @@ export default function Features() {
                   setIsHovering(true);
                 }
               }}
-              className={`flex flex-col items-center p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300 transform-gpu
+              className={`flex flex-col items-center justify-between p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300
                 rounded-xl
+                overflow-hidden
                 grow
                 min-w-[200px]
                 sm:min-w-[240px]
                 md:min-w-[250px]
                 lg:min-w-[360px]
-                ${isCardActive(i) ? "flex-[2]" : "flex-1"}
-                ${isMobile ? "h-auto" : "h-[300px]"}
                 `}
               style={{
                 backgroundColor: isCardActive(i) ? feature.bgColor : "white",
+                flex: isCardActive(i) ? 2 : 1,
+                height: isMobile ? "auto" : "350px",
               }}
             >
-              <div className="flex flex-col items-center text-center transition-transform duration-300 px-2 flex-1">
+              <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
                 <h3
-                  className={`font-semibold mb-1 sm:mb-2 transition-all duration-300 ${
-                    isCardActive(i) ? "text-[1.4rem]" : isMobile ? "text-base" : "text-[1.1rem]"
-                  }`}
+                  className="font-semibold mb-1 sm:mb-2 transition-all duration-300"
+                  style={{
+                    fontSize: isCardActive(i) ? "1.4rem" : isMobile ? "1rem" : "1.1rem",
+                  }}
                 >
                   {feature.title}
                 </h3>
                 <p
-                  className={`transition-all duration-300 text-mulearn-blackish leading-tight ${
-                    isCardActive(i) ? "text-base" : "text-[0.9rem]"
-                  }`}
+                  className="transition-all duration-300 text-mulearn-blackish leading-tight"
+                  style={{
+                    fontSize: isCardActive(i) ? "1rem" : isMobile ? "0.9rem" : "0.9rem",
+                  }}
                 >
                   {feature.description}
                 </p>
               </div>
               <div
-                className={`relative transition-transform duration-300 mb-2 sm:mb-0 w-full flex justify-center ${
-                  isCardActive(i) ? "scale-110" : "scale-100"
-                }`}
+                className="relative transition-transform duration-300 mb-4 w-full flex items-center justify-center"
+                style={{
+                  height: "140px",
+                  minHeight: "140px",
+                }}
               >
                 <MuImage
                   src={feature.image}
@@ -126,11 +131,10 @@ export default function Features() {
                               : 100
                   }
                   height={120}
-                  className="object-contain max-w-full h-auto"
-                  style={{ width: "auto", maxHeight: isCardActive(i) ? "150px" : "120px" }}
+                  className="object-contain max-w-full max-h-full"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
-
               <Link href={feature.url} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="mulearn"
