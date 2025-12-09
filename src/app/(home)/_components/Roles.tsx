@@ -4,6 +4,7 @@ import type { Variants } from "framer-motion";
 import { useState } from "react";
 import { MotionDiv, MotionNav, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -11,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { rolesContent, rolesTitle } from "@/data/home";
 import type { Role, RoleItem } from "@/lib/types";
 
@@ -41,63 +43,72 @@ export default function Roles() {
         </h6>
       </MotionDiv>
 
-      <div className=" flex flex-col w-full mb-6 items-center justify-center sm:hidden">
-        <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-          <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
-            <SelectValue placeholder="Select Role" />
-          </SelectTrigger>
-          <SelectContent>
-            {rolesTitle.map((role: Role) => (
-              <SelectItem key={role.id} value={role.id}>
-                {role.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+      <Tabs value={activeRole} onValueChange={setActiveRole} className="w-full">
+        <div className="flex flex-col w-full mb-6 items-center justify-center sm:hidden">
+          <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
+            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
+              <SelectValue placeholder="Select Role" />
+            </SelectTrigger>
+            <SelectContent>
+              {rolesTitle.map((role: Role) => (
+                <SelectItem key={role.id} value={role.id}>
+                  {role.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
 
-      <MotionNav className="hidden sm:flex justify-center mb-10" variants={fadeInUp}>
-        <ul className="list-none flex gap-5 p-0 m-0">
+        <TabsList className="hidden sm:flex justify-center mb-10 h-auto bg-transparent">
           {rolesTitle.map((role: Role) => (
-            <li
+            <TabsTrigger
               key={role.id}
-              className={`text-base cursor-pointer px-[15px] py-2.5 transition-all duration-300 ease-in-out border-b-2 ${
-                activeRole === role.id
-                  ? "font-bold border-mulearn-blackish"
-                  : "border-transparent hover:text-mulearn-trusty-blue"
-              }`}
-              onClick={() => setActiveRole(role.id)}
+              value={role.id}
+              className="text-base px-4 py-2.5 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-mulearn data-[state=active]:font-bold data-[state=active]:text-mulearn rounded-none"
             >
               {role.label}
-            </li>
+            </TabsTrigger>
           ))}
-        </ul>
-      </MotionNav>
+        </TabsList>
 
-      <MotionDiv
-        className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5 px-5"
-        variants={fadeInUp}
-      >
-        {rolesContent[activeRole].map((item: RoleItem) => (
-          <MotionDiv
-            key={item.id}
-            className="bg-mulearn-greyish/20 rounded-lg overflow-hidden text-center p-5 transition-transform duration-300 ease-in-out hover:-translate-y-[5px]"
-            variants={fadeInUp}
-          >
-            <MuImage
-              src={item.image}
-              alt={item.name}
-              width={300}
-              height={200}
-              className="w-full min-h-[220px] mb-2.5 object-cover"
-            />
-            <h6 className="text-[1.1rem] font-bold text-mulearn-blackish m-0 mb-2">{item.name}</h6>
-            <p className="text-[0.85rem] font-normal text-center text-mulearn-gray-600">
-              {item.description}
-            </p>
-          </MotionDiv>
+        {rolesTitle.map((role: Role) => (
+          <TabsContent key={role.id} value={role.id} className="mt-0">
+            <MotionDiv
+              className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5 px-5"
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              {rolesContent[role.id].map((item: RoleItem) => (
+                <MotionDiv key={item.id} variants={fadeInUp}>
+                  <Card
+                    variant="hoverable"
+                    className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+                  >
+                    <CardHeader className="p-0">
+                      <MuImage
+                        src={item.image}
+                        alt={item.name}
+                        width={300}
+                        height={200}
+                        className="w-full min-h-[220px] object-cover rounded-t-lg"
+                      />
+                    </CardHeader>
+                    <CardContent className="p-5 text-center">
+                      <CardTitle className="text-[1.1rem] font-bold text-mulearn-blackish mb-2">
+                        {item.name}
+                      </CardTitle>
+                      <CardDescription className="text-[0.85rem] font-normal text-mulearn-gray-600">
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
+          </TabsContent>
         ))}
-      </MotionDiv>
+      </Tabs>
     </MotionSection>
   );
 }

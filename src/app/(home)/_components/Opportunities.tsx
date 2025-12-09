@@ -1,6 +1,7 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { opportunities } from "@/data/home";
 
 const fadeInUp: Variants = {
@@ -32,29 +33,29 @@ export default function Opportunities() {
         </MotionDiv>
 
         <MotionDiv
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-4 gap-8 justify-center border-none"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-4 gap-8 justify-center"
           variants={fadeInUp}
         >
           {opportunities.map((opportunity) => (
-            <MotionDiv
-              key={opportunity.id}
-              className="flex flex-col items-center justify-start py-12 px-8 bg-mulearn-greyish/20 
-             transition-all rounded-lg duration-500 ease-in-out hover:-translate-y-[5px] 
-             cursor-pointer min-h-[250px]"
-              variants={fadeInUp}
-            >
-              <span className="w-full flex justify-center max-w-[220px] mx-auto">
-                <MuImage
-                  src={opportunity.icon}
-                  alt={opportunity.name}
-                  width={200}
-                  height={200}
-                  className="w-auto h-auto mx-auto"
-                  style={{ width: "auto", height: "auto", maxHeight: "150px" }}
-                />
-              </span>
-
-              <h6 className="text-xl font-semibold text-center mt-auto">{opportunity.name}</h6>
+            <MotionDiv key={opportunity.id} variants={fadeInUp}>
+              <Card
+                variant="hoverable"
+                className="flex flex-col items-center justify-start h-full min-h-[250px] bg-gradient-to-br from-white to-mulearn/5 border-mulearn/10 cursor-pointer"
+              >
+                <CardContent className="flex flex-col items-center justify-between h-full py-12 px-8">
+                  <span className="w-full flex justify-center max-w-[220px] mx-auto mb-4">
+                    <MuImage
+                      src={opportunity.icon}
+                      alt={opportunity.name}
+                      width={200}
+                      height={200}
+                      className="w-auto h-auto mx-auto"
+                      style={{ width: "auto", height: "auto", maxHeight: "150px" }}
+                    />
+                  </span>
+                  <h6 className="text-xl font-semibold text-center mt-auto">{opportunity.name}</h6>
+                </CardContent>
+              </Card>
             </MotionDiv>
           ))}
         </MotionDiv>
