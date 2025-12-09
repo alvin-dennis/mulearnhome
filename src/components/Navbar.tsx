@@ -140,7 +140,7 @@ export default function Navbar() {
           <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               variant={"mulearn"}
-              className="w-full p-4 font-semibold"
+              className="w-full py-2 px-8 font-semibold text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/login"))}
             >
               {refreshToken ? "Dashboard" : "Login"}
