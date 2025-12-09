@@ -89,13 +89,6 @@ const CareersCard = ({
             </a>
           </Button>
         )}
-        {jdlink && (
-          <Button asChild variant="mulearn" className="px-5 py-2 font-semibold">
-            <a href={jdlink} target="_blank" rel="noopener noreferrer">
-              View JD
-            </a>
-          </Button>
-        )}
         {extraButton && (
           <Button
             asChild
