@@ -1,7 +1,9 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MotionH2, MotionSection } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -58,14 +60,15 @@ export default function Newsletter() {
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp} className="flex items-center gap-2 mb-4 text-base px-4">
-            <input
+            <Checkbox
               id="a1ef1"
-              type="checkbox"
               name="l"
               defaultChecked
               value="a1ef1095-7430-4b91-973f-8826ac7c79d7"
             />
-            <label htmlFor="a1ef1">I agree to subscribe to the μPulse Newsletter</label>
+            <Label htmlFor="a1ef1" className="font-normal">
+              I agree to subscribe to the μPulse Newsletter
+            </Label>
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp}>

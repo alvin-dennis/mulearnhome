@@ -2,6 +2,7 @@
 
 import { Building, Calendar, FileText, HelpCircle, School, Send, Users } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -47,10 +49,6 @@ export default function ContactForm() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
 
   const intents = [
     { value: "", label: "Select one", disabled: true },
@@ -136,7 +134,6 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
 
     try {
       const response = await fetch("/api/contact", {
@@ -150,10 +147,7 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (data.success) {
-        setSubmitStatus({
-          type: "success",
-          message: data.message || "Thank you for your message! We'll get back to you soon.",
-        });
+        toast.success(data.message || "Thank you for your message! We'll get back to you soon.");
 
         // Reset form on success
         setFormData({
@@ -186,10 +180,7 @@ export default function ContactForm() {
         });
         setErrors({});
       } else {
-        setSubmitStatus({
-          type: "error",
-          message: data.message || "Something went wrong. Please try again.",
-        });
+        toast.error(data.message || "Something went wrong. Please try again.");
 
         // Handle validation errors
         if (data.errors && Array.isArray(data.errors)) {
@@ -205,10 +196,7 @@ export default function ContactForm() {
         }
       }
     } catch (_error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Network error. Please check your connection and try again.",
-      });
+      toast.error("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -681,16 +669,14 @@ export default function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="message">Message / Brief Description *</Label>
-          <textarea
+          <Textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Tell us about your query or provide a brief description..."
             rows={5}
-            className={`w-full px-3 py-2 border border-mulearn-gray-300 rounded-lg focus:ring-2 focus:ring-mulearn-trusty-blue focus:border-transparent transition-all duration-300 resize-none text-sm ${
-              errors.message ? "border-red-500" : ""
-            }`}
+            className={`w-full ${errors.message ? "border-red-500" : ""}`}
           />
           {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}
         </div>
@@ -704,24 +690,12 @@ export default function ContactForm() {
               onChange={handleChange}
               className="mt-1"
             />
-            <label htmlFor="consent" className="text-sm text-mulearn-gray-700">
+            <Label htmlFor="consent" className="text-sm text-mulearn-gray-700 font-normal">
               I agree to the privacy policy and to be contacted about my query. *
-            </label>
+            </Label>
           </div>
           {errors.consent && <p className="text-sm text-red-600">{errors.consent}</p>}
         </div>
-
-        {submitStatus.type && (
-          <div
-            className={`p-4 rounded-lg mb-4 ${
-              submitStatus.type === "success"
-                ? "bg-green-50 border border-green-200 text-green-800"
-                : "bg-red-50 border border-red-200 text-red-800"
-            }`}
-          >
-            <p className="text-sm font-medium">{submitStatus.message}</p>
-          </div>
-        )}
 
         <Button
           type="submit"
