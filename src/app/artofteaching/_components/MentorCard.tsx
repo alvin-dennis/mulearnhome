@@ -17,31 +17,36 @@ const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => 
   const mentorImage = image ? fallbackImage : undefined;
 
   return (
-    <Card className="mx-auto mt-4 max-w-sm w-full overflow-hidden">
-      <CardContent className="flex flex-col items-center text-center">
+    <Card className="mx-auto mt-4 max-w-sm w-full h-full overflow-hidden border-mulearn/10 hover:border-mulearn/30 transition-all duration-300 hover:shadow-lg bg-gradient-to-br from-white to-mulearn/5">
+      <CardContent className="flex flex-col items-center text-center pt-6 pb-6">
         {mentorImage && (
-          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-gray-50">
+          <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden bg-gradient-to-br from-mulearn/20 to-mulearn/5 ring-2 ring-mulearn/20 mb-4 transition-all">
             <MuImage
               src={mentorImage}
               alt={`${name} profile`}
-              width={128}
-              height={128}
+              width={144}
+              height={144}
               className="object-cover w-full h-full"
               loading="lazy"
             />
           </div>
         )}
-        <div className="flex flex-col items-end">
-          {linkedIn && linkedIn !== "" && (
-            <Link href={linkedIn} target="_blank" rel="noopener noreferrer" className="mt-2 group">
-              <FaLinkedin className="w-7 h-7 rounded overflow-hidden hover:scale-110 transition-transform duration-300 hover:shadow-lg" />
-            </Link>
-          )}
-        </div>
-      </CardContent>
 
-      <h3 className="text-lg font-semibold text-mulearn-blackish mt-4 mb-2">{name}</h3>
-      <p className="text-sm text-gray-600 leading-relaxed">{designation}</p>
+        <h3 className="text-xl font-semibold text-mulearn-blackish mb-3">{name}</h3>
+
+        {linkedIn && linkedIn !== "" && (
+          <Link
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-3 inline-block"
+          >
+            <FaLinkedin className="w-7 h-7 text-[#0077b5] hover:scale-110 transition-transform duration-300 hover:opacity-80" />
+          </Link>
+        )}
+
+        <p className="text-sm text-gray-600 leading-relaxed px-4">{designation}</p>
+      </CardContent>
     </Card>
   );
 };

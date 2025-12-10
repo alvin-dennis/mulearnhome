@@ -202,10 +202,10 @@ export default function Careers() {
             <div className="mt-12 mb-8">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
-                  variant={"mulearn-outline"}
+                  variant="mulearn-outline"
                   onClick={goToPrevious}
                   disabled={currentPage === 1}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-4 py-2"
                   aria-label="Previous page"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -224,14 +224,10 @@ export default function Careers() {
                     const pageNumber = item.number;
                     return (
                       <Button
-                        variant={"mulearn-secondary"}
+                        variant={currentPage === pageNumber ? "mulearn" : "mulearn-secondary"}
                         key={item.key}
                         onClick={() => goToPage(pageNumber)}
-                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
-                          currentPage === pageNumber
-                            ? "bg-mulearn-trusty-blue text-white hover:bg-mulearn-duke-purple"
-                            : "border border-gray-300 bg-white hover:bg-gray-50"
-                        }`}
+                        className="w-10 h-10 text-sm font-medium"
                         aria-label={`Go to page ${pageNumber}`}
                         aria-current={currentPage === pageNumber ? "page" : undefined}
                       >
@@ -241,10 +237,10 @@ export default function Careers() {
                   })}
                 </div>
                 <Button
-                  variant={"mulearn-outline"}
+                  variant="mulearn-outline"
                   onClick={goToNext}
                   disabled={currentPage === totalPages}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-4 py-2"
                   aria-label="Next page"
                 >
                   <span className="text-sm font-medium">Next</span>

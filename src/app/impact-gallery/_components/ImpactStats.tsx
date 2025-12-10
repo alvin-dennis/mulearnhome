@@ -65,7 +65,7 @@ export default function Stats() {
         </MotionH1>
 
         <MotionDiv variants={fadeInUp} className="w-full">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 px-4 sm:px-8">
+          <div className="flex flex-wrap justify-center gap-4 mt-6 px-4 sm:px-8">
             <StatCard value={counts.members} label="Members" />
             {counts.org_type_counts.map((org) => (
               <StatCard
@@ -100,7 +100,7 @@ function StatCard({
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
         {isString ? (
-          `${value}+`
+          value + "+"
         ) : (
           <CountUp end={value as number} duration={5} separator="," suffix="+" />
         )}

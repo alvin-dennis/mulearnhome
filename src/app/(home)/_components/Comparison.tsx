@@ -36,11 +36,11 @@ export default function Comparison() {
               </tr>
             </thead>
             <tbody>
-              {comparisons.map(({ problem, solution, highlight }, index) => {
+              {comparisons.map(({ problem, solution, highlight }, _index) => {
                 if (highlight) {
                   const [before, after] = solution.split(highlight);
                   return (
-                    <tr key={index}>
+                    <tr key={problem}>
                       <td className="py-8 px-4 text-right pr-8">{problem}</td>
                       <td className="py-8 px-4 text-left pl-8 border-l border-mulearn-greyish">
                         {before}
@@ -52,7 +52,7 @@ export default function Comparison() {
                 }
 
                 return (
-                  <tr key={index}>
+                  <tr key={problem}>
                     <td className="py-8 px-4 text-right pr-8">{problem}</td>
                     <td className="py-8 px-4 text-left pl-8 border-l border-mulearn-greyish">
                       {solution}

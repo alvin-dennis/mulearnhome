@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 import {
   type DonationFormData,
   type DonationType,
@@ -224,12 +225,12 @@ export default function DonationForm() {
           <Label htmlFor="address" className="text-sm font-medium text-mulearn-gray-600">
             Address <span className="text-mulearn">*</span>
           </Label>
-          <textarea
+          <Textarea
             id="address"
             placeholder="Enter your full address"
             {...register("address")}
             rows={3}
-            className={`w-full px-3 py-2 bg-mulearn-whitish border border-gray-200 dark:border-gray-700 rounded-md focus:border-mulearn-trusty-blue focus:ring-1 focus:ring-mulearn-trusty-blue focus:outline-none transition-all resize-none ${
+            className={`w-full bg-mulearn-whitish border-gray-200 dark:border-gray-700 resize-none ${
               errors.address ? "border-red-500" : ""
             }`}
           />

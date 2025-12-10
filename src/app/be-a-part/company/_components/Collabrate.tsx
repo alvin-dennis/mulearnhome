@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
+import { Card, CardContent } from "@/components/ui/card";
 import { CompanyFeatures, companyImages } from "@/data/company";
 
 const NumberIcon = ({ num }: { num: number }) => (
@@ -56,7 +57,7 @@ export default function WhyCollaborate() {
         <div className="hidden lg:flex items-stretch justify-center gap-0">
           {CompanyFeatures.map((feature, index) => (
             <MotionDiv
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -95,7 +96,7 @@ export default function WhyCollaborate() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
           {CompanyFeatures.map((feature, index) => (
             <MotionDiv
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -103,17 +104,25 @@ export default function WhyCollaborate() {
               whileHover={{ scale: 1.02 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`flex flex-col items-center justify-start gap-5 p-6 border-2 border-mulearn-gray-600/10 rounded-lg transition-all duration-300 ease-in-out ${
-                hoveredIndex === index ? "bg-[#E7F2FF]" : "bg-white"
-              }`}
             >
-              <NumberIcon num={index + 1} />
-              <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">
-                {feature.title}
-              </h3>
-              <p className="text-center font-thin text-mulearn-blackish leading-relaxed text-base sm:text-lg">
-                {feature.description}
-              </p>
+              <Card
+                variant="interactive"
+                className={`h-full border-mulearn/10 transition-all duration-300 ${
+                  hoveredIndex === index
+                    ? "bg-[#E7F2FF]"
+                    : "bg-gradient-to-br from-white to-mulearn/5"
+                }`}
+              >
+                <CardContent className="flex flex-col items-center justify-start gap-5 p-6">
+                  <NumberIcon num={index + 1} />
+                  <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-center font-thin text-mulearn-blackish leading-relaxed text-base sm:text-lg">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
             </MotionDiv>
           ))}
         </div>

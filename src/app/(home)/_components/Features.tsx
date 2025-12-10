@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { features } from "@/data/home";
 
 export default function Features() {
@@ -65,7 +66,7 @@ export default function Features() {
         >
           {features.map((feature, i) => (
             <MotionDiv
-              key={i}
+              key={feature.title}
               variants={fadeInUp}
               custom={i}
               onHoverStart={() => {
@@ -74,75 +75,84 @@ export default function Features() {
                   setIsHovering(true);
                 }
               }}
-              className={`flex flex-col items-center justify-between p-5 sm:p-6 border border-mulearn-gray-600/20 transition-all duration-300
-                rounded-xl
-                overflow-hidden
-                grow
+              className={`grow transition-all duration-300
                 min-w-[200px]
                 sm:min-w-[240px]
                 md:min-w-[250px]
                 lg:min-w-[360px]
                 `}
               style={{
-                backgroundColor: isCardActive(i) ? feature.bgColor : "white",
                 flex: isCardActive(i) ? 2 : 1,
-                height: isMobile ? "auto" : "350px",
               }}
             >
-              <div className="flex flex-col items-center text-center mb-4 transition-transform duration-300 px-2">
-                <h3
-                  className="font-semibold mb-1 sm:mb-2 transition-all duration-300"
-                  style={{
-                    fontSize: isCardActive(i) ? "1.4rem" : isMobile ? "1rem" : "1.1rem",
-                  }}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  className="transition-all duration-300 text-mulearn-blackish leading-tight"
-                  style={{
-                    fontSize: isCardActive(i) ? "1rem" : isMobile ? "0.9rem" : "0.9rem",
-                  }}
-                >
-                  {feature.description}
-                </p>
-              </div>
-              <div
-                className="relative transition-transform duration-300 mb-4 w-full flex items-center justify-center"
+              <Card
+                variant="interactive"
+                className="h-full border-mulearn-gray-600/20 transition-all duration-300"
                 style={{
-                  height: "140px",
-                  minHeight: "140px",
+                  backgroundColor: isCardActive(i) ? feature.bgColor : "white",
+                  height: isMobile ? "auto" : "350px",
                 }}
               >
-                <MuImage
-                  src={feature.image}
-                  alt={feature.title}
-                  width={
-                    feature.title === "Community"
-                      ? 150
-                      : feature.title === "Mentors"
-                        ? 120
-                        : feature.title === "Interest Groups"
-                          ? 120
-                          : feature.title === "Roadmaps"
-                            ? 130
-                            : feature.title === "Challenges"
-                              ? 170
-                              : 100
-                  }
-                  height={120}
-                  className="object-contain max-w-full max-h-full"
-                  style={{ width: "auto", height: "auto" }}
-                />
-              </div>
-              <Link href={feature.url} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="mulearn"
-                  className="mt-auto px-4 py-2 font-semibold w-full sm:w-auto"
-                >
-                  {feature.cta}
-                </Button>
-              </Link>
+                <CardHeader className="flex-none">
+                  <CardTitle
+                    className="font-semibold text-center transition-all duration-300"
+                    style={{
+                      fontSize: isCardActive(i) ? "1.4rem" : isMobile ? "1rem" : "1.1rem",
+                    }}
+                  >
+                    {feature.title}
+                  </CardTitle>
+                  <p
+                    className="transition-all duration-300 text-mulearn-blackish leading-tight text-center"
+                    style={{
+                      fontSize: isCardActive(i) ? "1rem" : isMobile ? "0.9rem" : "0.9rem",
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                </CardHeader>
+
+                <CardContent className="flex-1 flex items-center justify-center py-4">
+                  <div
+                    className="relative w-full flex items-center justify-center"
+                    style={{ height: "140px", minHeight: "140px" }}
+                  >
+                    <MuImage
+                      src={feature.image}
+                      alt={feature.title}
+                      width={
+                        feature.title === "Community"
+                          ? 150
+                          : feature.title === "Mentors"
+                            ? 120
+                            : feature.title === "Interest Groups"
+                              ? 120
+                              : feature.title === "Roadmaps"
+                                ? 130
+                                : feature.title === "Challenges"
+                                  ? 170
+                                  : 100
+                      }
+                      height={120}
+                      className="object-contain max-w-full max-h-full"
+                      style={{ width: "auto", height: "auto" }}
+                    />
+                  </div>
+                </CardContent>
+
+                <CardFooter className="flex-none justify-center">
+                  <Link
+                    href={feature.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <Button variant="mulearn" className="px-4 py-2 font-semibold w-full">
+                      {feature.cta}
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
             </MotionDiv>
           ))}
         </MotionDiv>

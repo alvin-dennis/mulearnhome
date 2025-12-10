@@ -12,6 +12,7 @@ import { donationRoutes } from "./urls";
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: External library
     Razorpay: any;
   }
 }

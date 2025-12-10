@@ -466,33 +466,15 @@ export default function CampusLogoGenerator() {
               </label>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.logoType === "MuLearn" ? undefined : "outline"}
-                  className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoType === "MuLearn" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                  style={{
-                    backgroundColor:
-                      formData.logoType === "MuLearn" ? "var(--mulearn-trusty-blue )" : undefined,
-                    fontFamily: "var(--font-plus-jakarta)",
-                    color:
-                      formData.logoType !== "MuLearn"
-                        ? "var(  --mulearn-blackish-normal)"
-                        : undefined,
-                    fontWeight: 500,
-                  }}
+                  variant={formData.logoType === "MuLearn" ? "mulearn-trusty" : "outline"}
+                  className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("logoType", "MuLearn")}
                 >
                   MuLearn
                 </Button>
                 <Button
-                  variant={formData.logoType === "YIP" ? undefined : "outline"}
-                  className={`flex-1 rounded-lg p-3 font-medium transition-all ${formData.logoType === "YIP" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                  style={{
-                    backgroundColor:
-                      formData.logoType === "YIP" ? "var(  --mulearn-trusty-blue )" : undefined,
-                    fontFamily: "var(--font-plus-jakarta)",
-                    color:
-                      formData.logoType !== "YIP" ? "var(  --mulearn-blackish-normal)" : undefined,
-                    fontWeight: 500,
-                  }}
+                  variant={formData.logoType === "YIP" ? "mulearn-trusty" : "outline"}
+                  className="flex-1 rounded-lg p-3 font-medium"
                   onClick={() => handleInputChange("logoType", "YIP")}
                 >
                   YIP
@@ -517,20 +499,8 @@ export default function CampusLogoGenerator() {
                   {yipVariants.map((variant) => (
                     <Button
                       key={variant.value}
-                      variant={formData.yipVariant === variant.value ? undefined : "outline"}
-                      className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.yipVariant === variant.value ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                      style={{
-                        backgroundColor:
-                          formData.yipVariant === variant.value
-                            ? "var(  --mulearn-trusty-blue )"
-                            : undefined,
-                        fontFamily: "var(--font-plus-jakarta)",
-                        color:
-                          formData.yipVariant !== variant.value
-                            ? "var(  --mulearn-blackish-normal)"
-                            : undefined,
-                        fontWeight: 500,
-                      }}
+                      variant={formData.yipVariant === variant.value ? "mulearn-trusty" : "outline"}
+                      className="flex-1 p-3 rounded-lg font-medium"
                       onClick={() => handleInputChange("yipVariant", variant.value)}
                     >
                       {variant.name}
@@ -553,39 +523,17 @@ export default function CampusLogoGenerator() {
                 </label>
                 <div className="flex gap-2">
                   <Button
-                    variant={formData.logoVariant === "Profile Pic" ? undefined : "outline"}
-                    className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoVariant === "Profile Pic" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                    style={{
-                      backgroundColor:
-                        formData.logoVariant === "Profile Pic"
-                          ? "var(  --mulearn-trusty-blue )"
-                          : undefined,
-                      fontFamily: "var(--font-plus-jakarta)",
-                      color:
-                        formData.logoVariant !== "Profile Pic"
-                          ? "var(  --mulearn-blackish-normal)"
-                          : undefined,
-                      fontWeight: 500,
-                    }}
+                    variant={formData.logoVariant === "Profile Pic" ? "mulearn-trusty" : "outline"}
+                    className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Profile Pic")}
                   >
                     Profile Pic
                   </Button>
                   <Button
-                    variant={formData.logoVariant === "Transparent Bg" ? undefined : "outline"}
-                    className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.logoVariant === "Transparent Bg" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                    style={{
-                      backgroundColor:
-                        formData.logoVariant === "Transparent Bg"
-                          ? "var(  --mulearn-trusty-blue )"
-                          : undefined,
-                      fontFamily: "var(--font-plus-jakarta)",
-                      color:
-                        formData.logoVariant !== "Transparent Bg"
-                          ? "var(  --mulearn-blackish-normal)"
-                          : undefined,
-                      fontWeight: 500,
-                    }}
+                    variant={
+                      formData.logoVariant === "Transparent Bg" ? "mulearn-trusty" : "outline"
+                    }
+                    className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Transparent Bg")}
                   >
                     Transparent Bg
@@ -679,31 +627,15 @@ export default function CampusLogoGenerator() {
               </label>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.fileType === "PNG" ? undefined : "outline"}
-                  className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.fileType === "PNG" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                  style={{
-                    backgroundColor:
-                      formData.fileType === "PNG" ? "var(  --mulearn-trusty-blue )" : undefined,
-                    fontFamily: "var(--font-plus-jakarta)",
-                    color:
-                      formData.fileType !== "PNG" ? "var(  --mulearn-blackish-normal)" : undefined,
-                    fontWeight: 500,
-                  }}
+                  variant={formData.fileType === "PNG" ? "mulearn-trusty" : "outline"}
+                  className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "PNG")}
                 >
                   PNG
                 </Button>
                 <Button
-                  variant={formData.fileType === "SVG" ? undefined : "outline"}
-                  className={`flex-1 p-3 rounded-lg font-medium transition-all ${formData.fileType === "SVG" ? "text-mulearn-whitish" : "bg-gray-100 hover:bg-gray-200"}`}
-                  style={{
-                    backgroundColor:
-                      formData.fileType === "SVG" ? "var(  --mulearn-trusty-blue )" : undefined,
-                    fontFamily: "var(--font-plus-jakarta)",
-                    color:
-                      formData.fileType !== "SVG" ? "var(  --mulearn-blackish-normal)" : undefined,
-                    fontWeight: 500,
-                  }}
+                  variant={formData.fileType === "SVG" ? "mulearn-trusty" : "outline"}
+                  className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "SVG")}
                 >
                   SVG
@@ -712,7 +644,7 @@ export default function CampusLogoGenerator() {
             </div>
 
             <Button
-              className="w-full rounded-lg p-4 text-mulearn-whitish font-medium transition-all hover:opacity-90 active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-lg p-4 font-medium"
               variant="mulearn-trusty"
               onClick={handleDownload}
               disabled={isDownloading || formData.campusCode.length < 3}

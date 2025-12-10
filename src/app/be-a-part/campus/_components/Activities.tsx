@@ -1,4 +1,5 @@
 import { MotionDiv } from "@/components/MuFramer";
+import { Card, CardContent } from "@/components/ui/card";
 import { campusChapter } from "@/data/campus";
 
 export default function Activities() {
@@ -27,18 +28,26 @@ export default function Activities() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="rounded-2xl p-6 text-center shadow-sm transition-all border hover:scale-105 hover:shadow-md"
               >
-                <div className="mb-3">
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-mulearn">
-                    <Icon className="h-8 w-8 text-mulearn-whitish" />
-                  </div>
-                </div>
-                <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-mulearn-gray-600">
-                  {activity.title}
-                </div>
-                <div className="mb-1 text-lg font-bold text-mulearn-blackish">{activity.desc}</div>
-                <div className="text-sm text-mulearn-gray-600">{activity.detail}</div>
+                <Card
+                  variant="interactive"
+                  className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-3">
+                      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-mulearn shadow-lg">
+                        <Icon className="h-6 w-6 text-mulearn-whitish" />
+                      </div>
+                    </div>
+                    <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-mulearn-gray-600">
+                      {activity.title}
+                    </div>
+                    <div className="mb-1 text-lg font-bold text-mulearn-blackish">
+                      {activity.desc}
+                    </div>
+                    <div className="text-sm text-mulearn-gray-600">{activity.detail}</div>
+                  </CardContent>
+                </Card>
               </MotionDiv>
             );
           })}

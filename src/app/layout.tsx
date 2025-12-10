@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import { clientEnv } from "@/lib/env/env.client";
 import "./globals.css";
 import BackToTop from "@/components/BacktoTop";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "µLearn",
@@ -75,6 +76,7 @@ export default function RootLayout({
         <Suspense fallback={<MuLoader />}>{children}</Suspense>
         <Footer />
         <Toaster reverseOrder={true} position="top-center" />
+        <SonnerToaster />
         <div className="fixed bottom-4 right-4 z-50">
           <BackToTop />
         </div>

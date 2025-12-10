@@ -47,6 +47,7 @@ export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridPr
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.3 }}
+            className="h-full"
           >
             <MediaCard item={item} onClick={() => onItemClick(item)} />
           </MotionDiv>

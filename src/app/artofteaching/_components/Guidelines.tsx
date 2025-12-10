@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
 
@@ -71,62 +73,77 @@ const Guidelines = () => {
           </div>
 
           <div className=" lg:block lg:w-1/2">
-            <div className="bg-white rounded-lg p-8 max-w-2xl">
-              <h3 className="text-2xl font-semibold text-mulearn-blackish mb-6">
-                <span className="text-mulearn">Guidelines</span>
-              </h3>
-              <div style={timelineStyle}>
-                <div>
-                  <h4 className="text-lg font-semibold text-mulearn-blackish mb-2">Level 1</h4>
-                </div>
-                <div style={timelineItemStyle}>
-                  <div style={circleStyle}></div>
-                  <div style={lineStyle}></div>
-                  <div style={contentStyle}>
-                    <p className="text-lg">
-                      Task 1 - Video submission explaining a selected topic.
-                    </p>
+            <Card className="max-w-2xl border-none shadow-none">
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-mulearn-blackish">
+                  <span className="text-mulearn">Guidelines</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div style={timelineStyle}>
+                  <div className="mb-4">
+                    <Badge variant="default" className="bg-mulearn text-white text-base px-3 py-1">
+                      Level 1
+                    </Badge>
                   </div>
-                </div>
+                  <div style={timelineItemStyle}>
+                    <div style={circleStyle}></div>
+                    <div style={lineStyle}></div>
+                    <div style={contentStyle}>
+                      <p className="text-lg">
+                        Task 1 - Video submission explaining a selected topic.
+                      </p>
+                    </div>
+                  </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-mulearn-blackish mb-2 mt-4">Level 2</h4>
-                </div>
-                <div style={timelineItemStyle}>
-                  <div style={circleStyle}></div>
-                  <div style={lineStyle}></div>
-                  <div style={contentStyle}>
-                    <p className="text-lg">
-                      Task 2 - Detailed document submission of the designed course curriculum.
-                    </p>
+                  <div className="mb-4 mt-6">
+                    <Badge variant="default" className="bg-mulearn text-white text-base px-3 py-1">
+                      Level 2
+                    </Badge>
+                  </div>
+                  <div style={timelineItemStyle}>
+                    <div style={circleStyle}></div>
+                    <div style={lineStyle}></div>
+                    <div style={contentStyle}>
+                      <p className="text-lg">
+                        Task 2 - Detailed document submission of the designed course curriculum.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <Link href={artOfTeachingGuidelines} download="Art of Teaching Guidelines.pdf">
+                      <Button
+                        variant={"mulearn-trusty"}
+                        className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors"
+                      >
+                        Download PDF
+                      </Button>
+                    </Link>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <Link href={artOfTeachingGuidelines} download="Art of Teaching Guidelines.pdf">
-                    <Button
-                      variant={"mulearn-trusty"}
-                      className="border-none  px-4 py-2 text-base font-bold w-[180px] transition-colors"
-                    >
-                      Download PDF
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
         <div className="mt-24 mb-8 flex items-center justify-center">
-          <div className="w-full max-w-md lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">
-            <iframe
-              className="w-full h-56 lg:h-70 xl:h-96 rounded-lg mx-auto lg:w-[750px]"
-              src={artOfTeachingUrls.mainVideo}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
+          <Card
+            variant="hoverable"
+            className="w-full max-w-md lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl overflow-hidden border-mulearn/10 shadow-lg"
+          >
+            <CardContent className="p-0">
+              <div className="relative w-full aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src={artOfTeachingUrls.mainVideo}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

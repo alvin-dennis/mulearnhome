@@ -61,17 +61,17 @@ export default function Stats() {
           className="flex flex-col sm:flex-row justify-between items-start gap-8 w-full"
           variants={fadeInUp}
         >
-          <div className="flex-1">
+          <div className="flex-1 justify-center items-center ">
             <h1 className="text-center min-w-0 sm:min-w-[400px]">
               The Impact of <span className="text-mulearn">μLearn</span>
             </h1>
-          </div>
-          <div className="flex-1">
-            <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
-              Over the last year, we as a community have made an impact on a significant number of
-              students, mentors, and facilitators, enabling them to gain more knowledge about the
-              ecosystem of learning and upskill themselves.
-            </h6>
+            <div className="flex-1">
+              <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
+                Over the last year, we as a community have made an impact on a significant number of
+                students, mentors, and facilitators, enabling them to gain more knowledge about the
+                ecosystem of learning and upskill themselves.
+              </h6>
+            </div>
           </div>
         </MotionDiv>
 
