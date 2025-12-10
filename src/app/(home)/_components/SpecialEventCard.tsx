@@ -5,14 +5,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,

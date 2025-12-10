@@ -16,8 +16,8 @@ const Archives = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {artOfTeachingUrls.archives.map((videoUrl, index) => (
-            <div key={index} className="relative w-full rounded-lg overflow-hidden aspect-video">
+          {artOfTeachingUrls.archives.map((videoUrl) => (
+            <div key={videoUrl} className="relative w-full rounded-lg overflow-hidden aspect-video">
               <div className="absolute top-0 left-0 w-full h-full">
                 <YouTubeEmbed
                   videoid={videoUrl}

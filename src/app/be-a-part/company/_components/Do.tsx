@@ -28,9 +28,9 @@ export default function WhatYouCanDo() {
 
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-mulearn-blackish hidden md:block" />
 
-              {companyDo.map((action, index) => (
+              {companyDo.map((action) => (
                 <Card
-                  key={index}
+                  key={action.title}
                   variant="interactive"
                   className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
                 >

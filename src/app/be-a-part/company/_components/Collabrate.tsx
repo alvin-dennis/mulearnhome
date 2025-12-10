@@ -57,7 +57,7 @@ export default function WhyCollaborate() {
         <div className="hidden lg:flex items-stretch justify-center gap-0">
           {CompanyFeatures.map((feature, index) => (
             <MotionDiv
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function WhyCollaborate() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
           {CompanyFeatures.map((feature, index) => (
             <MotionDiv
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

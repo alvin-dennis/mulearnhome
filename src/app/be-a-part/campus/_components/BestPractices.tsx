@@ -1,6 +1,13 @@
 import { MotionDiv } from "@/components/MuFramer";
 import { campusChapter } from "@/data/campus";
 
+type PracticeItem = {
+  // biome-ignore lint/suspicious/noExplicitAny: Icon can be any component
+  icon: any;
+  title: string;
+  desc: string;
+};
+
 export default function BestPractices() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
@@ -15,7 +22,7 @@ export default function BestPractices() {
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {campusChapter.bestpractices.slice(0, 3).map((practice: any, idx: number) => {
+          {campusChapter.bestpractices.slice(0, 3).map((practice: PracticeItem, idx: number) => {
             const Icon = practice.icon;
             return (
               <MotionDiv
@@ -42,7 +49,7 @@ export default function BestPractices() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mt-6 max-w-4xl mx-auto">
-          {campusChapter.bestpractices.slice(3).map((practice: any, idx: number) => {
+          {campusChapter.bestpractices.slice(3).map((practice: PracticeItem, idx: number) => {
             const Icon = practice.icon;
             return (
               <MotionDiv

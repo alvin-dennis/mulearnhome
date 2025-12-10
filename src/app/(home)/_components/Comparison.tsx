@@ -36,7 +36,7 @@ export default function Comparison() {
               </tr>
             </thead>
             <tbody>
-              {comparisons.map(({ problem, solution, highlight }, index) => {
+              {comparisons.map(({ problem, solution, highlight }, _index) => {
                 if (highlight) {
                   const [before, after] = solution.split(highlight);
                   return (

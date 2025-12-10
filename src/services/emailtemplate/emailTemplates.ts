@@ -1,7 +1,7 @@
 import type { EmailData } from "../mail";
 
-export class EmailTemplates {
-  static getIntentLabel(intent: string): string {
+export const EmailTemplates = {
+  getIntentLabel: (intent: string): string => {
     const intentMap: Record<string, string> = {
       student: "Student Community Registration",
       partner: "Partnership Inquiry",
@@ -14,9 +14,9 @@ export class EmailTemplates {
     };
 
     return intentMap[intent] || "Contact Form Submission";
-  }
+  },
 
-  static generateEmailSubject(intent: string, name: string): string {
+  generateEmailSubject: (intent: string, name: string): string => {
     const subjectMap: Record<string, string> = {
       student: `New Student Registration - ${name}`,
       partner: `Partnership Inquiry - ${name}`,
@@ -29,9 +29,9 @@ export class EmailTemplates {
     };
 
     return subjectMap[intent] || `Contact Form Submission - ${name}`;
-  }
+  },
 
-  static getIntentSpecificFields(data: EmailData): string {
+  getIntentSpecificFields: (data: EmailData): string => {
     let fieldsHtml = "";
 
     switch (data.intent) {
@@ -142,9 +142,9 @@ export class EmailTemplates {
     }
 
     return fieldsHtml;
-  }
+  },
 
-  static generateContactEmailTemplate(data: EmailData): string {
+  generateContactEmailTemplate: (data: EmailData): string => {
     const specificFields = EmailTemplates.getIntentSpecificFields(data);
     const currentDate = new Date().toLocaleDateString("en-US", {
       weekday: "long",
@@ -243,9 +243,9 @@ export class EmailTemplates {
       </body>
       </html>
     `;
-  }
+  },
 
-  static generateAutoReplyTemplate(data: EmailData): string {
+  generateAutoReplyTemplate: (data: EmailData): string => {
     const _currentDate = new Date().toLocaleDateString("en-US", {
       weekday: "long",
       year: "numeric",
@@ -330,5 +330,5 @@ export class EmailTemplates {
       </body>
       </html>
     `;
-  }
-}
+  },
+};
