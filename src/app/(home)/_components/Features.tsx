@@ -66,7 +66,7 @@ export default function Features() {
         >
           {features.map((feature, i) => (
             <MotionDiv
-              key={i}
+              key={feature.title}
               variants={fadeInUp}
               custom={i}
               onHoverStart={() => {

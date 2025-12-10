@@ -72,7 +72,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
     <MotionDiv
       whileHover={{ scale: 1.05, y: -5 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-mulearn-whitish rounded-lg overflow-hidden cursor-pointer group border border-mulearn-greyish hover:shadow-xl transition-all "
+      className="bg-mulearn-whitish rounded-lg overflow-hidden cursor-pointer group border border-mulearn-greyish hover:shadow-xl transition-all h-full flex flex-col"
       onClick={onClick}
     >
       <div className="relative h-48 overflow-hidden">
@@ -120,11 +120,11 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex-1 flex flex-col">
         <h3 className="font-bold text-mulearn mb-2 line-clamp-2">{item.title}</h3>
         <p className="text-mulearn-gray-600 text-sm line-clamp-2">{item.description}</p>
 
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-auto pt-3 flex flex-wrap gap-2">
           {item.stats &&
             Object.entries(item.stats).map(([key, value]) => (
               <span
@@ -136,7 +136,7 @@ export default function MediaCard({ item, onClick }: MediaCardProps) {
               </span>
             ))}
 
-          {}
+          {/* Always show category tag as a fallback stat-like item */}
           <span className="text-xs bg-mulearn-whitish text-mulearn-gray-600 px-2 py-1 rounded border border-mulearn-greyish flex items-center gap-1">
             {getCategoryIcon(item.category)}
             {item.category

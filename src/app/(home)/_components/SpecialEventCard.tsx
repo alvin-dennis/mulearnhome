@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { FiCalendar, FiClock, FiX } from "react-icons/fi";
+import { FiCalendar, FiClock } from "react-icons/fi";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import {

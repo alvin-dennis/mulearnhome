@@ -224,9 +224,7 @@ export default function Careers() {
                     const pageNumber = item.number;
                     return (
                       <Button
-                        variant={
-                          currentPage === pageNumber ? "mulearn-trusty" : "mulearn-secondary"
-                        }
+                        variant={currentPage === pageNumber ? "mulearn" : "mulearn-secondary"}
                         key={item.key}
                         onClick={() => goToPage(pageNumber)}
                         className="w-10 h-10 text-sm font-medium"
