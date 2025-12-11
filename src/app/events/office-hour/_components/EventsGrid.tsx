@@ -1,8 +1,9 @@
-import { Calendar, Mic } from "lucide-react";
+import { Calendar, Mic, User } from "lucide-react";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { OMEvent } from "@/lib/types";
+import Link from "next/link";
 
 interface EventsGridProps {
   events: OMEvent[];
@@ -14,7 +15,7 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
   return (
     <div>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-2">
           {icon}
           {title}
         </h2>
@@ -56,16 +57,37 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
                 ))}
               </div>
 
-              <CardTitle className="text-xl mb-2 line-clamp-2">{event.title}</CardTitle>
+              <CardTitle className="text-xl mb-1 line-clamp-2">{event.title}</CardTitle>
+
+              {event.performer && (
+                <p className="text-sm text-mulearn-gray-400 flex items-center gap-1">
+                  <User className="w-4 h-4" /> {event.performer} {event.designation ? `- ${event.designation}` : ""}
+                </p>
+              )}
             </CardHeader>
 
-            <CardContent className="pt-0 flex flex-col">
-              <div className="flex justify-between items-center pt-4 border-t border-mulearn-gray-600/30">
-                <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  {event.date}
+            <CardContent className="pt-0 flex flex-col gap-2">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-mulearn-gray-500 font-medium flex items-center gap-1">
+                  <Calendar className="w-4 h-4" />
+                  {event.date} {event.time ? `• ${event.time}` : ""}
                 </span>
+
+                {event.link && (
+                  <Link
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-mulearn-trusty-blue font-semibold hover:underline"
+                  >
+                    {event.isUpcoming ? "Join Live" : "View Past"}
+                  </Link>
+                )}
               </div>
+
+              {event.description && (
+                <p className="text-sm text-mulearn-gray-400 mt-2 line-clamp-3">{event.description}</p>
+              )}
             </CardContent>
           </Card>
         ))}
@@ -73,3 +95,4 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
     </div>
   );
 }
+

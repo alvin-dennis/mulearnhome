@@ -1,4 +1,4 @@
-import type { LearnerRoleTag, OnboardingStep, Testimonial, TopLearner } from "@/lib/types";
+import type { LearnerRoleTag, OnboardingStep, Testimonial } from "@/lib/types";
 
 export const learnerIdentityTags: LearnerRoleTag[] = [
   { label: "The Ambitious Student", id: "ambitious" },
@@ -31,32 +31,6 @@ export const onboardingSteps: OnboardingStep[] = [
       "Now you will have access to the #lvl-info channel, and as you do the tasks, you will progress through the levels. Once you reach level 4, you will have the option to edit Interest Groups on your learn profile page.",
     iconUrl: "/assets/learners/icons/bulb-icon.svg",
   },
-];
-
-export const topLearnersData: TopLearner[] = [
-  {
-    name: "Greg George",
-    kp: 37500,
-    imageUrl: "/assets/learners/images/greg.png",
-  },
-  {
-    name: "Erica Jackson",
-    kp: 24500,
-    imageUrl: "/assets/learners/images/erica.png",
-  },
-  {
-    name: "Vishnu Das",
-    kp: 20300,
-    imageUrl: "/assets/learners/images/vishnu.png",
-  },
-  { name: "John", kp: 20000, imageUrl: "" },
-  { name: "Jane", kp: 19900, imageUrl: "" },
-  { name: "Alice", kp: 19800, imageUrl: "" },
-  { name: "Doe", kp: 19700, imageUrl: "" },
-  { name: "Smith", kp: 19600, imageUrl: "" },
-  { name: "Lenita", kp: 19500, imageUrl: "" },
-  { name: "Grace", kp: 19400, imageUrl: "" },
-  { name: "Rodrigues", kp: 19300, imageUrl: "" },
 ];
 
 export const testimonialsData: Testimonial[] = [

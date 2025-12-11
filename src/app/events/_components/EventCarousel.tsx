@@ -1,13 +1,15 @@
 "use client";
 
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MotionDiv } from "@/components/MuFramer";
 import EventCard from "./EventCard";
+import { Button } from "@/components/ui/button";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import type { Event } from "@/lib/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   events: Event[];
@@ -16,8 +18,22 @@ interface Props {
 export default function EventCarousel({ events }: Props) {
   return (
     <div className="relative">
+      <Button
+        variant={"mulearn"}
+        className="swiper-button-prev absolute -translate-y-1/2 z-10 flex items-center justify-center"
+      >
+        <ChevronLeft className="w-5 h-5 text-mulearn-whitish" />
+      </Button>
+
+      <Button
+        variant={"mulearn"}
+        className="swiper-button-next absolute -translate-y-1/2 z-10 flex items-center justify-center"
+      >
+        <ChevronRight className="w-5 h-5 text-mulearn-whitish" />
+      </Button>
+
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={24}
         slidesPerView={1}
         autoplay={{
@@ -26,8 +42,11 @@ export default function EventCarousel({ events }: Props) {
           pauseOnMouseEnter: true,
         }}
         pagination={{ clickable: true, dynamicBullets: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         loop={events.length > 3}
-        //loop={true}
         breakpoints={{
           640: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 3, spaceBetween: 24 },

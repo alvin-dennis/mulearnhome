@@ -1,6 +1,7 @@
 import { Sparkle } from "lucide-react";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const LearnersHero = () => {
   return (
@@ -52,13 +53,13 @@ const LearnersHero = () => {
         </div>
 
         <Button
-          variant="mulearn-blue"
+          variant="mulearn"
           className="px-8 py-3 font-semibold shadow-lg hover:shadow-xl text-base rounded-full transform hover:scale-105 transition-all duration-300"
           asChild
         >
-          <a href="https://app.mulearn.org" target="_blank" rel="noopener noreferrer">
+          <Link href="https://app.mulearn.org" target="_blank" rel="noopener noreferrer">
             Join μLearn
-          </a>
+          </Link>
         </Button>
       </div>
 

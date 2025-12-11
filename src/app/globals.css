@@ -206,7 +206,6 @@ h5 {
         font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
     }
 
-    /* Global Typography - Responsive heading styles */
     h1 {
         @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-mulearn-blackish leading-tight;
     }
@@ -253,4 +252,10 @@ h5 {
 .swiper-pagination-bullet-active {
     opacity: 1;
     transform: scale(1.2);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none !important;
+    content: "" !important;
 }

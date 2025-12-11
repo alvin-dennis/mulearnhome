@@ -122,7 +122,7 @@ export const footer = [
       { title: "Companies", url: "be-a-part/company" },
       {
         title: "Students",
-        url: "/learners",
+        url: "/be-a-part/learners",
       },
       {
         title: "Mentors",

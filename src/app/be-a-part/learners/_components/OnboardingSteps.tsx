@@ -29,7 +29,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
           <Fragment key={step.step}>
             <Card
               variant="hoverable"
-              className="flex-1 max-w-sm border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+              className="flex-1 max-w-sm"
             >
               <CardContent className="flex flex-col items-center text-center p-6">
                 <div className="relative mb-6">
@@ -59,7 +59,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
       <div className="lg:hidden flex flex-col items-center space-y-8">
         {data.map((step, index) => (
           <Fragment key={step.step}>
-            <Card className="max-w-md border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5">
+            <Card className="max-w-md">
               <CardContent className="flex flex-col items-center text-center p-6">
                 <div className="relative mb-4">
                   <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
