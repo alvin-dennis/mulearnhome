@@ -8,6 +8,7 @@ import type { TopLearner, Learner } from "@/lib/types"
 import { ArrowRight } from "lucide-react"
 import { MotionDiv } from "@/components/MuFramer"
 import { Button } from "@/components/ui/button"
+import { clientEnv } from "@/lib/env/env.client";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -24,13 +25,13 @@ export default function RankingSection() {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`
+        `${clientEnv.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`
       )
       const learners: Learner[] = Array.isArray(res.data.response)
         ? res.data.response
         : []
 
-      const formatted: TopLearner[] = learners.slice(0, 20).map((item) => ({
+      const formatted: TopLearner[] = learners.slice(0, 10).map((item) => ({
         name: item.full_name,
         kp: item.total_karma,
       }))
