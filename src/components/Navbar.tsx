@@ -114,18 +114,16 @@ export default function Navbar() {
                               {items.map((subItem: SubItem, subIndex: number) => (
                                 <Link
                                   key={subItem.label}
-                                    href={subItem.href}
-                                    prefetch
+                                  href={subItem.href}
+                                  prefetch
                                   className="leading-snug relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
-                                    onClick={() => setActiveSubmenu(null)}
-                                  >
-                                <li
-                                  key={subIndex}
-                                    className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1"
+                                  onClick={() => setActiveSubmenu(null)}
                                 >
-                      
+                                  <li
+                                    key={subIndex}
+                                    className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1"
+                                  >
                                     {subItem.label}
-                                  
                                   </li>
                                 </Link>
                               ))}

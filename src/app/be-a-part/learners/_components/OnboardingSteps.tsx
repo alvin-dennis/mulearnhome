@@ -27,10 +27,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
       <div className="hidden lg:flex justify-center items-start relative gap-8">
         {data.map((step, index) => (
           <Fragment key={step.step}>
-            <Card
-              variant="hoverable"
-              className="flex-1 max-w-sm"
-            >
+            <Card variant="hoverable" className="flex-1 max-w-sm">
               <CardContent className="flex flex-col items-center text-center p-6">
                 <div className="relative mb-6">
                   <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">

@@ -67,29 +67,28 @@ export default function HowToJoin() {
                   </div>
                 ) : (
                   <div className="flex items-center relative h-full flex-row-reverse">
-                      <svg
-                        className="absolute right-0 top-0 w-full h-full"
-                        viewBox="0 0 944 170"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="none"
+                    <svg
+                      className="absolute right-0 top-0 w-full h-full"
+                      viewBox="0 0 944 170"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="none"
+                    >
+                      <text
+                        x="50%"
+                        y="50%"
+                        dominantBaseline="middle"
+                        textAnchor="middle"
+                        className="text-2xl font-bold"
                       >
-                        <text
-                          x="50%"
-                          y="50%"
-                          dominantBaseline="middle"
-                          textAnchor="middle"
-                          className="text-2xl font-bold"
-                        >
-                          title
-                        </text>
+                        title
+                      </text>
 
-                        <path
-                          d="M416 0C410.477 0 406 4.47715 406 10H858V10.0059C858.333 10.0015 858.666 10 859 10C900.421 10 934 43.5786 934 85C934 126.421 900.421 160 859 160C858.666 160 858.333 159.998 858 159.993V160H406C406 165.523 410.477 170 416 170H849C849.876 170 850.725 169.886 851.534 169.675C853.994 169.889 856.484 170 859 170C905.944 170 944 131.944 944 85C944 38.0558 905.944 0 859 0C856.484 0 853.994 0.110138 851.534 0.324219C850.725 0.112826 849.876 0 849 0H416Z"
-                          fill="#D9D9D9"
-                        />
-                      </svg>
-
+                      <path
+                        d="M416 0C410.477 0 406 4.47715 406 10H858V10.0059C858.333 10.0015 858.666 10 859 10C900.421 10 934 43.5786 934 85C934 126.421 900.421 160 859 160C858.666 160 858.333 159.998 858 159.993V160H406C406 165.523 410.477 170 416 170H849C849.876 170 850.725 169.886 851.534 169.675C853.994 169.889 856.484 170 859 170C905.944 170 944 131.944 944 85C944 38.0558 905.944 0 859 0C856.484 0 853.994 0.110138 851.534 0.324219C850.725 0.112826 849.876 0 849 0H416Z"
+                        fill="#D9D9D9"
+                      />
+                    </svg>
 
                     <div className="relative z-20 flex-shrink-0 mr-[22px]">
                       <div className="w-[90px] h-[90px] rounded-full bg-mulearn flex items-center justify-center">
