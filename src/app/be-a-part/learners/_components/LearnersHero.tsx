@@ -1,7 +1,7 @@
 import { Sparkle } from "lucide-react";
+import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const LearnersHero = () => {
   return (

@@ -1,15 +1,15 @@
 "use client";
 
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MotionDiv } from "@/components/MuFramer";
-import EventCard from "./EventCard";
 import { Button } from "@/components/ui/button";
+import EventCard from "./EventCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import type { Event } from "@/lib/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { Event } from "@/lib/types";
 
 interface Props {
   events: Event[];

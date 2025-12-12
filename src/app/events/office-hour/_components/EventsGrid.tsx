@@ -1,9 +1,9 @@
 import { Calendar, Mic, User } from "lucide-react";
+import Link from "next/link";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { OMEvent } from "@/lib/types";
-import Link from "next/link";
 
 interface EventsGridProps {
   events: OMEvent[];
@@ -61,7 +61,8 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
 
               {event.performer && (
                 <p className="text-sm text-mulearn-gray-400 flex items-center gap-1">
-                  <User className="w-4 h-4" /> {event.performer} {event.designation ? `- ${event.designation}` : ""}
+                  <User className="w-4 h-4" /> {event.performer}{" "}
+                  {event.designation ? `- ${event.designation}` : ""}
                 </p>
               )}
             </CardHeader>
@@ -86,7 +87,9 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
               </div>
 
               {event.description && (
-                <p className="text-sm text-mulearn-gray-400 mt-2 line-clamp-3">{event.description}</p>
+                <p className="text-sm text-mulearn-gray-400 mt-2 line-clamp-3">
+                  {event.description}
+                </p>
               )}
             </CardContent>
           </Card>
@@ -95,4 +98,3 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
     </div>
   );
 }
-
