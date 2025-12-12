@@ -18,11 +18,11 @@ export default function Events() {
   const formatSectionTitle = (type: string) => {
     const titles: Record<string, string> = {
       latest: "Ongoing Events",
-      past: "Past Events",
-      flagship: "Flagship Events",
       weekly: "Weekly Twitch Events",
+      flagship: "Flagship Events",
       biweekly: "Biweekly Events",
       monthly: "Monthly Events",
+      past: "Past Events",
     };
     return titles[type] || type;
   };
@@ -35,8 +35,8 @@ export default function Events() {
 
   const allEventsSections: [string, Event[]][] = [
     ["latest", events.latestEvents],
-    ["past", events.pastEvents],
     ...recurringEventsEntries,
+    ["past", events.pastEvents],
   ] as [string, Event[]][];
 
   return (

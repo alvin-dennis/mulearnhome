@@ -65,7 +65,7 @@ export function TeamCard({
                 {displayedRoles.map((role, index) => (
                   <li
                     key={index}
-                    className="bg-mulearn-greyish/20 text-mulearn-gray-600 text-xs px-2.5 py-1 rounded-xl whitespace-nowrap"
+                    className="bg-mulearn-greyish/20 text-mulearn-gray-600 text-xs px-2.5 py-1 rounded-xl whitespace-normal"
                   >
                     {role}
                   </li>

@@ -57,7 +57,7 @@ export default function Features() {
         </h6>
 
         <MotionDiv
-          className={`flex w-full mt-10 overflow-hidden relative justify-center gap-5 flex-wrap`}
+          className={`flex w-full mt-10 overflow-hidden relative justify-center gap-2 flex-wrap`}
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -86,7 +86,6 @@ export default function Features() {
               }}
             >
               <Card
-                variant="interactive"
                 className="h-full border-mulearn-gray-600/20 transition-all duration-300"
                 style={{
                   backgroundColor: isCardActive(i) ? feature.bgColor : "white",

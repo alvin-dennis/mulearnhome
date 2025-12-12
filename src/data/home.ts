@@ -58,7 +58,7 @@ export const specialevents = [
     title: "Top 100 Coders",
     description:
       "Welcome to the Top 100 Coders initiative Recognised by Kerala Govt. We're on a mission to recognize and empower the best coders in India. If you're passionate about coding and want to make a significant impact in the tech community, you're in the right place.",
-    link: "https://top100coders.com/",
+    link: "https://www.top100series.com/",
     image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
     isLive: true,
   },

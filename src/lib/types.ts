@@ -258,9 +258,12 @@ export interface OMEvent {
   title: string;
   description: string;
   date?: string;
+  time?: string;
   performer?: string;
+  designation?: string;
   tags: string[];
   thumbnail?: string;
+  link?: string;
   isUpcoming: boolean;
 }
 
@@ -308,11 +311,15 @@ export interface LearnerRoleTag {
   id: string;
 }
 
+export interface Learner {
+  full_name: string;
+  total_karma: number;
+  institution: string;
+}
+
 export interface TopLearner {
   name: string;
   kp: number;
-  imageUrl: string;
-  designation?: string;
 }
 
 export interface Testimonial {

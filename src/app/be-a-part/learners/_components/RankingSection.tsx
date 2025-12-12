@@ -1,133 +1,155 @@
-import MuImage from "@/components/MuImage";
-import { Card, CardContent } from "@/components/ui/card";
-import type { Testimonial, TopLearner } from "@/lib/types";
-import { cdnUrl } from "@/services/cdn";
+"use client"
 
-interface RankingSectionProps {
-  topLearners: TopLearner[];
-  testimonials: Testimonial[];
-}
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import axios from "axios"
+import { Variants } from "framer-motion"
+import type { TopLearner, Learner } from "@/lib/types"
+import { ArrowRight } from "lucide-react"
+import { MotionDiv } from "@/components/MuFramer"
+import { Button } from "@/components/ui/button"
+import { clientEnv } from "@/lib/env/env.client";
 
-const fallbackImage = cdnUrl("public/assets/team/default.webp");
-
-const TopLearnerCard: React.FC<TopLearner & { rank: number }> = ({ name, kp, imageUrl }) => (
-  <Card className="text-center group relative flex flex-col items-center bg-transparent shadow-none">
-    <CardContent className="relative p-0">
-      <div className="relative">
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-blue-400 to-mulearn-whitish-300 rounded-xl" />
-        <MuImage
-          src={imageUrl ? imageUrl : fallbackImage}
-          alt={`${name}'s profile`}
-          fill
-          className="object-contain object-top"
-        />
-      </div>
-
-      <div className="mt-4">
-        <p className="text-lg font-bold text-mulearn-blackish mb-1">{name}</p>
-        <p className="text-xl font-extrabold text-mulearn-blackish">
-          {kp.toLocaleString()}
-          <span className="text-mulearn-trusty-blue">KP</span>
-        </p>
-      </div>
-    </CardContent>
-  </Card>
-);
-
-const SmallLearnerCard: React.FC<{
-  name: string;
-  kp: number;
-  imageUrl: string;
-}> = ({ name, kp, imageUrl }) => (
-  <Card className="relative w-44 sm:w-60 h-18 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
-    <div className="absolute inset-0 bg-linear-to-br from-blue-500 via-blue-600 to-blue-700" />
-    <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />
-    <CardContent className="relative h-full flex items-center px-3 gap-3 p-0">
-      <MuImage
-        src={imageUrl ? imageUrl : fallbackImage}
-        alt={`${name}'s profile`}
-        width={100}
-        height={100}
-        className="object-contain object-top"
-      />
-
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-mulearn-whitish truncate drop-shadow">{name}</p>
-        <p className="text-xs font-medium text-mulearn-whitish/90 drop-shadow">
-          {kp.toLocaleString()} <span className="font-bold">KP</span>
-        </p>
-      </div>
-    </CardContent>
-
-    <div className="absolute inset-0 rounded-xl border border-mulearn-whitish/20 pointer-events-none" />
-  </Card>
-);
-
-const RankingSection: React.FC<RankingSectionProps> = ({ topLearners }) => {
-  const showcaseLearners = topLearners.slice(0, 3);
-
-  const smallLearners =
-    topLearners.slice(3, 11).length >= 8
-      ? topLearners.slice(3, 11)
-      : [
-          ...topLearners.slice(3),
-          ...topLearners.slice(0, Math.max(0, 8 - (topLearners.length - 3))),
-        ];
-
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-center mb-16">
-        Top <span className="text-mulearn-trusty-blue">Learners</span>
-      </h2>
-
-      <div className="flex flex-col md:flex-row items-end justify-center gap-8 md:gap-12 mb-16 max-w-5xl mx-auto w-full">
-        {showcaseLearners[0] && (
-          <div className="order-1 md:order-2 md:mb-16 flex justify-center w-full md:w-auto">
-            <TopLearnerCard {...showcaseLearners[0]} rank={1} />
-          </div>
-        )}
-
-        {showcaseLearners[1] && (
-          <div className="order-2 md:order-1 md:mt-16 flex justify-center w-full md:w-auto">
-            <TopLearnerCard {...showcaseLearners[1]} rank={2} />
-          </div>
-        )}
-
-        {showcaseLearners[2] && (
-          <div className="order-3 md:order-3 md:mt-16 flex justify-center w-full md:w-auto">
-            <TopLearnerCard {...showcaseLearners[2]} rank={3} />
-          </div>
-        )}
-      </div>
-
-      <div className="relative mt-12 mb-8">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-mulearn-whitish via-gray-50/80 to-transparent z-10 pointer-events-none hidden sm:block" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 place-items-center lg:-ml-8">
-            {smallLearners.slice(0, 4).map((learner, index) => (
-              <SmallLearnerCard
-                key={index}
-                name={learner.name}
-                kp={learner.kp}
-                imageUrl={learner.imageUrl}
-              />
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 place-items-center lg:ml-8">
-            {smallLearners.slice(4, 8).map((learner, index) => (
-              <SmallLearnerCard
-                key={`second-${index}`}
-                name={learner.name}
-                kp={learner.kp}
-                imageUrl={learner.imageUrl}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
 };
 
-export default RankingSection;
+export default function RankingSection() {
+  const [topLearners, setTopLearners] = useState<TopLearner[]>([])
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        `${clientEnv.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`
+      )
+      const learners: Learner[] = Array.isArray(res.data.response)
+        ? res.data.response
+        : []
+
+      const formatted: TopLearner[] = learners.slice(0, 10).map((item) => ({
+        name: item.full_name,
+        kp: item.total_karma,
+      }))
+
+      setTopLearners(formatted)
+    } catch (err) {
+      console.error("Error fetching learners:", err)
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const topThree = topLearners.slice(0, 3)
+
+  const getAvatarColor = (index: number) => {
+    const colors = ["bg-mulearn-duke-purple", "bg-green-500", "bg-pink-500"]
+    return colors[index] || "bg-mulearn-trusty-blue"
+  }
+
+
+  return (
+    <>
+      <div className="text-center md:mb-30 mb-40">
+        <h1 className="text-5xl font-bold text-mulearn-blackish">Top <span className="text-mulearn">Learners</span></h1>
+      </div>
+
+      <div className="w-full max-w-4xl mx-auto px-4 py-8">
+        <div className="mb-12">
+          <div className="flex items-end justify-center gap-8 mb-12 h-64">
+            {topThree[1] && (
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className={`w-20 h-20 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-xl ${getAvatarColor(1)}`}
+                >
+                  {topThree[1].name.charAt(0).toUpperCase()}
+                </div>
+                <p className="font-semibold text-mulearn text-center">
+                  {topThree[1].name}
+                </p>
+                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
+                  {topThree[1].kp.toLocaleString()}
+                </div>
+                <div className="bg-mulearn w-24 h-32 rounded-t-lg" />
+              </div>
+            )}
+
+            {topThree[0] && (
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className={`w-24 h-24 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-2xl ${getAvatarColor(0)}`}
+                >
+                  {topThree[0].name.charAt(0).toUpperCase()}
+                </div>
+                <p className="font-semibold text-mulearn text-center">
+                  {topThree[0].name}
+                </p>
+                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
+                  {topThree[0].kp.toLocaleString()}
+                </div>
+                <div className="bg-mulearn w-24 h-48 rounded-t-lg" />
+              </div>
+            )}
+
+            {topThree[2] && (
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className={`w-20 h-20 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-xl ${getAvatarColor(2)}`}
+                >
+                  {topThree[2].name.charAt(0).toUpperCase()}
+                </div>
+                <p className="font-semibold text-mulearn text-center">
+                  {topThree[2].name}
+                </p>
+                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
+                  {topThree[2].kp.toLocaleString()}
+                </div>
+                <div className="bg-mulearn w-24 h-24 rounded-t-lg" />
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          {topLearners.slice(3, 10).map((learner, index) => (
+            <div
+              key={index + 3}
+              className="flex items-center justify-between p-4 rounded-lg transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <span className="font-bold text-base text-mulearn-blackish">
+                  #{index + 4}
+                </span>
+                <span className="font-medium text-mulearn-blackish">{learner.name}</span>
+              </div>
+              <span className="font-bold text-mulearn-blackish">
+                {learner.kp.toLocaleString()} Karma
+              </span>
+            </div>
+          ))}
+        </div>
+        <MotionDiv
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          className="flex justify-center mt-6"
+        >
+          <Link href="https://app.mulearn.org/dashboard/leaderboard">
+            <Button
+              variant={"mulearn"}
+              className="inline-flex items-center px-8 py-4 font-semibold text-lg"
+            >
+              View Full Leaderboard <ArrowRight className="w-5 h-5" />
+            </Button>
+          </Link>
+        </MotionDiv>
+      </div>
+    </>
+  )
+}

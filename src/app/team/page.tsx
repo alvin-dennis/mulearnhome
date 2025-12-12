@@ -176,7 +176,7 @@ export default function Team() {
       <div className="flex flex-col items-center mt-20 max-w-7xl mx-auto px-4">
         <div className="mt-6 mb-12 flex justify-center">
           <Select value={activeYear} onValueChange={(value) => setActiveYear(value as YearType)}>
-            <SelectTrigger className="w-[200px] border-mulearn-trusty-blue shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
+            <SelectTrigger className="w-[200px] border-mulearn-trusty-blue text-mulearn-trusty-blue">
               <SelectValue placeholder="Select year" />
             </SelectTrigger>
             <SelectContent>
