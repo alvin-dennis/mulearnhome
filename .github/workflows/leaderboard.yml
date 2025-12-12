@@ -25,7 +25,7 @@ jobs:
       - name: Run leaderboard script
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bun run generate
+        run: bun generate
 
       - name: Configure git
         run: |
