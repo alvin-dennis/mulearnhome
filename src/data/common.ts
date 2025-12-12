@@ -18,7 +18,7 @@ export const navItems = [
       Programs: [
         { label: "LAUNCHPAD", href: "https://launchpadkerala.org/" },
         { label: "PERMUTE", href: "https://permute.mulearn.org/" },
-        { label: "TOP100SERIES", href: "https://top100coders.com/" },
+        { label: "TOP100SERIES", href: "https://top100series.com/" },
         { label: "ART OF TEACHING", href: "/artofteaching" },
         { label: "IN50HOURS", href: "/in50hours" },
         { label: "KKEM", href: "/kkem" },
