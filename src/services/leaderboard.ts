@@ -1,7 +1,7 @@
 import { existsSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import axios from "axios";
-import { serverEnv } from "@/lib/env/env.server";
+import { serverEnv } from "../lib/env/env.server";
 
 interface ContributorStats {
   username: string;
