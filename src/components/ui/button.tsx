@@ -20,21 +20,21 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         mulearn:
-          "bg-linear-to-r from-[#6366f1] to-[#2E85FE] text-[#fefefe] hover:from-[#5856eb] hover:to-[#1d4ed8] shadow-lg hover:shadow-xl font-bold  transition-all duration-300 rounded-full cursor-pointer",
+          "bg-linear-to-r from-[#6366f1] to-[#2E85FE] text-[#fefefe] hover:from-[#5856eb] hover:to-[#1d4ed8] shadow-lg hover:shadow-xl font-bold cursor-pointer   transition-all duration-300 rounded-full cursor-pointer",
         "mulearn-outline":
-          "border-2 border-[#2E85FE] text-[#2E85FE] hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#2E85FE] hover:text-[#fefefe] transition-all duration-300",
+          "border-2 border-[#2E85FE] text-[#2E85FE] hover:bg-linear-to-r hover:from-[#6366f1] hover:to-[#2E85FE] hover:text-[#fefefe] font-bold cursor-pointer   transition-all duration-300",
         "mulearn-ghost":
-          "text-transparent bg-linear-to-r from-[#6366f1] to-[#2E85FE] bg-clip-text hover:bg-[#6366f1]/10 transition-all duration-300",
+          "text-transparent bg-linear-to-r from-[#6366f1] to-[#2E85FE] bg-clip-text hover:bg-[#6366f1]/10 transition-all font-bold cursor-pointer   duration-300",
         "mulearn-secondary":
-          "bg-[#c4c4c4] text-[#1a1a1a] hover:bg-[#a3a3a3] border border-[#c4c4c4] transition-all duration-300",
+          "bg-[#c4c4c4] text-[#1a1a1a] hover:bg-[#a3a3a3] border border-[#c4c4c4] transition-all duration-300 font-bold cursor-pointer ",
         "mulearn-purple":
-          "bg-[#AF2EE6] text-[#fefefe] hover:bg-[#9333ea] shadow-lg hover:shadow-xl transition-all duration-300",
+          "bg-[#AF2EE6] text-[#fefefe] hover:bg-[#9333ea] shadow-lg hover:shadow-xl transition-all duration-300 font-bold cursor-pointer ",
         "mulearn-trusty":
-          "bg-linear-to-r from-[#6366f1] to-[#2E85FE] text-[#fefefe] hover:from-[#5856eb] hover:to-[#1d4ed8] shadow-lg hover:shadow-2xl  transition-all duration-300",
+          "bg-linear-to-r from-[#6366f1] to-[#2E85FE] text-[#fefefe] hover:from-[#5856eb] hover:to-[#1d4ed8] shadow-lg hover:shadow-2xl  transition-all duration-300 font-bold cursor-pointer ",
         "mulearn-blue":
-          "bg-mulearn-trusty-blue text-mulearn-whitish rounded-full text-base hover:bg-mulearn-duke-purple active:bg-mulearn-trusty-blue transition-all duration-300 rounded-full cursor-pointer",
+          "bg-mulearn-trusty-blue text-mulearn-whitish rounded-full text-base hover:bg-mulearn-duke-purple active:bg-mulearn-trusty-blue transition-all duration-300 font-bold cursor-pointer  rounded-full cursor-pointer",
         "mulearn-inverted":
-          "bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish/90 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300",
+          "bg-mulearn-whitish text-mulearn-trusty-blue hover:bg-mulearn-whitish/90 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 font-bold cursor-pointer ",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
