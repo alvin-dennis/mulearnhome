@@ -20,7 +20,7 @@ export default function HowToJoin() {
           <div className="hidden md:block">
             {companySteps.map((step, index) => (
               <MotionDiv
-                key={index}
+                key={step.title}
                 initial={{ opacity: 0, x: step.align === "left" ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -36,6 +36,15 @@ export default function HowToJoin() {
                       xmlns="http://www.w3.org/2000/svg"
                       preserveAspectRatio="none"
                     >
+                      <text
+                        x="50%"
+                        y="50%"
+                        dominantBaseline="middle"
+                        textAnchor="middle"
+                        className="text-2xl font-bold"
+                      >
+                        title
+                      </text>
                       <path
                         d="M528 0C533.523 4.5098e-07 538 4.47715 538 10H86V10.0059C85.6672 10.0015 85.3338 10 85 10C43.5786 10 10 43.5786 10 85C10 126.421 43.5786 160 85 160C85.3338 160 85.6672 159.998 86 159.993V160H538C538 165.523 533.523 170 528 170H95C94.1243 170 93.2752 169.886 92.4658 169.675C90.0057 169.889 87.5157 170 85 170C38.0558 170 0 131.944 0 85C0 38.0558 38.0558 0 85 0C87.5157 0 90.0057 0.110138 92.4658 0.324219C93.2752 0.112826 94.1244 0 95 0H528Z"
                         fill="#D9D9D9"
@@ -58,18 +67,29 @@ export default function HowToJoin() {
                   </div>
                 ) : (
                   <div className="flex items-center relative h-full flex-row-reverse">
-                    <svg
-                      className="absolute right-0 top-0 w-full h-full"
-                      viewBox="0 0 944 170"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M416 0C410.477 0 406 4.47715 406 10H858V10.0059C858.333 10.0015 858.666 10 859 10C900.421 10 934 43.5786 934 85C934 126.421 900.421 160 859 160C858.666 160 858.333 159.998 858 159.993V160H406C406 165.523 410.477 170 416 170H849C849.876 170 850.725 169.886 851.534 169.675C853.994 169.889 856.484 170 859 170C905.944 170 944 131.944 944 85C944 38.0558 905.944 0 859 0C856.484 0 853.994 0.110138 851.534 0.324219C850.725 0.112826 849.876 0 849 0H416Z"
-                        fill="#D9D9D9"
-                      />
-                    </svg>
+                      <svg
+                        className="absolute right-0 top-0 w-full h-full"
+                        viewBox="0 0 944 170"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none"
+                      >
+                        <text
+                          x="50%"
+                          y="50%"
+                          dominantBaseline="middle"
+                          textAnchor="middle"
+                          className="text-2xl font-bold"
+                        >
+                          title
+                        </text>
+
+                        <path
+                          d="M416 0C410.477 0 406 4.47715 406 10H858V10.0059C858.333 10.0015 858.666 10 859 10C900.421 10 934 43.5786 934 85C934 126.421 900.421 160 859 160C858.666 160 858.333 159.998 858 159.993V160H406C406 165.523 410.477 170 416 170H849C849.876 170 850.725 169.886 851.534 169.675C853.994 169.889 856.484 170 859 170C905.944 170 944 131.944 944 85C944 38.0558 905.944 0 859 0C856.484 0 853.994 0.110138 851.534 0.324219C850.725 0.112826 849.876 0 849 0H416Z"
+                          fill="#D9D9D9"
+                        />
+                      </svg>
+
 
                     <div className="relative z-20 flex-shrink-0 mr-[22px]">
                       <div className="w-[90px] h-[90px] rounded-full bg-mulearn flex items-center justify-center">
@@ -104,7 +124,7 @@ export default function HowToJoin() {
           <div className="md:hidden space-y-8">
             {companySteps.map((step, index) => (
               <MotionDiv
-                key={index}
+                key={step.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

@@ -15,11 +15,29 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute left-16 top-[60%] text-mulearn-blackish/80">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-2xl font-bold"
+            >
+              title
+            </text>
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
           </svg>
         </div>
         <div className="absolute right-45 top-[60%] transform -translate-x-1/2 text-mulearn-blackish/80">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-2xl font-bold"
+            >
+              title
+            </text>
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
           </svg>
         </div>
@@ -28,11 +46,29 @@ export default function Hero() {
           style={{ transform: "rotate(10deg)" }}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-2xl font-bold"
+            >
+              title
+            </text>
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
           </svg>
         </div>
         <div className="absolute right-24 top-28 text-mulearn-blackish/40">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <text
+              x="50%"
+              y="50%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              className="text-2xl font-bold"
+            >
+              title
+            </text>
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
           </svg>
         </div>
@@ -71,6 +107,15 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                   style={{ transform: "rotate(180deg)" }}
                 >
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    className="text-2xl font-bold"
+                  >
+                    title
+                  </text>
                   <path
                     d="M2 30c40-18 92-20 156-16"
                     stroke="currentColor"
@@ -96,6 +141,15 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-full w-full"
                 >
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                    className="text-2xl font-bold"
+                  >
+                    title
+                  </text>
                   <circle cx="12" cy="8" r="6" fill="var(--mulearn-blackish)" />
                   <path
                     d="M12 14c6 0 7 10 7 16v12H5V30c0-6 1-16 7-16Z"
@@ -114,6 +168,15 @@ export default function Hero() {
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
               >
+                <text
+                  x="50%"
+                  y="50%"
+                  dominantBaseline="middle"
+                  textAnchor="middle"
+                  className="text-2xl font-bold"
+                >
+                  title
+                </text>
                 <path
                   d="M2 5C100 3 200 3 298 5"
                   stroke="url(#u)"
