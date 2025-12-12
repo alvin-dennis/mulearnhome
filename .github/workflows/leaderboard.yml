@@ -16,16 +16,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: npm install
+        run:  bun install
 
       - name: Run leaderboard script
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run generate
+        run: bun generate
 
       - name: Configure git
         run: |
