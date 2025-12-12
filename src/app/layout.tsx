@@ -70,6 +70,9 @@ export default function RootLayout({
             <link rel="dns-prefetch" href={cdnurl} />
           </>
         )}
+        {/* Preconnect to S3 for faster remote image loading */}
+        <link rel="preconnect" href="https://s3.ap-south-1.amazonaws.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
       </head>
       <body className="font-sans antialiased">
         <Navbar />

@@ -18,7 +18,8 @@
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
     "validate": "bun run typecheck && bun run lint",
-    "generate": "node --loader ts-node/esm src/services/leaderboard.ts"
+    "generate": "node --loader ts-node/esm src/services/leaderboard.ts",
+    "optimize:images": "bun run scripts/optimize-images.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -76,6 +77,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"

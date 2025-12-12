@@ -4,40 +4,40 @@ export const navItems = [
   {
     label: "About",
     submenu: {
-      "KEY PAGES": [
-        { label: "MANIFESTO", href: "/manifesto" },
-        { label: "TEAM", href: "/team" },
+      "Key Pages": [
+        { label: "Manifesto", href: "/manifesto" },
+        { label: "Team", href: "/team" },
         {
-          label: "IMPACT GALLERY",
+          label: "Impact Gallery",
           href: "/impact-gallery",
         },
-        { label: "LEADERBOARD", href: "/leaderboard" },
-        { label: "OUR PARTNERS", href: "/partners" },
-        { label: "EVENTS", href: "/events" },
+        { label: "Leaderboard", href: "/leaderboard" },
+        { label: "Our Partners", href: "/partners" },
+        { label: "Events", href: "/events" },
       ],
       Programs: [
-        { label: "LAUNCHPAD", href: "https://launchpadkerala.org/" },
-        { label: "PERMUTE", href: "https://permute.mulearn.org/" },
-        { label: "TOP100SERIES", href: "https://top100series.com/" },
-        { label: "ART OF TEACHING", href: "/artofteaching" },
-        { label: "IN50HOURS", href: "/in50hours" },
+        { label: "Launchpad", href: "https://launchpadkerala.org/" },
+        { label: "Permute", href: "https://permute.mulearn.org/" },
+        { label: "Top100 Series", href: "https://top100series.com/" },
+        { label: "Art of Teaching", href: "/artofteaching" },
+        { label: "In50Hours", href: "/in50hours" },
         { label: "KKEM", href: "/kkem" },
       ],
-      OTHERS: [
+      Others: [
         {
           label: "MuBook",
           href: "https://mulearn.org/r/mubook",
         },
         {
-          label: "CAREER LABS",
+          label: "Career Labs",
           href: "/careers",
         },
         {
-          label: "CONTACT US",
+          label: "Contact Us",
           href: "/contact",
         },
         {
-          label: "TESTIMONIALS",
+          label: "Testimonials",
           href: "/testimonials",
         },
         // { label: "ANNUAL REPORTS",
@@ -62,8 +62,8 @@ export const navItems = [
         { label: "Campus Logo Generator", href: "/campus-logo-generator" },
       ],
       Partners: [
-        { label: "COMMUNITY PARTNERS", href: "/partners/community-partners" },
-        { label: "COMPANY PARTNERS", href: "/partners/company-partners" },
+        { label: "Community Partners", href: "/partners/community-partners" },
+        { label: "Company Partners", href: "/partners/company-partners" },
       ],
     },
   },

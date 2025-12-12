@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   compress: true,
   reactStrictMode: true,
   images: {
+    // Sharp will automatically convert to WebP when installed
+    formats: ["image/webp"],
+    // Responsive image sizes for different devices
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Cache optimized images for 1 minute
+    minimumCacheTTL: 60,
+    qualities: [75, 85, 90],
     remotePatterns: [
       {
         protocol: "https",

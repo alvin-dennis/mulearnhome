@@ -13,7 +13,7 @@ const fadeInUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+    transition: { duration: 0.4, ease: [0.42, 0, 0.58, 1] }, // Reduced from 0.6s for faster LCP
   },
 };
 
@@ -22,11 +22,11 @@ const textVariant: Variants = {
   visible: (custom: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: custom * 0.1, duration: 0.5 },
+    transition: { delay: custom * 0.05, duration: 0.3 }, // Faster animations for better LCP
   }),
 };
 
-const illustration = cdnUrl("src/modules/Public/Home/assets/illustration.webp");
+const illustration = "/assets/illustration.webp";
 
 export default function Hero() {
   const redirect = useRedirectToApp();
@@ -91,25 +91,20 @@ export default function Hero() {
         </div>
       </div>
 
-      <MotionDiv
-        custom={4}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={textVariant}
-        className="relative w-full mt-auto flex justify-center items-end"
-      >
+      <div className="relative w-full mt-auto flex justify-center items-end">
         <MuImage
           src={illustration}
-          alt="Community illustration"
+          alt="Community illustration showcasing µLearn peer learning platform"
           width={1300}
           height={900}
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
-          preload
-          fetchPriority="high"
+          priority
+          quality={85}
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoKAAoAAkA4JaQAA3AA/vuZxe3gAAA="
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, 70vw"
         />
-      </MotionDiv>
+      </div>
     </MotionHeader>
   );
 }

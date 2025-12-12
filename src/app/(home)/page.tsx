@@ -1,13 +1,17 @@
-import Community from "@/app/(home)/_components/Community";
-import Comparison from "@/app/(home)/_components/Comparison";
+import dynamic from "next/dynamic";
 import Features from "@/app/(home)/_components/Features";
 import Hero from "@/app/(home)/_components/Hero";
-import Newsletter from "@/app/(home)/_components/Newsletter";
-import Opportunities from "@/app/(home)/_components/Opportunities";
-import Roles from "@/app/(home)/_components/Roles";
-import SpecialEvents from "@/app/(home)/_components/SpecialEvents";
-import Stats from "@/app/(home)/_components/Stats";
 import Story from "@/app/(home)/_components/Story";
+
+// Lazy load below-fold components for better initial page load
+// SEO-safe: Next.js dynamic imports don't affect SSR, crawlers see all content
+const SpecialEvents = dynamic(() => import("@/app/(home)/_components/SpecialEvents"));
+const Comparison = dynamic(() => import("@/app/(home)/_components/Comparison"));
+const Opportunities = dynamic(() => import("@/app/(home)/_components/Opportunities"));
+const Roles = dynamic(() => import("@/app/(home)/_components/Roles"));
+const Stats = dynamic(() => import("@/app/(home)/_components/Stats"));
+const Community = dynamic(() => import("@/app/(home)/_components/Community"));
+const Newsletter = dynamic(() => import("@/app/(home)/_components/Newsletter"));
 
 const Home = () => {
   return (
