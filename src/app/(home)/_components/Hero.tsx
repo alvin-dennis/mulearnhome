@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <MotionHeader
       id="home"
-      className="relative flex flex-col items-center justify-between min-h-[calc(100vh-80px)] lg:min-h-screen overflow-hidden"
+      className="relative flex flex-col items-center justify-between h-[70vh] lg:min-h-screen overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #ffffff 0%, #f1f2f7 30%, #dce0f4 100%)",
       }}
@@ -54,7 +54,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight mb-4 sm:mb-6 max-w-3xl sm:max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight  max-w-3xl sm:max-w-4xl"
           >
             Your Ultimate Gateway
             <br />
@@ -67,7 +67,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-sm sm:text-lg md:text-xl text-mulearn-gray-600 mt-2 sm:mt-4 mb-4 sm:mb-6 max-w-xs sm:max-w-xl md:max-w-2xl font-normal"
+            className="text-sm sm:text-lg md:text-xl text-mulearn-gray-600 mb-4 sm:mb-6 max-w-xs sm:max-w-xl md:max-w-2xl font-normal"
           >
             An open community for learners, makers, and innovators
           </MotionP>
@@ -81,6 +81,7 @@ export default function Hero() {
           >
             <Button
               variant={"mulearn"}
+              size={"lg"}
               className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
             >
