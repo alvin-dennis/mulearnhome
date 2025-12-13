@@ -109,19 +109,6 @@ export default function TestimonialsPage() {
         { icon: TrendingUp, number: "100+", label: "Partner Companies" },
       ];
 
-  const _formatMobileNumber = (raw: string) => {
-    // extract digits from string like "62,783+" or "1990+" or "50K+"
-    const digitsStr = (raw || "").replace(/[^0-9]/g, "");
-    const n = parseInt(digitsStr || "0", 10);
-    if (!n) return raw;
-    if (n >= 1000) {
-      // if >=10,000 show rounded k (no decimals), else show one decimal place
-      if (n >= 10000) return `${Math.round(n / 1000)}k+`;
-      return `${Math.round(n / 100) / 10}k+`;
-    }
-    return raw;
-  };
-
   return (
     <div className="min-h-screen">
       {}

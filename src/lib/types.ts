@@ -228,12 +228,18 @@ export interface TextTestimonial {
   name: string;
   role: string;
   company?: string;
-  profileImage: string;
+  muid?: string;
+  profileImage?: string;
   quote: string;
   type: "learner" | "mentor" | "partner" | "community-leader";
   rating: number;
   date: string;
   socialProof?: string;
+}
+
+export interface ProfileImage {
+  id: number;
+  avatar: string;
 }
 
 export type Testimonials = VideoTestimonial | TextTestimonial;

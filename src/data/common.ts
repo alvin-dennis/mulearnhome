@@ -15,7 +15,7 @@ export const navItems = [
         { label: "Our Partners", href: "/partners" },
         { label: "Events", href: "/events" },
       ],
-      Programs: [
+      "Flagship Initiatives": [
         { label: "Launchpad", href: "https://launchpadkerala.org/" },
         { label: "Permute", href: "https://permute.mulearn.org/" },
         { label: "Top100 Series", href: "https://top100series.com/" },

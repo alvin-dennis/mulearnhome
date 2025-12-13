@@ -1,6 +1,5 @@
 "use client";
 
-import { cdnUrl } from "@services/cdn";
 import type { Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
@@ -13,7 +12,7 @@ const fadeInUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: [0.42, 0, 0.58, 1] }, // Reduced from 0.6s for faster LCP
+    transition: { duration: 0.4, ease: [0.42, 0, 0.58, 1] },
   },
 };
 
@@ -22,7 +21,7 @@ const textVariant: Variants = {
   visible: (custom: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: custom * 0.05, duration: 0.3 }, // Faster animations for better LCP
+    transition: { delay: custom * 0.05, duration: 0.3 },
   }),
 };
 
@@ -81,7 +80,6 @@ export default function Hero() {
           >
             <Button
               variant={"mulearn"}
-              size={"lg"}
               className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
             >

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MotionDiv } from "@/components/MuFramer";
@@ -16,18 +17,23 @@ interface Props {
 }
 
 export default function EventCarousel({ events }: Props) {
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+
   return (
     <div className="relative">
       <Button
-        variant={"mulearn"}
-        className="swiper-button-prev absolute -translate-y-1/2 z-10 flex items-center justify-center"
+        ref={prevRef}
+        variant="mulearn"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
       >
         <ChevronLeft className="w-5 h-5 text-mulearn-whitish" />
       </Button>
 
       <Button
-        variant={"mulearn"}
-        className="swiper-button-next absolute -translate-y-1/2 z-10 flex items-center justify-center"
+        ref={nextRef}
+        variant="mulearn"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10"
       >
         <ChevronRight className="w-5 h-5 text-mulearn-whitish" />
       </Button>
@@ -43,8 +49,14 @@ export default function EventCarousel({ events }: Props) {
         }}
         pagination={{ clickable: true, dynamicBullets: true }}
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          // @ts-expect-error - Swiper typing mismatch
+          swiper.params.navigation.prevEl = prevRef.current;
+          // @ts-expect-error - Swiper typing mismatch
+          swiper.params.navigation.nextEl = nextRef.current;
         }}
         loop={events.length > 3}
         breakpoints={{
@@ -53,13 +65,13 @@ export default function EventCarousel({ events }: Props) {
         }}
         className="!pb-12"
       >
-        {events.map((event, i) => (
+        {events.map((event) => (
           <SwiperSlide key={event.title}>
             <MotionDiv
+              layout={false}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
               className="h-full"
             >
               <EventCard event={event} />
