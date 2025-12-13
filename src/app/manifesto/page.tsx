@@ -26,9 +26,10 @@ export default function Manifesto() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-mulearn-whitish text-[10vw] md:text-[6.5vw] leading-[1.5] md:leading-none font-[var(--font-retro)]"
+            style={{ fontFamily: 'var(--font-retro)' }}
+            className="text-mulearn-whitish text-[10vw] md:text-[6.5vw] leading-[1.5] md:leading-none"
           >
-            We,The Unbound, The Unbowed
+            We, The Unbound, The Unbowed
           </MotionH1>
         </div>
 
@@ -64,12 +65,12 @@ export default function Manifesto() {
         </p>
       </div>
 
-      <div className="bg-mulearn text-mulearn-whitish flex flex-col justify-center items-center gap-4 md:gap-8 mt-8 mb-[1.2rem] mx-0 sm:mt-20 sm:mb-24 text-center py-6 px-4 rounded-b-2xl">
+      <div className="bg-mulearn flex flex-col justify-center items-center gap-4 md:gap-8 mt-8 mb-[1.2rem] mx-0 sm:mt-20 sm:mb-24 text-center py-6 px-4 rounded-b-2xl">
         <MotionH2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-[1rem] sm:text-[2rem] w-full"
+          className="text-[1rem] sm:text-[2rem] w-full text-mulearn-whitish"
         >
           Welcome to the <span className="font-semibold">µLearn.</span>
           <br />
