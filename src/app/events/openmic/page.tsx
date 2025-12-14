@@ -1,96 +1,111 @@
 "use client";
 
 import { Calendar, Clock, Mic, PlayCircle, Users } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { openMicData } from "@/data/events";
 import type { OMEvent } from "@/lib/types";
 
 export default function OpenMicPage() {
-  const upcomingEvents = openMicData.events.filter((event) => event.isUpcoming);
-  const pastEvents = openMicData.events.filter((event) => !event.isUpcoming);
+  const [activeTab, setActiveTab] = useState<"upcoming" | "previous">("upcoming");
+  const [search, setSearch] = useState("");
+
+  const upcomingEvents = useMemo(() => openMicData.events.filter((e) => e.isUpcoming), []);
+  const pastEvents = useMemo(() => openMicData.events.filter((e) => !e.isUpcoming), []);
+
+  const filteredEvents = useMemo(() => {
+    const events = activeTab === "upcoming" ? upcomingEvents : pastEvents;
+    return events.filter((e) => e.title.toLowerCase().includes(search.toLowerCase()));
+  }, [activeTab, search, upcomingEvents, pastEvents]);
 
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge
-              variant="outline"
-              className="mb-6 border-2 border-mulearn-trusty-blue text-mulearn-trusty-blue font-bold text-sm py-2 px-4 hover:bg-mulearn-trusty-blue/10 hover:border-mulearn-duke-purple hover:text-mulearn-duke-purple transition-all duration-300 shadow-sm"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge
+            variant="outline"
+            className="mb-6 border-2 border-mulearn-trusty-blue text-mulearn-trusty-blue font-bold text-sm py-2 px-4 shadow-sm"
+          >
+            <Mic className="w-4 h-4 mr-2" /> Community Platform
+          </Badge>
+
+          <h1 className="mb-6">
+            µLearn <span className="text-mulearn">Open Mic</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-mulearn-gray-600 mb-8">
+            A platform where µLearn members perform, speak, express creativity, and share unique
+            stories or talents.
+          </p>
+
+          <div className="flex justify-center mb-6">
+            <Input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={`Search ${activeTab} events...`}
+              className="border border-mulearn-gray-600 rounded-lg py-2 px-4 w-full max-w-md text-sm"
+            />
+          </div>
+
+          <div className="flex justify-center gap-4 mb-6">
+            <Button
+              variant={activeTab === "upcoming" ? "mulearn" : "outline"}
+              className="rounded-full px-6"
+              onClick={() => setActiveTab("upcoming")}
             >
-              <Mic className="w-4 h-4 mr-2" />
-              Community Platform
-            </Badge>
+              Upcoming Sessions
+            </Button>
 
-            <h1 className="mb-6">
-              µLearn <span className="text-mulearn">Open Mic</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-mulearn-gray-600 mb-8">
-              A platform where µLearn members perform, speak, express creativity, and share unique
-              stories or talents. Join our community-driven stage for music, poetry, storytelling,
-              and innovative performances that celebrate youth expression and creative voices.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="mulearn" className="px-8 py-3 gap-2 rounded-full">
-                <PlayCircle className="w-5 h-5" />
-                Join Next Session
-              </Button>
-              <Button variant="mulearn-outline" className="px-8 py-3 gap-2 rounded-full">
-                <Users className="w-5 h-5" />
-                Watch Previous Events
-              </Button>
-            </div>
+            <Button
+              variant={activeTab === "previous" ? "mulearn" : "outline"}
+              className="rounded-full px-6"
+              onClick={() => setActiveTab("previous")}
+            >
+              Previous Sessions
+            </Button>
           </div>
         </div>
       </section>
 
-      {upcomingEvents.length > 0 && (
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="mb-4 flex items-center justify-center">
-                <Clock className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
-                Upcoming Sessions
-              </h2>
-              <p className="text-mulearn-gray-600 max-w-2xl mx-auto">
-                Don&apos;t miss these exciting upcoming Open Mic performances
-              </p>
-            </div>
-
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {filteredEvents.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {upcomingEvents.map((event) => (
+              {filteredEvents.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>
-          </div>
-        </section>
-      )}
-
-      <section className="py-12 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="mb-4 flex items-center justify-center">
-              <Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />
-              Performance Highlights
-            </h2>
-            <p className="text-mulearn-gray-600 max-w-2xl mx-auto">
-              Amazing performances and creative expressions from our community
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
+          ) : (
+            <FallbackEmpty
+              title={
+                activeTab === "upcoming"
+                  ? "No Upcoming Open Mic Sessions"
+                  : "No Past Performances Yet"
+              }
+              description={
+                activeTab === "upcoming"
+                  ? "New performances will be announced soon. Stay tuned!"
+                  : "Be part of the next Open Mic and make history ✨"
+              }
+            />
+          )}
         </div>
       </section>
+    </div>
+  );
+}
+
+function FallbackEmpty({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="text-center py-8 md:py-12">
+      <Calendar className="w-12 h-12 md:w-16 md:h-16 text-mulearn-gray-600  mx-auto mb-3 md:mb-4" />
+      <h3 className="text-lg md:text-xl font-semibold text-mulearn-gray-600 mb-2">{title}</h3>
+      <p className="text-mulearn-gray-600 text-sm md:text-base">{description}</p>
     </div>
   );
 }
@@ -107,12 +122,7 @@ function useReadMore(initialText: string, maxLength: number = 100) {
 
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
-  return {
-    displayText,
-    isExpanded,
-    shouldTruncate,
-    toggleExpand,
-  };
+  return { displayText, isExpanded, shouldTruncate, toggleExpand };
 }
 
 function EventCard({ event }: { event: OMEvent }) {

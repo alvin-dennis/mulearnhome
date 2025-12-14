@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import axios from "axios";
 import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import { useEffect, useState } from "react";
+import MuImage from "@/components/MuImage";
 import { CardFooter } from "@/components/ui/card";
+import { clientEnv } from "@/lib/env/env.client";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import axios from "axios";
-import { clientEnv } from "@/lib/env/env.client";
-import MuImage from "@/components/MuImage";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;
@@ -24,7 +24,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
     const fetchProfileImage = async () => {
       try {
         const res = await axios.get(
-          `${clientEnv.NEXT_PUBLIC_API_BASE_URL}/dashboard/profile/user-profile/${testimonial.muid}/`
+          `${clientEnv.NEXT_PUBLIC_API_BASE_URL}/dashboard/profile/user-profile/${testimonial.muid}/`,
         );
         const profilePic = res.data.response.profile_pic;
 
@@ -86,9 +86,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
           key={i}
           className={cn(
             "w-4 h-4",
-            i < rating
-              ? "fill-yellow-400 text-yellow-400"
-              : "fill-gray-300 text-gray-300"
+            i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300",
           )}
         />
       ))}
@@ -117,9 +115,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
           </div>
 
           <div>
-            <h3 className="font-semibold text-mulearn-blackish">
-              {testimonial.name}
-            </h3>
+            <h3 className="font-semibold text-mulearn-blackish">{testimonial.name}</h3>
             <p className="text-sm text-mulearn-gray-600">
               {testimonial.role}
               {testimonial.company && ` • ${testimonial.company}`}
@@ -130,7 +126,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
         <div
           className={cn(
             "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide",
-            getTypeColor(testimonial.type)
+            getTypeColor(testimonial.type),
           )}
         >
           {getTypeLabel(testimonial.type)}
@@ -138,9 +134,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
       </div>
 
       <blockquote className="mb-4">
-        <p className="text-mulearn-gray-600 leading-relaxed">
-          &quot;{testimonial.quote}&quot;
-        </p>
+        <p className="text-mulearn-gray-600 leading-relaxed">&quot;{testimonial.quote}&quot;</p>
       </blockquote>
 
       <CardFooter className="pt-0">
