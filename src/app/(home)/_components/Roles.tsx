@@ -46,7 +46,7 @@ export default function Roles() {
       <Tabs value={activeRole} onValueChange={setActiveRole} className="w-full">
         <div className="flex flex-col w-full mb-6 items-center justify-center sm:hidden">
           <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
+            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn-trusty-blue">
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>

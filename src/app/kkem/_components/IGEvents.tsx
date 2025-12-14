@@ -39,14 +39,16 @@ const Card = ({ name, image, link, description, largeImg, date }: cardProps) => 
         <p className="font-light text-[16px] leading-[22px]">{date}</p>
         <p className="font-light text-[16px] leading-[22px]">{description}</p>
 
-        {link !== "#" ? (
-          <div className="flex flex-row items-center gap-2 hover:text-mulearn-trusty-blue">
-            <span className="uppercase font-medium text-[16px] leading-[22px]">Explore More</span>
-            <SquareArrowOutUpRight />
-          </div>
-        ) : (
-          <span className="uppercase font-medium text-[16px] leading-[22px]">Coming Soon!</span>
-        )}
+        <div className="mt-auto">
+          {link !== "#" ? (
+            <div className="flex items-center gap-2 hover:text-mulearn-trusty-blue">
+              <span className="uppercase font-medium text-[16px]">Explore More</span>
+              <SquareArrowOutUpRight />
+            </div>
+          ) : (
+            <span className="uppercase font-medium text-[16px]">Coming Soon!</span>
+          )}
+        </div>
       </MotionDiv>
     </Link>
   );
