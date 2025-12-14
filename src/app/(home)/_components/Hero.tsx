@@ -81,7 +81,12 @@ export default function Hero() {
             <Button
               variant={"mulearn"}
               className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
-              onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
+              onClick={() => {
+                const path = refreshToken ? "/dashboard/home" : "/register";
+                console.log("Redirecting to:", path);
+                console.log("Has refresh token:", !!refreshToken);
+                redirect(path);
+              }}
             >
               Join µLearn
             </Button>
