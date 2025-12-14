@@ -2,10 +2,55 @@ import type { Variants } from "framer-motion";
 import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
 import { MotionDiv } from "@/components/MuFramer";
-import { events } from "@/data/events";
+import { getLatestEvents, getPastEvents, getRecurringEvents } from "@/lib/tina";
 import type { Event } from "@/lib/types";
 
-export default function Events() {
+export const dynamic = "force-dynamic";
+
+// Transform TinaCMS event to local Event type
+function transformEvent(
+  tinaEvent: NonNullable<Awaited<ReturnType<typeof getLatestEvents>>[number]>,
+): Event {
+  return {
+    title: tinaEvent.title,
+    date: tinaEvent.date || "",
+    description: tinaEvent.description || "",
+    link: tinaEvent.link || "",
+    image: tinaEvent.image || "",
+    isLive: tinaEvent.isLive || false,
+  };
+}
+
+export default async function Events() {
+  // Fetch events from TinaCMS
+  const [latestEvents, pastEvents, recurringEvents] = await Promise.all([
+    getLatestEvents(),
+    getPastEvents(),
+    getRecurringEvents(),
+  ]);
+
+  // Transform TinaCMS events to local Event type
+  const transformedLatest = latestEvents
+    .filter((e): e is NonNullable<typeof e> => e != null)
+    .map(transformEvent);
+  const transformedPast = pastEvents
+    .filter((e): e is NonNullable<typeof e> => e != null)
+    .map(transformEvent);
+  const transformedRecurring = {
+    weekly: recurringEvents.weekly
+      .filter((e): e is NonNullable<typeof e> => e != null)
+      .map(transformEvent),
+    biweekly: recurringEvents.biweekly
+      .filter((e): e is NonNullable<typeof e> => e != null)
+      .map(transformEvent),
+    monthly: recurringEvents.monthly
+      .filter((e): e is NonNullable<typeof e> => e != null)
+      .map(transformEvent),
+    flagship: recurringEvents.flagship
+      .filter((e): e is NonNullable<typeof e> => e != null)
+      .map(transformEvent),
+  };
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -26,16 +71,16 @@ export default function Events() {
     return titles[type] || type;
   };
 
-  const recurringEventsEntries: [string, Event[]][] = Object.entries(events.recurringEvents).filter(
+  const recurringEventsEntries: [string, Event[]][] = Object.entries(transformedRecurring).filter(
     ([, events]) => events.length > 0,
   );
 
   const shouldUseCarousel = (events: Event[]) => events.length > 3;
 
   const allEventsSections: [string, Event[]][] = [
-    ["latest", events.latestEvents],
+    ["latest", transformedLatest],
     ...recurringEventsEntries,
-    ["past", events.pastEvents],
+    ["past", transformedPast],
   ] as [string, Event[]][];
 
   return (

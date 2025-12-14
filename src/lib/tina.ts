@@ -98,5 +98,22 @@ export async function getEvent(filename: string) {
   return response.data.event;
 }
 
+/**
+ * Fetch all Salt Mango Tree episodes
+ */
+export async function getSaltMangoTree() {
+  const response = await client.queries.saltMangoTreeConnection();
+  return response.data.saltMangoTreeConnection.edges?.map((edge) => edge?.node) || [];
+}
+
+/**
+ * Fetch all Inspiration Station episodes
+ */
+export async function getInspirationStation() {
+  const response = await client.queries.inspirationStationConnection();
+  return response.data.inspirationStationConnection.edges?.map((edge) => edge?.node) || [];
+}
+
 // Types for external use
 export type { Event, SpecialEvent, OfficeHours };
+export type { InspirationStation, SaltMangoTree } from "@/tina/__generated__/types";
