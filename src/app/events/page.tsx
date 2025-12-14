@@ -19,7 +19,6 @@ export default function Events() {
     const titles: Record<string, string> = {
       latest: "Ongoing Events",
       weekly: "Weekly Twitch Events",
-      flagship: "Flagship Events",
       biweekly: "Biweekly Events",
       monthly: "Monthly Events",
       past: "Past Events",

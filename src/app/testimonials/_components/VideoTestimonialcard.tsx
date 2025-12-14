@@ -8,7 +8,7 @@ interface VideoTestimonialCardProps {
 
 export default function VideoTestimonialCard({ testimonial }: VideoTestimonialCardProps) {
   return (
-    <Card className="rounded-2xl overflow-hidden">
+    <Card className="overflow-hidden">
       <CardContent className="p-0">
         <div className="w-full h-full aspect-video">
           <YouTubeEmbed

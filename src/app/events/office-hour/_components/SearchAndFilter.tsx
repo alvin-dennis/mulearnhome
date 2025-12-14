@@ -21,6 +21,7 @@ interface SearchAndFilterProps {
   startDate?: string | null;
   endDate?: string | null;
   onDateRangeChange?: (start?: string | null, end?: string | null) => void;
+  view: string | null;
 }
 
 export default function SearchAndFilter({
@@ -29,6 +30,7 @@ export default function SearchAndFilter({
   selectedTags,
   onTagToggle,
   allTags,
+  view,
 }: SearchAndFilterProps) {
   return (
     <div className="max-w-7xl mx-auto justify-center items-center px-4 mt-10 mb-6">
@@ -36,7 +38,7 @@ export default function SearchAndFilter({
         <div className="relative w-full md:w-1/3">
           <Search className="absolute top-3 left-3 text-mulearn-gray-600 w-5 h-5" />
           <Input
-            placeholder="Search events..."
+            placeholder={`Search ${view} events...`}
             className="pl-10 py-6 rounded-xl w-full"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}

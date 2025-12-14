@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "mulearn.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "www.propeers.in",
         pathname: "/**",
       },

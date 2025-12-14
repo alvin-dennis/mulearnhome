@@ -35,10 +35,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-1/2 flex flex-col items-center lg:items-end gap-8 order-1 lg:order-2"
           >
-            <h1 className="text-xl sm:text-lg md:text-xl lg:text-[40px] font-semibold leading-tight text-center lg:text-right max-w-[630px]">
-              <span className="text-[#1A202C]">Partner with </span>
+            <h1 className="text-4xl lg:text-5xl font-semibold leading-tight text-center lg:text-right max-w-[630px]">
+              <span className="text-mulearn-blackish">Partner with </span>
               <span className="text-mulearn">µLearn </span>
-              <span className="text-[#1A202C]">to discover talent and spark innovation</span>
+              <span className="text-mulearn-blackish">to discover talent and spark innovation</span>
             </h1>
 
             <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

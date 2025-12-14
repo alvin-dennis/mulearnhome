@@ -50,8 +50,6 @@ const retro = localFont({
   display: "swap",
 });
 
-const cdnurl = clientEnv.NEXT_PUBLIC_CDN_URL;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,13 +62,6 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${circe.variable} ${retro.variable}`}
     >
       <head>
-        {cdnurl && (
-          <>
-            <link rel="preconnect" href={cdnurl} crossOrigin="anonymous" />
-            <link rel="dns-prefetch" href={cdnurl} />
-          </>
-        )}
-        {/* Preconnect to S3 for faster remote image loading */}
         <link rel="preconnect" href="https://s3.ap-south-1.amazonaws.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
       </head>

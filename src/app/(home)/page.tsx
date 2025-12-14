@@ -3,8 +3,6 @@ import Features from "@/app/(home)/_components/Features";
 import Hero from "@/app/(home)/_components/Hero";
 import Story from "@/app/(home)/_components/Story";
 
-// Lazy load below-fold components for better initial page load
-// SEO-safe: Next.js dynamic imports don't affect SSR, crawlers see all content
 const SpecialEvents = dynamic(() => import("@/app/(home)/_components/SpecialEvents"));
 const Comparison = dynamic(() => import("@/app/(home)/_components/Comparison"));
 const Opportunities = dynamic(() => import("@/app/(home)/_components/Opportunities"));

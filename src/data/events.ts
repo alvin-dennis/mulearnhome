@@ -8,7 +8,6 @@ export const events: {
     weekly: Event[];
     biweekly: Event[];
     monthly: Event[];
-    flagship: Event[];
   };
 } = {
   latestEvents: [
@@ -102,63 +101,6 @@ export const events: {
     },
   ],
   recurringEvents: {
-    flagship: [
-      {
-        title: "Permute",
-        description:
-          "Perµte is the annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
-        link: "https://permute.mulearn.org/",
-        isLive: false,
-      },
-      {
-        title: "Top 100 Series",
-        description:
-          "Top 100 Series aims to highlight and empower India’s top innovative talents in the fields of coding, designing and hardware development and product innovation. Through well curated challenges and expert guidance, we help individuals connect, grow and gain global recognition.",
-        link: "https://top100series.com/",
-        image: cdnUrl("src/modules/Public/Home/assets/top-100.webp"),
-        isLive: true,
-      },
-      {
-        title: "In50Hours",
-        description:
-          "Get ready to unleash your creativity and innovation at In50Hr, a high-energy 50-hour hackathon where ideas turn into reality. Over an intense and inspiring weekend, participants will collaborate, code, and create groundbreaking solutions while connecting with like-minded innovators, mentors, and industry experts. It’s a space where passion meets purpose — filled with brainstorming sessions, sleepless nights, and bursts of caffeine-fueled energy. Whether you’re a developer, designer, or dreamer, In50Hr offers the perfect platform to showcase your talent, learn new skills, and build something extraordinary in just 50 hours.",
-        link: "/in50hours/",
-        image: "",
-        isLive: false,
-      },
-      {
-        title: "Launchpad",
-        description:
-          "Launchpad Kerala is a premier job fair that brings together talented individuals and innovative companies in the technical and engineering fields. With its skills-first approach, flexible interviews, and a wide talent pool, Launchpad Kerala offers unmatched opportunities for both candidates and employers.",
-        link: "https://launchpad.mulearn.org/",
-        image: cdnUrl("src/modules/Public/Home/assets/launchpad.webp"),
-        isLive: false,
-      },
-      {
-        title: "Trivial Ideas",
-        description:
-          "The Trivial Ideas program is a monthly initiative by μLearn where students create and share small, useful tools that solve real problems. Each month starts with a new theme and continues through building, reviewing, and publishing the best tools. The program helps students practice building consistently, learn from feedback, and see their work adopted by others. It also involves partners who guide, support, and validate the tools through real-world use.",
-        link: "https://mulearn.org/",
-        image: cdnUrl("src/modules/Public/Home/assets/trivialideas.webp"),
-        isLive: false,
-      },
-      {
-        title: "Mutate",
-        description:
-          "Mutate is a prestigious, invite-only convergence that brought together 125 campus leads and enablers from the μLearn foundation. This exclusive event, held at the Gokulam Grand in Kazhakoottam, was designed to foster collaboration, ignite creative discussions, and drive impactful change for future campus initiatives. It served as a strategic platform for networking and planning, uniting the community's brightest minds to shape the future of student-led innovation.",
-        link: "https://mulearn.org/",
-
-        isLive: false,
-      },
-      {
-        title: "Amuse",
-        description:
-          "Amuse is a vibrant, invite-only gathering that brought together campus leads, district leads, and core enablers from the μLearn community. Hosted as a collaborative planning retreat, Amuse served as a space for vision-building, strategy discussions, and cross-campus collaboration. The event fostered meaningful conversations and collective ideation, empowering leaders to align on future initiatives and strengthen the ecosystem of student-led innovation across campuses.",
-        link: "https://mulearn.org/",
-
-        isLive: false,
-      },
-    ],
     weekly: [
       {
         title: "Office Hour",

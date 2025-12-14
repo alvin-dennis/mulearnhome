@@ -109,19 +109,6 @@ export default function TestimonialsPage() {
         { icon: TrendingUp, number: "100+", label: "Partner Companies" },
       ];
 
-  const _formatMobileNumber = (raw: string) => {
-    // extract digits from string like "62,783+" or "1990+" or "50K+"
-    const digitsStr = (raw || "").replace(/[^0-9]/g, "");
-    const n = parseInt(digitsStr || "0", 10);
-    if (!n) return raw;
-    if (n >= 1000) {
-      // if >=10,000 show rounded k (no decimals), else show one decimal place
-      if (n >= 10000) return `${Math.round(n / 1000)}k+`;
-      return `${Math.round(n / 100) / 10}k+`;
-    }
-    return raw;
-  };
-
   return (
     <div className="min-h-screen">
       {}
@@ -282,15 +269,19 @@ export default function TestimonialsPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 variant="mulearn"
-                className="border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish px-10 py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className=" px-10 py-4 text-lg font-semibold rounded-2xl"
                 onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
               >
                 Join Our Community
               </Button>
-              <Link href="/contact" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://airtable.com/appzJZWzMWidJ0KHo/pagqcMn08HSvFjj7R/form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="mulearn"
-                  className="border-2 border-mulearn-trusty-blue bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple text-mulearn-whitish px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                  className="px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold"
                 >
                   Share Your Experience
                 </Button>
