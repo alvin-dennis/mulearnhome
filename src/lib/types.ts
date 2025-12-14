@@ -229,7 +229,7 @@ export interface TextTestimonial {
   role: string;
   company?: string;
   muid?: string;
-  profileImage?: string;
+  profileImage: string;
   quote: string;
   type: "learner" | "mentor" | "partner" | "community-leader";
   rating: number;
