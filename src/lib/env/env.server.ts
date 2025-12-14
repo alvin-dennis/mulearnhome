@@ -44,6 +44,9 @@ const serverEnvSchema = z.object({
 
   // GitHub Token (Optional - for leaderboard generation)
   GH_TOKEN: z.string().optional(),
+
+  // TinaCMS Token (Optional - for CMS authentication with TinaCloud)
+  TINA_TOKEN: z.string().optional(),
 });
 
 // ============================================================================

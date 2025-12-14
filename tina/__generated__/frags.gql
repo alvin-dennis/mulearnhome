@@ -1,0 +1,60 @@
+fragment EventParts on Event {
+  __typename
+  title
+  date
+  description
+  link
+  image
+  isLive
+  category
+  order
+}
+
+fragment OfficeHoursParts on OfficeHours {
+  __typename
+  sessions {
+    __typename
+    title
+    performer
+    description
+    date
+    tags
+    isUpcoming
+  }
+}
+
+fragment SaltMangoTreeParts on SaltMangoTree {
+  __typename
+  episodes {
+    __typename
+    topic
+    campus
+    zone
+    date
+    description
+    isUpcoming
+  }
+}
+
+fragment InspirationStationParts on InspirationStation {
+  __typename
+  episodes {
+    __typename
+    topic
+    campus
+    zone
+    date
+    description
+    isUpcoming
+  }
+}
+
+fragment SpecialEventParts on SpecialEvent {
+  __typename
+  title
+  description
+  link
+  image
+  isLive
+  order
+}
