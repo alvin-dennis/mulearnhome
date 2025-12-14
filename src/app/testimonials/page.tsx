@@ -274,7 +274,11 @@ export default function TestimonialsPage() {
               >
                 Join Our Community
               </Button>
-              <Link href="https://airtable.com/appzJZWzMWidJ0KHo/pagqcMn08HSvFjj7R/form" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://airtable.com/appzJZWzMWidJ0KHo/pagqcMn08HSvFjj7R/form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="mulearn"
                   className="px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold"
