@@ -70,7 +70,7 @@ const CareersCard = ({
         {jdlink && (
           <Button
             asChild
-            variant="mulearn"
+            variant={"custom"}
             className="w-full flex items-center justify-center gap-1 px-4 py-2"
           >
             <a href={jdlink} target="_blank" rel="noopener noreferrer">
@@ -81,7 +81,7 @@ const CareersCard = ({
         {applylink && (
           <Button
             asChild
-            variant="mulearn"
+            variant={"custom"}
             className="w-full flex items-center justify-center gap-1 px-4 py-2"
           >
             <a href={applylink} target="_blank" rel="noopener noreferrer">
@@ -92,7 +92,7 @@ const CareersCard = ({
         {extraButton && (
           <Button
             asChild
-            variant="mulearn"
+            variant={"custom"}
             className="w-full flex items-center justify-center gap-1 px-4 py-2"
           >
             <a href={extraButton} target="_blank" rel="noopener noreferrer">

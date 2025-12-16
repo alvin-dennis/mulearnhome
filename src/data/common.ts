@@ -136,6 +136,7 @@ export const footer = [
       { title: "Terms and Conditions", url: "/termsandconditions" },
       { title: "Privacy Policy", url: "/privacypolicy" },
       { title: "Refund Policy", url: "/refundpolicy" },
+      { title: "Cookie Settings", url: "#cookie-settings" },
     ],
   },
 ];

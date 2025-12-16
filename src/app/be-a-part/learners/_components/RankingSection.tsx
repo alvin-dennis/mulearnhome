@@ -131,7 +131,7 @@ export default function RankingSection() {
         >
           <Link href="https://app.mulearn.org/dashboard/leaderboard">
             <Button
-              variant={"mulearn"}
+              variant={"custom"}
               className="inline-flex items-center px-8 py-4 font-semibold text-lg"
             >
               View Full Leaderboard <ArrowRight className="w-5 h-5" />

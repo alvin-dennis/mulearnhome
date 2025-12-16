@@ -185,6 +185,59 @@ By visiting our Website or providing µLearn with your Information, you fully un
         "This Policy may be amended or updated from time to time to reflect changes in our practices with respect to the Processing of Personal Data, or changes in Applicable Law. We encourage you to read this Policy carefully, and to regularly check this page to review any changes we might make in accordance with the terms of this Policy.",
       subsections: [],
     },
+    {
+      heading: "Cookies and Tracking Technologies",
+      content:
+        "We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and personalize content. Cookies are small text files stored on your device that help us remember your preferences and understand how you interact with our website.",
+      subsections: [
+        "**Essential Cookies**: These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility. You cannot opt out of essential cookies.",
+        "**Analytics Cookies**: We use Google Analytics 4 to collect anonymous information about how visitors use our website. This data helps us improve user experience and website performance. Analytics cookies are only activated with your consent.",
+        "**Performance Cookies**: These cookies collect information about page load times and Core Web Vitals metrics to help us optimize website performance.",
+        "**Marketing Cookies**: These cookies may be used to deliver personalized advertisements and measure the effectiveness of marketing campaigns. Marketing cookies require explicit consent.",
+      ],
+    },
+    {
+      heading: "Google Analytics",
+      content:
+        "We use Google Analytics 4, a web analytics service provided by Google LLC, to analyze website usage. Google Analytics uses cookies to collect anonymous data including pages visited, time spent on pages, referral sources, and device information. This data is processed by Google and may be transferred to servers in the United States.",
+      subsections: [
+        "We have implemented IP anonymization to ensure your full IP address is never stored.",
+        "We do not combine Google Analytics data with personally identifiable information.",
+        "You can opt out of Google Analytics by using our cookie preferences panel or by installing the Google Analytics Opt-out Browser Add-on.",
+        "For more information about Google's privacy practices, please visit: https://policies.google.com/privacy",
+      ],
+    },
+    {
+      heading: "Your Cookie Choices",
+      content:
+        "You have the right to manage your cookie preferences at any time. When you first visit our website, a cookie consent banner will appear asking for your consent to use non-essential cookies. You can:",
+      subsections: [
+        "**Accept All**: Enable all cookies including analytics, performance, and marketing cookies.",
+        "**Reject All**: Only essential cookies will be used, which are necessary for website functionality.",
+        "**Manage Preferences**: Customize which cookie categories you allow. You can change your preferences at any time through the 'Cookie Settings' link in our website footer.",
+        "Most web browsers allow you to control cookies through their settings. However, limiting cookies may affect your experience on our website.",
+      ],
+    },
+    {
+      heading: "Do Not Track",
+      content:
+        "We respect the Do Not Track (DNT) browser setting. If you have enabled DNT in your browser, we will honor this signal and limit tracking accordingly. Please note that enabling DNT may affect some website functionality.",
+      subsections: [],
+    },
+    {
+      heading: "International Data Transfers and Your Rights",
+      content:
+        "If you are located in the European Union, California, or Brazil, you have specific rights regarding your personal data under GDPR, CCPA, and LGPD respectively:",
+      subsections: [
+        "**Right to Access**: You can request a copy of your personal data we hold.",
+        "**Right to Rectification**: You can request correction of inaccurate personal data.",
+        "**Right to Erasure**: You can request deletion of your personal data under certain circumstances.",
+        "**Right to Data Portability**: You can request your data in a machine-readable format.",
+        "**Right to Object**: You can object to processing of your personal data for marketing purposes.",
+        "**Right to Withdraw Consent**: You can withdraw your consent for data processing at any time by updating your cookie preferences.",
+        "To exercise any of these rights, please contact us at info@mulearn.org. We will respond to your request within 30 days.",
+      ],
+    },
   ],
 };
 

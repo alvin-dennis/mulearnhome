@@ -44,7 +44,7 @@ export default function LightboxModal({ item, onClose }: LightboxModalProps) {
           onClick={(e) => e.stopPropagation()}
         >
           <Button
-            variant={"mulearn"}
+            variant={"custom"}
             onClick={onClose}
             className="absolute top-1 right-2 rounded-full text-2xl p-2 transition-colors z-50"
           >

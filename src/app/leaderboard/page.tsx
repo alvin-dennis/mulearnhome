@@ -131,7 +131,7 @@ export default function LeaderBoard() {
       >
         <Link href="https://contributors.mulearn.org">
           <Button
-            variant={"mulearn"}
+            variant={"custom"}
             className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-lg"
           >
             View Full Leaderboard <ArrowRight className="w-5 h-5" />

@@ -24,7 +24,7 @@ export default function EventCarousel({ events }: Props) {
     <div className="relative">
       <Button
         ref={prevRef}
-        variant="mulearn"
+        variant={"custom"}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
       >
         <ChevronLeft className="w-5 h-5 text-mulearn-whitish" />
@@ -32,7 +32,7 @@ export default function EventCarousel({ events }: Props) {
 
       <Button
         ref={nextRef}
-        variant="mulearn"
+        variant={"custom"}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10"
       >
         <ChevronRight className="w-5 h-5 text-mulearn-whitish" />

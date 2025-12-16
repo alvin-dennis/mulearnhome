@@ -268,7 +268,7 @@ export default function TestimonialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
-                variant="mulearn"
+                variant={"custom"}
                 className=" px-10 py-4 text-lg font-semibold rounded-2xl"
                 onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
               >
@@ -280,7 +280,7 @@ export default function TestimonialsPage() {
                 rel="noopener noreferrer"
               >
                 <Button
-                  variant="mulearn"
+                  variant={"custom"}
                   className="px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold"
                 >
                   Share Your Experience

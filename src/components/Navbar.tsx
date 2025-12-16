@@ -138,9 +138,9 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <MotionDiv>
             <Button
-              variant={"mulearn"}
+              variant={"custom"}
               className="w-full py-2 px-8 font-semibold text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/login"))}
             >
@@ -250,9 +250,9 @@ export default function Navbar() {
                     )}
                   </ul>
 
-                  <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <MotionDiv>
                     <Button
-                      variant={"mulearn"}
+                      variant={"custom"}
                       className="w-full p-4 mb-20"
                       onClick={() =>
                         refreshToken ? redirect("/dashboard/home") : redirect("/login")

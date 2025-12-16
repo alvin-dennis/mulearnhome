@@ -113,7 +113,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               <div className="flex justify-start">
                 <Button
                   onClick={onDownload}
-                  variant="mulearn"
+                  variant={"custom"}
                   className="group/btn px-6 py-3 text-base font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
                 >
                   <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />

@@ -24,7 +24,7 @@ export default function Comparison() {
         <MotionDiv className="flex flex-col justify-center items-center" variants={fadeInUp}>
           <h1 className="mb-16 text-center">μLearn is here to solve all your learning problems</h1>
 
-          <table className="border-collapse w-full max-w-[800px]">
+          <table className="border-collapse w-full max-w-[800px] mx-auto">
             <thead>
               <tr>
                 <th className="pb-4 border-b border-mulearn-greyish text-mulearn-blackish text-lg text-right pr-4">

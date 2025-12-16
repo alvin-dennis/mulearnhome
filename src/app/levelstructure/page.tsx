@@ -374,7 +374,7 @@ export default function LevelStructure() {
                           }}
                         >
                           <Button
-                            variant="mulearn"
+                            variant={"custom"}
                             onClick={handleBeginJourney}
                             disabled={isAnimating}
                             className={`px-6 sm:px-6 py-3 sm:py-4 rounded-full font-semibold ${

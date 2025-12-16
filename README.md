@@ -302,7 +302,7 @@ Defined as CSS variables in `src/app/globals.css`:
 ### Usage Example
 
 ```tsx
-<Button variant="mulearn">MuLearn Gradient Button</Button>
+<Button variant={"custom"}>MuLearn Gradient Button</Button>
 <Card className="bg-mulearn-trusty text-mulearn-whitish">...</Card>
 <h1 className="font-display text-mulearn-trusty">Gradient Heading</h1>
 ```

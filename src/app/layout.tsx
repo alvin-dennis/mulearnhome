@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { clientEnv } from "@/lib/env/env.client";
 import "./globals.css";
+import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/components/analytics";
 import BackToTop from "@/components/BacktoTop";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
@@ -66,14 +67,18 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
       </head>
       <body className="font-sans antialiased">
-        <Navbar />
-        <Suspense fallback={<MuLoader />}>{children}</Suspense>
-        <Footer />
-        <Toaster reverseOrder={true} position="top-center" />
-        <SonnerToaster />
-        <div className="fixed bottom-4 right-4 z-50">
-          <BackToTop />
-        </div>
+        <AnalyticsProvider>
+          <Navbar />
+          <Suspense fallback={<MuLoader />}>{children}</Suspense>
+          <Footer />
+          <Toaster reverseOrder={true} position="top-center" />
+          <SonnerToaster />
+          <div className="fixed bottom-4 right-4 z-50">
+            <BackToTop />
+          </div>
+          <CookieConsent />
+          <DebugPanel />
+        </AnalyticsProvider>
       </body>
     </html>
   );

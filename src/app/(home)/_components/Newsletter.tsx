@@ -72,7 +72,7 @@ export default function Newsletter() {
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp}>
-            <Button type="submit" variant="mulearn" className="py-3 px-8 mb-8 font-bold">
+            <Button type="submit" variant={"custom"} className="py-3 px-8 mb-8 font-bold">
               Subscribe
             </Button>
           </MotionDiv>

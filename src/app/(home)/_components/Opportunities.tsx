@@ -15,7 +15,7 @@ const fadeInUp: Variants = {
 
 export default function Opportunities() {
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full ">
       <MotionSection
         className="flex flex-col justify-center py-24 items-center"
         variants={fadeInUp}
@@ -25,7 +25,7 @@ export default function Opportunities() {
       >
         <MotionDiv className="text-center" variants={fadeInUp}>
           <h1>At The End Of a μLearners Journey</h1>
-          <h6 className="font-normal mb-16 max-w-[800px] text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
+          <h6 className="font-normal mb-16 max-w-[800px] mx-auto text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             At the end of a μLearner&apos;s journey, they are equipped with a plethora of
             opportunities to choose from. They can choose to work in a job, freelance, research,
             start their own venture, or work for a social cause.
@@ -49,6 +49,7 @@ export default function Opportunities() {
                       alt={opportunity.name}
                       width={200}
                       height={200}
+                      loading="lazy"
                       className="w-auto h-auto mx-auto"
                       style={{ width: "auto", height: "auto", maxHeight: "150px" }}
                     />

@@ -152,7 +152,7 @@ export default function HowToJoin() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={"mulearn"} className="px-4 py-3">
+            <Button variant={"custom"} className="px-4 py-3">
               Join as a Company Partner
             </Button>
           </Link>

@@ -471,7 +471,7 @@ export default function DonationForm() {
               </div>
               <Button
                 type="submit"
-                variant="mulearn"
+                variant={"custom"}
                 className="sm:w-auto h-12 px-8 font-medium text-base shadow-sm hover:shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!isValid || totalAmount === 0}
               >

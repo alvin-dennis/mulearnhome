@@ -1,5 +1,6 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import CookieSettingsLink from "@/components/analytics/CookieSettingsLink";
 import { MotionFooter } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { contactInfo, footer, socials } from "@/data/common";
@@ -79,12 +80,18 @@ export default function Footer() {
               <ul className="space-y-3 md:space-y-2">
                 {section.links.map((link) => (
                   <li key={link.title}>
-                    <Link
-                      href={link.url}
-                      className="text-mulearn-gray-600 hover:text-mulearn-trusty-blue transition-all duration-300 hover:translate-x-1 inline-block text-sm"
-                    >
-                      {link.title}
-                    </Link>
+                    {link.url === "#cookie-settings" ? (
+                      <CookieSettingsLink className="text-mulearn-gray-600 hover:text-mulearn-trusty-blue transition-all duration-300 hover:translate-x-1 inline-block text-sm cursor-pointer">
+                        {link.title}
+                      </CookieSettingsLink>
+                    ) : (
+                      <Link
+                        href={link.url}
+                        className="text-mulearn-gray-600 hover:text-mulearn-trusty-blue transition-all duration-300 hover:translate-x-1 inline-block text-sm"
+                      >
+                        {link.title}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

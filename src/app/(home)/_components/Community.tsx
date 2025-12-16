@@ -47,7 +47,7 @@ export default function Community() {
             rel="noopener noreferrer"
             className="self-center sm:self-auto"
           >
-            <Button variant="mulearn" className="font-semibold px-6 py-3">
+            <Button variant={"custom"} className="font-semibold px-6 py-3">
               Join The Community
             </Button>
           </Link>
@@ -59,6 +59,8 @@ export default function Community() {
             alt="Join community"
             height={640}
             width={640}
+            loading="lazy"
+            priority={false}
             className="h-[40rem] w-auto max-w-full object-contain"
             style={{ width: "auto" }}
           />

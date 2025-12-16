@@ -46,11 +46,11 @@ export default function Features() {
         viewport={{ once: true }}
       >
         <div className="pt-10 sm:pt-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-left max-w-140 font-extrabold leading-snug">
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-center max-w-140 font-extrabold leading-snug">
             What <span className="text-mulearn">µLearn</span> offers
           </h1>
         </div>
-        <h6 className="font-normal max-w-[800px] text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
+        <h6 className="font-normal max-w-[800px] mx-auto text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
           µLearn offers a wide range of features and opportunities that help you learn, grow, and
           upskill yourself in a fun and engaging way. Here are some of the key features that µLearn
           offers.
@@ -133,6 +133,7 @@ export default function Features() {
                                   : 100
                       }
                       height={120}
+                      loading="lazy"
                       className="object-contain max-w-full max-h-full"
                       style={{ width: "auto", height: "auto" }}
                     />
@@ -146,7 +147,7 @@ export default function Features() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <Button variant="mulearn" className="px-4 py-2 font-semibold w-full">
+                    <Button variant={"custom"} className="px-4 py-2 font-semibold w-full">
                       {feature.cta}
                     </Button>
                   </Link>

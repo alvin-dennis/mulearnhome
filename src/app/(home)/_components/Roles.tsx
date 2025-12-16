@@ -91,6 +91,7 @@ export default function Roles() {
                         alt={item.name}
                         width={300}
                         height={200}
+                        loading="lazy"
                         className="w-full min-h-[220px] object-cover rounded-t-lg"
                       />
                     </CardHeader>

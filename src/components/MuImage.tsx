@@ -109,29 +109,8 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
     if (Object.hasOwn(newStyle, "width")) delete (newStyle as any).width;
     if (Object.hasOwn(newStyle, "height")) delete (newStyle as any).height;
   }
-  // Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
-  // and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
-  let shouldUnoptimized = false;
-  try {
-    const srcVal = (rest as any).src;
-    if (typeof srcVal === "string" && /^https?:\/\//.test(srcVal)) {
-      const parsed = new URL(srcVal);
-      const host = parsed.hostname;
-      if (
-        host === "s3.ap-south-1.amazonaws.com" ||
-        host.endsWith("cdn.mulearn") ||
-        host.includes("cdn.mulearn")
-      ) {
-        shouldUnoptimized = true;
-      }
-    }
-  } catch (_e) {
-    /* ignore parsing errors */
-  }
-
   const imageProps = {
     ...(rest as object),
-    unoptimized: shouldUnoptimized || (rest as any).unoptimized,
   } as ImageProps;
 
   return (
