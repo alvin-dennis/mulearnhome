@@ -133,7 +133,6 @@ export default function Features() {
                                   : 100
                       }
                       height={120}
-                      loading="lazy"
                       className="object-contain max-w-full max-h-full"
                       style={{ width: "auto", height: "auto" }}
                     />

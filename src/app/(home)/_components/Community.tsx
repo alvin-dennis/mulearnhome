@@ -59,8 +59,6 @@ export default function Community() {
             alt="Join community"
             height={640}
             width={640}
-            loading="lazy"
-            priority={false}
             className="h-[40rem] w-auto max-w-full object-contain"
             style={{ width: "auto" }}
           />

@@ -49,7 +49,6 @@ export default function Opportunities() {
                       alt={opportunity.name}
                       width={200}
                       height={200}
-                      loading="lazy"
                       className="w-auto h-auto mx-auto"
                       style={{ width: "auto", height: "auto", maxHeight: "150px" }}
                     />
