@@ -83,14 +83,14 @@ export default function Stats() {
                 }
               />
             ))}
-            <StatCard value={200} label="Events" />
+            <StatCard value={378} label="Events" />
             <StatCard value={counts.ig_count} label="Interest Groups" />
             <StatCard value={counts.karma_pow_count.karma_count} label="Total Karma Mined" />
             <StatCard value={counts.karma_pow_count.pow_count} label="Number of Proof of Works" />
-            <StatCard value={2000} label="Number of Internships" />
-            <StatCard value={1000} label="Jobs" />
-            <StatCard value={100} label="Products" />
-            <StatCard value="1Cr" label="Worth of Gig Works" isString />
+            <StatCard value={2270} label="Number of Internships" />
+            <StatCard value={1320} label="Jobs" />
+            <StatCard value={120} label="Products" />
+            <StatCard value="1.3Cr" label="Worth of Gig Works" isString />
             {counts.enablers_mentors_count.map((role) => (
               <StatCard
                 key={role.role__title}
