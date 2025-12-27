@@ -1,6 +1,6 @@
 {
   "schema": {
-    "version": { "fullVersion": "2.0.2", "major": "2", "minor": "0", "patch": "2" },
+    "version": { "fullVersion": "2.0.3", "major": "2", "minor": "0", "patch": "3" },
     "meta": { "flags": ["experimentalData"] },
     "collections": [
       {
