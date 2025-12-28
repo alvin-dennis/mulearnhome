@@ -20,6 +20,7 @@ fragment OfficeHoursParts on OfficeHours {
     date
     tags
     isUpcoming
+    interestGroups
   }
 }
 

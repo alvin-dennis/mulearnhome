@@ -308,6 +308,7 @@ export type OfficeHoursSessions = {
   date?: Maybe<Scalars["String"]["output"]>;
   tags?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
   isUpcoming?: Maybe<Scalars["Boolean"]["output"]>;
+  interestGroups?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
 };
 
 export type OfficeHours = Node &
@@ -326,6 +327,7 @@ export type OfficeHoursSessionsFilter = {
   date?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   isUpcoming?: InputMaybe<BooleanFilter>;
+  interestGroups?: InputMaybe<StringFilter>;
 };
 
 export type OfficeHoursFilter = {
@@ -603,6 +605,7 @@ export type OfficeHoursSessionsMutation = {
   date?: InputMaybe<Scalars["String"]["input"]>;
   tags?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
   isUpcoming?: InputMaybe<Scalars["Boolean"]["input"]>;
+  interestGroups?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
 };
 
 export type OfficeHoursMutation = {
@@ -666,6 +669,7 @@ export type OfficeHoursPartsFragment = {
     date?: string | null;
     tags?: Array<string | null> | null;
     isUpcoming?: boolean | null;
+    interestGroups?: Array<string | null> | null;
   } | null> | null;
 };
 
@@ -812,6 +816,7 @@ export type OfficeHoursQuery = {
       date?: string | null;
       tags?: Array<string | null> | null;
       isUpcoming?: boolean | null;
+      interestGroups?: Array<string | null> | null;
     } | null> | null;
   };
 };
@@ -861,6 +866,7 @@ export type OfficeHoursConnectionQuery = {
           date?: string | null;
           tags?: Array<string | null> | null;
           isUpcoming?: boolean | null;
+          interestGroups?: Array<string | null> | null;
         } | null> | null;
       } | null;
     } | null> | null;
@@ -1131,6 +1137,7 @@ export const OfficeHoursPartsFragmentDoc = gql`
     date
     tags
     isUpcoming
+    interestGroups
   }
 }
     `;

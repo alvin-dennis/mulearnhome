@@ -171,6 +171,7 @@ type OfficeHoursSessions {
   date: String
   tags: [String]
   isUpcoming: Boolean
+  interestGroups: [String]
 }
 
 type OfficeHours implements Node & Document {
@@ -187,6 +188,7 @@ input OfficeHoursSessionsFilter {
   date: StringFilter
   tags: StringFilter
   isUpcoming: BooleanFilter
+  interestGroups: StringFilter
 }
 
 input OfficeHoursFilter {
@@ -369,6 +371,7 @@ input OfficeHoursSessionsMutation {
   date: String
   tags: [String]
   isUpcoming: Boolean
+  interestGroups: [String]
 }
 
 input OfficeHoursMutation {
