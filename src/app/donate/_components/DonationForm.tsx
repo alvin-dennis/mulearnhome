@@ -194,13 +194,13 @@ export default function DonationForm() {
               value="yearly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Annual Supporter (Yearly)
+              Annual Supporter
             </TabsTrigger>
             <TabsTrigger
               value="monthly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Monthly Supporter (Monthly)
+              Monthly Supporter
             </TabsTrigger>
           </TabsList>
 
