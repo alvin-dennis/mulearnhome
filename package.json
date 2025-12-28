@@ -66,6 +66,11 @@
     "tinacms": "^3.1.0",
     "zod": "^4.1.12"
   },
+  "overrides": {
+    "@tinacms/cli": {
+      "tailwindcss": "^3.4.17"
+    }
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
     "@commitlint/cli": "^20.2.0",
