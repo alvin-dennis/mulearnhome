@@ -280,6 +280,7 @@ export interface OfficeHours {
   description: string;
   performer?: string;
   tags: string[];
+  ig?: string;
   thumbnail?: string;
   isUpcoming: boolean;
 }
