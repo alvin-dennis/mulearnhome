@@ -959,13 +959,6 @@
         "HR"
       ],
       "isUpcoming": false
-    },
-    {
-      "title": "Office Hours Title",
-      "performer": "Speakers Name",
-      "description": "Whats it about?\n",
-      "date": "01/01/2026",
-      "isUpcoming": true
     }
   ]
 }
