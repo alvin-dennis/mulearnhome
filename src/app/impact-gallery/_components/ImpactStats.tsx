@@ -78,7 +78,7 @@ export default function Stats() {
                 }
               />
             ))}
-            <StatCard value={200} label="Events Hosted" />
+            <StatCard value={378} label="Events Hosted" />
             <StatCard value="100" label="Success Stories" isString />
           </div>
         </MotionDiv>
