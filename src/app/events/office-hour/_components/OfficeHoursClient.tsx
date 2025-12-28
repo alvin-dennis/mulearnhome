@@ -73,9 +73,9 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
           if (parts.length === 3) {
             // DD/MM/YYYY format
             return new Date(
-              parseInt(parts[2]),
-              parseInt(parts[1]) - 1,
-              parseInt(parts[0]),
+              parseInt(parts[2], 10),
+              parseInt(parts[1], 10) - 1,
+              parseInt(parts[0], 10),
             ).getTime();
           }
           return new Date(dateStr).getTime() || 0;
@@ -106,7 +106,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
   useEffect(() => {
     setUpcomingPage(1);
     setPastPage(1);
-  }, [view, search, selectedTags]);
+  }, []);
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },

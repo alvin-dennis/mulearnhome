@@ -40,7 +40,7 @@ export default function RankingSection() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const topThree = topLearners.slice(0, 3);
 

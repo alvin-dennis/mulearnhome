@@ -8,7 +8,7 @@
  */
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Activity, Bug, ChevronDown, ChevronUp, Eye, EyeOff, Trash2, User } from "lucide-react";
+import { Activity, Bug, ChevronDown, ChevronUp, EyeOff, Trash2, User } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { CONSENT_CONFIG } from "@/lib/analytics/config";
 import { getStoredConsent, getVisitorId, isBrowser } from "@/lib/analytics/consent";

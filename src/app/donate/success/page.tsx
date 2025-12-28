@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowLeft, CheckCircle2, Mail } from "lucide-react";
+import { Check, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
 interface DonationData {
@@ -10,12 +11,14 @@ interface DonationData {
   amount: number;
   name: string;
   email: string;
+  paymentId?: string;
   [key: string]: unknown;
 }
 
 export default function DonateSuccessPage() {
   const router = useRouter();
   const [donationData, setDonationData] = useState<DonationData | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedData = localStorage.getItem("donationData");
@@ -23,15 +26,20 @@ export default function DonateSuccessPage() {
       try {
         const data = JSON.parse(storedData);
         setDonationData(data);
+        setLoading(false);
       } catch (error) {
         console.error("Failed to parse donation data:", error);
-
         setTimeout(() => router.push("/donate"), 3000);
       }
     } else {
       setTimeout(() => router.push("/donate"), 3000);
     }
   }, [router]);
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Copied to clipboard");
+  };
 
   const formatDonationType = (type: string) => {
     return type
@@ -40,111 +48,133 @@ export default function DonateSuccessPage() {
       .join(" ");
   };
 
-  if (!donationData) {
+  if (loading || !donationData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-mulearn-whitish to-purple-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-mulearn-trusty-blue mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+      <div className="min-h-screen flex items-center justify-center bg-mulearn-whitish">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-mulearn-trusty-blue/20 border-t-mulearn-trusty-blue rounded-full animate-spin"></div>
+          <p className="text-mulearn-gray-600 font-medium animate-pulse">Generating receipt...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 via-mulearn-whitish to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        {}
-        <div className="bg-mulearn-whitish rounded-2xl shadow-xl overflow-hidden">
-          {}
-          <div className="bg-mulearn px-8 py-12 text-center">
-            <div className="flex justify-center mb-4">
-              <div className="bg-mulearn-whitish rounded-full p-3">
-                <CheckCircle2 className="w-16 h-16 text-green-500" />
+    <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
+      <div className="w-full max-w-4xl perspective-1000">
+        {/* Main Card - Split Layout */}
+        <div className="bg-white rounded-[2rem] shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
+          {/* Left Side: Brand & Success (mulearn-trusty-blue background) */}
+          <div className="w-full md:w-5/12 bg-mulearn-trusty-blue relative overflow-hidden flex flex-col items-center justify-center p-10 text-center text-white">
+            {/* Decorative Circles */}
+            <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+
+            <div className="relative z-10 w-full">
+              <div className="mx-auto w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 ring-4 ring-white/20 shadow-xl">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+                  <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-[3]" />
+                </div>
               </div>
+
+              <h1 className="text-3xl font-bold tracking-tight mb-3 text-white">
+                Payment Successful
+              </h1>
+              <p className="text-blue-100 text-lg leading-relaxed max-w-xs mx-auto">
+                Thank you for empowering the next generation of learners.
+              </p>
             </div>
-            <h1 className="text-mulearn-whitish mb-2">Thank You!</h1>
-            <p className="text-white text-lg">Your donation has been received successfully</p>
           </div>
 
-          {}
-          <div className="px-8 py-10">
-            <div className="bg-gray-50 rounded-xl p-6 mb-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Donation Amount</p>
-                  <p className="text-3xl font-bold text-mulearn-trusty-blue">
-                    ₹{donationData.amount.toLocaleString("en-IN")}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Donation Type</p>
-                  <p className="text-xl font-semibold text-mulearn-blackish">
-                    {formatDonationType(donationData.donationType)}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Donor Name</p>
-                  <p className="text-lg font-medium text-mulearn-blackish">{donationData.name}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Email</p>
-                  <p className="text-lg font-medium text-mulearn-blackish break-all">
-                    {donationData.email}
-                  </p>
-                </div>
-              </div>
+          {/* Right Side: Receipt Details (White background) */}
+          <div className="w-full md:w-7/12 bg-white p-8 sm:p-12 flex flex-col justify-center relative">
+            {/* Watermark Logo */}
+            <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
+              <img src="/assets/logo.png" alt="" className="h-16 w-auto grayscale" />
             </div>
 
-            {}
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-green-100 rounded-full p-2 flex-shrink-0">
-                  <Mail className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-green-800 mb-1">Confirmation Email Sent!</h3>
-                  <p className="text-sm text-green-700 leading-relaxed">
-                    We&apos;ve sent a confirmation email to{" "}
-                    <span className="font-semibold">{donationData.email}</span> with your{" "}
-                    <span className="font-semibold">donation invoice attached</span>. Please check
-                    your inbox (and spam folder, just in case).
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={() => router.push("/")}
-                variant="outline"
-                className="flex-1 h-12 border-2 border-gray-300 hover:bg-gray-50"
-              >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Home
-              </Button>
-            </div>
-
-            {}
-            <div className="mt-10 text-center">
-              <p className="text-gray-600 leading-relaxed">
-                Your generous contribution helps us empower thousands of learners across India.
-                Together, we&apos;re building a vibrant learning community that breaks barriers and
-                creates opportunities.
+            <div className="mb-8">
+              <p className="text-xs uppercase tracking-widest font-bold text-mulearn-gray-600/60 mb-1">
+                Total Contribution
               </p>
-              <p className="mt-4 text-sm text-gray-500">
-                If you have any questions, please contact us at{" "}
-                <a
-                  href="mailto:donate@mulearn.org"
-                  className="text-mulearn-trusty-blue hover:underline"
+              <div className="flex items-baseline gap-1">
+                <span className="text-4xl font-extrabold text-mulearn-blackish">
+                  ₹{donationData.amount.toLocaleString("en-IN")}
+                </span>
+                <span className="text-sm font-medium text-mulearn-gray-600">INR</span>
+              </div>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                <span className="text-sm font-medium text-mulearn-gray-600">Donation Type</span>
+                <span className="text-sm font-bold text-mulearn-blackish">
+                  {formatDonationType(donationData.donationType)}
+                </span>
+              </div>
+              <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                <span className="text-sm font-medium text-mulearn-gray-600">Donor Name</span>
+                <span className="text-sm font-bold text-mulearn-blackish truncate max-w-[180px]">
+                  {donationData.name}
+                </span>
+              </div>
+              <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                <span className="text-sm font-medium text-mulearn-gray-600">Date</span>
+                <span className="text-sm font-bold text-mulearn-blackish">
+                  {new Date().toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </span>
+              </div>
+              {donationData.paymentId && (
+                <div
+                  className="flex items-center justify-between py-3 group cursor-pointer"
+                  onClick={() => copyToClipboard(donationData.paymentId || "")}
                 >
-                  donate@mulearn.org
-                </a>
+                  <span className="text-sm font-medium text-mulearn-gray-600">Transaction ID</span>
+                  <div className="flex items-center gap-2 bg-gray-50 px-2 py-1 rounded-md border border-gray-200 group-hover:border-mulearn-trusty-blue/30 transition-colors">
+                    <span className="text-xs font-mono text-mulearn-gray-600 group-hover:text-mulearn-trusty-blue">
+                      {donationData.paymentId.slice(0, 16)}...
+                    </span>
+                    <Copy className="w-3 h-3 text-gray-400 group-hover:text-mulearn-trusty-blue" />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Email Hint */}
+            <div className="flex items-center gap-3 text-sm text-mulearn-gray-600 mb-8 bg-blue-50/50 p-3 rounded-lg border border-blue-100/50">
+              <div className="bg-white p-1.5 rounded-full shadow-xs">
+                <Mail className="w-4 h-4 text-mulearn-trusty-blue" />
+              </div>
+              <p>
+                Receipt sent to{" "}
+                <span className="font-semibold text-mulearn-blackish">{donationData.email}</span>
               </p>
             </div>
+
+            <Button
+              variant="custom"
+              onClick={() => router.push("/")}
+              className="w-full h-12 rounded-xl text-base font-semibold shadow-lg shadow-mulearn-trusty-blue/20 hover:shadow-xl transition-all"
+            >
+              Return to Home
+            </Button>
           </div>
         </div>
+
+        {/* Footer Text */}
+        <p className="text-center mt-6 text-sm text-mulearn-gray-600/60">
+          Need help?{" "}
+          <a
+            href="mailto:donate@mulearn.org"
+            className="text-mulearn-trusty-blue font-medium hover:underline"
+          >
+            Contact Support
+          </a>
+        </p>
       </div>
     </div>
   );

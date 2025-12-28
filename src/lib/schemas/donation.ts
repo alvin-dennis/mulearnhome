@@ -19,6 +19,7 @@ export type DonationType = z.infer<typeof donationTypeSchema>;
 export const donationFormSchema = z
   .object({
     name: nameSchema,
+    donationName: z.string().optional(),
     email: emailSchema,
     phone: phoneSchema,
     panNumber: panSchema,
@@ -57,6 +58,7 @@ export const donationPayloadSchema = z.object({
   amount: z.number().positive("Amount must be positive"),
   currency: z.string().default("INR"),
   name: nameSchema,
+  donation_name: z.string().optional(),
   email: emailSchema,
   company: z.string().optional(),
   phone_number: phoneSchema,
@@ -105,6 +107,7 @@ export interface RazorpayErrorResponse {
 export interface DonationFormPayload {
   amount: number;
   name: string;
+  donationName?: string;
   email: string;
   mobile: string;
   pan: string;
