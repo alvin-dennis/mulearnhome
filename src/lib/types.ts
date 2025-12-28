@@ -267,7 +267,8 @@ export interface OMEvent {
   time?: string;
   performer?: string;
   designation?: string;
-  tags: string[];
+  tags?: string[];
+  interestGroups?: string[];
   thumbnail?: string;
   link?: string;
   isUpcoming: boolean;

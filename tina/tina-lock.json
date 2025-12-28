@@ -123,6 +123,15 @@
               },
               {
                 "type": "string",
+                "name": "designation",
+                "label": "Speaker Designation",
+                "description": "e.g., Senior Developer, Tech Lead, Product Manager",
+                "namespace": ["officeHours", "sessions", "designation"],
+                "searchable": true,
+                "uid": false
+              },
+              {
+                "type": "string",
                 "name": "description",
                 "label": "Description",
                 "ui": { "component": "textarea" },
@@ -136,15 +145,6 @@
                 "label": "Date",
                 "description": "Format: DD/MM/YYYY",
                 "namespace": ["officeHours", "sessions", "date"],
-                "searchable": true,
-                "uid": false
-              },
-              {
-                "type": "string",
-                "name": "tags",
-                "label": "Tags",
-                "list": true,
-                "namespace": ["officeHours", "sessions", "tags"],
                 "searchable": true,
                 "uid": false
               },
@@ -1738,6 +1738,12 @@
           },
           {
             "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "designation" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "description" },
             "arguments": [],
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
@@ -1747,15 +1753,6 @@
             "name": { "kind": "Name", "value": "date" },
             "arguments": [],
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
-          },
-          {
-            "kind": "FieldDefinition",
-            "name": { "kind": "Name", "value": "tags" },
-            "arguments": [],
-            "type": {
-              "kind": "ListType",
-              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
-            }
           },
           {
             "kind": "FieldDefinition",
@@ -1840,17 +1837,17 @@
           },
           {
             "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "designation" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "description" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           },
           {
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "date" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
-          },
-          {
-            "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "tags" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           },
           {
@@ -3141,6 +3138,11 @@
           },
           {
             "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "designation" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "description" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           },
@@ -3148,14 +3150,6 @@
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "date" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
-          },
-          {
-            "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "tags" },
-            "type": {
-              "kind": "ListType",
-              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
-            }
           },
           {
             "kind": "InputValueDefinition",

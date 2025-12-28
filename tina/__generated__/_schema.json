@@ -122,6 +122,15 @@
             },
             {
               "type": "string",
+              "name": "designation",
+              "label": "Speaker Designation",
+              "description": "e.g., Senior Developer, Tech Lead, Product Manager",
+              "namespace": ["officeHours", "sessions", "designation"],
+              "searchable": true,
+              "uid": false
+            },
+            {
+              "type": "string",
               "name": "description",
               "label": "Description",
               "ui": { "component": "textarea" },
@@ -135,15 +144,6 @@
               "label": "Date",
               "description": "Format: DD/MM/YYYY",
               "namespace": ["officeHours", "sessions", "date"],
-              "searchable": true,
-              "uid": false
-            },
-            {
-              "type": "string",
-              "name": "tags",
-              "label": "Tags",
-              "list": true,
-              "namespace": ["officeHours", "sessions", "tags"],
               "searchable": true,
               "uid": false
             },

@@ -304,9 +304,9 @@ export type OfficeHoursSessions = {
   __typename?: "OfficeHoursSessions";
   title: Scalars["String"]["output"];
   performer?: Maybe<Scalars["String"]["output"]>;
+  designation?: Maybe<Scalars["String"]["output"]>;
   description?: Maybe<Scalars["String"]["output"]>;
   date?: Maybe<Scalars["String"]["output"]>;
-  tags?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
   isUpcoming?: Maybe<Scalars["Boolean"]["output"]>;
   interestGroups?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
 };
@@ -323,9 +323,9 @@ export type OfficeHours = Node &
 export type OfficeHoursSessionsFilter = {
   title?: InputMaybe<StringFilter>;
   performer?: InputMaybe<StringFilter>;
+  designation?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   date?: InputMaybe<StringFilter>;
-  tags?: InputMaybe<StringFilter>;
   isUpcoming?: InputMaybe<BooleanFilter>;
   interestGroups?: InputMaybe<StringFilter>;
 };
@@ -601,9 +601,9 @@ export type EventMutation = {
 export type OfficeHoursSessionsMutation = {
   title?: InputMaybe<Scalars["String"]["input"]>;
   performer?: InputMaybe<Scalars["String"]["input"]>;
+  designation?: InputMaybe<Scalars["String"]["input"]>;
   description?: InputMaybe<Scalars["String"]["input"]>;
   date?: InputMaybe<Scalars["String"]["input"]>;
-  tags?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
   isUpcoming?: InputMaybe<Scalars["Boolean"]["input"]>;
   interestGroups?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
 };
@@ -665,9 +665,9 @@ export type OfficeHoursPartsFragment = {
     __typename: "OfficeHoursSessions";
     title: string;
     performer?: string | null;
+    designation?: string | null;
     description?: string | null;
     date?: string | null;
-    tags?: Array<string | null> | null;
     isUpcoming?: boolean | null;
     interestGroups?: Array<string | null> | null;
   } | null> | null;
@@ -812,9 +812,9 @@ export type OfficeHoursQuery = {
       __typename: "OfficeHoursSessions";
       title: string;
       performer?: string | null;
+      designation?: string | null;
       description?: string | null;
       date?: string | null;
-      tags?: Array<string | null> | null;
       isUpcoming?: boolean | null;
       interestGroups?: Array<string | null> | null;
     } | null> | null;
@@ -862,9 +862,9 @@ export type OfficeHoursConnectionQuery = {
           __typename: "OfficeHoursSessions";
           title: string;
           performer?: string | null;
+          designation?: string | null;
           description?: string | null;
           date?: string | null;
-          tags?: Array<string | null> | null;
           isUpcoming?: boolean | null;
           interestGroups?: Array<string | null> | null;
         } | null> | null;
@@ -1133,9 +1133,9 @@ export const OfficeHoursPartsFragmentDoc = gql`
     __typename
     title
     performer
+    designation
     description
     date
-    tags
     isUpcoming
     interestGroups
   }

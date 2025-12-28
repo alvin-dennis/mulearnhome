@@ -115,12 +115,17 @@ var config_default = defineConfig({
               { type: "string", name: "performer", label: "Speaker/Host" },
               {
                 type: "string",
+                name: "designation",
+                label: "Speaker Designation",
+                description: "e.g., Senior Developer, Tech Lead, Product Manager"
+              },
+              {
+                type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
               { type: "string", name: "date", label: "Date", description: "Format: DD/MM/YYYY" },
-              { type: "string", name: "tags", label: "Tags", list: true },
               { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
               {
                 type: "string",
