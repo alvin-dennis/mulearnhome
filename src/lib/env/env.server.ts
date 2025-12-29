@@ -21,9 +21,12 @@ const serverEnvSchema = z.object({
   // Node Environment
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
 
-  // Email Configuration (Required)
-  GMAIL_USER: z.string().email("GMAIL_USER must be a valid email address"),
-  GMAIL_APP_PASSWORD: z.string().min(1, "GMAIL_APP_PASSWORD is required"),
+  // Discord Configuration
+  DISCORD_CONTACT_WEBHOOK: z.string().url("DISCORD_CONTACT_WEBHOOK must be a valid URL"),
+
+  // Email Configuration (Optional - Deprecated)
+  GMAIL_USER: z.string().email().optional(),
+  GMAIL_APP_PASSWORD: z.string().optional(),
   EMAIL_PROVIDER: z.enum(["gmail", "outlook"]).default("gmail"),
 
   // Email Recipients (Optional - defaults to fallback list)

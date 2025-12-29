@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { serverEnv } from "@/lib/env/env.server";
 import { contactFormSchema, type EmailData } from "@/lib/schemas/contact";
-import { mailService } from "@/services/mail";
+import { discordService } from "@/services/discord";
 
 const RATE_LIMIT_CONFIG = {
   windowMs: 15 * 60 * 1000,
@@ -101,9 +101,9 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    if (!serverEnv.GMAIL_USER || !serverEnv.GMAIL_APP_PASSWORD) {
+    if (!serverEnv.DISCORD_CONTACT_WEBHOOK) {
       return NextResponse.json(
-        { success: false, message: "Service temporarily unavailable." },
+        { success: false, message: "Service configuration error." },
         { status: 503, headers },
       );
     }
@@ -166,33 +166,14 @@ export async function POST(request: NextRequest) {
       ticketId: ticketId,
     };
 
-    const emailPromises = [
-      mailService.sendContactEmail(emailData),
-      mailService.sendAutoReply(emailData),
-    ];
+    const result = await discordService.sendContactNotification(emailData);
 
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Email timeout")), 30000),
-    );
-
-    const [contactResult, autoReplyResult] = await Promise.allSettled([
-      Promise.race([emailPromises[0], timeoutPromise]),
-      Promise.race([emailPromises[1], timeoutPromise]),
-    ]);
-
-    const contactSuccess =
-      contactResult.status === "fulfilled" && (contactResult.value as { success: boolean }).success;
-    const autoReplySuccess =
-      autoReplyResult.status === "fulfilled" &&
-      (autoReplyResult.value as { success: boolean }).success;
-
-    if (contactSuccess) {
+    if (result.success) {
       return NextResponse.json(
         {
           success: true,
           message: "Your message has been sent successfully! We'll get back to you soon.",
           ticketId: ticketId,
-          autoReplyStatus: autoReplySuccess ? "sent" : "failed",
         },
         { headers },
       );
