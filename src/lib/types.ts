@@ -355,3 +355,10 @@ export interface WeeklyTwitchData {
   "salt mango tree": WeeklyTwitchEvent[];
   "inspiration station radio": WeeklyTwitchEvent[];
 }
+
+export interface Captcha {
+  success: boolean;
+  statusCode: string;
+  score: number;
+  error?: string;
+}
