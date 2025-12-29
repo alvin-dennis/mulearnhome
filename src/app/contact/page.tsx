@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import MuImage from "@/components/MuImage";
 import { contactInfo, contactPage } from "@/data/common";
-import { clientEnv } from "@/lib/env";
+import { clientEnv } from "@/lib/env/env.client";
 import ContactForm from "./_components/ContactForm";
 
 export default function ContactPage() {
