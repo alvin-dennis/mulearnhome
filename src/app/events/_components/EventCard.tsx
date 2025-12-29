@@ -65,7 +65,7 @@ export default function EventCard({ event }: Props) {
                 <div className="flex justify-center">
                   <Button
                     variant={"custom"}
-                    className="mt-2 flex items-center gap-2 px-5 py-3 font-semibold"
+                    className="mt-2 flex w-full items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                   >
                     Check it out!
                     <ArrowRight className="w-4 h-4" />
