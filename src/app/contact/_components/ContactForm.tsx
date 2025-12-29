@@ -2,6 +2,7 @@
 
 import { Building, Calendar, FileText, HelpCircle, School, Send, Users } from "lucide-react";
 import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -49,6 +50,7 @@ export default function ContactForm() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const intents = [
     { value: "", label: "Select one", disabled: true },
@@ -129,11 +131,16 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
+
+    const isHuman = await verifyRecaptcha();
+    if (!isHuman) {
+      toast.error("ReCaptcha verification failed.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -199,6 +206,42 @@ export default function ContactForm() {
       toast.error("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const verifyRecaptcha = async (): Promise<boolean> => {
+    if (!executeRecaptcha) {
+      toast.error("ReCaptcha not ready. Please try again.");
+      return false;
+    }
+
+    let token: string;
+
+    try {
+      token = await executeRecaptcha("contact_form");
+    } catch (err) {
+      console.error("Failed to execute reCAPTCHA", err);
+      toast.error("ReCaptcha failed. Please retry.");
+      return false;
+    }
+
+    try {
+      const res = await fetch("/api/captcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          gReCaptchaToken: token,
+        }),
+      });
+
+      if (!res.ok) return false;
+      const data = await res.json();
+      return data.success && data.score > 0.5;
+    } catch (err) {
+      console.error("reCAPTCHA verification error", err);
+      return false;
     }
   };
 

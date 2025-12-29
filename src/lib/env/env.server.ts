@@ -24,6 +24,9 @@ const serverEnvSchema = z.object({
   // Discord Configuration
   DISCORD_CONTACT_WEBHOOK: z.string().url("DISCORD_CONTACT_WEBHOOK must be a valid URL"),
 
+  // Captcha secret key
+  RECAPTCHA_SECRET_KEY: z.string().optional(),
+
   // Email Configuration (Optional - Deprecated)
   GMAIL_USER: z.string().email().optional(),
   GMAIL_APP_PASSWORD: z.string().optional(),

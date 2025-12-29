@@ -30,6 +30,9 @@ const clientEnvSchema = z.object({
   // Razorpay Key (Required for payment processing)
   NEXT_PUBLIC_RAZORPAY_KEY_ID: z.string().min(1, "NEXT_PUBLIC_RAZORPAY_KEY_ID is required"),
 
+  // Contact form google captcha
+  NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
+
   // TinaCMS Client ID (Optional - for CMS authentication)
   NEXT_PUBLIC_TINA_CLIENT_ID: z.string().optional(),
 
@@ -66,6 +69,7 @@ function validateClientEnv(): ClientEnv {
     NEXT_PUBLIC_RAZORPAY_KEY_ID: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
     NEXT_PUBLIC_TINA_CLIENT_ID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
     NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
   });
 
   if (!parsed.success) {

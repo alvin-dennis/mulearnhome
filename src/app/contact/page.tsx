@@ -1,9 +1,14 @@
+"use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import MuImage from "@/components/MuImage";
 import { contactInfo, contactPage } from "@/data/common";
+import { clientEnv } from "@/lib/env";
 import ContactForm from "./_components/ContactForm";
 
 export default function ContactPage() {
+  const recaptchaKey: string | undefined = clientEnv.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden">
@@ -111,7 +116,17 @@ export default function ContactPage() {
 
             <div className="flex justify-center lg:justify-end">
               <div className="w-full">
-                <ContactForm />
+                <GoogleReCaptchaProvider
+                  reCaptchaKey={recaptchaKey ?? "NOT DEFINED"}
+                  scriptProps={{
+                    async: false,
+                    defer: false,
+                    appendTo: "head",
+                    nonce: undefined,
+                  }}
+                >
+                  <ContactForm />
+                </GoogleReCaptchaProvider>
               </div>
             </div>
 

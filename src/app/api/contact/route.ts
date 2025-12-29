@@ -135,24 +135,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let ticketId = "";
-
-    try {
-      const datasheetResponse = await fetch(`${request.nextUrl.origin}/api/datasheet`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (datasheetResponse.ok) {
-        const datasheetResult = await datasheetResponse.json();
-        ticketId = datasheetResult.ticketId || "";
-      }
-    } catch (_error) {
-      // Continue without ticket ID if datasheet fails
-    }
+    const ticketId = "";
 
     if (!sanitizedData) {
       return NextResponse.json(
