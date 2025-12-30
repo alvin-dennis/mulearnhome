@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
-  SECRETS_SCAN_OMIT_KEYS = "TINA_TOKEN"
+  SECRETS_SCAN_OMIT_KEYS = "TINA_TOKEN,NEXT_PUBLIC_TINA_CLIENT_ID"
 
 [[build.processing.skip]]
   for = "secret-scanning"
