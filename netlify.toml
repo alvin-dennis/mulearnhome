@@ -1,0 +1,31 @@
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[build.processing.skip]]
+  for = "secret-scanning"
+  paths = ["**/*"]
+  patterns = ["NEXT_PUBLIC_*"]
+
+# Redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Force HTTPS
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.mulearn.org/*"
+  to = "https://mulearn.org/:splat"
+  status = 301
+  force = true
