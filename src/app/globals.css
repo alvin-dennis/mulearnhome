@@ -198,12 +198,7 @@ h5 {
     }
 
     body {
-        font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
         @apply bg-background text-foreground;
-    }
-
-    .font-sans {
-        font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
     }
     
     h1 {

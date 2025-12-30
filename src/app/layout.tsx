@@ -55,16 +55,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${plusJakarta.variable} ${circe.variable} ${retro.variable}`}
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://s3.ap-south-1.amazonaws.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
       </head>
-      <body className="font-sans antialiased">
+      <body
+        className={`${plusJakarta.variable} ${circe.variable} ${retro.variable} font-sans antialiased`}
+      >
         <AnalyticsProvider>
           <Navbar />
           <Suspense fallback={<MuLoader />}>{children}</Suspense>

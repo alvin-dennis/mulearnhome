@@ -44,6 +44,7 @@ cp .env.example .env.local
 ```
 
 **Required environment variables:**
+
 - See `.env.example` for all required variables
 - Fill in actual values for your local development
 - Never commit `.env.local` to version control
@@ -54,34 +55,40 @@ cp .env.example .env.local
 Follow the project structure and guidelines:
 
 #### **Pages/Routes**
+
 - Add folders under `src/app` with `page.tsx` files
 - Each folder becomes a route (e.g., `src/app/about/page.tsx` → `/about`)
 
 #### **Components**
+
 - Place reusable UI in `src/components`
 - Use shadcn/ui components with MuLearn variants
 
-
 #### **Static Data**
+
 - All static data must be in `src/data` folder
 - Export data from appropriate files (e.g., `home.ts`, `team.ts`)
 
 #### **Services**
+
 - Business logic goes in `src/services`
 - Use `cdn.ts` for asset URL management
 - API client code in `apiGateway.ts`
 
 #### **API Routes**
+
 - Add server endpoints in `src/app/api`
 - Use `serverEnv` from `@/lib/env/env.server` for secrets
 - Never expose server secrets to client
 
 #### **Environment Variables**
+
 - **Server-side secrets:** Import from `@/lib/env/env.server`
 - **Client-side public vars:** Import from `@/lib/env/env.client`
 - **Never** use `process.env` directly (Biome will catch this)
 
 #### **Styles**
+
 - Use Tailwind CSS for all styling
 - Global styles in `src/app/globals.css`
 - Follow MuLearn color and font system (see below)
@@ -112,6 +119,7 @@ bun run build
 This project uses **Conventional Commits** with commitlint enforced via Husky.
 
 **Commit Format:**
+
 ```
 type(scope): subject
 
@@ -121,6 +129,7 @@ footer (optional)
 ```
 
 **Allowed Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only
@@ -134,6 +143,7 @@ footer (optional)
 - `revert`: Revert previous commit
 
 **Commit Rules:**
+
 - ✅ Type must be lowercase
 - ✅ Subject must be lowercase
 - ✅ Subject: 3-72 characters
@@ -142,6 +152,7 @@ footer (optional)
 - ✅ Body lines max 100 characters
 
 **Good Examples:**
+
 ```bash
 git commit -m "feat: add donation success page with receipt download"
 git commit -m "fix: resolve navigation menu overflow on mobile devices"
@@ -151,6 +162,7 @@ git commit -m "style: format code with biome"
 ```
 
 **Bad Examples:**
+
 ```bash
 git commit -m "Add feature"  # ❌ No type
 git commit -m "Feat: Add feature"  # ❌ Type not lowercase
@@ -203,6 +215,7 @@ mulearnhome/
 - Use `cdnUrl("path/to/asset")` helper function
 
 **Example:**
+
 ```tsx
 import { cdnUrl } from "@/services/cdn";
 
@@ -250,6 +263,7 @@ const cdnUrl = clientEnv.NEXT_PUBLIC_CDN_URL;
    - Import from `@/lib/env/env.server`
 
 **Important:**
+
 - ❌ Never use `process.env` directly (Biome will prevent this)
 - ❌ Never import `serverEnv` in client code
 - ✅ Always use the validated env utilities
@@ -265,17 +279,20 @@ All UI must follow the MuLearn brand identity. **Strict enforcement.**
 Use **only** the CSS variables defined in `src/app/globals.css`:
 
 **Primary Colors:**
+
 - `--mulearn-trusty` - Gradient (blue to purple)
 - `--mulearn-trusty-blue` - #2E85FE
 - `--mulearn-duke-purple` - #AF2EE6
 
 **Neutral Colors:**
+
 - `--mulearn-greyish` - #c4c4c4
 - `--mulearn-blackish` - #1a1a1a
 - `--mulearn-whitish` - #fefefe
 - `--mulearn-gray-600` - #666771 (navigation/muted text)
 
 **Usage in Tailwind:**
+
 ```tsx
 <div className="bg-mulearn-trusty text-mulearn-whitish">
 <h1 className="text-mulearn-trusty-blue">
@@ -283,6 +300,7 @@ Use **only** the CSS variables defined in `src/app/globals.css`:
 ```
 
 **❌ Never:**
+
 ```tsx
 <div className="bg-[#2E85FE]">  {/* Hardcoded color */}
 <div style={{ color: '#AF2EE6' }}>  {/* Inline style with hex */}
@@ -296,6 +314,7 @@ Use **only** these font families:
 - **`font-display`** - Circe Rounded (headings, display text)
 
 **Example:**
+
 ```tsx
 <h1 className="font-display text-4xl">Heading</h1>
 <p className="font-sans">Body text</p>
@@ -308,6 +327,7 @@ Use **only** these font families:
 - Document new variants in `src/components/ui/mulearn-shadcn-doc.md`
 
 **Example Button Usage:**
+
 ```tsx
 import { Button } from "@/components/ui/button";
 
@@ -350,6 +370,7 @@ import { Button } from "@/components/ui/button";
 ## 🧪 Testing
 
 When adding features, consider:
+
 - Type safety (TypeScript)
 - Linting (Biome)
 - Build success (`bun run build`)

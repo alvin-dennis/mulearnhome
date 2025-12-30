@@ -69,6 +69,7 @@ src/lib/env/
 ### Setup
 
 1. **Copy the example file:**
+
    ```bash
    cp .env.example .env.local
    ```
@@ -77,9 +78,11 @@ src/lib/env/
    Edit `.env.local` with your actual credentials (never commit this file!)
 
 3. **Start the app:**
+
    ```bash
    npm run dev
    ```
+
    The app will validate all variables on boot and crash with clear error messages if anything is missing or invalid.
 
 ### Usage
@@ -109,11 +112,13 @@ const cdnUrl = clientEnv.NEXT_PUBLIC_CDN_URL;
 #### 1. For **Client-Side** Variables (Safe to Expose)
 
 **Step 1:** Add to `.env.local` with `NEXT_PUBLIC_` prefix:
+
 ```bash
 NEXT_PUBLIC_MY_API_URL=https://api.example.com
 ```
 
 **Step 2:** Add to `src/lib/env/env.client.ts`:
+
 ```ts
 const clientEnvSchema = z.object({
   // ... existing fields
@@ -122,6 +127,7 @@ const clientEnvSchema = z.object({
 ```
 
 **Step 3:** Use in your code:
+
 ```ts
 import { clientEnv } from "@/lib/env";
 console.log(clientEnv.NEXT_PUBLIC_MY_API_URL);
