@@ -3,4 +3,5 @@ export const donationRoutes = {
   verify: "/donate/verify/",
   subscription: "/donate/subscription/create/",
   subscriptionVerify: "/donate/subscription/verify/",
+  bankTransfer: "/donate/bank-transfer/",
 };

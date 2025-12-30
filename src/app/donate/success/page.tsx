@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -12,6 +12,9 @@ interface DonationData {
   name: string;
   email: string;
   paymentId?: string;
+  referenceCode?: string;
+  isBankTransfer?: boolean;
+  status?: string;
   [key: string]: unknown;
 }
 
@@ -53,40 +56,56 @@ export default function DonateSuccessPage() {
       <div className="min-h-screen flex items-center justify-center bg-mulearn-whitish">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-mulearn-trusty-blue/20 border-t-mulearn-trusty-blue rounded-full animate-spin"></div>
-          <p className="text-mulearn-gray-600 font-medium animate-pulse">Generating receipt...</p>
+          <p className="text-mulearn-gray-600 font-medium animate-pulse">Processing...</p>
         </div>
       </div>
     );
   }
+
+  const isBankTransfer = donationData.isBankTransfer === true;
 
   return (
     <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
       <div className="w-full max-w-4xl perspective-1000">
         {/* Main Card - Split Layout */}
         <div className="bg-white rounded-[2rem] shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
-          {/* Left Side: Brand & Success (mulearn-trusty-blue background) */}
-          <div className="w-full md:w-5/12 bg-mulearn-trusty-blue relative overflow-hidden flex flex-col items-center justify-center p-10 text-center text-white">
+          {/* Left Side: Brand & Status */}
+          <div
+            className={`w-full md:w-5/12 relative overflow-hidden flex flex-col items-center justify-center p-10 text-center text-white ${
+              isBankTransfer ? "bg-amber-500" : "bg-mulearn-trusty-blue"
+            }`}
+          >
             {/* Decorative Circles */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+            <div
+              className={`absolute bottom-0 right-0 w-64 h-64 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 ${
+                isBankTransfer ? "bg-yellow-300/20" : "bg-cyan-400/20"
+              }`}
+            ></div>
 
             <div className="relative z-10 w-full">
               <div className="mx-auto w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 ring-4 ring-white/20 shadow-xl">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
-                  <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-[3]" />
+                  {isBankTransfer ? (
+                    <Clock className="w-8 h-8 text-amber-500 stroke-[3]" />
+                  ) : (
+                    <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-[3]" />
+                  )}
                 </div>
               </div>
 
               <h1 className="text-3xl font-bold tracking-tight mb-3 text-white">
-                Payment Successful
+                {isBankTransfer ? "Submitted for Verification" : "Payment Successful"}
               </h1>
-              <p className="text-blue-100 text-lg leading-relaxed max-w-xs mx-auto">
-                Thank you for empowering the next generation of learners.
+              <p className="text-white/80 text-lg leading-relaxed max-w-xs mx-auto">
+                {isBankTransfer
+                  ? "We've received your donation details and payment proof."
+                  : "Thank you for empowering the next generation of learners."}
               </p>
             </div>
           </div>
 
-          {/* Right Side: Receipt Details (White background) */}
+          {/* Right Side: Receipt Details */}
           <div className="w-full md:w-7/12 bg-white p-8 sm:p-12 flex flex-col justify-center relative">
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
@@ -128,6 +147,22 @@ export default function DonateSuccessPage() {
                   })}
                 </span>
               </div>
+              {/* Reference Code for Bank Transfer */}
+              {isBankTransfer && donationData.referenceCode && (
+                <div
+                  className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
+                  onClick={() => copyToClipboard(donationData.referenceCode || "")}
+                >
+                  <span className="text-sm font-medium text-mulearn-gray-600">Reference Code</span>
+                  <div className="flex items-center gap-2 bg-amber-50 px-2 py-1 rounded-md border border-amber-200 group-hover:border-amber-400 transition-colors">
+                    <span className="text-xs font-mono text-amber-700 group-hover:text-amber-800">
+                      {donationData.referenceCode}
+                    </span>
+                    <Copy className="w-3 h-3 text-amber-400 group-hover:text-amber-600" />
+                  </div>
+                </div>
+              )}
+              {/* Transaction ID for Razorpay */}
               {donationData.paymentId && (
                 <div
                   className="flex items-center justify-between py-3 group cursor-pointer"
@@ -144,16 +179,30 @@ export default function DonateSuccessPage() {
               )}
             </div>
 
-            {/* Email Hint */}
-            <div className="flex items-center gap-3 text-sm text-mulearn-gray-600 mb-8 bg-blue-50/50 p-3 rounded-lg border border-blue-100/50">
-              <div className="bg-white p-1.5 rounded-full shadow-xs">
-                <Mail className="w-4 h-4 text-mulearn-trusty-blue" />
+            {/* Status Message */}
+            {isBankTransfer ? (
+              <div className="flex items-start gap-3 text-sm text-amber-800 mb-8 bg-amber-50 p-4 rounded-lg border border-amber-200">
+                <div className="bg-white p-1.5 rounded-full shadow-xs shrink-0 mt-0.5">
+                  <Clock className="w-4 h-4 text-amber-500" />
+                </div>
+                <p className="leading-relaxed">
+                  Please allow <span className="font-semibold">24–48 hours</span> for verification.
+                  You will be contacted at{" "}
+                  <span className="font-semibold">{donationData.email}</span> once the payment is
+                  confirmed.
+                </p>
               </div>
-              <p>
-                Receipt sent to{" "}
-                <span className="font-semibold text-mulearn-blackish">{donationData.email}</span>
-              </p>
-            </div>
+            ) : (
+              <div className="flex items-center gap-3 text-sm text-mulearn-gray-600 mb-8 bg-blue-50/50 p-3 rounded-lg border border-blue-100/50">
+                <div className="bg-white p-1.5 rounded-full shadow-xs">
+                  <Mail className="w-4 h-4 text-mulearn-trusty-blue" />
+                </div>
+                <p>
+                  Receipt sent to{" "}
+                  <span className="font-semibold text-mulearn-blackish">{donationData.email}</span>
+                </p>
+              </div>
+            )}
 
             <Button
               variant="custom"

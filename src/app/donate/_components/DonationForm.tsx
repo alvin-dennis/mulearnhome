@@ -1,7 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+import { AlertTriangle, Building2, Check, Copy } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -11,19 +12,38 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  BANK_TRANSFER_THRESHOLD,
   type DonationFormData,
   type DonationType,
   donationFormSchema,
 } from "@/lib/schemas/donation";
 import { cn } from "@/lib/utils";
-import { submitDonationForm, submitSubscription } from "@/services/donation";
+import {
+  generateReferenceCode,
+  submitBankTransfer,
+  submitDonationForm,
+  submitSubscription,
+} from "@/services/donation";
 import { annualTiers, monthlyTiers, oneTimeTiers, type PatronTierConfig } from "./PatronData";
+
+// Bank details for display
+const BANK_DETAILS = {
+  accountName: "MULEARN FOUNDATION",
+  bankName: "ICICI Bank",
+  accountNumber: "263405011014",
+  ifscCode: "ICIC0002534",
+  branch: "Technopark, Trivandrum",
+  accountType: "Current",
+} as const;
 
 export default function DonationForm() {
   const [mounted, setMounted] = useState(false);
   const [donationType, setDonationType] = useState<DonationType>("one-time");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
   const [customAmount, setCustomAmount] = useState<string>("");
+  const [proofUrl, setProofUrl] = useState<string>("");
+  const [proofUrlError, setProofUrlError] = useState<string>("");
+  const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const {
     register,
@@ -51,6 +71,17 @@ export default function DonationForm() {
 
   const isOrganisation = watch("isOrganisation");
   const totalAmount = watch("donationAmount") || 0;
+
+  // Bank transfer mode when amount >= 5L
+  const isBankTransferMode = totalAmount >= BANK_TRANSFER_THRESHOLD;
+
+  // Generate reference code once when entering bank transfer mode
+  const referenceCode = useMemo(() => {
+    if (isBankTransferMode) {
+      return generateReferenceCode();
+    }
+    return "";
+  }, [isBankTransferMode]);
 
   useEffect(() => {
     setMounted(true);
@@ -107,6 +138,45 @@ export default function DonationForm() {
 
   const onSubmit = async (data: DonationFormData) => {
     try {
+      // Bank transfer mode - bypass Razorpay
+      if (isBankTransferMode) {
+        // Validate proof URL
+        if (!proofUrl.trim()) {
+          setProofUrlError("Please provide the payment proof URL");
+          toast.error("Please provide the payment proof URL");
+          return;
+        }
+        try {
+          new URL(proofUrl);
+          setProofUrlError("");
+        } catch {
+          setProofUrlError("Please enter a valid URL");
+          toast.error("Please enter a valid URL for payment proof");
+          return;
+        }
+
+        toast.loading("Submitting bank transfer details...", { id: "donation-loading" });
+
+        await submitBankTransfer({
+          amount: data.donationAmount,
+          name: data.name,
+          donationName: data.donationName,
+          email: data.email,
+          mobile: data.phone,
+          pan: data.panNumber,
+          address: data.address,
+          donationType: data.donationType,
+          isOrganisation: data.isOrganisation,
+          organisationName: data.organisationName,
+          proofUrl: proofUrl,
+          referenceCode: referenceCode,
+        });
+
+        toast.dismiss("donation-loading");
+        return;
+      }
+
+      // Normal Razorpay flow
       const loadingMessage =
         data.donationType === "one-time"
           ? "Processing your patron contribution..."
@@ -137,6 +207,13 @@ export default function DonationForm() {
       toast.dismiss("donation-loading");
       console.error("Donation submission error:", error);
     }
+  };
+
+  const copyToClipboard = (text: string, fieldName: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(fieldName);
+    toast.success("Copied to clipboard");
+    setTimeout(() => setCopiedField(null), 2000);
   };
 
   if (!mounted) {
@@ -459,6 +536,127 @@ export default function DonationForm() {
                 />
                 {errors.address && <p className="text-xs text-red-500">{errors.address.message}</p>}
               </div>
+
+              {/* Bank Transfer Section - Only shown when amount >= 5L */}
+              {isBankTransferMode && (
+                <div className="pt-6">
+                  {/* Disclaimer */}
+                  <div className="flex items-start gap-3 p-4 mb-6 bg-amber-50 border border-amber-200 rounded-xl">
+                    <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                    <p className="text-sm text-amber-800 leading-relaxed">
+                      Donations above <span className="font-semibold">₹5,00,000</span> are processed
+                      via bank transfer and verified manually for compliance and security.
+                    </p>
+                  </div>
+
+                  {/* Bank Details Card */}
+                  <div className="border border-mulearn-gray-600/20 rounded-xl overflow-hidden">
+                    <div className="bg-mulearn-greyish/10 px-5 py-4 border-b border-mulearn-gray-600/10">
+                      <div className="flex items-center gap-2">
+                        <Building2 className="w-5 h-5 text-mulearn-trusty-blue" />
+                        <h4 className="font-bold text-mulearn-blackish">Bank Transfer Details</h4>
+                      </div>
+                      <p className="text-xs text-mulearn-gray-600 mt-1">
+                        Please complete the transfer using NEFT/RTGS and provide the proof link
+                        below.
+                      </p>
+                    </div>
+
+                    <div className="p-5 space-y-3">
+                      {/* Bank Details Grid */}
+                      {[
+                        {
+                          label: "Account Name",
+                          value: BANK_DETAILS.accountName,
+                          key: "accountName",
+                        },
+                        { label: "Bank Name", value: BANK_DETAILS.bankName, key: "bankName" },
+                        {
+                          label: "Account Number",
+                          value: BANK_DETAILS.accountNumber,
+                          key: "accountNumber",
+                        },
+                        { label: "IFSC Code", value: BANK_DETAILS.ifscCode, key: "ifsc" },
+                        { label: "Branch", value: BANK_DETAILS.branch, key: "branch" },
+                      ].map((item) => (
+                        <div
+                          key={item.key}
+                          className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0"
+                        >
+                          <span className="text-sm text-mulearn-gray-600">{item.label}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-mulearn-blackish font-mono">
+                              {item.value}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => copyToClipboard(item.value, item.key)}
+                              className="p-1 hover:bg-mulearn-greyish/20 rounded transition-colors"
+                            >
+                              {copiedField === item.key ? (
+                                <Check className="w-4 h-4 text-green-500" />
+                              ) : (
+                                <Copy className="w-4 h-4 text-mulearn-gray-600" />
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+
+                      {/* Reference Code */}
+                      <div className="mt-4 p-3 bg-mulearn-trusty-blue/5 rounded-lg border border-mulearn-trusty-blue/20">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-xs text-mulearn-gray-600 uppercase tracking-wide font-semibold">
+                              Reference Code
+                            </p>
+                            <p className="text-lg font-bold font-mono text-mulearn-trusty-blue">
+                              {referenceCode}
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => copyToClipboard(referenceCode, "referenceCode")}
+                            className="p-2 bg-white hover:bg-mulearn-greyish/10 rounded-lg border border-mulearn-gray-600/20 transition-colors"
+                          >
+                            {copiedField === "referenceCode" ? (
+                              <Check className="w-4 h-4 text-green-500" />
+                            ) : (
+                              <Copy className="w-4 h-4 text-mulearn-gray-600" />
+                            )}
+                          </button>
+                        </div>
+                        <p className="text-xs text-mulearn-gray-600 mt-2">
+                          Include this reference code in your bank transfer remark/description.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Proof URL Input */}
+                  <div className="mt-6 space-y-2">
+                    <Label htmlFor="proofUrl" className="text-mulearn-gray-600">
+                      Payment Proof URL <span className="text-red-500">*</span>
+                    </Label>
+                    <Input
+                      id="proofUrl"
+                      type="url"
+                      value={proofUrl}
+                      onChange={(e) => {
+                        setProofUrl(e.target.value);
+                        if (proofUrlError) setProofUrlError("");
+                      }}
+                      placeholder="https://example.com/payment-screenshot.png"
+                      className={`bg-white border-mulearn-gray-600/20 focus:border-mulearn-trusty-blue ${proofUrlError ? "border-red-500" : ""}`}
+                    />
+                    {proofUrlError && <p className="text-xs text-red-500">{proofUrlError}</p>}
+                    <p className="text-xs text-mulearn-gray-600">
+                      Provide a link to your payment receipt or screenshot (e.g., Google Drive,
+                      Dropbox, or any image hosting service).
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </TabsContent>
         </Tabs>
@@ -525,10 +723,15 @@ export default function DonationForm() {
             <Button
               type="submit"
               size="lg"
-              className="w-full sm:w-auto px-8 py-6 text-base font-semibold shadow-xl shadow-mulearn-trusty-blue/20 hover:shadow-2xl hover:shadow-mulearn-trusty-blue/30 hover:scale-[1.02] transition-all bg-mulearn-trusty-blue"
-              disabled={!isValid || totalAmount === 0}
+              className={cn(
+                "w-full sm:w-auto px-8 py-6 text-base font-semibold shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all",
+                isBankTransferMode
+                  ? "bg-amber-500 shadow-amber-500/20 hover:shadow-amber-500/30"
+                  : "bg-mulearn-trusty-blue shadow-mulearn-trusty-blue/20 hover:shadow-mulearn-trusty-blue/30",
+              )}
+              disabled={!isValid || totalAmount === 0 || (isBankTransferMode && !proofUrl.trim())}
             >
-              Proceed to Payment
+              {isBankTransferMode ? "Submit for Verification" : "Proceed to Payment"}
             </Button>
           </div>
         </form>
