@@ -1228,6 +1228,12 @@
         },
         {
           "kind": "FieldDefinition",
+          "name": { "kind": "Name", "value": "designation" },
+          "arguments": [],
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+        },
+        {
+          "kind": "FieldDefinition",
           "name": { "kind": "Name", "value": "description" },
           "arguments": [],
           "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
@@ -1240,18 +1246,18 @@
         },
         {
           "kind": "FieldDefinition",
-          "name": { "kind": "Name", "value": "tags" },
+          "name": { "kind": "Name", "value": "isUpcoming" },
+          "arguments": [],
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": { "kind": "Name", "value": "interestGroups" },
           "arguments": [],
           "type": {
             "kind": "ListType",
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
-        },
-        {
-          "kind": "FieldDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
         }
       ]
     },
@@ -1321,6 +1327,11 @@
         },
         {
           "kind": "InputValueDefinition",
+          "name": { "kind": "Name", "value": "designation" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+        },
+        {
+          "kind": "InputValueDefinition",
           "name": { "kind": "Name", "value": "description" },
           "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
         },
@@ -1331,13 +1342,13 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "tags" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          "name": { "kind": "Name", "value": "isUpcoming" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+          "name": { "kind": "Name", "value": "interestGroups" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
         }
       ]
     },
@@ -2614,6 +2625,11 @@
         },
         {
           "kind": "InputValueDefinition",
+          "name": { "kind": "Name", "value": "designation" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+        },
+        {
+          "kind": "InputValueDefinition",
           "name": { "kind": "Name", "value": "description" },
           "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         },
@@ -2624,16 +2640,16 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "tags" },
+          "name": { "kind": "Name", "value": "isUpcoming" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": { "kind": "Name", "value": "interestGroups" },
           "type": {
             "kind": "ListType",
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
-        },
-        {
-          "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
         }
       ]
     },

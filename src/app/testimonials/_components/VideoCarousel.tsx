@@ -36,8 +36,8 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
             bulletActiveClass: "swiper-pagination-bullet-active",
           }}
         >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
+          {testimonials.map((testimonial) => (
+            <SwiperSlide key={testimonial.name}>
               <VideoTestimonialCard testimonial={testimonial} />
             </SwiperSlide>
           ))}

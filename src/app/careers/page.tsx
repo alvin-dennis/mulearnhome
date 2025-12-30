@@ -152,9 +152,9 @@ export default function Careers() {
               available on Career Labs
             </p>
             <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-              {newHiring.map((role, idx) => (
+              {newHiring.map((role) => (
                 <CareersCard
-                  key={idx}
+                  key={role.role}
                   logo={role.logo}
                   role={role.role}
                   remuneration={role.remuneration}
@@ -184,9 +184,9 @@ export default function Careers() {
           </p>
 
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {currentItems.map((role, idx) => (
+            {currentItems.map((role) => (
               <ClosedCareersCard
-                key={idx}
+                key={role.title}
                 title={role.title}
                 qualifications={role.qualifications}
                 date={role.date}

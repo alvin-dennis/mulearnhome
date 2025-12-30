@@ -267,7 +267,8 @@ export interface OMEvent {
   time?: string;
   performer?: string;
   designation?: string;
-  tags: string[];
+  tags?: string[];
+  interestGroups?: string[];
   thumbnail?: string;
   link?: string;
   isUpcoming: boolean;
@@ -280,6 +281,7 @@ export interface OfficeHours {
   description: string;
   performer?: string;
   tags: string[];
+  ig?: string;
   thumbnail?: string;
   isUpcoming: boolean;
 }
@@ -352,4 +354,11 @@ export interface WeeklyTwitchEvent {
 export interface WeeklyTwitchData {
   "salt mango tree": WeeklyTwitchEvent[];
   "inspiration station radio": WeeklyTwitchEvent[];
+}
+
+export interface Captcha {
+  success: boolean;
+  statusCode: string;
+  score: number;
+  error?: string;
 }

@@ -453,7 +453,7 @@ export default function CampusLogoGenerator() {
             </div>
 
             <div>
-              <label
+              <span
                 className="block font-medium mb-2"
                 style={{
                   fontFamily: "var(--font-plus-jakarta)",
@@ -463,7 +463,7 @@ export default function CampusLogoGenerator() {
                 }}
               >
                 Logo Type
-              </label>
+              </span>
               <div className="flex gap-2">
                 <Button
                   variant={formData.logoType === "MuLearn" ? "mulearn-trusty" : "outline"}
@@ -484,7 +484,7 @@ export default function CampusLogoGenerator() {
 
             {formData.logoType === "YIP" ? (
               <div>
-                <label
+                <span
                   className="block font-medium mb-2"
                   style={{
                     fontFamily: "var(--font-plus-jakarta)",
@@ -494,7 +494,7 @@ export default function CampusLogoGenerator() {
                   }}
                 >
                   YIP Variant
-                </label>
+                </span>
                 <div className="flex gap-2">
                   {yipVariants.map((variant) => (
                     <Button
@@ -510,7 +510,7 @@ export default function CampusLogoGenerator() {
               </div>
             ) : (
               <div>
-                <label
+                <span
                   className="block font-medium mb-2"
                   style={{
                     fontFamily: "var(--font-plus-jakarta)",
@@ -520,7 +520,7 @@ export default function CampusLogoGenerator() {
                   }}
                 >
                   Logo Variant
-                </label>
+                </span>
                 <div className="flex gap-2">
                   <Button
                     variant={formData.logoVariant === "Profile Pic" ? "mulearn-trusty" : "outline"}
@@ -545,7 +545,7 @@ export default function CampusLogoGenerator() {
             {formData.logoType !== "YIP" && (
               <>
                 <div>
-                  <label
+                  <span
                     className="block font-medium mb-3"
                     style={{
                       fontFamily: "var(--font-plus-jakarta)",
@@ -555,10 +555,11 @@ export default function CampusLogoGenerator() {
                     }}
                   >
                     Foreground Color
-                  </label>
+                  </span>
                   <div className="flex gap-3">
                     {foregroundColors.map((color) => (
                       <button
+                        type="button"
                         key={color.value}
                         className={`w-12 h-12 rounded border border-gray-200 transition-all ${
                           formData.foregroundColor === color.value
@@ -575,7 +576,7 @@ export default function CampusLogoGenerator() {
                 </div>
 
                 <div>
-                  <label
+                  <span
                     className={`block font-medium mb-3 ${
                       formData.logoVariant === "Transparent Bg" ? "opacity-50" : ""
                     }`}
@@ -587,10 +588,11 @@ export default function CampusLogoGenerator() {
                     }}
                   >
                     Background Color
-                  </label>
+                  </span>
                   <div className="flex gap-3">
                     {backgroundColors.map((color) => (
                       <button
+                        type="button"
                         key={color.value}
                         disabled={formData.logoVariant === "Transparent Bg"}
                         className={`w-12 h-12 rounded border border-gray-200 transition-all ${
@@ -614,7 +616,7 @@ export default function CampusLogoGenerator() {
             )}
 
             <div>
-              <label
+              <span
                 className="block font-medium mb-2"
                 style={{
                   fontFamily: "var(--font-plus-jakarta)",
@@ -624,7 +626,7 @@ export default function CampusLogoGenerator() {
                 }}
               >
                 File Type
-              </label>
+              </span>
               <div className="flex gap-2">
                 <Button
                   variant={formData.fileType === "PNG" ? "mulearn-trusty" : "outline"}

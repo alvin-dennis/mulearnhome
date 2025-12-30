@@ -167,10 +167,11 @@ type EventConnection implements Connection {
 type OfficeHoursSessions {
   title: String!
   performer: String
+  designation: String
   description: String
   date: String
-  tags: [String]
   isUpcoming: Boolean
+  interestGroups: [String]
 }
 
 type OfficeHours implements Node & Document {
@@ -183,10 +184,11 @@ type OfficeHours implements Node & Document {
 input OfficeHoursSessionsFilter {
   title: StringFilter
   performer: StringFilter
+  designation: StringFilter
   description: StringFilter
   date: StringFilter
-  tags: StringFilter
   isUpcoming: BooleanFilter
+  interestGroups: StringFilter
 }
 
 input OfficeHoursFilter {
@@ -365,10 +367,11 @@ input EventMutation {
 input OfficeHoursSessionsMutation {
   title: String
   performer: String
+  designation: String
   description: String
   date: String
-  tags: [String]
   isUpcoming: Boolean
+  interestGroups: [String]
 }
 
 input OfficeHoursMutation {

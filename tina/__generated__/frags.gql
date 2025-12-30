@@ -16,10 +16,11 @@ fragment OfficeHoursParts on OfficeHours {
     __typename
     title
     performer
+    designation
     description
     date
-    tags
     isUpcoming
+    interestGroups
   }
 }
 

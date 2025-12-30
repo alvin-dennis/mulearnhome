@@ -78,7 +78,7 @@ export default function Stats() {
                 }
               />
             ))}
-            <StatCard value={200} label="Events Hosted" />
+            <StatCard value={378} label="Events Hosted" />
             <StatCard value="100" label="Success Stories" isString />
           </div>
         </MotionDiv>
@@ -100,7 +100,7 @@ function StatCard({
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
         {isString ? (
-          value + "+"
+          `${value}+`
         ) : (
           <CountUp end={value as number} duration={5} separator="," suffix="+" />
         )}

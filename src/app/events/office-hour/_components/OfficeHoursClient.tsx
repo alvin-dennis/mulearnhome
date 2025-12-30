@@ -14,9 +14,10 @@ import SearchAndFilter from "./SearchAndFilter";
 export interface OfficeHourSession {
   title: string;
   performer?: string | null;
+  designation?: string | null;
   description?: string | null;
   date?: string | null;
-  tags?: (string | null)[] | null;
+  interestGroups?: (string | null)[] | null;
   isUpcoming?: boolean | null;
 }
 
@@ -50,20 +51,26 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       id: index + 1,
       title: session.title,
       performer: session.performer || "",
+      designation: session.designation || "",
       description: session.description || "",
       date: session.date || "",
-      tags: session.tags?.filter((t): t is string => t !== null) || [],
+      interestGroups: session.interestGroups?.filter((t): t is string => t !== null) || [],
       isUpcoming: session.isUpcoming || false,
     }));
   }, [sessions]);
 
-  const allTags = useMemo(() => Array.from(new Set(allEvents.flatMap((e) => e.tags))), [allEvents]);
+  const allTags = useMemo(
+    () => Array.from(new Set(allEvents.flatMap((e) => e.interestGroups))),
+    [allEvents],
+  );
 
   const filteredEvents = useMemo(() => {
     return allEvents
       .filter((event) => event.title.toLowerCase().includes(search.toLowerCase()))
       .filter((event) =>
-        selectedTags.length === 0 ? true : selectedTags.every((t) => event.tags.includes(t)),
+        selectedTags.length === 0
+          ? true
+          : selectedTags.every((t) => event.interestGroups.includes(t)),
       )
       .sort((a, b) => {
         // Parse dates in DD/MM/YYYY format
@@ -73,9 +80,9 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
           if (parts.length === 3) {
             // DD/MM/YYYY format
             return new Date(
-              parseInt(parts[2]),
-              parseInt(parts[1]) - 1,
-              parseInt(parts[0]),
+              parseInt(parts[2], 10),
+              parseInt(parts[1], 10) - 1,
+              parseInt(parts[0], 10),
             ).getTime();
           }
           return new Date(dateStr).getTime() || 0;
@@ -106,7 +113,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
   useEffect(() => {
     setUpcomingPage(1);
     setPastPage(1);
-  }, [view, search, selectedTags]);
+  }, []);
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },

@@ -5,6 +5,39 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { OMEvent } from "@/lib/types";
 
+/** Maps interest group slugs to human-readable display labels */
+const IG_LABELS: Record<string, string> = {
+  "ui-ux": "UI/UX",
+  "web-development": "Web Development",
+  devops: "DevOps",
+  "game-dev": "Game Dev",
+  "no-low-code": "No/Low Code",
+  entrepreneurship: "Entrepreneurship",
+  "ar-vr-mr": "AR/VR/MR",
+  "cyber-security": "Cyber Security",
+  "mobile-development": "Mobile Dev",
+  "data-analytics": "Data Analytics",
+  space: "Space",
+  ai: "AI",
+  comics: "Comics",
+  "digital-marketing": "Digital Marketing",
+  muv: "MuV",
+  "generative-ai": "Generative AI",
+  dsa: "DSA",
+  blockchain: "Blockchain",
+  "data-science": "Data Science",
+  "project-management": "Project Management",
+  "quantum-computing": "Quantum Computing",
+  "strategic-leadership": "Strategic Leadership",
+  civil: "Civil",
+  "iot-robotics": "IoT & Robotics",
+  "creative-design": "Creative Design",
+  beckn: "Beckn",
+  "quality-assurance": "QA",
+  "human-resources": "HR",
+  cloud: "Cloud",
+};
+
 interface EventsGridProps {
   events: OMEvent[];
   title: string;
@@ -46,13 +79,13 @@ export default function EventsGrid({ events, title, icon }: EventsGridProps) {
 
             <CardHeader className="pb-4 grow">
               <div className="flex flex-wrap gap-2 mb-3">
-                {event.tags.map((tag: string) => (
+                {event.interestGroups?.map((ig: string) => (
                   <Badge
-                    key={tag}
+                    key={ig}
                     variant="outline"
                     className="text-mulearn-trusty-blue bg-mulearn-trusty-blue/10"
                   >
-                    {tag}
+                    {IG_LABELS[ig] || ig}
                   </Badge>
                 ))}
               </div>

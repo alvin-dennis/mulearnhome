@@ -94,15 +94,15 @@ const Testimonials: React.FC = () => {
           </Button>
 
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
+            {slides.map((slide, slideIndex) => (
               <Button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                variant={index === currentSlide ? "mulearn" : "ghost"}
+                key={slide.alt}
+                onClick={() => setCurrentSlide(slideIndex)}
+                variant={slideIndex === currentSlide ? "mulearn" : "ghost"}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? "w-8" : "bg-mulearn-whitish/40"
+                  slideIndex === currentSlide ? "w-8" : "bg-mulearn-whitish/40"
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`Go to slide ${slideIndex + 1}`}
               />
             ))}
           </div>
@@ -118,10 +118,10 @@ const Testimonials: React.FC = () => {
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             <div className="scroll-content flex flex-nowrap items-stretch gap-6 pb-4 px-8">
-              {learnerTestimonials.map((testimonial, index) => (
+              {learnerTestimonials.map((testimonial) => (
                 <Card
-                  key={index}
-                  className="mt-4 flex-shrink-0 w-80 relative h-[280px] rounded-[24px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(256,256,256,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)]"
+                  key={testimonial.name}
+                  className="mt-4 shrink-0 w-80 relative h-[280px] rounded-[24px] overflow-hidden shadow-[0_10px_40px_-10px_rgba(256,256,256,0.5)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_50px_-10px_rgba(37,99,235,0.6)]"
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-[#4A7FE8] via-[#5B8FF5] to-[#6BA5FF]" />
                   <div className="absolute inset-0 bg-linear-radial from-mulearn-whitish/10 via-transparent to-transparent" />

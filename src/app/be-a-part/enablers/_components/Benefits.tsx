@@ -27,16 +27,12 @@ export default function Benefits() {
               {enablers.benefits[0].items.map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
                   <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                      <text
-                        x="50%"
-                        y="50%"
-                        dominantBaseline="middle"
-                        textAnchor="middle"
-                        className="text-2xl font-bold"
-                      >
-                        title
-                      </text>
+                    <svg
+                      className="h-3 w-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -56,16 +52,8 @@ export default function Benefits() {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 className="text-mulearn-whitish/30"
+                aria-hidden="true"
               >
-                <text
-                  x="50%"
-                  y="50%"
-                  dominantBaseline="middle"
-                  textAnchor="middle"
-                  className="text-2xl font-bold"
-                >
-                  title
-                </text>
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
             </div>
@@ -83,16 +71,12 @@ export default function Benefits() {
               {enablers.benefits[1].items.map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
                   <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn/20">
-                    <svg className="h-3 w-3 bg-mulearn" fill="currentColor" viewBox="0 0 20 20">
-                      <text
-                        x="50%"
-                        y="50%"
-                        dominantBaseline="middle"
-                        textAnchor="middle"
-                        className="text-2xl font-bold"
-                      >
-                        title
-                      </text>
+                    <svg
+                      className="h-3 w-3 bg-mulearn"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -118,7 +102,12 @@ export default function Benefits() {
               {enablers.benefits[2].items.map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
                   <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-3 w-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -138,16 +127,8 @@ export default function Benefits() {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 className="text-mulearn-whitish/30"
+                aria-hidden="true"
               >
-                <text
-                  x="50%"
-                  y="50%"
-                  dominantBaseline="middle"
-                  textAnchor="middle"
-                  className="text-2xl font-bold"
-                >
-                  title
-                </text>
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
             </div>
@@ -167,16 +148,8 @@ export default function Benefits() {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 className="text-mulearn-blackish opacity-10"
+                aria-hidden="true"
               >
-                <text
-                  x="50%"
-                  y="50%"
-                  dominantBaseline="middle"
-                  textAnchor="middle"
-                  className="text-2xl font-bold"
-                >
-                  title
-                </text>
                 <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
               </svg>
             </div>

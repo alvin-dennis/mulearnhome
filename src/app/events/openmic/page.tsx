@@ -153,9 +153,18 @@ function EventCard({ event }: { event: OMEvent }) {
         </div>
       </div>
 
-      <CardHeader className="pb-4 flex-grow">
-        <div className="flex flex-wrap gap-2 mb-3">
-          {event.tags.map((tag: string) => (
+      <CardHeader className="pb-4 flex-grow relative z-10 bg-white">
+        <CardTitle className="text-xl mb-2 line-clamp-2 font-bold">{event.title}</CardTitle>
+
+        {event.performer && (
+          <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">
+            <Users className="w-4 h-4 mr-2 text-mulearn-gray-500" />
+            Featuring: {event.performer}
+          </p>
+        )}
+
+        <div className="flex flex-wrap gap-2">
+          {event.tags?.map((tag: string) => (
             <Badge
               key={tag}
               variant="outline"
@@ -165,15 +174,6 @@ function EventCard({ event }: { event: OMEvent }) {
             </Badge>
           ))}
         </div>
-
-        <CardTitle className="text-xl mb-2 line-clamp-2">{event.title}</CardTitle>
-
-        {event.performer && (
-          <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">
-            <Users className="w-4 h-4 mr-2 text-mulearn-gray-500" />
-            Featuring: {event.performer}
-          </p>
-        )}
       </CardHeader>
 
       <CardContent className="pt-0 flex flex-col flex-grow">

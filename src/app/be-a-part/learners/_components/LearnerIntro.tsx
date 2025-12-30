@@ -28,15 +28,14 @@ const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
         <div className="overflow-x-auto mt-6">
           <div className="flex gap-2 min-w-max justify-center items-center">
             {learnerTags.map((tag) => (
-              <span
+              <button
                 key={tag.id}
-                role="button"
-                tabIndex={0}
+                type="button"
                 aria-label={`Learner tag ${tag.label}`}
                 className="px-3 py-1.5 text-sm font-medium rounded-full bg-mulearn-whitish text-mulearn-trusty-blue border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish focus:outline-none focus-visible:ring-2 focus-visible:ring-mulearn-trusty-blue transition-colors duration-200 whitespace-nowrap"
               >
                 {tag.label}
-              </span>
+              </button>
             ))}
           </div>
         </div>

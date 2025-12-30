@@ -115,13 +115,57 @@ var config_default = defineConfig({
               { type: "string", name: "performer", label: "Speaker/Host" },
               {
                 type: "string",
+                name: "designation",
+                label: "Speaker Designation",
+                description: "e.g., Senior Developer, Tech Lead, Product Manager"
+              },
+              {
+                type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
               { type: "string", name: "date", label: "Date", description: "Format: DD/MM/YYYY" },
-              { type: "string", name: "tags", label: "Tags", list: true },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" }
+              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
+              {
+                type: "string",
+                name: "interestGroups",
+                label: "Interest Groups",
+                description: "Select one or more Interest Groups related to this session",
+                list: true,
+                options: [
+                  { label: "UI/UX", value: "ui-ux" },
+                  { label: "Web Development", value: "web-development" },
+                  { label: "Product Management", value: "product-management" },
+                  { label: "DevOps", value: "devops" },
+                  { label: "Game Dev", value: "game-dev" },
+                  { label: "No Or Low Code", value: "no-low-code" },
+                  { label: "Entrepreneurship", value: "entrepreneurship" },
+                  { label: "AR/VR/MR", value: "ar-vr-mr" },
+                  { label: "Cyber Security", value: "cyber-security" },
+                  { label: "Mobile Development", value: "mobile-development" },
+                  { label: "Data Analytics", value: "data-analytics" },
+                  { label: "Space", value: "space" },
+                  { label: "AI", value: "ai" },
+                  { label: "Comics", value: "comics" },
+                  { label: "Digital Marketing", value: "digital-marketing" },
+                  { label: "MuV", value: "muv" },
+                  { label: "Generative AI", value: "generative-ai" },
+                  { label: "Data Structures and Algorithm", value: "dsa" },
+                  { label: "Blockchain", value: "blockchain" },
+                  { label: "Data Science", value: "data-science" },
+                  { label: "Project Management", value: "project-management" },
+                  { label: "Quantum Computing", value: "quantum-computing" },
+                  { label: "Strategic Leadership", value: "strategic-leadership" },
+                  { label: "Civil", value: "civil" },
+                  { label: "Internet Of Things (IOT) And Robotics", value: "iot-robotics" },
+                  { label: "Creative Design", value: "creative-design" },
+                  { label: "Beckn", value: "beckn" },
+                  { label: "Quality Assurance", value: "quality-assurance" },
+                  { label: "Human Resources", value: "human-resources" },
+                  { label: "Cloud", value: "cloud" }
+                ]
+              }
             ]
           }
         ]

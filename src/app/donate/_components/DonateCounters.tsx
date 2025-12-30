@@ -16,7 +16,7 @@ export default function DonateCounters() {
       <Card className="flex items-center justify-center">
         <CardContent className="flex flex-col items-center justify-center py-6">
           <div className="text-3xl sm:text-4xl font-extrabold bg-linear-to-r from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent">
-            <CountUp end={300} duration={2.2} separator="," suffix="+" />
+            <CountUp end={378} duration={2.2} separator="," suffix="+" />
           </div>
           <div className="text-sm text-mulearn-blackish">Events</div>
         </CardContent>

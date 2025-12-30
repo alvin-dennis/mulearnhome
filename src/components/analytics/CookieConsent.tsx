@@ -8,7 +8,7 @@
  */
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Cookie, Settings, X } from "lucide-react";
+import { Cookie, Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useConsentManager } from "@/hooks/useConsentManager";
