@@ -270,7 +270,7 @@ export default function DonationForm() {
                   className={cn(
                     "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden",
                     isSelected
-                      ? `bg-gradient-to-r ${tier.color} border-amber-400 ring-2 ring-offset-2 ring-amber-400/50 shadow-lg`
+                      ? `bg-linear-to-r ${tier.color} border-amber-400 ring-2 ring-offset-2 ring-amber-400/50 shadow-lg`
                       : "bg-white border-mulearn-gray-600/20 hover:border-amber-400/50 hover:bg-amber-50/30",
                   )}
                 >

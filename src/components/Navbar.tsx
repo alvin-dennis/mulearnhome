@@ -78,11 +78,11 @@ export default function Navbar() {
           </Link>
 
           <ul className="flex items-center gap-8 list-none m-0 p-0 xl:gap-8 lg:gap-6 md:gap-4">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <MotionLi
-                key={index}
+                key={item.label}
                 className="relative text-mulearn-gray-600 hover:text-mulearn-trusty-blue font-bold text-base cursor-pointer py-2 text-left transition-all duration-300 hover:-translate-y-px after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
-                onMouseEnter={() => handleMouseEnter(index, !!item.submenu)}
+                onMouseEnter={() => handleMouseEnter(navItems.indexOf(item), !!item.submenu)}
                 onMouseLeave={handleMouseLeave}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -96,7 +96,7 @@ export default function Navbar() {
                 </Link>
 
                 <AnimatePresence>
-                  {activeSubmenu === index && item.submenu && (
+                  {activeSubmenu === navItems.indexOf(item) && item.submenu && (
                     <MotionDiv
                       className="absolute top-full left-1/2 -translate-x-1/2 bg-mulearn-whitish rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-mulearn-greyish z-1000 overflow-hidden mt-2 lg:min-w-[240px]"
                       initial={{ opacity: 0, y: -10 }}
@@ -111,7 +111,7 @@ export default function Navbar() {
                               {category}
                             </h4>
                             <ul className="list-none m-0 p-0 flex flex-col gap-0.5 lg:gap-0">
-                              {items.map((subItem: SubItem, subIndex: number) => (
+                              {items.map((subItem: SubItem) => (
                                 <Link
                                   key={subItem.label}
                                   href={subItem.href}
@@ -119,10 +119,7 @@ export default function Navbar() {
                                   className="leading-snug relative after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:after:w-full"
                                   onClick={() => setActiveSubmenu(null)}
                                 >
-                                  <li
-                                    key={subIndex}
-                                    className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1"
-                                  >
+                                  <li className="text-mulearn-gray-600 text-[0.7rem] font-bold cursor-pointer rounded-lg transition-all duration-300 hover:bg-mulearn-trusty-blue/10 hover:text-mulearn-trusty-blue lg:text-[0.8rem] lg:px-2 lg:py-1">
                                     {subItem.label}
                                   </li>
                                 </Link>
@@ -205,13 +202,13 @@ export default function Navbar() {
 
                   <ul className="list-none mt-16 mb-8 p-0 flex-1">
                     {activeMobileSubmenu === null ? (
-                      navItems.map((item, index) => (
+                      navItems.map((item) => (
                         <li
-                          key={index}
+                          key={item.label}
                           className="mb-4 py-4 border-b border-mulearn-greyish text-mulearn-gray-600 font-medium text-[1.1rem] cursor-pointer transition-all duration-300 hover:text-mulearn-trusty-blue hover:pl-4 hover:bg-mulearn-whitish hover:rounded-lg "
                           onClick={() =>
                             item.submenu
-                              ? setActiveMobileSubmenu(index)
+                              ? setActiveMobileSubmenu(navItems.indexOf(item))
                               : window.location.assign(item.href!)
                           }
                         >
@@ -233,9 +230,9 @@ export default function Navbar() {
                                 {category}
                               </div>
                               <ul className="pl-4 list-none">
-                                {items.map((subItem: SubItem, subIndex: number) => (
+                                {items.map((subItem: SubItem) => (
                                   <li
-                                    key={subIndex}
+                                    key={subItem.label}
                                     className="py-2 text-mulearn-gray-600 cursor-pointer hover:text-mulearn-duke-purple hover:pl-2"
                                     onClick={() => window.location.assign(subItem.href!)}
                                   >

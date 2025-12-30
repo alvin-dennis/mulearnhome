@@ -21,7 +21,7 @@ export default function Hero() {
             </h3>
 
             <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-mulearn-gray-600 mb-8 sm:mb-10">
-              Build the future through peer-to-peer learning, proof-of-work, and a 55,000+ strong
+              Build the future through peer-to-peer learning, proof-of-work, and a 64,000+ strong
               community.
             </p>
           </MotionDiv>

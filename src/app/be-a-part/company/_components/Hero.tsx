@@ -41,7 +41,7 @@ export default function Hero() {
               <span className="text-mulearn-blackish">to discover talent and spark innovation</span>
             </h1>
 
-            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <MotionDiv>
               <Link
                 href="https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"
                 target="_blank"

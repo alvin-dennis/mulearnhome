@@ -4,6 +4,7 @@ import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
 interface DonationData {
@@ -68,7 +69,7 @@ export default function DonateSuccessPage() {
     <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
       <div className="w-full max-w-4xl perspective-1000">
         {/* Main Card - Split Layout */}
-        <div className="bg-white rounded-[2rem] shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
+        <div className="bg-white rounded-4xl shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
           {/* Left Side: Brand & Status */}
           <div
             className={`w-full md:w-5/12 relative overflow-hidden flex flex-col items-center justify-center p-10 text-center text-white ${
@@ -87,9 +88,9 @@ export default function DonateSuccessPage() {
               <div className="mx-auto w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 ring-4 ring-white/20 shadow-xl">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
                   {isBankTransfer ? (
-                    <Clock className="w-8 h-8 text-amber-500 stroke-[3]" />
+                    <Clock className="w-8 h-8 text-amber-500 stroke-3" />
                   ) : (
-                    <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-[3]" />
+                    <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-3" />
                   )}
                 </div>
               </div>
@@ -109,7 +110,13 @@ export default function DonateSuccessPage() {
           <div className="w-full md:w-7/12 bg-white p-8 sm:p-12 flex flex-col justify-center relative">
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
-              <img src="/assets/logo.png" alt="" className="h-16 w-auto grayscale" />
+              <MuImage
+                src="/assets/logo.png"
+                alt=""
+                className="h-16 w-auto grayscale"
+                width={64}
+                height={64}
+              />
             </div>
 
             <div className="mb-8">
@@ -150,8 +157,13 @@ export default function DonateSuccessPage() {
               {/* Reference Code for Bank Transfer */}
               {isBankTransfer && donationData.referenceCode && (
                 <div
+                  role="button"
+                  tabIndex={0}
                   className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
                   onClick={() => copyToClipboard(donationData.referenceCode || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.referenceCode || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Reference Code</span>
                   <div className="flex items-center gap-2 bg-amber-50 px-2 py-1 rounded-md border border-amber-200 group-hover:border-amber-400 transition-colors">
@@ -165,8 +177,13 @@ export default function DonateSuccessPage() {
               {/* Transaction ID for Razorpay */}
               {donationData.paymentId && (
                 <div
+                  role="button"
+                  tabIndex={0}
                   className="flex items-center justify-between py-3 group cursor-pointer"
                   onClick={() => copyToClipboard(donationData.paymentId || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.paymentId || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Transaction ID</span>
                   <div className="flex items-center gap-2 bg-gray-50 px-2 py-1 rounded-md border border-gray-200 group-hover:border-mulearn-trusty-blue/30 transition-colors">

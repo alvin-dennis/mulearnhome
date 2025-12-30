@@ -59,7 +59,7 @@ export default function WhyChapter() {
                   <div className="rounded-lg flex items-center justify-center">
                     <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
                   </div>
-                  <span>Join 55,000+ community with 400+ partner companies</span>
+                  <span>Join 64,000+ community with 400+ partner companies</span>
                 </li>
               </ul>
             </CardContent>

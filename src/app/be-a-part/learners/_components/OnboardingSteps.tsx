@@ -73,8 +73,14 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
             </Card>
 
             {index < data.length - 1 && (
-              <div className="text-mulearn-blackish">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-mulearn-blackish" aria-hidden="true">
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

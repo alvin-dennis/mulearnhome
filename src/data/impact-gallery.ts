@@ -27,7 +27,7 @@ export const galleryData: GalleryItem[] = [
     title: "Won 18 Lakhs by Students in Meta's Global Hackathon!",
     description:
       "Twenty-seven of the two hundred winners of a worldwide challenge conducted by Meta recently were from MuLearn! Meta challenge was to create Instagram filters using Spark AR. Participation from Kerala in such challenges has often been limited owing to a lack of resources to acquire the knowhow to crack the task. Participants of the bootcamp went on to win cash prizes worth eighteen lakh rupees!",
-    image: "/images/impact/success-story-1.jpg",
+    image: "/assets/impact-gallery/meta-global-hackathon.jpg",
     category: "impact-stories",
     type: "image",
   },

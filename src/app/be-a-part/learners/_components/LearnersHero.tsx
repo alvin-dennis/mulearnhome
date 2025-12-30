@@ -33,6 +33,7 @@ const LearnersHero = () => {
             viewBox="0 0 120 30"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M10 8 Q60 20, 110 8"
