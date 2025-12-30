@@ -4,7 +4,7 @@ import axios from "axios";
 import type { Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/lib/env/env.client";
@@ -22,7 +22,7 @@ const fadeInUp: Variants = {
 export default function RankingSection() {
   const [topLearners, setTopLearners] = useState<TopLearner[]>([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const res = await axios.get(`${clientEnv.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`);
       const learners: Learner[] = Array.isArray(res.data.response) ? res.data.response : [];
@@ -36,7 +36,7 @@ export default function RankingSection() {
     } catch (err) {
       console.error("Error fetching learners:", err);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -108,13 +108,15 @@ export default function RankingSection() {
         </div>
 
         <div className="space-y-3">
-          {topLearners.slice(3, 10).map((learner, index) => (
+          {topLearners.slice(3, 10).map((learner) => (
             <div
-              key={index + 3}
+              key={learner.name}
               className="flex items-center justify-between p-4 rounded-lg transition-colors"
             >
               <div className="flex items-center gap-4">
-                <span className="font-bold text-base text-mulearn-blackish">#{index + 4}</span>
+                <span className="font-bold text-base text-mulearn-blackish">
+                  #{topLearners.indexOf(learner) + 1}
+                </span>
                 <span className="font-medium text-mulearn-blackish">{learner.name}</span>
               </div>
               <span className="font-bold text-mulearn-blackish">
