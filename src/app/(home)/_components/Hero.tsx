@@ -6,6 +6,8 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
+// Static import ensures Next.js bundles the image properly for Netlify
+import illustrationImg from "../../../public/assets/illustration.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -24,8 +26,6 @@ const textVariant: Variants = {
     transition: { delay: custom * 0.05, duration: 0.3 },
   }),
 };
-
-const illustration = "/assets/illustration.webp";
 
 export default function Hero() {
   const redirect = useRedirectToApp();
@@ -96,15 +96,12 @@ export default function Hero() {
 
       <div className="relative w-full mt-auto flex justify-center items-end">
         <MuImage
-          src={illustration}
+          src={illustrationImg}
           alt="Community illustration showcasing µLearn peer learning platform"
-          width={1300}
-          height={900}
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           priority
           quality={85}
           placeholder="blur"
-          blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoKAAoAAkA4JaQAA3AA/vuZxe3gAAA="
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, 70vw"
         />
       </div>

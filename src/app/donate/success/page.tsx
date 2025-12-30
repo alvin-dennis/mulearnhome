@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+// Static import ensures Next.js bundles the image properly for Netlify
+import logoImg from "../../../../public/assets/logo.png";
 
 interface DonationData {
   donationType: string;
@@ -111,7 +113,7 @@ export default function DonateSuccessPage() {
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
               <MuImage
-                src="/assets/logo.png"
+                src={logoImg}
                 alt=""
                 className="h-16 w-auto grayscale"
                 width={64}
