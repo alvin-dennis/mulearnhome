@@ -5,6 +5,8 @@
 [build.environment]
   NODE_VERSION = "20"
 
+  SECRETS_SCAN_OMIT_KEYS = "TINA_TOKEN"
+
 [[build.processing.skip]]
   for = "secret-scanning"
   paths = ["**/*"]
