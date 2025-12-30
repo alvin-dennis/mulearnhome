@@ -229,7 +229,7 @@ export default function LearningCirclePage() {
         <p className="text-lg mb-8 text-mulearn-whitish  max-w-2xl mx-auto">
           {ctaSection.description}
         </p>
-        <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+        <MotionDiv className="inline-block">
           <Link href={ctaSection.buttonLink} target="_blank" rel="noopener noreferrer">
             <Button variant="mulearn-inverted" className="text-lg px-6 py-3">
               {ctaSection.buttonText}

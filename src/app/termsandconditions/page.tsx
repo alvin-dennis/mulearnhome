@@ -10,8 +10,8 @@ const Paragraph = ({ text }: { text: string }) => (
 
 const SubsectionList = ({ subsections }: { subsections: string[] }) => (
   <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify list-[lower-roman]">
-    {subsections.map((subsection, index) => (
-      <li key={index} className="pl-2 leading-relaxed">
+    {subsections.map((subsection) => (
+      <li key={subsection.slice(0, 50)} className="pl-2 leading-relaxed">
         {subsection}
       </li>
     ))}
@@ -30,27 +30,29 @@ export default async function TermsAndConditions() {
         </header>
 
         <div className="mb-12 space-y-6 text-justify">
-          {termsAndConditions.introduction.split("\n\n").map((paragraph, index) => (
-            <Paragraph key={index} text={paragraph} />
+          {termsAndConditions.introduction.split("\n\n").map((paragraph) => (
+            <Paragraph key={paragraph.slice(0, 50)} text={paragraph} />
           ))}
         </div>
 
         <div className="space-y-12">
-          {termsAndConditions.sections.map((section, index) => (
-            <section key={index} className="scroll-mt-20">
+          {termsAndConditions.sections.map((section) => (
+            <section key={section.heading} className="scroll-mt-20">
               <h2 className="mb-3 text-lg font-semibold text-mulearn-blackish text-justify">
-                {index + 1}. {section.heading}
+                {termsAndConditions.sections.indexOf(section) + 1}. {section.heading}
               </h2>
 
               <div className="mb-4 space-y-4">
                 {section.content &&
                   (Array.isArray(section.content)
-                    ? section.content.map((paragraph, pIndex) => (
-                        <Paragraph key={pIndex} text={paragraph} />
+                    ? section.content.map((paragraph) => (
+                        <Paragraph key={paragraph.slice(0, 50)} text={paragraph} />
                       ))
                     : section.content
                         .split("\n\n")
-                        .map((paragraph, pIndex) => <Paragraph key={pIndex} text={paragraph} />))}
+                        .map((paragraph) => (
+                          <Paragraph key={paragraph.slice(0, 50)} text={paragraph} />
+                        )))}
               </div>
 
               {section.subsections.length > 0 && (

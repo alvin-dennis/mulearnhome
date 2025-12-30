@@ -62,9 +62,9 @@ export function TeamCard({
                   showAllRoles ? "max-h-none" : "max-h-[58px]",
                 )}
               >
-                {displayedRoles.map((role, index) => (
+                {displayedRoles.map((role) => (
                   <li
-                    key={index}
+                    key={role}
                     className="bg-mulearn-greyish/20 text-mulearn-gray-600 text-xs px-2.5 py-1 rounded-xl whitespace-normal"
                   >
                     {role}

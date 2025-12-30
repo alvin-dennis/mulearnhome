@@ -68,7 +68,7 @@ export default function DonateSuccessPage() {
     <div className="min-h-screen bg-[#F5F7FA] flex items-center justify-center p-4 sm:p-6 lg:p-8 font-sans">
       <div className="w-full max-w-4xl perspective-1000">
         {/* Main Card - Split Layout */}
-        <div className="bg-white rounded-[2rem] shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
+        <div className="bg-white rounded-4xl shadow-2xl shadow-mulearn-trusty-blue/10 overflow-hidden flex flex-col md:flex-row min-h-[500px] animate-scale-in">
           {/* Left Side: Brand & Status */}
           <div
             className={`w-full md:w-5/12 relative overflow-hidden flex flex-col items-center justify-center p-10 text-center text-white ${
@@ -87,9 +87,9 @@ export default function DonateSuccessPage() {
               <div className="mx-auto w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 ring-4 ring-white/20 shadow-xl">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
                   {isBankTransfer ? (
-                    <Clock className="w-8 h-8 text-amber-500 stroke-[3]" />
+                    <Clock className="w-8 h-8 text-amber-500 stroke-3" />
                   ) : (
-                    <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-[3]" />
+                    <Check className="w-8 h-8 text-mulearn-trusty-blue stroke-3" />
                   )}
                 </div>
               </div>

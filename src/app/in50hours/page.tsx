@@ -43,7 +43,7 @@ export default function In50Hours() {
           </div>
           <div className="flex justify-center md:justify-start">
             <Link target="_blank" rel="noreferrer" href="https://www.makemypass.com/in50hours">
-              <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <MotionDiv>
                 <Button
                   variant={"custom"}
                   className=" mt-2 sm:mt-4 px-4 sm:px-6 py-2 font-semibold"
