@@ -11,27 +11,12 @@ class MailService {
   private transporter: nodemailer.Transporter;
 
   constructor() {
-    const emailConfig =
-      serverEnv.EMAIL_PROVIDER === "outlook"
-        ? {
-            host: "smtp-mail.outlook.com",
-            port: 587,
-            secure: false,
-            auth: {
-              user: serverEnv.GMAIL_USER,
-              pass: serverEnv.GMAIL_APP_PASSWORD,
-            },
-          }
-        : {
-            service: "gmail",
-            auth: {
-              user: serverEnv.GMAIL_USER,
-              pass: serverEnv.GMAIL_APP_PASSWORD,
-            },
-          };
-
+    // Transporter configuration removed - mail service is not in use
+    // Create a dummy transporter for backwards compatibility
     this.transporter = nodemailer.createTransport({
-      ...emailConfig,
+      streamTransport: true,
+      newline: "unix",
+      buffer: true,
     });
   }
 
@@ -40,11 +25,9 @@ class MailService {
       const subject = EmailTemplates.generateEmailSubject(data.intent, data.name);
       const html = EmailTemplates.generateContactEmailTemplate(data);
 
-      const recipients = serverEnv.CONTACT_EMAIL_RECIPIENTS;
-
       const mailOptions = {
-        from: serverEnv.GMAIL_USER,
-        to: recipients,
+        from: data.email,
+        to: "contact@mulearn.org",
         subject,
         html,
         replyTo: data.email,
@@ -76,7 +59,7 @@ class MailService {
       const autoReplyHtml = EmailTemplates.generateAutoReplyTemplate(data);
 
       const autoReplyOptions = {
-        from: serverEnv.GMAIL_USER,
+        from: "noreply@mulearn.org",
         to: data.email,
         subject: "Your inquiry has been received - μLearn Foundation",
         html: autoReplyHtml,

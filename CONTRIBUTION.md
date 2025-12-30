@@ -221,8 +221,8 @@ This project uses a **production-grade environment variable system** with Zod va
 // In API routes, server components, server actions
 import { serverEnv } from "@/lib/env/env.server";
 
-const email = serverEnv.GMAIL_USER;
-const apiKey = serverEnv.GOOGLE_APPS_SCRIPT_SECRET;
+const githubToken = serverEnv.GH_TOKEN;
+const tinaToken = serverEnv.TINA_TOKEN;
 ```
 
 ### Client-Side Public Variables

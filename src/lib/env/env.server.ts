@@ -21,27 +21,6 @@ const serverEnvSchema = z.object({
   // Node Environment
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
 
-  // Email Configuration (Required)
-  GMAIL_USER: z.string().email("GMAIL_USER must be a valid email address"),
-  GMAIL_APP_PASSWORD: z.string().min(1, "GMAIL_APP_PASSWORD is required"),
-  EMAIL_PROVIDER: z.enum(["gmail", "outlook"]).default("gmail"),
-
-  // Email Recipients (Optional - defaults to fallback list)
-  CONTACT_EMAIL_RECIPIENTS: z
-    .string()
-    .optional()
-    .transform((val) => {
-      if (!val) return ["sachin@mulearn.org", "info@mulearn.org"];
-      return val
-        .split(",")
-        .map((e) => e.trim())
-        .filter((e) => e.length > 0);
-    }),
-
-  // Google Apps Script Integration (Required)
-  GOOGLE_APPS_SCRIPT_URL: z.string().url("GOOGLE_APPS_SCRIPT_URL must be a valid URL"),
-  GOOGLE_APPS_SCRIPT_SECRET: z.string().min(1, "GOOGLE_APPS_SCRIPT_SECRET is required"),
-
   // GitHub Token (Optional - for leaderboard generation)
   GH_TOKEN: z.string().optional(),
 
@@ -91,8 +70,8 @@ function validateServerEnv(): ServerEnv {
  * Validated server environment variables.
  *
  * ⚠️ Usage:
- *   - serverEnv.GMAIL_USER
- *   - serverEnv.GOOGLE_APPS_SCRIPT_URL
+ *   - serverEnv.GH_TOKEN
+ *   - serverEnv.TINA_TOKEN
  *   - etc.
  *
  * DO NOT use process.env directly!

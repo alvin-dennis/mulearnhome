@@ -101,13 +101,6 @@ export async function POST(request: NextRequest) {
   };
 
   try {
-    if (!serverEnv.GMAIL_USER || !serverEnv.GMAIL_APP_PASSWORD) {
-      return NextResponse.json(
-        { success: false, message: "Service temporarily unavailable." },
-        { status: 503, headers },
-      );
-    }
-
     const ip = getClientIP(request);
 
     if (isRateLimited(ip)) {
@@ -135,25 +128,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let ticketId = "";
-
-    try {
-      const datasheetResponse = await fetch(`${request.nextUrl.origin}/api/datasheet`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (datasheetResponse.ok) {
-        const datasheetResult = await datasheetResponse.json();
-        ticketId = datasheetResult.ticketId || "";
-      }
-    } catch (_error) {
-      // Continue without ticket ID if datasheet fails
-    }
-
     if (!sanitizedData) {
       return NextResponse.json(
         { success: false, message: "Validation failed" },
@@ -163,7 +137,6 @@ export async function POST(request: NextRequest) {
 
     const emailData: EmailData = {
       ...sanitizedData,
-      ticketId: ticketId,
     };
 
     const emailPromises = [
@@ -191,7 +164,6 @@ export async function POST(request: NextRequest) {
         {
           success: true,
           message: "Your message has been sent successfully! We'll get back to you soon.",
-          ticketId: ticketId,
           autoReplyStatus: autoReplySuccess ? "sent" : "failed",
         },
         { headers },
