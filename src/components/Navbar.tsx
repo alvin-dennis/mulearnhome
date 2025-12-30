@@ -1,7 +1,5 @@
 "use client";
 
-// Static import ensures Next.js bundles the image properly for Netlify
-import logoImg from "@public/assets/logo.png";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -10,6 +8,8 @@ import MuImage from "@/components/MuImage";
 import { navItems } from "@/data/common";
 import type { SubItem } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
+// Static import ensures Next.js bundles the image properly for Netlify
+import logoImg from "../../public/assets/logo.png";
 import { MotionDiv, MotionLi } from "./MuFramer";
 import { Button } from "./ui/button";
 

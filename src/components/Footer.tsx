@@ -1,11 +1,12 @@
 // Static import ensures Next.js bundles the image properly for Netlify
-import logoImg from "@public/assets/logo.png";
+
 import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import CookieSettingsLink from "@/components/analytics/CookieSettingsLink";
 import { MotionFooter } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { contactInfo, footer, socials } from "@/data/common";
+import logoImg from "../../public/assets/logo.png";
 
 export default function Footer() {
   return (

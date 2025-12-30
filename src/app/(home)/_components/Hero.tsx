@@ -1,13 +1,13 @@
 "use client";
 
-// Static import ensures Next.js bundles the image properly for Netlify
-import illustrationImg from "@public/assets/illustration.webp";
 import type { Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
+// Static import ensures Next.js bundles the image properly for Netlify
+import illustrationImg from "../../../public/assets/illustration.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

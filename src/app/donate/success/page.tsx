@@ -1,13 +1,13 @@
 "use client";
 
-// Static import ensures Next.js bundles the image properly for Netlify
-import logoImg from "@public/assets/logo.png";
 import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
+// Static import ensures Next.js bundles the image properly for Netlify
+import logoImg from "../../../../public/assets/logo.png";
 
 interface DonationData {
   donationType: string;
