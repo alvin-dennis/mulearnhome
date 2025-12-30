@@ -25,8 +25,6 @@ const textVariant: Variants = {
   }),
 };
 
-const illustration = "/assets/illustration.webp";
-
 export default function Hero() {
   const redirect = useRedirectToApp();
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
@@ -96,15 +94,13 @@ export default function Hero() {
 
       <div className="relative w-full mt-auto flex justify-center items-end">
         <MuImage
-          src={illustration}
+          src="/assets/illustration.webp"
           alt="Community illustration showcasing µLearn peer learning platform"
-          width={1300}
-          height={900}
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           priority
           quality={85}
-          placeholder="blur"
-          blurDataURL="data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoKAAoAAkA4JaQAA3AA/vuZxe3gAAA="
+          width={1300}
+          height={900}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, 70vw"
         />
       </div>
