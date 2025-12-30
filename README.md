@@ -90,8 +90,8 @@ src/lib/env/
 import { serverEnv } from "@/lib/env";
 
 // Access validated server secrets
-const emailUser = serverEnv.GMAIL_USER;
-const apiSecret = serverEnv.GOOGLE_APPS_SCRIPT_SECRET;
+const ghToken = serverEnv.GH_TOKEN;
+const tinaToken = serverEnv.TINA_TOKEN;
 ```
 
 #### In Client-Side Code (React Components, Hooks)
