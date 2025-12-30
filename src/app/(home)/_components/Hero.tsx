@@ -6,8 +6,6 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
-// Static import ensures Next.js bundles the image properly for Netlify
-import illustrationImg from "../../../public/assets/illustration.webp";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -96,12 +94,13 @@ export default function Hero() {
 
       <div className="relative w-full mt-auto flex justify-center items-end">
         <MuImage
-          src={illustrationImg}
+          src="/assets/illustration.webp"
           alt="Community illustration showcasing µLearn peer learning platform"
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           priority
           quality={85}
-          placeholder="blur"
+          width={1300}
+          height={900}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, 70vw"
         />
       </div>
