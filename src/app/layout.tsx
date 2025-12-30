@@ -4,13 +4,12 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import type React from "react";
 import { Suspense } from "react";
-import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/components/analytics";
 import BackToTop from "@/components/BacktoTop";
-import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "µLearn",
@@ -70,8 +69,7 @@ export default function RootLayout({
           <Navbar />
           <Suspense fallback={<MuLoader />}>{children}</Suspense>
           <Footer />
-          <Toaster reverseOrder={true} position="top-center" />
-          <SonnerToaster />
+          <Toaster richColors theme="light" position="bottom-right" />
           <div className="fixed bottom-4 right-4 z-50">
             <BackToTop />
           </div>
