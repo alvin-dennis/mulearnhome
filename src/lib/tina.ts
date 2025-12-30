@@ -1,5 +1,32 @@
-import { client } from "@/tina/__generated__/client";
-import type { Event, OfficeHours, SpecialEvent } from "@/tina/__generated__/types";
+import "server-only";
+import { createClient } from "tinacms/dist/client";
+import { clientEnv } from "@/lib/env/env.client";
+import { serverEnv } from "@/lib/env/env.server";
+import {
+  type Event,
+  type OfficeHours,
+  queries,
+  type SpecialEvent,
+} from "@/tina/__generated__/types";
+
+/**
+ * Server-only TinaCMS client
+ *
+ * This client is created at runtime using environment variables,
+ * preventing the TINA_TOKEN from being embedded in the build output.
+ */
+function getServerClient() {
+  const branch =
+    process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+
+  return createClient({
+    url: `https://content.tinajs.io/content/${clientEnv.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`,
+    token: serverEnv.TINA_TOKEN || "",
+    queries,
+  });
+}
+
+const client = getServerClient();
 
 /**
  * Fetch all events from TinaCMS
