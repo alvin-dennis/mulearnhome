@@ -1,5 +1,7 @@
 "use client";
 
+// Static import ensures Next.js bundles the image properly for Netlify
+import logoImg from "@public/assets/logo.png";
 import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -111,7 +113,7 @@ export default function DonateSuccessPage() {
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
               <MuImage
-                src="/assets/logo.png"
+                src={logoImg}
                 alt=""
                 className="h-16 w-auto grayscale"
                 width={64}

@@ -1,5 +1,7 @@
 "use client";
 
+// Static import ensures Next.js bundles the image properly for Netlify
+import logoImg from "@public/assets/logo.png";
 import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -68,7 +70,7 @@ export default function Navbar() {
         >
           <Link href="/" className="flex items-center shrink-0">
             <MuImage
-              src="/assets/logo.png"
+              src={logoImg}
               alt="Mulearn Brand"
               width={170}
               height={170}
@@ -152,7 +154,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center p-4 relative z-1000">
             <Link href="/" className="flex items-center shrink-0">
               <MuImage
-                src="/assets/logo.png"
+                src={logoImg}
                 alt="Mulearn Brand"
                 width={120}
                 height={40}
