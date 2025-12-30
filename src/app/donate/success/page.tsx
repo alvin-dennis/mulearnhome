@@ -4,6 +4,7 @@ import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
 interface DonationData {
@@ -109,7 +110,13 @@ export default function DonateSuccessPage() {
           <div className="w-full md:w-7/12 bg-white p-8 sm:p-12 flex flex-col justify-center relative">
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
-              <img src="/assets/logo.png" alt="" className="h-16 w-auto grayscale" />
+              <MuImage
+                src="/assets/logo.png"
+                alt=""
+                className="h-16 w-auto grayscale"
+                width={64}
+                height={64}
+              />
             </div>
 
             <div className="mb-8">
@@ -150,8 +157,13 @@ export default function DonateSuccessPage() {
               {/* Reference Code for Bank Transfer */}
               {isBankTransfer && donationData.referenceCode && (
                 <div
+                  role="button"
+                  tabIndex={0}
                   className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
                   onClick={() => copyToClipboard(donationData.referenceCode || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.referenceCode || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Reference Code</span>
                   <div className="flex items-center gap-2 bg-amber-50 px-2 py-1 rounded-md border border-amber-200 group-hover:border-amber-400 transition-colors">
@@ -165,8 +177,13 @@ export default function DonateSuccessPage() {
               {/* Transaction ID for Razorpay */}
               {donationData.paymentId && (
                 <div
+                  role="button"
+                  tabIndex={0}
                   className="flex items-center justify-between py-3 group cursor-pointer"
                   onClick={() => copyToClipboard(donationData.paymentId || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.paymentId || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Transaction ID</span>
                   <div className="flex items-center gap-2 bg-gray-50 px-2 py-1 rounded-md border border-gray-200 group-hover:border-mulearn-trusty-blue/30 transition-colors">
