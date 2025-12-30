@@ -17,7 +17,10 @@ import {
  */
 function getServerClient() {
   const branch =
-    process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+    process.env.GITHUB_BRANCH ||
+    process.env.VERCEL_GIT_COMMIT_REF ||
+    process.env.HEAD ||
+    "production";
 
   return createClient({
     url: `https://content.tinajs.io/content/${clientEnv.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`,
