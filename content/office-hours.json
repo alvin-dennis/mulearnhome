@@ -959,17 +959,6 @@
       "interestGroups": [
         "human-resources"
       ]
-    },
-    {
-      "title": "Office Hour title",
-      "performer": "AwinDas",
-      "designation": "Tech Lead",
-      "description": "Description",
-      "date": "01/01/2026",
-      "isUpcoming": true,
-      "interestGroups": [
-        "web-development"
-      ]
     }
   ]
 }
