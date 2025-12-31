@@ -29,8 +29,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
         <MuImage
           src={specialevent.image}
           alt={specialevent.title}
-          width={400}
-          height={180}
+          fill
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
         />
