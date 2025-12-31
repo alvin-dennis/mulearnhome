@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { refundPolicy } from "@/data/legal";
 import { formatAndSanitize } from "@/lib/sanitize";
 

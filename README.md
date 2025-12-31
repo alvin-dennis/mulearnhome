@@ -1,6 +1,6 @@
 # MuLearn Home
 
-A modern, scalable web application for the MuLearn community built with Next.js, TypeScript, and Tailwind CSS
+A web application for the MuLearn community built with Next.js, TypeScript, and Tailwind CSS
 
 ---
 

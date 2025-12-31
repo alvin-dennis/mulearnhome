@@ -4,12 +4,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-
+import { EmptyState } from "@/app/events/_components/EmptyState";
+import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
+import Pagination from "@/app/events/_components/Pagination";
+import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
+import { TabButton } from "@/app/events/_components/TabButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import EventsGrid from "./EventsGrid";
-import Pagination from "./Pagination";
-import SearchAndFilter from "./SearchAndFilter";
 
 export interface OfficeHourSession {
   title: string;
@@ -123,7 +124,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
 
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden py-20 md:py-28">
+      <section className="relative overflow-hidden py-4 md:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <Badge
@@ -158,22 +159,19 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
         allTags={allTags}
         view={view}
       />
-      <div className="flex justify-center gap-3 py-10">
-        <Button
-          variant={view === "upcoming" ? "mulearn" : "outline"}
-          className="rounded-full px-6"
+      <div className="flex justify-center gap-3 py-4">
+        <TabButton
+          icon={Clock}
+          label="Upcoming"
+          isActive={view === "upcoming"}
           onClick={() => setView("upcoming")}
-        >
-          Upcoming Sessions
-        </Button>
-
-        <Button
-          variant={view === "previous" ? "mulearn" : "outline"}
-          className="rounded-full px-6"
+        />
+        <TabButton
+          icon={Calendar}
+          label="Previous"
+          isActive={view === "previous"}
           onClick={() => setView("previous")}
-        >
-          Previous Sessions
-        </Button>
+        />
       </div>
       <AnimatePresence mode="wait">
         {view === "upcoming" && (
@@ -188,21 +186,21 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
           >
             <div className="max-w-7xl mx-auto px-4">
               {paginatedUpcoming.length > 0 ? (
-                <EventsGrid
-                  events={paginatedUpcoming}
-                  title="Upcoming Sessions"
-                  icon={<Clock className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />}
-                />
-              ) : (
-                <div className="text-center py-8 md:py-12">
-                  <Calendar className="w-12 h-12 md:w-16 md:h-16 text-mulearn-gray-600 mx-auto mb-3 md:mb-4" />
-                  <h3 className="text-lg md:text-xl font-semibold text-mulearn-gray-600 mb-2">
-                    No Upcoming Episodes
-                  </h3>
-                  <p className="text-mulearn-gray-600 text-sm md:text-base">
-                    Check back later for new inspiring stories!
-                  </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {paginatedUpcoming.map((event) => (
+                    <GenericEventCard
+                      key={event.id}
+                      event={event}
+                      variant="office-hour"
+                      icon={Mic}
+                    />
+                  ))}
                 </div>
+              ) : (
+                <EmptyState
+                  title="No Upcoming Episodes"
+                  description="Check back later for new inspiring stories!"
+                />
               )}
 
               <Pagination
@@ -226,11 +224,11 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
             className="py-12 pb-20"
           >
             <div className="max-w-7xl mx-auto px-4">
-              <EventsGrid
-                events={paginatedPast}
-                title="Previous Sessions"
-                icon={<Calendar className="w-8 h-8 mr-3 text-mulearn-trusty-blue" />}
-              />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {paginatedPast.map((event) => (
+                  <GenericEventCard key={event.id} event={event} variant="office-hour" icon={Mic} />
+                ))}
+              </div>
 
               <Pagination
                 page={pastPage}

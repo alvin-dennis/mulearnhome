@@ -1,12 +1,9 @@
-// Static import ensures Next.js bundles the image properly for Netlify
-
 import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import CookieSettingsLink from "@/components/analytics/CookieSettingsLink";
 import { MotionFooter } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { contactInfo, footer, socials } from "@/data/common";
-import logoImg from "../../public/assets/logo.png";
 
 export default function Footer() {
   return (
@@ -32,7 +29,7 @@ export default function Footer() {
                 <div className="flex items-center justify-center">
                   <div className=" rounded-xl overflow-hidden flex items-center justify-center">
                     <MuImage
-                      src={logoImg}
+                      src="/assets/logo.png"
                       alt="µLearn Logo"
                       width={180}
                       height={0}
