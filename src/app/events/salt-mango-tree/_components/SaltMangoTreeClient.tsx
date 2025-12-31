@@ -3,9 +3,11 @@
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { EmptyState } from "@/app/events/_components/EmptyState";
+import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
+import { TabButton } from "@/app/events/_components/TabButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { EpisodeCard } from "./EpisodeCard";
 
 export interface SaltMangoTreeEpisode {
   topic: string;
@@ -96,27 +98,18 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
-              <Button
-                variant={"mulearn-outline"}
+              <TabButton
+                icon={Clock}
+                label="Upcoming"
+                isActive={activeTab === "upcoming"}
                 onClick={() => setActiveTab("upcoming")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${
-                  activeTab === "upcoming" ? "sm:shadow-xl scale-105" : "text-gray-500"
-                }`}
-              >
-                <Clock className="w-4 h-4 md:w-5 md:h-5" />
-                Upcoming
-              </Button>
-
-              <Button
-                variant={"mulearn-outline"}
+              />
+              <TabButton
+                icon={Calendar}
+                label="Previous"
+                isActive={activeTab === "past"}
                 onClick={() => setActiveTab("past")}
-                className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold ${
-                  activeTab === "past" ? "sm:shadow-xl scale-105" : "text-gray-500"
-                }`}
-              >
-                <Calendar className="w-4 h-4 md:w-5 md:h-5" />
-                Previous
-              </Button>
+              />
             </div>
           </div>
 
@@ -126,19 +119,19 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
                 {upcomingEvents.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {upcomingEvents.map((event) => (
-                      <EpisodeCard key={event.id} event={event} />
+                      <GenericEventCard
+                        key={event.id}
+                        event={event}
+                        variant="episode"
+                        icon={Radio}
+                      />
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-8 md:py-12">
-                    <Calendar className="w-12 h-12 md:w-16 md:h-16 text-gray-300 mx-auto mb-3 md:mb-4" />
-                    <h3 className="text-lg md:text-xl font-semibold text-gray-600 mb-2">
-                      No Upcoming Episodes
-                    </h3>
-                    <p className="text-gray-500 text-sm md:text-base">
-                      Check back later for new inspiring stories!
-                    </p>
-                  </div>
+                  <EmptyState
+                    title="No Upcoming Episodes"
+                    description="Check back later for new inspiring stories!"
+                  />
                 )}
               </div>
             )}
@@ -153,7 +146,7 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {pastEvents.map((event) => (
-                    <EpisodeCard key={event.id} event={event} />
+                    <GenericEventCard key={event.id} event={event} variant="episode" icon={Radio} />
                   ))}
                 </div>
               </div>
