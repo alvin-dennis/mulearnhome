@@ -361,13 +361,7 @@ export default function CampusLogoGenerator() {
                         <div className="flex flex-col items-center">
                           <MuLearnLogo color={formData.foregroundColor} width={180} height={45} />
                           <div className="relative w-full">
-                            <div
-                              className="text-2xl lg:text-3xl opacity-90 absolute right-0"
-                              style={{
-                                fontFamily: "var(--font-plus-jakarta)",
-                                fontWeight: 400,
-                              }}
-                            >
+                            <div className="text-2xl lg:text-3xl opacity-90 absolute right-0 font-sans">
                               {formData.campusCode || "Campus"}
                             </div>
                           </div>
@@ -388,14 +382,7 @@ export default function CampusLogoGenerator() {
                         <div className="flex flex-col items-center">
                           <MuLearnLogo color={formData.foregroundColor} width={140} height={35} />
                           <div className="relative w-full">
-                            <div
-                              className="text-base mt-2 opacity-90 absolute right-0"
-                              style={{
-                                color: "#FFFFFF",
-                                fontFamily: "var(--font-plus-jakarta)",
-                                fontWeight: 400,
-                              }}
-                            >
+                            <div className="text-base mt-2 opacity-90 absolute right-0 font-sans text-mulearn-whitish">
                               {formData.campusCode || "Campus"}
                             </div>
                           </div>
@@ -421,10 +408,6 @@ export default function CampusLogoGenerator() {
                 type="text"
                 placeholder="Enter Campus Code"
                 className="w-full p-3 border-0 bg-gray-50 focus:bg-mulearn-whitish transition-all duration-200"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  fontSize: "var(--font-size-body)",
-                }}
                 value={formData.campusCode}
                 onChange={(e) => handleInputChange("campusCode", e.target.value)}
               />
@@ -434,17 +417,7 @@ export default function CampusLogoGenerator() {
             </div>
 
             <div>
-              <span
-                className="block font-medium mb-2"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  color: "var(  --mulearn-blackish-normal)",
-                  fontSize: "var(--font-size-body)",
-                  fontWeight: 500,
-                }}
-              >
-                Logo Type
-              </span>
+              <span className="block font-medium mb-2">Logo Type</span>
               <div className="flex gap-2">
                 <Button
                   variant={formData.logoType === "MuLearn" ? "custom" : "outline"}
