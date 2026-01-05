@@ -966,7 +966,7 @@
       "designation": "Project Management IG Lead",
       "description": "Trello 101 is a beginner-friendly session introducing Trello as a visual project management tool. Learn how to create boards, lists, and cards, organize tasks, collaborate with teams, and manage workflows effectively.",
       "date": "05/01/2026",
-      "isUpcoming": true,
+      "isUpcoming": false,
       "interestGroups": [
         "project-management"
       ]
