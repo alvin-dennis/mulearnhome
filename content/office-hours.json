@@ -6,12 +6,6 @@
       "description": "Join us for a discussion on why audiences are moving away from traditional theatres.",
       "date": "28/11/2025",
       "interestGroups": ["muv"]
-    },
-    {
-      "title": "General Discussion",
-      "performer": "",
-      "description": "Join us for an open discussion on Data Structures and Algorithms.",
-      "date": "27/11/2025",
       "interestGroups": ["dsa"]
     },
     {
@@ -127,9 +121,9 @@
       "interestGroups": ["ui-ux"]
     },
     {
-      "title": "Rasha Hasoon, Project Management: Facts & Myths",
+      "title": "Project Management: Facts & Myths",
       "performer": "",
-      "description": "Join us for Rasha Hasoon, Project Management: Facts & Myths.",
+      "description": "Join us for Project Management: Facts & Myths.",
       "date": "10/11/2025",
       "interestGroups": ["project-management"]
     },
