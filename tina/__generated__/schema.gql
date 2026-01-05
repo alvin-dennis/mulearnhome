@@ -171,6 +171,7 @@ type OfficeHoursSessions {
   description: String
   date: String
   isUpcoming: Boolean
+  link: String
   interestGroups: [String]
 }
 
@@ -188,6 +189,7 @@ input OfficeHoursSessionsFilter {
   description: StringFilter
   date: StringFilter
   isUpcoming: BooleanFilter
+  link: StringFilter
   interestGroups: StringFilter
 }
 
@@ -213,6 +215,7 @@ type SaltMangoTreeEpisodes {
   date: String
   description: String
   isUpcoming: Boolean
+  link: String
 }
 
 type SaltMangoTree implements Node & Document {
@@ -229,6 +232,7 @@ input SaltMangoTreeEpisodesFilter {
   date: StringFilter
   description: StringFilter
   isUpcoming: BooleanFilter
+  link: StringFilter
 }
 
 input SaltMangoTreeFilter {
@@ -253,6 +257,7 @@ type InspirationStationEpisodes {
   date: String
   description: String
   isUpcoming: Boolean
+  link: String
 }
 
 type InspirationStation implements Node & Document {
@@ -269,6 +274,7 @@ input InspirationStationEpisodesFilter {
   date: StringFilter
   description: StringFilter
   isUpcoming: BooleanFilter
+  link: StringFilter
 }
 
 input InspirationStationFilter {
@@ -371,6 +377,7 @@ input OfficeHoursSessionsMutation {
   description: String
   date: String
   isUpcoming: Boolean
+  link: String
   interestGroups: [String]
 }
 
@@ -385,6 +392,7 @@ input SaltMangoTreeEpisodesMutation {
   date: String
   description: String
   isUpcoming: Boolean
+  link: String
 }
 
 input SaltMangoTreeMutation {
@@ -398,6 +406,7 @@ input InspirationStationEpisodesMutation {
   date: String
   description: String
   isUpcoming: Boolean
+  link: String
 }
 
 input InspirationStationMutation {

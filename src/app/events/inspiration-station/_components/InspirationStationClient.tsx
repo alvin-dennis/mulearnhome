@@ -17,6 +17,7 @@ export interface InspirationStationEpisode {
   date?: string | null;
   description?: string | null;
   isUpcoming?: boolean | null;
+  link?: string | null;
 }
 
 interface InspirationStationClientProps {
@@ -33,6 +34,7 @@ export default function InspirationStationClient({ episodes }: InspirationStatio
     date: episode.date || "",
     description: episode.description || "",
     isUpcoming: episode.isUpcoming || false,
+    link: episode.link || undefined,
   }));
 
   const upcomingEvents = events.filter((event) => event.isUpcoming);

@@ -14,8 +14,21 @@ import {
  *
  * This client is created at runtime using environment variables,
  * preventing the TINA_TOKEN from being embedded in the build output.
+ *
+ * In local development (when TINA_PUBLIC_IS_LOCAL is set), connects to the local TinaCMS dev server.
+ * In production, connects to TinaCloud.
  */
 function getServerClient() {
+  const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
+
+  if (isLocal) {
+    return createClient({
+      url: "http://localhost:4001/graphql",
+      token: "",
+      queries,
+    });
+  }
+
   const branch =
     process.env.GITHUB_BRANCH ||
     process.env.VERCEL_GIT_COMMIT_REF ||

@@ -20,6 +20,7 @@ fragment OfficeHoursParts on OfficeHours {
     description
     date
     isUpcoming
+    link
     interestGroups
   }
 }
@@ -34,6 +35,7 @@ fragment SaltMangoTreeParts on SaltMangoTree {
     date
     description
     isUpcoming
+    link
   }
 }
 
@@ -47,6 +49,7 @@ fragment InspirationStationParts on InspirationStation {
     date
     description
     isUpcoming
+    link
   }
 }
 

@@ -16,6 +16,7 @@ export interface SaltMangoTreeEpisode {
   date?: string | null;
   description?: string | null;
   isUpcoming?: boolean | null;
+  link?: string | null;
 }
 
 interface SaltMangoTreeClientProps {
@@ -32,6 +33,7 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
     date: episode.date || "",
     description: episode.description || "",
     isUpcoming: episode.isUpcoming || false,
+    link: episode.link || undefined,
   }));
 
   const upcomingEvents = events.filter((event) => event.isUpcoming);

@@ -149,6 +149,12 @@ export default defineConfig({
               { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
               {
                 type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the session (shown only for upcoming events)",
+              },
+              {
+                type: "string",
                 name: "interestGroups",
                 label: "Interest Groups",
                 description: "Select one or more Interest Groups related to this session",
@@ -226,6 +232,12 @@ export default defineConfig({
                 ui: { component: "textarea" },
               },
               { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)",
+              },
             ],
           },
         ],
@@ -266,6 +278,12 @@ export default defineConfig({
                 ui: { component: "textarea" },
               },
               { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)",
+              },
             ],
           },
         ],

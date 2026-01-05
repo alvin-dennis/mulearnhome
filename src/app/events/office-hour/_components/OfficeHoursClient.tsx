@@ -20,6 +20,7 @@ export interface OfficeHourSession {
   date?: string | null;
   interestGroups?: (string | null)[] | null;
   isUpcoming?: boolean | null;
+  link?: string | null;
 }
 
 interface OfficeHoursClientProps {
@@ -57,6 +58,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       date: session.date || "",
       interestGroups: session.interestGroups?.filter((t): t is string => t !== null) || [],
       isUpcoming: session.isUpcoming || false,
+      link: session.link || undefined,
     }));
   }, [sessions]);
 
