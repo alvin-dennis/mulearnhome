@@ -181,9 +181,9 @@
       ]
     },
     {
-      "title": "Rasha Hasoon, Project Management: Facts & Myths",
+      "title": "Project Management: Facts & Myths",
       "performer": "",
-      "description": "Join us for Rasha Hasoon, Project Management: Facts & Myths.",
+      "description": "Join us for Project Management: Facts & Myths.",
       "date": "10/11/2025",
       "isUpcoming": false,
       "interestGroups": [
@@ -959,6 +959,7 @@
       "interestGroups": [
         "human-resources"
       ]
-    }
+    },
+    {}
   ]
 }
