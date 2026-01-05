@@ -864,17 +864,6 @@
       "interestGroups": [
         "human-resources"
       ]
-    },
-    {
-      "title": "Test event",
-      "performer": "me",
-      "designation": "dev",
-      "description": "description of the event",
-      "date": "05/01/2026",
-      "link": "https://mulearnhome.vercel.app/admin#/collections/edit/officeHours/office-hours",
-      "interestGroups": [
-        "ui-ux"
-      ]
     }
   ]
 }
