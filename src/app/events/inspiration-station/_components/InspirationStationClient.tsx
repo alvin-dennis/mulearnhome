@@ -25,6 +25,16 @@ interface InspirationStationClientProps {
 }
 
 export default function InspirationStationClient({ episodes }: InspirationStationClientProps) {
+  // Parse YYYY-MM-DD date format and check if it's upcoming (today or future)
+  const isDateUpcoming = (dateStr: string): boolean => {
+    if (!dateStr) return false;
+    const eventDate = new Date(dateStr);
+    if (isNaN(eventDate.getTime())) return false;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return eventDate >= today;
+  };
+
   // Transform episodes to match WeeklyTwitchEvent type
   const events = episodes.map((episode, index) => ({
     id: index + 1,
@@ -33,7 +43,7 @@ export default function InspirationStationClient({ episodes }: InspirationStatio
     zone: episode.zone || "",
     date: episode.date || "",
     description: episode.description || "",
-    isUpcoming: episode.isUpcoming || false,
+    isUpcoming: isDateUpcoming(episode.date || ""),
     link: episode.link || undefined,
   }));
 

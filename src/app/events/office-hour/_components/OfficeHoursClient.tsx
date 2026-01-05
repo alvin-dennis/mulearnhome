@@ -47,6 +47,21 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
   const [pastPage, setPastPage] = useState(1);
   const itemsPerPage = 6;
 
+  // Parse DD/MM/YYYY date format and check if it's upcoming (today or future)
+  const isDateUpcoming = (dateStr: string): boolean => {
+    if (!dateStr) return false;
+    const parts = dateStr.split("/");
+    if (parts.length !== 3) return false;
+    const eventDate = new Date(
+      parseInt(parts[2], 10),
+      parseInt(parts[1], 10) - 1,
+      parseInt(parts[0], 10),
+    );
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return eventDate >= today;
+  };
+
   // Transform sessions to match expected format
   const allEvents = useMemo(() => {
     return sessions.map((session, index) => ({
@@ -57,7 +72,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       description: session.description || "",
       date: session.date || "",
       interestGroups: session.interestGroups?.filter((t): t is string => t !== null) || [],
-      isUpcoming: session.isUpcoming || false,
+      isUpcoming: isDateUpcoming(session.date || ""),
       link: session.link || undefined,
     }));
   }, [sessions]);
