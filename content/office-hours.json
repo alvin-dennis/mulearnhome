@@ -981,6 +981,17 @@
       "interestGroups": [
         "cyber-security"
       ]
+    },
+    {
+      "title": "What companies look for?",
+      "performer": "Aaron R Thomas",
+      "designation": "UI/UX IG Lead",
+      "description": "What do companies actually expect from a UI/UX designer? This session breaks down real industry expectations—covering essential skills, portfolio standards, design thinking, and what hiring teams truly evaluate during recruitment. Ideal for anyone preparing for UI/UX roles or refining their career direction.",
+      "date": "06/01/2026",
+      "isUpcoming": true,
+      "interestGroups": [
+        "ui-ux"
+      ]
     }
   ]
 }
