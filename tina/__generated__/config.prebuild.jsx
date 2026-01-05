@@ -1,6 +1,6 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
-var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "production";
 var config_default = defineConfig({
   branch,
   // TinaCloud credentials (only include if available)
@@ -125,8 +125,19 @@ var config_default = defineConfig({
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "string", name: "date", label: "Date", description: "Format: DD/MM/YYYY" },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: DD/MM/YYYY - Events are automatically marked as upcoming/past based on this date",
+                required: true
+              },
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the session (shown only for upcoming events)"
+              },
               {
                 type: "string",
                 name: "interestGroups",
@@ -197,14 +208,25 @@ var config_default = defineConfig({
                 label: "Zone",
                 options: ["North", "Central", "South"]
               },
-              { type: "string", name: "date", label: "Date", description: "Format: YYYY-MM-DD" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                required: true
+              },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" }
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)"
+              }
             ]
           }
         ]
@@ -236,14 +258,25 @@ var config_default = defineConfig({
                 label: "Zone",
                 options: ["North", "Central", "South"]
               },
-              { type: "string", name: "date", label: "Date", description: "Format: YYYY-MM-DD" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                required: true
+              },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" }
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)"
+              }
             ]
           }
         ]
