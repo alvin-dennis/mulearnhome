@@ -28,7 +28,7 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
   const isDateUpcoming = (dateStr: string): boolean => {
     if (!dateStr) return false;
     const eventDate = new Date(dateStr);
-    if (isNaN(eventDate.getTime())) return false;
+    if (Number.isNaN(eventDate.getTime())) return false;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return eventDate >= today;

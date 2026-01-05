@@ -1,12 +1,11 @@
 "use client";
 
-import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
+import { Calendar, Clock, Mic } from "lucide-react";
 import { useMemo, useState } from "react";
 import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import { TabButton } from "@/app/events/_components/TabButton";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { openMicData } from "@/data/events";
 
