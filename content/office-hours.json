@@ -970,6 +970,17 @@
       "interestGroups": [
         "project-management"
       ]
+    },
+    {
+      "title": "Cyber Security Myths",
+      "performer": "Dany Koshy",
+      "designation": "Jr. Associate",
+      "description": "Think cybersecurity is only for hackers or IT experts? Think again.\nThis office hour breaks down common myths around cybersecurity—what’s real, what’s exaggerated, and what actually matters in today’s digital world. Learn how everyday users, students, and professionals can stay safe online, and understand cybersecurity beyond the hype, fear, and jargon.",
+      "date": "05/01/2026",
+      "isUpcoming": true,
+      "interestGroups": [
+        "cyber-security"
+      ]
     }
   ]
 }
