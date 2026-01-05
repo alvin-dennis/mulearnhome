@@ -955,8 +955,8 @@
       "performer": "Sona MB",
       "description": "Join us for insights on HR internship at Reflections Info Systems with Sona MB.",
       "date": "01/10/2025",
-      "isUpcoming": true,
-      "link": "https://mulearn.org/r/pmp-officehour",
+      "isUpcoming": false,
+      "link": "",
       "interestGroups": [
         "human-resources"
       ]
