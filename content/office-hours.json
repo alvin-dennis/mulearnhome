@@ -5,658 +5,846 @@
       "performer": "",
       "description": "Join us for a discussion on why audiences are moving away from traditional theatres.",
       "date": "28/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Django Series - Part 3",
       "performer": "",
       "description": "Join us for the third session of our Django web development series.",
       "date": "26/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Deepika",
       "performer": "Deepika",
       "description": "Join us for a UI/UX design session with Deepika.",
       "date": "25/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT technologies and trends.",
       "date": "23/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Intro to Classical Physics",
       "performer": "Jubit A Jacob",
       "description": "Join us for Intro to Classical Physics with Jubit A Jacob.",
       "date": "22/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Savio",
       "description": "Join us for an AR/VR/MR session with Savio.",
       "date": "22/11/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "What Gave Rise to OTT Platforms?",
       "performer": "",
       "description": "Join us to explore the evolution and rise of OTT platforms.",
       "date": "21/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Scenario-Based Questions",
       "performer": "",
       "description": "Join us to practice scenario-based DSA questions and problem-solving.",
       "date": "20/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Django Series - Part 2",
       "performer": "",
       "description": "Join us for the second session of our Django web development series.",
       "date": "19/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Alwin Shiju",
       "performer": "Alwin Shiju",
       "description": "Join us for a UI/UX design session with Alwin Shiju.",
       "date": "18/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT technologies and applications.",
       "date": "16/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "MythBusters - Episode 7",
       "performer": "",
       "description": "Join us for the seventh episode of our space MythBusters series.",
       "date": "15/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "The Early Days of Cinema",
       "performer": "",
       "description": "Join us to explore the history and evolution of early cinema.",
       "date": "14/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Pattern Printing",
       "performer": "",
       "description": "Join us to learn pattern printing techniques and algorithms.",
       "date": "13/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Catch the Bugs Before They Bite",
       "performer": "Vivek Harikumar",
       "description": "Join us for Catch the Bugs Before They Bite with Vivek Harikumar.",
       "date": "12/11/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Backend with Django",
       "performer": "Adarsh",
       "description": "Join us for Backend with Django with Adarsh.",
       "date": "12/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Deepika",
       "performer": "Deepika",
       "description": "Join us for a UI/UX design session with Deepika.",
       "date": "11/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Project Management: Facts & Myths",
       "performer": "",
       "description": "Join us for Project Management: Facts & Myths.",
       "date": "10/11/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT concepts and innovations.",
       "date": "09/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Alien Worlds",
       "performer": "Ekta Krishna",
       "description": "Join us for a fascinating session on alien worlds with Ekta Krishna.",
       "date": "08/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Discussion: The Shawshank Redemption",
       "performer": "",
       "description": "Join us for a discussion about The Shawshank Redemption.",
       "date": "08/11/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Customer-Centric Thinking",
       "performer": "Karthik",
       "description": "Join us for a session on customer-centric thinking with Karthik.",
       "date": "08/11/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "PC vs Console Games",
       "performer": "",
       "description": "Join us for a discussion on PC versus console gaming.",
       "date": "07/11/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Basics of Sound Design",
       "performer": "",
       "description": "Join us to learn the fundamentals of sound design in film.",
       "date": "07/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "OpenCV for Data Science",
       "performer": "",
       "description": "Join us to explore OpenCV applications in data science.",
       "date": "06/11/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "OpenCV for AI",
       "performer": "",
       "description": "Join us to explore OpenCV applications in artificial intelligence.",
       "date": "06/11/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "DSA EXAM PREP",
       "performer": "",
       "description": "Join us for DSA EXAM PREP.",
       "date": "06/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Linux Foundation: Fueling the Future",
       "performer": "Joswin Emmanuel",
       "description": "Join us for Linux Foundation: Fueling the Future with Joswin Emmanuel.",
       "date": "05/11/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "React Hooks",
       "performer": "Arya Sreekumar",
       "description": "Join us for React Hooks with Arya Sreekumar.",
       "date": "05/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "From Ideas to Wireframes",
       "performer": "Interest Group Lead",
       "description": "Join us to learn how to transform ideas into wireframes with our Interest Group Lead.",
       "date": "04/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Project Management Session",
       "performer": "",
       "description": "Join us for a project management discussion and learning session.",
       "date": "03/11/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "Cybersecurity in IoT",
       "performer": "",
       "description": "Join us to explore cybersecurity challenges and solutions in IoT.",
       "date": "02/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Black Holes: The Universe's Darkest Secret",
       "performer": "Jubit A Jacob",
       "description": "Join us to explore black holes, the universe's darkest secrets, with Jubit A Jacob.",
       "date": "01/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Interest Group Leads",
       "description": "Join us for an AR/VR/MR session with our Interest Group Leads.",
       "date": "01/11/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Discussion: The 6th Sense Movie",
       "performer": "",
       "description": "Join us for a discussion about the movie The 6th Sense.",
       "date": "01/11/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "What is BMC (Business Model Canvas)?",
       "performer": "Karthik & Diya Bhatt A",
       "description": "Join us to learn about Business Model Canvas with Karthik and Diya Bhatt A.",
       "date": "01/11/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "ASB HR (Whistle Blowing)",
       "performer": "Israth Ramsana S S",
       "description": "Join us for ASB HR (Whistle Blowing) with Israth Ramsana S S.",
       "date": "29/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Competitor Audits",
       "performer": "",
       "description": "Join us to learn how to conduct effective competitor audits in UI/UX.",
       "date": "28/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Biohacking and IoT Devices",
       "performer": "Geo Mathew",
       "description": "Join us to explore biohacking and IoT device security with Geo Mathew.",
       "date": "27/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "Space Exploration Speaker Session",
       "performer": "",
       "description": "Join us for a special speaker session on space exploration.",
       "date": "25/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Savio",
       "description": "Join us for an AR/VR/MR session with Savio.",
       "date": "25/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Tell Your Story",
       "performer": "",
       "description": "Join us for a creative storytelling session where you can share your stories.",
       "date": "25/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 2",
       "performer": "Diya Bhatt A",
       "description": "Join us for Entrepreneurship Development 2 with Diya Bhatt A.",
       "date": "25/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Story-Driven Games vs Gameplay-Driven Games",
       "performer": "",
       "description": "Join us for a discussion comparing story-driven and gameplay-driven games.",
       "date": "24/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Is Nostalgia the New Marketing Strategy?",
       "performer": "",
       "description": "Join us to explore how nostalgia is used as a marketing strategy in cinema.",
       "date": "24/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "MobileNet-SSD",
       "performer": "",
       "description": "Join us to learn about MobileNet-SSD and its applications in data science.",
       "date": "23/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "MobileNet-SSD for AI",
       "performer": "",
       "description": "Join us to explore MobileNet-SSD and its applications in artificial intelligence.",
       "date": "23/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Scenario-Based Questions",
       "performer": "",
       "description": "Join us to practice scenario-based DSA questions and problem-solving.",
       "date": "23/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "From Windows to Linux: A Smooth Start",
       "performer": "Aibel Bin Zacariah",
       "description": "Join us for From Windows to Linux: A Smooth Start with Aibel Bin Zacariah.",
       "date": "22/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Intro to React",
       "performer": "Adarsh Dev",
       "description": "Join us for Intro to React with Adarsh Dev.",
       "date": "22/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Senior HR Manager, Srishti Innovative ( HR Enna Summava)",
       "performer": "Vishnu Prasad M V",
       "description": "Join us for Senior HR Manager, Srishti Innovative ( HR Enna Summava) with Vishnu Prasad M V.",
       "date": "22/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "From Wireframe to UI",
       "performer": "",
       "description": "Join us to learn the process of transforming wireframes into user interfaces.",
       "date": "21/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "No Office Hour Due to Exams",
       "performer": "",
       "description": "No office hour session today due to exams.",
       "date": "20/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "The Language of Machines",
       "performer": "Ajith",
       "description": "Join us for The Language of Machines with Ajith.",
       "date": "19/10/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "MythBusters",
       "performer": "",
       "description": "Join us for another episode of our space MythBusters series.",
       "date": "18/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Interaction in Unity",
       "performer": "",
       "description": "Join us to learn about creating interactive experiences in Unity.",
       "date": "18/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Sketch, Snicker, Storyboard",
       "performer": "",
       "description": "Join us for a creative session on sketching and storyboarding.",
       "date": "18/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 1 - Quiz",
       "performer": "Diya Bhatt A",
       "description": "Join us for a quiz session on Entrepreneurship Development with Diya Bhatt A.",
       "date": "18/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Next-Gen Game Tech: How Nanite, Lumen & AI Are Changing Game Development",
       "performer": "",
       "description": "Join us to explore how next-generation technologies like Nanite, Lumen, and AI are transforming game development.",
       "date": "17/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "The Art of Visual Storytelling",
       "performer": "",
       "description": "Join us to explore the art and techniques of visual storytelling in cinema.",
       "date": "17/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Beyond Hype: Examining the Drawbacks of AI",
       "performer": "",
       "description": "Join us for a critical discussion on the limitations and drawbacks of AI in data science.",
       "date": "16/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Beyond Hype: Examining the Drawbacks of AI - General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on the limitations and challenges of artificial intelligence.",
       "date": "16/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Pattern Printing",
       "performer": "",
       "description": "Join us to master pattern printing techniques and algorithms.",
       "date": "16/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Challenge Support Hour",
       "performer": "Muhammed Anees",
       "description": "Join us for Challenge Support Hour with Muhammed Anees.",
       "date": "15/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Choosing the right web framework",
       "performer": "Sreehari",
       "description": "Join us for Choosing the right web framework with Sreehari.",
       "date": "15/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Hands-On UX Challenge",
       "performer": "",
       "description": "Join us for a practical hands-on UX design challenge.",
       "date": "14/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Offensive or Defensive Security: Which Is for You?",
       "performer": "Dany",
       "description": "Join us to explore offensive and defensive security approaches with Dany.",
       "date": "13/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "How to Get Started with notion",
       "performer": "Rasha Hasoon",
       "description": "Join us for How to Get Started with notion with Rasha Hasoon.",
       "date": "13/10/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "UnoQ Roundtable General Discussion",
       "performer": "",
       "description": "Join us for an open roundtable discussion on IoT technologies.",
       "date": "12/10/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Good Night Oppy - Documentary Live Screening",
       "performer": "",
       "description": "Join us for a live screening of the documentary 'Good Night Oppy'.",
       "date": "11/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Write, Design, Repeat",
       "performer": "",
       "description": "Join us for an iterative creative session on writing and designing comics.",
       "date": "11/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 1",
       "performer": "Diya Bhatt A",
       "description": "Join us for Entrepreneurship Development 1 with Diya Bhatt A.",
       "date": "11/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Remakes, Remasters, and Nostalgia: Are We Running Out of New Ideas?",
       "performer": "",
       "description": "Join us to discuss why the gaming industry keeps re-releasing classics and the role of nostalgia.",
       "date": "10/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Budget Allocation in Modern Cinema",
       "performer": "",
       "description": "Join us to explore how budgets are allocated in modern cinema production.",
       "date": "10/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Agentic AI: How Autonomous Systems Work",
       "performer": "Joel, MD, Supe AI",
       "description": "Join us to learn about agentic AI and autonomous systems with Joel, MD at Supe AI.",
       "date": "09/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Agentic AI: How Autonomous Systems Work",
       "performer": "Joel, MD, Supe AI",
       "description": "Join us to explore agentic AI and how autonomous systems function with Joel, MD at Supe AI.",
       "date": "09/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Stacks",
       "performer": "Mentor",
       "description": "Join us for Stacks with Mentor.",
       "date": "09/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "CI/CD with GitHub Actions",
       "performer": "Milan Suman",
       "description": "Join us for CI/CD with GitHub Actions with Milan Suman.",
       "date": "08/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Chatbot with Gemini",
       "performer": "Aravind P",
       "description": "Join us for Chatbot with Gemini with Aravind P.",
       "date": "08/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Evaluating Employee Performance Through Effective Appraisal Techniques",
       "performer": "Dr. Ebe Robert E",
       "description": "Join us for a session on employee performance evaluation with Dr. Ebe Robert E, Associate Professor of OB & HRM.",
       "date": "08/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "What's a Case Study & Why It Matters",
       "performer": "",
       "description": "Join us to learn about case studies and their importance in UI/UX design.",
       "date": "07/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Cyber Warfare and Critical Infrastructure Attack",
       "performer": "Mohammed Saad",
       "description": "Join us for Cyber Warfare and Critical Infrastructure Attack with Mohammed Saad.",
       "date": "06/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "PM Master Quest Leaderboard Showcase",
       "performer": "Rasha Hasoon",
       "description": "Join us for the PM Master Quest Leaderboard Showcase with speaker Rasha Hasoon.",
       "date": "06/10/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "NASA SAC 2025",
       "performer": "",
       "description": "Join us for a discussion about NASA's Space Apps Challenge 2025.",
       "date": "04/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR Research Paper Discussion",
       "performer": "",
       "description": "Join us for a discussion and mini-debate on trending AR/VR research, including VR applications in healthcare.",
       "date": "04/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "The Ones That Connect",
       "performer": "",
       "description": "Join us for a creative session on storytelling connections in comics.",
       "date": "04/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Open Discussion About Entrepreneurship",
       "performer": "Diya Bhatt A",
       "description": "Join us for an open discussion about entrepreneurship with Diya Bhatt A.",
       "date": "04/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Game Piracy and Indie Developers: A Double-Edged Sword",
       "performer": "",
       "description": "Join us to discuss the impact of game piracy on indie developers.",
       "date": "03/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Should Cinema Be a Trial Source?",
       "performer": "",
       "description": "Join us to debate whether cinema should be used as a trial or experimental platform.",
       "date": "03/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "NLP: A Brief Introduction",
       "performer": "Arnav Jagadeesh, AI IG Lead",
       "description": "Join us for a brief introduction to Natural Language Processing with Arnav Jagadeesh, AI Interest Group Lead.",
       "date": "02/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "NLP: A Brief Introduction",
       "performer": "Arnav Jagadeesh, AI IG Lead",
       "description": "Join us for a brief introduction to Natural Language Processing with Arnav Jagadeesh, AI Interest Group Lead.",
       "date": "02/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "VSCodium, Git, GitHub, and PRs - Bootcamp Session",
       "performer": "Amith",
       "description": "Join us for a bootcamp session on VSCodium, Git, GitHub, and Pull Requests with Amith.",
       "date": "02/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Introduction to CI/CD",
       "performer": "Adnan KS",
       "description": "Join us for Introduction to CI/CD with Adnan KS.",
       "date": "01/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Js for React",
       "performer": "Devika Dileep",
       "description": "Join us for Js for React with Devika Dileep.",
       "date": "01/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "HR Internship at Reflections Info Systems",
@@ -664,7 +852,20 @@
       "description": "Join us for insights on HR internship at Reflections Info Systems with Sona MB.",
       "date": "01/10/2025",
       "link": "",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "xx",
+      "performer": "xdd",
+      "designation": "cdc",
+      "description": "cdscqecw",
+      "date": "2/1/26",
+      "link": "https://mulearn.org/r/cyb-officehour",
+      "interestGroups": [
+        "cyber-security"
+      ]
     }
   ]
 }
