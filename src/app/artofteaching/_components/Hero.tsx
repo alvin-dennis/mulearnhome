@@ -22,7 +22,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full ">
             <Link href={artOfTeachingUrls.registerNow} className="no-underline w-full">
               <Button
-                variant={"mulearn-trusty"}
+                variant={"custom"}
                 className="w-full px-6 py-3 text-center font-bold mt-4 transition-colors"
               >
                 Register Now

@@ -13,7 +13,7 @@ export default function FilterButtons({ activeFilter, onFilterChange }: FilterBu
       {galleryCategories.map((category) => (
         <MotionDiv key={category.id} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
-            variant={activeFilter === category.id ? "mulearn" : "outline"}
+            variant={activeFilter === category.id ? "custom" : "outline"}
             onClick={() => onFilterChange(category.id)}
             className="px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold"
           >

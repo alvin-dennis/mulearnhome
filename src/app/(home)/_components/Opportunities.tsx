@@ -24,7 +24,10 @@ export default function Opportunities() {
         viewport={{ once: true }}
       >
         <MotionDiv className="text-center" variants={fadeInUp}>
-          <h1>At The End Of a μLearners Journey</h1>
+          <h1>
+            At The <span className="text-mulearn">End</span> Of a μLearners{" "}
+            <span className="text-mulearn">Journey</span>
+          </h1>
           <h6 className="font-normal mb-16 max-w-[800px] mx-auto text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             At the end of a μLearner&apos;s journey, they are equipped with a plethora of
             opportunities to choose from. They can choose to work in a job, freelance, research,
@@ -40,7 +43,7 @@ export default function Opportunities() {
             <MotionDiv key={opportunity.id} variants={fadeInUp}>
               <Card
                 variant="hoverable"
-                className="flex flex-col items-center justify-start h-full min-h-[250px] bg-gradient-to-br from-white to-mulearn/5 border-mulearn/10 cursor-pointer"
+                className="flex flex-col items-center justify-start h-full min-h-[250px] cursor-pointer"
               >
                 <CardContent className="flex flex-col items-center justify-between h-full py-12 px-8">
                   <span className="w-full flex justify-center max-w-[220px] mx-auto mb-4">
@@ -50,7 +53,7 @@ export default function Opportunities() {
                       width={200}
                       height={200}
                       className="w-auto h-auto mx-auto"
-                      style={{ width: "auto", height: "auto", maxHeight: "150px" }}
+                      style={{ width: "auto", height: "auto", maxHeight: "140px" }}
                     />
                   </span>
                   <h6 className="text-xl font-semibold text-center mt-auto">{opportunity.name}</h6>

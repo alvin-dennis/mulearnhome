@@ -98,7 +98,7 @@ const Testimonials: React.FC = () => {
               <Button
                 key={slide.alt}
                 onClick={() => setCurrentSlide(slideIndex)}
-                variant={slideIndex === currentSlide ? "mulearn" : "ghost"}
+                variant={slideIndex === currentSlide ? "custom" : "ghost"}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   slideIndex === currentSlide ? "w-8" : "bg-mulearn-whitish/40"
                 }`}

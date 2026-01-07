@@ -225,8 +225,8 @@ export default function LearningCirclePage() {
         transition={{ duration: 0.5 }}
         className="w-full mt-16 bg-mulearn text-mulearn-whitish p-10 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
       >
-        <h2 className="mb-4">{ctaSection.title}</h2>
-        <p className="text-lg mb-8 text-mulearn-whitish  max-w-2xl mx-auto">
+        <h2 className="mb-4 text-mulearn-whitish">{ctaSection.title}</h2>
+        <p className="text-lg mb-8 text-mulearn-whitish max-w-2xl mx-auto">
           {ctaSection.description}
         </p>
         <MotionDiv className="inline-block">

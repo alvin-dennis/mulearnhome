@@ -123,6 +123,27 @@ const MotionLi = React.forwardRef<HTMLLIElement, HTMLMotionProps<"li">>(function
   );
 });
 
+const MotionTBody = React.forwardRef<HTMLTableSectionElement, HTMLMotionProps<"tbody">>(
+  function MotionTBody({ children, ...props }, ref) {
+    return (
+      <motion.tbody ref={ref} {...props}>
+        {children}
+      </motion.tbody>
+    );
+  },
+);
+
+const MotionTR = React.forwardRef<HTMLTableRowElement, HTMLMotionProps<"tr">>(function MotionTR(
+  { children, ...props },
+  ref,
+) {
+  return (
+    <motion.tr ref={ref} {...props}>
+      {children}
+    </motion.tr>
+  );
+});
+
 export {
   MotionDiv,
   MotionSection,
@@ -135,4 +156,6 @@ export {
   MotionFooter,
   MotionA,
   MotionLi,
+  MotionTBody,
+  MotionTR,
 };

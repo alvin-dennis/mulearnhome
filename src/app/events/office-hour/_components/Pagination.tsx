@@ -78,7 +78,7 @@ export default function Pagination({ page, setPage, total, perPage, scrollToId }
             return (
               <Button
                 key={item.key}
-                variant={page === pageNumber ? "mulearn" : "outline"}
+                variant={page === pageNumber ? "custom" : "outline"}
                 onClick={() => goToPage(pageNumber)}
                 className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
                   page === pageNumber

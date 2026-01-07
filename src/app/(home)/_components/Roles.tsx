@@ -37,7 +37,9 @@ export default function Roles() {
       viewport={{ once: true }}
     >
       <MotionDiv className="text-center mb-10" variants={fadeInUp}>
-        <h1>Roles in μLearn Network</h1>
+        <h1>
+          <span className="text-mulearn">Roles</span> in μLearn Network
+        </h1>
         <h6 className="text-[1.2rem] text-mulearn-gray-600 mt-2.5">
           A brief overview of the diverse roles that power our network.
         </h6>
@@ -64,7 +66,7 @@ export default function Roles() {
             <TabsTrigger
               key={role.id}
               value={role.id}
-              className="text-base px-4 py-2.5 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-mulearn data-[state=active]:font-bold data-[state=active]:text-mulearn rounded-none"
+              className="text-base px-4 py-2.5 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-mulearn data-[state=active]:font-bold data-[state=active]:text-mulearn-trusty-blue rounded-none"
             >
               {role.label}
             </TabsTrigger>

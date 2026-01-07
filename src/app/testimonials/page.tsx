@@ -171,7 +171,7 @@ export default function TestimonialsPage() {
             <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 my-6 max-w-full">
               <Button
                 onClick={() => setActiveTab("video")}
-                variant={activeTab === "video" ? "mulearn" : "ghost"}
+                variant={activeTab === "video" ? "custom" : "ghost"}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
                   activeTab === "video" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
@@ -181,7 +181,7 @@ export default function TestimonialsPage() {
               </Button>
               <Button
                 onClick={() => setActiveTab("text")}
-                variant={activeTab === "text" ? "mulearn" : "ghost"}
+                variant={activeTab === "text" ? "custom" : "ghost"}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
                   activeTab === "text" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}

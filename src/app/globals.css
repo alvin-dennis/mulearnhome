@@ -228,14 +228,14 @@ h5 {
 }
 
 .text-mulearn {
-    background: linear-gradient(to right, #6366f1, #2E85FE);
+    background: #0961F5;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .bg-mulearn {
-    background: linear-gradient(to right, #6366f1, #2E85FE);
+    background: #0961F5;
 }
 
 .swiper-pagination-bullet {

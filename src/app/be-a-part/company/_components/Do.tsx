@@ -23,17 +23,13 @@ export default function WhatYouCanDo() {
             viewport={{ once: true }}
             className="flex-1 relative"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
               <div className="absolute left-0 right-0 top-1/2 h-px bg-mulearn-blackish hidden md:block" />
 
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-mulearn-blackish hidden md:block" />
 
               {companyDo.map((action) => (
-                <Card
-                  key={action.title}
-                  variant="interactive"
-                  className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                >
+                <Card key={action.title} variant="interactive">
                   <CardContent className="flex flex-col items-center text-center p-6 gap-4">
                     <h3 className="text-xl font-bold text-mulearn leading-tight">{action.title}</h3>
                     <p className="text-lg text-mulearn-blackish leading-snug max-w-[400px]">

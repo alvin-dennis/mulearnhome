@@ -66,6 +66,7 @@ export default async function Events() {
       weekly: "Weekly Twitch Events",
       biweekly: "Biweekly Events",
       monthly: "Monthly Events",
+      flagship: "Flagship Events",
       past: "Past Events",
     };
     return titles[type] || type;
@@ -84,7 +85,7 @@ export default async function Events() {
   ] as [string, Event[]][];
 
   return (
-    <section className="bg-mulearn-whitish px-6 py-8 md:px-12 min-h-screen">
+    <section className="px-6 py-8 md:px-12 min-h-screen">
       <div className="max-w-[1300px] mx-auto mb-16">
         <MotionDiv
           initial="hidden"

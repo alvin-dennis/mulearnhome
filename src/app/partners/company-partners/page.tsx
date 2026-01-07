@@ -60,7 +60,7 @@ export default function CompanyPartners() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish)] text-center lg:text-left mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-mulearn-blackish text-center lg:text-left mb-3 sm:mb-4">
               Company <span className="text-mulearn">Onboardings</span>
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-mulearn-blackish text-center lg:text-left max-w-3xl">

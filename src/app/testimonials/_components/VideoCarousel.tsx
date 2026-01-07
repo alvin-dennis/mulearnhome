@@ -18,7 +18,7 @@ export default function VideoCarousel({ testimonials }: VideoCarouselProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="w-full h-full max-w-3xl md:max-w-4xl mx-auto px-7"
+      className="w-full h-full max-w-3xl md:max-w-4xl mx-auto px-20"
     >
       <div className="relative">
         <Swiper
