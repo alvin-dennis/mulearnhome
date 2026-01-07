@@ -35,6 +35,6 @@ jobs:
       - name: Commit and push changes
         run: |
           git add src/data/leaderboard.json
-          git commit -m "chore(leaderboard): update leaderboard.json with new data" || echo "No changes to commit"
+          git commit -m "chore(leaderboard): update contribution leaderboard with new metrics" || echo "No changes to commit"
           git push
 
