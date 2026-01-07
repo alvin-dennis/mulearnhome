@@ -1,101 +1,10 @@
 {
-  "month": "2025-12",
-  "monthly": [
-    {
-      "username": "Safwancs7",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Muhammad Safwan C S"
-    },
-    {
-      "username": "Blackhole-supernova",
-      "commits": 0,
-      "prs_opened": 4,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Blackhole-supernova"
-    },
-    {
-      "username": "awindsr",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Awindsr"
-    },
-    {
-      "username": "joyanna27",
-      "commits": 0,
-      "prs_opened": 2,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "joyanna27"
-    },
-    {
-      "username": "peepsbruh",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Athul P P"
-    },
-    {
-      "username": "AFEEF19",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "AFEEF19"
-    },
-    {
-      "username": "stccreation",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Shaheen T"
-    },
-    {
-      "username": "Prapanchj",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Prapanchj"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Alvin Dennis"
-    },
-    {
-      "username": "Anand-S-G",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Anand SG"
-    }
-  ],
+  "month": "2026-01",
+  "date": "January 2026",
   "overall": [
     {
       "username": "AswinAsok",
-      "commits": 5792,
+      "commits": 5791,
       "prs_opened": 42,
       "prs_merged": 41,
       "issues_opened": 63,
@@ -175,14 +84,105 @@
       "displayname": "Aswanth Vc"
     },
     {
-      "username": "notS0LD13R",
-      "commits": 738,
-      "prs_opened": 110,
-      "prs_merged": 109,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Joel T Vadakekalam"
+      "username": "awindsr",
+      "commits": 643,
+      "prs_opened": 168,
+      "prs_merged": 162,
+      "issues_opened": 16,
+      "issues_closed": 9,
+      "displayname": "Awindsr"
     }
   ],
-  "date": "December 2025"
+  "monthly": [
+    {
+      "username": "awindsr",
+      "commits": 73,
+      "prs_opened": 7,
+      "prs_merged": 7,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Awindsr"
+    },
+    {
+      "username": "sachin-raj-m",
+      "commits": 39,
+      "prs_opened": 23,
+      "prs_merged": 23,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Sachin Raj"
+    },
+    {
+      "username": "nanda-kshr",
+      "commits": 11,
+      "prs_opened": 7,
+      "prs_merged": 7,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Nandakishore P"
+    },
+    {
+      "username": "EzioAuditore-daFirenze",
+      "commits": 4,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Anerudh M K"
+    },
+    {
+      "username": "octavia47",
+      "commits": 1,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "nasih"
+    },
+    {
+      "username": "afiya525",
+      "commits": 2,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Afiya Fathima"
+    },
+    {
+      "username": "Amith-Abey-Stephen",
+      "commits": 0,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "issues_opened": 1,
+      "issues_closed": 1,
+      "displayname": "Amith Abey Stephen"
+    },
+    {
+      "username": "alsuhails5-ui",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "alsuhails5-ui"
+    },
+    {
+      "username": "Alienwalker-6",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "ALIEN"
+    },
+    {
+      "username": "ANZA-logos",
+      "commits": 1,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "ANZA S"
+    }
+  ]
 }
