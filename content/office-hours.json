@@ -866,6 +866,17 @@
       "interestGroups": [
         "cyber-security"
       ]
+    },
+    {
+      "title": "Simply Explained: The XAI Masterclass",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD @ Supe AI",
+      "description": "Why do AI models make the choices they do? This session demystifies Explainable AI (XAI), exploring its key concepts, practical techniques, and real-world impact to help make AI decisions clearer and more trustworthy.",
+      "date": "08/01/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
