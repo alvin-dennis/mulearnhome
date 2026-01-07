@@ -85,15 +85,15 @@ export default function Leaderboard() {
                 className="h-9 px-4 gap-2 text-sm font-medium data-[state=active]:text-mulearn-trusty-blue data-[state=active]:bg-background data-[state=active]:shadow-sm"
               >
                 <Trophy className="w-4 h-4" />
-                All-Time
+                Overall
               </TabsTrigger>
             </TabsList>
           </Tabs>
 
           <div className="flex items-center gap-2 text-sm text-mulearn-blackish cursor-help">
-            <Info className="w-4 h-4" />
-            <span className="font-medium">
-              {activeTab === "monthly" ? data.date : "All-time stats"}
+            <Info className="w-4 h-4 text-mulearn-trusty-blue" />
+            <span className="font-medium text-mulearn">
+              {activeTab === "monthly" ? data.date : "Overall stats"}
             </span>
           </div>
         </MotionDiv>

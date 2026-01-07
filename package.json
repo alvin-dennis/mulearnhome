@@ -21,7 +21,7 @@
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
     "validate": "bun run typecheck && bun run lint",
-    "generate": "node --loader ts-node/esm src/services/leaderboard.ts",
+    "generate": "bun run ./src/services/leaderboard.ts",
     "optimize:images": "bun run scripts/optimize-images.ts"
   },
   "dependencies": {
@@ -46,6 +46,7 @@
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.544.0",
     "next": "16.0.10",
+    "octokit": "^5.0.5",
     "react": "^19.2.0",
     "react-countup": "^6.5.3",
     "react-day-picker": "^9.11.2",
@@ -84,7 +85,6 @@
     "postcss": "^8.5.6",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
-    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
 }

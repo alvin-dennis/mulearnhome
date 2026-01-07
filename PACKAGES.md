@@ -184,9 +184,9 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 ## 🛠 Developer Utilities
 
-### **ts-node**
+### **Octokit**
 
-* Run TypeScript files directly (used in scripts)
+* Official SDK for interacting with GitHub’s APIs to manage repositories, issues, pull requests, and more.
 
 ### **baseline-browser-mapping**
 
