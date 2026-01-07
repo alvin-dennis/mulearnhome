@@ -1242,13 +1242,16 @@
           "kind": "FieldDefinition",
           "name": { "kind": "Name", "value": "date" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          "type": {
+            "kind": "NonNullType",
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          }
         },
         {
           "kind": "FieldDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
+          "name": { "kind": "Name", "value": "link" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         },
         {
           "kind": "FieldDefinition",
@@ -1342,8 +1345,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
         },
         {
           "kind": "InputValueDefinition",
@@ -1461,7 +1464,10 @@
           "kind": "FieldDefinition",
           "name": { "kind": "Name", "value": "date" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          "type": {
+            "kind": "NonNullType",
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          }
         },
         {
           "kind": "FieldDefinition",
@@ -1471,9 +1477,9 @@
         },
         {
           "kind": "FieldDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
+          "name": { "kind": "Name", "value": "link" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },
@@ -1558,8 +1564,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
         }
       ]
     },
@@ -1672,7 +1678,10 @@
           "kind": "FieldDefinition",
           "name": { "kind": "Name", "value": "date" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          "type": {
+            "kind": "NonNullType",
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          }
         },
         {
           "kind": "FieldDefinition",
@@ -1682,9 +1691,9 @@
         },
         {
           "kind": "FieldDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
+          "name": { "kind": "Name", "value": "link" },
           "arguments": [],
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },
@@ -1769,8 +1778,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
         }
       ]
     },
@@ -2640,8 +2649,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         },
         {
           "kind": "InputValueDefinition",
@@ -2701,8 +2710,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },
@@ -2754,8 +2763,8 @@
         },
         {
           "kind": "InputValueDefinition",
-          "name": { "kind": "Name", "value": "isUpcoming" },
-          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          "name": { "kind": "Name", "value": "link" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },

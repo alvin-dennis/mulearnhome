@@ -143,16 +143,18 @@
                 "type": "string",
                 "name": "date",
                 "label": "Date",
-                "description": "Format: DD/MM/YYYY",
+                "description": "Format: DD/MM/YYYY - Events are automatically marked as upcoming/past based on this date",
+                "required": true,
                 "namespace": ["officeHours", "sessions", "date"],
                 "searchable": true,
                 "uid": false
               },
               {
-                "type": "boolean",
-                "name": "isUpcoming",
-                "label": "Is Upcoming?",
-                "namespace": ["officeHours", "sessions", "isUpcoming"],
+                "type": "string",
+                "name": "link",
+                "label": "Event Link",
+                "description": "Optional link for the session (shown only for upcoming events)",
+                "namespace": ["officeHours", "sessions", "link"],
                 "searchable": true,
                 "uid": false
               },
@@ -251,7 +253,8 @@
                 "type": "string",
                 "name": "date",
                 "label": "Date",
-                "description": "Format: YYYY-MM-DD",
+                "description": "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                "required": true,
                 "namespace": ["saltMangoTree", "episodes", "date"],
                 "searchable": true,
                 "uid": false
@@ -266,10 +269,11 @@
                 "uid": false
               },
               {
-                "type": "boolean",
-                "name": "isUpcoming",
-                "label": "Is Upcoming?",
-                "namespace": ["saltMangoTree", "episodes", "isUpcoming"],
+                "type": "string",
+                "name": "link",
+                "label": "Event Link",
+                "description": "Optional link for the episode (shown only for upcoming events)",
+                "namespace": ["saltMangoTree", "episodes", "link"],
                 "searchable": true,
                 "uid": false
               }
@@ -326,7 +330,8 @@
                 "type": "string",
                 "name": "date",
                 "label": "Date",
-                "description": "Format: YYYY-MM-DD",
+                "description": "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                "required": true,
                 "namespace": ["inspirationStation", "episodes", "date"],
                 "searchable": true,
                 "uid": false
@@ -341,10 +346,11 @@
                 "uid": false
               },
               {
-                "type": "boolean",
-                "name": "isUpcoming",
-                "label": "Is Upcoming?",
-                "namespace": ["inspirationStation", "episodes", "isUpcoming"],
+                "type": "string",
+                "name": "link",
+                "label": "Event Link",
+                "description": "Optional link for the episode (shown only for upcoming events)",
+                "namespace": ["inspirationStation", "episodes", "link"],
                 "searchable": true,
                 "uid": false
               }
@@ -1752,13 +1758,16 @@
             "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "date" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
           },
           {
             "kind": "FieldDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
+            "name": { "kind": "Name", "value": "link" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           },
           {
             "kind": "FieldDefinition",
@@ -1852,8 +1861,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           },
           {
             "kind": "InputValueDefinition",
@@ -1971,7 +1980,10 @@
             "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "date" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
           },
           {
             "kind": "FieldDefinition",
@@ -1981,9 +1993,9 @@
           },
           {
             "kind": "FieldDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
+            "name": { "kind": "Name", "value": "link" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
@@ -2068,8 +2080,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           }
         ]
       },
@@ -2182,7 +2194,10 @@
             "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "date" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
           },
           {
             "kind": "FieldDefinition",
@@ -2192,9 +2207,9 @@
           },
           {
             "kind": "FieldDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
+            "name": { "kind": "Name", "value": "link" },
             "arguments": [],
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
@@ -2279,8 +2294,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           }
         ]
       },
@@ -3153,8 +3168,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           },
           {
             "kind": "InputValueDefinition",
@@ -3214,8 +3229,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
@@ -3267,8 +3282,8 @@
           },
           {
             "kind": "InputValueDefinition",
-            "name": { "kind": "Name", "value": "isUpcoming" },
-            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+            "name": { "kind": "Name", "value": "link" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
