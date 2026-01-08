@@ -6,6 +6,7 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
+import { cdnUrl } from "@/services/cdn";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -94,10 +95,11 @@ export default function Hero() {
 
       <div className="relative w-full mt-auto flex justify-center items-end">
         <MuImage
-          src="/assets/illustration.webp"
+          src={cdnUrl("src/modules/Public/Home/assets/illustration.webp")}
           alt="Community illustration showcasing µLearn peer learning platform"
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           preload
+          fetchPriority="high"
           quality={85}
           width={1300}
           height={900}
