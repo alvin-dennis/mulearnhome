@@ -1,11 +1,11 @@
 "use client";
 
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import { TabButton } from "@/app/events/_components/TabButton";
+import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -87,13 +87,13 @@ export default function SaltMangoTreeClient({ episodes }: SaltMangoTreeClientPro
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-                <Image
+                <MuImage
                   src="/assets/smt/smt.svg"
                   alt="Salt Mango Tree Illustration"
                   width={500}
                   height={500}
                   className="w-full h-auto rounded-2xl"
-                  priority
+                  preload
                 />
               </div>
             </div>

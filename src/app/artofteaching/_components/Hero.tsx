@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
 
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <Image
+          <MuImage
             src={teachingGif}
             alt="Art of Teaching Illustration"
             width={400}
