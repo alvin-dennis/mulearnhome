@@ -5,14 +5,8 @@ import { MotionDiv } from "@/components/MuFramer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import type { Score } from "@/lib/types";
+import type { TopContributorProps } from "@/lib/types";
 import { cn } from "@/lib/utils";
-
-interface TopContributorProps {
-  score: Score;
-  rank: 1 | 2 | 3;
-  delay?: number;
-}
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -34,6 +28,7 @@ const rankConfig = {
     cardGradient: "from-amber-50 via-yellow-50/50 to-orange-50/30",
     borderGradient: "from-amber-300 via-yellow-200 to-orange-300",
     avatarRing: "ring-amber-400/50",
+    separator: "bg-amber-300/60",
   },
   2: {
     icon: Medal,
@@ -42,6 +37,7 @@ const rankConfig = {
     cardGradient: "from-slate-50 via-gray-50/50 to-slate-50/30",
     borderGradient: "from-slate-300 via-gray-200 to-slate-300",
     avatarRing: "ring-slate-400/50",
+    separator: "bg-slate-300/60",
   },
   3: {
     icon: Award,
@@ -50,25 +46,19 @@ const rankConfig = {
     cardGradient: "from-orange-50/60 via-amber-50/40 to-orange-100/40",
     borderGradient: "from-orange-600 via-amber-500 to-orange-500",
     avatarRing: "ring-orange-600/50",
+    separator: "bg-orange-400/60",
   },
 };
 
-export function TopContributor({ score, rank, delay = 0 }: TopContributorProps) {
+export function TopContributor({ score, rank }: TopContributorProps) {
   const config = rankConfig[rank];
   return (
-    <MotionDiv
-      variants={fadeInUp}
-      initial="hidden"
-      animate="visible"
-      transition={{ delay }}
-      className="relative"
-    >
+    <MotionDiv variants={fadeInUp} initial="hidden" animate="visible" className="relative">
       <MotionDiv
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
-        transition={{ delay: delay + 0.2 }}
-        className="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
+        className="absolute z-10 top-3 right-4 sm:-top-4 sm:left-1/2 sm:-translate-x-1/2 sm:right-auto"
       >
         <span
           className={cn(
@@ -123,7 +113,7 @@ export function TopContributor({ score, rank, delay = 0 }: TopContributorProps) 
           </h3>
         </div>
 
-        <Separator orientation="horizontal" className="my-4" />
+        <Separator orientation="horizontal" className={cn("my-4 h-0.5", config.separator)} />
 
         <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center mb-4">
           <div className="text-center">
@@ -133,14 +123,14 @@ export function TopContributor({ score, rank, delay = 0 }: TopContributorProps) 
             </div>
           </div>
 
-          <Separator orientation="vertical" className="h-10" />
+          <Separator orientation="vertical" className={cn("h-10 w-0.5", config.separator)} />
 
           <div className="text-center">
             <div className="font-bold text-foreground tabular-nums">{score.prs_merged}</div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">PRs</div>
           </div>
 
-          <Separator orientation="vertical" className="h-10" />
+          <Separator orientation="vertical" className={cn("h-10 w-0.5", config.separator)} />
 
           <div className="text-center">
             <div className="font-bold text-foreground tabular-nums">{score.issues_closed}</div>
@@ -148,7 +138,7 @@ export function TopContributor({ score, rank, delay = 0 }: TopContributorProps) 
           </div>
         </div>
 
-        <Separator orientation="horizontal" className="mb-4" />
+        <Separator orientation="horizontal" className={cn("my-4 h-0.5", config.separator)} />
 
         <Link
           href={`https://github.com/${score.username}`}
