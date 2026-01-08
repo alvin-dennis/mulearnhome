@@ -3,8 +3,8 @@
 import { MessageCircle, Star, TrendingUp, Users, Video } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import MuLoader from "@/components/Loader";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import MuLoader from "@/components/MuLoader";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import type { Counts, TextTestimonial, VideoTestimonial } from "@/lib/types";

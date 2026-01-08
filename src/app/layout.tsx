@@ -1,10 +1,10 @@
-import MuLoader from "@components/Loader";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import type React from "react";
 import { Suspense } from "react";
 import Footer from "@/components/Footer";
+import MuLoader from "@/components/MuLoader";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Toaster } from "sonner";
