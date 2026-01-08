@@ -1,0 +1,57 @@
+import { MotionDiv, MotionP } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
+
+const Action = () => {
+  return (
+    <section className="relative overflow-hidden pt-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-20 mb-20">
+          <div className="max-w-xl flex flex-col gap-4">
+            <MotionP
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-2xl md:text-4xl lg:text-6xl font-bold"
+            >
+              Shaping <span className="text-mulearn-trusty-blue">Innovators</span>
+            </MotionP>
+
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-2xl md:text-4xl lg:text-6xl font-bold"
+            >
+              <p className="text-lg text-mulearn-gray-600 max-w-md">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit.
+              </p>
+            </MotionDiv>
+            <div>
+              <Button variant={"mulearn-trusty"}>Register now</Button>
+            </div>
+          </div>
+
+          <div className="relative w-full max-w-xl h-[300px] lg:h-[380px]">
+            <MotionDiv
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <MuImage
+                src="/assets/Trivial/Browser.svg"
+                alt="Trivial-img"
+                fill
+                className="object-contain"
+              />
+            </MotionDiv>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Action;
