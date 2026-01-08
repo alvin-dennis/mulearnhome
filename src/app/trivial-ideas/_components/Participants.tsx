@@ -14,9 +14,9 @@ const Participants = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-2xl md:text-3xl lg:text-4xl font-bold "
             >
-              <p className="text-2xl md:text-3xl lg:text-5xl font-bold">
-                What Our <span className="text-mulearn-trusty-blue">Community Says</span>
-              </p>
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold">
+                What Our <span className="text-mulearn">Community Says</span>
+              </h3>
               <p className="text-lg text-mulearn-gray-600 max-w-xl mx-auto md:mx-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
                 amet,consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing

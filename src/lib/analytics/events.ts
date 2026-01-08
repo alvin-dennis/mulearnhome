@@ -388,7 +388,7 @@ export function trackDonationComplete(
  * Track consent update
  */
 export function trackConsentUpdate(
-  action: "accept_all" | "reject_all" | "custom",
+  action: "accept_all" | "reject_all" | "default",
   categories: { analytics: boolean; performance: boolean; marketing: boolean },
 ): void {
   sendEvent(EVENT_NAMES.CONSENT_UPDATE, {

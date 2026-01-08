@@ -280,6 +280,7 @@ Use **only** the CSS variables defined in `src/app/globals.css`:
 
 **Primary Colors:**
 
+- `--mulearn` - #0961F5;
 - `--mulearn-trusty` - Gradient (blue to purple)
 - `--mulearn-trusty-blue` - #2E85FE
 - `--mulearn-duke-purple` - #AF2EE6
@@ -294,7 +295,7 @@ Use **only** the CSS variables defined in `src/app/globals.css`:
 **Usage in Tailwind:**
 
 ```tsx
-<div className="bg-mulearn-trusty text-mulearn-whitish">
+<div className="bg-mulearn text-mulearn-whitish">
 <h1 className="text-mulearn-trusty-blue">
 <Button variant="mulearn">Click Me</Button>
 ```

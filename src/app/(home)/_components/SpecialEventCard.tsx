@@ -35,7 +35,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
         />
         <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
           <Button
-            variant={"custom"}
+            variant={"default"}
             className="py-3 px-8 flex items-center justify-center w-full font-semibold"
           >
             Read More
@@ -90,7 +90,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
 
           <DialogFooter className="px-6 pb-6">
             <Button
-              variant={"custom"}
+              variant={"default"}
               className="font-semibold py-3 px-6 w-full"
               onClick={() => window.open(specialevent.link, "_blank")}
             >

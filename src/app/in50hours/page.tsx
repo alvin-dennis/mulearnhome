@@ -45,7 +45,7 @@ export default function In50Hours() {
             <Link target="_blank" rel="noreferrer" href="https://www.makemypass.com/in50hours">
               <MotionDiv>
                 <Button
-                  variant={"custom"}
+                  variant={"default"}
                   className=" mt-2 sm:mt-4 px-4 sm:px-6 py-2 font-semibold"
                 >
                   Register Now

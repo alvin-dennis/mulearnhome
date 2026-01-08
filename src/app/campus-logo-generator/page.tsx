@@ -420,14 +420,14 @@ export default function CampusLogoGenerator() {
               <span className="block font-medium mb-2">Logo Type</span>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.logoType === "MuLearn" ? "custom" : "outline"}
+                  variant={formData.logoType === "MuLearn" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("logoType", "MuLearn")}
                 >
                   MuLearn
                 </Button>
                 {/* <Button
-                  variant={formData.logoType === "YIP" ? "custom" : "outline"}
+                  variant={formData.logoType === "YIP" ? "default" : "outline"}
                   className="flex-1 rounded-lg p-3 font-medium"
                   onClick={() => handleInputChange("logoType", "YIP")}
                 >
@@ -453,7 +453,7 @@ export default function CampusLogoGenerator() {
                   {yipVariants.map((variant) => (
                     <Button
                       key={variant.value}
-                      variant={formData.yipVariant === variant.value ? "custom" : "outline"}
+                      variant={formData.yipVariant === variant.value ? "default" : "outline"}
                       className="flex-1 p-3 rounded-lg font-medium"
                       onClick={() => handleInputChange("yipVariant", variant.value)}
                     >
@@ -467,14 +467,14 @@ export default function CampusLogoGenerator() {
                 <span className="block font-medium mb-2">Logo Variant</span>
                 <div className="flex gap-2">
                   <Button
-                    variant={formData.logoVariant === "Profile Pic" ? "custom" : "outline"}
+                    variant={formData.logoVariant === "Profile Pic" ? "default" : "outline"}
                     className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Profile Pic")}
                   >
                     Profile Pic
                   </Button>
                   <Button
-                    variant={formData.logoVariant === "Transparent Bg" ? "custom" : "outline"}
+                    variant={formData.logoVariant === "Transparent Bg" ? "default" : "outline"}
                     className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Transparent Bg")}
                   >
@@ -545,14 +545,14 @@ export default function CampusLogoGenerator() {
               <span className="block font-medium mb-2">File Type</span>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.fileType === "PNG" ? "custom" : "outline"}
+                  variant={formData.fileType === "PNG" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "PNG")}
                 >
                   PNG
                 </Button>
                 <Button
-                  variant={formData.fileType === "SVG" ? "custom" : "outline"}
+                  variant={formData.fileType === "SVG" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "SVG")}
                 >
@@ -563,7 +563,7 @@ export default function CampusLogoGenerator() {
 
             <Button
               className="w-full rounded-lg p-4 font-medium"
-              variant="custom"
+              variant="default"
               onClick={handleDownload}
               disabled={isDownloading || formData.campusCode.length < 3}
             >

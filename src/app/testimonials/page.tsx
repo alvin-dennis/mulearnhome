@@ -111,7 +111,6 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen">
-      {}
       <div className="relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-32 pb-12 sm:pb-24">
           <MotionDiv
@@ -138,7 +137,6 @@ export default function TestimonialsPage() {
               future of learning
             </MotionP>
 
-            {}
             <MotionDiv
               className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -164,14 +162,13 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      {}
       <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 my-6 max-w-full">
               <Button
                 onClick={() => setActiveTab("video")}
-                variant={activeTab === "video" ? "custom" : "ghost"}
+                variant={activeTab === "video" ? "default" : "ghost"}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
                   activeTab === "video" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
@@ -181,7 +178,7 @@ export default function TestimonialsPage() {
               </Button>
               <Button
                 onClick={() => setActiveTab("text")}
-                variant={activeTab === "text" ? "custom" : "ghost"}
+                variant={activeTab === "text" ? "default" : "ghost"}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
                   activeTab === "text" ? "shadow-sm" : "text-mulearn-gray-600"
                 }`}
@@ -209,19 +206,14 @@ export default function TestimonialsPage() {
           </div>
         ) : (
           <>
-            {}
             {activeTab === "video" && videoTestimonialData.length > 0 && (
               <VideoCarousel testimonials={videoTestimonialData} />
             )}
-
-            {}
             {activeTab === "text" && textTestimonialData.length > 0 && (
               <div className="max-w-7xl mx-auto px-6">
                 <TextTestimonialsGrid testimonials={textTestimonialData} />
               </div>
             )}
-
-            {}
             {activeTab === "video" && videoTestimonialData.length === 0 && (
               <div className="max-w-2xl mx-auto px-6 text-center py-32">
                 <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -268,7 +260,7 @@ export default function TestimonialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
-                variant={"custom"}
+                variant={"default"}
                 className=" px-10 py-4 text-lg font-semibold rounded-2xl"
                 onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
               >
@@ -280,7 +272,7 @@ export default function TestimonialsPage() {
                 rel="noopener noreferrer"
               >
                 <Button
-                  variant={"custom"}
+                  variant={"default"}
                   className="px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold"
                 >
                   Share Your Experience

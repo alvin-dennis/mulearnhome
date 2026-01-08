@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MotionP } from "@/components/MuFramer";
+import { MotionH2 } from "@/components/MuFramer";
 import { Card } from "@/components/ui/card";
 
 const Qna = () => {
@@ -18,14 +18,14 @@ const Qna = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12">
           <div className="max-w-3xl text-center">
-            <MotionP
+            <MotionH2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-2xl md:text-3xl lg:text-5xl font-bold"
             >
-              Got <span className="text-mulearn-trusty-blue">Questions?</span>
-            </MotionP>
+              Got <span className="text-mulearn">Questions?</span>
+            </MotionH2>
 
             <div className="mt-8 space-y-4">
               {faqs.map((faq) => (

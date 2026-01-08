@@ -215,7 +215,7 @@ export function GenericEventCard({
             {event.date} {event.time ? `• ${event.time}` : ""}
           </span>
           {event.link && event.isUpcoming && (
-            <Button variant="custom" className="gap-1 px-4 py-2 text-sm rounded-full" asChild>
+            <Button variant="default" className="gap-1 px-4 py-2 text-sm rounded-full" asChild>
               <a href={event.link} target="_blank" rel="noopener noreferrer">
                 Join <ExternalLink className="w-3.5 h-3.5" />
               </a>
@@ -223,7 +223,7 @@ export function GenericEventCard({
           )}
           {actionButton && (
             <Button
-              variant={event.isUpcoming ? "custom" : "mulearn-outline"}
+              variant={event.isUpcoming ? "default" : "outline"}
               className="gap-1 px-4 py-2 text-sm rounded-full"
               onClick={actionButton.onClick}
             >

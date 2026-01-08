@@ -1053,7 +1053,7 @@ export default function DonationForm() {
             </div>
             <Button
               type="submit"
-              variant={"custom"}
+              variant={"default"}
               size="lg"
               className="w-full sm:w-auto text-base font-semibold"
               disabled={!isValid || totalAmount === 0}

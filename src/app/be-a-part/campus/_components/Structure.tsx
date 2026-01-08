@@ -28,10 +28,7 @@ export default function Structure() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <Card
-                  variant="interactive"
-                  className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                >
+                <Card variant="interactive" className="h-full border-mulearn/10 ">
                   <CardContent className="p-6 text-center">
                     <div className="mb-2 text-3xl font-bold text-mulearn">{item.value}</div>
                     <div className="mb-1 font-semibold text-mulearn-blackish">{item.label}</div>

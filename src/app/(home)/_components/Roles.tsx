@@ -48,7 +48,7 @@ export default function Roles() {
       <Tabs value={activeRole} onValueChange={setActiveRole} className="w-full">
         <div className="flex flex-col w-full mb-6 items-center justify-center sm:hidden">
           <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn-trusty-blue">
+            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>
@@ -66,7 +66,7 @@ export default function Roles() {
             <TabsTrigger
               key={role.id}
               value={role.id}
-              className="text-base px-4 py-2.5 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-mulearn data-[state=active]:font-bold data-[state=active]:text-mulearn-trusty-blue rounded-none"
+              className="text-base px-4 py-2.5 data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-mulearn data-[state=active]:font-bold data-[state=active]:text-mulearn rounded-none"
             >
               {role.label}
             </TabsTrigger>
@@ -83,10 +83,7 @@ export default function Roles() {
             >
               {rolesContent[role.id].map((item: RoleItem) => (
                 <MotionDiv key={item.id} variants={fadeInUp}>
-                  <Card
-                    variant="hoverable"
-                    className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                  >
+                  <Card variant="hoverable" className="h-full border-mulearn/10">
                     <CardHeader className="p-0">
                       <MuImage
                         src={item.image}

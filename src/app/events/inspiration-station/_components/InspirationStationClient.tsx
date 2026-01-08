@@ -79,7 +79,7 @@ export default function InspirationStationClient({ episodes }: InspirationStatio
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
                 <Link href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
-                  <Button variant={"custom"} className="px-6 py-2.5 gap-2 font-semibold">
+                  <Button variant={"default"} className="px-6 py-2.5 gap-2 font-semibold">
                     <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
                     Join
                   </Button>

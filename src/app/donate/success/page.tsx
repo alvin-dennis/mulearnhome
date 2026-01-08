@@ -222,7 +222,7 @@ export default function DonateSuccessPage() {
             )}
 
             <Button
-              variant="custom"
+              variant="default"
               onClick={() => router.push("/")}
               className="w-full h-12 rounded-xl text-base font-semibold shadow-lg shadow-mulearn-trusty-blue/20 hover:shadow-xl transition-all"
             >

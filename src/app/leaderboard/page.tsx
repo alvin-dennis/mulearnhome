@@ -128,7 +128,7 @@ export default function Leaderboard() {
           className="flex flex-col items-center text-center pb-20"
         >
           <Link href="https://contributors.mulearn.org" target="_blank" rel="noopener noreferrer">
-            <Button variant={"custom"} className="h-12 px-6 text-sm font-semibold group shadow-sm">
+            <Button variant={"default"} className="h-12 px-6 text-sm font-semibold group shadow-sm">
               View Full Leaderboard
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
             </Button>

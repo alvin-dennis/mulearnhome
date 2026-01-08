@@ -17,10 +17,7 @@ export default function WhyChapter() {
         </h2>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <Card
-            variant="hoverable"
-            className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-          >
+          <Card variant="hoverable" className="border-mulearn/10">
             <CardHeader>
               <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-mulearn shadow-lg">
                 <Users className="h-7 w-7 text-mulearn-whitish" />
@@ -65,10 +62,7 @@ export default function WhyChapter() {
             </CardContent>
           </Card>
 
-          <Card
-            variant="hoverable"
-            className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-          >
+          <Card variant="hoverable" className="border-mulearn/10">
             <CardHeader>
               <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-mulearn shadow-lg">
                 <BookOpen className="h-7 w-7 text-mulearn-whitish" />

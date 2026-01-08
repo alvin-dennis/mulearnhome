@@ -202,7 +202,7 @@ export default function Careers() {
             <div className="mt-12 mb-8">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
-                  variant="mulearn-outline"
+                  variant="outline"
                   onClick={goToPrevious}
                   disabled={currentPage === 1}
                   className="flex items-center gap-2 px-4 py-2"
@@ -224,7 +224,7 @@ export default function Careers() {
                     const pageNumber = item.number;
                     return (
                       <Button
-                        variant={currentPage === pageNumber ? "custom" : "mulearn-secondary"}
+                        variant={currentPage === pageNumber ? "default" : "secondary"}
                         key={item.key}
                         onClick={() => goToPage(pageNumber)}
                         className="w-10 h-10 text-sm font-medium"
@@ -237,7 +237,7 @@ export default function Careers() {
                   })}
                 </div>
                 <Button
-                  variant="mulearn-outline"
+                  variant="outline"
                   onClick={goToNext}
                   disabled={currentPage === totalPages}
                   className="flex items-center gap-2 px-4 py-2"

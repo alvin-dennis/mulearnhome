@@ -1,13 +1,13 @@
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
-import About from "./components/About";
-import Action from "./components/Action";
-import Participants from "./components/participants";
-import Qna from "./components/qna";
-import Rewards from "./components/rewards";
-import Working from "./components/working";
+import About from "./_components/About";
+import Action from "./_components/Action";
+import Participants from "./_components/Participants";
+import Qna from "./_components/Q&A";
+import Rewards from "./_components/Rewards";
+import Working from "./_components/Working";
 
-const page = () => {
+export default function TrivialIdeas() {
   return (
     <section className="relative overflow-hidden pt-20 md:pt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,12 +38,12 @@ const page = () => {
               transition={{ duration: 0.6 }}
               className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-center"
             >
-              <Button variant={"mulearn-trusty"}>Register Now</Button>
+              <Button variant={"default"}>Register Now</Button>
             </MotionDiv>
           </div>
         </div>
         <MotionDiv initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
-          <div className="bg-mulearn-whitish mt-12 py-4 shadow-2xl text-mulearn-trusty-blue">
+          <div className="mt-12 py-4 shadow-2xl text-mulearn-trusty-blue">
             <div className="max-w-7xl mx-auto px-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <p className="font-semibold">10+ Editions</p>
@@ -55,7 +55,6 @@ const page = () => {
           </div>
         </MotionDiv>
       </div>
-
       <About />
       <Working />
       <Rewards />
@@ -64,6 +63,4 @@ const page = () => {
       <Action />
     </section>
   );
-};
-
-export default page;
+}

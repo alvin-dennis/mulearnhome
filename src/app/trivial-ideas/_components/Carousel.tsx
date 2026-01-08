@@ -1,5 +1,3 @@
-"use client";
-
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card } from "@/components/ui/card";
@@ -42,7 +40,7 @@ const Carousel = () => {
               <Card
                 key={`${item.id}-${index}`}
                 className="
-                  bg-mulearn-trusty-blue
+                  bg-mulearn
                   shrink-0
                   w-[220px]
                   sm:w-[260px]

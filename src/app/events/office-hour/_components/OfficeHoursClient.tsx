@@ -161,7 +161,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
               community-driven learning zone.
             </p>
 
-            <Button variant={"custom"} className="px-8 py-3 gap-2 rounded-full">
+            <Button variant={"default"} className="px-8 py-3 gap-2 rounded-full">
               <PlayCircle className="w-5 h-5" />
               Join Next Session
             </Button>

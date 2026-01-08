@@ -113,7 +113,7 @@ const Guidelines = () => {
                   <div className="mt-6">
                     <Link href={artOfTeachingGuidelines} download="Art of Teaching Guidelines.pdf">
                       <Button
-                        variant={"custom"}
+                        variant={"default"}
                         className="border-none px-4 py-2 text-base font-bold w-[180px] transition-colors"
                       >
                         Download PDF

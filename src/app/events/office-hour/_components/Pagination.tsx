@@ -55,7 +55,7 @@ export default function Pagination({ page, setPage, total, perPage, scrollToId }
     <div className="mt-12 mb-8">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button
-          variant="mulearn-outline"
+          variant="outline"
           onClick={goToPrevious}
           disabled={page === 1}
           className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
@@ -78,7 +78,7 @@ export default function Pagination({ page, setPage, total, perPage, scrollToId }
             return (
               <Button
                 key={item.key}
-                variant={page === pageNumber ? "custom" : "outline"}
+                variant={page === pageNumber ? "default" : "outline"}
                 onClick={() => goToPage(pageNumber)}
                 className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
                   page === pageNumber
@@ -94,7 +94,7 @@ export default function Pagination({ page, setPage, total, perPage, scrollToId }
           })}
         </div>
         <Button
-          variant="mulearn-outline"
+          variant="outline"
           onClick={goToNext}
           disabled={page === totalPages}
           className="flex items-center gap-2 px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"

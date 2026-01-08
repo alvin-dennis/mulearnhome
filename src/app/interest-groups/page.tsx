@@ -349,7 +349,7 @@ export default function InterestGroups() {
             for the careers of tomorrow.
           </p>
           <div>
-            <Button asChild variant="mulearn-inverted" className="px-8 py-4 text-lg">
+            <Button asChild variant="inverted" className="px-8 py-4 text-lg">
               <a
                 href="https://app.mulearn.org/dashboard/profile"
                 target="_blank"

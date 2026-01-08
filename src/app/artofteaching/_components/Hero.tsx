@@ -22,7 +22,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full ">
             <Link href={artOfTeachingUrls.registerNow} className="no-underline w-full">
               <Button
-                variant={"custom"}
+                variant={"default"}
                 className="w-full px-6 py-3 text-center font-bold mt-4 transition-colors"
               >
                 Register Now
@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="flex flex-row justify-center items-center gap-2 mt-2 w-full">
               <Link href="/enablers" className="flex-1">
                 <Button
-                  variant={"mulearn-outline"}
+                  variant={"outline"}
                   className="w-full px-6 py-2 font-bold transition-colors"
                 >
                   Enablers
@@ -40,7 +40,7 @@ const Hero = () => {
               </Link>
               <Link href="/" className="flex-1">
                 <Button
-                  variant={"mulearn-outline"}
+                  variant={"outline"}
                   className="w-full px-6 py-2 font-bold transition-colors"
                 >
                   µlearn

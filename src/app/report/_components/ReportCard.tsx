@@ -40,7 +40,6 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
     <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
       <Card className="overflow-hidden bg-mulearn-whitish border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
-          {}
           <div className="lg:w-1/3 relative overflow-hidden">
             <div className="aspect-[4/3] lg:aspect-square bg-linear-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
               {report.imageUrl ? (
@@ -60,16 +59,13 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {}
             <div className="absolute top-4 left-4 bg-mulearn text-mulearn-whitish px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
               {report.year}
             </div>
 
-            {}
             <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          {}
           <CardContent className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-mulearn-gray-600 text-sm mb-3">
@@ -85,7 +81,6 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
                 {report.summary}
               </p>
 
-              {}
               {report.highlights && report.highlights.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-mulearn-blackish mb-3">
@@ -108,12 +103,11 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               )}
             </div>
 
-            {}
             <CardFooter className="p-0">
               <div className="flex justify-start">
                 <Button
                   onClick={onDownload}
-                  variant={"custom"}
+                  variant={"default"}
                   className="group/btn px-6 py-3 text-base font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
                 >
                   <Download className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />

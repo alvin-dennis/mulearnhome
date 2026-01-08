@@ -11,7 +11,7 @@ interface TabButtonProps {
 export function TabButton({ icon: Icon, label, isActive, onClick }: TabButtonProps) {
   return (
     <Button
-      variant={"mulearn-outline"}
+      variant={"outline"}
       onClick={onClick}
       className={`flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 font-semibold rounded-full ${
         isActive ? "sm:shadow-xl scale-105" : "text-gray-500"

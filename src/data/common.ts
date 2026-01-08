@@ -11,7 +11,7 @@ export const navItems = [
           label: "Impact Gallery",
           href: "/impact-gallery",
         },
-        // { label: "Leaderboard", href: "/leaderboard" },
+        { label: "Leaderboard", href: "/leaderboard" },
         { label: "Our Partners", href: "/partners" },
         { label: "Events", href: "/events" },
       ],
