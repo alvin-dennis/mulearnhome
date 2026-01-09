@@ -916,6 +916,17 @@
       "interestGroups": [
         "game-dev"
       ]
+    },
+    {
+      "title": "Cracking the UIDAI Data Hackathon",
+      "performer": "Aiswarya Jayaprakash and Tharun Tomy",
+      "designation": "Data Science IG Leads",
+      "description": "A starter session covering UIDAI hackathon registration, dataset types, data formats, and a step-by-step data science approach to solving the problem, including feature engineering tips and best practices.",
+      "date": "10/01/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
     }
   ]
 }
