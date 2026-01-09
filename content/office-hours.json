@@ -938,6 +938,17 @@
       "interestGroups": [
         "comics"
       ]
+    },
+    {
+      "title": "Exploring NASA APIs",
+      "performer": "Vaishakh V S",
+      "designation": "NASA Space App Challenge Global Nominee 2025",
+      "description": "This session introduces NASA Public APIs and demonstrates how to explore and test space data using Postman. Led by a NASA Space Apps Challenge Global Nominee 2025, it focuses on effectively using NASA’s open data to build real-world applications that solve meaningful problems.",
+      "date": "10/01/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
     }
   ]
 }
