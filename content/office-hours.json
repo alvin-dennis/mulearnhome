@@ -949,6 +949,17 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "From Idea to Impact",
+      "performer": "Karthik Krishnan",
+      "designation": "IG Lead- Entrepreneurship",
+      "description": "A focused office hour where students pitch raw ideas, get real-time feedback, and learn how to turn concepts into actionable entrepreneurial opportunities.",
+      "date": "10/01/2026",
+      "link": "https://mulearn.org/r/ent-officehour",
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     }
   ]
 }
