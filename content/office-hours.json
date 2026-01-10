@@ -960,6 +960,17 @@
       "interestGroups": [
         "entrepreneurship"
       ]
+    },
+    {
+      "title": "IoT - General Discussion",
+      "performer": "Akhilesh.A.S",
+      "designation": "IoT IG Lead - µLearn Foundation",
+      "description": "An interactive session where participants were encouraged to share their ongoing IoT projects, talk about the issues they faced while working on them, and discuss possible solutions together.",
+      "date": "11/01/2026",
+      "link": "https://mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ]
     }
   ]
 }
