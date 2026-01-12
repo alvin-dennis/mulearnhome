@@ -981,6 +981,17 @@
       "interestGroups": [
         "project-management"
       ]
+    },
+    {
+      "title": "Good Design ≠ Good UX",
+      "performer": "Abikrishna S",
+      "designation": "UX DESIGNER",
+      "description": "A visually appealing design doesn’t always guarantee a great user experience. This session explores the key differences between good design and good UX, focusing on usability, user needs, and real-world impact beyond aesthetics.",
+      "date": "13/01/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ]
     }
   ]
 }
