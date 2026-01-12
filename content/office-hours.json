@@ -971,6 +971,16 @@
       "interestGroups": [
         "iot-robotics"
       ]
+    },
+    {
+      "title": "Trello 101",
+      "performer": "Rasha Hasoon",
+      "designation": "PMP IG Lead",
+      "date": "12/01/2026",
+      "link": "https://mulearn.org/r/pmp-officehour",
+      "interestGroups": [
+        "project-management"
+      ]
     }
   ]
 }
