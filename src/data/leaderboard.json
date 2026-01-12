@@ -75,25 +75,34 @@
       "displayname": "Jelan Mathew James"
     },
     {
+      "username": "awindsr",
+      "commits": 681,
+      "prs_opened": 180,
+      "prs_merged": 173,
+      "issues_opened": 16,
+      "issues_closed": 9,
+      "displayname": "Awindsr"
+    },
+    {
       "username": "aswanthabam",
-      "commits": 459,
+      "commits": 462,
       "prs_opened": 277,
       "prs_merged": 266,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Aswanth Vc"
-    },
-    {
-      "username": "awindsr",
-      "commits": 646,
-      "prs_opened": 168,
-      "prs_merged": 162,
-      "issues_opened": 16,
-      "issues_closed": 9,
-      "displayname": "Awindsr"
     }
   ],
   "monthly": [
+    {
+      "username": "awindsr",
+      "commits": 104,
+      "prs_opened": 19,
+      "prs_merged": 18,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Awindsr"
+    },
     {
       "username": "sachin-raj-m",
       "commits": 43,
@@ -104,22 +113,22 @@
       "displayname": "Sachin Raj"
     },
     {
-      "username": "awindsr",
-      "commits": 76,
-      "prs_opened": 7,
-      "prs_merged": 7,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Awindsr"
-    },
-    {
       "username": "nanda-kshr",
-      "commits": 11,
-      "prs_opened": 8,
-      "prs_merged": 8,
+      "commits": 20,
+      "prs_opened": 14,
+      "prs_merged": 13,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Nandakishore P"
+    },
+    {
+      "username": "nashnsulthan",
+      "commits": 7,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Nash N Sulthan"
     },
     {
       "username": "EzioAuditore-daFirenze",
@@ -167,22 +176,13 @@
       "displayname": "Amith Abey Stephen"
     },
     {
-      "username": "alsuhails5-ui",
+      "username": "mdmidlaj47-cloud",
       "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
+      "prs_opened": 2,
+      "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "alsuhails5-ui"
-    },
-    {
-      "username": "Alienwalker-6",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "PRANAV M K"
+      "displayname": "mdmidlaj47-cloud"
     }
   ]
 }
