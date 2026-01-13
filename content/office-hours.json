@@ -1004,6 +1004,16 @@
         "web-development"
       ]
     },
-    {}
+    {
+      "title": "Building Effective Solutions",
+      "performer": "Bharath Kumar",
+      "designation": "Associate-Talent Acquisition, CareStack",
+      "description": "This session explores a structured approach to problem-solving, focusing on how to identify core issues and design effective, practical solutions using technology. It helps participants think beyond code and build solutions that create real impact across domains.",
+      "date": "14/01/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    }
   ]
 }
