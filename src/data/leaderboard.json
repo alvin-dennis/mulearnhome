@@ -76,9 +76,9 @@
     },
     {
       "username": "awindsr",
-      "commits": 681,
-      "prs_opened": 180,
-      "prs_merged": 173,
+      "commits": 688,
+      "prs_opened": 184,
+      "prs_merged": 177,
       "issues_opened": 16,
       "issues_closed": 9,
       "displayname": "Awindsr"
@@ -96,27 +96,27 @@
   "monthly": [
     {
       "username": "awindsr",
-      "commits": 104,
-      "prs_opened": 19,
-      "prs_merged": 18,
+      "commits": 111,
+      "prs_opened": 23,
+      "prs_merged": 22,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Awindsr"
     },
     {
       "username": "sachin-raj-m",
-      "commits": 43,
-      "prs_opened": 25,
-      "prs_merged": 25,
+      "commits": 54,
+      "prs_opened": 30,
+      "prs_merged": 30,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Sachin Raj"
     },
     {
       "username": "nanda-kshr",
-      "commits": 20,
-      "prs_opened": 14,
-      "prs_merged": 13,
+      "commits": 21,
+      "prs_opened": 15,
+      "prs_merged": 14,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Nandakishore P"
@@ -140,6 +140,15 @@
       "displayname": "Anerudh M K"
     },
     {
+      "username": "Amith-Abey-Stephen",
+      "commits": 3,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "issues_opened": 1,
+      "issues_closed": 1,
+      "displayname": "Amith Abey Stephen"
+    },
+    {
       "username": "Arya3077",
       "commits": 1,
       "prs_opened": 2,
@@ -147,6 +156,15 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Arya Shibu Dhanya"
+    },
+    {
+      "username": "aaronrthomas",
+      "commits": 2,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Aaronrthomas"
     },
     {
       "username": "octavia47",
@@ -165,24 +183,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Afiya Fathima"
-    },
-    {
-      "username": "Amith-Abey-Stephen",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 1,
-      "issues_closed": 1,
-      "displayname": "Amith Abey Stephen"
-    },
-    {
-      "username": "mdmidlaj47-cloud",
-      "commits": 0,
-      "prs_opened": 2,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "mdmidlaj47-cloud"
     }
   ]
 }
