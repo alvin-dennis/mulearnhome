@@ -29,10 +29,7 @@ export default function Activities() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <Card
-                  variant="interactive"
-                  className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                >
+                <Card variant="interactive" className="h-full border-mulearn/10 ">
                   <CardContent className="p-6 text-center">
                     <div className="mb-3">
                       <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-mulearn shadow-lg">

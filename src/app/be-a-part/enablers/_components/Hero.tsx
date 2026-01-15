@@ -135,7 +135,7 @@ export default function Hero() {
 
           <Link href="https://app.mulearn.org/" target="_blank" className="inline-block">
             <Button
-              variant={"custom"}
+              variant={"default"}
               className=" mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
             >
               Join µLearn

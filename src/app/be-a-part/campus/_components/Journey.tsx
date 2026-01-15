@@ -20,7 +20,7 @@ export default function Journey() {
           </p>
 
           <div className="hidden md:block relative">
-            <div className="absolute left-1/2 top-0 bottom-[5%] w-0.5 bg-linear-to-b from-mulearn-trusty-blue to-mulearn-duke-purple transform -translate-x-1/2" />
+            <div className="absolute left-1/2 top-0 bottom-[5%] w-0.5 bg-mulearn transform -translate-x-1/2" />
 
             {campusChapter.journey.map((step, index) => {
               const stepNumber = index + 1;
@@ -37,10 +37,7 @@ export default function Journey() {
                 >
                   <div className={`flex items-center ${isLeft ? "justify-end" : "justify-start"}`}>
                     <div className={`w-5/12 ${isLeft ? "pr-12 text-right" : "pl-12 text-left"}`}>
-                      <Card
-                        variant="hoverable"
-                        className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                      >
+                      <Card variant="hoverable" className="border-mulearn/10 ">
                         <CardContent className="p-6">
                           <div
                             className={`flex items-center gap-3 mb-3 ${
@@ -96,7 +93,7 @@ export default function Journey() {
                     </div>
                   </div>
 
-                  <Card className="border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5">
+                  <Card className="border-mulearn/10">
                     <CardContent className="p-6">
                       <h3 className="text-lg font-bold text-mulearn-blackish mb-2">{step.title}</h3>
                       <p className="text-mulearn-gray-600 text-sm leading-relaxed">{step.desc}</p>

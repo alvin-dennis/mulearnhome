@@ -64,7 +64,7 @@ export default function EventCard({ event }: Props) {
               <MotionDiv whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <div className="flex justify-center">
                   <Button
-                    variant={"custom"}
+                    variant={"default"}
                     className="mt-2 flex w-full items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                   >
                     Check it out!
@@ -99,7 +99,7 @@ export default function EventCard({ event }: Props) {
               <DialogFooter>
                 <Button
                   asChild
-                  variant={"custom"}
+                  variant={"default"}
                   className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                 >
                   <a href={event.link}>Go to Event</a>

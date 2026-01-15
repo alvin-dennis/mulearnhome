@@ -1,4 +1,4 @@
-import { MotionDiv, MotionP } from "@/components/MuFramer";
+import { MotionDiv, MotionH2 } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
@@ -8,14 +8,14 @@ const Action = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-20 mb-20">
           <div className="max-w-xl flex flex-col gap-4">
-            <MotionP
+            <MotionH2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-2xl md:text-4xl lg:text-6xl font-bold"
             >
-              Shaping <span className="text-mulearn-trusty-blue">Innovators</span>
-            </MotionP>
+              Shaping <span className="text-mulearn">Innovators</span>
+            </MotionH2>
 
             <MotionDiv
               initial={{ opacity: 0, y: 40 }}
@@ -29,7 +29,7 @@ const Action = () => {
               </p>
             </MotionDiv>
             <div>
-              <Button variant={"mulearn-trusty"}>Register now</Button>
+              <Button variant={"default"}>Register now</Button>
             </div>
           </div>
 

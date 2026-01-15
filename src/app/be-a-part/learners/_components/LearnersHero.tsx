@@ -54,7 +54,7 @@ const LearnersHero = () => {
         </div>
 
         <Button
-          variant={"custom"}
+          variant={"default"}
           className="px-8 py-3 font-semibold shadow-lg hover:shadow-xl text-base rounded-full transform hover:scale-105 transition-all duration-300"
           asChild
         >

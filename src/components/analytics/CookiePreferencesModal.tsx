@@ -7,11 +7,12 @@
  * Premium minimal design with accessibility.
  */
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { BarChart3, Cookie, Megaphone, Settings, Shield, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import type { ConsentCategories } from "@/lib/analytics/types";
+import { MotionDiv } from "../MuFramer";
 
 interface CookiePreferencesModalProps {
   isOpen: boolean;
@@ -122,7 +123,7 @@ export default function CookiePreferencesModal({
       {isOpen && (
         <div className="fixed inset-0 z-10000 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -133,7 +134,7 @@ export default function CookiePreferencesModal({
           />
 
           {/* Modal */}
-          <motion.div
+          <MotionDiv
             ref={modalRef}
             role="dialog"
             aria-modal="true"
@@ -264,7 +265,7 @@ export default function CookiePreferencesModal({
                 Save
               </Button>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       )}
     </AnimatePresence>

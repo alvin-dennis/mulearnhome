@@ -146,7 +146,7 @@ export default function Features() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <Button variant={"custom"} className="px-4 py-2 font-semibold w-full">
+                    <Button variant={"default"} className="px-4 py-2 font-semibold w-full">
                       {feature.cta}
                     </Button>
                   </Link>

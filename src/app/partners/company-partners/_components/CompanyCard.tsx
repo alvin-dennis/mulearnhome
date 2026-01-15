@@ -34,7 +34,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
       <Card className="flex items-center justify-between hover:border-color-mulearn-trusty-blue rounded-lg p-3 sm:p-4 bg-mulearn-whitish">
         <CardContent className="p-0">
           <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-            <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 rounded-md overflow-hidden bg-gray-50">
+            <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 rounded-md overflow-hidden">
               <MuImage
                 src={cdnUrl(company.logo)}
                 alt={`${company.name} logo`}
@@ -43,7 +43,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
                 sizes="(max-width: 640px) 48px, 64px"
               />
             </div>
-            <p className="font-medium text-sm sm:text-base text-mulearn-blackish group-hover:text-mulearn-trusty-blue transition-colors truncate">
+            <p className="font-medium text-sm sm:text-base text-mulearn-blackish group-hover:text-mulearn-trusty-blue transition-colors">
               {company.name}
             </p>
           </div>

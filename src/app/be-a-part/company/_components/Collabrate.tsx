@@ -35,11 +35,11 @@ export default function WhyCollaborate() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xl sm:text-xl md:text-4xl font-semibold text-center mb-4 tracking-tight"
+          className="text-xl sm:text-xl md:text-4xl font-semibold text-mulearn-blackish text-center mb-4 tracking-tight"
         >
-          <span className="text-[#1A202C]">Why Collaborate with </span>
-          <span className="text-mulearn-trusty-blue">µLearn</span>
-          <span className="text-[#1A202C]">?</span>
+          <span>Why Collaborate with </span>
+          <span className="text-mulearn">µLearn</span>
+          <span>?</span>
         </MotionH2>
 
         <MotionP
@@ -115,7 +115,7 @@ export default function WhyCollaborate() {
               >
                 <CardContent className="flex flex-col items-center justify-start gap-5 p-6">
                   <NumberIcon num={index + 1} />
-                  <h3 className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-center leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-mulearn text-center leading-tight">
                     {feature.title}
                   </h3>
                   <p className="text-center font-thin text-mulearn-blackish leading-relaxed text-base sm:text-lg">

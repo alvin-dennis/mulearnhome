@@ -302,9 +302,20 @@ export interface LeaderboardData {
   date: string;
 }
 
-export interface LeaderboardProps {
-  props: LeaderboardData & { date: string };
-  revalidate: number;
+export interface TopContributorProps {
+  score: Score;
+  rank: 1 | 2 | 3;
+}
+
+export interface LeaderboardTableProps {
+  scores: Score[];
+  showTopThree?: boolean;
+}
+
+export interface LeaderboardRowProps {
+  score: Score;
+  rank: number;
+  isCurrentUser?: boolean;
 }
 
 export interface OnboardingStep {

@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
-import Image from "next/image";
 import { MotionDiv, MotionP } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { cdnUrl } from "@/services/cdn";
 
 const slideInLeft: Variants = {
@@ -65,7 +65,7 @@ export default function IGAbout() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <Image
+          <MuImage
             src="assets/kkem/kkem-hero.svg"
             alt="Interest Group"
             width={400}
@@ -89,21 +89,21 @@ export default function IGAbout() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <Image
+          <MuImage
             src={cdnUrl("src/modules/Public/KKEM/assets/im7.webp")}
             alt="Curator 1"
             width={56}
             height={56}
             className="rounded-full object-cover shadow-md p-2"
           />
-          <Image
+          <MuImage
             src={cdnUrl("src/modules/Public/KKEM/assets/im9.webp")}
             alt="Curator 2"
             width={56}
             height={56}
             className="rounded-full object-cover shadow-md p-2"
           />
-          <Image
+          <MuImage
             src={cdnUrl("src/modules/Public/KKEM/assets/im10.webp")}
             alt="Curator 3"
             width={56}

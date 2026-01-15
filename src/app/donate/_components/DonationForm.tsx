@@ -1087,8 +1087,9 @@ export default function DonationForm() {
             </div>
             <Button
               type="submit"
+              variant={"default"}
               size="lg"
-              className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-mulearn-trusty-blue shadow-xl shadow-mulearn-trusty-blue/20 hover:shadow-2xl hover:shadow-mulearn-trusty-blue/30 hover:scale-[1.02] transition-all"
+              className="w-full sm:w-auto text-base font-semibold"
               disabled={!isValid || totalAmount === 0}
             >
               Proceed to Payment

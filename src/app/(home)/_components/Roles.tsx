@@ -37,7 +37,9 @@ export default function Roles() {
       viewport={{ once: true }}
     >
       <MotionDiv className="text-center mb-10" variants={fadeInUp}>
-        <h1>Roles in μLearn Network</h1>
+        <h1>
+          <span className="text-mulearn">Roles</span> in μLearn Network
+        </h1>
         <h6 className="text-[1.2rem] text-mulearn-gray-600 mt-2.5">
           A brief overview of the diverse roles that power our network.
         </h6>
@@ -46,7 +48,7 @@ export default function Roles() {
       <Tabs value={activeRole} onValueChange={setActiveRole} className="w-full">
         <div className="flex flex-col w-full mb-6 items-center justify-center sm:hidden">
           <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn-trusty-blue">
+            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>
@@ -81,10 +83,7 @@ export default function Roles() {
             >
               {rolesContent[role.id].map((item: RoleItem) => (
                 <MotionDiv key={item.id} variants={fadeInUp}>
-                  <Card
-                    variant="hoverable"
-                    className="h-full border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
-                  >
+                  <Card variant="hoverable" className="h-full border-mulearn/10">
                     <CardHeader className="p-0">
                       <MuImage
                         src={item.image}

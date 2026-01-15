@@ -33,18 +33,11 @@ export default function LearningCirclePage() {
           {subtitle && <h2 className="mb-4">{subtitle}</h2>}
           <p className="leading-relaxed mb-8 ">{description}</p>
 
-          <MotionDiv
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block"
-          >
-            <Link
-              href={ctaLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-mulearn text-mulearn-whitish px-8 py-3 rounded-xl font-semibold shadow-md hover:bg-mulearn-duke-purple transition-colors"
-            >
-              {ctaText}
+          <MotionDiv whileTap={{ scale: 0.95 }} className="inline-block">
+            <Link href={ctaLink} target="_blank" rel="noopener noreferrer">
+              <Button variant={"default"} className="font-semibold">
+                {ctaText}
+              </Button>
             </Link>
           </MotionDiv>
         </MotionDiv>
@@ -225,13 +218,13 @@ export default function LearningCirclePage() {
         transition={{ duration: 0.5 }}
         className="w-full mt-16 bg-mulearn text-mulearn-whitish p-10 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
       >
-        <h2 className="mb-4">{ctaSection.title}</h2>
-        <p className="text-lg mb-8 text-mulearn-whitish  max-w-2xl mx-auto">
+        <h2 className="mb-4 text-mulearn-whitish">{ctaSection.title}</h2>
+        <p className="text-lg mb-8 text-mulearn-whitish max-w-2xl mx-auto">
           {ctaSection.description}
         </p>
         <MotionDiv className="inline-block">
           <Link href={ctaSection.buttonLink} target="_blank" rel="noopener noreferrer">
-            <Button variant="mulearn-inverted" className="text-lg px-6 py-3">
+            <Button variant="inverted" className="text-lg px-6 py-3">
               {ctaSection.buttonText}
             </Button>
           </Link>

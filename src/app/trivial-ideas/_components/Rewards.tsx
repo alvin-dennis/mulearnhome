@@ -13,9 +13,9 @@ const Rewards = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-2xl md:text-3xl lg:text-4xl font-bold "
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                What <span className="text-mulearn-trusty-blue">we’ve got for you</span>
-              </p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+                What <span className="text-mulearn">we’ve got for you</span>
+              </h2>
             </MotionDiv>
           </div>
 
@@ -29,7 +29,7 @@ const Rewards = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <Card variant="interactive">
                 <CardContent className="flex justify-center items-center gap-6 flex-col ">
-                  <div className="h-14 w-24 bg-mulearn-trusty-blue rounded-full shadow-mulearn-trusty-blue text-mulearn-whitish flex justify-center items-center ">
+                  <div className="h-14 w-24 bg-mulearn rounded-full shadow-mulearn text-mulearn-whitish flex justify-center items-center ">
                     1st prize
                   </div>
                   <p className="font-bold text-2xl">50,000 INR</p>

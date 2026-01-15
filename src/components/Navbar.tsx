@@ -137,7 +137,7 @@ export default function Navbar() {
 
           <MotionDiv>
             <Button
-              variant={"custom"}
+              variant={"default"}
               className="w-full py-2 px-8 font-semibold text-lg"
               onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/login"))}
             >
@@ -249,7 +249,7 @@ export default function Navbar() {
 
                   <MotionDiv>
                     <Button
-                      variant={"custom"}
+                      variant={"default"}
                       className="w-full p-4 mb-20"
                       onClick={() =>
                         refreshToken ? redirect("/dashboard/home") : redirect("/login")
