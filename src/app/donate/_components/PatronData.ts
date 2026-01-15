@@ -19,6 +19,7 @@ export interface PatronTierConfig {
   textColor: string;
 }
 
+// Founding Patron tiers (bank transfer, one-time)
 export const oneTimeTiers: PatronTierConfig[] = [
   {
     id: "diamond-founding",
@@ -31,7 +32,7 @@ export const oneTimeTiers: PatronTierConfig[] = [
     textColor: "text-[#006064]",
     benefits: [
       {
-        text: "Founding Recognition: Permanent placement as “Founding Diamond Patron”",
+        text: 'Founding Recognition: Permanent placement as "Founding Diamond Patron"',
         highlight: true,
       },
       { text: "Ecosystem Access: All Diamond Annual benefits for 5 years" },
@@ -53,11 +54,11 @@ export const oneTimeTiers: PatronTierConfig[] = [
     textColor: "text-[#546E7A]",
     benefits: [
       {
-        text: "Program Co-Creation: Recognition as “Platinum Patron” on website and flagship decks",
+        text: 'Program Co-Creation: Recognition as "Platinum Patron" on website and flagship decks',
         highlight: true,
       },
       { text: "Ecosystem Access: All Platinum Annual benefits" },
-      { text: "Branding: “Powered By” branding for 1 flagship program (3-year period)" },
+      { text: 'Branding: "Powered By" branding for 1 flagship program (3-year period)' },
       {
         text: "Talent Access: Full access to 60,000+ learner pool for surveys, pilots, and beta testing",
       },
@@ -74,7 +75,7 @@ export const oneTimeTiers: PatronTierConfig[] = [
     textColor: "text-[#B08600]",
     benefits: [
       {
-        text: "Regional Impact: Recognition as “Gold Patron” on website and select programs for 3 years",
+        text: 'Regional Impact: Recognition as "Gold Patron" on website and select programs for 3 years',
       },
       { text: "Ecosystem Access: All Gold Annual benefits for 2-3 years" },
       {
@@ -82,21 +83,59 @@ export const oneTimeTiers: PatronTierConfig[] = [
       },
     ],
   },
+];
+
+// Regular one-time donation tiers (not Founding Patron)
+export const regularOneTimeTiers: PatronTierConfig[] = [
   {
-    id: "silver-founding",
-    tier: "silver",
-    label: "Silver Patron",
+    id: "one-time-100k",
+    tier: "diamond",
+    label: "Champion",
     amount: 100000,
-    description: "Entry Patron & Community Ally",
-    limit: "Unlimited",
+    description: "Make a significant impact",
+    color: "from-cyan-50 to-white",
+    textColor: "text-[#006064]",
+    benefits: [
+      { text: "Recognition on our website as a Champion donor", highlight: true },
+      { text: "Certificate of appreciation" },
+      { text: "Exclusive updates on impact" },
+    ],
+  },
+  {
+    id: "one-time-80k",
+    tier: "platinum",
+    label: "Advocate",
+    amount: 80000,
+    description: "Support our cause",
+    color: "from-slate-50 to-white",
+    textColor: "text-[#546E7A]",
+    benefits: [
+      { text: "Recognition on our website as an Advocate donor", highlight: true },
+      { text: "Certificate of appreciation" },
+    ],
+  },
+  {
+    id: "one-time-50k",
+    tier: "gold",
+    label: "Supporter",
+    amount: 50000,
+    description: "Help us grow",
+    color: "from-amber-50 to-white",
+    textColor: "text-[#B08600]",
+    benefits: [
+      { text: "Recognition as a Supporter donor" },
+      { text: "Certificate of appreciation" },
+    ],
+  },
+  {
+    id: "one-time-30k",
+    tier: "silver",
+    label: "Friend",
+    amount: 30000,
+    description: "Every contribution counts",
     color: "from-zinc-50 to-white",
     textColor: "text-[#757575]",
-    benefits: [
-      { text: "Community Ally: Recognition as “Silver Patron” on website" },
-      {
-        text: "Visibility: Inclusion in the Patron recognition slide showcased at all major µLearn events",
-      },
-    ],
+    benefits: [{ text: "Certificate of appreciation" }],
   },
 ];
 
@@ -113,7 +152,7 @@ export const annualTiers: PatronTierConfig[] = [
     textColor: "text-[#006064]",
     benefits: [
       { text: "6 months branding window (first-pick)", highlight: true },
-      { text: "“Powered By” branding for 2 flagship events" },
+      { text: '"Powered By" branding for 2 flagship events' },
       { text: "Keynote status at Permute + 4 major events branding" },
       { text: "Dedicated Community Manager" },
       { text: "Executive Roundtable seat" },
@@ -131,7 +170,7 @@ export const annualTiers: PatronTierConfig[] = [
     textColor: "text-[#546E7A]",
     benefits: [
       { text: "6 months branding window", highlight: true },
-      { text: "“Powered By” branding for 1 flagship program" },
+      { text: '"Powered By" branding for 1 flagship program' },
       { text: "VIP seating at Permute" },
       { text: "3 AMA slots/year" },
       { text: "Full talent pool access for pilots" },
