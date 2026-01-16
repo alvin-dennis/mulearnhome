@@ -1066,6 +1066,17 @@
       "interestGroups": [
         "strategic-leadership"
       ]
+    },
+    {
+      "title": "Eyes in the Sky: Understanding Satellites",
+      "performer": "Niya Santhosh & M R Nandana",
+      "designation": "IG Leads:Space|µLearn Foundation",
+      "description": "Episode 1 introduces satellites, their purpose, and how they shape modern life.\nIt builds the core foundation for the upcoming deep-dive sessions on satellite systems",
+      "date": "17/01/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
     }
   ]
 }
