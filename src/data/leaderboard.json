@@ -114,9 +114,9 @@
     },
     {
       "username": "nanda-kshr",
-      "commits": 27,
-      "prs_opened": 17,
-      "prs_merged": 15,
+      "commits": 34,
+      "prs_opened": 22,
+      "prs_merged": 20,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Nandakishore P"
@@ -141,7 +141,7 @@
     },
     {
       "username": "github-actions[bot]",
-      "commits": 7,
+      "commits": 8,
       "prs_opened": 0,
       "prs_merged": 0,
       "issues_opened": 0,
