@@ -8,7 +8,7 @@
       "prs_opened": 42,
       "prs_merged": 41,
       "issues_opened": 63,
-      "issues_closed": 51,
+      "issues_closed": 52,
       "displayname": "Aswin Asok"
     },
     {
@@ -67,8 +67,8 @@
     },
     {
       "username": "awindsr",
-      "commits": 695,
-      "prs_opened": 189,
+      "commits": 697,
+      "prs_opened": 190,
       "prs_merged": 183,
       "issues_opened": 16,
       "issues_closed": 16,
@@ -96,8 +96,8 @@
   "monthly": [
     {
       "username": "awindsr",
-      "commits": 118,
-      "prs_opened": 28,
+      "commits": 120,
+      "prs_opened": 29,
       "prs_merged": 28,
       "issues_opened": 0,
       "issues_closed": 0,
@@ -114,8 +114,8 @@
     },
     {
       "username": "nanda-kshr",
-      "commits": 34,
-      "prs_opened": 22,
+      "commits": 35,
+      "prs_opened": 23,
       "prs_merged": 20,
       "issues_opened": 0,
       "issues_closed": 0,
@@ -123,9 +123,9 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 13,
-      "prs_opened": 0,
-      "prs_merged": 0,
+      "commits": 16,
+      "prs_opened": 1,
+      "prs_merged": 1,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Alvin Dennis"
@@ -141,7 +141,7 @@
     },
     {
       "username": "github-actions[bot]",
-      "commits": 8,
+      "commits": 10,
       "prs_opened": 0,
       "prs_merged": 0,
       "issues_opened": 0,
