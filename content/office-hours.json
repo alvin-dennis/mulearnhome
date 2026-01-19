@@ -1077,6 +1077,17 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "Agile",
+      "performer": "Rasha Hasoon",
+      "designation": "PMP IG Lead",
+      "description": "A quick, practical introduction to Agile—covering core principles, workflows, and real-world examples. Learn how Agile helps teams adapt faster, collaborate better, and deliver value continuously.",
+      "date": "19/01/2026",
+      "link": "http://mulearn.org/r/pmp-officehour",
+      "interestGroups": [
+        "project-management"
+      ]
     }
   ]
 }
