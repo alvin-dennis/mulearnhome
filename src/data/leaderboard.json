@@ -131,6 +131,15 @@
       "displayname": "Alvin Dennis"
     },
     {
+      "username": "github-actions[bot]",
+      "commits": 11,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "github-actions[bot]"
+    },
+    {
       "username": "nashnsulthan",
       "commits": 8,
       "prs_opened": 1,
@@ -138,15 +147,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Nash N Sulthan"
-    },
-    {
-      "username": "github-actions[bot]",
-      "commits": 10,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "github-actions[bot]"
     },
     {
       "username": "EzioAuditore-daFirenze",
