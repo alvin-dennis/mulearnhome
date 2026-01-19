@@ -198,6 +198,12 @@ export default defineConfig({
                   { label: "Cloud", value: "cloud" },
                 ],
               },
+              {
+                type: "image",
+                name: "poster_thumbnail",
+                label: "Poster Thumbnail",
+                description: "Image to display on the event card instead of the default icon",
+              },
             ],
           },
         ],

@@ -107,7 +107,9 @@ export function GenericEventCard({
   return (
     <Card variant="hoverable" className="h-full flex flex-col">
       {/* Thumbnail Section */}
-      <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative shrink-0">
+      <div
+        className={`${variant === "office-hour" ? "aspect-[3/4] h-auto" : "h-48"} bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative shrink-0`}
+      >
         {event.thumbnail ? (
           <MuImage
             src={event.thumbnail}
