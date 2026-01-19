@@ -1088,6 +1088,17 @@
       "interestGroups": [
         "project-management"
       ]
+    },
+    {
+      "title": "Red Teaming",
+      "performer": "Dany Kozhy",
+      "designation": "Software Cluster Lead",
+      "description": "Red teaming is a process for testing cybersecurity effectiveness where ethical hackers conduct a simulated and nondestructive cyberattack. The simulated attack helps an organization identify vulnerabilities in its system and make targeted improvements to security operations.",
+      "date": "19/01/2026",
+      "link": "https://mulearn.org/r/cyb-officehour",
+      "interestGroups": [
+        "cyber-security"
+      ]
     }
   ]
 }
