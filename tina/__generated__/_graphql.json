@@ -1261,6 +1261,12 @@
             "kind": "ListType",
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": { "kind": "Name", "value": "poster_thumbnail" },
+          "arguments": [],
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },
@@ -1352,6 +1358,11 @@
           "kind": "InputValueDefinition",
           "name": { "kind": "Name", "value": "interestGroups" },
           "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": { "kind": "Name", "value": "poster_thumbnail" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ImageFilter" } }
         }
       ]
     },
@@ -2659,6 +2670,11 @@
             "kind": "ListType",
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": { "kind": "Name", "value": "poster_thumbnail" },
+          "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
         }
       ]
     },

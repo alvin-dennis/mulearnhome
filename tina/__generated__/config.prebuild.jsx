@@ -176,6 +176,12 @@ var config_default = defineConfig({
                   { label: "Human Resources", value: "human-resources" },
                   { label: "Cloud", value: "cloud" }
                 ]
+              },
+              {
+                type: "image",
+                name: "poster_thumbnail",
+                label: "Poster Thumbnail",
+                description: "Image to display on the event card instead of the default icon"
               }
             ]
           }
