@@ -199,6 +199,15 @@
                 "namespace": ["officeHours", "sessions", "interestGroups"],
                 "searchable": true,
                 "uid": false
+              },
+              {
+                "type": "image",
+                "name": "poster_thumbnail",
+                "label": "Poster Thumbnail",
+                "description": "Image to display on the event card instead of the default icon",
+                "namespace": ["officeHours", "sessions", "poster_thumbnail"],
+                "searchable": false,
+                "uid": false
               }
             ],
             "namespace": ["officeHours", "sessions"],
@@ -1777,6 +1786,12 @@
               "kind": "ListType",
               "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
             }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "poster_thumbnail" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
@@ -1868,6 +1883,11 @@
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "interestGroups" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "poster_thumbnail" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ImageFilter" } }
           }
         ]
       },
@@ -3178,6 +3198,11 @@
               "kind": "ListType",
               "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
             }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "poster_thumbnail" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           }
         ]
       },
