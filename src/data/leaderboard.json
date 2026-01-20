@@ -67,7 +67,7 @@
     },
     {
       "username": "awindsr",
-      "commits": 697,
+      "commits": 701,
       "prs_opened": 190,
       "prs_merged": 183,
       "issues_opened": 16,
@@ -96,7 +96,7 @@
   "monthly": [
     {
       "username": "awindsr",
-      "commits": 120,
+      "commits": 124,
       "prs_opened": 29,
       "prs_merged": 28,
       "issues_opened": 0,
@@ -116,16 +116,25 @@
       "username": "nanda-kshr",
       "commits": 35,
       "prs_opened": 23,
-      "prs_merged": 20,
+      "prs_merged": 21,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Nandakishore P"
     },
     {
       "username": "alvin-dennis",
-      "commits": 16,
-      "prs_opened": 1,
-      "prs_merged": 1,
+      "commits": 17,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "issues_opened": 0,
+      "issues_closed": 0,
+      "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "github-actions[bot]",
+      "commits": 12,
+      "prs_opened": 0,
+      "prs_merged": 0,
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "github-actions[bot]"
@@ -140,13 +149,22 @@
       "displayname": "Nash N Sulthan"
     },
     {
-      "username": "github-actions[bot]",
-      "commits": 10,
-      "prs_opened": 0,
-      "prs_merged": 0,
+      "username": "Arya3077",
+      "commits": 4,
+      "prs_opened": 2,
+      "prs_merged": 2,
       "issues_opened": 0,
       "issues_closed": 0,
-      "displayname": "github-actions[bot]"
+      "displayname": "Arya Shibu Dhanya"
+    },
+    {
+      "username": "Amith-Abey-Stephen",
+      "commits": 3,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "issues_opened": 1,
+      "issues_closed": 1,
+      "displayname": "Amith Abey Stephen"
     },
     {
       "username": "EzioAuditore-daFirenze",
@@ -156,24 +174,6 @@
       "issues_opened": 0,
       "issues_closed": 0,
       "displayname": "Anerudh M K"
-    },
-    {
-      "username": "Amith-Abey-Stephen",
-      "commits": 3,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "issues_opened": 1,
-      "issues_closed": 1,
-      "displayname": "Amith Abey Stephen"
-    },
-    {
-      "username": "Arya3077",
-      "commits": 1,
-      "prs_opened": 2,
-      "prs_merged": 1,
-      "issues_opened": 0,
-      "issues_closed": 0,
-      "displayname": "Arya Shibu Dhanya"
     },
     {
       "username": "Sreya-STP",
