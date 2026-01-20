@@ -135,7 +135,7 @@ export interface BankTransferPayload {
   donationType: DonationType;
   isOrganisation: boolean;
   organisationName?: string;
-  proofUrl: string;
+  proofUrl?: string;
   referenceCode: string;
 }
 

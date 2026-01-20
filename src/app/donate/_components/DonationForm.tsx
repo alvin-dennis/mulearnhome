@@ -46,8 +46,6 @@ export default function DonationForm() {
   const [donationType, setDonationType] = useState<DonationType>("monthly");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
   const [customAmount, setCustomAmount] = useState<string>("");
-  const [proofUrl, setProofUrl] = useState<string>("");
-  const [proofUrlError, setProofUrlError] = useState<string>("");
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [showFoundingPatron, setShowFoundingPatron] = useState(false);
   const [foundingPatronTier, setFoundingPatronTier] = useState<PatronTierConfig | null>(null);
@@ -134,8 +132,6 @@ export default function DonationForm() {
   const handleFoundingPatronClick = () => {
     setShowFoundingPatron(true);
     setFoundingPatronTier(null);
-    setProofUrl("");
-    setProofUrlError("");
   };
 
   const handleFoundingTierSelect = (tier: PatronTierConfig) => {
@@ -147,8 +143,6 @@ export default function DonationForm() {
   const closeFoundingPatron = () => {
     setShowFoundingPatron(false);
     setFoundingPatronTier(null);
-    setProofUrl("");
-    setProofUrlError("");
     reset();
   };
 
@@ -156,20 +150,6 @@ export default function DonationForm() {
     try {
       // Founding Patron (Bank Transfer) flow
       if (showFoundingPatron && foundingPatronTier) {
-        if (!proofUrl.trim()) {
-          setProofUrlError("Please provide the payment proof URL");
-          toast.error("Please provide the payment proof URL");
-          return;
-        }
-        try {
-          new URL(proofUrl);
-          setProofUrlError("");
-        } catch {
-          setProofUrlError("Please enter a valid URL");
-          toast.error("Please enter a valid URL for payment proof");
-          return;
-        }
-
         toast.loading("Submitting bank transfer details...", { id: "donation-loading" });
 
         await submitBankTransfer({
@@ -183,7 +163,6 @@ export default function DonationForm() {
           donationType: "one-time",
           isOrganisation: data.isOrganisation,
           organisationName: data.organisationName,
-          proofUrl: proofUrl,
           referenceCode: referenceCode,
         });
 
@@ -559,58 +538,7 @@ export default function DonationForm() {
                         </div>
                       </div>
                     ))}
-
-                    {/* Reference Code */}
-                    <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-xs text-mulearn-gray-600 uppercase tracking-wide font-semibold">
-                            Reference Code
-                          </p>
-                          <p className="text-lg font-bold font-mono text-amber-600">
-                            {referenceCode}
-                          </p>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => copyToClipboard(referenceCode, "referenceCode")}
-                          className="p-2 bg-white hover:bg-mulearn-greyish/10 rounded-lg border border-mulearn-gray-600/20 transition-colors"
-                        >
-                          {copiedField === "referenceCode" ? (
-                            <Check className="w-4 h-4 text-green-500" />
-                          ) : (
-                            <Copy className="w-4 h-4 text-mulearn-gray-600" />
-                          )}
-                        </button>
-                      </div>
-                      <p className="text-xs text-mulearn-gray-600 mt-2">
-                        Include this reference code in your bank transfer remark/description.
-                      </p>
-                    </div>
                   </div>
-                </div>
-
-                {/* Proof URL Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="proofUrl" className="text-mulearn-gray-600">
-                    Payment Proof URL <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="proofUrl"
-                    type="url"
-                    value={proofUrl}
-                    onChange={(e) => {
-                      setProofUrl(e.target.value);
-                      if (proofUrlError) setProofUrlError("");
-                    }}
-                    placeholder="https://example.com/payment-screenshot.png"
-                    className={`bg-white border-mulearn-gray-600/20 focus:border-amber-500 ${proofUrlError ? "border-red-500" : ""}`}
-                  />
-                  {proofUrlError && <p className="text-xs text-red-500">{proofUrlError}</p>}
-                  <p className="text-xs text-mulearn-gray-600">
-                    Provide a link to your payment receipt or screenshot (e.g., Google Drive,
-                    Dropbox).
-                  </p>
                 </div>
               </div>
             </>
@@ -676,7 +604,7 @@ export default function DonationForm() {
                   type="submit"
                   size="lg"
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-amber-500 shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-[1.02] transition-all"
-                  disabled={!isValid || !proofUrl.trim()}
+                  disabled={!isValid}
                 >
                   Submit for Verification
                 </Button>
