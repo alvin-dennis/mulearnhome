@@ -69,6 +69,7 @@ src/lib/env/
 ### Setup
 
 1. **Copy the example file:**
+
    ```bash
    cp .env.example .env.local
    ```
@@ -77,9 +78,11 @@ src/lib/env/
    Edit `.env.local` with your actual credentials (never commit this file!)
 
 3. **Start the app:**
+
    ```bash
    npm run dev
    ```
+
    The app will validate all variables on boot and crash with clear error messages if anything is missing or invalid.
 
 ### Usage
@@ -109,19 +112,24 @@ const cdnUrl = clientEnv.NEXT_PUBLIC_CDN_URL;
 #### 1. For **Client-Side** Variables (Safe to Expose)
 
 **Step 1:** Add to `.env.local` with `NEXT_PUBLIC_` prefix:
+
 ```bash
 NEXT_PUBLIC_MY_API_URL=https://api.example.com
 ```
 
 **Step 2:** Add to `src/lib/env/env.client.ts`:
+
 ```ts
 const clientEnvSchema = z.object({
   // ... existing fields
-  NEXT_PUBLIC_MY_API_URL: z.string().url("NEXT_PUBLIC_MY_API_URL must be a valid URL"),
+  NEXT_PUBLIC_MY_API_URL: z
+    .string()
+    .url("NEXT_PUBLIC_MY_API_URL must be a valid URL"),
 });
 ```
 
 **Step 3:** Use in your code:
+
 ```ts
 import { clientEnv } from "@/lib/env";
 console.log(clientEnv.NEXT_PUBLIC_MY_API_URL);
@@ -159,25 +167,25 @@ Use Zod validators for robust type checking:
 
 ```ts
 // String validators
-z.string()                           // Any string
-z.string().min(1)                    // Non-empty string
-z.string().email()                   // Email format
-z.string().url()                     // Valid URL
+z.string(); // Any string
+z.string().min(1); // Non-empty string
+z.string().email(); // Email format
+z.string().url(); // Valid URL
 
 // Number validators
-z.number()                           // Any number
-z.number().positive()                // Positive numbers only
-z.coerce.number()                    // Convert string to number
+z.number(); // Any number
+z.number().positive(); // Positive numbers only
+z.coerce.number(); // Convert string to number
 
 // Enum validators
-z.enum(["dev", "staging", "prod"])   // Only these values
+z.enum(["dev", "staging", "prod"]); // Only these values
 
 // Optional with defaults
-z.string().optional()                // Can be undefined
-z.string().default("fallback")       // Use default if missing
+z.string().optional(); // Can be undefined
+z.string().default("fallback"); // Use default if missing
 
 // Custom transforms
-z.string().transform((val) => val.toUpperCase())
+z.string().transform((val) => val.toUpperCase());
 ```
 
 ### Security Best Practices
@@ -272,6 +280,7 @@ All UI in this project uses the MuLearn brand color palette and font system:
 
 Defined as CSS variables in `src/app/globals.css`:
 
+- `--mulearn`: #0961F5;
 - `--mulearn-trusty`: linear-gradient(135deg, #2E85FE 0%, #AF2EE6 100%)
 - `--mulearn-trusty-blue`: #2E85FE
 - `--mulearn-duke-purple`: #AF2EE6
@@ -302,9 +311,9 @@ Defined as CSS variables in `src/app/globals.css`:
 ### Usage Example
 
 ```tsx
-<Button variant={"custom"}>MuLearn Gradient Button</Button>
-<Card className="bg-mulearn-trusty text-mulearn-whitish">...</Card>
-<h1 className="font-display text-mulearn-trusty">Gradient Heading</h1>
+<Button variant={"default"}>MuLearn Button</Button>
+<Card className="bg-mulearn text-mulearn-whitish">...</Card>
+<h1 className="font-display text-mulearn">Heading</h1>
 ```
 
 ---

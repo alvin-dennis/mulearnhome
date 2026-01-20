@@ -48,7 +48,7 @@ export default function SearchAndFilter({
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                variant="mulearn-outline"
+                variant="outline"
                 className="w-12 h-12 p-0 rounded-full flex items-center justify-center gap-2"
               >
                 <Filter className="w-4 h-4" />

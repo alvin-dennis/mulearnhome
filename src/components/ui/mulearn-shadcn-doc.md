@@ -6,6 +6,7 @@ All components use the following CSS variables (defined in `globals.css`):
 
 ```css
 :root {
+  --mulearn: #0961F5;
   --mulearn-trusty: linear-gradient(135deg, #2e85fe 0%, #af2ee6 100%);
   --mulearn-trusty-blue: #2e85fe;
   --mulearn-duke-purple: #af2ee6;
@@ -26,9 +27,9 @@ All components use the following CSS variables (defined in `globals.css`):
 
 ```tsx
 <Button variant="mulearn">MuLearn Gradient Button</Button>
-<Button variant="mulearn-outline">Outline Button</Button>
-<Button variant="mulearn-purple">Purple Button</Button>
-<Button variant="mulearn-ghost">Ghost Button</Button>
+<Button variant="outline">Outline Button</Button>
+<Button variant="purple">Purple Button</Button>
+<Button variant="ghost">Ghost Button</Button>
 ```
 
 ### Card

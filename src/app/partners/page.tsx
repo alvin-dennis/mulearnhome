@@ -285,13 +285,13 @@ export default function PartnersPage() {
               </p>
               <div className="flex flex-col items-center lg:flex-row gap-4 justify-center pt-4">
                 <Link href="/be-a-part/company">
-                  <Button type="button" variant="mulearn-inverted" className="px-8 py-4">
+                  <Button type="button" variant="inverted" className="px-8 py-4">
                     Join as Company
                     <ArrowRight className="w-5 h-5 text-mulearn !text-mulearn-trusty-blue" />
                   </Button>
                 </Link>
                 <Link href="/be-a-part/campus">
-                  <Button type="button" variant="mulearn-inverted" className="px-6 py-4">
+                  <Button type="button" variant="inverted" className="px-6 py-4">
                     Join as Community
                     <ArrowRight className="w-5 h-5 text-mulearn !text-mulearn-trusty-blue" />
                   </Button>

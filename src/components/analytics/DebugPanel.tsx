@@ -7,12 +7,13 @@
  * Only visible when NODE_ENV is 'development'.
  */
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Activity, Bug, ChevronDown, ChevronUp, EyeOff, Trash2, User } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { CONSENT_CONFIG } from "@/lib/analytics/config";
 import { getStoredConsent, getVisitorId, isBrowser } from "@/lib/analytics/consent";
 import type { ConsentState, DebugEventEntry } from "@/lib/analytics/types";
+import { MotionButton, MotionDiv } from "../MuFramer";
 
 // Only render in development
 const isDev = process.env.NODE_ENV === "development";
@@ -101,7 +102,7 @@ export default function DebugPanel() {
   return (
     <>
       {/* Toggle Button */}
-      <motion.button
+      <MotionButton
         className="fixed bottom-20 left-4 z-[9998] rounded-full bg-gray-900 p-3 text-white shadow-lg transition-all hover:bg-gray-800"
         onClick={toggleOpen}
         whileHover={{ scale: 1.05 }}
@@ -114,12 +115,12 @@ export default function DebugPanel() {
             {events.length}
           </span>
         )}
-      </motion.button>
+      </MotionButton>
 
       {/* Panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <MotionDiv
             initial={{ x: -320, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -320, opacity: 0 }}
@@ -156,7 +157,7 @@ export default function DebugPanel() {
 
             <AnimatePresence>
               {!isMinimized && (
-                <motion.div
+                <MotionDiv
                   initial={{ height: 0 }}
                   animate={{ height: "auto" }}
                   exit={{ height: 0 }}
@@ -259,10 +260,10 @@ export default function DebugPanel() {
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </MotionDiv>
               )}
             </AnimatePresence>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
     </>

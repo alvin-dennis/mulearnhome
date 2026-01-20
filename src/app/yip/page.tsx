@@ -177,7 +177,7 @@ export default function YipPage() {
               </div>
               <Link href="https://yip.kerala.gov.in/" target="_blank" rel="noopener noreferrer">
                 <Button
-                  variant={"custom"}
+                  variant={"default"}
                   className="absolute mt-[-2rem] mr-12 right-0 z-10 shadow-[0px_17px_31px_rgba(0,0,0,0.12)] rounded-xl font-semibold text-[1.25rem] px-[4.5rem] py-3 leading-[33px] capitalize"
                 >
                   Apply Now

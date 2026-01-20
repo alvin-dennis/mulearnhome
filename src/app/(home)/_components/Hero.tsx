@@ -77,7 +77,7 @@ export default function Hero() {
             variants={textVariant}
           >
             <Button
-              variant={"custom"}
+              variant={"default"}
               className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
               onClick={() => {
                 const path = refreshToken ? "/dashboard/home" : "/register";
@@ -97,7 +97,8 @@ export default function Hero() {
           src="/assets/illustration.webp"
           alt="Community illustration showcasing µLearn peer learning platform"
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
-          priority
+          preload
+          fetchPriority="high"
           quality={85}
           width={1300}
           height={900}

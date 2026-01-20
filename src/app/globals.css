@@ -4,6 +4,7 @@
 
 :root {
     /* MuLearn Brand Colors */
+    --mulearn: #0961F5;
     --mulearn-trusty: linear-gradient(135deg, #2e85fe 0%, #af2ee6 100%);
     --mulearn-trusty-blue: #2e85fe;
     --mulearn-duke-purple: #af2ee6;
@@ -175,6 +176,7 @@ h5 {
     --color-chart-4: var(--chart-4);
     --color-chart-5: var(--chart-5);
     /* MuLearn brand color tokens */
+    --color-mulearn: var(--mulearn);
     --color-mulearn-trusty: var(--mulearn-trusty);
     --color-mulearn-trusty-blue: var(--mulearn-trusty-blue);
     --color-mulearn-duke-purple: var(--mulearn-duke-purple);
@@ -198,12 +200,7 @@ h5 {
     }
 
     body {
-        font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
         @apply bg-background text-foreground;
-    }
-
-    .font-sans {
-        font-family: var(--font-sans, "Plus Jakarta Sans", sans-serif);
     }
     
     h1 {
@@ -230,17 +227,6 @@ h5 {
     p {
         @apply text-base leading-relaxed;
     }
-}
-
-.text-mulearn {
-    background: linear-gradient(to right, #6366f1, #2E85FE);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.bg-mulearn {
-    background: linear-gradient(to right, #6366f1, #2E85FE);
 }
 
 .swiper-pagination-bullet {

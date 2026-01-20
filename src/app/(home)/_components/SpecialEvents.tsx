@@ -24,7 +24,9 @@ export default function SpecialEvents() {
         viewport={{ once: true }}
       >
         <MotionDiv variants={fadeInUp} className="text-center mb-12">
-          <h1 className="mb-4">Special Events</h1>
+          <h1 className="mb-4">
+            Special <span className="text-mulearn">Events</span>
+          </h1>
           <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
             Discover exclusive events designed to inspire innovation, enhance skills, and foster
             meaningful connections across technology, management, and creativity.
@@ -37,7 +39,7 @@ export default function SpecialEvents() {
           </div>
           <div className="mt-12">
             <Link href="/events">
-              <Button variant={"custom"} className="px-8 py-3 font-semibold">
+              <Button variant={"default"} className="px-8 py-3 font-semibold">
                 View All Events
               </Button>
             </Link>

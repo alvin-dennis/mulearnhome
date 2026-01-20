@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -9,6 +9,7 @@ import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
 import { TabButton } from "@/app/events/_components/TabButton";
+import { MotionSection } from "@/components/MuFramer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -161,7 +162,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
               community-driven learning zone.
             </p>
 
-            <Button variant={"custom"} className="px-8 py-3 gap-2 rounded-full">
+            <Button variant={"default"} className="px-8 py-3 gap-2 rounded-full">
               <PlayCircle className="w-5 h-5" />
               Join Next Session
             </Button>
@@ -192,7 +193,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       </div>
       <AnimatePresence mode="wait">
         {view === "upcoming" && (
-          <motion.section
+          <MotionSection
             key="upcoming"
             variants={motionVariants}
             initial="initial"
@@ -227,11 +228,11 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
                 perPage={itemsPerPage}
               />
             </div>
-          </motion.section>
+          </MotionSection>
         )}
 
         {view === "previous" && (
-          <motion.section
+          <MotionSection
             key="previous"
             variants={motionVariants}
             initial="initial"
@@ -254,7 +255,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
                 perPage={itemsPerPage}
               />
             </div>
-          </motion.section>
+          </MotionSection>
         )}
       </AnimatePresence>
     </div>

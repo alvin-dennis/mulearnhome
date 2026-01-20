@@ -1,5 +1,4 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
-import { Card, CardContent } from "@/components/ui/card";
 import type { VideoTestimonial } from "@/lib/types";
 
 interface VideoTestimonialCardProps {
@@ -8,17 +7,13 @@ interface VideoTestimonialCardProps {
 
 export default function VideoTestimonialCard({ testimonial }: VideoTestimonialCardProps) {
   return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-0">
-        <div className="w-full h-full aspect-video">
-          <YouTubeEmbed
-            videoid={testimonial.videoUrl}
-            style="border-none"
-            playlabel="true"
-            params="disablekb=1&enablejsapi=1&playsinline=1"
-          />
-        </div>
-      </CardContent>
-    </Card>
+    <div className="relative w-full inset-0 h-full overflow-hidden mb-10">
+      <YouTubeEmbed
+        videoid={testimonial.videoUrl}
+        playlabel="true"
+        style="border: none"
+        params="rel=0&modestbranding=1&playsinline=1"
+      />
+    </div>
   );
 }

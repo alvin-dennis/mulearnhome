@@ -64,7 +64,7 @@ export default function Programs() {
                       rel="noopener noreferrer"
                     >
                       <Button
-                        variant={"custom"}
+                        variant={"default"}
                         className=" px-6 py-3 text-sm font-semibold md:text-base"
                       >
                         Know More

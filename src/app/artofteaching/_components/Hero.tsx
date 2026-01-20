@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { artOfTeachingUrls } from "@/data/events";
 import { cdnUrl } from "@/services/cdn";
@@ -22,7 +22,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-2 mt-2 w-full ">
             <Link href={artOfTeachingUrls.registerNow} className="no-underline w-full">
               <Button
-                variant={"mulearn-trusty"}
+                variant={"default"}
                 className="w-full px-6 py-3 text-center font-bold mt-4 transition-colors"
               >
                 Register Now
@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="flex flex-row justify-center items-center gap-2 mt-2 w-full">
               <Link href="/enablers" className="flex-1">
                 <Button
-                  variant={"mulearn-outline"}
+                  variant={"outline"}
                   className="w-full px-6 py-2 font-bold transition-colors"
                 >
                   Enablers
@@ -40,7 +40,7 @@ const Hero = () => {
               </Link>
               <Link href="/" className="flex-1">
                 <Button
-                  variant={"mulearn-outline"}
+                  variant={"outline"}
                   className="w-full px-6 py-2 font-bold transition-colors"
                 >
                   µlearn
@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
 
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <Image
+          <MuImage
             src={teachingGif}
             alt="Art of Teaching Illustration"
             width={400}

@@ -25,6 +25,16 @@ const MotionSection = React.forwardRef<HTMLElement, HTMLMotionProps<"section">>(
   },
 );
 
+const MotionButton = React.forwardRef<HTMLButtonElement, HTMLMotionProps<"button">>(
+  function MotionButton({ children, ...props }, ref) {
+    return (
+      <motion.button ref={ref} {...props}>
+        {children}
+      </motion.button>
+    );
+  },
+);
+
 const MotionHeader = React.forwardRef<HTMLElement, HTMLMotionProps<"header">>(function MotionHeader(
   { children, ...props },
   ref,
@@ -123,9 +133,31 @@ const MotionLi = React.forwardRef<HTMLLIElement, HTMLMotionProps<"li">>(function
   );
 });
 
+const MotionTBody = React.forwardRef<HTMLTableSectionElement, HTMLMotionProps<"tbody">>(
+  function MotionTBody({ children, ...props }, ref) {
+    return (
+      <motion.tbody ref={ref} {...props}>
+        {children}
+      </motion.tbody>
+    );
+  },
+);
+
+const MotionTR = React.forwardRef<HTMLTableRowElement, HTMLMotionProps<"tr">>(function MotionTR(
+  { children, ...props },
+  ref,
+) {
+  return (
+    <motion.tr ref={ref} {...props}>
+      {children}
+    </motion.tr>
+  );
+});
+
 export {
   MotionDiv,
   MotionSection,
+  MotionButton,
   MotionHeader,
   MotionH1,
   MotionH2,
@@ -135,4 +167,6 @@ export {
   MotionFooter,
   MotionA,
   MotionLi,
+  MotionTBody,
+  MotionTR,
 };

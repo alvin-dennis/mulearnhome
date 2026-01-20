@@ -111,6 +111,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
               width={48}
               height={48}
               className="w-full h-full object-cover rounded-full"
+              unoptimized
             />
           </div>
 

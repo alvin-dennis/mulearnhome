@@ -17,8 +17,19 @@ import {
   donationFormSchema,
 } from "@/lib/schemas/donation";
 import { cn } from "@/lib/utils";
-import { generateReferenceCode, submitBankTransfer, submitSubscription } from "@/services/donation";
-import { annualTiers, monthlyTiers, oneTimeTiers, type PatronTierConfig } from "./PatronData";
+import {
+  generateReferenceCode,
+  submitBankTransfer,
+  submitDonationForm,
+  submitSubscription,
+} from "@/services/donation";
+import {
+  annualTiers,
+  monthlyTiers,
+  oneTimeTiers,
+  type PatronTierConfig,
+  regularOneTimeTiers,
+} from "./PatronData";
 
 // Bank details for display
 const BANK_DETAILS = {
@@ -87,6 +98,8 @@ export default function DonationForm() {
         return annualTiers;
       case "monthly":
         return monthlyTiers;
+      case "one-time":
+        return regularOneTimeTiers;
       default:
         return monthlyTiers;
     }
@@ -178,8 +191,14 @@ export default function DonationForm() {
         return;
       }
 
-      // Normal Razorpay subscription flow
-      toast.loading("Setting up your recurring support...", { id: "donation-loading" });
+      // Determine payment flow based on donation type
+      const isOneTime = data.donationType === "one-time";
+
+      if (isOneTime) {
+        toast.loading("Processing your donation...", { id: "donation-loading" });
+      } else {
+        toast.loading("Setting up your recurring support...", { id: "donation-loading" });
+      }
 
       const payload = {
         amount: data.donationAmount,
@@ -191,10 +210,17 @@ export default function DonationForm() {
         donationType: data.donationType,
         isOrganisation: data.isOrganisation,
         organisationName: data.organisationName,
-        donation_name: data.donationName,
+        donationName: data.donationName,
       };
 
-      await submitSubscription(payload);
+      if (isOneTime) {
+        // One-time donation - use Orders API (single payment)
+        await submitDonationForm(payload);
+      } else {
+        // Recurring donation (monthly/yearly) - use Subscriptions API
+        await submitSubscription(payload);
+      }
+
       toast.dismiss("donation-loading");
     } catch (error) {
       toast.dismiss("donation-loading");
@@ -707,7 +733,7 @@ export default function DonationForm() {
                   Want to become a Founding Patron?
                 </h3>
                 <p className="text-sm text-mulearn-gray-600">
-                  One-time contributions starting from ₹1,00,000
+                  One-time contributions starting from ₹5,00,000
                 </p>
               </div>
             </div>
@@ -726,18 +752,24 @@ export default function DonationForm() {
           onValueChange={(v) => setDonationType(v as DonationType)}
           className="space-y-6"
         >
-          <TabsList className="w-full h-auto p-1 bg-mulearn-greyish/10 rounded-xl border border-mulearn-gray-600/10 grid grid-cols-2 gap-1">
+          <TabsList className="w-full h-auto p-1 bg-mulearn-greyish/10 rounded-xl border border-mulearn-gray-600/10 grid grid-cols-3 gap-1">
             <TabsTrigger
               value="monthly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Monthly Supporter
+              Monthly
             </TabsTrigger>
             <TabsTrigger
               value="yearly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Annual Supporter
+              Annually
+            </TabsTrigger>
+            <TabsTrigger
+              value="one-time"
+              className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
+            >
+              One Time
             </TabsTrigger>
           </TabsList>
 
@@ -818,7 +850,9 @@ export default function DonationForm() {
                             isSelected ? tier.textColor : "text-mulearn-gray-600",
                           )}
                         >
-                          Per {donationType === "monthly" ? "Month" : "Year"}
+                          {donationType === "one-time"
+                            ? "One-Time"
+                            : `Per ${donationType === "monthly" ? "Month" : "Year"}`}
                         </div>
                       </div>
                     </div>
@@ -1053,8 +1087,9 @@ export default function DonationForm() {
             </div>
             <Button
               type="submit"
+              variant={"default"}
               size="lg"
-              className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-mulearn-trusty-blue shadow-xl shadow-mulearn-trusty-blue/20 hover:shadow-2xl hover:shadow-mulearn-trusty-blue/30 hover:scale-[1.02] transition-all"
+              className="w-full sm:w-auto text-base font-semibold"
               disabled={!isValid || totalAmount === 0}
             >
               Proceed to Payment

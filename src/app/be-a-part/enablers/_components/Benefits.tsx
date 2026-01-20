@@ -22,7 +22,9 @@ export default function Benefits() {
             transition={{ duration: 0.5, delay: 0 }}
             className={`${enablers.benefits[0].bgColor} ${enablers.benefits[0].textColor} relative overflow-hidden rounded-3xl p-8 shadow-lg`}
           >
-            <h3 className=" mb-6 text-xl font-bold md:text-2xl">{enablers.benefits[0].title}</h3>
+            <h3 className=" mb-6 text-xl font-bold text-mulearn-whitish md:text-2xl">
+              {enablers.benefits[0].title}
+            </h3>
             <ul className=" space-y-4">
               {enablers.benefits[0].items.map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
@@ -66,7 +68,9 @@ export default function Benefits() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className={`${enablers.benefits[1].bgColor} ${enablers.benefits[1].textColor} relative overflow-hidden rounded-3xl p-8 shadow-lg`}
           >
-            <h3 className=" mb-6 text-xl font-bold md:text-2xl">{enablers.benefits[1].title}</h3>
+            <h3 className=" mb-6 text-xl font-bold text-mulearn-whitish md:text-2xl">
+              {enablers.benefits[1].title}
+            </h3>
             <ul className=" space-y-4">
               {enablers.benefits[1].items.map((item) => (
                 <li key={item.text} className="flex items-start gap-3">

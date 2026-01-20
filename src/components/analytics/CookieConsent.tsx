@@ -7,11 +7,12 @@
  * Premium minimal design with subtle animations.
  */
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Cookie, Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useConsentManager } from "@/hooks/useConsentManager";
+import { MotionDiv } from "../MuFramer";
 import CookiePreferencesModal from "./CookiePreferencesModal";
 
 export default function CookieConsent() {
@@ -44,7 +45,7 @@ export default function CookieConsent() {
     <>
       <AnimatePresence mode="wait">
         {showBanner && !isPreferencesOpen && (
-          <motion.div
+          <MotionDiv
             ref={bannerRef}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -122,7 +123,7 @@ export default function CookieConsent() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
 

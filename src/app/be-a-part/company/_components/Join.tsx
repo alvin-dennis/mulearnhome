@@ -52,9 +52,7 @@ export default function HowToJoin() {
                     </div>
 
                     <div className="flex-1 pl-16 relative z-20">
-                      <h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
-                        {step.title}
-                      </h3>
+                      <h3 className="text-xl font-bold text-mulearn mb-3">{step.title}</h3>
                       <p className="text-lg text-mulearn-blackish max-w-xl">{step.description}</p>
                     </div>
                   </div>
@@ -84,9 +82,7 @@ export default function HowToJoin() {
                     </div>
 
                     <div className="flex-1 pr-16 text-right relative z-20">
-                      <h3 className="text-xl font-bold text-mulearn-trusty-blue mb-3">
-                        {step.title}
-                      </h3>
+                      <h3 className="text-xl font-bold text-mulearn mb-3">{step.title}</h3>
                       <p className="text-lg text-mulearn-blackish max-w-xl ml-auto">
                         {step.description}
                       </p>
@@ -137,7 +133,7 @@ export default function HowToJoin() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={"custom"} className="px-4 py-3">
+            <Button variant={"default"} className="px-4 py-3">
               Join as a Company Partner
             </Button>
           </Link>

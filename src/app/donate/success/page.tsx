@@ -1,8 +1,9 @@
 "use client";
 
+import confetti from "canvas-confetti";
 import { Check, Clock, Copy, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,41 @@ export default function DonateSuccessPage() {
   const [donationData, setDonationData] = useState<DonationData | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Confetti celebration effect
+  const triggerConfetti = useCallback(() => {
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+    const interval = window.setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+
+      // Confetti from left side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+        colors: ["#5bc0de", "#0275d8", "#5cb85c", "#f0ad4e", "#d9534f", "#6c5ce7", "#00b894"],
+      });
+
+      // Confetti from right side
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+        colors: ["#5bc0de", "#0275d8", "#5cb85c", "#f0ad4e", "#d9534f", "#6c5ce7", "#00b894"],
+      });
+    }, 250);
+  }, []);
+
   useEffect(() => {
     const storedData = localStorage.getItem("donationData");
     if (storedData) {
@@ -31,6 +67,13 @@ export default function DonateSuccessPage() {
         const data = JSON.parse(storedData);
         setDonationData(data);
         setLoading(false);
+
+        // Trigger confetti for successful payments (not pending bank transfers)
+        if (!data.isBankTransfer) {
+          setTimeout(() => {
+            triggerConfetti();
+          }, 300);
+        }
       } catch (error) {
         console.error("Failed to parse donation data:", error);
         setTimeout(() => router.push("/donate"), 3000);
@@ -38,7 +81,7 @@ export default function DonateSuccessPage() {
     } else {
       setTimeout(() => router.push("/donate"), 3000);
     }
-  }, [router]);
+  }, [router, triggerConfetti]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -222,7 +265,7 @@ export default function DonateSuccessPage() {
             )}
 
             <Button
-              variant="custom"
+              variant="default"
               onClick={() => router.push("/")}
               className="w-full h-12 rounded-xl text-base font-semibold shadow-lg shadow-mulearn-trusty-blue/20 hover:shadow-xl transition-all"
             >
@@ -235,7 +278,7 @@ export default function DonateSuccessPage() {
         <p className="text-center mt-6 text-sm text-mulearn-gray-600/60">
           Need help?{" "}
           <a
-            href="mailto:donate@mulearn.org"
+            href="mailto:donation@mulearn.org"
             className="text-mulearn-trusty-blue font-medium hover:underline"
           >
             Contact Support

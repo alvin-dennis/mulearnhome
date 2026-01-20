@@ -86,6 +86,16 @@ export const team = [
             lead: "",
           },
           {
+            name: "Nash N Sulthan",
+            team: "Root Administrator",
+            image: "public/assets/team/Nash N Sulthan.webp",
+            linkedin: "https://www.linkedin.com/in/nashns/",
+            muid: "nashnsulthan@mulearn",
+            x: "",
+            github: "https://github.com/nashnsulthan",
+            lead: "",
+          },
+          {
             name: "Muhammed Ziyan Ummalil",
             image: "public/assets/team/Muhammed Ziyan Ummalil.jpg",
             muid: "muhammedziyanummalil@mulearn",

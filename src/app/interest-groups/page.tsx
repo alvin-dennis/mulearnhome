@@ -152,7 +152,7 @@ export default function InterestGroups() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-mulearn-greyish/10 to-mulearn-whitish">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 30 }}
@@ -162,14 +162,13 @@ export default function InterestGroups() {
             className="text-center mb-16"
           >
             <h2 className="mb-4">Your Learning Journey</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto">
               From curiosity to career readiness in five simple steps
             </p>
           </MotionDiv>
 
           <div className="hidden md:block relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-mulearn/40 rounded-full inset-y-0" />
-
+            <div className="absolute left-1/2 top-18 bottom-20 -translate-x-1/2 w-1 bg-mulearn rounded-full" />
             {workflowSteps.map((step, index) => {
               const Icon = step.icon;
               const isLeft = index % 2 === 0;
@@ -194,7 +193,7 @@ export default function InterestGroups() {
                           <Icon className="w-6 h-6 text-mulearn" />
                           <h3>{step.title}</h3>
                         </div>
-                        <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                        <p className="text-mulearn-gray-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </div>
@@ -229,7 +228,7 @@ export default function InterestGroups() {
                   className="relative pl-12"
                 >
                   {index < workflowSteps.length - 1 && (
-                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-mulearn/30 transform -translate-x-1/2" />
+                    <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-mulearn transform -translate-x-1/2" />
                   )}
 
                   <div className="absolute left-0 top-0">
@@ -350,7 +349,7 @@ export default function InterestGroups() {
             for the careers of tomorrow.
           </p>
           <div>
-            <Button asChild variant="mulearn-inverted" className="px-8 py-4 text-lg">
+            <Button asChild variant="inverted" className="px-8 py-4 text-lg">
               <a
                 href="https://app.mulearn.org/dashboard/profile"
                 target="_blank"

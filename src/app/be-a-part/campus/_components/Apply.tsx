@@ -25,7 +25,7 @@ export default function Apply() {
           rel="noopener noreferrer"
         >
           <Button
-            variant="mulearn-inverted"
+            variant="inverted"
             className="rounded-xl group inline-flex items-center text-center justify-center gap-2 px-4 py-3 text-base md:px-8 w-auto"
           >
             Apply to Start a Chapter
