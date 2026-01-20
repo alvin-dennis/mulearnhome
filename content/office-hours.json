@@ -1111,7 +1111,17 @@
         "human-resources"
       ]
     },
-    {},
+    {
+      "title": "Data Science Today : Trends, Career Paths, and Entry Level Opportunities",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD - SupeAI",
+      "description": "An overview of current data science trends, career paths, and entry-level opportunities, helping students understand industry demand and how to get started.",
+      "date": "21/01/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
     {}
   ]
 }
