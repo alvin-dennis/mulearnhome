@@ -172,6 +172,7 @@ type OfficeHoursSessions {
   date: String!
   link: String
   interestGroups: [String]
+  poster_thumbnail: String
 }
 
 type OfficeHours implements Node & Document {
@@ -189,6 +190,7 @@ input OfficeHoursSessionsFilter {
   date: StringFilter
   link: StringFilter
   interestGroups: StringFilter
+  poster_thumbnail: ImageFilter
 }
 
 input OfficeHoursFilter {
@@ -372,6 +374,7 @@ input OfficeHoursSessionsMutation {
   date: String
   link: String
   interestGroups: [String]
+  poster_thumbnail: String
 }
 
 input OfficeHoursMutation {

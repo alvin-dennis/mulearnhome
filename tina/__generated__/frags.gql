@@ -21,6 +21,7 @@ fragment OfficeHoursParts on OfficeHours {
     date
     link
     interestGroups
+    poster_thumbnail
   }
 }
 

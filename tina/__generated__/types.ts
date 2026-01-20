@@ -309,6 +309,7 @@ export type OfficeHoursSessions = {
   date: Scalars["String"]["output"];
   link?: Maybe<Scalars["String"]["output"]>;
   interestGroups?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
+  poster_thumbnail?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type OfficeHours = Node &
@@ -328,6 +329,7 @@ export type OfficeHoursSessionsFilter = {
   date?: InputMaybe<StringFilter>;
   link?: InputMaybe<StringFilter>;
   interestGroups?: InputMaybe<StringFilter>;
+  poster_thumbnail?: InputMaybe<ImageFilter>;
 };
 
 export type OfficeHoursFilter = {
@@ -606,6 +608,7 @@ export type OfficeHoursSessionsMutation = {
   date?: InputMaybe<Scalars["String"]["input"]>;
   link?: InputMaybe<Scalars["String"]["input"]>;
   interestGroups?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  poster_thumbnail?: InputMaybe<Scalars["String"]["input"]>;
 };
 
 export type OfficeHoursMutation = {
@@ -670,6 +673,7 @@ export type OfficeHoursPartsFragment = {
     date: string;
     link?: string | null;
     interestGroups?: Array<string | null> | null;
+    poster_thumbnail?: string | null;
   } | null> | null;
 };
 
@@ -817,6 +821,7 @@ export type OfficeHoursQuery = {
       date: string;
       link?: string | null;
       interestGroups?: Array<string | null> | null;
+      poster_thumbnail?: string | null;
     } | null> | null;
   };
 };
@@ -867,6 +872,7 @@ export type OfficeHoursConnectionQuery = {
           date: string;
           link?: string | null;
           interestGroups?: Array<string | null> | null;
+          poster_thumbnail?: string | null;
         } | null> | null;
       } | null;
     } | null> | null;
@@ -1138,6 +1144,7 @@ export const OfficeHoursPartsFragmentDoc = gql`
     date
     link
     interestGroups
+    poster_thumbnail
   }
 }
     `;
@@ -1746,7 +1753,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:4001/graphql",
+        url: "https://content.tinajs.io/2.0/content/b9e54343-1f10-4879-aab6-19e5edff6315/github/production",
         queries,
       }),
     ),

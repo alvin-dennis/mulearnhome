@@ -198,6 +198,15 @@
               "namespace": ["officeHours", "sessions", "interestGroups"],
               "searchable": true,
               "uid": false
+            },
+            {
+              "type": "image",
+              "name": "poster_thumbnail",
+              "label": "Poster Thumbnail",
+              "description": "Image to display on the event card instead of the default icon",
+              "namespace": ["officeHours", "sessions", "poster_thumbnail"],
+              "searchable": false,
+              "uid": false
             }
           ],
           "namespace": ["officeHours", "sessions"],

@@ -22,8 +22,13 @@ function getServerClient() {
     process.env.HEAD ||
     "production";
 
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4001/graphql"
+      : `https://content.tinajs.io/content/${clientEnv.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`;
+
   return createClient({
-    url: `https://content.tinajs.io/content/${clientEnv.NEXT_PUBLIC_TINA_CLIENT_ID}/github/${branch}`,
+    url,
     token: serverEnv.TINA_TOKEN || "",
     queries,
   });
