@@ -33,6 +33,9 @@ export function LeaderboardTable({ scores, showTopThree = true }: LeaderboardTab
                 Contributor
               </TableHead>
               <TableHead className="text-center text-[11px] font-semibold uppercase tracking-wider text-mulearn-blackish">
+                Score
+              </TableHead>
+              <TableHead className="text-center text-[11px] font-semibold uppercase tracking-wider text-mulearn-blackish">
                 Commits
               </TableHead>
               <TableHead className="text-center">
@@ -42,16 +45,6 @@ export function LeaderboardTable({ scores, showTopThree = true }: LeaderboardTab
                   </span>
                   <span className="text-[9px] font-normal normal-case text-mulearn-blackish/60">
                     open / merged
-                  </span>
-                </div>
-              </TableHead>
-              <TableHead className="text-center">
-                <div className="flex flex-col items-center leading-tight">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-mulearn-blackish">
-                    Issues
-                  </span>
-                  <span className="text-[9px] font-normal normal-case text-mulearn-blackish/60">
-                    open / closed
                   </span>
                 </div>
               </TableHead>

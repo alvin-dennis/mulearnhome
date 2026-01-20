@@ -56,6 +56,12 @@ export function LeaderboardRow({ score, rank }: LeaderboardRowProps) {
       </TableCell>
 
       <TableCell className="py-5 text-center">
+        <div className="inline-flex items-center gap-1 tabular-nums text-sm">
+          <span className="text-mulearn-blackish70">{score.points}</span>
+        </div>
+      </TableCell>
+
+      <TableCell className="py-5 text-center">
         <span className="font-medium text-mulearn-blackish">{score.commits.toLocaleString()}</span>
       </TableCell>
 
@@ -64,14 +70,6 @@ export function LeaderboardRow({ score, rank }: LeaderboardRowProps) {
           <span className="text-mulearn-blackish/70">{score.prs_opened}</span>
           <span className="text-mulearn-blackish/30">/</span>
           <span className="font-semibold text-mulearn-blackish">{score.prs_merged}</span>
-        </div>
-      </TableCell>
-
-      <TableCell className="py-5 text-center">
-        <div className="inline-flex items-center gap-1 tabular-nums text-sm">
-          <span className="text-mulearn-blackish70">{score.issues_opened}</span>
-          <span className="text-mulearn-blackish/30">/</span>
-          <span className="font-semibold text-mulearn-blackish">{score.issues_closed}</span>
         </div>
       </TableCell>
     </MotionTR>

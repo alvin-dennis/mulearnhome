@@ -117,6 +117,13 @@ export function TopContributor({ score, rank }: TopContributorProps) {
 
         <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center mb-4">
           <div className="text-center">
+            <div className="font-bold text-foreground tabular-nums">{score.points}</div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Points</div>
+          </div>
+
+          <Separator orientation="vertical" className={cn("h-10 w-0.5", config.separator)} />
+
+          <div className="text-center">
             <div className="font-bold text-mulearn-blackish tabular-nums">{score.commits}</div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
               Commits
@@ -128,13 +135,6 @@ export function TopContributor({ score, rank }: TopContributorProps) {
           <div className="text-center">
             <div className="font-bold text-foreground tabular-nums">{score.prs_merged}</div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">PRs</div>
-          </div>
-
-          <Separator orientation="vertical" className={cn("h-10 w-0.5", config.separator)} />
-
-          <div className="text-center">
-            <div className="font-bold text-foreground tabular-nums">{score.issues_closed}</div>
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Issues</div>
           </div>
         </div>
 
