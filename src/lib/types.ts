@@ -292,8 +292,7 @@ export interface Score {
   commits: number;
   prs_opened: number;
   prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
+  points: number;
 }
 
 export interface LeaderboardData {
