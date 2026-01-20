@@ -1122,6 +1122,15 @@
         "data-science"
       ]
     },
-    {}
+    {
+      "title": "Open Discussion",
+      "performer": "IG Leads",
+      "description": " This open discussion session is a space for shared learning, idea exchange, and meaningful conversations around Bootcamps and Impact Projects. Interact with the community, ask questions, share ideas, clarify doubts, and gain insights on how to get started and grow through hands-on initiatives.",
+      "date": "21/01/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
+    }
   ]
 }
