@@ -1,3 +1,6 @@
+import type { CSSProperties, ReactNode } from "react";
+import type { IconType } from "react-icons";
+
 export interface SubItem {
   label: string;
   href: string;
@@ -371,4 +374,25 @@ export interface Captcha {
   statusCode: string;
   score: number;
   error?: string;
+}
+
+export type SocialLinks = {
+  icon: IconType;
+  title: string;
+  subtitle?: string;
+  href: string;
+  action?: "follow" | "subscribe";
+  color: string;
+  hoverColor: string;
+  iconBg: string;
+};
+
+export interface SocialCardProps {
+  icon: IconType;
+  title: string;
+  subtitle?: string;
+  action?: ReactNode;
+  href: string;
+  size?: "sm" | "md" | "lg";
+  style?: CSSProperties;
 }
