@@ -383,16 +383,4 @@ export type SocialLinks = {
   href: string;
   action?: "follow" | "subscribe";
   color: string;
-  hoverColor: string;
-  iconBg: string;
 };
-
-export interface SocialCardProps {
-  icon: IconType;
-  title: string;
-  subtitle?: string;
-  action?: ReactNode;
-  href: string;
-  size?: "sm" | "md" | "lg";
-  style?: CSSProperties;
-}

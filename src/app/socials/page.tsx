@@ -43,13 +43,13 @@ const cardVariants: Variants = {
 function getBentoSize(index: number): string {
   switch (index) {
     case 0:
-      return "lg:col-span-2 lg:row-span-1"; // Wide card top-left
+      return "lg:col-span-2 lg:row-span-1";
     case 10:
-      return "lg:col-span-1 lg:row-span-2"; // Tall card right
+      return "lg:col-span-1 lg:row-span-2";
     case 11:
-      return "lg:col-span-3 lg:row-span-1"; // Wide card bottom
+      return "lg:col-span-3 lg:row-span-1";
     default:
-      return "lg:col-span-1 lg:row-span-1"; // Standard cards
+      return "lg:col-span-1 lg:row-span-1";
   }
 }
 function SocialCard({ social, className }: { social: SocialLinks; className?: string }) {
@@ -59,15 +59,11 @@ function SocialCard({ social, className }: { social: SocialLinks; className?: st
       <Link href={social.href} target="_blank" rel="noopener noreferrer" className="block h-full">
         <Card
           variant="interactive"
-          className={cn(
-            "group relative h-full overflow-hidden rounded-xl p-6",
-            "transition-all duration-300",
-            social.hoverColor,
-          )}
+          className="group relative h-full overflow-hidden rounded-xl p-6 transition-all duration-300"
         >
           <div
             className={cn(
-              "pointer-events-none absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-300 group-hover:opacity-5",
+              "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-5",
               social.color,
             )}
           />
@@ -75,7 +71,7 @@ function SocialCard({ social, className }: { social: SocialLinks; className?: st
             <div>
               <MotionDiv
                 transition={{ type: "spring", stiffness: 300 }}
-                className={cn("mb-4 inline-flex rounded-lg p-3 text-2xl", social.iconBg)}
+                className={cn("mb-4 inline-flex rounded-lg p-3 text-2xl", social.color)}
               >
                 <Icon className="text-mulearn-whitish" />
               </MotionDiv>
