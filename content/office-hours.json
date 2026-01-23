@@ -1196,6 +1196,17 @@
       "interestGroups": [
         "comics"
       ]
+    },
+    {
+      "title": "Understanding Satellites: Episode 2",
+      "performer": "M R Nandana",
+      "designation": "IG Lead: Space | µLearn Foundation",
+      "description": "The session mainly focus on Orbital Mechanics ,Satellite Trajectories & Spacecraft Subsystems.",
+      "date": "24/01/26",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
     }
   ]
 }
