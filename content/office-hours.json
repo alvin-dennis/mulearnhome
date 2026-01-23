@@ -1163,6 +1163,18 @@
       "interestGroups": [
         "game-dev"
       ]
-    }
+    },
+    {
+      "title": "Making a Short Film (From Idea to Screen 🍿)",
+      "performer": "Muv team",
+      "designation": "Muv IG Leads",
+      "description": "From concept to final cut — learn how to turn an idea into a complete short film. 🎥✨",
+      "date": "23/01/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {}
   ]
 }
