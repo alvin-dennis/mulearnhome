@@ -1207,6 +1207,17 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Vaishnav R S",
+      "designation": "IoT IG Lead",
+      "description": "In this session, we will learn how to convert images into a format that can be used in C++ programs. The session explains the basic idea of turning an image into C++ code, why this is useful, and where it is commonly used. Simple examples will be discussed to help beginners understand how images can be stored and used directly inside a C++ application.",
+      "date": "25/01/2026",
+      "link": "mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ]
     }
   ]
 }
