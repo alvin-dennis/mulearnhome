@@ -10,8 +10,7 @@ interface ContributorStats {
   commits: number;
   prs_opened: number;
   prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
+  points: number;
 }
 
 const TOKEN = process.env.GH_TOKEN;
@@ -31,9 +30,12 @@ function emptyStats(username: string): ContributorStats {
     commits: 0,
     prs_opened: 0,
     prs_merged: 0,
-    issues_opened: 0,
-    issues_closed: 0,
+    points: 0,
   };
+}
+
+function isBot(username: string) {
+  return username === "github-actions[bot]" || username.endsWith("[bot]");
 }
 
 export async function getLeaderboard() {
@@ -65,7 +67,7 @@ export async function getLeaderboard() {
 
     for (const c of contributors) {
       const login = c.login;
-      if (!login) continue;
+      if (!login || isBot(login)) continue;
       if (!contributorsMap[login]) {
         contributorsMap[login] = {
           overall: emptyStats(login),
@@ -84,7 +86,7 @@ export async function getLeaderboard() {
 
     for (const commit of monthlyCommits) {
       const login = commit.author?.login;
-      if (!login) continue;
+      if (!login || isBot(login)) continue;
 
       if (!contributorsMap[login]) {
         contributorsMap[login] = {
@@ -105,7 +107,7 @@ export async function getLeaderboard() {
 
     for (const pr of prs) {
       const login = pr.user?.login;
-      if (!login) continue;
+      if (!login || isBot(login)) continue;
       if (!contributorsMap[login]) {
         contributorsMap[login] = {
           overall: emptyStats(login),
@@ -120,52 +122,21 @@ export async function getLeaderboard() {
         if (pr.merged_at) contributorsMap[login].monthly.prs_merged += 1;
       }
     }
-
-    const issues = await octokit.paginate(octokit.rest.issues.listForRepo, {
-      owner: "gtech-mulearn",
-      repo: repo.name,
-      state: "all",
-      per_page: 100,
-    });
-
-    for (const issue of issues) {
-      if (issue.pull_request) continue;
-
-      const login = issue.user?.login;
-      if (!login) continue;
-
-      if (!contributorsMap[login]) {
-        contributorsMap[login] = {
-          overall: emptyStats(login),
-          monthly: emptyStats(login),
-        };
-      }
-
-      contributorsMap[login].overall.issues_opened += 1;
-      if (issue.state === "closed") {
-        contributorsMap[login].overall.issues_closed += 1;
-      }
-
-      if (getMonth(issue.created_at) === currentMonthStr) {
-        contributorsMap[login].monthly.issues_opened += 1;
-        if (issue.state === "closed") {
-          contributorsMap[login].monthly.issues_closed += 1;
-        }
-      }
-    }
     await new Promise((r) => setTimeout(r, 800));
   }
 
-  const score = (s: ContributorStats) =>
-    s.commits + s.prs_opened + s.prs_merged + s.issues_opened + s.issues_closed;
+  for (const c of Object.values(contributorsMap)) {
+    c.overall.points = c.overall.commits + c.overall.prs_opened + c.overall.prs_merged;
+    c.monthly.points = c.monthly.commits + c.monthly.prs_opened + c.monthly.prs_merged;
+  }
 
   const top10Overall = Object.values(contributorsMap)
-    .sort((a, b) => score(b.overall) - score(a.overall))
+    .sort((a, b) => b.overall.points - a.overall.points)
     .slice(0, 10)
     .map((c) => c.overall);
 
   const top10Monthly = Object.values(contributorsMap)
-    .sort((a, b) => score(b.monthly) - score(a.monthly))
+    .sort((a, b) => b.monthly.points - a.monthly.points)
     .slice(0, 10)
     .map((c) => c.monthly);
 

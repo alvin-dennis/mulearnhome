@@ -1,7 +1,22 @@
-"use client";
-
 import { refundPolicy } from "@/data/legal";
-import { formatAndSanitize } from "@/lib/sanitize";
+
+const formatText = (text: string) =>
+  text
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.*?)\*/g, "<em>$1</em>")
+    .replace(
+      /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+      '<a href="mailto:$1" class="font-medium text-mulearn underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>',
+    );
+
+const Paragraph = ({ text }: { text: string }) => (
+  <p
+    className="text-[15px] sm:text-base leading-7 text-mulearn-blackish"
+    dangerouslySetInnerHTML={{
+      __html: formatText(text),
+    }}
+  />
+);
 
 export default function RefundPolicy() {
   return (
@@ -14,13 +29,7 @@ export default function RefundPolicy() {
 
         <div className="mb-12 space-y-6">
           {refundPolicy.introduction.split("\n\n").map((paragraph) => (
-            <p
-              key={paragraph.slice(0, 50)}
-              className="text-[15px] sm:text-base leading-7 text-mulearn-blackish"
-              dangerouslySetInnerHTML={{
-                __html: formatAndSanitize(paragraph),
-              }}
-            />
+            <Paragraph key={paragraph.slice(0, 50)} text={paragraph} />
           ))}
         </div>
 
@@ -34,13 +43,7 @@ export default function RefundPolicy() {
               {section.content && (
                 <div className="mb-4 space-y-4">
                   {section.content.split("\n\n").map((paragraph) => (
-                    <p
-                      key={paragraph.slice(0, 50)}
-                      className="text-[15px] sm:text-base leading-7 text-mulearn-blackish"
-                      dangerouslySetInnerHTML={{
-                        __html: formatAndSanitize(paragraph),
-                      }}
-                    />
+                    <Paragraph key={paragraph.slice(0, 50)} text={paragraph} />
                   ))}
                 </div>
               )}
@@ -51,7 +54,7 @@ export default function RefundPolicy() {
                     <li key={subsection.slice(0, 50)} className="pl-2 leading-relaxed">
                       <span
                         dangerouslySetInnerHTML={{
-                          __html: formatAndSanitize(subsection),
+                          __html: formatText(subsection),
                         }}
                       />
                     </li>
