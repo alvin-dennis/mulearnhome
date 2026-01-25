@@ -1,3 +1,6 @@
+import type { CSSProperties, ReactNode } from "react";
+import type { IconType } from "react-icons";
+
 export interface SubItem {
   label: string;
   href: string;
@@ -292,8 +295,7 @@ export interface Score {
   commits: number;
   prs_opened: number;
   prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
+  points: number;
 }
 
 export interface LeaderboardData {
@@ -373,3 +375,12 @@ export interface Captcha {
   score: number;
   error?: string;
 }
+
+export type SocialLinks = {
+  icon: IconType;
+  title: string;
+  subtitle?: string;
+  href: string;
+  action?: "follow" | "subscribe";
+  color: string;
+};
