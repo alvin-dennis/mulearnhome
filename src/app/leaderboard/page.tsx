@@ -121,7 +121,7 @@ export default function Leaderboard() {
           <LeaderboardTable scores={currentScores} showTopThree />
         </MotionDiv>
 
-        <MotionDiv
+        {/* <MotionDiv
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -133,7 +133,7 @@ export default function Leaderboard() {
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
             </Button>
           </Link>
-        </MotionDiv>
+        </MotionDiv> */}
       </main>
     </div>
   );
