@@ -143,9 +143,18 @@ export default function FoundersMessage() {
               "This is not an invitation to join a platform. It is a call to participate in a
               learning civilization."
             </p>
-            <p className="text-mulearn-blackish font-bold text-2xl md:text-3xl">
-              Welcome to μLearn.
-            </p>
+            <div className="flex flex-wrap items-center gap-3 mt-4">
+              <span className="text-mulearn-blackish font-bold text-2xl md:text-3xl">
+                Welcome to
+              </span>
+              <MuImage
+                src="/assets/logo-black.png"
+                alt="μLearn"
+                width={70}
+                height={10}
+                className="h-6 md:h-8 w-auto object-contain"
+              />
+            </div>
           </div>
         </MotionDiv>
 
