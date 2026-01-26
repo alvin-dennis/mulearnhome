@@ -1230,6 +1230,17 @@
         "civil"
       ],
       "poster_thumbnail": ""
+    },
+    {
+      "title": "Python Flask",
+      "performer": "Adithyan L",
+      "designation": "Tech Team, MuLearnSCTCE",
+      "description": "This Office Hours session introduces Flask, a lightweight Python web framework, and walks participants through the essentials needed to start building simple web applications. Topics include setting up Flask, understanding routes and URLs, working with templates, and basic form handling .\nIdeal for beginners and anyone looking to explore backend development with Python in a simple and practical way. ",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
     }
   ]
 }
