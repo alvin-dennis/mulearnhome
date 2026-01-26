@@ -166,6 +166,13 @@ export default function FoundersMessage() {
           <div>
             <h3 className="font-bold text-mulearn-blackish text-xl">Deepu S Nath</h3>
             <p className="text-mulearn font-medium">Chief Volunteer</p>
+            <Link
+              href="https://deepusnath.com"
+              target="_blank"
+              className="text-mulearn-gray-400 text-sm hover:text-mulearn transition-colors block mt-1"
+            >
+              deepusnath.com
+            </Link>
             <p className="text-mulearn-gray-500 text-sm">Mulearn Foundation</p>
           </div>
         </MotionDiv>
