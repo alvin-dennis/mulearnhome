@@ -1244,15 +1244,16 @@
       "poster_thumbnail": "/assets/events/3600c031-7c9a-42ed-8de0-00058ded3421.jpg"
     },
     {
-      "title": "Campus vs Corporate Life",
-      "performer": "Shalini Chandrasekar",
-      "designation": "US client Associate, Infosys",
-      "description": "Step into the professional world with clarity and confidence. This session is designed to help students understand how corporate life differs from college, what skills recruiters actually look for, and the career opportunities available for engineers today. You’ll also gain insights into current industry trends and practical tips to crack placements and interviews. The session concludes with an open Q&A to address your questions and concerns.",
-      "date": "28/01/2026",
-      "link": "https://mulearn.org/r/hr-officehour",
+      "title": "Design without Figma",
+      "performer": "Edwin Emmanuel Roy",
+      "designation": "Product Designer",
+      "description": "Great design doesn’t start with tools—it starts with thinking. This session explores how designers approach problem-solving, structure ideas, and make design decisions even without relying on tools like Figma. Learn alternative workflows, mindset shifts, and practical approaches that strengthen your UX fundamentals.",
+      "date": "27/01/2026",
+      "link": "mulearn.org/r/uiux-officehour",
       "interestGroups": [
-        "human-resources"
-      ]
+        "ui-ux"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
     }
   ]
 }
