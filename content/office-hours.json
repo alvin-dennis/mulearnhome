@@ -1218,6 +1218,18 @@
       "interestGroups": [
         "iot-robotics"
       ]
+    },
+    {
+      "title": "Project Management on Site: Real Work, Real Control",
+      "performer": "Druvajith Kalita",
+      "designation": "Civil IG Lead | Site Supervisor | Asst. Soil Tester | Founder of DruvaTalks | TEDx Speaker",
+      "description": "Learn how project management actually works on a construction site-planning the day, coordinating people and materials, handling drawings, tracking progress, and managing delays before they grow. This session is ideal for civil engineering students who want practical clarity on site workflows and how real projects are delivered",
+      "date": "01/02/2026",
+      "link": "mulearn.org/r/civilofficehour",
+      "interestGroups": [
+        "civil"
+      ],
+      "poster_thumbnail": "/assets/events/PM OFFICE HOUR.png"
     }
   ]
 }
