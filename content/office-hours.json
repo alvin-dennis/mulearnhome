@@ -1254,6 +1254,17 @@
         "ui-ux"
       ],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
+    },
+    {
+      "title": "Campus vs Corporate Life",
+      "performer": "Shalini Chandrasekhar ",
+      "designation": "US client Associate, Infosys",
+      "description": "Step into the professional world with clarity and confidence. This session is designed to help students understand how corporate life differs from college, what skills recruiters actually look for, and the career opportunities available for engineers today. You’ll also gain insights into current industry trends and practical tips to crack placements and interviews. The session concludes with an open Q&A to address your questions and concerns.\n",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
     }
   ]
 }
