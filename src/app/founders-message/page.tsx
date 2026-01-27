@@ -144,15 +144,15 @@ export default function FoundersMessage() {
               learning civilization."
             </p>
             <div className="flex flex-wrap items-center gap-3 mt-4">
-              <span className="text-mulearn-blackish font-bold text-2xl md:text-3xl">
+              <span className="text-mulearn-blackish font-bold text-2xl md:text-3xl mb-2">
                 Welcome to
               </span>
               <MuImage
                 src="/assets/logo-black.png"
                 alt="μLearn"
                 width={70}
-                height={10}
-                className="h-6 md:h-8 w-auto object-contain"
+                height={5}
+                className="h-4 md:h-6 w-auto object-contain"
               />
             </div>
           </div>
