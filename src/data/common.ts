@@ -16,6 +16,7 @@ export const navItems = [
     submenu: {
       "Key Pages": [
         { label: "Manifesto", href: "/manifesto" },
+        { label: "Founder's Message", href: "/founders-message" },
         { label: "Team", href: "/team" },
         {
           label: "Impact Gallery",
