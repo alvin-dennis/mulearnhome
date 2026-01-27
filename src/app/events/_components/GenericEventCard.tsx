@@ -103,6 +103,11 @@ export function GenericEventCard({
   );
 
   const title = event.title || event.topic || "";
+  const eventLink = event.link
+    ? event.link.match(/^https?:\/\//)
+      ? event.link
+      : `https://${event.link}`
+    : undefined;
 
   return (
     <Card variant="hoverable" className="h-full flex flex-col">
@@ -216,9 +221,9 @@ export function GenericEventCard({
             <Calendar className="w-4 h-4 mr-1" />
             {event.date} {event.time ? `• ${event.time}` : ""}
           </span>
-          {event.link && event.isUpcoming && (
+          {eventLink && event.isUpcoming && (
             <Button variant="default" className="gap-1 px-4 py-2 text-sm rounded-full" asChild>
-              <a href={event.link} target="_blank" rel="noopener noreferrer">
+              <a href={eventLink} target="_blank" rel="noopener noreferrer">
                 Join <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </Button>
