@@ -1265,6 +1265,16 @@
       "interestGroups": [
         "human-resources"
       ]
+    },
+    {
+      "title": "Dealing With Imbalanced Data in ML",
+      "performer": "Tharun Tomy",
+      "designation": "IG Lead",
+      "description": "A short session on understanding imbalanced datasets, why they affect model performance, and basic techniques to handle them effectively in machine learning.",
+      "date": "28/01/2026",
+      "interestGroups": [
+        "data-science"
+      ]
     }
   ]
 }
