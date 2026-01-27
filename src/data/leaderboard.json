@@ -52,10 +52,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 723,
+      "commits": 727,
       "prs_opened": 199,
       "prs_merged": 193,
-      "points": 1115,
+      "points": 1119,
       "displayname": "Awindsr"
     },
     {
@@ -86,10 +86,10 @@
   "monthly": [
     {
       "username": "awindsr",
-      "commits": 146,
+      "commits": 150,
       "prs_opened": 38,
       "prs_merged": 38,
-      "points": 222,
+      "points": 226,
       "displayname": "Awindsr"
     },
     {
@@ -102,10 +102,10 @@
     },
     {
       "username": "nanda-kshr",
-      "commits": 35,
-      "prs_opened": 23,
-      "prs_merged": 21,
-      "points": 79,
+      "commits": 36,
+      "prs_opened": 24,
+      "prs_merged": 22,
+      "points": 82,
       "displayname": "Nandakishore P"
     },
     {
@@ -133,6 +133,14 @@
       "displayname": "Nash N Sulthan"
     },
     {
+      "username": "DevWithPranav",
+      "commits": 7,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 9,
+      "displayname": "Pranav P"
+    },
+    {
       "username": "Amith-Abey-Stephen",
       "commits": 6,
       "prs_opened": 1,
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 8,
       "displayname": "Nikhila C"
-    },
-    {
-      "username": "EzioAuditore-daFirenze",
-      "commits": 4,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 6,
-      "displayname": "Anerudh M K"
     }
   ]
 }
