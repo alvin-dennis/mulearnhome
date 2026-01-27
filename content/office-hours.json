@@ -1275,6 +1275,16 @@
       "interestGroups": [
         "data-science"
       ]
+    },
+    {
+      "title": "Open Discussion",
+      "performer": "IG Leads",
+      "description": "\n\nThis open discussion session is a space for shared learning, idea exchange, and meaningful conversations around Impact Projects. Interact with the community, ask questions, share ideas, clarify doubts, and gain insights on how to get started and grow through hands-on initiatives.\n\n\n\n",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
     }
   ]
 }
