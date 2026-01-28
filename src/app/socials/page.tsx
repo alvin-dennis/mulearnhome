@@ -52,6 +52,7 @@ function getBentoSize(index: number): string {
       return "lg:col-span-1 lg:row-span-1";
   }
 }
+
 function SocialCard({ social, className }: { social: SocialLinks; className?: string }) {
   const Icon = social.icon;
   return (
@@ -75,19 +76,15 @@ function SocialCard({ social, className }: { social: SocialLinks; className?: st
               >
                 <Icon className="text-mulearn-whitish" />
               </MotionDiv>
-
               <h3 className="text-md font-semibold text-mulearn">{social.title}</h3>
-
               {social.subtitle && (
                 <p className="mt-1 text-xs text-muted-foreground">{social.subtitle}</p>
               )}
             </div>
             {social.action && (
-              <Link href={social.href} target="_blank" rel="noopener noreferrer">
-                <Button variant={"default"} className="mt-4 w-full font-semibold">
-                  {social.action === "follow" ? "Follow" : "Subscribe"}
-                </Button>
-              </Link>
+              <Button variant="default" className="mt-4 w-full font-semibold pointer-events-none">
+                {social.action === "follow" ? "Follow" : "Subscribe"}
+              </Button>
             )}
           </div>
         </Card>
