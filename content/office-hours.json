@@ -1294,6 +1294,15 @@
       "interestGroups": [
         "dsa"
       ]
+    },
+    {
+      "title": "Production Ready AI systems",
+      "description": "Real-time AI systems go far beyond model accuracy, they demand low latency, scalability, reliability, and seamless integration with production environments. In this session, Rohith K Bobby walks through the practical challenges of taking AI from prototype to production, with a focus on real-time use cases.\n\nThe talk covers system architecture, model serving strategies, data pipelines, monitoring, and performance optimization, along with common pitfalls teams face when deploying AI at scale. Drawing from hands-on industry experience, Rohith shares best practices, tools, and design patterns used to build robust, production-grade AI systems that perform under real-world constraints",
+      "date": "29/01/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
