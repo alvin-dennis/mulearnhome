@@ -68,14 +68,6 @@ export const socialLinks: SocialLinksGroup = {
     },
     {
       icon: FaInstagram,
-      title: "@mulearn.clan",
-      subtitle: "instagram.com",
-      href: "https://www.instagram.com/mulearn.clan/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
-      action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
-    },
-    {
-      icon: FaInstagram,
       title: "@mu.campus",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.campus/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",

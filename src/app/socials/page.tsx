@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { socialLinks } from "@/data/links";
+import { socialLinks } from "@/data/socials";
 import type { SocialLinks } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -40,18 +40,19 @@ const cardVariants: Variants = {
   },
 };
 
-function getBentoSize(index: number): string {
+const getBentoSize = (index: number): string => {
   switch (index) {
     case 0:
-      return "lg:col-span-2 lg:row-span-1";
-    case 10:
       return "lg:col-span-1 lg:row-span-2";
-    case 11:
-      return "lg:col-span-3 lg:row-span-1";
+    case 2:
+    case 4:
+    case 5:
+    case 10:
+      return "lg:col-span-2 lg:row-span-1";
     default:
       return "lg:col-span-1 lg:row-span-1";
   }
-}
+};
 
 function SocialCard({ social, className }: { social: SocialLinks; className?: string }) {
   const Icon = social.icon;
