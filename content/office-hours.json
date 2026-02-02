@@ -1349,6 +1349,18 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "Doubt clearance",
+      "performer": "Aaron R Thomas",
+      "designation": "UI/UX IG lead",
+      "description": "Clear your UI/UX doubts level up your design skills.Join our UI/UX Office Hours for expert guidance and take your designs to the next level.",
+      "date": "03/02/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ],
+      "poster_thumbnail": "/assets/events/IMG-20260202-WA0027.jpg"
     }
   ]
 }
