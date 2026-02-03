@@ -1384,6 +1384,16 @@
         "human-resources"
       ]
     },
-    {}
+    {
+      "title": "ML Algorithms",
+      "performer": "Tharun Tomy",
+      "designation": "IG Lead",
+      "description": "A This session introduces key machine learning algorithms, explains when to use each, and discusses their pros and cons with practical examples.",
+      "date": "04/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    }
   ]
 }
