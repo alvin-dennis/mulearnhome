@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { refundPolicy } from "@/data/legal";
+
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Refund Policy | Mulearn",
+  description: "Mulearn Foundation refund policy and donation guidelines.",
+};
 
 const formatText = (text: string) =>
   text
