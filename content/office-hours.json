@@ -1373,7 +1373,17 @@
         "web-development"
       ]
     },
-    {},
+    {
+      "title": "Challenges faced in HR",
+      "performer": "Nandana S Chandran",
+      "designation": "Associate I – HR (Talent Acquisition), UST",
+      "description": "Get a real-world perspective on the challenges faced by HR professionals in today’s corporate world—from talent acquisition and hiring pressures to skill gaps and evolving candidate expectations. Explore HR career paths, industry expectations, and practical recruitment insights, followed by an open Q&A.",
+      "date": "04/02/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
     {}
   ]
 }
