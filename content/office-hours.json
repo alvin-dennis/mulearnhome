@@ -1404,6 +1404,16 @@
       "interestGroups": [
         "dsa"
       ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Arnav Jagadeeesh",
+      "designation": "AI IG Lead",
+      "date": "05/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
