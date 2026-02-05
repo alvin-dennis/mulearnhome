@@ -1394,6 +1394,16 @@
       "interestGroups": [
         "data-science"
       ]
+    },
+    {
+      "title": "Recursion",
+      "performer": "Dine Babu",
+      "designation": "IG Lead",
+      "date": "05/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehours/",
+      "interestGroups": [
+        "dsa"
+      ]
     }
   ]
 }
