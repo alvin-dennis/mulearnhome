@@ -1425,6 +1425,18 @@
       "interestGroups": [
         "game-dev"
       ]
-    }
+    },
+    {
+      "title": "Movie Talks",
+      "performer": "By MuV Team ,μLearn Foundation",
+      "designation": "Muv IG Leads",
+      "description": "An open discussion for film lovers and filmmakers.\nShare opinions, break scenes, and talk cinema beyond ratings",
+      "date": "06/02/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {}
   ]
 }
