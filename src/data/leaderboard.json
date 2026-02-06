@@ -94,10 +94,10 @@
     },
     {
       "username": "rubyaj24",
-      "commits": 32,
-      "prs_opened": 9,
-      "prs_merged": 9,
-      "points": 50,
+      "commits": 36,
+      "prs_opened": 10,
+      "prs_merged": 10,
+      "points": 56,
       "displayname": "AMALJITH"
     },
     {
@@ -133,6 +133,14 @@
       "displayname": "Mohammed Anfas K P"
     },
     {
+      "username": "Devika123098",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Devika Dileep"
+    },
+    {
       "username": "DevWithPranav",
       "commits": 0,
       "prs_opened": 1,
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": "Angel Rose"
-    },
-    {
-      "username": "IRJ2",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Irene Rose Johnson"
     }
   ]
 }
