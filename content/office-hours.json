@@ -1447,6 +1447,18 @@
       "interestGroups": [
         "strategic-leadership"
       ]
+    },
+    {
+      "title": "Quiz Night - Dark Matter & Dark Energy",
+      "performer": "",
+      "designation": "Space Leads",
+      "description": "A Quiz on Dark Matter & Dark Energy. To Test Your knowledge on the topic & to add up your knowledge on it with a new experience ",
+      "date": "07/02/26",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Saturday - Post (9).png"
     }
   ]
 }
