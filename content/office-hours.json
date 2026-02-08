@@ -1470,6 +1470,17 @@
       "interestGroups": [
         "comics"
       ]
+    },
+    {
+      "title": "Intro To Arduino Uno Q",
+      "performer": "Vaishnav R S",
+      "designation": "IOT IG LEAD",
+      "description": "Join this online office hour to learn about the Arduino Uno Q and how it fits into IoT projects. We’ll walk through the board basics, key features, and common use cases, with time for discussion and questions.",
+      "date": "08-02-2026",
+      "link": "https://mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ]
     }
   ]
 }
