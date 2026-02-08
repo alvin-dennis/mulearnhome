@@ -85,6 +85,14 @@
   ],
   "monthly": [
     {
+      "username": "rubyaj24",
+      "commits": 61,
+      "prs_opened": 17,
+      "prs_merged": 17,
+      "points": 95,
+      "displayname": "AMALJITH"
+    },
+    {
       "username": "sachin-raj-m",
       "commits": 37,
       "prs_opened": 17,
@@ -93,12 +101,12 @@
       "displayname": "Sachin Raj"
     },
     {
-      "username": "rubyaj24",
-      "commits": 36,
-      "prs_opened": 10,
-      "prs_merged": 10,
-      "points": 56,
-      "displayname": "AMALJITH"
+      "username": "alvin-dennis",
+      "commits": 12,
+      "prs_opened": 3,
+      "prs_merged": 2,
+      "points": 17,
+      "displayname": "Alvin Dennis"
     },
     {
       "username": "awindsr",
@@ -109,20 +117,20 @@
       "displayname": "Awindsr"
     },
     {
-      "username": "alvin-dennis",
-      "commits": 8,
-      "prs_opened": 2,
-      "prs_merged": 1,
-      "points": 11,
-      "displayname": "Alvin Dennis"
-    },
-    {
       "username": "Devika123098",
       "commits": 0,
       "prs_opened": 2,
       "prs_merged": 0,
       "points": 2,
       "displayname": "Devika Dileep"
+    },
+    {
+      "username": "vedhavk",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Vedha"
     },
     {
       "username": "athul-joseph-aj",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": "Rejah Rehim "
-    },
-    {
-      "username": "Angelrose19",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Angel Rose"
     }
   ]
 }
