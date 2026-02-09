@@ -86,10 +86,10 @@
   "monthly": [
     {
       "username": "rubyaj24",
-      "commits": 61,
-      "prs_opened": 17,
-      "prs_merged": 17,
-      "points": 95,
+      "commits": 75,
+      "prs_opened": 20,
+      "prs_merged": 20,
+      "points": 115,
       "displayname": "AMALJITH"
     },
     {
@@ -102,10 +102,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 12,
-      "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 17,
+      "commits": 14,
+      "prs_opened": 5,
+      "prs_merged": 4,
+      "points": 23,
       "displayname": "Alvin Dennis"
     },
     {
@@ -133,6 +133,14 @@
       "displayname": "Vedha"
     },
     {
+      "username": "annabinny987-boop",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "annabinny987-boop"
+    },
+    {
       "username": "athul-joseph-aj",
       "commits": 0,
       "prs_opened": 1,
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 1,
       "displayname": "Pranav P"
-    },
-    {
-      "username": "rejahrehim",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Rejah Rehim "
     }
   ]
 }
