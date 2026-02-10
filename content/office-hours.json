@@ -1493,7 +1493,17 @@
         "web-development"
       ]
     },
-    {},
+    {
+      "title": "General Discussion",
+      "performer": "IG Leads",
+      "designation": "µLearn Foundation",
+      "description": "n this office hour , we’ll be discussing some important topics like the future of Data Science IG and the impact projects, new volunteers team selection . See you there!",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
     {},
     {}
   ]
