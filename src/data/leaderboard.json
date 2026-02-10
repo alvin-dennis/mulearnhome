@@ -119,9 +119,9 @@
     {
       "username": "Devika123098",
       "commits": 0,
-      "prs_opened": 2,
+      "prs_opened": 3,
       "prs_merged": 0,
-      "points": 2,
+      "points": 3,
       "displayname": "Devika Dileep"
     },
     {
@@ -131,6 +131,14 @@
       "prs_merged": 0,
       "points": 1,
       "displayname": "Vedha"
+    },
+    {
+      "username": "Amith-Abey-Stephen",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Amith Abey Stephen"
     },
     {
       "username": "annabinny987-boop",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 1,
       "displayname": "Mohammed Anfas K P"
-    },
-    {
-      "username": "DevWithPranav",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "Pranav P"
     }
   ]
 }
