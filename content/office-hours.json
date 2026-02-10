@@ -1504,7 +1504,17 @@
         "data-science"
       ]
     },
-    {},
+    {
+      "title": "General Discussion",
+      "performer": "IG Leads",
+      "designation": "µLearn Foundation",
+      "description": "n this office hour , we’ll be discussing some important topics like the future of Cloud & DevOps IG and the impact projects. See you there!",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
+    },
     {}
   ]
 }
