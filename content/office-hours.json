@@ -1481,6 +1481,7 @@
       "interestGroups": [
         "iot-robotics"
       ]
-    }
+    },
+    {}
   ]
 }
