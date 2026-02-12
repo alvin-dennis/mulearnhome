@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 const Contact = () => {
   return (
     <section className="py-12 bg-mulearn-whitish overflow-visible relative">
-      {/* Decorative SVGs */}
       <div className="hidden lg:block absolute left-20 top-2 text-mulearn-blackish">
         <svg
           width="50"
@@ -48,7 +47,6 @@ const Contact = () => {
         </svg>
       </div>
 
-      {/* Content */}
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center relative px-4 sm:px-6 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0 }}
