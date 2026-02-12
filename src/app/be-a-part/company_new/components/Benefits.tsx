@@ -60,7 +60,7 @@ const Benefits = () => {
             >
               <Card
                 variant="interactive"
-                className="h-full border-mulearn/10 bg-mulearn-whitish z-10"
+                className="h-full border-mulearn/10 bg-mulearn-whitish z-10 relative"
               >
                 <CardContent className="flex flex-col gap-5 p-6">
                   <MuImage src={feature.image} alt={feature.title} width={60} height={60} />
