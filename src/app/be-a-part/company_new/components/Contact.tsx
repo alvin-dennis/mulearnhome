@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 const Contact = () => {
   return (
     <section className="py-12 bg-mulearn-whitish overflow-visible relative">
+      {/* Decorative SVGs */}
       <div className="hidden lg:block absolute left-20 top-2 text-mulearn-blackish">
         <svg
           width="50"
@@ -12,7 +13,10 @@ const Contact = () => {
           fill="currentColor"
           strokeWidth="1"
           shapeRendering="geometricPrecision"
+          aria-hidden="true"
+          focusable="false"
         >
+          <title>Decorative star shape</title>
           <path
             d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z"
             stroke="currentColor"
@@ -23,14 +27,17 @@ const Contact = () => {
         </svg>
       </div>
 
-      <div className="hidden lg:block absolute  left-32 top-4 text-mulearn-blackish">
+      <div className="hidden lg:block absolute left-32 top-4 text-mulearn-blackish">
         <svg
           width="20"
           height="50"
           viewBox="0 0 24 24"
           fill="currentColor"
           shapeRendering="geometricPrecision"
+          aria-hidden="true"
+          focusable="false"
         >
+          <title>Decorative star shape</title>
           <path
             d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z"
             stroke="currentColor"
@@ -40,6 +47,8 @@ const Contact = () => {
           />
         </svg>
       </div>
+
+      {/* Content */}
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center relative px-4 sm:px-6 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0 }}
@@ -47,27 +56,26 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="w-full relative"
         >
+          {/* Glow */}
           <div className="absolute left-1/7 -translate-x-1/2 top-0 pointer-events-none">
             <div className="w-72 h-72 sm:w-80 sm:h-80 bg-mulearn blur-[200px] opacity-30 rounded-full" />
           </div>
 
           <Card variant="muted" className="bg-mulearn-whitish p-6 sm:p-10 w-full">
-            <div className="mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center md:text-left text-xl sm:text-2xl">
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-mulearn-gray-600">Email</p>
-                  <p className="font-semibold text-2xl sm:text-2xl">partners@mulearn.org</p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center md:text-left text-xl sm:text-2xl">
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-mulearn-gray-600">Email</p>
+                <p className="font-semibold text-2xl">partners@mulearn.org</p>
+              </div>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-mulearn-gray-600">Phone</p>
-                  <p className="font-semibold text-2xl sm:text-2xl">+91 89436 47000</p>
-                </div>
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-mulearn-gray-600">Phone</p>
+                <p className="font-semibold text-2xl">+91 89436 47000</p>
+              </div>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-mulearn-gray-600">Website</p>
-                  <p className="font-semibold text-2xl sm:text-2xl">www.mulearn.org</p>
-                </div>
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-mulearn-gray-600">Website</p>
+                <p className="font-semibold text-2xl">www.mulearn.org</p>
               </div>
             </div>
           </Card>
