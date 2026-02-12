@@ -52,10 +52,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 759,
-      "prs_opened": 206,
-      "prs_merged": 200,
-      "points": 1165,
+      "commits": 771,
+      "prs_opened": 207,
+      "prs_merged": 201,
+      "points": 1179,
       "displayname": "Awindsr"
     },
     {
@@ -102,27 +102,35 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 14,
+      "commits": 35,
       "prs_opened": 6,
-      "prs_merged": 4,
-      "points": 24,
+      "prs_merged": 5,
+      "points": 46,
       "displayname": "Alvin Dennis"
     },
     {
       "username": "awindsr",
-      "commits": 12,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 14,
+      "commits": 24,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "points": 28,
       "displayname": "Awindsr"
     },
     {
       "username": "Amith-Abey-Stephen",
-      "commits": 5,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 9,
+      "commits": 10,
+      "prs_opened": 3,
+      "prs_merged": 3,
+      "points": 16,
       "displayname": "Amith Abey Stephen"
+    },
+    {
+      "username": "erzer12",
+      "commits": 2,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "Harshil P"
     },
     {
       "username": "Devika123098",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 1,
       "displayname": "annabinny987-boop"
-    },
-    {
-      "username": "athul-joseph-aj",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "athul-joseph-aj"
     }
   ]
 }
