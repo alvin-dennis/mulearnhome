@@ -62,8 +62,6 @@ const About = () => {
           </div>
         </div>
         <div className="absolute right-1/8 pr-6 top-12 text-mulearn-blackish  hidden lg:block">
-          This one is already almost perfect 👍 You just need one small addition to fully satisfy
-          accessibility best practices across all browsers. ✅ Final recommended version
           <svg
             width="60"
             height="100"
