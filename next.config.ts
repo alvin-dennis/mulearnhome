@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
         hostname: "www.propeers.in",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/**",
+      },
     ],
   },
 };

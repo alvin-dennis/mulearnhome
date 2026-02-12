@@ -19,8 +19,9 @@ fragment OfficeHoursParts on OfficeHours {
     designation
     description
     date
-    isUpcoming
+    link
     interestGroups
+    poster_thumbnail
   }
 }
 
@@ -33,7 +34,7 @@ fragment SaltMangoTreeParts on SaltMangoTree {
     zone
     date
     description
-    isUpcoming
+    link
   }
 }
 
@@ -46,7 +47,7 @@ fragment InspirationStationParts on InspirationStation {
     zone
     date
     description
-    isUpcoming
+    link
   }
 }
 

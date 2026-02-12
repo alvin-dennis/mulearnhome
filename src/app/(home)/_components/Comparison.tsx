@@ -22,7 +22,9 @@ export default function Comparison() {
         viewport={{ once: true }}
       >
         <MotionDiv className="flex flex-col justify-center items-center" variants={fadeInUp}>
-          <h1 className="mb-16 text-center">μLearn is here to solve all your learning problems</h1>
+          <h1 className="mb-16 text-center">
+            <span className="text-mulearn">μLearn</span> is here to solve all your learning problems
+          </h1>
 
           <table className="border-collapse w-full max-w-[800px] mx-auto">
             <thead>

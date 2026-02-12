@@ -1,6 +1,15 @@
 "use client";
 
-import { Calendar, Clock, type LucideIcon, MapPin, Radio, User, Users } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  ExternalLink,
+  type LucideIcon,
+  MapPin,
+  Radio,
+  User,
+  Users,
+} from "lucide-react";
 import { useState } from "react";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +32,7 @@ interface GenericEventCardProps {
     thumbnail?: string;
     interestGroups?: string[];
     tags?: string[];
+    link?: string;
   };
   variant?: "episode" | "office-hour" | "open-mic";
   icon?: LucideIcon;
@@ -93,11 +103,18 @@ export function GenericEventCard({
   );
 
   const title = event.title || event.topic || "";
+  const eventLink = event.link
+    ? event.link.match(/^https?:\/\//)
+      ? event.link
+      : `https://${event.link}`
+    : undefined;
 
   return (
     <Card variant="hoverable" className="h-full flex flex-col">
       {/* Thumbnail Section */}
-      <div className="h-48 bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative shrink-0">
+      <div
+        className={`${variant === "office-hour" ? "aspect-[3/4] h-auto" : "h-48"} bg-linear-to-br from-mulearn-trusty-blue/20 to-mulearn-duke-purple/20 flex items-center justify-center relative shrink-0`}
+      >
         {event.thumbnail ? (
           <MuImage
             src={event.thumbnail}
@@ -198,15 +215,22 @@ export function GenericEventCard({
 
         {/* Footer */}
         <div
-          className={`flex ${actionButton ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
+          className={`flex ${actionButton || (event.link && event.isUpcoming) ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
         >
           <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
             <Calendar className="w-4 h-4 mr-1" />
             {event.date} {event.time ? `• ${event.time}` : ""}
           </span>
+          {eventLink && event.isUpcoming && (
+            <Button variant="default" className="gap-1 px-4 py-2 text-sm rounded-full" asChild>
+              <a href={eventLink} target="_blank" rel="noopener noreferrer">
+                Join <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </Button>
+          )}
           {actionButton && (
             <Button
-              variant={event.isUpcoming ? "mulearn" : "mulearn-outline"}
+              variant={event.isUpcoming ? "default" : "outline"}
               className="gap-1 px-4 py-2 text-sm rounded-full"
               onClick={actionButton.onClick}
             >

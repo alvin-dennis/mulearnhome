@@ -15,7 +15,7 @@ export default function DonatePage() {
           <h1>
             Help us sustain
             <br />
-            Our <span className="text-mulearn">Mission</span>
+            Our <span className="text-mulearn-trusty-blue">Mission</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground">
             Foster an innovation culture, introduce new technologies, and develop skilled

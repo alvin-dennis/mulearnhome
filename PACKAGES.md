@@ -73,15 +73,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 * Declarative animations for React
 * Used for page transitions and micro-interactions
 
-### **GSAP**
-
-* Advanced animation library
-* Used for complex timeline-based animations
-
-### **Lenis**
-
-* Smooth scrolling library
-
 ---
 
 ## 🧩 Forms & Validation
@@ -103,10 +94,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 ## 📅 Date & UI Utilities
 
-### **date-fns**
-
-* Lightweight date manipulation utilities
-
 ### **react-day-picker**
 
 * Accessible and customizable calendar/date picker
@@ -123,14 +110,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 * Promise-based HTTP client
 
-### **Nodemailer**
-
-* Sends emails from server-side (forms, notifications)
-
-### **@types/nodemailer**
-
-* TypeScript definitions for Nodemailer
-
 ---
 
 ## 🔊 Notifications & Feedback
@@ -138,10 +117,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 ### **sonner**
 
 * Toast notifications with modern UI
-
-### **react-hot-toast**
-
-* Lightweight toast notifications (legacy/quick use cases)
 
 ---
 
@@ -159,22 +134,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 ### **swiper**
 
 * Touch-enabled sliders and carousels
-
----
-
-## 🌌 3D & Graphics
-
-### **three**
-
-* WebGL-based 3D rendering engine
-
-### **@react-three/fiber**
-
-* React renderer for Three.js
-
-### **@react-three/drei**
-
-* Helpers and abstractions for common 3D patterns
 
 ---
 
@@ -225,9 +184,9 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 ## 🛠 Developer Utilities
 
-### **ts-node**
+### **Octokit**
 
-* Run TypeScript files directly (used in scripts)
+* Official SDK for interacting with GitHub’s APIs to manage repositories, issues, pull requests, and more.
 
 ### **baseline-browser-mapping**
 

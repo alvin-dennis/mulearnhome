@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -9,6 +9,7 @@ import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
 import { TabButton } from "@/app/events/_components/TabButton";
+import { MotionSection } from "@/components/MuFramer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -20,6 +21,8 @@ export interface OfficeHourSession {
   date?: string | null;
   interestGroups?: (string | null)[] | null;
   isUpcoming?: boolean | null;
+  link?: string | null;
+  poster_thumbnail?: string | null;
 }
 
 interface OfficeHoursClientProps {
@@ -46,6 +49,21 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
   const [pastPage, setPastPage] = useState(1);
   const itemsPerPage = 6;
 
+  // Parse DD/MM/YYYY date format and check if it's upcoming (today or future)
+  const isDateUpcoming = (dateStr: string): boolean => {
+    if (!dateStr) return false;
+    const parts = dateStr.split("/");
+    if (parts.length !== 3) return false;
+    const eventDate = new Date(
+      parseInt(parts[2], 10),
+      parseInt(parts[1], 10) - 1,
+      parseInt(parts[0], 10),
+    );
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return eventDate >= today;
+  };
+
   // Transform sessions to match expected format
   const allEvents = useMemo(() => {
     return sessions.map((session, index) => ({
@@ -56,7 +74,9 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       description: session.description || "",
       date: session.date || "",
       interestGroups: session.interestGroups?.filter((t): t is string => t !== null) || [],
-      isUpcoming: session.isUpcoming || false,
+      isUpcoming: isDateUpcoming(session.date || ""),
+      link: session.link || undefined,
+      thumbnail: session.poster_thumbnail || undefined,
     }));
   }, [sessions]);
 
@@ -144,7 +164,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
               community-driven learning zone.
             </p>
 
-            <Button variant={"custom"} className="px-8 py-3 gap-2 rounded-full">
+            <Button variant={"default"} className="px-8 py-3 gap-2 rounded-full">
               <PlayCircle className="w-5 h-5" />
               Join Next Session
             </Button>
@@ -175,7 +195,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       </div>
       <AnimatePresence mode="wait">
         {view === "upcoming" && (
-          <motion.section
+          <MotionSection
             key="upcoming"
             variants={motionVariants}
             initial="initial"
@@ -210,11 +230,11 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
                 perPage={itemsPerPage}
               />
             </div>
-          </motion.section>
+          </MotionSection>
         )}
 
         {view === "previous" && (
-          <motion.section
+          <MotionSection
             key="previous"
             variants={motionVariants}
             initial="initial"
@@ -237,7 +257,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
                 perPage={itemsPerPage}
               />
             </div>
-          </motion.section>
+          </MotionSection>
         )}
       </AnimatePresence>
     </div>

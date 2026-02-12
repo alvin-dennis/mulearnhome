@@ -125,8 +125,19 @@ var config_default = defineConfig({
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "string", name: "date", label: "Date", description: "Format: DD/MM/YYYY" },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: DD/MM/YYYY - Events are automatically marked as upcoming/past based on this date",
+                required: true
+              },
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the session (shown only for upcoming events)"
+              },
               {
                 type: "string",
                 name: "interestGroups",
@@ -165,6 +176,12 @@ var config_default = defineConfig({
                   { label: "Human Resources", value: "human-resources" },
                   { label: "Cloud", value: "cloud" }
                 ]
+              },
+              {
+                type: "image",
+                name: "poster_thumbnail",
+                label: "Poster Thumbnail",
+                description: "Image to display on the event card instead of the default icon"
               }
             ]
           }
@@ -197,14 +214,25 @@ var config_default = defineConfig({
                 label: "Zone",
                 options: ["North", "Central", "South"]
               },
-              { type: "string", name: "date", label: "Date", description: "Format: YYYY-MM-DD" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                required: true
+              },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" }
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)"
+              }
             ]
           }
         ]
@@ -236,14 +264,25 @@ var config_default = defineConfig({
                 label: "Zone",
                 options: ["North", "Central", "South"]
               },
-              { type: "string", name: "date", label: "Date", description: "Format: YYYY-MM-DD" },
+              {
+                type: "string",
+                name: "date",
+                label: "Date",
+                description: "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+                required: true
+              },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
                 ui: { component: "textarea" }
               },
-              { type: "boolean", name: "isUpcoming", label: "Is Upcoming?" }
+              {
+                type: "string",
+                name: "link",
+                label: "Event Link",
+                description: "Optional link for the episode (shown only for upcoming events)"
+              }
             ]
           }
         ]

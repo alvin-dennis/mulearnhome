@@ -1,4 +1,14 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaGithub,
+  FaGlobe,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+  FaTwitter,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 
 export const navItems = [
   {
@@ -6,12 +16,13 @@ export const navItems = [
     submenu: {
       "Key Pages": [
         { label: "Manifesto", href: "/manifesto" },
+        { label: "Founder's Message", href: "/founders-message" },
         { label: "Team", href: "/team" },
         {
           label: "Impact Gallery",
           href: "/impact-gallery",
         },
-        // { label: "Leaderboard", href: "/leaderboard" },
+        { label: "Leaderboard", href: "/leaderboard" },
         { label: "Our Partners", href: "/partners" },
         { label: "Events", href: "/events" },
       ],

@@ -92,46 +92,46 @@ const MuLearnLogo = ({
   );
 };
 
-const YIPLogo = ({
-  variant,
-  width = 200,
-  height = 50,
-}: {
-  variant: string;
-  width?: number;
-  height?: number;
-}) => {
-  const getLogoPath = () => {
-    switch (variant) {
-      case "red":
-        return "/assets/logo-template/yip-logo-red.svg";
-      case "dark":
-        return "/assets/logo-template/yip-logo-dark.svg";
-      case "black":
-        return "/assets/logo-template/yip-logo-black.svg";
-      default:
-        return "/assets/logo-template/yip-logo-red.svg";
-    }
-  };
+// const YIPLogo = ({
+//   variant,
+//   width = 200,
+//   height = 50,
+// }: {
+//   variant: string;
+//   width?: number;
+//   height?: number;
+// }) => {
+//   const getLogoPath = () => {
+//     switch (variant) {
+//       case "red":
+//         return "/assets/logo-template/yip-logo-red.svg";
+//       case "dark":
+//         return "/assets/logo-template/yip-logo-dark.svg";
+//       case "black":
+//         return "/assets/logo-template/yip-logo-black.svg";
+//       default:
+//         return "/assets/logo-template/yip-logo-red.svg";
+//     }
+//   };
 
-  return (
-    <div
-      className="transition-all duration-300"
-      style={{
-        width: width,
-        height: height,
-      }}
-    >
-      <MuImage
-        src={getLogoPath()}
-        alt="YIP Logo"
-        width={width}
-        height={height}
-        className="w-full h-full transition-all duration-300"
-      />
-    </div>
-  );
-};
+//   return (
+//     <div
+//       className="transition-all duration-300"
+//       style={{
+//         width: width,
+//         height: height,
+//       }}
+//     >
+//       <MuImage
+//         src={getLogoPath()}
+//         alt="YIP Logo"
+//         width={width}
+//         height={height}
+//         className="w-full h-full transition-all duration-300"
+//       />
+//     </div>
+//   );
+// };
 
 export default function CampusLogoGenerator() {
   const [formData, setFormData] = useState({
@@ -159,11 +159,11 @@ export default function CampusLogoGenerator() {
     { name: "Purple", value: "var(--mulearn-duke-purple)" },
     { name: "Blue", value: "var(--mulearn-trusty-blue)" },
   ];
-  const yipVariants = [
-    { name: "Red", value: "red", bgColor: "#ffffff" },
-    { name: "Dark", value: "dark", bgColor: "var(--mulearn-blackish)" },
-    { name: "Black", value: "black", bgColor: "#ffffff" },
-  ];
+  // const yipVariants = [
+  //   { name: "Red", value: "red", bgColor: "#ffffff" },
+  //   { name: "Dark", value: "dark", bgColor: "var(--mulearn-blackish)" },
+  //   { name: "Black", value: "black", bgColor: "#ffffff" },
+  // ];
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -186,11 +186,11 @@ export default function CampusLogoGenerator() {
 
       const config = {
         backgroundColor:
-          formData.logoType === "YIP"
-            ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
-            : formData.logoVariant === "Transparent Bg"
-              ? "transparent"
-              : formData.backgroundColor,
+          // formData.logoType === "YIP"
+          //   ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
+          //   :
+          formData.logoVariant === "Transparent Bg" ? "transparent" : formData.backgroundColor,
+
         width: rect.width,
         height: rect.height,
         quality: 1.0,
@@ -235,24 +235,24 @@ export default function CampusLogoGenerator() {
     } catch (error) {
       console.error("Error generating logo:", error);
       try {
-        const simpleConfig = {
-          quality: 1.0,
-          backgroundColor:
-            formData.logoType === "YIP"
-              ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
-              : formData.backgroundColor,
-        };
+        // const simpleConfig = {
+        //   quality: 1.0,
+        //   backgroundColor:
+        //     formData.logoType === "YIP"
+        //       ? yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor || "#FFFFFF"
+        //       : formData.backgroundColor,
+        // };
 
-        const fallbackDataUrl =
-          formData.fileType === "PNG"
-            ? await htmlToImage.toPng(squareLogoRef.current, simpleConfig)
-            : await htmlToImage.toSvg(squareLogoRef.current, simpleConfig);
+        // const fallbackDataUrl =
+        //   formData.fileType === "PNG"
+        //     ? await htmlToImage.toPng(squareLogoRef.current, simpleConfig)
+        //     : await htmlToImage.toSvg(squareLogoRef.current, simpleConfig);
 
         const link = document.createElement("a");
         link.download = `${
           formData.campusCode || "mulearn"
         }-logo.${formData.fileType.toLowerCase()}`;
-        link.href = fallbackDataUrl;
+        // link.href = fallbackDataUrl;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -279,7 +279,7 @@ export default function CampusLogoGenerator() {
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10">
             {formData.logoType === "YIP" ? (
               <>
-                <div className="relative group">
+                {/* <div className="relative group">
                   <div
                     ref={squareLogoRef}
                     className="w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden shadow-2xl"
@@ -338,7 +338,7 @@ export default function CampusLogoGenerator() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </>
             ) : (
               <>
@@ -361,13 +361,7 @@ export default function CampusLogoGenerator() {
                         <div className="flex flex-col items-center">
                           <MuLearnLogo color={formData.foregroundColor} width={180} height={45} />
                           <div className="relative w-full">
-                            <div
-                              className="text-2xl lg:text-3xl opacity-90 absolute right-0"
-                              style={{
-                                fontFamily: "var(--font-plus-jakarta)",
-                                fontWeight: 400,
-                              }}
-                            >
+                            <div className="text-2xl lg:text-3xl opacity-90 absolute right-0 font-sans">
                               {formData.campusCode || "Campus"}
                             </div>
                           </div>
@@ -388,14 +382,7 @@ export default function CampusLogoGenerator() {
                         <div className="flex flex-col items-center">
                           <MuLearnLogo color={formData.foregroundColor} width={140} height={35} />
                           <div className="relative w-full">
-                            <div
-                              className="text-base mt-2 opacity-90 absolute right-0"
-                              style={{
-                                color: "#FFFFFF",
-                                fontFamily: "var(--font-plus-jakarta)",
-                                fontWeight: 400,
-                              }}
-                            >
+                            <div className="text-base mt-2 opacity-90 absolute right-0 font-sans text-mulearn-whitish">
                               {formData.campusCode || "Campus"}
                             </div>
                           </div>
@@ -412,38 +399,15 @@ export default function CampusLogoGenerator() {
         <div className="order-2 lg:order-1 w-full lg:w-110 bg-mulearn-whitish p-4 lg:p-10 shadow overflow-y-auto">
           <div className="space-y-6">
             <div>
-              <h1
-                className="font-bold mb-2"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  color: "var(--mulearn-blackish)",
-                  fontSize: "1.5rem",
-                }}
-              >
-                Logo Generator
-              </h1>
+              <h1 className="font-bold mb-2 text-3xl">Logo Generator</h1>
             </div>
 
             <div>
-              <Label
-                className="block mb-2"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  color: "var(  --mulearn-blackish-normal)",
-                  fontSize: "var(--font-size-body)",
-                  fontWeight: 500,
-                }}
-              >
-                Campus Code
-              </Label>
+              <Label className="block mb-2">Campus Code</Label>
               <Input
                 type="text"
                 placeholder="Enter Campus Code"
                 className="w-full p-3 border-0 bg-gray-50 focus:bg-mulearn-whitish transition-all duration-200"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  fontSize: "var(--font-size-body)",
-                }}
                 value={formData.campusCode}
                 onChange={(e) => handleInputChange("campusCode", e.target.value)}
               />
@@ -453,38 +417,28 @@ export default function CampusLogoGenerator() {
             </div>
 
             <div>
-              <span
-                className="block font-medium mb-2"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  color: "var(  --mulearn-blackish-normal)",
-                  fontSize: "var(--font-size-body)",
-                  fontWeight: 500,
-                }}
-              >
-                Logo Type
-              </span>
+              <span className="block font-medium mb-2">Logo Type</span>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.logoType === "MuLearn" ? "mulearn-trusty" : "outline"}
+                  variant={formData.logoType === "MuLearn" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("logoType", "MuLearn")}
                 >
                   MuLearn
                 </Button>
-                <Button
-                  variant={formData.logoType === "YIP" ? "mulearn-trusty" : "outline"}
+                {/* <Button
+                  variant={formData.logoType === "YIP" ? "default" : "outline"}
                   className="flex-1 rounded-lg p-3 font-medium"
                   onClick={() => handleInputChange("logoType", "YIP")}
                 >
                   YIP
-                </Button>
+                </Button> */}
               </div>
             </div>
 
             {formData.logoType === "YIP" ? (
               <div>
-                <span
+                {/* <span
                   className="block font-medium mb-2"
                   style={{
                     fontFamily: "var(--font-plus-jakarta)",
@@ -499,40 +453,28 @@ export default function CampusLogoGenerator() {
                   {yipVariants.map((variant) => (
                     <Button
                       key={variant.value}
-                      variant={formData.yipVariant === variant.value ? "mulearn-trusty" : "outline"}
+                      variant={formData.yipVariant === variant.value ? "default" : "outline"}
                       className="flex-1 p-3 rounded-lg font-medium"
                       onClick={() => handleInputChange("yipVariant", variant.value)}
                     >
                       {variant.name}
                     </Button>
                   ))}
-                </div>
+                </div> */}
               </div>
             ) : (
               <div>
-                <span
-                  className="block font-medium mb-2"
-                  style={{
-                    fontFamily: "var(--font-plus-jakarta)",
-                    color: "var(  --mulearn-blackish-normal)",
-                    fontSize: "var(--font-size-body)",
-                    fontWeight: 500,
-                  }}
-                >
-                  Logo Variant
-                </span>
+                <span className="block font-medium mb-2">Logo Variant</span>
                 <div className="flex gap-2">
                   <Button
-                    variant={formData.logoVariant === "Profile Pic" ? "mulearn-trusty" : "outline"}
+                    variant={formData.logoVariant === "Profile Pic" ? "default" : "outline"}
                     className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Profile Pic")}
                   >
                     Profile Pic
                   </Button>
                   <Button
-                    variant={
-                      formData.logoVariant === "Transparent Bg" ? "mulearn-trusty" : "outline"
-                    }
+                    variant={formData.logoVariant === "Transparent Bg" ? "default" : "outline"}
                     className="flex-1 p-3 rounded-lg font-medium"
                     onClick={() => handleInputChange("logoVariant", "Transparent Bg")}
                   >
@@ -545,17 +487,7 @@ export default function CampusLogoGenerator() {
             {formData.logoType !== "YIP" && (
               <>
                 <div>
-                  <span
-                    className="block font-medium mb-3"
-                    style={{
-                      fontFamily: "var(--font-plus-jakarta)",
-                      color: "var(  --mulearn-blackish-normal)",
-                      fontSize: "var(--font-size-body)",
-                      fontWeight: 500,
-                    }}
-                  >
-                    Foreground Color
-                  </span>
+                  <span className="block font-medium mb-3">Foreground Color</span>
                   <div className="flex gap-3">
                     {foregroundColors.map((color) => (
                       <button
@@ -563,7 +495,7 @@ export default function CampusLogoGenerator() {
                         key={color.value}
                         className={`w-12 h-12 rounded border border-gray-200 transition-all ${
                           formData.foregroundColor === color.value
-                            ? "scale-110 ring-2 ring-blue-500"
+                            ? "scale-110 ring-2 ring-mulearn-trusty-blue"
                             : "hover:opacity-80"
                         }`}
                         style={{
@@ -580,12 +512,6 @@ export default function CampusLogoGenerator() {
                     className={`block font-medium mb-3 ${
                       formData.logoVariant === "Transparent Bg" ? "opacity-50" : ""
                     }`}
-                    style={{
-                      fontFamily: "var(--font-plus-jakarta)",
-                      color: "var(  --mulearn-blackish-normal)",
-                      fontSize: "var(--font-size-body)",
-                      fontWeight: 500,
-                    }}
                   >
                     Background Color
                   </span>
@@ -597,7 +523,7 @@ export default function CampusLogoGenerator() {
                         disabled={formData.logoVariant === "Transparent Bg"}
                         className={`w-12 h-12 rounded border border-gray-200 transition-all ${
                           formData.backgroundColor === color.value
-                            ? "scale-110 ring-2 ring-blue-500"
+                            ? "scale-110 ring-2 ring-mulearn-trusty-blue"
                             : "hover:opacity-80"
                         } ${
                           formData.logoVariant === "Transparent Bg"
@@ -616,27 +542,17 @@ export default function CampusLogoGenerator() {
             )}
 
             <div>
-              <span
-                className="block font-medium mb-2"
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  color: "var(  --mulearn-blackish-normal)",
-                  fontSize: "var(--font-size-body)",
-                  fontWeight: 500,
-                }}
-              >
-                File Type
-              </span>
+              <span className="block font-medium mb-2">File Type</span>
               <div className="flex gap-2">
                 <Button
-                  variant={formData.fileType === "PNG" ? "mulearn-trusty" : "outline"}
+                  variant={formData.fileType === "PNG" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "PNG")}
                 >
                   PNG
                 </Button>
                 <Button
-                  variant={formData.fileType === "SVG" ? "mulearn-trusty" : "outline"}
+                  variant={formData.fileType === "SVG" ? "default" : "outline"}
                   className="flex-1 p-3 rounded-lg font-medium"
                   onClick={() => handleInputChange("fileType", "SVG")}
                 >
@@ -647,7 +563,7 @@ export default function CampusLogoGenerator() {
 
             <Button
               className="w-full rounded-lg p-4 font-medium"
-              variant="mulearn-trusty"
+              variant="default"
               onClick={handleDownload}
               disabled={isDownloading || formData.campusCode.length < 3}
             >

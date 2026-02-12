@@ -169,9 +169,10 @@ type OfficeHoursSessions {
   performer: String
   designation: String
   description: String
-  date: String
-  isUpcoming: Boolean
+  date: String!
+  link: String
   interestGroups: [String]
+  poster_thumbnail: String
 }
 
 type OfficeHours implements Node & Document {
@@ -187,8 +188,9 @@ input OfficeHoursSessionsFilter {
   designation: StringFilter
   description: StringFilter
   date: StringFilter
-  isUpcoming: BooleanFilter
+  link: StringFilter
   interestGroups: StringFilter
+  poster_thumbnail: ImageFilter
 }
 
 input OfficeHoursFilter {
@@ -210,9 +212,9 @@ type SaltMangoTreeEpisodes {
   topic: String!
   campus: String!
   zone: String
-  date: String
+  date: String!
   description: String
-  isUpcoming: Boolean
+  link: String
 }
 
 type SaltMangoTree implements Node & Document {
@@ -228,7 +230,7 @@ input SaltMangoTreeEpisodesFilter {
   zone: StringFilter
   date: StringFilter
   description: StringFilter
-  isUpcoming: BooleanFilter
+  link: StringFilter
 }
 
 input SaltMangoTreeFilter {
@@ -250,9 +252,9 @@ type InspirationStationEpisodes {
   topic: String!
   campus: String!
   zone: String
-  date: String
+  date: String!
   description: String
-  isUpcoming: Boolean
+  link: String
 }
 
 type InspirationStation implements Node & Document {
@@ -268,7 +270,7 @@ input InspirationStationEpisodesFilter {
   zone: StringFilter
   date: StringFilter
   description: StringFilter
-  isUpcoming: BooleanFilter
+  link: StringFilter
 }
 
 input InspirationStationFilter {
@@ -370,8 +372,9 @@ input OfficeHoursSessionsMutation {
   designation: String
   description: String
   date: String
-  isUpcoming: Boolean
+  link: String
   interestGroups: [String]
+  poster_thumbnail: String
 }
 
 input OfficeHoursMutation {
@@ -384,7 +387,7 @@ input SaltMangoTreeEpisodesMutation {
   zone: String
   date: String
   description: String
-  isUpcoming: Boolean
+  link: String
 }
 
 input SaltMangoTreeMutation {
@@ -397,7 +400,7 @@ input InspirationStationEpisodesMutation {
   zone: String
   date: String
   description: String
-  isUpcoming: Boolean
+  link: String
 }
 
 input InspirationStationMutation {

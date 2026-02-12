@@ -1,6 +1,8 @@
+#!/usr/bin/env bun
+
 import { existsSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import axios from "axios";
+import { Octokit } from "octokit";
 
 interface ContributorStats {
   username: string;
@@ -8,45 +10,13 @@ interface ContributorStats {
   commits: number;
   prs_opened: number;
   prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
+  points: number;
 }
 
 const TOKEN = process.env.GH_TOKEN;
-if (!TOKEN) throw new Error("GITHUB_TOKEN is required to run");
+if (!TOKEN) throw new Error("GH_TOKEN is required to run");
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function paginatedGet<T>(
-  url: string,
-  params: Record<string, string | number> = {},
-): Promise<T[]> {
-  let page = 1;
-  const results: T[] = [];
-
-  while (true) {
-    const response = await axios.get<T[]>(url, {
-      headers: {
-        Authorization: `token ${TOKEN}`,
-      },
-      params: { ...params, per_page: 100, page },
-    });
-
-    if (response.status === 202) {
-      await sleep(3000);
-      continue;
-    }
-
-    results.push(...response.data);
-
-    if (response.data.length < 100) break;
-    page++;
-  }
-
-  return results;
-}
+const octokit = new Octokit({ auth: TOKEN });
 
 function getMonth(dateStr: string | null) {
   if (!dateStr) return null;
@@ -54,212 +24,155 @@ function getMonth(dateStr: string | null) {
   return `${d.getUTCFullYear()}-${(d.getUTCMonth() + 1).toString().padStart(2, "0")}`;
 }
 
+function emptyStats(username: string): ContributorStats {
+  return {
+    username,
+    commits: 0,
+    prs_opened: 0,
+    prs_merged: 0,
+    points: 0,
+  };
+}
+
+function isBot(username: string) {
+  return username === "github-actions[bot]" || username.endsWith("[bot]");
+}
+
 export async function getLeaderboard() {
-  const currentMonth = new Date();
-  const currentMonthStr = `${currentMonth.getUTCFullYear()}-${(currentMonth.getUTCMonth() + 1)
+  const now = new Date();
+  const currentMonthStr = `${now.getUTCFullYear()}-${(now.getUTCMonth() + 1)
     .toString()
     .padStart(2, "0")}`;
 
-  const date = currentMonth.toLocaleString("en-US", {
+  const date = now.toLocaleString("en-US", {
     month: "long",
     year: "numeric",
   });
 
-  const repos = await paginatedGet<{ name: string }>(
-    `https://api.github.com/orgs/gtech-mulearn/repos`,
-    { type: "all", sort: "updated" },
-  );
+  const repos = await octokit.paginate(octokit.rest.repos.listForOrg, {
+    org: "gtech-mulearn",
+    type: "all",
+    per_page: 100,
+  });
 
   const contributorsMap: Record<string, { overall: ContributorStats; monthly: ContributorStats }> =
     {};
 
-  const repoPromises = repos.map(async (repo) => {
-    const [contributors, prs, issues] = await Promise.all([
-      paginatedGet<{ login: string; contributions: number }>(
-        `https://api.github.com/repos/gtech-mulearn/${repo.name}/contributors`,
-      ),
-      paginatedGet<{
-        user: { login: string } | null;
-        created_at: string;
-        merged_at: string | null;
-      }>(`https://api.github.com/repos/gtech-mulearn/${repo.name}/pulls`, {
-        state: "all",
-      }),
-      paginatedGet<{
-        user: { login: string } | null;
-        state: string;
-        created_at: string;
-        pull_request?: string;
-      }>(`https://api.github.com/repos/gtech-mulearn/${repo.name}/issues`, {
-        state: "all",
-      }),
-    ]);
+  for (const repo of repos) {
+    const contributors = await octokit.paginate(octokit.rest.repos.listContributors, {
+      owner: "gtech-mulearn",
+      repo: repo.name,
+      per_page: 100,
+    });
 
-    return { contributors, prs, issues };
-  });
-
-  const allRepoData = await Promise.all(repoPromises);
-
-  for (const repoData of allRepoData) {
-    const { contributors, prs, issues } = repoData;
     for (const c of contributors) {
       const login = c.login;
+      if (!login || isBot(login)) continue;
       if (!contributorsMap[login]) {
         contributorsMap[login] = {
-          overall: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
-          monthly: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
+          overall: emptyStats(login),
+          monthly: emptyStats(login),
         };
       }
       contributorsMap[login].overall.commits += c.contributions;
     }
 
-    for (const pr of prs) {
-      if (!pr.user?.login) continue;
-      const login = pr.user.login;
+    const monthlyCommits = await octokit.paginate(octokit.rest.repos.listCommits, {
+      owner: "gtech-mulearn",
+      repo: repo.name,
+      since: `${currentMonthStr}-01T00:00:00Z`,
+      per_page: 100,
+    });
+
+    for (const commit of monthlyCommits) {
+      const login = commit.author?.login;
+      if (!login || isBot(login)) continue;
+
       if (!contributorsMap[login]) {
         contributorsMap[login] = {
-          overall: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
-          monthly: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
+          overall: emptyStats(login),
+          monthly: emptyStats(login),
+        };
+      }
+
+      contributorsMap[login].monthly.commits += 1;
+    }
+
+    const prs = await octokit.paginate(octokit.rest.pulls.list, {
+      owner: "gtech-mulearn",
+      repo: repo.name,
+      state: "all",
+      per_page: 100,
+    });
+
+    for (const pr of prs) {
+      const login = pr.user?.login;
+      if (!login || isBot(login)) continue;
+      if (!contributorsMap[login]) {
+        contributorsMap[login] = {
+          overall: emptyStats(login),
+          monthly: emptyStats(login),
         };
       }
       contributorsMap[login].overall.prs_opened += 1;
-      contributorsMap[login].overall.prs_merged += pr.merged_at ? 1 : 0;
+      if (pr.merged_at) contributorsMap[login].overall.prs_merged += 1;
 
       if (getMonth(pr.created_at) === currentMonthStr) {
         contributorsMap[login].monthly.prs_opened += 1;
-        contributorsMap[login].monthly.prs_merged += pr.merged_at ? 1 : 0;
+        if (pr.merged_at) contributorsMap[login].monthly.prs_merged += 1;
       }
     }
+    await new Promise((r) => setTimeout(r, 800));
+  }
 
-    for (const issue of issues) {
-      if (issue.pull_request || !issue.user?.login) continue;
-      const login = issue.user.login;
-      if (!contributorsMap[login]) {
-        contributorsMap[login] = {
-          overall: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
-          monthly: {
-            username: login,
-            commits: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-            issues_opened: 0,
-            issues_closed: 0,
-          },
-        };
-      }
-      contributorsMap[login].overall.issues_opened += 1;
-      contributorsMap[login].overall.issues_closed += issue.state === "closed" ? 1 : 0;
-
-      if (getMonth(issue.created_at) === currentMonthStr) {
-        contributorsMap[login].monthly.issues_opened += 1;
-        contributorsMap[login].monthly.issues_closed += issue.state === "closed" ? 1 : 0;
-      }
-    }
+  for (const c of Object.values(contributorsMap)) {
+    c.overall.points = c.overall.commits + c.overall.prs_opened + c.overall.prs_merged;
+    c.monthly.points = c.monthly.commits + c.monthly.prs_opened + c.monthly.prs_merged;
   }
 
   const top10Overall = Object.values(contributorsMap)
-    .sort(
-      (a, b) =>
-        Object.values(b.overall).reduce(
-          (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0,
-        ) -
-        Object.values(a.overall).reduce((sum, val) => sum + (typeof val === "number" ? val : 0), 0),
-    )
+    .sort((a, b) => b.overall.points - a.overall.points)
     .slice(0, 10)
     .map((c) => c.overall);
 
   const top10Monthly = Object.values(contributorsMap)
-    .sort(
-      (a, b) =>
-        Object.values(b.monthly).reduce(
-          (sum, val) => sum + (typeof val === "number" ? val : 0),
-          0,
-        ) -
-        Object.values(a.monthly).reduce((sum, val) => sum + (typeof val === "number" ? val : 0), 0),
-    )
+    .sort((a, b) => b.monthly.points - a.monthly.points)
     .slice(0, 10)
     .map((c) => c.monthly);
 
   async function addDisplayNames(list: ContributorStats[]) {
     return Promise.all(
-      list.map(async (contributor) => {
+      list.map(async (c) => {
         try {
-          const { data } = await axios.get(`https://api.github.com/users/${contributor.username}`, {
-            headers: {
-              Authorization: `token ${TOKEN}`,
-            },
+          const { data } = await octokit.rest.users.getByUsername({
+            username: c.username,
           });
-
-          contributor.displayname = data.name || contributor.username;
+          c.displayname = data.name || c.username;
         } catch {
-          contributor.displayname = contributor.username;
+          c.displayname = c.username;
         }
-        return contributor;
+        return c;
       }),
     );
   }
 
-  const Monthly = await addDisplayNames(top10Monthly);
-  const Overall = await addDisplayNames(top10Overall);
-
   return {
     month: currentMonthStr,
-    monthly: Monthly,
-    overall: Overall,
     date,
+    overall: await addDisplayNames(top10Overall),
+    monthly: await addDisplayNames(top10Monthly),
   };
 }
 
 (async () => {
   try {
     const data = await getLeaderboard();
-
     const outputPath = path.join(process.cwd(), "src", "data", "leaderboard.json");
 
-    if (existsSync(outputPath)) {
-      console.log(`✏️ Updating existing file: ${outputPath}`);
-    } else {
-      console.log(`📁 Creating new file: ${outputPath}`);
-    }
+    console.log(existsSync(outputPath) ? `✏️ Updating ${outputPath}` : `📁 Creating ${outputPath}`);
 
     writeFileSync(outputPath, JSON.stringify(data, null, 2));
-    console.log(`✅ Leaderboard saved to ${outputPath}`);
+    console.log("✅ Leaderboard generated successfully");
   } catch (err) {
     console.error("❌ Failed to generate leaderboard:", err);
     process.exit(1);

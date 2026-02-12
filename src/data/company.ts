@@ -35,7 +35,7 @@ export const CompanyPartner = [
   },
   {
     name: "PIT Solutions",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Google-logo.webp",
+    logo: "src/modules/Public/CompanyPartners/assets/companies/Pits.webp",
     website: "https://www.pitsolutions.com/",
     descritpion:
       "A global IT services company providing web, mobile, and enterprise software solutions.",

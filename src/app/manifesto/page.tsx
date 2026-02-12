@@ -78,7 +78,7 @@ export default function Manifesto() {
         </MotionH2>
 
         <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
-          <Button variant="mulearn-inverted" className="py-2 px-6 sm:px-8 sm:py-3">
+          <Button variant="inverted" className="py-2 px-6 sm:px-8 sm:py-3">
             Join µLearn
           </Button>
         </Link>

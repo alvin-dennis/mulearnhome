@@ -21,9 +21,11 @@ const Paragraph = ({ text }: { text: string }) => (
 const SubsectionList = ({ subsections }: { subsections: string[] }) => (
   <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify list-[lower-roman]">
     {subsections.map((subsection) => (
-      <li key={subsection.slice(0, 50)} className="pl-2 leading-relaxed">
-        {subsection}
-      </li>
+      <li
+        key={subsection.slice(0, 50)}
+        className="pl-2 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: formatText(subsection) }}
+      />
     ))}
   </ol>
 );
@@ -56,7 +58,7 @@ export default async function PrivacyPolicy() {
                 ))}
               </div>
 
-              {section.subsections.length > 0 && (
+              {section.subsections?.length > 0 && (
                 <SubsectionList subsections={section.subsections} />
               )}
             </section>

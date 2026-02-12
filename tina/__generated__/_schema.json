@@ -142,16 +142,18 @@
               "type": "string",
               "name": "date",
               "label": "Date",
-              "description": "Format: DD/MM/YYYY",
+              "description": "Format: DD/MM/YYYY - Events are automatically marked as upcoming/past based on this date",
+              "required": true,
               "namespace": ["officeHours", "sessions", "date"],
               "searchable": true,
               "uid": false
             },
             {
-              "type": "boolean",
-              "name": "isUpcoming",
-              "label": "Is Upcoming?",
-              "namespace": ["officeHours", "sessions", "isUpcoming"],
+              "type": "string",
+              "name": "link",
+              "label": "Event Link",
+              "description": "Optional link for the session (shown only for upcoming events)",
+              "namespace": ["officeHours", "sessions", "link"],
               "searchable": true,
               "uid": false
             },
@@ -195,6 +197,15 @@
               ],
               "namespace": ["officeHours", "sessions", "interestGroups"],
               "searchable": true,
+              "uid": false
+            },
+            {
+              "type": "image",
+              "name": "poster_thumbnail",
+              "label": "Poster Thumbnail",
+              "description": "Image to display on the event card instead of the default icon",
+              "namespace": ["officeHours", "sessions", "poster_thumbnail"],
+              "searchable": false,
               "uid": false
             }
           ],
@@ -250,7 +261,8 @@
               "type": "string",
               "name": "date",
               "label": "Date",
-              "description": "Format: YYYY-MM-DD",
+              "description": "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+              "required": true,
               "namespace": ["saltMangoTree", "episodes", "date"],
               "searchable": true,
               "uid": false
@@ -265,10 +277,11 @@
               "uid": false
             },
             {
-              "type": "boolean",
-              "name": "isUpcoming",
-              "label": "Is Upcoming?",
-              "namespace": ["saltMangoTree", "episodes", "isUpcoming"],
+              "type": "string",
+              "name": "link",
+              "label": "Event Link",
+              "description": "Optional link for the episode (shown only for upcoming events)",
+              "namespace": ["saltMangoTree", "episodes", "link"],
               "searchable": true,
               "uid": false
             }
@@ -325,7 +338,8 @@
               "type": "string",
               "name": "date",
               "label": "Date",
-              "description": "Format: YYYY-MM-DD",
+              "description": "Format: YYYY-MM-DD - Episodes are automatically marked as upcoming/past based on this date",
+              "required": true,
               "namespace": ["inspirationStation", "episodes", "date"],
               "searchable": true,
               "uid": false
@@ -340,10 +354,11 @@
               "uid": false
             },
             {
-              "type": "boolean",
-              "name": "isUpcoming",
-              "label": "Is Upcoming?",
-              "namespace": ["inspirationStation", "episodes", "isUpcoming"],
+              "type": "string",
+              "name": "link",
+              "label": "Event Link",
+              "description": "Optional link for the episode (shown only for upcoming events)",
+              "namespace": ["inspirationStation", "episodes", "link"],
               "searchable": true,
               "uid": false
             }

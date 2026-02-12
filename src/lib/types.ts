@@ -1,3 +1,6 @@
+import type { CSSProperties, ReactNode } from "react";
+import type { IconType } from "react-icons";
+
 export interface SubItem {
   label: string;
   href: string;
@@ -292,8 +295,7 @@ export interface Score {
   commits: number;
   prs_opened: number;
   prs_merged: number;
-  issues_opened: number;
-  issues_closed: number;
+  points: number;
 }
 
 export interface LeaderboardData {
@@ -302,9 +304,20 @@ export interface LeaderboardData {
   date: string;
 }
 
-export interface LeaderboardProps {
-  props: LeaderboardData & { date: string };
-  revalidate: number;
+export interface TopContributorProps {
+  score: Score;
+  rank: 1 | 2 | 3;
+}
+
+export interface LeaderboardTableProps {
+  scores: Score[];
+  showTopThree?: boolean;
+}
+
+export interface LeaderboardRowProps {
+  score: Score;
+  rank: number;
+  isCurrentUser?: boolean;
 }
 
 export interface OnboardingStep {
@@ -362,3 +375,12 @@ export interface Captcha {
   score: number;
   error?: string;
 }
+
+export type SocialLinks = {
+  icon: IconType;
+  title: string;
+  subtitle?: string;
+  href: string;
+  action?: "follow" | "subscribe";
+  color: string;
+};

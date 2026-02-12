@@ -47,7 +47,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant={"custom"} className="font-semibold px-6 py-3 md:px-8 md:py-4">
+                <Button variant={"default"} className="font-semibold px-6 py-3 md:px-8 md:py-4">
                   Join as a Company Partner
                 </Button>
               </Link>

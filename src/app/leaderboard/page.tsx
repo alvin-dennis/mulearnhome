@@ -1,143 +1,140 @@
+"use client";
+
 import type { Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Info, Trophy } from "lucide-react";
 import Link from "next/link";
-import { MotionDiv, MotionH2 } from "@/components/MuFramer";
+import { useState } from "react";
+import { LeaderboardTable } from "@/app/leaderboard/_components/LeaderboardTable";
+import { TopContributor } from "@/app/leaderboard/_components/TopContributor";
+import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import leaderboardData from "@/data/leaderboard.json";
-import type { Score } from "@/lib/types";
+import type { LeaderboardData, Score } from "@/lib/types";
+
+const data = leaderboardData as LeaderboardData;
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+    transition: {
+      duration: 0.6,
+      ease: [0.42, 0, 0.58, 1],
+    },
   },
 };
 
-export default function LeaderBoard() {
-  const { date, monthly, overall } = leaderboardData as typeof leaderboardData;
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
 
-  const mapScores = (scores: Score[]) =>
-    scores.map((c) => ({ ...c, displayname: c.displayname || c.username }));
+const mapScores = (scores: Score[]) =>
+  scores.map((c) => ({
+    ...c,
+    displayname: c.displayname || c.username,
+  }));
 
-  const renderTable = (title: string, scores: Score[]) => (
-    <MotionDiv
-      className="m-3 w-full max-w-5xl"
-      variants={fadeInUp}
-      initial="hidden"
-      animate="visible"
-    >
-      <Card className="rounded-2xl shadow-md bg-mulearn-bg">
-        <CardContent className="p-5 overflow-x-auto">
-          <h1 className="text-center mb-5 text-mulearn-primary">
-            {title}
-            {title === "Monthly Leaderboard" && ` — ${date}`}
-          </h1>
-
-          <Table className="min-w-[800px] w-full">
-            <TableHeader>
-              <TableRow>
-                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-                  Rank
-                </TableHead>
-                <TableHead className="text-left text-sm md:text-base text-mulearn-blackish">
-                  Name
-                </TableHead>
-                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-                  Commits
-                </TableHead>
-                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-                  PRs
-                  <div className="text-xs font-normal text-mulearn-gray-600">(Open / Merged)</div>
-                </TableHead>
-                <TableHead className="text-center text-sm md:text-base text-mulearn-blackish">
-                  Issues
-                  <div className="text-xs font-normal text-mulearn-gray-600">(Open / Closed)</div>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-
-            <TableBody>
-              {scores.map((score, index) => (
-                <TableRow
-                  key={score.username}
-                  className={index < 3 ? "bg-mulearn text-mulearn-whitish font-bold" : ""}
-                >
-                  <TableCell className="text-center text-sm md:text-base">{index + 1}</TableCell>
-                  <TableCell className="text-left text-sm md:text-base">
-                    <Link
-                      href={`https://github.com/${score.username}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline text-mulearn-primary"
-                    >
-                      {score.displayname}
-                    </Link>
-                  </TableCell>
-                  <TableCell className="text-center text-sm md:text-base">
-                    {score.commits}
-                  </TableCell>
-                  <TableCell className="text-center text-sm md:text-base">
-                    {score.prs_opened}/{score.prs_merged}
-                  </TableCell>
-                  <TableCell className="text-center text-sm md:text-base">
-                    {score.issues_opened}/{score.issues_closed}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
-    </MotionDiv>
-  );
+export default function Leaderboard() {
+  const [activeTab, setActiveTab] = useState<"monthly" | "overall">("monthly");
+  const currentScores = mapScores(activeTab === "monthly" ? data.monthly : data.overall);
+  const topThree = currentScores.slice(0, 3);
 
   return (
-    <div className="flex flex-col w-full px-3 md:px-5 py-10">
-      <MotionH2
-        className="text-4xl md:text-5xl font-bold text-center mb-10 text-mulearn-primary"
-        variants={fadeInUp}
-        initial="hidden"
-        animate="visible"
-      >
-        <span className="text-mulearn">μLearn </span>
-        Contribution Leaderboard
-      </MotionH2>
+    <div className="min-h-screen">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <MotionDiv
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          className="text-center mx-auto pt-12 sm:pt-20 pb-10 sm:pb-12"
+        >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-mulearn-blackish mb-4">
+            <span className="text-mulearn">μLearn</span> Contribution Leaderboard
+          </h1>
 
-      <div className="flex flex-col lg:flex-row justify-center items-start w-full gap-5 lg:gap-10">
-        <div className="w-full lg:w-1/2 flex justify-center">
-          {renderTable("Monthly Leaderboard", mapScores(monthly))}
-        </div>
+          <p className="text-mulearn-blackish text-base sm:text-lg leading-relaxed">
+            Recognizing developers who make our open-source community thrive.
+          </p>
+        </MotionDiv>
 
-        <div className="w-full lg:w-1/2 flex justify-center">
-          {renderTable("Overall Leaderboard", mapScores(overall))}
-        </div>
-      </div>
-      <MotionDiv
-        variants={fadeInUp}
-        initial="hidden"
-        animate="visible"
-        className="flex justify-center mt-6"
-      >
-        <Link href="https://contributors.mulearn.org">
-          <Button
-            variant={"custom"}
-            className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-lg"
-          >
-            View Full Leaderboard <ArrowRight className="w-5 h-5" />
-          </Button>
-        </Link>
-      </MotionDiv>
+        <MotionDiv
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8"
+        >
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as "monthly" | "overall")}>
+            <TabsList className="bg-muted/60 p-1 h-11">
+              <TabsTrigger
+                value="monthly"
+                className="h-9 px-4 gap-2 text-sm font-medium data-[state=active]:text-mulearn-trusty-blue data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
+                <Calendar className="w-4 h-4" />
+                Monthly
+              </TabsTrigger>
+
+              <TabsTrigger
+                value="overall"
+                className="h-9 px-4 gap-2 text-sm font-medium data-[state=active]:text-mulearn-trusty-blue data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
+                <Trophy className="w-4 h-4" />
+                Overall
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+
+          <div className="flex items-center gap-2 text-sm text-mulearn-blackish cursor-help">
+            <Info className="w-4 h-4 text-mulearn-trusty-blue" />
+            <span className="font-medium text-mulearn">
+              {activeTab === "monthly" ? data.date : "Overall stats"}
+            </span>
+          </div>
+        </MotionDiv>
+
+        <MotionDiv
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 items-end pb-10"
+        >
+          <MotionDiv variants={fadeInUp} className="order-2 md:order-1">
+            {topThree[1] && <TopContributor score={topThree[1]} rank={2} />}
+          </MotionDiv>
+
+          <MotionDiv variants={fadeInUp} className="order-1 md:order-2">
+            {topThree[0] && <TopContributor score={topThree[0]} rank={1} />}
+          </MotionDiv>
+
+          <MotionDiv variants={fadeInUp} className="order-3">
+            {topThree[2] && <TopContributor score={topThree[2]} rank={3} />}
+          </MotionDiv>
+        </MotionDiv>
+
+        <MotionDiv variants={fadeInUp} initial="hidden" animate="visible" className="pb-12">
+          <LeaderboardTable scores={currentScores} showTopThree />
+        </MotionDiv>
+
+        {/* <MotionDiv
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center text-center pb-20"
+        >
+          <Link href="https://contributors.mulearn.org" target="_blank" rel="noopener noreferrer">
+            <Button variant={"default"} className="h-12 px-6 text-sm font-semibold group shadow-sm">
+              View Full Leaderboard
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
+            </Button>
+          </Link>
+        </MotionDiv> */}
+      </main>
     </div>
   );
 }

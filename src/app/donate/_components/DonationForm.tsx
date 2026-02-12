@@ -17,8 +17,19 @@ import {
   donationFormSchema,
 } from "@/lib/schemas/donation";
 import { cn } from "@/lib/utils";
-import { generateReferenceCode, submitBankTransfer, submitSubscription } from "@/services/donation";
-import { annualTiers, monthlyTiers, oneTimeTiers, type PatronTierConfig } from "./PatronData";
+import {
+  generateReferenceCode,
+  submitBankTransfer,
+  submitDonationForm,
+  submitSubscription,
+} from "@/services/donation";
+import {
+  annualTiers,
+  monthlyTiers,
+  oneTimeTiers,
+  type PatronTierConfig,
+  regularOneTimeTiers,
+} from "./PatronData";
 
 // Bank details for display
 const BANK_DETAILS = {
@@ -35,8 +46,6 @@ export default function DonationForm() {
   const [donationType, setDonationType] = useState<DonationType>("monthly");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
   const [customAmount, setCustomAmount] = useState<string>("");
-  const [proofUrl, setProofUrl] = useState<string>("");
-  const [proofUrlError, setProofUrlError] = useState<string>("");
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [showFoundingPatron, setShowFoundingPatron] = useState(false);
   const [foundingPatronTier, setFoundingPatronTier] = useState<PatronTierConfig | null>(null);
@@ -87,6 +96,8 @@ export default function DonationForm() {
         return annualTiers;
       case "monthly":
         return monthlyTiers;
+      case "one-time":
+        return regularOneTimeTiers;
       default:
         return monthlyTiers;
     }
@@ -121,8 +132,6 @@ export default function DonationForm() {
   const handleFoundingPatronClick = () => {
     setShowFoundingPatron(true);
     setFoundingPatronTier(null);
-    setProofUrl("");
-    setProofUrlError("");
   };
 
   const handleFoundingTierSelect = (tier: PatronTierConfig) => {
@@ -134,8 +143,6 @@ export default function DonationForm() {
   const closeFoundingPatron = () => {
     setShowFoundingPatron(false);
     setFoundingPatronTier(null);
-    setProofUrl("");
-    setProofUrlError("");
     reset();
   };
 
@@ -143,20 +150,6 @@ export default function DonationForm() {
     try {
       // Founding Patron (Bank Transfer) flow
       if (showFoundingPatron && foundingPatronTier) {
-        if (!proofUrl.trim()) {
-          setProofUrlError("Please provide the payment proof URL");
-          toast.error("Please provide the payment proof URL");
-          return;
-        }
-        try {
-          new URL(proofUrl);
-          setProofUrlError("");
-        } catch {
-          setProofUrlError("Please enter a valid URL");
-          toast.error("Please enter a valid URL for payment proof");
-          return;
-        }
-
         toast.loading("Submitting bank transfer details...", { id: "donation-loading" });
 
         await submitBankTransfer({
@@ -170,7 +163,6 @@ export default function DonationForm() {
           donationType: "one-time",
           isOrganisation: data.isOrganisation,
           organisationName: data.organisationName,
-          proofUrl: proofUrl,
           referenceCode: referenceCode,
         });
 
@@ -178,8 +170,14 @@ export default function DonationForm() {
         return;
       }
 
-      // Normal Razorpay subscription flow
-      toast.loading("Setting up your recurring support...", { id: "donation-loading" });
+      // Determine payment flow based on donation type
+      const isOneTime = data.donationType === "one-time";
+
+      if (isOneTime) {
+        toast.loading("Processing your donation...", { id: "donation-loading" });
+      } else {
+        toast.loading("Setting up your recurring support...", { id: "donation-loading" });
+      }
 
       const payload = {
         amount: data.donationAmount,
@@ -191,10 +189,17 @@ export default function DonationForm() {
         donationType: data.donationType,
         isOrganisation: data.isOrganisation,
         organisationName: data.organisationName,
-        donation_name: data.donationName,
+        donationName: data.donationName,
       };
 
-      await submitSubscription(payload);
+      if (isOneTime) {
+        // One-time donation - use Orders API (single payment)
+        await submitDonationForm(payload);
+      } else {
+        // Recurring donation (monthly/yearly) - use Subscriptions API
+        await submitSubscription(payload);
+      }
+
       toast.dismiss("donation-loading");
     } catch (error) {
       toast.dismiss("donation-loading");
@@ -533,58 +538,7 @@ export default function DonationForm() {
                         </div>
                       </div>
                     ))}
-
-                    {/* Reference Code */}
-                    <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-xs text-mulearn-gray-600 uppercase tracking-wide font-semibold">
-                            Reference Code
-                          </p>
-                          <p className="text-lg font-bold font-mono text-amber-600">
-                            {referenceCode}
-                          </p>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => copyToClipboard(referenceCode, "referenceCode")}
-                          className="p-2 bg-white hover:bg-mulearn-greyish/10 rounded-lg border border-mulearn-gray-600/20 transition-colors"
-                        >
-                          {copiedField === "referenceCode" ? (
-                            <Check className="w-4 h-4 text-green-500" />
-                          ) : (
-                            <Copy className="w-4 h-4 text-mulearn-gray-600" />
-                          )}
-                        </button>
-                      </div>
-                      <p className="text-xs text-mulearn-gray-600 mt-2">
-                        Include this reference code in your bank transfer remark/description.
-                      </p>
-                    </div>
                   </div>
-                </div>
-
-                {/* Proof URL Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="proofUrl" className="text-mulearn-gray-600">
-                    Payment Proof URL <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="proofUrl"
-                    type="url"
-                    value={proofUrl}
-                    onChange={(e) => {
-                      setProofUrl(e.target.value);
-                      if (proofUrlError) setProofUrlError("");
-                    }}
-                    placeholder="https://example.com/payment-screenshot.png"
-                    className={`bg-white border-mulearn-gray-600/20 focus:border-amber-500 ${proofUrlError ? "border-red-500" : ""}`}
-                  />
-                  {proofUrlError && <p className="text-xs text-red-500">{proofUrlError}</p>}
-                  <p className="text-xs text-mulearn-gray-600">
-                    Provide a link to your payment receipt or screenshot (e.g., Google Drive,
-                    Dropbox).
-                  </p>
                 </div>
               </div>
             </>
@@ -650,7 +604,7 @@ export default function DonationForm() {
                   type="submit"
                   size="lg"
                   className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-amber-500 shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/30 hover:scale-[1.02] transition-all"
-                  disabled={!isValid || !proofUrl.trim()}
+                  disabled={!isValid}
                 >
                   Submit for Verification
                 </Button>
@@ -707,7 +661,7 @@ export default function DonationForm() {
                   Want to become a Founding Patron?
                 </h3>
                 <p className="text-sm text-mulearn-gray-600">
-                  One-time contributions starting from ₹1,00,000
+                  One-time contributions starting from ₹5,00,000
                 </p>
               </div>
             </div>
@@ -726,18 +680,24 @@ export default function DonationForm() {
           onValueChange={(v) => setDonationType(v as DonationType)}
           className="space-y-6"
         >
-          <TabsList className="w-full h-auto p-1 bg-mulearn-greyish/10 rounded-xl border border-mulearn-gray-600/10 grid grid-cols-2 gap-1">
+          <TabsList className="w-full h-auto p-1 bg-mulearn-greyish/10 rounded-xl border border-mulearn-gray-600/10 grid grid-cols-3 gap-1">
             <TabsTrigger
               value="monthly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Monthly Supporter
+              Monthly
             </TabsTrigger>
             <TabsTrigger
               value="yearly"
               className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
             >
-              Annual Supporter
+              Annually
+            </TabsTrigger>
+            <TabsTrigger
+              value="one-time"
+              className="py-2.5 rounded-lg text-sm font-medium transition-all data-[state=active]:bg-white data-[state=active]:text-mulearn-trusty-blue data-[state=active]:shadow-sm text-mulearn-gray-600"
+            >
+              One Time
             </TabsTrigger>
           </TabsList>
 
@@ -818,7 +778,9 @@ export default function DonationForm() {
                             isSelected ? tier.textColor : "text-mulearn-gray-600",
                           )}
                         >
-                          Per {donationType === "monthly" ? "Month" : "Year"}
+                          {donationType === "one-time"
+                            ? "One-Time"
+                            : `Per ${donationType === "monthly" ? "Month" : "Year"}`}
                         </div>
                       </div>
                     </div>
@@ -1053,8 +1015,9 @@ export default function DonationForm() {
             </div>
             <Button
               type="submit"
+              variant={"default"}
               size="lg"
-              className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-mulearn-trusty-blue shadow-xl shadow-mulearn-trusty-blue/20 hover:shadow-2xl hover:shadow-mulearn-trusty-blue/30 hover:scale-[1.02] transition-all"
+              className="w-full sm:w-auto text-base font-semibold"
               disabled={!isValid || totalAmount === 0}
             >
               Proceed to Payment

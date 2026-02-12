@@ -306,9 +306,10 @@ export type OfficeHoursSessions = {
   performer?: Maybe<Scalars["String"]["output"]>;
   designation?: Maybe<Scalars["String"]["output"]>;
   description?: Maybe<Scalars["String"]["output"]>;
-  date?: Maybe<Scalars["String"]["output"]>;
-  isUpcoming?: Maybe<Scalars["Boolean"]["output"]>;
+  date: Scalars["String"]["output"];
+  link?: Maybe<Scalars["String"]["output"]>;
   interestGroups?: Maybe<Array<Maybe<Scalars["String"]["output"]>>>;
+  poster_thumbnail?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type OfficeHours = Node &
@@ -326,8 +327,9 @@ export type OfficeHoursSessionsFilter = {
   designation?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   date?: InputMaybe<StringFilter>;
-  isUpcoming?: InputMaybe<BooleanFilter>;
+  link?: InputMaybe<StringFilter>;
   interestGroups?: InputMaybe<StringFilter>;
+  poster_thumbnail?: InputMaybe<ImageFilter>;
 };
 
 export type OfficeHoursFilter = {
@@ -352,9 +354,9 @@ export type SaltMangoTreeEpisodes = {
   topic: Scalars["String"]["output"];
   campus: Scalars["String"]["output"];
   zone?: Maybe<Scalars["String"]["output"]>;
-  date?: Maybe<Scalars["String"]["output"]>;
+  date: Scalars["String"]["output"];
   description?: Maybe<Scalars["String"]["output"]>;
-  isUpcoming?: Maybe<Scalars["Boolean"]["output"]>;
+  link?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type SaltMangoTree = Node &
@@ -372,7 +374,7 @@ export type SaltMangoTreeEpisodesFilter = {
   zone?: InputMaybe<StringFilter>;
   date?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  isUpcoming?: InputMaybe<BooleanFilter>;
+  link?: InputMaybe<StringFilter>;
 };
 
 export type SaltMangoTreeFilter = {
@@ -397,9 +399,9 @@ export type InspirationStationEpisodes = {
   topic: Scalars["String"]["output"];
   campus: Scalars["String"]["output"];
   zone?: Maybe<Scalars["String"]["output"]>;
-  date?: Maybe<Scalars["String"]["output"]>;
+  date: Scalars["String"]["output"];
   description?: Maybe<Scalars["String"]["output"]>;
-  isUpcoming?: Maybe<Scalars["Boolean"]["output"]>;
+  link?: Maybe<Scalars["String"]["output"]>;
 };
 
 export type InspirationStation = Node &
@@ -417,7 +419,7 @@ export type InspirationStationEpisodesFilter = {
   zone?: InputMaybe<StringFilter>;
   date?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  isUpcoming?: InputMaybe<BooleanFilter>;
+  link?: InputMaybe<StringFilter>;
 };
 
 export type InspirationStationFilter = {
@@ -604,8 +606,9 @@ export type OfficeHoursSessionsMutation = {
   designation?: InputMaybe<Scalars["String"]["input"]>;
   description?: InputMaybe<Scalars["String"]["input"]>;
   date?: InputMaybe<Scalars["String"]["input"]>;
-  isUpcoming?: InputMaybe<Scalars["Boolean"]["input"]>;
+  link?: InputMaybe<Scalars["String"]["input"]>;
   interestGroups?: InputMaybe<Array<InputMaybe<Scalars["String"]["input"]>>>;
+  poster_thumbnail?: InputMaybe<Scalars["String"]["input"]>;
 };
 
 export type OfficeHoursMutation = {
@@ -618,7 +621,7 @@ export type SaltMangoTreeEpisodesMutation = {
   zone?: InputMaybe<Scalars["String"]["input"]>;
   date?: InputMaybe<Scalars["String"]["input"]>;
   description?: InputMaybe<Scalars["String"]["input"]>;
-  isUpcoming?: InputMaybe<Scalars["Boolean"]["input"]>;
+  link?: InputMaybe<Scalars["String"]["input"]>;
 };
 
 export type SaltMangoTreeMutation = {
@@ -631,7 +634,7 @@ export type InspirationStationEpisodesMutation = {
   zone?: InputMaybe<Scalars["String"]["input"]>;
   date?: InputMaybe<Scalars["String"]["input"]>;
   description?: InputMaybe<Scalars["String"]["input"]>;
-  isUpcoming?: InputMaybe<Scalars["Boolean"]["input"]>;
+  link?: InputMaybe<Scalars["String"]["input"]>;
 };
 
 export type InspirationStationMutation = {
@@ -667,9 +670,10 @@ export type OfficeHoursPartsFragment = {
     performer?: string | null;
     designation?: string | null;
     description?: string | null;
-    date?: string | null;
-    isUpcoming?: boolean | null;
+    date: string;
+    link?: string | null;
     interestGroups?: Array<string | null> | null;
+    poster_thumbnail?: string | null;
   } | null> | null;
 };
 
@@ -680,9 +684,9 @@ export type SaltMangoTreePartsFragment = {
     topic: string;
     campus: string;
     zone?: string | null;
-    date?: string | null;
+    date: string;
     description?: string | null;
-    isUpcoming?: boolean | null;
+    link?: string | null;
   } | null> | null;
 };
 
@@ -693,9 +697,9 @@ export type InspirationStationPartsFragment = {
     topic: string;
     campus: string;
     zone?: string | null;
-    date?: string | null;
+    date: string;
     description?: string | null;
-    isUpcoming?: boolean | null;
+    link?: string | null;
   } | null> | null;
 };
 
@@ -814,9 +818,10 @@ export type OfficeHoursQuery = {
       performer?: string | null;
       designation?: string | null;
       description?: string | null;
-      date?: string | null;
-      isUpcoming?: boolean | null;
+      date: string;
+      link?: string | null;
       interestGroups?: Array<string | null> | null;
+      poster_thumbnail?: string | null;
     } | null> | null;
   };
 };
@@ -864,9 +869,10 @@ export type OfficeHoursConnectionQuery = {
           performer?: string | null;
           designation?: string | null;
           description?: string | null;
-          date?: string | null;
-          isUpcoming?: boolean | null;
+          date: string;
+          link?: string | null;
           interestGroups?: Array<string | null> | null;
+          poster_thumbnail?: string | null;
         } | null> | null;
       } | null;
     } | null> | null;
@@ -897,9 +903,9 @@ export type SaltMangoTreeQuery = {
       topic: string;
       campus: string;
       zone?: string | null;
-      date?: string | null;
+      date: string;
       description?: string | null;
-      isUpcoming?: boolean | null;
+      link?: string | null;
     } | null> | null;
   };
 };
@@ -946,9 +952,9 @@ export type SaltMangoTreeConnectionQuery = {
           topic: string;
           campus: string;
           zone?: string | null;
-          date?: string | null;
+          date: string;
           description?: string | null;
-          isUpcoming?: boolean | null;
+          link?: string | null;
         } | null> | null;
       } | null;
     } | null> | null;
@@ -979,9 +985,9 @@ export type InspirationStationQuery = {
       topic: string;
       campus: string;
       zone?: string | null;
-      date?: string | null;
+      date: string;
       description?: string | null;
-      isUpcoming?: boolean | null;
+      link?: string | null;
     } | null> | null;
   };
 };
@@ -1028,9 +1034,9 @@ export type InspirationStationConnectionQuery = {
           topic: string;
           campus: string;
           zone?: string | null;
-          date?: string | null;
+          date: string;
           description?: string | null;
-          isUpcoming?: boolean | null;
+          link?: string | null;
         } | null> | null;
       } | null;
     } | null> | null;
@@ -1136,8 +1142,9 @@ export const OfficeHoursPartsFragmentDoc = gql`
     designation
     description
     date
-    isUpcoming
+    link
     interestGroups
+    poster_thumbnail
   }
 }
     `;
@@ -1151,7 +1158,7 @@ export const SaltMangoTreePartsFragmentDoc = gql`
     zone
     date
     description
-    isUpcoming
+    link
   }
 }
     `;
@@ -1165,7 +1172,7 @@ export const InspirationStationPartsFragmentDoc = gql`
     zone
     date
     description
-    isUpcoming
+    link
   }
 }
     `;
