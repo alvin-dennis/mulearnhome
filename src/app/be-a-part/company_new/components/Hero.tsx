@@ -1,4 +1,4 @@
-import { MotionDiv, MotionH1 } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
@@ -29,7 +29,7 @@ const Hero = () => {
             >
               Explore learners
             </Button>
-            <Button variant={"mulearn-trusty"} className="">
+            <Button variant={"trusty"} className="">
               Join as a Company Partner
             </Button>
           </div>
@@ -42,6 +42,7 @@ const Hero = () => {
               fill="currentColor"
               strokeWidth="1"
               aria-hidden="true"
+              focusable="false"
               shapeRendering="geometricPrecision"
             >
               <path
@@ -61,6 +62,7 @@ const Hero = () => {
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
+              focusable="false"
               shapeRendering="geometricPrecision"
             >
               <path
@@ -81,6 +83,7 @@ const Hero = () => {
               fill="currentColor"
               strokeWidth="1"
               aria-hidden="true"
+              focusable="false"
               shapeRendering="geometricPrecision"
             >
               <path
@@ -99,6 +102,7 @@ const Hero = () => {
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
+              focusable="false"
               shapeRendering="geometricPrecision"
             >
               <path

@@ -3,15 +3,6 @@ import type { Variants } from "framer-motion";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 
 const About = () => {
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: [0.42, 0, 0.58, 1] },
-    },
-  };
-
   const textVariant: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
@@ -71,6 +62,8 @@ const About = () => {
           </div>
         </div>
         <div className="absolute right-1/8 pr-6 top-12 text-mulearn-blackish  hidden lg:block">
+          This one is already almost perfect 👍 You just need one small addition to fully satisfy
+          accessibility best practices across all browsers. ✅ Final recommended version
           <svg
             width="60"
             height="100"
@@ -78,6 +71,7 @@ const About = () => {
             fill="currentColor"
             strokeWidth="1"
             aria-hidden="true"
+            focusable="false"
             shapeRendering="geometricPrecision"
           >
             <path
@@ -97,6 +91,7 @@ const About = () => {
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
+            focusable="false"
             shapeRendering="geometricPrecision"
           >
             <path
@@ -117,6 +112,7 @@ const About = () => {
             fill="currentColor"
             strokeWidth="1"
             aria-hidden="true"
+            focusable="false"
             shapeRendering="geometricPrecision"
           >
             <path

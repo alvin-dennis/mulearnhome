@@ -33,7 +33,14 @@ const Benefits = () => {
         />
 
         <div className="absolute right-24 top-0 text-mulearn-blackish/80 hidden lg:block">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            focusable="false"
+          >
             <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
           </svg>
         </div>
