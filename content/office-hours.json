@@ -1581,6 +1581,17 @@
         "space"
       ],
       "poster_thumbnail": "/assets/events/OH - Saturday - Post (6).png"
+    },
+    {
+      "title": "Comics Project Discussion",
+      "performer": "Comics Core Team",
+      "description": " Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "14/01/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "space"
+      ],
+      "poster_thumbnail": "/assets/events/OH%20-%20Saturday%20-%20Post%20(6).png"
     }
   ]
 }
