@@ -52,10 +52,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 829,
-      "prs_opened": 207,
-      "prs_merged": 201,
-      "points": 1237,
+      "commits": 853,
+      "prs_opened": 212,
+      "prs_merged": 206,
+      "points": 1271,
       "displayname": "Awindsr"
     },
     {
@@ -86,26 +86,26 @@
   "monthly": [
     {
       "username": "rubyaj24",
-      "commits": 78,
-      "prs_opened": 21,
-      "prs_merged": 21,
-      "points": 120,
+      "commits": 87,
+      "prs_opened": 23,
+      "prs_merged": 23,
+      "points": 133,
       "displayname": "AMALJITH"
     },
     {
       "username": "awindsr",
-      "commits": 82,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 86,
+      "commits": 106,
+      "prs_opened": 7,
+      "prs_merged": 7,
+      "points": 120,
       "displayname": "Awindsr"
     },
     {
       "username": "sachin-raj-m",
-      "commits": 37,
+      "commits": 41,
       "prs_opened": 17,
       "prs_merged": 17,
-      "points": 71,
+      "points": 75,
       "displayname": "Sachin Raj"
     },
     {
@@ -159,9 +159,9 @@
     {
       "username": "vedhavk",
       "commits": 0,
-      "prs_opened": 1,
+      "prs_opened": 2,
       "prs_merged": 1,
-      "points": 2,
+      "points": 3,
       "displayname": "Vedha"
     }
   ]
