@@ -3,6 +3,7 @@ import LearnersHero from "@/app/be-a-part/learners/_components/LearnersHero";
 import OnboardingSteps from "@/app/be-a-part/learners/_components/OnboardingSteps";
 import RankingSection from "@/app/be-a-part/learners/_components/RankingSection";
 import Testimonials from "@/app/be-a-part/learners/_components/Testimonials";
+import WhyMuLearn from "@/app/be-a-part/learners/_components/WhyMuLearn";
 
 import { learnerIdentityTags, onboardingSteps } from "@/data/learners";
 
@@ -13,7 +14,10 @@ export default function LearnersPage() {
         <LearnersHero />
       </section>
       <section id="learner-intro" className="pt-12 md:pt-16">
-        <LearnerIntro learnerTags={learnerIdentityTags} />
+        <LearnerIntro />
+      </section>
+      <section id="why-mulearn" className="pt-12 md:pt-16">
+        <WhyMuLearn />
       </section>
       <section id="testimonials" className="pt-12 md:pt-16 pb-12 md:pb-16">
         <Testimonials />
