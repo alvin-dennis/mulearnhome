@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, Target, TrendingUp, Trophy, Users } from "lucide-react";
+import React from "react";
 
 const WhatYouGet = () => {
   const benefits = [
@@ -37,40 +38,43 @@ const WhatYouGet = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 container mx-auto px-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 bg-white">
+      {/* Increased padding-left (px-16) to ensure the outside bars don't hit the screen edge */}
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Heading */}
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
             What You Get as
-            <br />a <span className="text-blue-600">Learner</span>?
+            <br />a <span className="text-[#456FF6]">Learner</span>?
           </h2>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-10">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
               <div
                 key={index}
-                className="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative"
               >
-                {/* Blue accent bar on the left */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
+                {/* THE OUTSIDE BLUE BAR:
+                   - left-[-12px]: Moves it entirely outside the card.
+                   - rounded-full: Creates the perfect pill shape at both ends.
+                   - z-[-1]: Ensures it doesn't overlap the card border if they touch.
+                */}
+                <div className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-[10px] h-16 bg-[#456FF6] rounded-full transition-all duration-300 group-hover:h-20"></div>
 
-                {/* Icon */}
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <IconComponent className="w-6 h-6 text-white" strokeWidth={2.5} />
+                {/* Icon Container */}
+                <div className="w-12 h-12 bg-[#456FF6] rounded-xl flex items-center justify-center mb-6 shadow-sm">
+                  <IconComponent className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm lg:text-base text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                <p className="text-gray-600 leading-relaxed text-[15px]">{benefit.description}</p>
               </div>
             );
           })}

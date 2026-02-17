@@ -1,15 +1,31 @@
 "use client";
 
 import axios from "axios";
-import { Sparkles } from "lucide-react";
+import { Sparkle } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { clientEnv } from "@/lib/env/env.client";
 import type { Learner, TopLearner } from "@/lib/types";
 
+const Sparkles = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z" />
+  </svg>
+);
+
 interface ExtendedTopLearner extends TopLearner {
   email?: string;
   avatar?: string;
+}
+
+interface LearnerResponse extends Learner {
+  muid?: string;
+  profile_pic?: string;
 }
 
 export default function RankingSection() {
@@ -23,8 +39,10 @@ export default function RankingSection() {
       const formatted: ExtendedTopLearner[] = learners.slice(0, 5).map((item) => ({
         name: item.full_name,
         kp: item.total_karma,
-        email: (item as any).muid || `${item.full_name.toLowerCase().replace(/\s+/g, "")}@mulearn`,
-        avatar: (item as any).profile_pic || undefined,
+        email:
+          (item as LearnerResponse).muid ||
+          `${item.full_name.toLowerCase().replace(/\s+/g, "")}@mulearn`,
+        avatar: (item as LearnerResponse).profile_pic || undefined,
       }));
 
       setTopLearners(formatted);
@@ -40,12 +58,18 @@ export default function RankingSection() {
   return (
     <section className="py-16 md:py-20 container mx-auto px-4 relative">
       {/* Decorative Sparkles */}
-      <Sparkles className="absolute top-20 left-12 w-6 h-6 text-gray-400 hidden lg:block" />
-      <Sparkles className="absolute top-32 left-24 w-4 h-4 text-gray-300 hidden lg:block" />
-      <Sparkles className="absolute top-24 right-12 w-5 h-5 text-gray-400 hidden lg:block" />
-      <Sparkles className="absolute top-16 right-32 w-4 h-4 text-gray-300 hidden lg:block" />
-      <Sparkles className="absolute bottom-40 left-1/2 w-5 h-5 text-gray-400 hidden lg:block" />
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+        {/* Left Side Sparkles */}
+        <Sparkles className="absolute top-[15%] left-[18%] w-8 h-8 text-black fill-black" />
+        <Sparkles className="absolute top-[35%] left-[8%] w-4 h-4 text-black fill-black" />
 
+        {/* Right Side Sparkles */}
+        <Sparkles className="absolute top-[28%] right-[15%] w-6 h-6 text-black fill-black" />
+        <Sparkles className="absolute top-[32%] right-[13%] w-3 h-3 text-black fill-black" />
+
+        {/* Bottom Sparkle */}
+        <Sparkles className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-5 h-5 text-black fill-black" />
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
