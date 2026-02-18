@@ -13,16 +13,17 @@ const FinalCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative bg-gradient-to-r from-blue-600 to-blue-500 rounded-3xl overflow-hidden"
+          className="relative bg-[#456FF6] rounded-3xl overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 md:p-12 lg:p-16">
             {/* Left Content */}
             <div className="text-white z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white">
                 Start building your future with µLearn.
               </h2>
               <p className="text-lg md:text-xl mb-8 text-blue-50 leading-relaxed">
-                Gain real skills, collaborate with learners, and earn recognition as you grow.
+                Gain real skills, collaborate with learners, and earn <br /> recognition as you
+                grow.
               </p>
               <Link
                 href="https://app.mulearn.org"
