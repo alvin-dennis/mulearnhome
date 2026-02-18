@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { Sparkle } from "lucide-react";
+
 import { useCallback, useEffect, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { clientEnv } from "@/lib/env/env.client";
@@ -14,6 +14,7 @@ const Sparkles = ({ className }: { className?: string }) => (
     className={className}
     xmlns="http://www.w3.org/2000/svg"
   >
+    <title>Sparkles icon</title>
     <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z" />
   </svg>
 );
