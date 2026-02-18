@@ -1,35 +1,49 @@
 "use client";
 
 import axios from "axios";
-import type { Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+
 import { useCallback, useEffect, useState } from "react";
-import { MotionDiv } from "@/components/MuFramer";
-import { Button } from "@/components/ui/button";
+import MuImage from "@/components/MuImage";
 import { clientEnv } from "@/lib/env/env.client";
 import type { Learner, TopLearner } from "@/lib/types";
 
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
-  },
-};
+const Sparkles = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>Sparkles icon</title>
+    <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z" />
+  </svg>
+);
+
+interface ExtendedTopLearner extends TopLearner {
+  email?: string;
+  avatar?: string;
+}
+
+interface LearnerResponse extends Learner {
+  muid?: string;
+  profile_pic?: string;
+}
 
 export default function RankingSection() {
-  const [topLearners, setTopLearners] = useState<TopLearner[]>([]);
+  const [topLearners, setTopLearners] = useState<ExtendedTopLearner[]>([]);
 
   const fetchData = useCallback(async () => {
     try {
       const res = await axios.get(`${clientEnv.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`);
       const learners: Learner[] = Array.isArray(res.data.response) ? res.data.response : [];
 
-      const formatted: TopLearner[] = learners.slice(0, 10).map((item) => ({
+      const formatted: ExtendedTopLearner[] = learners.slice(0, 5).map((item) => ({
         name: item.full_name,
         kp: item.total_karma,
+        email:
+          (item as LearnerResponse).muid ||
+          `${item.full_name.toLowerCase().replace(/\s+/g, "")}@mulearn`,
+        avatar: (item as LearnerResponse).profile_pic || undefined,
       }));
 
       setTopLearners(formatted);
@@ -42,105 +56,71 @@ export default function RankingSection() {
     fetchData();
   }, [fetchData]);
 
-  const topThree = topLearners.slice(0, 3);
-
-  const getAvatarColor = (index: number) => {
-    const colors = ["bg-mulearn-duke-purple", "bg-green-500", "bg-pink-500"];
-    return colors[index] || "bg-mulearn-trusty-blue";
-  };
-
   return (
-    <>
-      <div className="text-center md:mb-30 mb-40">
-        <h1 className="text-5xl font-bold text-mulearn-blackish">
-          Top <span className="text-mulearn">Learners</span>
-        </h1>
+    <section className="py-16 md:py-20 container mx-auto px-4 relative">
+      {/* Decorative Sparkles */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+        {/* Left Side Sparkles */}
+        <Sparkles className="absolute top-[15%] left-[18%] w-8 h-8 text-black fill-black" />
+        <Sparkles className="absolute top-[35%] left-[8%] w-4 h-4 text-black fill-black" />
+
+        {/* Right Side Sparkles */}
+        <Sparkles className="absolute top-[28%] right-[15%] w-6 h-6 text-black fill-black" />
+        <Sparkles className="absolute top-[32%] right-[13%] w-3 h-3 text-black fill-black" />
+
+        {/* Bottom Sparkle */}
+        <Sparkles className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-5 h-5 text-black fill-black" />
       </div>
-
-      <div className="w-full max-w-4xl mx-auto px-4 py-8">
-        <div className="mb-12">
-          <div className="flex items-end justify-center gap-8 mb-12 h-64">
-            {topThree[1] && (
-              <div className="flex flex-col items-center gap-4">
-                <div
-                  className={`w-20 h-20 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-xl ${getAvatarColor(1)}`}
-                >
-                  {topThree[1].name.charAt(0).toUpperCase()}
-                </div>
-                <p className="font-semibold text-mulearn text-center">{topThree[1].name}</p>
-                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
-                  {topThree[1].kp.toLocaleString()}
-                </div>
-                <div className="bg-mulearn w-24 h-32 rounded-t-lg" />
-              </div>
-            )}
-
-            {topThree[0] && (
-              <div className="flex flex-col items-center gap-4">
-                <div
-                  className={`w-24 h-24 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-2xl ${getAvatarColor(0)}`}
-                >
-                  {topThree[0].name.charAt(0).toUpperCase()}
-                </div>
-                <p className="font-semibold text-mulearn text-center">{topThree[0].name}</p>
-                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
-                  {topThree[0].kp.toLocaleString()}
-                </div>
-                <div className="bg-mulearn w-24 h-48 rounded-t-lg" />
-              </div>
-            )}
-
-            {topThree[2] && (
-              <div className="flex flex-col items-center gap-4">
-                <div
-                  className={`w-20 h-20 rounded-full flex items-center justify-center text-mulearn-whitish font-bold text-xl ${getAvatarColor(2)}`}
-                >
-                  {topThree[2].name.charAt(0).toUpperCase()}
-                </div>
-                <p className="font-semibold text-mulearn text-center">{topThree[2].name}</p>
-                <div className="bg-mulearn rounded-lg px-4 py-2 text-mulearn-whitish font-bold text-sm">
-                  {topThree[2].kp.toLocaleString()}
-                </div>
-                <div className="bg-mulearn w-24 h-24 rounded-t-lg" />
-              </div>
-            )}
-          </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+            Top Learners
+          </h2>
+          <p className="text-base md:text-lg text-gray-700">
+            Recognizing consistent learners strengthens motivation for all.
+          </p>
         </div>
 
-        <div className="space-y-3">
-          {topLearners.slice(3, 10).map((learner) => (
+        {/* Learners Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+          {topLearners.map((learner, index) => (
             <div
-              key={learner.name}
-              className="flex items-center justify-between p-4 rounded-lg transition-colors"
+              key={index}
+              className="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col items-center text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex items-center gap-4">
-                <span className="font-bold text-base text-mulearn-blackish">
-                  #{topLearners.indexOf(learner) + 1}
-                </span>
-                <span className="font-medium text-mulearn-blackish">{learner.name}</span>
+              {/* Profile Image */}
+              <div className="w-20 h-20 mb-4 rounded-full overflow-hidden bg-gray-200">
+                {learner.avatar ? (
+                  <MuImage
+                    src={learner.avatar}
+                    alt={learner.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-blue-600 text-white text-2xl font-bold">
+                    {learner.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
               </div>
-              <span className="font-bold text-mulearn-blackish">
-                {learner.kp.toLocaleString()} Karma
-              </span>
+
+              {/* Name */}
+              <h3 className="text-base font-semibold text-gray-900 mb-1">{learner.name}</h3>
+
+              {/* Email */}
+              <p className="text-xs text-gray-500 mb-3">{learner.email}</p>
+
+              {/* Karma Points Label */}
+              <p className="text-xs text-gray-600 mb-1 font-medium">Karma Points</p>
+
+              {/* Karma Points Value */}
+              <p className="text-xl font-bold text-black">{learner.kp.toLocaleString()} KP</p>
             </div>
           ))}
         </div>
-        <MotionDiv
-          variants={fadeInUp}
-          initial="hidden"
-          animate="visible"
-          className="flex justify-center mt-6"
-        >
-          <Link href="https://app.mulearn.org/dashboard/leaderboard">
-            <Button
-              variant={"default"}
-              className="inline-flex items-center px-8 py-4 font-semibold text-lg"
-            >
-              View Full Leaderboard <ArrowRight className="w-5 h-5" />
-            </Button>
-          </Link>
-        </MotionDiv>
       </div>
-    </>
+    </section>
   );
 }

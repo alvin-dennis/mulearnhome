@@ -1,96 +1,99 @@
-import { Lightbulb } from "lucide-react";
-import { Fragment } from "react";
-import { FaDiscord } from "react-icons/fa";
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+
+import { MotionDiv } from "@/components/MuFramer";
 import type { OnboardingStep } from "@/lib/types";
 
 interface OnboardingStepsProps {
   data: OnboardingStep[];
 }
 
-const getStepIcon = (step: number) => {
-  switch (step) {
-    case 1:
-      return <div className="text-mulearn-whitish text-5xl font-bold">μ</div>;
-    case 2:
-      return <FaDiscord className="w-12 h-12 text-mulearn-whitish" />;
-    case 3:
-      return <Lightbulb className="w-12 h-12 text-mulearn-whitish" />;
-    default:
-      return <div className="text-mulearn-whitish text-4xl font-bold">μ</div>;
-  }
-};
-
 const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
   return (
-    <div className="relative max-w-7xl mx-auto px-4">
-      <div className="hidden lg:flex justify-center items-start relative gap-8">
+    /* The max-w-4xl ensures the grid doesn't spread wider than the "How to Begin Your Journey" text */
+    <div className="relative max-w-4xl mx-auto px-4 py-10">
+      {/* Desktop Layout */}
+      <div className="hidden md:flex justify-center items-start">
         {data.map((step, index) => (
-          <Fragment key={step.step}>
-            <Card variant="hoverable" className="flex-1 max-w-sm">
-              <CardContent className="flex flex-col items-center text-center p-6">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                    {getStepIcon(step.step)}
-                  </div>
-
-                  <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-10 h-10 flex items-center justify-center font-bold text-sm shadow-md">
-                    0{step.step}
-                  </span>
+          <div key={step.step} className="flex items-start">
+            {/* Step Item Container */}
+            <div className="flex flex-col items-center w-36 lg:w-44">
+              {/* Step Number Box */}
+              <MotionDiv
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                className="relative z-10 mb-6"
+              >
+                <div className="w-16 h-16 bg-[#456FF6] rounded-lg flex items-center justify-center shadow-md">
+                  <span className="text-white text-2xl font-bold">{step.step}</span>
                 </div>
+              </MotionDiv>
 
-                <h3 className="mb-3">{step.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
-              </CardContent>
-            </Card>
+              {/* Text Content */}
+              <div className="text-center px-1">
+                <MotionDiv
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.1, duration: 0.5 }}
+                >
+                  <h3 className="text-base font-bold text-gray-900 mb-1 leading-tight">
+                    {step.title}
+                  </h3>
+                </MotionDiv>
 
+                <MotionDiv
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.2, duration: 0.5 }}
+                >
+                  <p className="text-[10px] lg:text-xs text-gray-500 leading-relaxed italic">
+                    {step.description}
+                  </p>
+                </MotionDiv>
+              </div>
+            </div>
+
+            {/* Connecting Line - Tightened and Centered */}
             {index < data.length - 1 && (
-              <div className="flex items-center mt-16">
-                <div className="w-20 h-1 bg-black"></div>
+              <div className="flex items-center h-16 px-0.5">
+                {/* Minimal px-0.5 brings the dots nearly flush with the boxes */}
+                <div className="relative w-20 lg:w-32 h-0.5 flex items-center">
+                  {/* The Dashed Line */}
+                  <div className="w-full border-t-2 border-dashed border-[#456FF6]"></div>
+
+                  {/* Start Dot */}
+                  <div className="absolute left-0 w-2 h-2 bg-[#456FF6] rounded-full -translate-x-1/2"></div>
+
+                  {/* End Dot */}
+                  <div className="absolute right-0 w-2 h-2 bg-[#456FF6] rounded-full translate-x-1/2"></div>
+                </div>
               </div>
             )}
-          </Fragment>
+          </div>
         ))}
       </div>
 
-      <div className="lg:hidden flex flex-col items-center space-y-8">
+      {/* Mobile Layout */}
+      <div className="md:hidden flex flex-col items-center space-y-8">
         {data.map((step, index) => (
-          <Fragment key={step.step}>
-            <Card className="max-w-md">
-              <CardContent className="flex flex-col items-center text-center p-6">
-                <div className="relative mb-4">
-                  <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                    {getStepIcon(step.step)}
-                  </div>
-                  <span className="absolute top-1/2 -translate-y-1/2 -right-4 bg-black text-mulearn-whitish border-4 border-mulearn-whitish rounded-full w-9 h-9 flex items-center justify-center font-bold text-sm shadow-md">
-                    0{step.step}
-                  </span>
-                </div>
-
-                <h3 className="mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-600">{step.description}</p>
-              </CardContent>
-            </Card>
+          <div key={step.step} className="flex flex-col items-center text-center max-w-xs">
+            <div className="w-16 h-16 bg-[#456FF6] rounded-lg flex items-center justify-center shadow-md mb-4">
+              <span className="text-white text-2xl font-bold">{step.step}</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
+            <p className="text-xs text-gray-500 italic px-4">{step.description}</p>
 
             {index < data.length - 1 && (
-              <div className="text-mulearn-blackish" aria-hidden="true">
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
+              <div className="flex flex-col items-center mt-4 h-12">
+                <div className="w-2 h-2 bg-[#456FF6] rounded-full"></div>
+                <div className="flex-1 border-l-2 border-dashed border-[#456FF6] my-0.5"></div>
+                <div className="w-2 h-2 bg-[#456FF6] rounded-full"></div>
               </div>
             )}
-          </Fragment>
+          </div>
         ))}
       </div>
     </div>

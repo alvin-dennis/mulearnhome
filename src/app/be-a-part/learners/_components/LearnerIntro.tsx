@@ -8,19 +8,26 @@ const LearnerIntro = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Blue Card */}
-        <div className="bg-blue-600 rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        <div className="bg-[#456FF6] rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side - Illustration */}
           <div className="flex-shrink-0 w-full lg:w-1/3 flex justify-center">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 flex items-end justify-center">
-              {/* White elliptical shadow/platform
-              <div className="absolute bottom-0 w-48 h-8 bg-white rounded-full opacity-80 blur-2xl"></div> */}
+              {/* White elliptical shadow/platform - Absolute positioned at the bottom */}
+              <MuImage
+                src="/assets/learners/Ellipse 1.png"
+                alt="Platform"
+                width={384}
+                height={100}
+                className="absolute bottom-7px] w-[80%] h-auto z-0 opacity-90"
+              />
 
+              {/* Learner Character - Relative to sit on top of the ellipse */}
               <MuImage
                 src="/assets/learners/learner-character.png"
                 alt="Learner Character with Lightbulb"
                 width={384}
                 height={384}
-                className="w-full h-full object-contain relative z-10"
+                className="relative z-10 w-full h-full object-contain"
               />
             </div>
           </div>
@@ -29,7 +36,7 @@ const LearnerIntro = () => {
           <div className="flex-1 text-white">
             <h2
               id="learners-intro-heading"
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white"
             >
               Who is a Learner?
             </h2>
