@@ -1612,6 +1612,15 @@
       "interestGroups": [
         "human-resources"
       ]
+    },
+    {
+      "title": "Model evaluation Metrics in Machine Learning",
+      "performer": "Aishwarya Jayaprakash",
+      "designation": "DS IG Lead",
+      "date": "18/02/2026",
+      "interestGroups": [
+        "data-science"
+      ]
     }
   ]
 }
