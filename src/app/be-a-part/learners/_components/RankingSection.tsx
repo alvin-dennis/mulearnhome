@@ -84,9 +84,9 @@ export default function RankingSection() {
 
         {/* Learners Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-          {topLearners.map((learner, index) => (
+          {topLearners.map((learner) => (
             <div
-              key={index}
+              key={learner.email}
               className="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-col items-center text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300"
             >
               {/* Profile Image */}
