@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
@@ -50,7 +50,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
   const itemsPerPage = 6;
 
   // Parse DD/MM/YYYY date format and check if it's upcoming (today or future)
-  const isDateUpcoming = (dateStr: string): boolean => {
+  const isDateUpcoming = useCallback((dateStr: string): boolean => {
     if (!dateStr) return false;
     const parts = dateStr.split("/");
     if (parts.length !== 3) return false;
@@ -62,7 +62,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return eventDate >= today;
-  };
+  }, []);
 
   // Transform sessions to match expected format
   const allEvents = useMemo(() => {
@@ -78,7 +78,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       link: session.link || undefined,
       thumbnail: session.poster_thumbnail || undefined,
     }));
-  }, [sessions]);
+  }, [sessions, isDateUpcoming]);
 
   const allTags = useMemo(
     () => Array.from(new Set(allEvents.flatMap((e) => e.interestGroups))),

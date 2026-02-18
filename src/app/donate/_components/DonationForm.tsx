@@ -269,11 +269,18 @@ export default function DonationForm() {
               const isSelected = foundingPatronTier?.id === tier.id;
 
               return (
-                <div
+                <button
+                  type="button"
                   key={tier.id}
                   onClick={() => handleFoundingTierSelect(tier)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleFoundingTierSelect(tier);
+                    }
+                  }}
                   className={cn(
-                    "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden",
+                    "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden w-full text-left",
                     isSelected
                       ? `bg-linear-to-r ${tier.color} border-amber-400 ring-2 ring-offset-2 ring-amber-400/50 shadow-lg`
                       : "bg-white border-mulearn-gray-600/20 hover:border-amber-400/50 hover:bg-amber-50/30",
@@ -307,8 +314,11 @@ export default function DonationForm() {
 
                       {(isSelected || window.innerWidth >= 640) && (
                         <ul className="mt-3 space-y-1.5">
-                          {tier.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm leading-snug">
+                          {tier.benefits.map((benefit) => (
+                            <li
+                              key={benefit.text}
+                              className="flex items-start gap-2 text-sm leading-snug"
+                            >
                               <span
                                 className={cn(
                                   "mt-0.5 size-1.5 rounded-full shrink-0",
@@ -348,7 +358,7 @@ export default function DonationForm() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -647,9 +657,16 @@ export default function DonationForm() {
         </div>
 
         {/* Founding Patron CTA */}
-        <div
+        <button
+          type="button"
           onClick={handleFoundingPatronClick}
-          className="mb-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl cursor-pointer hover:shadow-md hover:border-amber-300 transition-all group"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleFoundingPatronClick();
+            }
+          }}
+          className="mb-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl cursor-pointer hover:shadow-md hover:border-amber-300 transition-all group w-full text-left"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -673,7 +690,7 @@ export default function DonationForm() {
               Explore →
             </Button>
           </div>
-        </div>
+        </button>
 
         <Tabs
           value={donationType}
@@ -708,11 +725,18 @@ export default function DonationForm() {
                 const displayAmount = getDisplayAmount(tier);
 
                 return (
-                  <div
+                  <button
+                    type="button"
                     key={tier.id}
                     onClick={() => handleTierSelect(tier)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleTierSelect(tier);
+                      }
+                    }}
                     className={cn(
-                      "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden",
+                      "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden w-full text-left",
                       isSelected
                         ? `bg-gradient-to-r ${tier.color} border-mulearn-trusty-blue/30 ring-2 ring-offset-2 ring-mulearn-trusty-blue/30 shadow-lg`
                         : "bg-white border-mulearn-gray-600/20 hover:border-mulearn-trusty-blue/50 hover:bg-mulearn-whitish",
@@ -741,8 +765,11 @@ export default function DonationForm() {
 
                         {(isSelected || window.innerWidth >= 640) && (
                           <ul className="mt-3 space-y-1.5">
-                            {tier.benefits.map((benefit, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-sm leading-snug">
+                            {tier.benefits.map((benefit) => (
+                              <li
+                                key={benefit.text}
+                                className="flex items-start gap-2 text-sm leading-snug"
+                              >
                                 <span
                                   className={cn(
                                     "mt-0.5 size-1.5 rounded-full shrink-0",
@@ -784,7 +811,7 @@ export default function DonationForm() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 );
               })}
 
@@ -798,9 +825,16 @@ export default function DonationForm() {
                 )}
               >
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div
+                  <button
+                    type="button"
                     className="flex items-center gap-3 flex-1 w-full"
                     onClick={() => setSelectedAmount("custom")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedAmount("custom");
+                      }
+                    }}
                   >
                     <input
                       type="radio"
@@ -817,7 +851,7 @@ export default function DonationForm() {
                       Custom Amount
                     </Label>
                     <div className="h-px bg-mulearn-gray-600/20 flex-1"></div>
-                  </div>
+                  </button>
                   <div className="relative w-full sm:w-48">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-mulearn-gray-600">
                       ₹

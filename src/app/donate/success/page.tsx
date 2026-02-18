@@ -199,10 +199,9 @@ export default function DonateSuccessPage() {
               </div>
               {/* Reference Code for Bank Transfer */}
               {isBankTransfer && donationData.referenceCode && (
-                <div
-                  role="button"
-                  tabIndex={0}
-                  className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
+                <button
+                  type="button"
+                  className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100 w-full text-left"
                   onClick={() => copyToClipboard(donationData.referenceCode || "")}
                   onKeyDown={(e) =>
                     e.key === "Enter" && copyToClipboard(donationData.referenceCode || "")
@@ -215,14 +214,13 @@ export default function DonateSuccessPage() {
                     </span>
                     <Copy className="w-3 h-3 text-amber-400 group-hover:text-amber-600" />
                   </div>
-                </div>
+                </button>
               )}
               {/* Transaction ID for Razorpay */}
               {donationData.paymentId && (
-                <div
-                  role="button"
-                  tabIndex={0}
-                  className="flex items-center justify-between py-3 group cursor-pointer"
+                <button
+                  type="button"
+                  className="flex items-center justify-between py-3 group cursor-pointer w-full text-left"
                   onClick={() => copyToClipboard(donationData.paymentId || "")}
                   onKeyDown={(e) =>
                     e.key === "Enter" && copyToClipboard(donationData.paymentId || "")
@@ -235,7 +233,7 @@ export default function DonateSuccessPage() {
                     </span>
                     <Copy className="w-3 h-3 text-gray-400 group-hover:text-mulearn-trusty-blue" />
                   </div>
-                </div>
+                </button>
               )}
             </div>
 
