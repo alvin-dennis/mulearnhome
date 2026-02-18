@@ -8,32 +8,38 @@ type Benefit = {
   icon: React.ReactNode;
   title: string;
   description: string;
+  id: string; // Add unique id
 };
 
 const WhyKarmaPoints = () => {
   const benefits: Benefit[] = [
     {
+      id: "trending-up",
       icon: <TrendingUp className="w-7 h-7 text-white" />,
       title: "Shows real progress",
       description:
         "Karma grows only when you take action, making it a true reflection of your work.",
     },
     {
+      id: "box",
       icon: <Box className="w-7 h-7 text-white" />,
       title: "Builds consistency",
       description: "Regular earning helps you stay active and develop strong learning habits.",
     },
     {
+      id: "globe",
       icon: <Globe className="w-7 h-7 text-white" />,
       title: "Improves visibility",
       description: "Active learners stand out in guilds and the wider community.",
     },
     {
+      id: "zap",
       icon: <Zap className="w-7 h-7 text-white" />,
       title: "Highlights engagement",
       description: "Karma increases when you participate, contribute and collaborate.",
     },
     {
+      id: "line-chart",
       icon: <LineChart className="w-7 h-7 text-white" />,
       title: "Proof of growth",
       description:
@@ -68,14 +74,14 @@ const WhyKarmaPoints = () => {
           {/* First Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 mb-16">
             {benefits.slice(0, 3).map((benefit, index) => (
-              <Card key={index} benefit={benefit} index={index} />
+              <Card key={benefit.id} benefit={benefit} index={index} />
             ))}
           </div>
 
           {/* Second Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 max-w-4xl mx-auto">
             {benefits.slice(3, 5).map((benefit, index) => (
-              <Card key={index + 3} benefit={benefit} index={index + 3} />
+              <Card key={benefit.id} benefit={benefit} index={index + 3} />
             ))}
           </div>
         </div>
