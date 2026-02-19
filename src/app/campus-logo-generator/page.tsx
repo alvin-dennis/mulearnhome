@@ -277,70 +277,7 @@ export default function CampusLogoGenerator() {
             }}
           ></div>
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10">
-            {formData.logoType === "YIP" ? (
-              <>
-                {/* <div className="relative group">
-                  <div
-                    ref={squareLogoRef}
-                    className="w-64 h-64 lg:w-72 lg:h-72 flex items-center justify-center text-mulearn-whitish relative transform transition-all duration-300 overflow-hidden shadow-2xl"
-                    style={{
-                      backgroundColor:
-                        yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor ||
-                        "#FFFFFF",
-                    }}
-                  >
-                    <div className="relative w-full h-full flex items-center justify-center z-10">
-                      <div className="transition-all duration-300">
-                        <div className="flex flex-col items-center gap-3">
-                          <YIPLogo variant={formData.yipVariant} width={220} height={145} />
-                          <div className="text-center">
-                            <div
-                              className="text-2xl lg:text-3xl opacity-90"
-                              style={{
-                                color: formData.yipVariant === "dark" ? "#FFFFFF" : "#000000",
-                                fontFamily: "var(--font-plus-jakarta)",
-                                fontWeight: 400,
-                              }}
-                            >
-                              {formData.campusCode || "Campus"}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-mulearn-whitish relative overflow-hidden shadow-2xl"
-                  style={{
-                    backgroundColor:
-                      yipVariants.find((v) => v.value === formData.yipVariant)?.bgColor ||
-                      "#FFFFFF",
-                  }}
-                >
-                  <div className="relative w-full h-full flex items-center justify-center z-10">
-                    <div className="transition-all duration-300">
-                      <div className="flex flex-col items-center gap-2 lg:gap-1">
-                        <YIPLogo variant={formData.yipVariant} width={160} height={135} />
-                        <div className="text-center">
-                          <div
-                            className="text-lg opacity-90"
-                            style={{
-                              color: formData.yipVariant === "dark" ? "#FFFFFF" : "#000000",
-                              fontFamily: "var(--font-plus-jakarta)",
-                              fontWeight: 400,
-                            }}
-                          >
-                            {formData.campusCode || "Campus"}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-              </>
-            ) : (
+            {formData.logoType === "YIP" ? null : (
               <>
                 <div className="relative group">
                   <div

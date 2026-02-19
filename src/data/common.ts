@@ -1,14 +1,4 @@
-import {
-  FaFacebook,
-  FaGithub,
-  FaGlobe,
-  FaInstagram,
-  FaLinkedin,
-  FaPinterest,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export const navItems = [
   {

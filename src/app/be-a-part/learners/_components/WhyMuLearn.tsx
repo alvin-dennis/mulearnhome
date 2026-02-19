@@ -1,5 +1,4 @@
 import { Award, BookOpen, Briefcase, Target, TrendingUp, Users } from "lucide-react";
-import React from "react";
 
 const WhyMuLearn = () => {
   const benefits = [
@@ -36,7 +35,7 @@ const WhyMuLearn = () => {
 
             return (
               <div
-                key={index}
+                key={benefit.title}
                 className={`bg-white border border-[#456FF6] rounded-xl p-7 
                            shadow-sm hover:shadow-xl transition-all duration-500
                            ${isMiddleColumn ? "lg:-translate-y-10" : "lg:translate-y-0"}`}
