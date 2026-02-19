@@ -1622,6 +1622,17 @@
       "interestGroups": [
         "data-science"
       ]
+    },
+    {
+      "title": "Audio & OCR Systems",
+      "performer": "U S Sooraj",
+      "designation": "ML Intern @ ICFOSS",
+      "description": "Introduces the fundamentals of DOS concepts, audio signal processing, CTC (Connectionist Temporal Classification) loss for sequence modeling, and modern Optical Character Recognition (OCR) systems",
+      "date": "19/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
