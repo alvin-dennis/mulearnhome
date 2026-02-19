@@ -199,10 +199,14 @@ export default function DonateSuccessPage() {
               </div>
               {/* Reference Code for Bank Transfer */}
               {isBankTransfer && donationData.referenceCode && (
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
+                <div
+                  role="button"
+                  tabIndex={0}
+                  className="flex items-center justify-between py-3 group cursor-pointer border-b border-gray-100"
                   onClick={() => copyToClipboard(donationData.referenceCode || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.referenceCode || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Reference Code</span>
                   <div className="flex items-center gap-2 bg-amber-50 px-2 py-1 rounded-md border border-amber-200 group-hover:border-amber-400 transition-colors">
@@ -211,14 +215,18 @@ export default function DonateSuccessPage() {
                     </span>
                     <Copy className="w-3 h-3 text-amber-400 group-hover:text-amber-600" />
                   </div>
-                </button>
+                </div>
               )}
               {/* Transaction ID for Razorpay */}
               {donationData.paymentId && (
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between py-3 group cursor-pointer"
+                <div
+                  role="button"
+                  tabIndex={0}
+                  className="flex items-center justify-between py-3 group cursor-pointer"
                   onClick={() => copyToClipboard(donationData.paymentId || "")}
+                  onKeyDown={(e) =>
+                    e.key === "Enter" && copyToClipboard(donationData.paymentId || "")
+                  }
                 >
                   <span className="text-sm font-medium text-mulearn-gray-600">Transaction ID</span>
                   <div className="flex items-center gap-2 bg-gray-50 px-2 py-1 rounded-md border border-gray-200 group-hover:border-mulearn-trusty-blue/30 transition-colors">
@@ -227,7 +235,7 @@ export default function DonateSuccessPage() {
                     </span>
                     <Copy className="w-3 h-3 text-gray-400 group-hover:text-mulearn-trusty-blue" />
                   </div>
-                </button>
+                </div>
               )}
             </div>
 

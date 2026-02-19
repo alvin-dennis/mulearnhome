@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, Target, TrendingUp, Trophy, Users } from "lucide-react";
+import React from "react";
 
 const WhatYouGet = () => {
   const benefits = [
@@ -50,11 +51,11 @@ const WhatYouGet = () => {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-10">
-          {benefits.map((benefit) => {
+          {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
               <div
-                key={benefit.title}
+                key={index}
                 className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative"
               >
                 {/* THE OUTSIDE BLUE BAR:

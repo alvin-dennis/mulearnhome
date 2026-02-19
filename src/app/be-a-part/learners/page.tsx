@@ -10,7 +10,7 @@ import WhatYouGet from "@/app/be-a-part/learners/_components/WhatYouGet";
 import WhyKarmaPoints from "@/app/be-a-part/learners/_components/WhyKarmaPoints";
 import WhyMuLearn from "@/app/be-a-part/learners/_components/WhyMuLearn";
 
-import { onboardingSteps } from "@/data/learners";
+import { learnerIdentityTags, onboardingSteps } from "@/data/learners";
 
 export default function LearnersPage() {
   return (
