@@ -86,7 +86,7 @@ const LearnersStatus = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <MotionDiv
-              key={index}
+              key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

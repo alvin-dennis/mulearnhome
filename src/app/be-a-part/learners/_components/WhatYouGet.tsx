@@ -51,11 +51,11 @@ const WhatYouGet = () => {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-10">
-          {benefits.map((benefit, index) => {
+          {benefits.map((benefit) => {
             const IconComponent = benefit.icon;
             return (
               <div
-                key={index}
+                key={benefit.title}
                 className="group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 relative"
               >
                 {/* THE OUTSIDE BLUE BAR:
