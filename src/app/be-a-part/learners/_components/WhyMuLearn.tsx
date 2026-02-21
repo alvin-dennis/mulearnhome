@@ -15,7 +15,7 @@ const WhyMuLearn = () => {
 
   return (
     <section className="py-16 md:py-24 ">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 -mt-25">
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-gray-900">

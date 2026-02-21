@@ -6,7 +6,7 @@ const LearnerIntro = () => {
       className="py-16 md:py-20 container mx-auto px-4"
       aria-labelledby="learners-intro-heading"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto -mt-25">
         {/* Blue Card */}
         <div className="bg-[#456FF6] rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side - Illustration */}

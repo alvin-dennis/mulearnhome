@@ -14,7 +14,7 @@ import { onboardingSteps } from "@/data/learners";
 
 export default function LearnersPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
       <section id="hero">
         <LearnersHero />
       </section>

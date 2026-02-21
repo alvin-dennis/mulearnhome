@@ -59,7 +59,7 @@ export default function RankingSection() {
   return (
     <section className="py-16 md:py-20 container mx-auto px-4 relative">
       {/* Decorative Sparkles */}
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+      <div className="absolute inset-0 pointer-events-none hidden lg:block ">
         {/* Left Side Sparkles */}
         <Sparkles className="absolute top-[15%] left-[18%] w-8 h-8 text-black fill-black" />
         <Sparkles className="absolute top-[35%] left-[8%] w-4 h-4 text-black fill-black" />
@@ -83,7 +83,7 @@ export default function RankingSection() {
         </div>
 
         {/* Learners Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto ">
           {topLearners.map((learner, index) => (
             <div
               key={index}
