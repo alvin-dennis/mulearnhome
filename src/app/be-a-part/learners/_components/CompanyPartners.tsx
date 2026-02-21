@@ -1,5 +1,3 @@
-"use client";
-
 import MuImage from "@/components/MuImage";
 import { CompanyPartners1, CompanyPartners as CompanyPartnersData } from "@/data/company_new";
 
@@ -70,39 +68,6 @@ const CompanyPartners = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
-        }
-
-        .animate-scroll-right {
-          animation: scroll-right 30s linear infinite;
-        }
-
-        .animate-scroll-left:hover,
-        .animate-scroll-right:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };

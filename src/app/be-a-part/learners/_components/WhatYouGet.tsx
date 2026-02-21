@@ -1,5 +1,4 @@
 import { Briefcase, GraduationCap, Target, TrendingUp, Trophy, Users } from "lucide-react";
-import React from "react";
 
 const WhatYouGet = () => {
   const benefits = [

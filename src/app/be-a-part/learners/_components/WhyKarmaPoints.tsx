@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Globe, LineChart, TrendingUp, Zap } from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
 

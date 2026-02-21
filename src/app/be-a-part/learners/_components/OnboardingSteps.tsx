@@ -1,5 +1,3 @@
-"use client";
-
 import { MotionDiv } from "@/components/MuFramer";
 import type { OnboardingStep } from "@/lib/types";
 
