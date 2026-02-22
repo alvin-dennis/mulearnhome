@@ -52,10 +52,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 774,
-      "prs_opened": 213,
-      "prs_merged": 206,
-      "points": 1193,
+      "commits": 792,
+      "prs_opened": 215,
+      "prs_merged": 209,
+      "points": 1216,
       "displayname": "Awindsr"
     },
     {
@@ -93,20 +93,20 @@
       "displayname": "AMALJITH"
     },
     {
-      "username": "alvin-dennis",
-      "commits": 61,
-      "prs_opened": 14,
-      "prs_merged": 12,
-      "points": 87,
-      "displayname": "Alvin Dennis"
+      "username": "awindsr",
+      "commits": 89,
+      "prs_opened": 10,
+      "prs_merged": 10,
+      "points": 109,
+      "displayname": "Awindsr"
     },
     {
-      "username": "awindsr",
-      "commits": 71,
-      "prs_opened": 8,
-      "prs_merged": 7,
-      "points": 86,
-      "displayname": "Awindsr"
+      "username": "alvin-dennis",
+      "commits": 68,
+      "prs_opened": 14,
+      "prs_merged": 14,
+      "points": 96,
+      "displayname": "Alvin Dennis"
     },
     {
       "username": "sachin-raj-m",
@@ -125,6 +125,14 @@
       "displayname": "Devika Dileep"
     },
     {
+      "username": "Akshayvs-Tech",
+      "commits": 16,
+      "prs_opened": 5,
+      "prs_merged": 4,
+      "points": 25,
+      "displayname": "Akshay v s"
+    },
+    {
       "username": "Amith-Abey-Stephen",
       "commits": 14,
       "prs_opened": 4,
@@ -133,35 +141,27 @@
       "displayname": "Amith Abey Stephen"
     },
     {
+      "username": "erzer12",
+      "commits": 11,
+      "prs_opened": 5,
+      "prs_merged": 4,
+      "points": 20,
+      "displayname": "Harshil P"
+    },
+    {
       "username": "Arya3077",
-      "commits": 10,
-      "prs_opened": 3,
-      "prs_merged": 3,
-      "points": 16,
+      "commits": 12,
+      "prs_opened": 4,
+      "prs_merged": 4,
+      "points": 20,
       "displayname": "Arya Shibu Dhanya"
     },
     {
-      "username": "GokulShaji2005",
-      "commits": 14,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 16,
-      "displayname": "Gokul Shaji"
-    },
-    {
-      "username": "Akshayvs-Tech",
-      "commits": 8,
-      "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 13,
-      "displayname": "Akshay v s"
-    },
-    {
       "username": "DevWithPranav",
-      "commits": 7,
-      "prs_opened": 3,
-      "prs_merged": 3,
-      "points": 13,
+      "commits": 10,
+      "prs_opened": 4,
+      "prs_merged": 4,
+      "points": 18,
       "displayname": "Pranav P"
     }
   ]
