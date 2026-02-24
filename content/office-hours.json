@@ -1710,6 +1710,16 @@
         "human-resources"
       ]
     },
-    {}
+    {
+      "title": "Introduction to Typescript ",
+      "performer": "Harshil P",
+      "designation": "Frontend Developer, µLearn Foundation",
+      "description": "This Office Hours session introduces TypeScript and explains how it enhances JavaScript by adding static typing and better development tooling. Participants will learn why TypeScript is widely adopted in modern frontend and backend development, how it improves code quality, and how to get started with basic syntax and type definitions.",
+      "date": "25/02/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    }
   ]
 }
