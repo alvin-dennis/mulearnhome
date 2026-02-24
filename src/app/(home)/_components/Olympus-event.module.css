@@ -1,0 +1,170 @@
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#f8c538, #e8b020);
+  color: #1a1a1a;
+  border: solid 2px #c99a10;
+  border-radius: 9999px;
+  font-weight: 600;
+  position: relative;
+  overflow: visible;
+  height: 2.25rem;
+  white-space: nowrap;
+}
+
+.button:active {
+  background-image: linear-gradient(#e8b020, #f8c538);
+}
+
+.hide {
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.button:not(:hover) .hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) scale(0.85);
+}
+
+.topAnnotation {
+  position: absolute;
+  bottom: calc(100% + 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.topAnnotation::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 28px;
+  background-color: #1a1a1a;
+}
+
+.topAnnotation::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 28px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background-color: #1a1a1a;
+  border-radius: 100%;
+}
+
+.topLabel {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.bottomAnnotation {
+  position: absolute;
+  top: calc(100% + 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.bottomAnnotation::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 28px;
+  background-color: #1a1a1a;
+}
+
+.bottomAnnotation::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 28px);
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 5px;
+  height: 5px;
+  background-color: #1a1a1a;
+  border-radius: 100%;
+}
+
+.bottomLabel {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ── right annotation: "Industry Practice" ── */
+.rightAnnotation {
+  position: absolute;
+  left: calc(100% + 36px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* horizontal connector line going LEFT from label toward button */
+.rightAnnotation::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 1.5px;
+  background-color: #1a1a1a;
+}
+
+/* dot at the left end of the connector (touches button right edge) */
+.rightAnnotation::after {
+  content: "";
+  position: absolute;
+  right: calc(100% + 28px);
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 5px;
+  height: 5px;
+  background-color: #1a1a1a;
+  border-radius: 100%;
+}
+
+.rightLabel {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
