@@ -168,3 +168,12 @@
   white-space: nowrap;
   letter-spacing: 0.02em;
 }
+
+/* ── disable annotations on mobile ── */
+@media (max-width: 767px) {
+  .topAnnotation,
+  .bottomAnnotation,
+  .rightAnnotation {
+    display: none !important;
+  }
+}
