@@ -1254,6 +1254,450 @@
         "ui-ux"
       ],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
+    },
+    {
+      "title": "Campus vs Corporate Life",
+      "performer": "Shalini Chandrasekhar ",
+      "designation": "US client Associate, Infosys",
+      "description": "Step into the professional world with clarity and confidence. This session is designed to help students understand how corporate life differs from college, what skills recruiters actually look for, and the career opportunities available for engineers today. You’ll also gain insights into current industry trends and practical tips to crack placements and interviews. The session concludes with an open Q&A to address your questions and concerns.\n",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "Dealing With Imbalanced Data in ML",
+      "performer": "Tharun Tomy",
+      "designation": "IG Lead",
+      "description": "A short session on understanding imbalanced datasets, why they affect model performance, and basic techniques to handle them effectively in machine learning.",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
+    {
+      "title": "Open Discussion",
+      "performer": "IG Leads",
+      "description": "\n\nThis open discussion session is a space for shared learning, idea exchange, and meaningful conversations around Impact Projects. Interact with the community, ask questions, share ideas, clarify doubts, and gain insights on how to get started and grow through hands-on initiatives.\n\n\n\n",
+      "date": "28/01/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "date": "29/01/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
+    {
+      "title": "Production Ready AI systems",
+      "performer": "Rohith K Bobby  ",
+      "designation": "AI ML Engineer",
+      "description": "Real-time AI systems go far beyond model accuracy, they demand low latency, scalability, reliability, and seamless integration with production environments. In this session, Rohith K Bobby walks through the practical challenges of taking AI from prototype to production, with a focus on real-time use cases.\n\nThe talk covers system architecture, model serving strategies, data pipelines, monitoring, and performance optimization, along with common pitfalls teams face when deploying AI at scale. Drawing from hands-on industry experience, Rohith shares best practices, tools, and design patterns used to build robust, production-grade AI systems that perform under real-world constraints",
+      "date": "29/01/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "CBFC vs Indian Cinema",
+      "performer": "Muv team",
+      "designation": "Muv IG Leads",
+      "description": "CBFC vs Indian Cinema | μLearn Office Hours 🎬\n\nA closer look at the clash between creative freedom and censorship in Indian movies.\nLet’s discuss regulations, controversies, and how CBFC decisions shape storytelling in Indian cinema.",
+      "date": "30/01/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 8) ",
+      "performer": "Mr. Ashiq Muhammed M ",
+      "designation": "ame Dev IG lead ,μLearn Foundation",
+      "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
+      "date": "30/01/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Emotional Intelligence & Self-control ",
+      "performer": "Ms. Agatha Anna Skariah",
+      "designation": "SL IG core team member",
+      "description": "Emotions don’t make you weak. Handling them well makes you powerful.\n\nJoin us for μLearn Office Hours on Emotional Intelligence & Self-control to learn how to understand your emotions, manage impulses, and respond instead of react.",
+      "date": "30/01/2026",
+      "link": "https://mulearn.org/r/sl-officehour ",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Language of Spacetime-Exploring Gravity:Episode 4",
+      "performer": "Jubit A Jacob",
+      "designation": "Physics Enthusiasist & Author",
+      "description": "Redefines gravity not as a mysterious force pulling from a distance, but as the very shape of the universe. We’ll translate the complex math into a visual story of curves and contours, showing how matter speaks to space and tells it how to move. A perfect primer for those ready to see the \"invisible\" fabric of reality.\n",
+      "date": "31/01/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
+    },
+    {
+      "title": "Doubt clearance",
+      "performer": "Aaron R Thomas",
+      "designation": "UI/UX IG lead",
+      "description": "Clear your UI/UX doubts level up your design skills.Join our UI/UX Office Hours for expert guidance and take your designs to the next level.",
+      "date": "03/02/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ],
+      "poster_thumbnail": "/assets/events/IMG-20260202-WA0027.jpg"
+    },
+    {
+      "title": "Getting Started with Python",
+      "performer": "Adithyan L",
+      "designation": "Tech Team, MuLearnSCTCE",
+      "description": "This Office Hours session is a perfect entry point into the world of Python, focusing on core fundamentals required to begin programming confidently. The session will cover basic Python concepts and help participants build a strong foundation for future backend and data-driven development.",
+      "date": "04/02/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {
+      "title": "Challenges faced in HR",
+      "performer": "Nandana S Chandran",
+      "designation": "Associate I – HR (Talent Acquisition), UST",
+      "description": "Get a real-world perspective on the challenges faced by HR professionals in today’s corporate world—from talent acquisition and hiring pressures to skill gaps and evolving candidate expectations. Explore HR career paths, industry expectations, and practical recruitment insights, followed by an open Q&A.",
+      "date": "04/02/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "ML Algorithms",
+      "performer": "Tharun Tomy",
+      "designation": "IG Lead",
+      "description": "A This session introduces key machine learning algorithms, explains when to use each, and discusses their pros and cons with practical examples.",
+      "date": "04/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
+    {
+      "title": "Recursion",
+      "performer": "Dine Babu",
+      "designation": "IG Lead",
+      "date": "05/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Arnav Jagadeeesh",
+      "designation": "AI IG Lead",
+      "date": "05/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 9) ",
+      "performer": "Mr. Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 9) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
+      "date": "06/02/2026",
+      "link": " https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Movie Talks",
+      "performer": "By MuV Team, μLearn Foundation",
+      "designation": "Muv IG Leads",
+      "description": "An open discussion for film lovers and filmmakers.\nShare opinions, break scenes, and talk cinema beyond ratings",
+      "date": "06/02/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "When Leaders Fail ",
+      "performer": "Ms. Meenakshi Santhosh M S",
+      "designation": "SL IG Lead",
+      "description": "Failure doesn’t end leadership — it reveals it.\n\nJoin us for μLearn Office Hours: When Leaders Fail as we discuss common leadership mistakes, why they happen, and how failures can become turning points in a leader’s journey.\n",
+      "date": "06/02/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Quiz Night - Dark Matter & Dark Energy",
+      "performer": "IG LEADS",
+      "designation": " Space",
+      "description": "A Quiz on Dark Matter & Dark Energy. To Test Your knowledge on the topic & to add up your knowledge on it with a new experience ",
+      "date": "07/02/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Saturday - Post (9).png"
+    },
+    {
+      "title": "Setting the Visual Tone",
+      "performer": "Deepak S Raj",
+      "designation": " Illustrator, Animator & Comic Artist, Co-Creator of “Battle of The Winds” , Co-Founder Director - Pava Creative Studios",
+      "description": "Discover how moodboarding as a tool can capture ideas, emotions, and visual direction at the early stage of design.",
+      "date": "07/02/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
+    },
+    {
+      "title": "Intro To Arduino Uno Q",
+      "performer": "Vaishnav R S",
+      "designation": "IOT IG LEAD",
+      "description": "Join this online office hour to learn about the Arduino Uno Q and how it fits into IoT projects. We’ll walk through the board basics, key features, and common use cases, with time for discussion and questions.",
+      "date": "08-02-2026",
+      "link": "https://mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "IG Leads",
+      "designation": "µLearn Foundation",
+      "description": "n this office hour,we’ll be discussing some important topics like the future of Web Development IG and the impact projects. See you there!",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "IG Leads",
+      "designation": "µLearn Foundation",
+      "description": "n this office hour , we’ll be discussing some important topics like the future of Data Science IG and the impact projects, new volunteers team selection . See you there!",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "IG Leads",
+      "designation": "µLearn Foundation",
+      "description": "n this office hour , we’ll be discussing some important topics like the future of Cloud & DevOps IG and the impact projects. See you there!",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
+    },
+    {
+      "title": "Future of HR careers",
+      "performer": " Nandana S Chandran",
+      "designation": "Associate I HR (Talent Acquisition), UST",
+      "description": "Explore how HR is evolving in today’s workplace from technology-driven hiring to people-centric and strategic roles. Learn about future HR career paths, key skills, and industry expectations, followed by an interactive Q&A session.",
+      "date": "11/02/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "LLM Fine-Tuning Quiz",
+      "performer": "IG Leads",
+      "designation": "MuLearn Foundation",
+      "description": "Think you know LLM fine-tuning? Prove it at our interactive quiz night packed with AI challenges, practical scenarios, and insightful questions designed to test your understanding",
+      "date": "12/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Short Form Content vs Cinema",
+      "performer": "MuV Team",
+      "designation": "MuV IG Team",
+      "description": "Reels or big screen?\nLet’s discuss how short-form content is changing storytelling, attention spans, and the future of cinema.",
+      "date": "13/02/2026",
+      "link": " https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "Are we building a life — or just a resume?",
+      "performer": "Ms. Aradhana Rose ",
+      "designation": "SL IG Core Team Member",
+      "description": "Join us for μLearn Office Hours: Are We Building a Life or Just a Resume? as we explore the pressure to constantly achieve, the difference between growth and burnout, and how to build a life that feels as good as it looks on paper.",
+      "date": "13/02/2026",
+      "link": " https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 10) ",
+      "performer": "Mr. Janbass Jamal K K",
+      "designation": " CSE Student, CET College",
+      "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
+      "date": "12/02/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "From Atoms To Infinity: A Journey to the World of Wonders-Ep:05",
+      "performer": "Jubit A Jacob",
+      "designation": "Physics Enthusiasist",
+      "description": " Session redefines gravity not as a mysterious force pulling from a distance, but as the very shape of the universe. We’ll translate the complex math into a visual story of curves and contours, showing how matter speaks to space and tells it how to move. A perfect primer for those ready to see the \"invisible\" fabric of reality.",
+      "date": "14/02/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ],
+      "poster_thumbnail": ""
+    },
+    {
+      "title": "Comics Project Discussion",
+      "performer": "Comics Core Team",
+      "description": " Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "14/02/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "space"
+      ],
+      "poster_thumbnail": ""
+    },
+    {
+      "title": "UI/UX Community Audit ",
+      "performer": "Aaron R Thomas ",
+      "designation": "UI/UX IG LEAD ",
+      "description": "It is a open discussion meeting to improve the UI/UX IG community ",
+      "date": "17/02/2026",
+      "link": "https://mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ]
+    },
+    {
+      "title": "Talk Session",
+      "performer": "HR Team",
+      "date": "18/2/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "Model evaluation Metrics in ML",
+      "performer": "Aishwarya Jayaprakash",
+      "designation": "DS IG Lead",
+      "date": "18/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
+    {
+      "title": "Audio & OCR Systems",
+      "performer": "U S Sooraj",
+      "designation": "ML Intern @ ICFOSS",
+      "description": "Introduces the fundamentals of DOS concepts, audio signal processing, CTC (Connectionist Temporal Classification) loss for sequence modeling, and modern Optical Character Recognition (OCR) systems",
+      "date": "19/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "The Kerala Story 2 Trailer Talk ",
+      "performer": "MuV Team",
+      "designation": "MuV IG",
+      "description": "Let’s break down the trailer — themes, storytelling choices, controversies, and audience reactions.\nIs it impactful, provocative, or polarizing?\n",
+      "date": "20/02/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked",
+      "performer": "Mr. Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead",
+      "description": "Office Hour Walkthrough (Part 11) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
+      "date": "20/02/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Strategic Problem Solving ",
+      "performer": "Ms. Agatha Anna Skariah",
+      "designation": "SL IG Core Team Member ",
+      "description": "Are You Solving Problem or Just Reacting to Them?\n\nJoin us for μLearn Office Hours: Strategic Problem Solving as we explore how to think beyond quick fixes, break down complex challenges, and approach decisions with clarity and structure. Learn how to move from reactive thinking to intentional strategy in academics, career, and life.",
+      "date": "20/02/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Quiz Night:  The Satellite Arena",
+      "performer": "IG LEADS-Space",
+      "description": "Step into the Satellite Arena and test your knowledge of real-world space missions, launch vehicles, and satellite technologies. From communication and navigation systems to Earth observation and deep-space exploration, compete in an exciting battle of brains beyond Earth’s atmosphere.",
+      "date": "21/02/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
+    },
+    {
+      "title": "Project Discussion",
+      "performer": "Deepak S Raj",
+      "designation": "Illustrator, Animator & Comic Artist | Co-Creator of “Battle of The Winds” | Co-Founder Director - Pava Creative Studios",
+      "description": " Discussion on the changes and updates of our project: The Last Odiyan",
+      "date": "21/02/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
+    },
+    {
+      "title": "Does AI Decrease Creativity?",
+      "performer": "Niranjana Pradeep ",
+      "designation": "Product Designer, Innovinlabs ",
+      "description": "The Office Hours – UI/UX Edition\nJoin us for an engaging session on “Does AI Decrease Creativity?” as part of The Office Hours series. This discussion will explore the evolving relationship between artificial intelligence and creative problem-solving in the field of UI/UX design.\nThe session will be led by Niranjana Pradeep, Product Designer at Innovinlabs, who will share practical insights, industry perspectives, and real-world experiences on how AI tools influence ideation, design thinking, and innovation.\n📅 Date: Tuesday, 24th February 2026\n🕢 Time: 07:30 PM\n📍 Platform: Google Meet\nIf you're a designer, developer, or creative thinker curious about the impact of AI on creativity, this session is for you.",
+      "date": "24/02/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ]
     }
   ]
 }
