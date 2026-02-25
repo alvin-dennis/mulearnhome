@@ -1720,6 +1720,17 @@
       "interestGroups": [
         "web-development"
       ]
-    }
+    },
+    {
+      "title": "OpenClaw Unleashed",
+      "performer": "Joel Basil Kurain",
+      "designation": "MD, Supe AI",
+      "date": "26/02/2026",
+      "link": "https://mulearn.org/r/ai-officehour/",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {}
   ]
 }
