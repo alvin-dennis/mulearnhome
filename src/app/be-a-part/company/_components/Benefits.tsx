@@ -1,7 +1,7 @@
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
-import { CompanyFeatures } from "@/data/company_new";
+import { CompanyFeatures } from "@/data/company";
 
 const Benefits = () => {
   return (
@@ -25,7 +25,7 @@ const Benefits = () => {
         </MotionH1>
 
         <MuImage
-          src={"/assets/company_new/note.svg"}
+          src={"/assets/company/note.svg"}
           alt="note icon"
           className="absolute left-24 top-0 w-[92px] h-[115px] rotate-[16deg] hidden lg:block"
           width={92}

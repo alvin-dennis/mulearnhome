@@ -1,11 +1,11 @@
-import About from "./components/About";
-import Benefits from "./components/Benefits";
-import Change from "./components/Change";
-import Contact from "./components/Contact";
-import Hero from "./components/Hero";
-import Mission from "./components/Mission";
-import Partners from "./components/Partners";
-import Sucess from "./components/Success";
+import About from "./_components/About";
+import Benefits from "./_components/Benefits";
+import Change from "./_components/Change";
+import Contact from "./_components/Contact";
+import Hero from "./_components/Hero";
+import Mission from "./_components/Mission";
+import Partners from "./_components/Partners";
+import Success from "./_components/Success";
 
 const page = () => {
   return (
@@ -14,7 +14,7 @@ const page = () => {
       <About />
       <Benefits />
       <Partners />
-      <Sucess />
+      <Success />
       <Mission />
       <Change />
       <Contact />

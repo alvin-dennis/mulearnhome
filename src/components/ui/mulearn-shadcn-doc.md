@@ -26,7 +26,7 @@ All components use the following CSS variables (defined in `globals.css`):
 ### Button
 
 ```tsx
-<Button variant="mulearn">MuLearn Gradient Button</Button>
+<Button variant="mulearn">MuLearn Button</Button>
 <Button variant="outline">Outline Button</Button>
 <Button variant="purple">Purple Button</Button>
 <Button variant="ghost">Ghost Button</Button>

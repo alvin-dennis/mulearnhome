@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
@@ -23,8 +24,15 @@ const Hero = () => {
             community.{" "}
           </p>
           <div className="flex flex-row gap-8 mt-4">
-            <Button variant={"outline"}>Explore learners</Button>
-            <Button variant={"default"}>Join as a Company Partner</Button>
+            <Link
+              href={"https://airtable.com/app0v220Yc0G3CPMr/shrpiEQrpuIFTMNh1"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant={"default"} className="font-semibold">
+                Join as a Company Partner
+              </Button>
+            </Link>
           </div>
 
           <div className="absolute right-1/4 pr-6 top-12 text-mulearn-blackish hidden lg:block ">
@@ -110,7 +118,7 @@ const Hero = () => {
 
           <div className="absolute top-2/3 center w-[300px] h-[300px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block " />
           <MuImage
-            src={"/assets/company_new/student.svg"}
+            src={"/assets/company/student.svg"}
             alt="Company Partnership Illustration"
             className="w-full h-full relative  object-contain ml-10"
             width={650}

@@ -1,11 +1,10 @@
-import CompanyPartners from "@/app/be-a-part/company/components/Partners";
-import FinalCTA from "@/app/be-a-part/learners/_components/FinalCTA";
-import LearnerIntro from "@/app/be-a-part/learners/_components/LearnerIntro";
-import LearnersHero from "@/app/be-a-part/learners/_components/LearnersHero";
-import LearnersStatus from "@/app/be-a-part/learners/_components/LearnersStatus";
-import OnboardingSteps from "@/app/be-a-part/learners/_components/OnboardingSteps";
-import RankingSection from "@/app/be-a-part/learners/_components/RankingSection";
-// import Testimonials from "@/app/be-a-part/learners/_components/Testimonials";
+import CTA from "@/app/be-a-part/learners/_components/CTA";
+import Hero from "@/app/be-a-part/learners/_components/Hero";
+import Intro from "@/app/be-a-part/learners/_components/Intro";
+import Onboarding from "@/app/be-a-part/learners/_components/Onboarding";
+import CompanyPartners from "@/app/be-a-part/learners/_components/Partners";
+import Ranking from "@/app/be-a-part/learners/_components/Ranking";
+import Status from "@/app/be-a-part/learners/_components/Status";
 import WhatYouGet from "@/app/be-a-part/learners/_components/WhatYouGet";
 import WhyKarmaPoints from "@/app/be-a-part/learners/_components/WhyKarmaPoints";
 import WhyMuLearn from "@/app/be-a-part/learners/_components/WhyMuLearn";
@@ -16,19 +15,16 @@ export default function LearnersPage() {
   return (
     <main className="min-h-screen ">
       <section id="hero">
-        <LearnersHero />
+        <Hero />
       </section>
       <section id="learner-intro" className="pt-12 md:pt-16">
-        <LearnerIntro />
+        <Intro />
       </section>
       <section id="why-mulearn" className="pt-12 md:pt-16">
         <WhyMuLearn />
       </section>
-      {/* <section id="testimonials" className="pt-12 md:pt-16 pb-12 md:pb-16">
-        <Testimonials />
-      </section> */}
       <section id="rankings" className="py-12 md:py-16">
-        <RankingSection />
+        <Ranking />
       </section>
       <section id="what-you-get" className="py-12 md:py-16">
         <WhatYouGet />
@@ -43,13 +39,13 @@ export default function LearnersPage() {
         <h2 className="text-center mb-8 md:mb-12 text-4xl md:text-5xl font-bold text-black">
           How to Begin Your Journey
         </h2>
-        <OnboardingSteps data={onboardingSteps} />
+        <Onboarding data={onboardingSteps} />
       </section>
       <section id="learners-status" className="py-12 md:py-16">
-        <LearnersStatus />
+        <Status />
       </section>
       <section id="final-cta" className="py-12 md:py-16">
-        <FinalCTA />
+        <CTA />
       </section>
     </main>
   );

@@ -1,3 +1,176 @@
+export const CompanyFeatures = [
+  {
+    title: "Access to Talent",
+    description:
+      "Tap into a vibrant pool of learners who prove their skills through real projects, not empty promises.",
+    image: "/assets/company/b1.svg",
+  },
+  {
+    title: "Skill Validation",
+    description:
+      "See what candidates can actually do—proof-of-work speaks louder than CV buzzwords.",
+    image: "/assets/company/b2.svg",
+  },
+  {
+    title: "Employer Branding",
+    description:
+      "Show the world you're a future-ready company that invests in innovation and people.",
+    image: "/assets/company/b3.svg",
+  },
+  {
+    title: "Community Impact",
+    description:
+      "Bridge the gap between education and employment by fueling the next generation of talent.",
+    image: "/assets/company/b4.svg",
+  },
+];
+
+export const CompanyPartners = [
+  {
+    image: "/assets/company/foxlab.svg",
+    title: "foxlab",
+  },
+  {
+    image: "/assets/company/gdsc.svg",
+    title: "gdsc",
+  },
+  {
+    image: "/assets/company/google_android.svg",
+    title: "google_android",
+  },
+  {
+    image: "/assets/company/Google.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/ieee.svg",
+    title: "ieee",
+  },
+  {
+    image: "/assets/company/Softnotions.svg",
+    title: "softnotions",
+  },
+  {
+    image: "/assets/company/tiltlabs.svg",
+    title: "tiltlabs",
+  },
+  {
+    image: "/assets/company/tp.svg",
+    title: "Technopark",
+  },
+  {
+    image: "/assets/company/kuttycoders.svg",
+    title: "foxlab",
+  },
+  {
+    image: "/assets/company/Triassic.svg",
+    title: "foxlab",
+  },
+];
+
+export const CompanyPartners1 = [
+  {
+    image: "/assets/company/icfoss.svg",
+    title: "foxlab",
+  },
+  {
+    image: "/assets/company/kites.svg",
+    title: "gdsc",
+  },
+  {
+    image: "/assets/company/ksum.svg",
+    title: "google_android",
+  },
+  {
+    image: "/assets/company/kdisc.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/blockchain.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/Ecesis.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/Experion.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/Pits.svg",
+    title: "Google",
+  },
+  {
+    image: "/assets/company/SunTec.svg",
+    title: "Google",
+  },
+
+  {
+    image: "/assets/company/Thinkpalm.svg",
+    title: "Google",
+  },
+];
+
+export const companies = [
+  {
+    alt: "CAFIT",
+    src: "/public/assets/careers/companies/cafit.webp",
+  },
+  {
+    alt: "Carestack",
+    src: "/public/assets/careers/companies/carestack.webp",
+  },
+  {
+    alt: "cdf",
+    src: "/public/assets/careers/companies/cdf.webp",
+  },
+  {
+    alt: "Ecesis",
+    src: "/public/assets/careers/companies/ecesis.webp",
+  },
+  {
+    alt: "Experion",
+    src: "/public/assets/careers/companies/experion.webp",
+  },
+  {
+    alt: "EY",
+    src: "/public/assets/careers/companies/ey.webp",
+  },
+  {
+    alt: "Nucore",
+    src: "/public/assets/careers/companies/nucore.webp",
+  },
+  {
+    alt: "Softnotion",
+    src: "/public/assets/careers/companies/softnotions.webp",
+  },
+  {
+    alt: "SunTec",
+    src: "/public/assets/careers/companies/suntec.webp",
+  },
+  {
+    alt: "Tata Elexis",
+    src: "/public/assets/careers/companies/tata.webp",
+  },
+  {
+    alt: "Techfunic",
+    src: "/public/assets/careers/companies/techfunic.webp",
+  },
+  {
+    alt: "Thinkpalm",
+    src: "/public/assets/careers/companies/thinkpalm.webp",
+  },
+  {
+    alt: "Undaku",
+    src: "/public/assets/careers/companies/undaku.webp",
+  },
+  {
+    alt: "YIP",
+    src: "/public/assets/careers/companies/yip.webp",
+  },
+];
+
 export const CompanyPartner = [
   {
     name: "Google",
@@ -77,151 +250,60 @@ export const CompanyPartner = [
   },
 ];
 
-export const companies = [
+export const SucessStories = [
   {
-    alt: "CAFIT",
-    src: "/public/assets/careers/companies/cafit.webp",
+    title: "Ajeesh Achuthan",
+    role: "Co-founder, CTO Open Finance",
+    description:
+      "I began my journey at an In50Hrs event, and it has played a pivotal role in shaping who I am today. At µLearn, I see everyone in capable hands, sharing similar exposure and experiences. Make the most of it.",
+    image: "",
   },
   {
-    alt: "Carestack",
-    src: "/public/assets/careers/companies/carestack.webp",
+    title: "Mudit Srivastava",
+    role: "Growth Manager, Pathway",
+    description:
+      "µLearn has been our first partner in India. We have also collaborated with IITs and other premier institutions in the country. The conversion rates we achieved with µLearn are the best. I am inspired by what µLearn does.",
+    image: "",
   },
   {
-    alt: "cdf",
-    src: "/public/assets/careers/companies/cdf.webp",
+    title: "Shri. Anoop Ambika",
+    role: "CEO, Kerala Startup Mission",
+    description:
+      "µLearn helps to accelerate learning and discover the potential of every student so that they build their skills relevant to their passion and gain confidence & self efficacy.",
+    image: "",
   },
   {
-    alt: "Ecesis",
-    src: "/public/assets/careers/companies/ecesis.webp",
+    title: "Farish C V",
+    role: "Program Manager, Google for Startups Accelerator",
+    description:
+      "Partnership with µLearn will strengthen our work in Kerala, especially in the space of educators and the student community.",
+    image: "",
   },
   {
-    alt: "Experion",
-    src: "/public/assets/careers/companies/experion.webp",
+    title: "Dr. Saj Gopinath",
+    role: "Vice Chancellor, Kerala Digital University",
+    description: "µLearn provides a revolutionised way of learning in a very experienced manner.",
+    image: "",
   },
   {
-    alt: "EY",
-    src: "/public/assets/careers/companies/ey.webp",
+    title: "Shri. Sreekumar V",
+    role: "Secretary, GTech & Center Head, Tata Elxsi",
+    description:
+      "There is no doubt that µLearn will play an important role in sustainable development, job security, and the formation and growth of new industries in Kerala. This can be witnessed in the coming years.",
+    image: "",
   },
   {
-    alt: "Nucore",
-    src: "/public/assets/careers/companies/nucore.webp",
+    title: "Shri K N Balagopal",
+    role: "Minister for Finance, Government of Kerala",
+    description:
+      "Reaching 16,000 students in its first year of operation demonstrates µLearn's influence (among them) and its potential for growth.",
+    image: "",
   },
   {
-    alt: "Softnotion",
-    src: "/public/assets/careers/companies/softnotions.webp",
-  },
-  {
-    alt: "SunTec",
-    src: "/public/assets/careers/companies/suntec.webp",
-  },
-  {
-    alt: "Tata Elexis",
-    src: "/public/assets/careers/companies/tata.webp",
-  },
-  {
-    alt: "Techfunic",
-    src: "/public/assets/careers/companies/techfunic.webp",
-  },
-  {
-    alt: "Thinkpalm",
-    src: "/public/assets/careers/companies/thinkpalm.webp",
-  },
-  {
-    alt: "Undaku",
-    src: "/public/assets/careers/companies/undaku.webp",
-  },
-  {
-    alt: "YIP",
-    src: "/public/assets/careers/companies/yip.webp",
+    title: "Dr. P K Biju",
+    role: "Syndicate Member, University (APJAKTU)",
+    description:
+      "Concentrating technology, not at a single spot but making it accessible to everyone is the speciality of GTech µLearn.",
+    image: "",
   },
 ];
-
-export const CompanyFeatures = [
-  {
-    title: "Access to Talent",
-    description:
-      "Tap into a vibrant pool of learners who prove their skills through real projects, not empty promises.",
-    titleSize: "text-xl",
-  },
-  {
-    title: "Skill Validation",
-    description:
-      "See what candidates can actually do—proof-of-work speaks louder than CV buzzwords.",
-    titleSize: "text-xl",
-  },
-  {
-    title: "Employer Branding",
-    description:
-      "Show the world you're a future-ready company that invests in innovation and people.",
-    titleSize: "text-xl",
-  },
-  {
-    title: "Community Impact",
-    description:
-      "Bridge the gap between education and employment by fueling the next generation of talent.",
-    titleSize: "text-xl",
-  },
-];
-export const companyDo = [
-  {
-    title: "Post Internships & Job Roles",
-    description: "Connect with skilled learners ready to contribute from day one.",
-  },
-  {
-    title: "Collaborate on Programs & Events",
-    description: "Co-create hackathons, workshops, and learning tracks that inspire talent.",
-  },
-  {
-    title: "Track Engagement & Impact",
-    description: "Measure applications, participation, and outcomes with clear analytics.",
-  },
-  {
-    title: "Launch Proof-of-Work Challenges",
-    description: "Connect with skilled learners ready to contribute from day one.",
-  },
-];
-
-export const companySteps = [
-  {
-    number: "01",
-    title: "Sign Up",
-    description: "Fill out the company registration form.",
-    align: "left",
-  },
-  {
-    number: "02",
-    title: "Verification",
-    description: "Our team reviews and approves your profile.",
-    align: "right",
-  },
-  {
-    number: "03",
-    title: "Create Profile",
-    description: "Add your company details, logo, and team.",
-    align: "left",
-  },
-  {
-    number: "04",
-    title: "Post Opportunities",
-    description: "Share internships, gigs, or Proof-of-Work challenges.",
-    align: "right",
-  },
-  {
-    number: "05",
-    title: "Explore Talent",
-    description: "Discover learners by skills, badges, and engagement scores.",
-    align: "left",
-  },
-  {
-    number: "06",
-    title: "Track Impact",
-    description: "Monitor applications, participation, and analytics in real time.",
-    align: "right",
-  },
-];
-export const companyImages = {
-  hero: "/assets/company/stud.svg",
-  note: "/assets/company/note.svg",
-  handshake: "/assets/company/handshake.svg",
-  studLap: "/assets/company/studLap.svg",
-};
