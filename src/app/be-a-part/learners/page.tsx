@@ -1,4 +1,4 @@
-import CompanyPartners from "@/app/be-a-part/learners/_components/CompanyPartners";
+import CompanyPartners from "@/app/be-a-part/company/components/Partners";
 import FinalCTA from "@/app/be-a-part/learners/_components/FinalCTA";
 import LearnerIntro from "@/app/be-a-part/learners/_components/LearnerIntro";
 import LearnersHero from "@/app/be-a-part/learners/_components/LearnersHero";

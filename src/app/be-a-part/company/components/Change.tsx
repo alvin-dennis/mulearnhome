@@ -6,8 +6,6 @@ const Change = () => {
   return (
     <section className="bg-mulearn-whitish overflow-hidden relative py-12 sm:py-16 lg:py-0">
       <div className="max-w-7xl mx-auto flex items-center justify-center flex-col px-4 sm:px-6 lg:px-8">
-        {/* Decorative star - hidden on mobile */}
-
         <div className="absolute right-1/7 pr-3 top-1/8 pt-16 text-mulearn-blackish hidden lg:block">
           <svg
             width="40"
@@ -26,23 +24,18 @@ const Change = () => {
             />
           </svg>
         </div>
-
-        {/* Main heading - responsive text sizing */}
         <MotionDiv
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="font-extralight leading-tight text-center pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 lg:pb-20 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl px-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12 lg:pb-20 px-4">
             <span className="text-mulearn-blackish">Be a part of change with </span>
             <span className="text-mulearn">µLearn</span>
           </h1>
         </MotionDiv>
       </div>
-
-      {/* Background blur */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[150px] h-[200px] sm:w-[200px] sm:h-[300px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block z-0" />
 
       <div className="relative bg-mulearn-trusty-blue max-w-7xl min-h-[400px] sm:min-h-[450px] lg:h-[403px] flex flex-col lg:flex-row items-center justify-between mx-4 sm:mx-6 lg:mx-auto mt-8 sm:mt-12 rounded-2xl overflow-hidden p-6 sm:p-8 lg:p-0">
         <div className="absolute right-1/9 top-14 pt-16 text-mulearn-whitish hidden lg:block">
@@ -156,12 +149,12 @@ const Change = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-          className="relative lg:absolute lg:right-16 w-full lg:w-auto flex justify-center lg:block mt-6 lg:mt-0"
+          className="relative lg:absolute lg:right-16 w-full lg:w-auto justify-center lg:block hidden md:block"
         >
           <MuImage
             src={"/assets/company_new/lap.svg"}
             alt="Company Partnership Illustration"
-            className="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-auto lg:h-[450px] object-contain"
+            className="w-[280px] sm:w-[350px] lg:w-auto lg:h-[450px] object-contain"
             width={650}
             height={450}
             unoptimized

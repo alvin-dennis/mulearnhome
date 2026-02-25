@@ -94,7 +94,7 @@ const LearnersStatus = () => {
               className="text-center"
             >
               {/* Number with CountUp Animation */}
-              <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-600 mb-4">
+              <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn mb-4">
                 <CountUp end={stat.number} duration={2.5} separator="," />+
               </h3>
 

@@ -12,12 +12,12 @@ const Hero = () => {
         className="text-2xl md:text-4xl lg:text-6xl font-bold"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-center flex-col">
-          <h1 className=" lg:text-7xl font-extralight leading-tight text-center  max-w-[630px] pt-20">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extralight leading-tight text-center  max-w-[630px] pt-20">
             <span className="text-mulearn-blackish">Partner With </span>{" "}
             <span className="text-mulearn">µLearn </span>
             <span className="text-mulearn-blackish">to discover talent</span>
           </h1>
-          <p className="text-center text-mulearn-blackish font-medium text-xl">
+          <p className="text-center text-mulearn-blackish font-medium text-xl mt-5">
             A µLearn Company Partner is an organization that collaborates with µLearn to discover
             skilled learners, offer job or internship opportunities, and engage with our talent
             community.{" "}
@@ -27,7 +27,7 @@ const Hero = () => {
             <Button variant={"default"}>Join as a Company Partner</Button>
           </div>
 
-          <div className="absolute right-1/4 pr-6 top-12 text-mulearn-blackish  hidden lg:block ">
+          <div className="absolute right-1/4 pr-6 top-12 text-mulearn-blackish hidden lg:block ">
             <svg
               width="60"
               height="100"

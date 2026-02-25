@@ -56,7 +56,7 @@ export default function Mission() {
 
   return (
     <div className="flex justify-center">
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl bg-mulearn-trusty-blue/10">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl">
         <MotionSection
           className="flex flex-col justify-center py-24 items-center "
           variants={fadeInUp}
@@ -64,7 +64,10 @@ export default function Mission() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <MotionDiv className="flex flex-col items-center text-center w-full" variants={fadeInUp}>
+          <MotionDiv
+            className="text-4xl md:text-5xl lg:text-6xl flex flex-col items-center text-center w-full"
+            variants={fadeInUp}
+          >
             <h1>
               Our <span className="text-mulearn">Mission</span> &
               <span className="text-mulearn">Growth</span>

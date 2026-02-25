@@ -1,95 +1,59 @@
-import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { CompanyPartners, CompanyPartners1 } from "@/data/company_new";
+import { CompanyPartners1, CompanyPartners as CompanyPartnersData } from "@/data/company_new";
 
 const Partners = () => {
-  return (
-    <section className="bg-mulearn-whitish overflow-hidden relative z-10">
-      <div className="max-w-7xl mx-auto flex items-center justify-center flex-col">
-        <MotionDiv
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <h1 className="font-extralight leading-tight text-center max-w-[630px] pt-20">
-            <span className="text-mulearn-blackish">Our </span>
-            <span className="text-mulearn">Company Partners</span>
-          </h1>
-        </MotionDiv>
+  const partners = CompanyPartnersData;
+  const secondRowPartners = CompanyPartners1;
 
-        <div className="absolute right-38 top-0 items-center pointer-events-none">
-          <div className="w-[300px] h-[300px] bg-mulearn blur-[200px] opacity-30 rounded-full" />
+  return (
+    <section className="py-16 md:py-20 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            Our <span className="text-mulearn">Company Partners</span>
+          </h2>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-center flex-col">
-          <MotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-screen mt-12 border border-mulearn-blackish p-3 bg-mulearn-whitish"
-          >
-            <MotionDiv
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                ease: "linear",
-                duration: 12,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="flex gap-12 w-max"
-            >
-              {[...CompanyPartners1, ...CompanyPartners1].map((partner, i) => (
+        <div className="relative">
+          <div className="border-t border-gray-300 mb-8"></div>
+          <div className="overflow-hidden pb-8">
+            <div className="flex animate-scroll-left space-x-12 md:space-x-16">
+              {[...partners, ...partners].map((partner, index) => (
                 <div
-                  key={`${partner.image}-${i < CompanyPartners1.length ? "a" : "b"}`}
-                  className="flex-shrink-0 max-w-full"
+                  key={`${partner.title}-${index}`}
+                  className="flex-shrink-0 w-32 h-20 md:w-40 md:h-24 flex items-center justify-center transition-all duration-300"
                 >
                   <MuImage
                     src={partner.image}
                     alt={partner.title}
-                    width={120}
-                    height={80}
-                    className="object-contain"
+                    width={160}
+                    height={96}
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
               ))}
-            </MotionDiv>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-            className="w-screen mt-12 border border-mulearn-blackish p-3 bg-mulearn-whitish"
-          >
-            <MotionDiv
-              animate={{ x: ["-50%", "0%"] }}
-              transition={{
-                ease: "linear",
-                duration: 12,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="flex gap-8 w-max"
-            >
-              {[...CompanyPartners, ...CompanyPartners].map((partner, i) => (
+            </div>
+          </div>
+          <div className="border-t border-gray-300"></div>
+          <div className="border-t border-gray-300 mt-2 mb-8"></div>
+          <div className="overflow-hidden pb-8 border-b border-gray-300">
+            <div className="flex animate-scroll-right space-x-12 md:space-x-16">
+              {[...secondRowPartners, ...secondRowPartners].map((partner, index) => (
                 <div
-                  key={`${partner.image}-${i < CompanyPartners.length ? "a" : "b"}`}
-                  className="flex-shrink-0 max-w-full"
+                  key={`${partner.title}-${index}`}
+                  className="flex-shrink-0 w-32 h-20 md:w-40 md:h-24 flex items-center justify-center transition-all duration-300"
                 >
                   <MuImage
                     src={partner.image}
                     alt={partner.title}
-                    width={120}
-                    height={80}
-                    className="object-contain"
+                    width={160}
+                    height={96}
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
               ))}
-            </MotionDiv>
-          </MotionDiv>
+            </div>
+          </div>
         </div>
       </div>
     </section>

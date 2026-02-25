@@ -15,7 +15,7 @@ const Sucess = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="font-extralight leading-tight text-center pt-20">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center pt-20">
             <span className="text-mulearn-blackish">Success Stories From </span>
             <span className="text-mulearn">µLearn community</span>
           </h1>
@@ -34,7 +34,7 @@ const Sucess = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="max-w-5xl overflow-hidden sm:max-w-3xl"
+          className="max-w-7xl overflow-hidden sm:max-w-5xl"
         >
           <MotionDiv
             animate={{ x: ["0%", "-50%"] }}
@@ -49,7 +49,7 @@ const Sucess = () => {
             {[...SucessStories].map((feature, index) => (
               <Card
                 key={`${feature.image}-${index < SucessStories.length ? "a" : "b"}`}
-                className="min-w-[280px] max-w-[280px] border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"
+                className="min-w-[280px] max-w-[280px] border-mulearn/10 bg-gradient-to-br from-mulearn-whitish to-mulearn/5 h-full"
               >
                 <CardContent className="flex flex-col items-center gap-2 p-6">
                   <MuImage
@@ -81,9 +81,9 @@ const Sucess = () => {
                   </div>
 
                   <div className="flex flex-row gap-6 pt-3">
-                    <FaXTwitter className="bg-black text-white text-xl hover:scale-110 transition" />
-                    <FaLinkedin className="text-[#0A66C2] bg-white text-xl hover:scale-110 transition" />
-                    <FaGlobe className="text-gray-700 text-xl hover:scale-110 transition" />
+                    <FaXTwitter className="text-xl hover:scale-110 transition" />
+                    <FaLinkedin className="text-xl hover:scale-110 transition" />
+                    <FaGlobe className="text-xl hover:scale-110 transition" />
                   </div>
                 </CardContent>
               </Card>
