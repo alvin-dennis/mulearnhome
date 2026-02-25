@@ -1731,6 +1731,15 @@
         "ai"
       ]
     },
-    {}
+    {
+      "title": "Binary Search",
+      "performer": "Dine Babu",
+      "designation": "DSA IG Lead",
+      "date": "26/02/2026",
+      "link": "https://mulearn.org/r/dsa-officehours",
+      "interestGroups": [
+        "dsa"
+      ]
+    }
   ]
 }
