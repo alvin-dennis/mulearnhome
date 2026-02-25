@@ -1,10 +1,10 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { ArrowUp, User } from "lucide-react";
+import { User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import { Badge } from "@/components/ui/badge";
+import MuLoader from "@/components/MuLoader";
 import { Card } from "@/components/ui/card";
 import type { Counts } from "@/lib/types";
 
@@ -49,7 +49,7 @@ export default function Mission() {
   if (!counts) {
     return (
       <div className="px-14 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24 ">
-        <div className="text-center">Loading statistics...</div>
+        <MuLoader />
       </div>
     );
   }
@@ -80,11 +80,6 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Total members</p>
                   <p className="font-bold text-mulearn-blackish">{counts.members}+</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -99,11 +94,6 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Learning Circles</p>
                   <p className="font-bold text-mulearn-blackish">{counts.learning_circle_count}+</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -118,11 +108,6 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Events</p>
                   <p className="font-bold text-mulearn-blackish">378+</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -139,11 +124,6 @@ export default function Mission() {
                   <p className="font-bold text-mulearn-blackish">
                     {counts.karma_pow_count.karma_count}
                   </p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    +15%
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -160,11 +140,6 @@ export default function Mission() {
                   <p className="font-bold text-mulearn-blackish">
                     {counts.karma_pow_count.pow_count}
                   </p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -179,11 +154,6 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Number of Internships</p>
                   <p className="font-bold text-mulearn-blackish">2770</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -198,11 +168,6 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Products</p>
                   <p className="font-bold text-mulearn-blackish">120</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
                 <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
@@ -217,14 +182,9 @@ export default function Mission() {
                 <div className="flex justify-center flex-col gap-3">
                   <p className="text-mulearn-gray-600">Learning Circles</p>
                   <p className="font-bold text-mulearn-blackish">{counts.learning_circle_count}</p>
-                  <Badge className="text-green-500 bg-mulearn-whitish hover:bg-mulearn-whitish ">
-                    {" "}
-                    <ArrowUp className="w-3 h-3 text-green-500" />
-                    3+ interns
-                  </Badge>
                 </div>
 
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
+                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-full font-bold">
                   <User className="w-10 h-10" />
                 </div>
               </Card>

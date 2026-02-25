@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className=" bg-mulearn-whitish overflow-hidden relative">
+    <section className=" overflow-hidden relative">
       <MotionDiv
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -23,15 +23,8 @@ const Hero = () => {
             community.{" "}
           </p>
           <div className="flex flex-row gap-8 mt-4">
-            <Button
-              variant={"outline"}
-              className=" text-mulearn-blackish border-mulearn-trusty-blue  p-4"
-            >
-              Explore learners
-            </Button>
-            <Button variant={"trusty"} className="">
-              Join as a Company Partner
-            </Button>
+            <Button variant={"outline"}>Explore learners</Button>
+            <Button variant={"default"}>Join as a Company Partner</Button>
           </div>
 
           <div className="absolute right-1/4 pr-6 top-12 text-mulearn-blackish  hidden lg:block ">
@@ -116,13 +109,6 @@ const Hero = () => {
           </div>
 
           <div className="absolute top-2/3 center w-[300px] h-[300px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block " />
-          <div className="absolute top-1/4 right-50 w-[236px] h-[283px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block" />
-          <MotionDiv
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-2xl md:text-4xl lg:text-6xl font-bold"
-          ></MotionDiv>
           <MuImage
             src={"/assets/company_new/student.svg"}
             alt="Company Partnership Illustration"
@@ -133,9 +119,6 @@ const Hero = () => {
           />
         </div>
       </MotionDiv>
-      <div className="">
-        <div className=" mx-auto h-px bg-mulearn-blackish/40" />
-      </div>
     </section>
   );
 };

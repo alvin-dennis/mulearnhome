@@ -46,7 +46,7 @@ const Sucess = () => {
             }}
             className="flex gap-8 mt-10 w-max"
           >
-            {[...SucessStories, ...SucessStories].map((feature, index) => (
+            {[...SucessStories].map((feature, index) => (
               <Card
                 key={`${feature.image}-${index < SucessStories.length ? "a" : "b"}`}
                 className="min-w-[280px] max-w-[280px] border-mulearn/10 bg-gradient-to-br from-white to-mulearn/5"

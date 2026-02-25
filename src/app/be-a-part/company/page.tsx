@@ -1,17 +1,25 @@
-import WhyCollaborate from "./_components/Collabrate";
-import WhatYouCanDo from "./_components/Do";
-import Gateway from "./_components/Gateway";
-import Hero from "./_components/Hero";
-import HowToJoin from "./_components/Join";
+import About from "./components/About";
+import Benefits from "./components/Benefits";
+import Change from "./components/Change";
+import Contact from "./components/Contact";
+import Hero from "./components/Hero";
+import Mission from "./components/Mission";
+import Partners from "./components/Partners";
+import Sucess from "./components/Success";
 
-export default function Company() {
+const page = () => {
   return (
-    <div className="bg-mulearn-whitish min-h-screen">
+    <div className="bg-mulearn-whitish min-h-screen ">
       <Hero />
-      <WhyCollaborate />
-      <WhatYouCanDo />
-      <Gateway />
-      <HowToJoin />
+      <About />
+      <Benefits />
+      <Partners />
+      <Sucess />
+      <Mission />
+      <Change />
+      <Contact />
     </div>
   );
-}
+};
+
+export default page;

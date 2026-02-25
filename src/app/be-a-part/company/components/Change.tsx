@@ -27,11 +27,6 @@ const Change = () => {
           </svg>
         </div>
 
-        {/* Blur effect */}
-        <div className="absolute right-38 top-12 items-center pointer-events-none hidden md:block">
-          <div className="w-[200px] h-[300px] bg-mulearn blur-[100px] opacity-30 rounded-full" />
-        </div>
-
         {/* Main heading - responsive text sizing */}
         <MotionDiv
           initial={{ opacity: 0, y: 60 }}
@@ -131,9 +126,9 @@ const Change = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-white max-w-lg text-center lg:text-left lg:ml-11 z-10 mb-8 lg:mb-0"
+          className="text-mulearn-whitish max-w-lg text-center lg:text-left lg:ml-11 z-10 mb-8 lg:mb-0"
         >
-          <div className="text-white max-w-lg text-center lg:text-left lg:ml-11 z-10 mb-8 lg:mb-0">
+          <div className="max-w-lg text-center lg:text-left lg:ml-11 z-10 mb-8 lg:mb-0">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 break-words">
               Hire the <span className="text-mulearn-whitish">Right Person</span> for you
             </h2>
@@ -147,7 +142,7 @@ const Change = () => {
               </p>
               <div className="mt-2">
                 <Button
-                  variant={"secondary"}
+                  variant={"inverted"}
                   className="font-semibold p-4 sm:p-5 text-base sm:text-lg lg:text-xl w-full sm:w-auto"
                 >
                   Get in touch
