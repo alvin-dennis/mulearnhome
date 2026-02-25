@@ -1,102 +1,46 @@
-import { Sparkle } from "lucide-react";
 import Link from "next/link";
-import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 
 const LearnersHero = () => {
   return (
-    <div className="relative overflow-hidden pt-20 pb-48 lg:pt-28 lg:pb-56 bg-gradient-to-b from-[var(--mulearn-whitish)] via-[#F0F7FF] to-[#E3F0FF]">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <div className="relative inline-block mb-6">
-          <div className="absolute -top-6 -left-8 lg:-left-4">
-            <MuImage
-              src="/assets/learners/graduation-cap.png"
-              alt="Graduation Cap"
-              width={64}
-              height={64}
-              className="w-12 h-12 lg:w-32 lg:h-32 object-contain"
-            />
-          </div>
+    <div className="relative overflow-hidden py-20 lg:py-32">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6">
+          <span className="text-black">Unlock Your Potential</span>
+          <br />
+          <span className="text-black">with </span>
+          <span className="text-blue-600">μLearn</span>
+        </h1>
 
-          <h1 className="tracking-tight max-w-3xl">
-            <span className="text-mulearn-blackish">Unlock Your</span>
-            <br />
-            <span className="text-mulearn-blackish">Potential with</span>
-            <br />
-            <span className="text--mulearn-trusty-blue">μLearn</span>
-          </h1>
-        </div>
+        {/* Subtitle */}
+        <p className="font-semibold text-base sm:text-lg lg:text-xl leading-relaxed tracking-wide text-center mb-4 max-w-4xl lg:whitespace-nowrap">
+          Try new skills, learn at your own pace, and build confidence through real-world, hands-on
+          experience.
+          <br />
+          <span className="inline-block lg:pl-20">
+            μLearn connects your curiosity with the right resources, action, and proof-of-work.
+          </span>
+        </p>
 
-        <div className="flex justify-center mb-8">
-          <svg
-            className="w-28 h-8 text-mulearn-trusty-blue"
-            viewBox="0 0 120 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M10 8 Q60 20, 110 8"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <path
-              d="M105 3 L110 8 L105 13"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
-        </div>
+        {/* Tagline */}
+        <p className="font-bold text-base sm:text-lg lg:text-xl leading-relaxed tracking-normal text-center text-[#456FF6] mb-6 lg:whitespace-nowrap">
+          Stay Curious | Stay Active | Grow Every Day.
+        </p>
 
+        {/* CTA Button */}
         <Button
-          variant={"default"}
-          className="px-8 py-3 font-semibold shadow-lg hover:shadow-xl text-base rounded-full transform hover:scale-105 transition-all duration-300"
+          variant="default"
+          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           asChild
         >
           <Link href="https://app.mulearn.org" target="_blank" rel="noopener noreferrer">
-            Join μLearn
+            Join Now
           </Link>
         </Button>
-      </div>
-
-      <div className="absolute top-[95px] left-8 lg:left-[66px] animate-pulse hidden sm:block opacity-90">
-        <Sparkle className="w-7 h-7 text-gray-400" />
-      </div>
-      <div className="absolute top-32 right-12 lg:right-74 animate-pulse hidden sm:block opacity-90">
-        <Sparkle className="w-6 h-6 text-gray-300" />
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-20 overflow-visible">
-        <div className="absolute inset-0 transform -skew-y-3 origin-bottom-left">
-          <div className="absolute top-0 left-0 right-0 h-8 bg-linear-to-l from-blue-600 to-blue-100"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-5 bg-linear-to-l from-blue-600 to-blue-100"></div>
-        </div>
-
-        <div className="absolute inset-0 transform -skew-y-3 origin-bottom-left bg-mulearn-whitish shadow-lg top-2 bottom-2" />
-
-        <div className="absolute inset-0 flex justify-around items-center max-w-7xl mx-auto px-4 transform -skew-y-3 origin-bottom-left">
-          <RibbonItem text="Learn by Doing" />
-          <RibbonItem text="Build Your Portfolio" />
-          <RibbonItem text="Connect with Industry" />
-        </div>
       </div>
     </div>
   );
 };
-
-const RibbonItem = ({ text }: { text: string }) => (
-  <div className="flex items-center whitespace-nowrap px-2 sm:px-3">
-    <span className="text-lg sm:text-xl text-mulearn-blackish mr-2">✦</span>
-    <span className="text-base sm:text-lg lg:text-xl font-bold text-mulearn-trusty-blue">
-      {text}
-    </span>
-    <span className="text-lg sm:text-xl text-mulearn-blackish ml-2">✦</span>
-  </div>
-);
 
 export default LearnersHero;

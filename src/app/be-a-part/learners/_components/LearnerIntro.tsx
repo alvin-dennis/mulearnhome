@@ -1,56 +1,54 @@
-import type { LearnerRoleTag } from "@/lib/types";
+import MuImage from "@/components/MuImage";
 
-interface LearnerIntroProps {
-  learnerTags: LearnerRoleTag[];
-}
-
-const LearnerIntro: React.FC<LearnerIntroProps> = ({ learnerTags }) => {
+const LearnerIntro = () => {
   return (
     <section
       className="py-16 md:py-20 container mx-auto px-4"
       aria-labelledby="learners-intro-heading"
     >
-      <div className="text-center max-w-6xl mx-auto">
-        <h2
-          id="learners-intro-heading"
-          className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight "
-        >
-          Who is a <span className="text-mulearn-trusty-blue">Learner</span>?
-        </h2>
+      <div className="max-w-7xl mx-auto -mt-25">
+        {/* Blue Card */}
+        <div className="bg-[#456FF6] rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          {/* Left side - Illustration */}
+          <div className="flex-shrink-0 w-full lg:w-1/3 flex justify-center">
+            <div className="relative w-80 h-80 lg:w-96 lg:h-96 flex items-end justify-center">
+              {/* White elliptical shadow/platform - Absolute positioned at the bottom */}
+              <MuImage
+                src="/assets/learners/Ellipse 1.png"
+                alt="Platform"
+                width={384}
+                height={100}
+                className="absolute bottom-7px] w-[80%] h-auto z-0 opacity-90"
+              />
 
-        <p className="text-[20px] md:text-[20px] leading-[1.45] font-normal text-mulearn-gray-600 mx-auto max-w-[1119px]">
-          A Learner is a doer — driven students and professionals who build real projects, solve
-          problems, and collaborate with peers and mentors. They grow by shipping, iterating, and
-          sharing their work, turning curiosity into a portfolio that opens opportunities.
-        </p>
+              {/* Learner Character - Relative to sit on top of the ellipse */}
+              <MuImage
+                src="/assets/learners/learner-character.png"
+                alt="Learner Character with Lightbulb"
+                width={384}
+                height={384}
+                className="relative z-10 w-full h-full object-contain"
+              />
+            </div>
+          </div>
 
-        {}
-        <div className="overflow-x-auto mt-6">
-          <div className="flex gap-2 min-w-max justify-center items-center">
-            {learnerTags.map((tag) => (
-              <button
-                key={tag.id}
-                type="button"
-                aria-label={`Learner tag ${tag.label}`}
-                className="px-3 py-1.5 text-sm font-medium rounded-full bg-mulearn-whitish text-mulearn-trusty-blue border-2 border-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish focus:outline-none focus-visible:ring-2 focus-visible:ring-mulearn-trusty-blue transition-colors duration-200 whitespace-nowrap"
-              >
-                {tag.label}
-              </button>
-            ))}
+          {/* Right side - Content */}
+          <div className="flex-1 text-white">
+            <h2
+              id="learners-intro-heading"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white"
+            >
+              Who is a Learner?
+            </h2>
+
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed">
+              A Learner is anyone who chooses to grow. Students, professionals, beginners and career
+              changers from any background are welcome. Your degree does not define your potential.
+              Your curiosity does. μLearn supports learners in building strong portfolios through
+              real tasks, collaboration and consistent effort.
+            </p>
           </div>
         </div>
-      </div>
-
-      {}
-      <div className="text-center max-w-3xl mx-auto mt-16">
-        <h3 className="mb-4 leading-tight">
-          Why <span className="text-mulearn-trusty-blue">μLearn?</span>
-        </h3>
-        <p className="text-base sm:text-lg text-mulearn-gray-600 leading-relaxed">
-          In a world that never stops changing, learning consistently is how you stay ahead. μLearn
-          helps learners build practical skills through projects, mentorship, and community —
-          investing in your future and your ability to create impact.
-        </p>
       </div>
     </section>
   );

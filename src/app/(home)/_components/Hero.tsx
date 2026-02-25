@@ -6,6 +6,7 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
+import OlympusEventButton from "./Olympus-event";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -69,26 +70,41 @@ export default function Hero() {
             An open community for learners, makers, and innovators
           </MotionP>
 
-          <MotionDiv
-            custom={3}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={textVariant}
-          >
-            <Button
-              variant={"default"}
-              className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
-              onClick={() => {
-                const path = refreshToken ? "/dashboard/home" : "/register";
-                console.log("Redirecting to:", path);
-                console.log("Has refresh token:", !!refreshToken);
-                redirect(path);
-              }}
+          <div className="flex flex-col md:flex-row gap-4">
+            <MotionDiv
+              custom={3}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={textVariant}
             >
-              Join µLearn
-            </Button>
-          </MotionDiv>
+              <Button
+                variant={"default"}
+                className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
+                onClick={() => {
+                  const path = refreshToken ? "/dashboard/home" : "/register";
+                  console.log("Redirecting to:", path);
+                  console.log("Has refresh token:", !!refreshToken);
+                  redirect(path);
+                }}
+              >
+                Join µLearn
+              </Button>
+            </MotionDiv>
+            <MotionDiv
+              custom={4}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={textVariant}
+            >
+              <OlympusEventButton
+                onClick={() => {
+                  window.open("https://olympus.mulearn.org", "_blank");
+                }}
+              />
+            </MotionDiv>
+          </div>
         </div>
       </div>
 

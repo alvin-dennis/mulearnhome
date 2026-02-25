@@ -1,13 +1,11 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { ArrowRight, Calendar, Info, Trophy } from "lucide-react";
-import Link from "next/link";
+import { Calendar, Info, Trophy } from "lucide-react";
 import { useState } from "react";
 import { LeaderboardTable } from "@/app/leaderboard/_components/LeaderboardTable";
 import { TopContributor } from "@/app/leaderboard/_components/TopContributor";
 import { MotionDiv } from "@/components/MuFramer";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import leaderboardData from "@/data/leaderboard.json";
 import type { LeaderboardData, Score } from "@/lib/types";

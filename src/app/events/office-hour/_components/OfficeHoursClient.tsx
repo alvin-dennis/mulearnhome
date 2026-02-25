@@ -78,7 +78,7 @@ export default function OfficeHoursClient({ sessions }: OfficeHoursClientProps) 
       link: session.link || undefined,
       thumbnail: session.poster_thumbnail || undefined,
     }));
-  }, [sessions]);
+  }, [sessions, isDateUpcoming]);
 
   const allTags = useMemo(
     () => Array.from(new Set(allEvents.flatMap((e) => e.interestGroups))),

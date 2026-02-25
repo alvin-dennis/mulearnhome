@@ -1,4 +1,3 @@
-import type { CSSProperties, ReactNode } from "react";
 import type { IconType } from "react-icons";
 
 export interface SubItem {
