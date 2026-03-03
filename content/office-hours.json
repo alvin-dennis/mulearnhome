@@ -1786,6 +1786,16 @@
         "web-development"
       ]
     },
-    {}
+    {
+      "title": "Data Quality in ML",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD, SupeAI",
+      "description": "This session explores the critical role of data quality in building accurate, reliable, and robust machine learning models. \nIdeal for anyone working with ML who wants to improve model performance starting from the data itself.",
+      "date": "04/04/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    }
   ]
 }
