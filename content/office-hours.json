@@ -1796,6 +1796,15 @@
       "interestGroups": [
         "data-science"
       ]
+    },
+    {
+      "title": "Impact Project Talk",
+      "performer": "DevOps Team ",
+      "designation": "µLearn Foundation",
+      "date": "04/03/2026",
+      "interestGroups": [
+        "devops"
+      ]
     }
   ]
 }
