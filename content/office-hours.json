@@ -1774,6 +1774,18 @@
         "ui-ux"
       ],
       "poster_thumbnail": "/assets/events/WhatsApp Image 2026-03-02 at 9.02.06 PM.jpeg"
-    }
+    },
+    {
+      "title": "Web App Security Essentials",
+      "performer": "Yashas R Nair",
+      "designation": "Technical Lead, μLearnCEK",
+      "description": "This session focuses on key web application security concepts and practical strategies to prevent vulnerabilities in production environments.\nIdeal for developers who want to strengthen their understanding of security fundamentals in modern web development.",
+      "date": "04/04/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {}
   ]
 }
