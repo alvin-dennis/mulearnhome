@@ -1806,6 +1806,16 @@
       "interestGroups": [
         "devops"
       ]
+    },
+    {
+      "title": "Talk session - Olympus",
+      "performer": "HR Team",
+      "designation": "µLearn Foundation",
+      "date": "04/03/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
     }
   ]
 }
