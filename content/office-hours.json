@@ -1816,6 +1816,16 @@
       "interestGroups": [
         "human-resources"
       ]
+    },
+    {
+      "title": "Impact Project Talk",
+      "performer": "AI IG Leads",
+      "designation": "µLearn Foundation",
+      "date": "05/31/2026",
+      "link": "https://mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
