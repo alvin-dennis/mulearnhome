@@ -1838,7 +1838,17 @@
         "game-dev"
       ]
     },
-    {},
+    {
+      "title": "Movie Talk",
+      "performer": "MuV Team",
+      "designation": "MuV Team, μLearn Foundation",
+      "description": "An open discussion for film lovers to share thoughts on movies, storytelling, and iconic scenes.\n",
+      "date": "06/03/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
     {}
   ]
 }
