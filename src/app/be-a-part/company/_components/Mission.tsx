@@ -1,11 +1,10 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuLoader from "@/components/MuLoader";
-import { Card } from "@/components/ui/card";
 import type { Counts } from "@/lib/types";
 
 const fadeInUp: Variants = {
@@ -58,7 +57,7 @@ export default function Mission() {
     <div className="flex justify-center">
       <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl">
         <MotionSection
-          className="flex flex-col justify-center py-24 items-center "
+          className="flex flex-col justify-center py-24 items-center"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -76,125 +75,37 @@ export default function Mission() {
 
           <MotionDiv variants={fadeInUp} className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 mt-6 px-4 sm:px-8">
-              <Card
-                variant={"interactive"}
-                className="h-full p-5 border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Total members</p>
-                  <p className="font-bold text-mulearn-blackish">{counts.members}+</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Learning Circles</p>
-                  <p className="font-bold text-mulearn-blackish">{counts.learning_circle_count}+</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Events</p>
-                  <p className="font-bold text-mulearn-blackish">378+</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Total Karma Mined</p>
-                  <p className="font-bold text-mulearn-blackish">
-                    {counts.karma_pow_count.karma_count}
-                  </p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Number of Proof of Works</p>
-                  <p className="font-bold text-mulearn-blackish">
-                    {counts.karma_pow_count.pow_count}
-                  </p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Number of Internships</p>
-                  <p className="font-bold text-mulearn-blackish">2770</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full p-5 border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Products</p>
-                  <p className="font-bold text-mulearn-blackish">120</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-xs font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
-
-              <Card
-                variant={"interactive"}
-                className="h-full border-mulearn/10 transition-all duration-300  flex justify-center items-center flex-row gap-4 text-mulearn-blackish "
-              >
-                <div className="flex justify-center flex-col gap-3">
-                  <p className="text-mulearn-gray-600">Learning Circles</p>
-                  <p className="font-bold text-mulearn-blackish">{counts.learning_circle_count}</p>
-                </div>
-
-                <div className="bg-mulearn-trusty-blue text-mulearn-whitish rounded-full font-bold">
-                  <User className="w-10 h-10" />
-                </div>
-              </Card>
+              <StatCard value={counts.members} label="Members" />
+              <StatCard value={counts.learning_circle_count} label="Learning Circles" />
+              <StatCard value={378} label="Events" />
+              <StatCard value={counts.karma_pow_count.karma_count} label="Total Karma Mined" />
+              <StatCard value={counts.karma_pow_count.pow_count} label="Number of Proof of Works" />
+              <StatCard value={2270} label="Number of Internships" />
+              <StatCard value={1320} label="Jobs" />
+              <StatCard value={120} label="Products" />
             </div>
           </MotionDiv>
         </MotionSection>
       </div>
+    </div>
+  );
+}
+
+function StatCard({
+  value,
+  label,
+  isString = false,
+}: {
+  value: number | string;
+  label: string;
+  isString?: boolean;
+}) {
+  return (
+    <div className="bg-card rounded-2xl shadow-sm flex flex-col justify-center items-center p-4">
+      <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
+        {isString ? value : <CountUp end={value as number} duration={5} separator="," suffix="+" />}
+      </p>
+      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
     </div>
   );
 }
