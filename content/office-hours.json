@@ -1880,6 +1880,17 @@
       "interestGroups": [
         "data-science"
       ]
-    }
+    },
+    {
+      "title": "DSA and It's Possibilities",
+      "performer": "Sreehari J R",
+      "designation": "AI Intern, Carestack",
+      "date": "12/03/2026",
+      "link": "http://mulearn.org/r/dsa-officehour/",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
+    {}
   ]
 }
