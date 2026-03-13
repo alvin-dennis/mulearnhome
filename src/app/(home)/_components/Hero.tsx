@@ -6,6 +6,7 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
+import OlympusEventButton from "./Olympus-event";
 
 // import OlympusEventButton from "./Olympus-event";
 
