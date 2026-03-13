@@ -271,7 +271,10 @@ export default function DonationForm() {
               return (
                 <div
                   key={tier.id}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => handleFoundingTierSelect(tier)}
+                  onKeyDown={(e) => e.key === "Enter" && handleFoundingTierSelect(tier)}
                   className={cn(
                     "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden",
                     isSelected
@@ -648,7 +651,10 @@ export default function DonationForm() {
 
         {/* Founding Patron CTA */}
         <div
+          role="button"
+          tabIndex={0}
           onClick={handleFoundingPatronClick}
+          onKeyDown={(e) => e.key === "Enter" && handleFoundingPatronClick()}
           className="mb-6 p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl cursor-pointer hover:shadow-md hover:border-amber-300 transition-all group"
         >
           <div className="flex items-center justify-between">
@@ -710,7 +716,10 @@ export default function DonationForm() {
                 return (
                   <div
                     key={tier.id}
+                    role="button"
+                    tabIndex={0}
                     onClick={() => handleTierSelect(tier)}
+                    onKeyDown={(e) => e.key === "Enter" && handleTierSelect(tier)}
                     className={cn(
                       "relative rounded-xl border p-5 cursor-pointer transition-all duration-200 group overflow-hidden",
                       isSelected

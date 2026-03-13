@@ -68,14 +68,6 @@ export const socialLinks: SocialLinksGroup = {
     },
     {
       icon: FaInstagram,
-      title: "@mulearn.clan",
-      subtitle: "instagram.com",
-      href: "https://www.instagram.com/mulearn.clan/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
-      action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
-    },
-    {
-      icon: FaInstagram,
       title: "@mu.campus",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.campus/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -107,6 +99,38 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
     },
     {
+      icon: FaInstagram,
+      title: "@muplay.gg",
+      subtitle: "instagram.com",
+      href: "https://www.instagram.com/muplay.gg?igsh=b2U4MHc5OGFyZ2kx",
+      action: "follow",
+      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+    },
+    {
+      icon: FaInstagram,
+      title: "@mu.comics",
+      subtitle: "instagram.com",
+      href: "https://www.instagram.com/mu.comics?igsh=NW9oYm1wc29jd3Zs",
+      action: "follow",
+      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+    },
+    {
+      icon: FaInstagram,
+      title: "@mu.v_filmclub",
+      subtitle: "instagram.com",
+      href: "https://www.instagram.com/mu.v_filmclub?igsh=cTdydGV3Z2w2NWF3",
+      action: "follow",
+      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+    },
+    {
+      icon: FaInstagram,
+      title: "@mument.mulearn",
+      subtitle: "instagram.com",
+      href: "https://www.instagram.com/mument.mulearn?igsh=aWk3c3V3ejk2M2U1",
+      action: "follow",
+      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+    },
+    {
       icon: FaWhatsapp,
       title: "µLearn Foundation",
       subtitle: "whatsapp.com",
@@ -115,7 +139,6 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-chart-2",
     },
   ],
-
   website: [
     {
       icon: FaGlobe,

@@ -12,23 +12,20 @@ export const learnerIdentityTags: LearnerRoleTag[] = [
 export const onboardingSteps: OnboardingStep[] = [
   {
     step: 1,
-    title: "Create μLearn Profile",
-    description:
-      "Enablers should create a profile via app.mulearn.org, and they should ensure to register as a faculty member by choosing the option 'I'm teaching in an Institute. Once you get a profile, go to 'Connect Discord' and join our Discord server.",
+    title: "Create your µLearn account",
+    description: "Sign up in minutes and get access to the community.",
     iconUrl: "/assets/learners/icons/mu-icon.svg",
   },
   {
     step: 2,
-    title: "Connect Discord",
-    description:
-      "Once you join the server, our bot Aaronchetan will send you a DM asking you to connect your u-ID, which is provided in the learn profile. Once it's connected, you can start your onboarding process.",
+    title: "Choose an interested group",
+    description: "Join a guild that matches your skills and goals.",
     iconUrl: "/assets/learners/icons/discord-icon.svg",
   },
   {
     step: 3,
-    title: "Start Leveling Up",
-    description:
-      "Now you will have access to the #lvl-info channel, and as you do the tasks, you will progress through the levels. Once you reach level 4, you will have the option to edit Interest Groups on your learn profile page.",
+    title: "Start engaging & earn karma",
+    description: "Complete tasks, collaborate, and grow your karma points.",
     iconUrl: "/assets/learners/icons/bulb-icon.svg",
   },
 ];
