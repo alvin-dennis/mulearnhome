@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *" 
-  push:
-    branches:
-      - production
 
 jobs:
   update-leaderboard:
@@ -39,5 +36,5 @@ jobs:
         run: |
           git add src/data/leaderboard.json
           git commit -m "chore(leaderboard): update contribution leaderboard with new metrics" || echo "No changes to commit"
-          git push
+          git push origin production
 
