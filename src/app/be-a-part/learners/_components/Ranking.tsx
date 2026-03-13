@@ -37,7 +37,7 @@ export default function RankingSection() {
       const res = await axios.get(`${clientEnv.NEXT_PUBLIC_API_BASE_URL}/leaderboard/students/`);
       const learners: Learner[] = Array.isArray(res.data.response) ? res.data.response : [];
 
-      const formatted: ExtendedTopLearner[] = learners.slice(0, 5).map((item) => ({
+      const formatted: ExtendedTopLearner[] = learners.slice(0, 10).map((item) => ({
         name: item.full_name,
         kp: item.total_karma,
         email:

@@ -27,7 +27,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className=" font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight  max-w-3xl sm:max-w-4xl"
+            className="text-4xl md:text-5xl lg:text-6xl text-center text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight max-w-3xl sm:max-w-4xl"
           >
             <span className="text-mulearn-blackish">What is </span>{" "}
             <span className="text-mulearn">µLearn company partner </span>

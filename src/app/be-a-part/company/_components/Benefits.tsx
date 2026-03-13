@@ -1,7 +1,7 @@
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
-import { CompanyFeatures } from "@/data/company_new";
+import { CompanyFeatures } from "@/data/company";
 
 const Benefits = () => {
   return (
@@ -18,14 +18,14 @@ const Benefits = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-2xl md:text-3xl lg:text-6xl font-extralight leading-tight text-center pt-20"
+          className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center pt-20"
         >
           <span className="text-mulearn-blackish">Benefits to </span>{" "}
           <span className="text-mulearn">company partner</span>
         </MotionH1>
 
         <MuImage
-          src={"/assets/company_new/note.svg"}
+          src={"/assets/company/note.svg"}
           alt="note icon"
           className="absolute left-24 top-0 w-[92px] h-[115px] rotate-[16deg] hidden lg:block"
           width={92}
@@ -45,7 +45,7 @@ const Benefits = () => {
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 relative p-6">
           {CompanyFeatures.map((feature, index) => (
             <MotionDiv
               key={feature.title}
@@ -90,10 +90,6 @@ const Benefits = () => {
           ))}
         </div>
       </MotionDiv>
-
-      <div className="absolute -bottom-32 right-32 -translate-x-1/2 pointer-events-none z-0">
-        <div className="w-[300px] h-[300px] bg-mulearn blur-[200px] opacity-25 rounded-full" />
-      </div>
     </section>
   );
 };

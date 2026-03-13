@@ -54,11 +54,6 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="w-full relative"
         >
-          {/* Glow */}
-          <div className="absolute left-1/7 -translate-x-1/2 top-0 pointer-events-none">
-            <div className="w-72 h-72 sm:w-80 sm:h-80 bg-mulearn blur-[200px] opacity-30 rounded-full" />
-          </div>
-
           <Card variant="muted" className="bg-mulearn-whitish p-6 sm:p-10 w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center md:text-left text-xl sm:text-2xl">
               <div className="flex flex-col gap-2">
