@@ -5,658 +5,846 @@
       "performer": "",
       "description": "Join us for a discussion on why audiences are moving away from traditional theatres.",
       "date": "28/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Django Series - Part 3",
       "performer": "",
       "description": "Join us for the third session of our Django web development series.",
       "date": "26/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Deepika",
       "performer": "Deepika",
       "description": "Join us for a UI/UX design session with Deepika.",
       "date": "25/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT technologies and trends.",
       "date": "23/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Intro to Classical Physics",
       "performer": "Jubit A Jacob",
       "description": "Join us for Intro to Classical Physics with Jubit A Jacob.",
       "date": "22/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Savio",
       "description": "Join us for an AR/VR/MR session with Savio.",
       "date": "22/11/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "What Gave Rise to OTT Platforms?",
       "performer": "",
       "description": "Join us to explore the evolution and rise of OTT platforms.",
       "date": "21/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Scenario-Based Questions",
       "performer": "",
       "description": "Join us to practice scenario-based DSA questions and problem-solving.",
       "date": "20/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Django Series - Part 2",
       "performer": "",
       "description": "Join us for the second session of our Django web development series.",
       "date": "19/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Alwin Shiju",
       "performer": "Alwin Shiju",
       "description": "Join us for a UI/UX design session with Alwin Shiju.",
       "date": "18/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT technologies and applications.",
       "date": "16/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "MythBusters - Episode 7",
       "performer": "",
       "description": "Join us for the seventh episode of our space MythBusters series.",
       "date": "15/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "The Early Days of Cinema",
       "performer": "",
       "description": "Join us to explore the history and evolution of early cinema.",
       "date": "14/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Pattern Printing",
       "performer": "",
       "description": "Join us to learn pattern printing techniques and algorithms.",
       "date": "13/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Catch the Bugs Before They Bite",
       "performer": "Vivek Harikumar",
       "description": "Join us for Catch the Bugs Before They Bite with Vivek Harikumar.",
       "date": "12/11/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Backend with Django",
       "performer": "Adarsh",
       "description": "Join us for Backend with Django with Adarsh.",
       "date": "12/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "UI/UX Session with Deepika",
       "performer": "Deepika",
       "description": "Join us for a UI/UX design session with Deepika.",
       "date": "11/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Project Management: Facts & Myths",
       "performer": "",
       "description": "Join us for Project Management: Facts & Myths.",
       "date": "10/11/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on IoT concepts and innovations.",
       "date": "09/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Alien Worlds",
       "performer": "Ekta Krishna",
       "description": "Join us for a fascinating session on alien worlds with Ekta Krishna.",
       "date": "08/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Discussion: The Shawshank Redemption",
       "performer": "",
       "description": "Join us for a discussion about The Shawshank Redemption.",
       "date": "08/11/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Customer-Centric Thinking",
       "performer": "Karthik",
       "description": "Join us for a session on customer-centric thinking with Karthik.",
       "date": "08/11/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "PC vs Console Games",
       "performer": "",
       "description": "Join us for a discussion on PC versus console gaming.",
       "date": "07/11/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Basics of Sound Design",
       "performer": "",
       "description": "Join us to learn the fundamentals of sound design in film.",
       "date": "07/11/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "OpenCV for Data Science",
       "performer": "",
       "description": "Join us to explore OpenCV applications in data science.",
       "date": "06/11/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "OpenCV for AI",
       "performer": "",
       "description": "Join us to explore OpenCV applications in artificial intelligence.",
       "date": "06/11/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "DSA EXAM PREP",
       "performer": "",
       "description": "Join us for DSA EXAM PREP.",
       "date": "06/11/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Linux Foundation: Fueling the Future",
       "performer": "Joswin Emmanuel",
       "description": "Join us for Linux Foundation: Fueling the Future with Joswin Emmanuel.",
       "date": "05/11/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "React Hooks",
       "performer": "Arya Sreekumar",
       "description": "Join us for React Hooks with Arya Sreekumar.",
       "date": "05/11/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "From Ideas to Wireframes",
       "performer": "Interest Group Lead",
       "description": "Join us to learn how to transform ideas into wireframes with our Interest Group Lead.",
       "date": "04/11/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Project Management Session",
       "performer": "",
       "description": "Join us for a project management discussion and learning session.",
       "date": "03/11/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "Cybersecurity in IoT",
       "performer": "",
       "description": "Join us to explore cybersecurity challenges and solutions in IoT.",
       "date": "02/11/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Black Holes: The Universe's Darkest Secret",
       "performer": "Jubit A Jacob",
       "description": "Join us to explore black holes, the universe's darkest secrets, with Jubit A Jacob.",
       "date": "01/11/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Interest Group Leads",
       "description": "Join us for an AR/VR/MR session with our Interest Group Leads.",
       "date": "01/11/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Discussion: The 6th Sense Movie",
       "performer": "",
       "description": "Join us for a discussion about the movie The 6th Sense.",
       "date": "01/11/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "What is BMC (Business Model Canvas)?",
       "performer": "Karthik & Diya Bhatt A",
       "description": "Join us to learn about Business Model Canvas with Karthik and Diya Bhatt A.",
       "date": "01/11/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "ASB HR (Whistle Blowing)",
       "performer": "Israth Ramsana S S",
       "description": "Join us for ASB HR (Whistle Blowing) with Israth Ramsana S S.",
       "date": "29/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Competitor Audits",
       "performer": "",
       "description": "Join us to learn how to conduct effective competitor audits in UI/UX.",
       "date": "28/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Biohacking and IoT Devices",
       "performer": "Geo Mathew",
       "description": "Join us to explore biohacking and IoT device security with Geo Mathew.",
       "date": "27/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "Space Exploration Speaker Session",
       "performer": "",
       "description": "Join us for a special speaker session on space exploration.",
       "date": "25/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR/MR Session",
       "performer": "Savio",
       "description": "Join us for an AR/VR/MR session with Savio.",
       "date": "25/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Tell Your Story",
       "performer": "",
       "description": "Join us for a creative storytelling session where you can share your stories.",
       "date": "25/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 2",
       "performer": "Diya Bhatt A",
       "description": "Join us for Entrepreneurship Development 2 with Diya Bhatt A.",
       "date": "25/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Story-Driven Games vs Gameplay-Driven Games",
       "performer": "",
       "description": "Join us for a discussion comparing story-driven and gameplay-driven games.",
       "date": "24/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Is Nostalgia the New Marketing Strategy?",
       "performer": "",
       "description": "Join us to explore how nostalgia is used as a marketing strategy in cinema.",
       "date": "24/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "MobileNet-SSD",
       "performer": "",
       "description": "Join us to learn about MobileNet-SSD and its applications in data science.",
       "date": "23/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "MobileNet-SSD for AI",
       "performer": "",
       "description": "Join us to explore MobileNet-SSD and its applications in artificial intelligence.",
       "date": "23/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Scenario-Based Questions",
       "performer": "",
       "description": "Join us to practice scenario-based DSA questions and problem-solving.",
       "date": "23/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "From Windows to Linux: A Smooth Start",
       "performer": "Aibel Bin Zacariah",
       "description": "Join us for From Windows to Linux: A Smooth Start with Aibel Bin Zacariah.",
       "date": "22/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Intro to React",
       "performer": "Adarsh Dev",
       "description": "Join us for Intro to React with Adarsh Dev.",
       "date": "22/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Senior HR Manager, Srishti Innovative ( HR Enna Summava)",
       "performer": "Vishnu Prasad M V",
       "description": "Join us for Senior HR Manager, Srishti Innovative ( HR Enna Summava) with Vishnu Prasad M V.",
       "date": "22/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "From Wireframe to UI",
       "performer": "",
       "description": "Join us to learn the process of transforming wireframes into user interfaces.",
       "date": "21/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "No Office Hour Due to Exams",
       "performer": "",
       "description": "No office hour session today due to exams.",
       "date": "20/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "The Language of Machines",
       "performer": "Ajith",
       "description": "Join us for The Language of Machines with Ajith.",
       "date": "19/10/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "MythBusters",
       "performer": "",
       "description": "Join us for another episode of our space MythBusters series.",
       "date": "18/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Interaction in Unity",
       "performer": "",
       "description": "Join us to learn about creating interactive experiences in Unity.",
       "date": "18/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "Sketch, Snicker, Storyboard",
       "performer": "",
       "description": "Join us for a creative session on sketching and storyboarding.",
       "date": "18/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 1 - Quiz",
       "performer": "Diya Bhatt A",
       "description": "Join us for a quiz session on Entrepreneurship Development with Diya Bhatt A.",
       "date": "18/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Next-Gen Game Tech: How Nanite, Lumen & AI Are Changing Game Development",
       "performer": "",
       "description": "Join us to explore how next-generation technologies like Nanite, Lumen, and AI are transforming game development.",
       "date": "17/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "The Art of Visual Storytelling",
       "performer": "",
       "description": "Join us to explore the art and techniques of visual storytelling in cinema.",
       "date": "17/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Beyond Hype: Examining the Drawbacks of AI",
       "performer": "",
       "description": "Join us for a critical discussion on the limitations and drawbacks of AI in data science.",
       "date": "16/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Beyond Hype: Examining the Drawbacks of AI - General Discussion",
       "performer": "",
       "description": "Join us for an open discussion on the limitations and challenges of artificial intelligence.",
       "date": "16/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Pattern Printing",
       "performer": "",
       "description": "Join us to master pattern printing techniques and algorithms.",
       "date": "16/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Challenge Support Hour",
       "performer": "Muhammed Anees",
       "description": "Join us for Challenge Support Hour with Muhammed Anees.",
       "date": "15/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Choosing the right web framework",
       "performer": "Sreehari",
       "description": "Join us for Choosing the right web framework with Sreehari.",
       "date": "15/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Hands-On UX Challenge",
       "performer": "",
       "description": "Join us for a practical hands-on UX design challenge.",
       "date": "14/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Offensive or Defensive Security: Which Is for You?",
       "performer": "Dany",
       "description": "Join us to explore offensive and defensive security approaches with Dany.",
       "date": "13/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "How to Get Started with notion",
       "performer": "Rasha Hasoon",
       "description": "Join us for How to Get Started with notion with Rasha Hasoon.",
       "date": "13/10/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "UnoQ Roundtable General Discussion",
       "performer": "",
       "description": "Join us for an open roundtable discussion on IoT technologies.",
       "date": "12/10/2025",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Good Night Oppy - Documentary Live Screening",
       "performer": "",
       "description": "Join us for a live screening of the documentary 'Good Night Oppy'.",
       "date": "11/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Write, Design, Repeat",
       "performer": "",
       "description": "Join us for an iterative creative session on writing and designing comics.",
       "date": "11/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Entrepreneurship Development 1",
       "performer": "Diya Bhatt A",
       "description": "Join us for Entrepreneurship Development 1 with Diya Bhatt A.",
       "date": "11/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Remakes, Remasters, and Nostalgia: Are We Running Out of New Ideas?",
       "performer": "",
       "description": "Join us to discuss why the gaming industry keeps re-releasing classics and the role of nostalgia.",
       "date": "10/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Budget Allocation in Modern Cinema",
       "performer": "",
       "description": "Join us to explore how budgets are allocated in modern cinema production.",
       "date": "10/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Agentic AI: How Autonomous Systems Work",
       "performer": "Joel, MD, Supe AI",
       "description": "Join us to learn about agentic AI and autonomous systems with Joel, MD at Supe AI.",
       "date": "09/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Agentic AI: How Autonomous Systems Work",
       "performer": "Joel, MD, Supe AI",
       "description": "Join us to explore agentic AI and how autonomous systems function with Joel, MD at Supe AI.",
       "date": "09/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Stacks",
       "performer": "Mentor",
       "description": "Join us for Stacks with Mentor.",
       "date": "09/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "CI/CD with GitHub Actions",
       "performer": "Milan Suman",
       "description": "Join us for CI/CD with GitHub Actions with Milan Suman.",
       "date": "08/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Chatbot with Gemini",
       "performer": "Aravind P",
       "description": "Join us for Chatbot with Gemini with Aravind P.",
       "date": "08/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Evaluating Employee Performance Through Effective Appraisal Techniques",
       "performer": "Dr. Ebe Robert E",
       "description": "Join us for a session on employee performance evaluation with Dr. Ebe Robert E, Associate Professor of OB & HRM.",
       "date": "08/10/2025",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "What's a Case Study & Why It Matters",
       "performer": "",
       "description": "Join us to learn about case studies and their importance in UI/UX design.",
       "date": "07/10/2025",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Cyber Warfare and Critical Infrastructure Attack",
       "performer": "Mohammed Saad",
       "description": "Join us for Cyber Warfare and Critical Infrastructure Attack with Mohammed Saad.",
       "date": "06/10/2025",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "PM Master Quest Leaderboard Showcase",
       "performer": "Rasha Hasoon",
       "description": "Join us for the PM Master Quest Leaderboard Showcase with speaker Rasha Hasoon.",
       "date": "06/10/2025",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "NASA SAC 2025",
       "performer": "",
       "description": "Join us for a discussion about NASA's Space Apps Challenge 2025.",
       "date": "04/10/2025",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "AR/VR Research Paper Discussion",
       "performer": "",
       "description": "Join us for a discussion and mini-debate on trending AR/VR research, including VR applications in healthcare.",
       "date": "04/10/2025",
-      "interestGroups": ["ar-vr-mr"]
+      "interestGroups": [
+        "ar-vr-mr"
+      ]
     },
     {
       "title": "The Ones That Connect",
       "performer": "",
       "description": "Join us for a creative session on storytelling connections in comics.",
       "date": "04/10/2025",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Open Discussion About Entrepreneurship",
       "performer": "Diya Bhatt A",
       "description": "Join us for an open discussion about entrepreneurship with Diya Bhatt A.",
       "date": "04/10/2025",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "Game Piracy and Indie Developers: A Double-Edged Sword",
       "performer": "",
       "description": "Join us to discuss the impact of game piracy on indie developers.",
       "date": "03/10/2025",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Should Cinema Be a Trial Source?",
       "performer": "",
       "description": "Join us to debate whether cinema should be used as a trial or experimental platform.",
       "date": "03/10/2025",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "NLP: A Brief Introduction",
       "performer": "Arnav Jagadeesh, AI IG Lead",
       "description": "Join us for a brief introduction to Natural Language Processing with Arnav Jagadeesh, AI Interest Group Lead.",
       "date": "02/10/2025",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "NLP: A Brief Introduction",
       "performer": "Arnav Jagadeesh, AI IG Lead",
       "description": "Join us for a brief introduction to Natural Language Processing with Arnav Jagadeesh, AI Interest Group Lead.",
       "date": "02/10/2025",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "VSCodium, Git, GitHub, and PRs - Bootcamp Session",
       "performer": "Amith",
       "description": "Join us for a bootcamp session on VSCodium, Git, GitHub, and Pull Requests with Amith.",
       "date": "02/10/2025",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Introduction to CI/CD",
       "performer": "Adnan KS",
       "description": "Join us for Introduction to CI/CD with Adnan KS.",
       "date": "01/10/2025",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Js for React",
       "performer": "Devika Dileep",
       "description": "Join us for Js for React with Devika Dileep.",
       "date": "01/10/2025",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "HR Internship at Reflections Info Systems",
@@ -664,7 +852,9 @@
       "description": "Join us for insights on HR internship at Reflections Info Systems with Sona MB.",
       "date": "01/10/2025",
       "link": "",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Simply Explained : XAI",
@@ -673,13 +863,17 @@
       "description": "Why do AI models make the choices they do? This session demystifies Explainable AI (XAI), exploring its key concepts, practical techniques, and real-world impact to help make AI decisions clearer and more trustworthy.",
       "date": "08/01/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "General Discussion",
       "date": "08/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Adaptability and Resilience",
@@ -688,7 +882,9 @@
       "description": "Change is inevitable, but growth depends on how you respond to it.\n\nJoin us for the μLearn Office Hours on Adaptability and Resilience, where we explore how embracing change, staying flexible, and building inner strength help us navigate challenges and grow—both personally and professionally.",
       "date": "09/01/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Career Pathways in Civil Engineering: Government & Private Sector Opportunities",
@@ -697,7 +893,9 @@
       "description": "This Civil IG Office Hour focuses on helping civil engineering students understand real career pathways in both government and private sectors. The session will offer practical insights into available opportunities, where to find them, and how to approach preparation with clarity. Designed to support students at different stages of their academic journey, the discussion aims to reduce uncertainty around career decisions through experience-based guidance.",
       "date": "11/01/2026",
       "link": "https://mulearn.org/r/civilofficehour",
-      "interestGroups": ["civil"]
+      "interestGroups": [
+        "civil"
+      ]
     },
     {
       "title": "2025 Rewind x 2026 Preview",
@@ -705,7 +903,9 @@
       "designation": "Muv IG Leads ",
       "date": "09/01/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked",
@@ -713,7 +913,9 @@
       "designation": "Game Dev IG Lead",
       "date": "09/01/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Cracking the UIDAI Data Hackathon",
@@ -722,7 +924,9 @@
       "description": "A starter session covering UIDAI hackathon registration, dataset types, data formats, and a step-by-step data science approach to solving the problem, including feature engineering tips and best practices.",
       "date": "10/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "How a Page Tells a Story - Edition 2",
@@ -731,7 +935,9 @@
       "description": " Discover how storyboarding, panel placement, and drawings work together to guide the reader’s eye and bring a comic to life—one page at a time.",
       "date": "10/01/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Exploring NASA Public API's",
@@ -740,7 +946,9 @@
       "description": "This session introduces NASA Public APIs and demonstrates how to explore and test space data using Postman. Led by a NASA Space Apps Challenge Global Nominee 2025, it focuses on effectively using NASA’s open data to build real-world applications that solve meaningful problems.",
       "date": "10/01/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "From Idea to Impact",
@@ -749,7 +957,9 @@
       "description": "A focused office hour where students pitch raw ideas, get real-time feedback, and learn how to turn concepts into actionable entrepreneurial opportunities.",
       "date": "10/01/2026",
       "link": "https://mulearn.org/r/ent-officehour",
-      "interestGroups": ["entrepreneurship"]
+      "interestGroups": [
+        "entrepreneurship"
+      ]
     },
     {
       "title": "IoT - General Discussion",
@@ -758,7 +968,9 @@
       "description": "An interactive session where participants were encouraged to share their ongoing IoT projects, talk about the issues they faced while working on them, and discuss possible solutions together.",
       "date": "11/01/2026",
       "link": "https://mulearn.org/r/iot-officehour",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Trello 101",
@@ -766,7 +978,9 @@
       "designation": "PMP IG Lead",
       "date": "12/01/2026",
       "link": "https://mulearn.org/r/pmp-officehour",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "Good Design ≠ Good UX",
@@ -775,7 +989,9 @@
       "description": "A visually appealing design doesn’t always guarantee a great user experience. This session explores the key differences between good design and good UX, focusing on usability, user needs, and real-world impact beyond aesthetics.",
       "date": "13/01/2026",
       "link": "https://meet.google.com/acc-dsfr-ofi",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Building Effective Solutions",
@@ -784,7 +1000,9 @@
       "description": "This session explores a structured approach to problem-solving, focusing on how to identify core issues and design effective, practical solutions using technology. It helps participants think beyond code and build solutions that create real impact across domains.",
       "date": "14/01/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Building Effective Solutions",
@@ -793,7 +1011,9 @@
       "description": "This session explores a structured approach to problem-solving, focusing on how to identify core issues and design effective, practical solutions using technology. It helps participants think beyond code and build solutions that create real impact across domains.",
       "date": "14/01/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Agentic Al Tools Intro",
@@ -802,13 +1022,17 @@
       "description": "Join Vaishnav Sreejeev, Intern @  AI & ML Aficionado, for a brief introduction to Agentic AI . This session covers key concepts, popular tools, and real-world applications shaping the future of intelligent automation",
       "date": "15/01/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "General Discussion ",
       "date": "15/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "The \"Toxic\" Controversy",
@@ -817,7 +1041,9 @@
       "description": "The “Toxic” Controversy\nOne film. Many opinions. Join µLearn Office Hours as we break down why Toxic is stirring debates and taking over conversations. 🎬🔥",
       "date": "16/01/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked",
@@ -826,7 +1052,9 @@
       "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 6) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
       "date": "16/01/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Execution Mindset",
@@ -835,7 +1063,9 @@
       "description": "Ideas are easy. Consistency is rare.\n\nJoin us for the μLearn Office Hours on how to act even when motivation is low, clarity is imperfect, and results are delayed.",
       "date": "16/01/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Eyes in the Sky: Understanding Satellites",
@@ -844,7 +1074,9 @@
       "description": "Episode 1 introduces satellites, their purpose, and how they shape modern life.\nIt builds the core foundation for the upcoming deep-dive sessions on satellite systems",
       "date": "17/01/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Agile",
@@ -853,7 +1085,9 @@
       "description": "A quick, practical introduction to Agile—covering core principles, workflows, and real-world examples. Learn how Agile helps teams adapt faster, collaborate better, and deliver value continuously.",
       "date": "19/01/2026",
       "link": "http://mulearn.org/r/pmp-officehour",
-      "interestGroups": ["project-management"]
+      "interestGroups": [
+        "project-management"
+      ]
     },
     {
       "title": "Red Teaming",
@@ -862,7 +1096,9 @@
       "description": "Red teaming is a process for testing cybersecurity effectiveness where ethical hackers conduct a simulated and nondestructive cyberattack. The simulated attack helps an organization identify vulnerabilities in its system and make targeted improvements to security operations.",
       "date": "19/01/2026",
       "link": "https://mulearn.org/r/cyb-officehour",
-      "interestGroups": ["cyber-security"]
+      "interestGroups": [
+        "cyber-security"
+      ]
     },
     {
       "title": "From Campus to Corporate : HR Insights",
@@ -871,7 +1107,9 @@
       "description": "Learn how to transition smoothly from campus life to the corporate world by understanding what HR professionals actually look for in candidates. Gain insights into essential skills, expectations, and how to prepare yourself to stand out during placements and interviews.",
       "date": "21/01/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Data Science Today : Trends, Career Paths, and Entry Level Opportunities",
@@ -880,7 +1118,9 @@
       "description": "An overview of current data science trends, career paths, and entry-level opportunities, helping students understand industry demand and how to get started.",
       "date": "21/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Open Discussion",
@@ -888,7 +1128,9 @@
       "description": " This open discussion session is a space for shared learning, idea exchange, and meaningful conversations around Bootcamps and Impact Projects. Interact with the community, ask questions, share ideas, clarify doubts, and gain insights on how to get started and grow through hands-on initiatives.",
       "date": "21/01/2026",
       "link": "https://mulearn.org/r/dop-officehour",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "General Discussion",
@@ -897,7 +1139,9 @@
       "description": "This is a space for open conversation about artificial intelligence. Participants can share ideas, ask questions, discuss trends, and explore the ethical, technical, and societal implications of AI. Topics may include machine learning, natural language processing, AI applications, research breakthroughs, and future possibilities. The goal is to foster curiosity, collaboration, and thoughtful dialogue among AI enthusiasts, professionals, and learners of all levels.",
       "date": "22/01/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Trees in DSA ",
@@ -905,7 +1149,9 @@
       "designation": "DSA IG lead",
       "date": "22/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 7) ",
@@ -914,7 +1160,9 @@
       "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 7) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
       "date": "23/01/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Making a Short Film (From Idea to Screen 🍿)",
@@ -923,7 +1171,9 @@
       "description": "From concept to final cut — learn how to turn an idea into a complete short film. 🎥✨",
       "date": "23/01/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Self-Awareness & Identity",
@@ -932,7 +1182,9 @@
       "description": "Knowing who you are is the first step to becoming who you want to be. It shapes your choices, confidence, and direction in life.\n\nJoin us for the μLearn Office Hours to explore Self-Awareness & Identity — understanding yourself beyond labels, aligning your values, and growing with clarity and purpose.\n",
       "date": "23/01/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "How a Page Tells a Story - Edition 3",
@@ -941,7 +1193,9 @@
       "description": "Discover how storyboarding, panel placement, and drawings work together to guide the reader’s eye and bring a comic to life—one page at a time.",
       "date": "24/01/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Understanding Satellites: Episode 2",
@@ -950,7 +1204,9 @@
       "description": "The session mainly focus on Orbital Mechanics ,Satellite Trajectories & Spacecraft Subsystems.",
       "date": "24/01/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "General Discussion",
@@ -959,7 +1215,9 @@
       "description": "In this session, we will learn how to convert images into a format that can be used in C++ programs. The session explains the basic idea of turning an image into C++ code, why this is useful, and where it is commonly used. Simple examples will be discussed to help beginners understand how images can be stored and used directly inside a C++ application.",
       "date": "25/01/2026",
       "link": "https://mulearn.org/r/iot-officehour",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "Project Management on Site: Real Work, Real Control",
@@ -968,7 +1226,9 @@
       "description": "Learn how project management actually works on a construction site-planning the day, coordinating people and materials, handling drawings, tracking progress, and managing delays before they grow. This session is ideal for civil engineering students who want practical clarity on site workflows and how real projects are delivered",
       "date": "01/02/2026",
       "link": "mulearn.org/r/civilofficehour",
-      "interestGroups": ["civil"],
+      "interestGroups": [
+        "civil"
+      ],
       "poster_thumbnail": ""
     },
     {
@@ -978,7 +1238,9 @@
       "description": "This Office Hours session introduces Flask, a lightweight Python web framework, and walks participants through the essentials needed to start building simple web applications. Topics include setting up Flask, understanding routes and URLs, working with templates, and basic form handling .\nIdeal for beginners and anyone looking to explore backend development with Python in a simple and practical way. ",
       "date": "28/01/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": ["web-development"],
+      "interestGroups": [
+        "web-development"
+      ],
       "poster_thumbnail": "/assets/events/3600c031-7c9a-42ed-8de0-00058ded3421.jpg"
     },
     {
@@ -988,7 +1250,9 @@
       "description": "Great design doesn’t start with tools—it starts with thinking. This session explores how designers approach problem-solving, structure ideas, and make design decisions even without relying on tools like Figma. Learn alternative workflows, mindset shifts, and practical approaches that strengthen your UX fundamentals.",
       "date": "27/01/2026",
       "link": "mulearn.org/r/uiux-officehour",
-      "interestGroups": ["ui-ux"],
+      "interestGroups": [
+        "ui-ux"
+      ],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
     },
     {
@@ -998,7 +1262,9 @@
       "description": "Step into the professional world with clarity and confidence. This session is designed to help students understand how corporate life differs from college, what skills recruiters actually look for, and the career opportunities available for engineers today. You’ll also gain insights into current industry trends and practical tips to crack placements and interviews. The session concludes with an open Q&A to address your questions and concerns.\n",
       "date": "28/01/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Dealing With Imbalanced Data in ML",
@@ -1007,7 +1273,9 @@
       "description": "A short session on understanding imbalanced datasets, why they affect model performance, and basic techniques to handle them effectively in machine learning.",
       "date": "28/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Open Discussion",
@@ -1015,13 +1283,17 @@
       "description": "\n\nThis open discussion session is a space for shared learning, idea exchange, and meaningful conversations around Impact Projects. Interact with the community, ask questions, share ideas, clarify doubts, and gain insights on how to get started and grow through hands-on initiatives.\n\n\n\n",
       "date": "28/01/2026",
       "link": "https://mulearn.org/r/dop-officehour",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "General Discussion",
       "date": "29/01/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "Production Ready AI systems",
@@ -1030,7 +1302,9 @@
       "description": "Real-time AI systems go far beyond model accuracy, they demand low latency, scalability, reliability, and seamless integration with production environments. In this session, Rohith K Bobby walks through the practical challenges of taking AI from prototype to production, with a focus on real-time use cases.\n\nThe talk covers system architecture, model serving strategies, data pipelines, monitoring, and performance optimization, along with common pitfalls teams face when deploying AI at scale. Drawing from hands-on industry experience, Rohith shares best practices, tools, and design patterns used to build robust, production-grade AI systems that perform under real-world constraints",
       "date": "29/01/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "CBFC vs Indian Cinema",
@@ -1039,7 +1313,9 @@
       "description": "CBFC vs Indian Cinema | μLearn Office Hours 🎬\n\nA closer look at the clash between creative freedom and censorship in Indian movies.\nLet’s discuss regulations, controversies, and how CBFC decisions shape storytelling in Indian cinema.",
       "date": "30/01/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 8) ",
@@ -1048,7 +1324,9 @@
       "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
       "date": "30/01/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Emotional Intelligence & Self-control ",
@@ -1057,7 +1335,9 @@
       "description": "Emotions don’t make you weak. Handling them well makes you powerful.\n\nJoin us for μLearn Office Hours on Emotional Intelligence & Self-control to learn how to understand your emotions, manage impulses, and respond instead of react.",
       "date": "30/01/2026",
       "link": "https://mulearn.org/r/sl-officehour ",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Language of Spacetime-Exploring Gravity:Episode 4",
@@ -1066,7 +1346,9 @@
       "description": "Redefines gravity not as a mysterious force pulling from a distance, but as the very shape of the universe. We’ll translate the complex math into a visual story of curves and contours, showing how matter speaks to space and tells it how to move. A perfect primer for those ready to see the \"invisible\" fabric of reality.\n",
       "date": "31/01/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Doubt clearance",
@@ -1075,7 +1357,9 @@
       "description": "Clear your UI/UX doubts level up your design skills.Join our UI/UX Office Hours for expert guidance and take your designs to the next level.",
       "date": "03/02/2026",
       "link": "mulearn.org/r/uiux-officehour",
-      "interestGroups": ["ui-ux"],
+      "interestGroups": [
+        "ui-ux"
+      ],
       "poster_thumbnail": "/assets/events/IMG-20260202-WA0027.jpg"
     },
     {
@@ -1085,7 +1369,9 @@
       "description": "This Office Hours session is a perfect entry point into the world of Python, focusing on core fundamentals required to begin programming confidently. The session will cover basic Python concepts and help participants build a strong foundation for future backend and data-driven development.",
       "date": "04/02/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "Challenges faced in HR",
@@ -1094,7 +1380,9 @@
       "description": "Get a real-world perspective on the challenges faced by HR professionals in today’s corporate world—from talent acquisition and hiring pressures to skill gaps and evolving candidate expectations. Explore HR career paths, industry expectations, and practical recruitment insights, followed by an open Q&A.",
       "date": "04/02/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "ML Algorithms",
@@ -1103,7 +1391,9 @@
       "description": "A This session introduces key machine learning algorithms, explains when to use each, and discusses their pros and cons with practical examples.",
       "date": "04/02/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Recursion",
@@ -1111,7 +1401,9 @@
       "designation": "IG Lead",
       "date": "05/02/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["dsa"]
+      "interestGroups": [
+        "dsa"
+      ]
     },
     {
       "title": "General Discussion",
@@ -1119,7 +1411,9 @@
       "designation": "AI IG Lead",
       "date": "05/02/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 9) ",
@@ -1128,7 +1422,9 @@
       "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 9) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
       "date": "06/02/2026",
       "link": " https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Movie Talks",
@@ -1137,7 +1433,9 @@
       "description": "An open discussion for film lovers and filmmakers.\nShare opinions, break scenes, and talk cinema beyond ratings",
       "date": "06/02/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "When Leaders Fail ",
@@ -1146,7 +1444,9 @@
       "description": "Failure doesn’t end leadership — it reveals it.\n\nJoin us for μLearn Office Hours: When Leaders Fail as we discuss common leadership mistakes, why they happen, and how failures can become turning points in a leader’s journey.\n",
       "date": "06/02/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Quiz Night - Dark Matter & Dark Energy",
@@ -1155,7 +1455,9 @@
       "description": "A Quiz on Dark Matter & Dark Energy. To Test Your knowledge on the topic & to add up your knowledge on it with a new experience ",
       "date": "07/02/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"],
+      "interestGroups": [
+        "space"
+      ],
       "poster_thumbnail": "/assets/events/OH - Saturday - Post (9).png"
     },
     {
@@ -1165,7 +1467,9 @@
       "description": "Discover how moodboarding as a tool can capture ideas, emotions, and visual direction at the early stage of design.",
       "date": "07/02/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Intro To Arduino Uno Q",
@@ -1174,7 +1478,9 @@
       "description": "Join this online office hour to learn about the Arduino Uno Q and how it fits into IoT projects. We’ll walk through the board basics, key features, and common use cases, with time for discussion and questions.",
       "date": "08-02-2026",
       "link": "https://mulearn.org/r/iot-officehour",
-      "interestGroups": ["iot-robotics"]
+      "interestGroups": [
+        "iot-robotics"
+      ]
     },
     {
       "title": "General Discussion",
@@ -1183,7 +1489,9 @@
       "description": "n this office hour,we’ll be discussing some important topics like the future of Web Development IG and the impact projects. See you there!",
       "date": "11/02/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": ["web-development"]
+      "interestGroups": [
+        "web-development"
+      ]
     },
     {
       "title": "General Discussion",
@@ -1192,7 +1500,9 @@
       "description": "n this office hour , we’ll be discussing some important topics like the future of Data Science IG and the impact projects, new volunteers team selection . See you there!",
       "date": "11/02/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "General Discussion",
@@ -1201,7 +1511,9 @@
       "description": "n this office hour , we’ll be discussing some important topics like the future of Cloud & DevOps IG and the impact projects. See you there!",
       "date": "11/02/2026",
       "link": "https://mulearn.org/r/dop-officehour",
-      "interestGroups": ["devops"]
+      "interestGroups": [
+        "devops"
+      ]
     },
     {
       "title": "Future of HR careers",
@@ -1210,7 +1522,9 @@
       "description": "Explore how HR is evolving in today’s workplace from technology-driven hiring to people-centric and strategic roles. Learn about future HR career paths, key skills, and industry expectations, followed by an interactive Q&A session.",
       "date": "11/02/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "LLM Fine-Tuning Quiz",
@@ -1219,7 +1533,9 @@
       "description": "Think you know LLM fine-tuning? Prove it at our interactive quiz night packed with AI challenges, practical scenarios, and insightful questions designed to test your understanding",
       "date": "12/02/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "Short Form Content vs Cinema",
@@ -1228,7 +1544,9 @@
       "description": "Reels or big screen?\nLet’s discuss how short-form content is changing storytelling, attention spans, and the future of cinema.",
       "date": "13/02/2026",
       "link": " https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Are we building a life — or just a resume?",
@@ -1237,7 +1555,9 @@
       "description": "Join us for μLearn Office Hours: Are We Building a Life or Just a Resume? as we explore the pressure to constantly achieve, the difference between growth and burnout, and how to build a life that feels as good as it looks on paper.",
       "date": "13/02/2026",
       "link": " https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 10) ",
@@ -1246,7 +1566,9 @@
       "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
       "date": "12/02/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "From Atoms To Infinity: A Journey to the World of Wonders-Ep:05",
@@ -1255,7 +1577,9 @@
       "description": " Session redefines gravity not as a mysterious force pulling from a distance, but as the very shape of the universe. We’ll translate the complex math into a visual story of curves and contours, showing how matter speaks to space and tells it how to move. A perfect primer for those ready to see the \"invisible\" fabric of reality.",
       "date": "14/02/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"],
+      "interestGroups": [
+        "space"
+      ],
       "poster_thumbnail": ""
     },
     {
@@ -1264,7 +1588,9 @@
       "description": " Discussion on streamlining the project framework and the storyline, character design and world building.",
       "date": "14/02/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": ["space"],
+      "interestGroups": [
+        "space"
+      ],
       "poster_thumbnail": ""
     },
     {
@@ -1274,14 +1600,18 @@
       "description": "It is a open discussion meeting to improve the UI/UX IG community ",
       "date": "17/02/2026",
       "link": "https://mulearn.org/r/uiux-officehour",
-      "interestGroups": ["ui-ux"]
+      "interestGroups": [
+        "ui-ux"
+      ]
     },
     {
       "title": "Talk Session",
       "performer": "HR Team",
       "date": "18/2/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": ["human-resources"]
+      "interestGroups": [
+        "human-resources"
+      ]
     },
     {
       "title": "Model evaluation Metrics in ML",
@@ -1289,7 +1619,9 @@
       "designation": "DS IG Lead",
       "date": "18/02/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": ["data-science"]
+      "interestGroups": [
+        "data-science"
+      ]
     },
     {
       "title": "Audio & OCR Systems",
@@ -1298,7 +1630,9 @@
       "description": "Introduces the fundamentals of DOS concepts, audio signal processing, CTC (Connectionist Temporal Classification) loss for sequence modeling, and modern Optical Character Recognition (OCR) systems",
       "date": "19/02/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": ["ai"]
+      "interestGroups": [
+        "ai"
+      ]
     },
     {
       "title": "The Kerala Story 2 Trailer Talk ",
@@ -1307,7 +1641,9 @@
       "description": "Let’s break down the trailer — themes, storytelling choices, controversies, and audience reactions.\nIs it impactful, provocative, or polarizing?\n",
       "date": "20/02/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": ["muv"]
+      "interestGroups": [
+        "muv"
+      ]
     },
     {
       "title": "Unity Tasks Unlocked",
@@ -1316,7 +1652,9 @@
       "description": "Office Hour Walkthrough (Part 11) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
       "date": "20/02/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": ["game-dev"]
+      "interestGroups": [
+        "game-dev"
+      ]
     },
     {
       "title": "Strategic Problem Solving ",
@@ -1325,7 +1663,9 @@
       "description": "Are You Solving Problem or Just Reacting to Them?\n\nJoin us for μLearn Office Hours: Strategic Problem Solving as we explore how to think beyond quick fixes, break down complex challenges, and approach decisions with clarity and structure. Learn how to move from reactive thinking to intentional strategy in academics, career, and life.",
       "date": "20/02/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
     },
     {
       "title": "Quiz Night:  The Satellite Arena",
@@ -1333,7 +1673,9 @@
       "description": "Step into the Satellite Arena and test your knowledge of real-world space missions, launch vehicles, and satellite technologies. From communication and navigation systems to Earth observation and deep-space exploration, compete in an exciting battle of brains beyond Earth’s atmosphere.",
       "date": "21/02/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": ["space"]
+      "interestGroups": [
+        "space"
+      ]
     },
     {
       "title": "Project Discussion",
@@ -1342,7 +1684,9 @@
       "description": " Discussion on the changes and updates of our project: The Last Odiyan",
       "date": "21/02/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": ["comics"]
+      "interestGroups": [
+        "comics"
+      ]
     },
     {
       "title": "Does AI Decrease Creativity?",
@@ -1556,6 +1900,19 @@
       "interestGroups": [
         "ai"
       ]
-    }
+    },
+    {
+      "title": "Making Movies with Political & Religious Aspects",
+      "performer": "Muv Team",
+      "designation": "Muv leads",
+      "description": "A discussion on how films portray political and religious themes, and the challenges of balancing storytelling with sensitivity and expression.",
+      "date": "13/03/2026",
+      "link": " https://mulearn.org/r/muv-officehour⁠",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {},
+    {}
   ]
 }
