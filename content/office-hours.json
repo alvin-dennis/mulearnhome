@@ -1351,9 +1351,7 @@
       "description": "The Office Hours – UI/UX Edition\nJoin us for an engaging session on “Does AI Decrease Creativity?” as part of The Office Hours series. This discussion will explore the evolving relationship between artificial intelligence and creative problem-solving in the field of UI/UX design.\nThe session will be led by Niranjana Pradeep, Product Designer at Innovinlabs, who will share practical insights, industry perspectives, and real-world experiences on how AI tools influence ideation, design thinking, and innovation.\n📅 Date: Tuesday, 24th February 2026\n🕢 Time: 07:30 PM\n📍 Platform: Google Meet\nIf you're a designer, developer, or creative thinker curious about the impact of AI on creativity, this session is for you.",
       "date": "24/02/2026",
       "link": "mulearn.org/r/uiux-officehour",
-      "interestGroups": [
-        "ui-ux"
-      ]
+      "interestGroups": ["ui-ux"]
     },
     {
       "title": "Recruitment & Selection Process in HR",
@@ -1362,9 +1360,7 @@
       "description": "Learn about the Recruitment & Selection Process in HR — from finding the right candidates to selecting and onboarding them. Understand basic sourcing methods, interviews, and how companies choose the best fit. Join us for an interactive Q&A session",
       "date": "25/02/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": [
-        "human-resources"
-      ]
+      "interestGroups": ["human-resources"]
     },
     {
       "title": "Introduction to Typescript ",
@@ -1373,9 +1369,7 @@
       "description": "This Office Hours session introduces TypeScript and explains how it enhances JavaScript by adding static typing and better development tooling. Participants will learn why TypeScript is widely adopted in modern frontend and backend development, how it improves code quality, and how to get started with basic syntax and type definitions.",
       "date": "25/02/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": [
-        "web-development"
-      ]
+      "interestGroups": ["web-development"]
     },
     {
       "title": "OpenClaw Unleashed",
@@ -1383,9 +1377,7 @@
       "designation": "MD, Supe AI",
       "date": "26/02/2026",
       "link": "https://mulearn.org/r/ai-officehour/",
-      "interestGroups": [
-        "ai"
-      ]
+      "interestGroups": ["ai"]
     },
     {
       "title": "Binary Search",
@@ -1393,9 +1385,7 @@
       "designation": "DSA IG Lead",
       "date": "26/02/2026",
       "link": "http://mulearn.org/r/dsa-officehour/",
-      "interestGroups": [
-        "dsa"
-      ]
+      "interestGroups": ["dsa"]
     },
     {
       "title": "AI Tools for Civil Engineering",
@@ -1404,9 +1394,7 @@
       "description": "The session mainly aims to convey \n-> How AI is being applied in the civil engineering field today\n-> How AI can support planning, design, execution, and project management\n-> How civil engineers can use AI as a productivity and support tool, rather than just a concept\n-> Introcude a few AI Tools\n-> Answer the main concern of will AI hinder Civil Industry Employment rates",
       "date": "28/02/2026",
       "link": "https://mulearn.org/r/civilofficehour",
-      "interestGroups": [
-        "civil"
-      ]
+      "interestGroups": ["civil"]
     },
     {
       "title": "Beyond the Stars: The Dark Matter Mystery",
@@ -1415,9 +1403,7 @@
       "description": "What holds galaxies together?\nWhat makes up most of our universe — yet remains invisible?\n\nJoin us for “Beyond the Stars: The Dark Matter Mystery” and dive deep into one of the greatest unsolved mysteries of modern physics.",
       "date": "28/02/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": [
-        "space"
-      ]
+      "interestGroups": ["space"]
     },
     {
       "title": "Interactive and Animated designs Using Figma",
@@ -1426,9 +1412,7 @@
       "description": "🌟 The Office Hours – UI/UX Edition\n\nReady to take your Figma skills to the next level?\n\nJoin us this Tuesday, 3rd March 2026 at 8:00 PM for an exclusive UI/UX session on “Interactive and Animated Designs using Figma.”\n\nThis session will deep dive into:\n\nCreating meaningful micro-interactions\n\nDesigning smooth animations\n\nMaking prototypes feel real and engaging\n\nEnhancing user experience through motion\n\n🎙 Session by: Dev Nandan\nProduct Designer – UST\n📍 Platform: Google Meet\n\nIf you want your designs to move beyond static screens and start delivering real impact, this is a session you shouldn’t miss.\n\n🔗 Join via: mulearn.org/r/uiux-officehour\n",
       "date": "03/03/2026",
       "link": "https://mulearn.org/r/uiux-officehour",
-      "interestGroups": [
-        "ui-ux"
-      ],
+      "interestGroups": ["ui-ux"],
       "poster_thumbnail": "/assets/events/WhatsApp Image 2026-03-02 at 9.02.06 PM.jpeg"
     },
     {
@@ -1438,9 +1422,7 @@
       "description": "This session focuses on key web application security concepts and practical strategies to prevent vulnerabilities in production environments.\nIdeal for developers who want to strengthen their understanding of security fundamentals in modern web development.",
       "date": "04/03/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": [
-        "web-development"
-      ]
+      "interestGroups": ["web-development"]
     },
     {
       "title": "Data Quality in ML",
@@ -1449,9 +1431,7 @@
       "description": "This session explores the critical role of data quality in building accurate, reliable, and robust machine learning models. \nIdeal for anyone working with ML who wants to improve model performance starting from the data itself.",
       "date": "04/03/2026",
       "link": "https://mulearn.org/r/dsa-officehour",
-      "interestGroups": [
-        "data-science"
-      ]
+      "interestGroups": ["data-science"]
     },
     {
       "title": "Impact Project Talk",
@@ -1459,9 +1439,7 @@
       "designation": "µLearn Foundation",
       "date": "04/03/2026",
       "link": "https://mulearn.org/r/dop-officehour",
-      "interestGroups": [
-        "devops"
-      ]
+      "interestGroups": ["devops"]
     },
     {
       "title": "Talk session - Olympus",
@@ -1469,9 +1447,7 @@
       "designation": "µLearn Foundation",
       "date": "04/03/2026",
       "link": "https://mulearn.org/r/hr-officehour",
-      "interestGroups": [
-        "human-resources"
-      ]
+      "interestGroups": ["human-resources"]
     },
     {
       "title": "Impact Project Talk",
@@ -1479,9 +1455,7 @@
       "designation": "µLearn Foundation",
       "date": "05/03/2026",
       "link": "https://mulearn.org/r/ai-officehour",
-      "interestGroups": [
-        "ai"
-      ]
+      "interestGroups": ["ai"]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 13) ",
@@ -1490,9 +1464,7 @@
       "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 13) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
       "date": "06/03/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": [
-        "game-dev"
-      ]
+      "interestGroups": ["game-dev"]
     },
     {
       "title": "Movie Talk",
@@ -1501,9 +1473,7 @@
       "description": "An open discussion for film lovers to share thoughts on movies, storytelling, and iconic scenes.\n",
       "date": "06/03/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": [
-        "muv"
-      ]
+      "interestGroups": ["muv"]
     },
     {
       "title": "Team Dynamics and Group Development",
@@ -1512,9 +1482,7 @@
       "description": "Strong teams are not formed by chance—they are built through understanding, collaboration, and growth.\n\nJoin us for the μLearn Office Hours on Team Dynamics and Group Development, where we explore how teams evolve, how individuals contribute effectively, and how collaboration drives collective success.",
       "date": "06/03/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": [
-        "strategic-leadership"
-      ]
+      "interestGroups": ["strategic-leadership"]
     },
     {
       "title": "Character Crafting",
@@ -1523,9 +1491,7 @@
       "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
       "date": "07/03/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": [
-        "comics"
-      ]
+      "interestGroups": ["comics"]
     },
     {
       "title": "Intuition Behind ML Algorithm",
@@ -1533,9 +1499,7 @@
       "designation": "Freelance Tech Contributor , Advisorx Growth",
       "date": "11/03/2026",
       "link": "mulearn.org/r/officehour",
-      "interestGroups": [
-        "data-science"
-      ]
+      "interestGroups": ["data-science"]
     },
     {
       "title": "DSA and It's Possibilities",
@@ -1543,9 +1507,7 @@
       "designation": "AI Intern, Carestack",
       "date": "12/03/2026",
       "link": "https://mulearn.org/r/dsa-officehour/",
-      "interestGroups": [
-        "dsa"
-      ]
+      "interestGroups": ["dsa"]
     },
     {
       "title": "Prompt Engineering ",
@@ -1553,9 +1515,7 @@
       "designation": "Founder of PulseTap.in",
       "date": "12/03/2026",
       "link": "https://mulearn.org/r/ai-officehour/",
-      "interestGroups": [
-        "ai"
-      ]
+      "interestGroups": ["ai"]
     }
   ]
 }
