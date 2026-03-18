@@ -1,6 +1,6 @@
 {
-  "month": "2026-02",
-  "date": "February 2026",
+  "month": "2026-03",
+  "date": "March 2026",
   "overall": [
     {
       "username": "AswinAsok",
@@ -43,20 +43,20 @@
       "displayname": "Muhammed Zafar "
     },
     {
+      "username": "awindsr",
+      "commits": 832,
+      "prs_opened": 229,
+      "prs_merged": 223,
+      "points": 1284,
+      "displayname": "Awindsr"
+    },
+    {
       "username": "bijomathewjose",
       "commits": 785,
       "prs_opened": 261,
       "prs_merged": 234,
       "points": 1280,
       "displayname": "Bijo Mathew Jose"
-    },
-    {
-      "username": "awindsr",
-      "commits": 803,
-      "prs_opened": 219,
-      "prs_merged": 213,
-      "points": 1235,
-      "displayname": "Awindsr"
     },
     {
       "username": "vishakh-abhayan",
@@ -85,84 +85,84 @@
   ],
   "monthly": [
     {
-      "username": "rubyaj24",
-      "commits": 93,
-      "prs_opened": 24,
-      "prs_merged": 24,
-      "points": 141,
-      "displayname": "AMALJITH"
-    },
-    {
-      "username": "awindsr",
-      "commits": 100,
-      "prs_opened": 14,
-      "prs_merged": 14,
-      "points": 128,
-      "displayname": "Awindsr"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 72,
+      "username": "sachin-raj-m",
+      "commits": 69,
       "prs_opened": 15,
       "prs_merged": 15,
-      "points": 102,
-      "displayname": "Alvin Dennis"
-    },
-    {
-      "username": "sachin-raj-m",
-      "commits": 38,
-      "prs_opened": 17,
-      "prs_merged": 17,
-      "points": 72,
+      "points": 99,
       "displayname": "Sachin Raj"
     },
     {
-      "username": "Devika123098",
-      "commits": 27,
-      "prs_opened": 5,
-      "prs_merged": 3,
-      "points": 35,
-      "displayname": "Devika Dileep"
+      "username": "alvin-dennis",
+      "commits": 19,
+      "prs_opened": 7,
+      "prs_merged": 7,
+      "points": 33,
+      "displayname": "Alvin Dennis"
     },
     {
-      "username": "Akshayvs-Tech",
-      "commits": 18,
-      "prs_opened": 6,
-      "prs_merged": 5,
-      "points": 29,
-      "displayname": "Akshay v s"
-    },
-    {
-      "username": "Amith-Abey-Stephen",
-      "commits": 14,
-      "prs_opened": 4,
-      "prs_merged": 4,
-      "points": 22,
-      "displayname": "Amith Abey Stephen"
-    },
-    {
-      "username": "erzer12",
-      "commits": 11,
-      "prs_opened": 5,
-      "prs_merged": 4,
-      "points": 20,
-      "displayname": "Harshil P"
-    },
-    {
-      "username": "Arya3077",
-      "commits": 12,
-      "prs_opened": 4,
-      "prs_merged": 4,
-      "points": 20,
-      "displayname": "Arya Shibu Dhanya"
+      "username": "awindsr",
+      "commits": 15,
+      "prs_opened": 9,
+      "prs_merged": 9,
+      "points": 33,
+      "displayname": "Awindsr"
     },
     {
       "username": "DevWithPranav",
-      "commits": 10,
-      "prs_opened": 4,
-      "prs_merged": 4,
-      "points": 18,
+      "commits": 12,
+      "prs_opened": 6,
+      "prs_merged": 6,
+      "points": 24,
       "displayname": "Pranav P"
+    },
+    {
+      "username": "GokulShaji2005",
+      "commits": 13,
+      "prs_opened": 3,
+      "prs_merged": 3,
+      "points": 19,
+      "displayname": "Gokul Shaji"
+    },
+    {
+      "username": "rubyaj24",
+      "commits": 7,
+      "prs_opened": 3,
+      "prs_merged": 2,
+      "points": 12,
+      "displayname": "AMALJITH"
+    },
+    {
+      "username": "febin-d",
+      "commits": 9,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 12,
+      "displayname": "Febin Daniel"
+    },
+    {
+      "username": "Amith-Abey-Stephen",
+      "commits": 6,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "points": 10,
+      "displayname": "Amith Abey Stephen"
+    },
+    {
+      "username": "Arya-John",
+      "commits": 4,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 6,
+      "displayname": "Arya John"
+    },
+    {
+      "username": "favas7907",
+      "commits": 4,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 6,
+      "displayname": "favas7907"
     }
   ]
 }
