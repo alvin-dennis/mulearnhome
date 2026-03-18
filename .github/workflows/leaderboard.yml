@@ -36,5 +36,5 @@ jobs:
         run: |
           git add src/data/leaderboard.json
           git commit -m "chore(leaderboard): update contribution leaderboard with new metrics" || echo "No changes to commit"
-          git push origin production
+          git push
 

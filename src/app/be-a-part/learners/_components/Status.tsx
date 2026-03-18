@@ -93,12 +93,10 @@ const LearnersStatus = () => {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               className="text-center"
             >
-              {/* Number with CountUp Animation */}
               <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn mb-4">
-                <CountUp end={stat.number} duration={2.5} separator="," />+
+                <CountUp end={stat.number} duration={2.5} separator="," />
               </h3>
 
-              {/* Label */}
               <p className="text-lg md:text-xl font-medium text-black">{stat.label}</p>
             </MotionDiv>
           ))}
