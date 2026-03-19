@@ -1964,6 +1964,15 @@
         "ai"
       ]
     },
-    {}
+    {
+      "title": "General Discussion",
+      "performer": "Dine Babu",
+      "designation": "DSA IG Lead",
+      "date": "19/03/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "dsa"
+      ]
+    }
   ]
 }
