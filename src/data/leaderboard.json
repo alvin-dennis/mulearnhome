@@ -44,10 +44,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 832,
+      "commits": 837,
       "prs_opened": 229,
       "prs_merged": 223,
-      "points": 1284,
+      "points": 1289,
       "displayname": "Awindsr"
     },
     {
@@ -86,11 +86,19 @@
   "monthly": [
     {
       "username": "sachin-raj-m",
-      "commits": 69,
-      "prs_opened": 15,
-      "prs_merged": 15,
-      "points": 99,
+      "commits": 71,
+      "prs_opened": 16,
+      "prs_merged": 16,
+      "points": 103,
       "displayname": "Sachin Raj"
+    },
+    {
+      "username": "awindsr",
+      "commits": 20,
+      "prs_opened": 9,
+      "prs_merged": 9,
+      "points": 38,
+      "displayname": "Awindsr"
     },
     {
       "username": "alvin-dennis",
@@ -101,19 +109,11 @@
       "displayname": "Alvin Dennis"
     },
     {
-      "username": "awindsr",
-      "commits": 15,
-      "prs_opened": 9,
-      "prs_merged": 9,
-      "points": 33,
-      "displayname": "Awindsr"
-    },
-    {
       "username": "DevWithPranav",
-      "commits": 12,
-      "prs_opened": 6,
-      "prs_merged": 6,
-      "points": 24,
+      "commits": 15,
+      "prs_opened": 8,
+      "prs_merged": 8,
+      "points": 31,
       "displayname": "Pranav P"
     },
     {
@@ -142,27 +142,27 @@
     },
     {
       "username": "Amith-Abey-Stephen",
-      "commits": 6,
+      "commits": 7,
       "prs_opened": 2,
       "prs_merged": 2,
-      "points": 10,
+      "points": 11,
       "displayname": "Amith Abey Stephen"
     },
     {
-      "username": "Arya-John",
-      "commits": 4,
+      "username": "Akshayvs-Tech",
+      "commits": 9,
       "prs_opened": 1,
       "prs_merged": 1,
-      "points": 6,
-      "displayname": "Arya John"
+      "points": 11,
+      "displayname": "Akshay v s"
     },
     {
-      "username": "favas7907",
-      "commits": 4,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 6,
-      "displayname": "favas7907"
+      "username": "Devika123098",
+      "commits": 10,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "points": 10,
+      "displayname": "Devika Dileep"
     }
   ]
 }
