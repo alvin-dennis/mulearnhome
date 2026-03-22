@@ -1,4 +1,3 @@
-import { GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
@@ -12,192 +11,88 @@ export default function Hero() {
           "linear-gradient(180deg, var(--mulearn-whitish) 0%, rgba(46,133,254,0.04) 55%, rgba(175,46,230,0.05) 100%)",
       }}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute left-16 top-[60%] text-mulearn-blackish/80">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
-          </svg>
-        </div>
-        <div className="absolute right-45 top-[60%] transform -translate-x-1/2 text-mulearn-blackish/80">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
-          </svg>
-        </div>
-        <div
-          className="absolute left-28 top-[63%] text-mulearn-blackish/70"
-          style={{ transform: "rotate(10deg)" }}
+      {/* Sparkles — above the word "Campus" in the heading */}
+      <div
+        className="pointer-events-none absolute hidden md:flex flex-col"
+        style={{ top: "20px", right: "18%", alignItems: "flex-end", gap: "2px" }}
+        aria-hidden="true"
+      >
+        {/* Large sparkle — top */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="49"
+          viewBox="0 0 69 68"
+          fill="none"
+          aria-hidden="true"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
-          </svg>
-        </div>
-        <div className="absolute right-24 top-28 text-mulearn-blackish/40">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" />
-          </svg>
-        </div>
+          <path
+            d="M34.3697 67.6033L33.7885 51.9719C33.4329 42.4087 25.7346 34.7392 16.1401 34.3896L2.95503e-06 33.8016L16.1401 33.2136C25.7346 32.8641 33.4329 25.1946 33.7885 15.6314L34.3697 4.6247e-06L34.9509 15.6314C35.3065 25.1946 43.0049 32.8641 52.5994 33.2136L68.7395 33.8016L52.5994 34.3896C43.0049 34.7392 35.3065 42.4087 34.9509 51.9719L34.3697 67.6033Z"
+            fill="black"
+          />
+        </svg>
+        {/* Small sparkle — below and to the right */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          style={{ marginRight: "-10px" }}
+          aria-hidden="true"
+        >
+          <path
+            d="M12.5001 24.587L12.2887 18.9019C12.1594 15.4238 9.35954 12.6345 5.87007 12.5073L-8.32618e-07 12.2935L5.87007 12.0796C9.35953 11.9525 12.1594 9.16315 12.2887 5.68505L12.5001 4.62925e-06L12.7115 5.68505C12.8408 9.16315 15.6407 11.9525 19.1301 12.0796L25.0002 12.2935L19.1301 12.5073C15.6407 12.6345 12.8408 15.4238 12.7115 18.9019L12.5001 24.587Z"
+            fill="black"
+          />
+        </svg>
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-16 md:pt-24">
+      <div className="relative mx-auto max-w-5xl px-6 pb-16 pt-16 md:pt-20">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className=" mx-auto max-w-4xl text-4xl font-extrabold leading-tight text-mulearn-blackish md:text-6xl">
-            <span className="block">Polish your skills through</span>
-
-            <span className="relative block">
-              <span className="relative inline-block align-middle text-mulearn">
-                µLearn
-                <span
-                  className="absolute -left-6 -top-0.5 hidden md:block"
-                  style={{
-                    transform: "rotate(-10deg)",
-                    transformOrigin: "center",
-                  }}
-                >
-                  <GraduationCap className="h-10 w-10 text-mulearn-trusty-blue" />
-                </span>
-              </span>
-              <span className="px-2">to make</span>
-              <span className="relative inline-block">
-                students
-                <svg
-                  className="absolute -bottom-6 left-[42%] h-10 w-36 -translate-x-1/2 text-mulearn-trusty-blue"
-                  viewBox="0 0 160 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ transform: "rotate(180deg)" }}
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 30c40-18 92-20 156-16"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M140 8l18 8-14 12"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+          {/* Main Heading — natural wrap: line 1 "Empower Your Campus", line 2 "with µLearn" */}
+          <h1 className="mx-auto max-w-3xl text-center text-5xl md:text-[4.5rem] leading-[1.15] font-bold font-['Plus_Jakarta_Sans'] tracking-tight">
+            <span className="text-[#1A202C]">
+              Empower Your Campus
+              <br />
+              with{" "}
             </span>
-
-            <span className="relative mt-2 inline-block">
-              <span className="absolute -left-8 -bottom-1 hidden h-12 w-6 md:block" aria-hidden>
-                <svg
-                  viewBox="0 0 24 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-full w-full"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="8" r="6" fill="var(--mulearn-blackish)" />
-                  <path
-                    d="M12 14c6 0 7 10 7 16v12H5V30c0-6 1-16 7-16Z"
-                    fill="var(--mulearn-blackish)"
-                  />
-                  <path d="M5 30h14" stroke="var(--mulearn-blackish)" strokeWidth="5" />
-                  <path d="M16 16l6-4" stroke="var(--mulearn-blackish)" strokeWidth="4" />
-                </svg>
-              </span>
-              <span>industry ready</span>
-              <svg
-                className="absolute -bottom-2 left-0 w-full"
-                height="10"
-                viewBox="0 0 300 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 5C100 3 200 3 298 5"
-                  stroke="url(#u)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient id="u" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: "var(--mulearn-trusty-blue)" }} />
-                    <stop offset="100%" style={{ stopColor: "var(--mulearn-duke-purple)" }} />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span>
+            <span className="text-[#0075FF]">µLearn</span>
           </h1>
 
-          <Link href="https://app.mulearn.org/" target="_blank" className="inline-block">
-            <Button
-              variant={"default"}
-              className=" mt-8 rounded-full px-8 py-2 text-base font-semibold cursor-pointer"
-            >
-              Join µLearn
-            </Button>
-          </Link>
-        </MotionDiv>
-      </div>
+          {/* Subtitle */}
+          <p className="mt-5 mx-auto max-w-xl text-center text-[#1A202C] text-sm md:text-base font-medium font-['Plus_Jakarta_Sans'] leading-relaxed">
+            Become a µLearn Campus Enabler and join the movement!!
+          </p>
 
-      <div className="relative mx-auto mb-8 mt-10 h-24 w-full overflow-visible" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/2 w-[170%] -translate-x-1/2 -translate-y-1/2">
-          <div className="relative mx-auto w-full" style={{ transform: "rotate(-4deg)" }}>
-            <div
-              className="absolute left-0 right-0 -top-2 h-2 rounded-full"
-              style={{
-                backgroundColor: "bg-mulearn",
-                boxShadow: "0 2px 8px rgba(46,133,254,0.25)",
-              }}
-            />
-            <div
-              className="absolute left-0 right-0 -bottom-3 h-4 rounded-full"
-              style={{
-                backgroundColor: "bg-mulearn",
-                boxShadow: "0 6px 14px rgba(46,133,254,0.25)",
-              }}
-            />
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4">
+            {/* Explore Learners */}
+            <Link href="https://app.mulearn.org/" target="_blank">
+              <Button
+                variant="outline"
+                className="h-[50px] w-72 sm:w-[200px] rounded-[10px] border border-indigo-300 bg-gray-100 text-sm font-bold font-['Plus_Jakarta_Sans'] text-gray-900 shadow-none hover:bg-gray-200 hover:text-gray-900"
+              >
+                Explore Learners
+              </Button>
+            </Link>
 
-            <div
-              className="relative z-10 mx-auto flex w-full items-center justify-center gap-6 rounded-xl px-6 py-4"
-              style={{
-                background: "var(--mulearn-whitish)",
-                border: "1px solid var(--mulearn-greyish)",
-                boxShadow: "0 8px 30px rgba(46,133,254,0.15)",
-              }}
-            >
-              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
-                Build Brighter Futures
-              </span>
-              <svg
-                className="h-3 w-3 text-mulearn-blackish/80 shrink-0"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
+            {/* Join as Enabler */}
+            <Link href="https://app.mulearn.org/" target="_blank">
+              <Button
+                variant="default"
+                className="h-[50px] w-72 sm:w-[200px] rounded-[10px] border-none bg-blue-500 text-sm font-bold font-['Plus_Jakarta_Sans'] text-white shadow-none hover:bg-blue-600"
               >
-                <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
-              </svg>
-              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
-                Make Learning Accessible
-              </span>
-              <svg
-                className="h-3 w-3 text-mulearn-blackish/80 shrink-0"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M12 0 L15 9 L24 12 L15 15 L12 24 L9 15 L0 12 L9 9 Z" />
-              </svg>
-              <span className=" text-sm font-semibold text-mulearn md:text-base whitespace-nowrap">
-                Transform Education Today
-              </span>
-            </div>
+                Join as Enabler
+              </Button>
+            </Link>
           </div>
-        </div>
+        </MotionDiv>
       </div>
     </section>
   );

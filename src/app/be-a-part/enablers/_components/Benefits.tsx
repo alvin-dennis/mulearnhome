@@ -1,172 +1,94 @@
-import { MotionDiv } from "@/components/MuFramer";
-import { enablers } from "@/data/enablers";
-
 export default function Benefits() {
+  const cards = [
+    {
+      icon: "/assets/be-a-part/hugeicons_pyramid-structure-02.svg",
+      alt: "Structured Framework icon",
+      title: "Structured Framework",
+      description: "Clear guidelines for smooth chapter functioning.",
+    },
+    {
+      icon: "/assets/be-a-part/community_impact.svg",
+      alt: "Community Impact icon",
+      title: "Community Impact",
+      description:
+        "Bridge the gap between education and employment by fueling the next generation of talent.",
+    },
+    {
+      icon: "/assets/be-a-part/campus_impact.svg",
+      alt: "Campus Impact icon",
+      title: "Campus Impact",
+      description:
+        "Enable portfolios, projects and student-led initiatives that enhance institution reputation.",
+    },
+    {
+      icon: "/assets/be-a-part/solar_medal-ribbon-broken.svg",
+      alt: "Faculty Recognition icon",
+      title: "Faculty Recognition",
+      description:
+        "Enable portfolios, projects and student-led initiatives that enhance institution reputation.",
+    },
+  ];
+
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-      <MotionDiv
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className=" mb-12 text-center text-3xl font-bold text-mulearn-blackish md:text-4xl lg:text-5xl">
-          <span className="text-mulearn">Benefits</span> to the Enabler
-        </h2>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0 }}
-            className={`${enablers.benefits[0].bgColor} ${enablers.benefits[0].textColor} relative overflow-hidden rounded-3xl p-8 shadow-lg`}
-          >
-            <h3 className=" mb-6 text-xl font-bold text-mulearn-whitish md:text-2xl">
-              {enablers.benefits[0].title}
-            </h3>
-            <ul className=" space-y-4">
-              {enablers.benefits[0].items.map((item) => (
-                <li key={item.text} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="flex-1 text-sm leading-relaxed md:text-base">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="absolute right-6 top-6 opacity-80">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="text-mulearn-whitish/30"
-                aria-hidden="true"
-              >
-                <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
-              </svg>
-            </div>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className={`${enablers.benefits[1].bgColor} ${enablers.benefits[1].textColor} relative overflow-hidden rounded-3xl p-8 shadow-lg`}
-          >
-            <h3 className=" mb-6 text-xl font-bold text-mulearn-whitish md:text-2xl">
-              {enablers.benefits[1].title}
-            </h3>
-            <ul className=" space-y-4">
-              {enablers.benefits[1].items.map((item) => (
-                <li key={item.text} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn/20">
-                    <svg
-                      className="h-3 w-3 bg-mulearn"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="flex-1 text-sm leading-relaxed md:text-base">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={`${enablers.benefits[2].bgColor} ${enablers.benefits[2].textColor} relative overflow-hidden rounded-3xl p-8 shadow-lg`}
-          >
-            <h3 className=" mb-6 text-xl font-bold md:text-2xl">{enablers.benefits[2].title}</h3>
-            <ul className=" space-y-4">
-              {enablers.benefits[2].items.map((item) => (
-                <li key={item.text} className="flex items-start gap-3">
-                  <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mulearn-whitish/20">
-                    <svg
-                      className="h-3 w-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span className="flex-1 text-sm leading-relaxed md:text-base">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="absolute right-6 bottom-6 opacity-80">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="text-mulearn-whitish/30"
-                aria-hidden="true"
-              >
-                <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
-              </svg>
-            </div>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative flex items-center justify-center overflow-hidden rounded-3xl border-2 border-gray-200 bg-mulearn-whitish p-8 shadow-lg"
-          >
-            <div className="absolute right-6 top-6">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="text-mulearn-blackish opacity-10"
-                aria-hidden="true"
-              >
-                <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
-              </svg>
-            </div>
-            <div className="relative z-10 text-center">
-              <p className=" text-lg font-semibold italic text-mulearn-blackish md:text-xl lg:text-2xl">
-                &quot;Beyond Teaching - Become the spark
-                <br />
-                That Shapes Tomorrow&quot;
-              </p>
-            </div>
-          </MotionDiv>
+    <section className="mx-auto max-w-[1276px] px-6 py-16 lg:px-8 lg:py-20">
+      <div className="w-full flex flex-col items-center gap-5">
+        {/* Heading */}
+        <div className="self-stretch text-center">
+          <span className="text-gray-900 text-5xl font-bold font-['Plus_Jakarta_Sans'] leading-[62.40px]">
+            Benefits of an{" "}
+          </span>
+          <span className="text-blue-500 text-5xl font-bold font-['Plus_Jakarta_Sans'] leading-[62.40px]">
+            Enabler
+          </span>
+          <span className="text-gray-900 text-5xl font-bold font-['Plus_Jakarta_Sans'] leading-[62.40px]">
+            ?
+          </span>
         </div>
-      </MotionDiv>
+
+        {/* Cards grid — 1 col on mobile, row on xl */}
+        <div className="w-full flex flex-col items-center gap-5 xl:flex-row xl:items-start xl:flex-wrap xl:justify-start">
+          {cards.map((card, i) => (
+            <div
+              key={i}
+              className="relative w-full max-w-xs xl:w-72 h-60 p-6 bg-white rounded-2xl outline outline-[1.60px] outline-offset-[-1.60px] outline-gray-300 flex flex-col justify-start items-start gap-5"
+            >
+              {/* Icon */}
+              <div className="w-12 h-12 relative overflow-hidden flex-shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={card.icon} alt={card.alt} className="w-full h-full object-contain" />
+              </div>
+
+              {/* Title */}
+              <div className="text-blue-500 text-2xl font-semibold font-['Plus_Jakarta_Sans'] leading-6">
+                {card.title}
+              </div>
+
+              {/* Description */}
+              <div className="self-stretch text-black text-base font-normal font-['Plus_Jakarta_Sans'] leading-6">
+                {card.description}
+              </div>
+
+              {/* Sparkle on last card (desktop only) */}
+              {i === cards.length - 1 && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  aria-hidden="true"
+                  className="hidden xl:block absolute right-[-5px] top-[10px]"
+                >
+                  <path
+                    d="M12.5001 24.587L12.2887 18.9019C12.1594 15.4238 9.35954 12.6345 5.87007 12.5073L-8.32618e-07 12.2935L5.87007 12.0796C9.35953 11.9525 12.1594 9.16315 12.2887 5.68505L12.5001 4.62925e-06L12.7115 5.68505C12.8408 9.16315 15.6407 11.9525 19.1301 12.0796L25.0002 12.2935L19.1301 12.5073C15.6407 12.6345 12.8408 15.4238 12.7115 18.9019L12.5001 24.587Z"
+                    fill="black"
+                  />
+                </svg>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
