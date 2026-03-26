@@ -93,6 +93,14 @@
       "displayname": "Sachin Raj"
     },
     {
+      "username": "DevWithPranav",
+      "commits": 21,
+      "prs_opened": 12,
+      "prs_merged": 12,
+      "points": 45,
+      "displayname": "Pranav P"
+    },
+    {
       "username": "awindsr",
       "commits": 20,
       "prs_opened": 9,
@@ -101,19 +109,11 @@
       "displayname": "Awindsr"
     },
     {
-      "username": "DevWithPranav",
-      "commits": 17,
-      "prs_opened": 10,
-      "prs_merged": 10,
-      "points": 37,
-      "displayname": "Pranav P"
-    },
-    {
       "username": "alvin-dennis",
       "commits": 19,
-      "prs_opened": 7,
+      "prs_opened": 8,
       "prs_merged": 7,
-      "points": 33,
+      "points": 34,
       "displayname": "Alvin Dennis"
     },
     {
