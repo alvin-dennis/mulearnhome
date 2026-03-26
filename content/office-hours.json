@@ -2039,7 +2039,16 @@
       ],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
     },
-    {},
+    {
+      "title": "C Basics",
+      "performer": "Dine Babu",
+      "designation": "DSA IG Lead",
+      "date": "26/03/2026",
+      "link": "http://mulearn.org/r/dsa-officehour/",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
     {}
   ]
 }
