@@ -1958,7 +1958,7 @@
       "title": "Image Segmentation: Decoded",
       "performer": "Joel Basil Kurian",
       "designation": "MD, Supe AI",
-      "date": "19/03/2026",
+      "date": "26/03/2026",
       "link": "https://mulearn.org/r/ai-officehour",
       "interestGroups": [
         "ai"
@@ -2038,6 +2038,8 @@
         "ui-ux"
       ],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
-    }
+    },
+    {},
+    {}
   ]
 }
