@@ -149,20 +149,20 @@
       "displayname": "AMALJITH"
     },
     {
+      "username": "Devika123098",
+      "commits": 10,
+      "prs_opened": 2,
+      "prs_merged": 0,
+      "points": 12,
+      "displayname": "Devika Dileep"
+    },
+    {
       "username": "febin-d",
       "commits": 9,
       "prs_opened": 2,
       "prs_merged": 1,
       "points": 12,
       "displayname": "Febin Daniel"
-    },
-    {
-      "username": "erzer12",
-      "commits": 9,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 11,
-      "displayname": "Harshil P"
     }
   ]
 }
