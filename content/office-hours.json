@@ -2081,6 +2081,17 @@
       "interestGroups": [
         "strategic-leadership"
       ]
-    }
+    },
+    {
+      "title": "Impact Project Discussion",
+      "performer": "Web Development IG Leads",
+      "designation": "Mulearn Foundation",
+      "date": "01/04/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {}
   ]
 }
