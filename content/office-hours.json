@@ -2103,7 +2103,17 @@
         "strategic-leadership"
       ]
     },
-    {},
+    {
+      "title": "Vaazha 2 – Movie Talk",
+      "performer": "MuV Team",
+      "designation": "MuV Leads",
+      "description": "A discussion on the currently successful film Vaazha 2 — what’s working, audience response, and the storytelling behind its success.\n",
+      "date": "03/04/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
     {}
   ]
 }
