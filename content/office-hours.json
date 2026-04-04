@@ -2133,6 +2133,16 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "COMICS DISCUSSION",
+      "performer": "Comics Core Team",
+      "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "04/04/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
     }
   ]
 }
