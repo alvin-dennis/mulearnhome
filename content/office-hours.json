@@ -2153,6 +2153,17 @@
       "interestGroups": [
         "ui-ux"
       ]
-    }
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Dine Babu ",
+      "designation": "DSA IG Lead",
+      "date": "09/04/2026",
+      "link": "https://mulearn.org/r/dsa-officehour/",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
+    {}
   ]
 }
