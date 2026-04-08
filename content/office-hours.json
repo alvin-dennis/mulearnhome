@@ -2164,6 +2164,15 @@
         "dsa"
       ]
     },
-    {}
+    {
+      "title": "Image Segmentation Decoded II",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD, Supe AI",
+      "date": "09/04/2026",
+      "link": "http://mulearn.org/r/ai-officehour/",
+      "interestGroups": [
+        "ai"
+      ]
+    }
   ]
 }
