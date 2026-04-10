@@ -54,7 +54,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
       case "learner":
         return "bg-mulearn-trusty-blue text-mulearn-whitish";
       case "mentor":
-        return "bg-mulearn-electric-purple text-mulearn-whitish";
+        return "bg-mulearn-duke-purple text-mulearn-whitish";
       case "partner":
         return "bg-mulearn-gray-600 text-mulearn-whitish";
       case "community-leader":
