@@ -71,7 +71,7 @@ src/lib/env/
 1. **Copy the example file:**
 
    ```bash
-   cp .env.example .env.local
+   cp .example.env .env.local
    ```
 
 2. **Fill in your values:**
@@ -80,7 +80,7 @@ src/lib/env/
 3. **Start the app:**
 
    ```bash
-   npm run dev
+   bun run dev
    ```
 
    The app will validate all variables on boot and crash with clear error messages if anything is missing or invalid.
