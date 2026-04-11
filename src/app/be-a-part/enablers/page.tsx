@@ -1,7 +1,10 @@
+import FiftyPlusColleges from "@/app/be-a-part/enablers/_components/50+colleges";
 import Benefits from "@/app/be-a-part/enablers/_components/Benefits";
+import GetInTouch from "@/app/be-a-part/enablers/_components/GetInTouch";
 import Hero from "@/app/be-a-part/enablers/_components/Hero";
-import Onboarding from "@/app/be-a-part/enablers/_components/Onboarding";
-import Programs from "@/app/be-a-part/enablers/_components/Programs";
+import HowToBegin from "@/app/be-a-part/enablers/_components/HowToBegin";
+import MissionAndGrowth from "@/app/be-a-part/enablers/_components/MissionAndGrowth";
+import SuccessStories from "@/app/be-a-part/enablers/_components/SuccessStories";
 import WhoIsEnabler from "@/app/be-a-part/enablers/_components/WhoIsEnabler";
 
 export default function EnablersPage() {
@@ -10,8 +13,11 @@ export default function EnablersPage() {
       <Hero />
       <WhoIsEnabler />
       <Benefits />
-      <Programs />
-      <Onboarding />
+      <FiftyPlusColleges />
+      <SuccessStories />
+      <MissionAndGrowth />
+      <HowToBegin />
+      <GetInTouch />
     </main>
   );
 }
