@@ -100,4 +100,27 @@ export const enablers = {
       linkText: "Explore Interests",
     },
   ],
+
+  successStories: [
+    {
+      name: "Dr. A G Mathew",
+      role: "Principal, St. Thomas Institute of Science and Technology",
+      url: "https://youtu.be/oyvb4-decaY?si=xbsRahh_mIschz-R",
+    },
+    {
+      name: "Dr. Neelakantan P C",
+      role: "Principal, Muthoot Institute of Science and Technology",
+      url: "https://youtu.be/oyvb4-decaY?si=2qGCXXH89j9yzmZ-&t=21",
+    },
+    {
+      name: "Sharika T R",
+      role: "Lead Enabler µLearn, Adi Shankara Institute of Engineering and Technology",
+      url: "https://youtu.be/oyvb4-decaY?si=_qT1fFmQJVmlmJmg&t=63",
+    },
+    {
+      name: "Dr. M Manoj",
+      role: "Lead Enabler µLearn, Marian Engineering College",
+      url: "https://youtu.be/oyvb4-decaY?si=fEPdIxDP4uanErYi&t=73",
+    },
+  ],
 };
