@@ -1,25 +1,26 @@
 "use client";
 
+import { MotionDiv } from "@/components/MuFramer";
 import { Card, CardContent } from "@/components/ui/card";
 
 const stories = [
   {
-    name: "Dr A G Mathew",
+    name: "Dr. A G Mathew",
     role: "Principal, St. Thomas Institute of Science and Technology",
     url: "https://youtu.be/oyvb4-decaY?si=xbsRahh_mIschz-R",
   },
   {
-    name: "Dr Neelakantan PC",
+    name: "Dr. Neelakantan P C",
     role: "Principal, Muthoot Institute of Science and Technology",
     url: "https://youtu.be/oyvb4-decaY?si=2qGCXXH89j9yzmZ-&t=21",
   },
   {
-    name: "Sharika TR",
+    name: "Sharika T R",
     role: "Lead Enabler µLearn, Adi Shankara Institute of Engineering and Technology",
-    url: "https://youtu.be/oyvb4-decaY?si=rpmXt-Ok2WMM6nBU&t=62",
+    url: "https://youtu.be/oyvb4-decaY?si=_qT1fFmQJVmlmJmg&t=63",
   },
   {
-    name: "Dr M Manoj",
+    name: "Dr. M Manoj",
     role: "Lead Enabler µLearn, Marian Engineering College",
     url: "https://youtu.be/oyvb4-decaY?si=fEPdIxDP4uanErYi&t=73",
   },
@@ -63,15 +64,22 @@ export default function SuccessStories() {
         </h2>
       </div>
 
-      <div className="relative w-full">
-        <div
-          className="flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
-          style={{ msOverflowStyle: "none", scrollbarWidth: "none" } as React.CSSProperties}
+      <MotionDiv
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1, duration: 0.6 }}
+        className="relative w-full overflow-hidden py-10"
+      >
+        <MotionDiv
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 40, repeat: Infinity, repeatType: "loop" }}
+          className="flex gap-4 md:gap-6 mt-10 w-max"
         >
-          {stories.map((story) => (
+          {[...stories, ...stories].map((story, index) => (
             <Card
-              key={story.url}
-              className="shrink-0 snap-start w-70 md:w-90 min-w-70 bg-white rounded-[28px] shadow-[0px_4px_24px_0px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden"
+              key={`${story.url}-${index}`}
+              className="shrink-0 w-[320px] md:w-105 min-w-[320px] bg-white rounded-[28px] shadow-[0px_4px_24px_0px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden"
             >
               <CardContent className="p-0 flex flex-col">
                 <div className="relative aspect-video w-full overflow-hidden bg-black">
@@ -95,11 +103,11 @@ export default function SuccessStories() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </MotionDiv>
 
         <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 bg-linear-to-r from-white to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 bg-linear-to-l from-white to-transparent z-10" />
-      </div>
+      </MotionDiv>
 
       <div className="hidden md:flex justify-end mt-4 pr-2">
         <svg
