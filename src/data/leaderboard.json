@@ -94,10 +94,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 24,
+      "commits": 26,
       "prs_opened": 8,
       "prs_merged": 8,
-      "points": 40,
+      "points": 42,
       "displayname": "Alvin Dennis"
     },
     {
@@ -133,6 +133,14 @@
       "displayname": "Salvin Sebastian"
     },
     {
+      "username": "Devika123098",
+      "commits": 5,
+      "prs_opened": 3,
+      "prs_merged": 2,
+      "points": 10,
+      "displayname": "Devika Dileep"
+    },
+    {
       "username": "Nayadrika787",
       "commits": 3,
       "prs_opened": 1,
@@ -141,12 +149,12 @@
       "displayname": "Nayana_Sen"
     },
     {
-      "username": "Devika123098",
-      "commits": 2,
-      "prs_opened": 2,
-      "prs_merged": 1,
-      "points": 5,
-      "displayname": "Devika Dileep"
+      "username": "shaderone",
+      "commits": 0,
+      "prs_opened": 4,
+      "prs_merged": 0,
+      "points": 4,
+      "displayname": "Sharon Shaji"
     },
     {
       "username": "Sidharth-sk-809",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 3,
       "displayname": "Sidharth s kumar"
-    },
-    {
-      "username": "Vinayapriya",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 0,
-      "points": 3,
-      "displayname": "Vinayapriya  C C"
     }
   ]
 }
