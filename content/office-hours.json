@@ -2216,6 +2216,16 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "Quiz On Communication Protocols",
+      "performer": "Core Team",
+      "date": "12/04/2025",
+      "link": "mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Sunday- Post.png"
     }
   ]
 }
