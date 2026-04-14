@@ -1623,7 +1623,7 @@
       "performer": "Dev Nandan",
       "designation": "Product Designer - UST",
       "description": "🚀 The Office Hours – UI/UX\n\nWe’re wrapping up the Figma interaction series with Part 3 — the advanced phase.\n\nJoin us on Tuesday, 24th March 2026 at 8:00 PM for\n“Interactive and Animated Designs using Figma – 3.”\n\nIn this session, you’ll learn how to:\n\nDesign advanced interaction patterns\nCreate complex and smooth animation flows\nBuild high-fidelity, real-world prototypes\nApply motion to improve user experience\n\n🎙 Session by: Dev Nandan\nProduct Designer – UST\n\n📍 Platform: Google Meet\n🔗 mulearn.org/r/uiux-officehour\n\nThis session brings everything together — ideal for anyone looking to move from basic animations to professional-level UI/UX design.",
-      "date": "24/04/2026",
+      "date": "finished",
       "link": "mulearn.org/r/uiux-officehour",
       "interestGroups": ["ui-ux"],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
@@ -1661,7 +1661,154 @@
       "description": "Most of us believe that learning is something that happens when we are taught.\n\nBut in reality, the most effective leaders are those who take ownership of their own growth—continuously learning, adapting, and improving without waiting for direction.\n\nJoin us for μLearn Office Hours, an insightful session on “Self-Regulated Learning Approaches” — where we explore how strategic leaders plan, monitor, and refine their learning journey to stay ahead and make better decisions.",
       "date": "27/03/2026",
       "link": " https://mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Impact Project Discussion",
+      "performer": "Web Development IG Leads",
+      "designation": "Mulearn Foundation",
+      "date": "01/04/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {
+      "title": "Critical Thinking & Structured Decision-Making Methods",
+      "performer": "Agatha Anna Skariah",
+      "designation": "SL IG Core Team Member ",
+      "description": "Good decisions don’t happen by chance—they are built through clear thinking.\n\nJoin us for the μLearn Office Hours on Critical Thinking & Structured Decision-Making Methods, where we explore how to analyze situations, think logically, and make well-informed decisions with confidence.\n",
+      "date": "03/04/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Vaazha 2 – Movie Talk",
+      "performer": "MuV Team",
+      "designation": "MuV Leads",
+      "description": "A discussion on the currently successful film Vaazha 2 — what’s working, audience response, and the storytelling behind its success.\n",
+      "date": "03/04/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 17) ",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
+      "date": "03/04/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Quiz Night",
+      "performer": "IG LEADS",
+      "date": "04/04/2026",
+      "link": "https://mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
+    },
+    {
+      "title": "COMICS DISCUSSION",
+      "performer": "Comics Core Team",
+      "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "04/04/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
+    },
+    {
+      "title": "Impact Project Discussion",
+      "performer": "Aysha Saliha",
+      "designation": "UI/UX IG Lead - µLearn Foundation",
+      "date": "07/04/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ]
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Dine Babu ",
+      "designation": "DSA IG Lead",
+      "date": "09/04/2026",
+      "link": "https://mulearn.org/r/dsa-officehour/",
+      "interestGroups": [
+        "dsa"
+      ]
+    },
+    {
+      "title": "Image Segmentation Decoded II",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD, Supe AI",
+      "date": "09/04/2026",
+      "link": "http://mulearn.org/r/ai-officehour/",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 18) ",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 18) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
+      "date": "10/04/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Upcoming New Stars of Vaazha 2 ",
+      "performer": "Muv Team",
+      "designation": "Muv IG Leads",
+      "description": "A discussion on the rising talents of Vaazha 2 — their performances, potential, and what they bring to the future of cinema.",
+      "date": "10/04/2026",
+      "link": "https://mulearn.org/r/muv-officehour⁠",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": " Team Coordination",
+      "performer": "Naveen S",
+      "designation": "Student, College of Engineering Muttathara",
+      "description": "Working in a team is common—working well as a team is a skill.\n\nJoin us for the μLearn Office Hours on Team Coordination, where we explore how effective communication, collaboration, and alignment help teams perform better together.",
+      "date": "10/04/2026",
+      "link": "https://mulearn.org/r/sl-officehour⁠",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Space, Screens & Us | Artemis II Return Live ",
+      "performer": "Community Members",
+      "description": "A Session Regarding Artemis II, Current Space News   ",
+      "date": "11/04/2026",
+      "link": "mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
+    },
+    {
+      "title": "Quiz On Communication Protocols",
+      "performer": "Core Team",
+      "date": "12/04/2026",
+      "link": "mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Sunday- Post.png"
     }
   ]
 }
