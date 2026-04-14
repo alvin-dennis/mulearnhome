@@ -2247,7 +2247,16 @@
         "data-science"
       ]
     },
-    {},
+    {
+      "title": "Work life balance",
+      "performer": "Devika Sasikumar",
+      "designation": "HRBP, corekraft private limited",
+      "date": "15/04/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
     {}
   ]
 }
