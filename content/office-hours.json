@@ -2257,6 +2257,15 @@
         "human-resources"
       ]
     },
-    {}
+    {
+      "title": "Linux Core Fundamentals",
+      "performer": "Adithyan L",
+      "designation": "DevOps IG Volunteer",
+      "date": "15/04/2026",
+      "link": "https://mulearn.org/r/dop-officehour",
+      "interestGroups": [
+        "devops"
+      ]
+    }
   ]
 }
