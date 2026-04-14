@@ -2236,6 +2236,18 @@
       "interestGroups": [
         "web-development"
       ]
-    }
+    },
+    {
+      "title": "General Discussion",
+      "performer": "Tharun Tomy",
+      "designation": "Data Science IG Lead",
+      "date": "15/04/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
+    {},
+    {}
   ]
 }
