@@ -1,4 +1,11 @@
+import type { LucideIcon } from "lucide-react";
+import { Building2, HelpCircle, Lightbulb, Target } from "lucide-react";
 import { cdnUrl } from "@/services/cdn";
+
+export interface EnablerFeature {
+  text: string;
+  icon: LucideIcon;
+}
 
 export const enablers = {
   benefits: [
@@ -51,6 +58,25 @@ export const enablers = {
       textColor: "text-mulearn-blackish",
     },
   ],
+
+  features: [
+    {
+      text: "Provide direction and ensure healthy chapter functioning",
+      icon: Target,
+    },
+    {
+      text: "Guide student leads when needed",
+      icon: HelpCircle,
+    },
+    {
+      text: "Support a culture of exploration and practical learning",
+      icon: Lightbulb,
+    },
+    {
+      text: "Facilitate industry or campus-level opportunities.",
+      icon: Building2,
+    },
+  ] as EnablerFeature[],
 
   programs: [
     {
