@@ -132,21 +132,25 @@ export const enablers = {
       name: "Dr. A G Mathew",
       role: "Principal, St. Thomas Institute of Science and Technology",
       url: "https://youtu.be/oyvb4-decaY?si=xbsRahh_mIschz-R",
+      thumbnail: "/assets/be-a-part/thumbnails/ag-mathew.webp",
     },
     {
       name: "Dr. Neelakantan P C",
       role: "Principal, Muthoot Institute of Science and Technology",
       url: "https://youtu.be/oyvb4-decaY?si=2qGCXXH89j9yzmZ-&t=21",
+      thumbnail: "/assets/be-a-part/thumbnails/neelakantan-pc.webp",
     },
     {
       name: "Sharika T R",
       role: "Lead Enabler µLearn, Adi Shankara Institute of Engineering and Technology",
       url: "https://youtu.be/oyvb4-decaY?si=_qT1fFmQJVmlmJmg&t=63",
+      thumbnail: "/assets/be-a-part/thumbnails/sharika-tr.webp",
     },
     {
       name: "Dr. M Manoj",
       role: "Lead Enabler µLearn, Marian Engineering College",
       url: "https://youtu.be/oyvb4-decaY?si=fEPdIxDP4uanErYi&t=73",
+      thumbnail: "/assets/be-a-part/thumbnails/m-manoj.webp",
     },
   ],
 };

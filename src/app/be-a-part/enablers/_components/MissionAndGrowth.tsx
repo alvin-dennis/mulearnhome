@@ -1,86 +1,131 @@
-import type { LucideIcon } from "lucide-react";
-import { Sparkle, TrendingUp, User, UserPlus, Users } from "lucide-react";
-import { Card } from "@/components/ui/card";
+"use client";
 
-interface Stat {
-  label: string;
-  value: string;
-  icon: LucideIcon;
-  iconBg: string;
-}
+import type { Variants } from "framer-motion";
+import { Sparkle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
+import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import MuLoader from "@/components/MuLoader";
+import type { Counts } from "@/lib/types";
 
-const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
-  <IconComponent className="w-6 h-6 text-mulearn-whitish" />
-);
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
+};
 
-const stats: Stat[] = [
-  {
-    label: "Active members",
-    value: "12,095",
-    icon: Users,
-    iconBg: "bg-blue-500",
-  },
-  {
-    label: "Total Members",
-    value: "44,700+",
-    icon: User,
-    iconBg: "bg-blue-600",
-  },
-  {
-    label: "New Members joined",
-    value: "88",
-    icon: UserPlus,
-    iconBg: "bg-blue-600",
-  },
-  {
-    label: "Learners Completion",
-    value: "92%",
-    icon: TrendingUp,
-    iconBg: "bg-blue-600",
-  },
-];
+export default function MissionandGrowth() {
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useRef<WebSocket | null>(null);
 
-export default function MissionAndGrowth() {
+  useEffect(() => {
+    if (!socketRef.current) {
+      const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
+      socketRef.current = socket;
+
+      const handleMessage = (event: MessageEvent) => {
+        setCounts(JSON.parse(event.data) as Counts);
+      };
+
+      const handleError = (event: Event) => {
+        void event;
+      };
+
+      socket.addEventListener("message", handleMessage);
+      socket.addEventListener("error", handleError);
+
+      return () => {
+        socket.removeEventListener("message", handleMessage);
+        socket.removeEventListener("error", handleError);
+        socket.close();
+        socketRef.current = null;
+      };
+    }
+  }, []);
+
+  if (!counts) {
+    return (
+      <div className="px-14 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24 ">
+        <MuLoader />
+      </div>
+    );
+  }
+
   return (
-    <section className="w-full bg-mulearn-whitish relative overflow-hidden py-12 px-6">
-      {/* Corner sparkles */}
+    <div className="flex justify-center relative">
       <div className="hidden md:block absolute top-6 right-10 z-10">
         <Sparkle className="w-6 h-6 text-mulearn" />
       </div>
       <div className="hidden md:block absolute bottom-6 left-8 z-10">
         <Sparkle className="w-6 h-6 text-mulearn" />
       </div>
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl">
+        <MotionSection
+          className="flex flex-col justify-center py-24 items-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <MotionDiv
+            className="text-4xl md:text-5xl lg:text-6xl flex flex-col items-center text-center w-full"
+            variants={fadeInUp}
+          >
+            <h1>
+              Our <span className="text-mulearn">Mission</span> &
+              <span className="text-mulearn">Growth</span>
+            </h1>
+          </MotionDiv>
 
-      <div className="mx-auto max-w-7xl flex flex-col items-center gap-10">
-        {/* Heading */}
-        <h2 className="text-center text-5xl font-bold leading-[62.40px]">
-          <span>Our </span>
-          <span className="text-mulearn">Mission </span>
-          <span>&amp; </span>
-          <span className="text-mulearn">Growth</span>
-        </h2>
-
-        {/* Stat Cards — single column on mobile, row on lg */}
-        <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center gap-5">
-          {stats.map((stat, i) => (
-            <Card key={i} className="w-72 p-6 flex flex-col justify-start items-start">
-              <div className="self-stretch flex justify-between items-center">
-                {/* Left: label, value, badge */}
-                <div className="flex-1 flex flex-col justify-start items-start gap-1">
-                  <p className="text-sm font-semibold leading-5">{stat.label}</p>
-                  <p className="text-3xl font-bold leading-9 pb-1">{stat.value}</p>
-                </div>
-
-                <div
-                  className={`w-12 h-12 ${stat.iconBg} rounded-xl flex justify-center items-center flex-shrink-0`}
-                >
-                  <Icon icon={stat.icon} />
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+          <MotionDiv variants={fadeInUp} className="w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 mt-6 px-4 sm:px-8">
+              <StatCard value={counts.members} label="Members" />
+              <StatCard value={counts.learning_circle_count} label="Learning Circles" />
+              {counts.org_type_counts.map((org) => (
+                <StatCard
+                  key={org.org_type}
+                  value={org.org_count}
+                  label={
+                    org.org_type.endsWith("y")
+                      ? `${org.org_type.slice(0, -1)}ies`
+                      : `${org.org_type}s`
+                  }
+                />
+              ))}
+              <StatCard value={counts.karma_pow_count.karma_count} label="Total Karma Mined" />
+              {counts.enablers_mentors_count.map((role) => (
+                <StatCard
+                  key={role.role__title}
+                  value={role.role_count}
+                  label={`${role.role__title}s`}
+                />
+              ))}
+            </div>
+          </MotionDiv>
+        </MotionSection>
       </div>
-    </section>
+    </div>
+  );
+}
+
+function StatCard({
+  value,
+  label,
+  isString = false,
+}: {
+  value: number | string;
+  label: string;
+  isString?: boolean;
+}) {
+  return (
+    <div className="bg-card rounded-2xl shadow-sm flex flex-col justify-center items-center p-4">
+      <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
+        {isString ? value : <CountUp end={value as number} duration={5} separator="," />}
+      </p>
+      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
+    </div>
   );
 }
