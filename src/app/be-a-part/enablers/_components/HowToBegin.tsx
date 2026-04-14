@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MotionDiv } from "@/components/MuFramer";
 
 const steps = [
@@ -51,9 +52,9 @@ const SparkleIcon = ({ size = 16 }: { size?: number }) => (
 const Connector = () => (
   <div className="flex items-center h-16 px-1 flex-shrink-0">
     <div className="relative flex items-center w-20 lg:w-28 h-0.5">
-      <div className="w-full border-t-2 border-dashed border-[#456FF6]" />
-      <div className="absolute left-0 w-2 h-2 bg-[#456FF6] rounded-full -translate-x-1/2" />
-      <div className="absolute right-0 w-2 h-2 bg-[#456FF6] rounded-full translate-x-1/2" />
+      <div className="w-full border-t-2 border-dashed border-mulearn" />
+      <div className="absolute left-0 w-2 h-2 bg-mulearn rounded-full -translate-x-1/2" />
+      <div className="absolute right-0 w-2 h-2 bg-mulearn rounded-full translate-x-1/2" />
     </div>
   </div>
 );
@@ -79,8 +80,8 @@ const StepBox = ({
       transition={{ delay: index * 0.15, duration: 0.45 }}
       className="mb-5"
     >
-      <div className="w-16 h-16 bg-[#456FF6] rounded-xl flex items-center justify-center shadow-md">
-        <span className="text-white text-2xl font-bold font-['Plus_Jakarta_Sans']">{step}</span>
+      <div className="w-16 h-16 bg-mulearn rounded-xl flex items-center justify-center shadow-md">
+        <span className="text-mulearn-whitish text-2xl font-bold">{step}</span>
       </div>
     </MotionDiv>
 
@@ -90,12 +91,10 @@ const StepBox = ({
       viewport={{ once: true }}
       transition={{ delay: index * 0.15 + 0.1, duration: 0.4 }}
     >
-      <h3 className="text-sm font-bold text-gray-900 mb-1 leading-snug font-['Plus_Jakarta_Sans']">
-        {title}
-      </h3>
+      <h3 className="text-sm font-bold mb-1 leading-snug">{title}</h3>
       <p
-        className={`text-[11px] leading-relaxed font-['Plus_Jakarta_Sans'] ${
-          bold ? "text-[#456FF6] font-bold not-italic" : "text-gray-500 italic"
+        className={`text-[11px] leading-relaxed ${
+          bold ? "text-mulearn font-bold not-italic" : "text-mulearn-gray-600 italic"
         }`}
       >
         {description}
@@ -109,7 +108,7 @@ export default function Onboarding() {
   const row2 = steps.slice(3, 5);
 
   return (
-    <section className="hidden md:block w-full relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 py-16 px-6">
+    <section className="hidden md:block w-full relative overflow-hidden py-16 px-6">
       {/* Sparkle accents */}
       <div className="absolute top-8 right-16 opacity-60">
         <SparkleIcon size={18} />
@@ -118,11 +117,11 @@ export default function Onboarding() {
         <SparkleIcon size={14} />
       </div>
 
-      {/* Character illustration — top right */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src="/assets/be-a-part/enabler-character.svg"
         alt="Enabler character"
+        width={100}
+        height={100}
         className="absolute top-4 right-8 w-24 h-24 object-contain opacity-90 pointer-events-none"
       />
 
@@ -134,7 +133,7 @@ export default function Onboarding() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-center text-4xl lg:text-5xl font-bold font-['Plus_Jakarta_Sans'] text-gray-900 leading-tight">
+          <h2 className="text-center text-4xl lg:text-5xl font-bold leading-tight">
             How to begin as an Enabler
           </h2>
         </MotionDiv>
@@ -180,9 +179,9 @@ export default function Onboarding() {
                 />
                 {i < steps.length - 1 && (
                   <div className="flex flex-col items-center mt-4 h-10">
-                    <div className="w-2 h-2 bg-[#456FF6] rounded-full" />
-                    <div className="flex-1 border-l-2 border-dashed border-[#456FF6] my-0.5" />
-                    <div className="w-2 h-2 bg-[#456FF6] rounded-full" />
+                    <div className="w-2 h-2 bg-mulearn rounded-full" />
+                    <div className="flex-1 border-l-2 border-dashed border-mulearn my-0.5" />
+                    <div className="w-2 h-2 bg-mulearn rounded-full" />
                   </div>
                 )}
               </div>

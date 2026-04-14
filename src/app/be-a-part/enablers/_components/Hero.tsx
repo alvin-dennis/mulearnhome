@@ -56,17 +56,17 @@ export default function Hero() {
           className="text-center"
         >
           {/* Main Heading — natural wrap: line 1 "Empower Your Campus", line 2 "with µLearn" */}
-          <h1 className="mx-auto max-w-3xl text-center text-5xl md:text-[4.5rem] leading-[1.15] font-bold font-['Plus_Jakarta_Sans'] tracking-tight">
-            <span className="text-[#1A202C]">
+          <h1 className="mx-auto max-w-3xl text-center text-5xl md:text-[4.5rem] leading-[1.15] font-bold tracking-tight">
+            <span>
               Empower Your Campus
               <br />
               with{" "}
             </span>
-            <span className="text-[#0075FF]">µLearn</span>
+            <span className="text-mulearn">µLearn</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-5 mx-auto max-w-xl text-center text-[#1A202C] text-sm md:text-base font-medium font-['Plus_Jakarta_Sans'] leading-relaxed">
+          <p className="mt-5 mx-auto max-w-xl text-center text-sm md:text-base font-medium leading-relaxed">
             Become a µLearn Campus Enabler and join the movement!!
           </p>
 
@@ -74,22 +74,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4">
             {/* Explore Learners */}
             <Link href="https://app.mulearn.org/" target="_blank">
-              <Button
-                variant="outline"
-                className="h-[50px] w-72 sm:w-[200px] rounded-[10px] border border-indigo-300 bg-gray-100 text-sm font-bold font-['Plus_Jakarta_Sans'] text-gray-900 shadow-none hover:bg-gray-200 hover:text-gray-900"
-              >
+              <Button variant="outline" className="rounded-full">
                 Explore Learners
               </Button>
             </Link>
 
-            {/* Join as Enabler */}
             <Link href="https://app.mulearn.org/" target="_blank">
-              <Button
-                variant="default"
-                className="h-[50px] w-72 sm:w-[200px] rounded-[10px] border-none bg-blue-500 text-sm font-bold font-['Plus_Jakarta_Sans'] text-white shadow-none hover:bg-blue-600"
-              >
-                Join as Enabler
-              </Button>
+              <Button variant="default">Join as Enabler</Button>
             </Link>
           </div>
         </MotionDiv>

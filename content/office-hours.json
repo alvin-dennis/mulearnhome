@@ -1661,9 +1661,7 @@
       "description": "Most of us believe that learning is something that happens when we are taught.\n\nBut in reality, the most effective leaders are those who take ownership of their own growth—continuously learning, adapting, and improving without waiting for direction.\n\nJoin us for μLearn Office Hours, an insightful session on “Self-Regulated Learning Approaches” — where we explore how strategic leaders plan, monitor, and refine their learning journey to stay ahead and make better decisions.",
       "date": "27/03/2026",
       "link": " https://mulearn.org/r/sl-officehour",
-      "interestGroups": [
-        "strategic-leadership"
-      ]
+      "interestGroups": ["strategic-leadership"]
     },
     {
       "title": "Impact Project Discussion",
@@ -1671,9 +1669,7 @@
       "designation": "Mulearn Foundation",
       "date": "01/04/2026",
       "link": "https://mulearn.org/r/web-officehour",
-      "interestGroups": [
-        "web-development"
-      ]
+      "interestGroups": ["web-development"]
     },
     {
       "title": "Critical Thinking & Structured Decision-Making Methods",
@@ -1682,9 +1678,7 @@
       "description": "Good decisions don’t happen by chance—they are built through clear thinking.\n\nJoin us for the μLearn Office Hours on Critical Thinking & Structured Decision-Making Methods, where we explore how to analyze situations, think logically, and make well-informed decisions with confidence.\n",
       "date": "03/04/2026",
       "link": "https://mulearn.org/r/sl-officehour",
-      "interestGroups": [
-        "strategic-leadership"
-      ]
+      "interestGroups": ["strategic-leadership"]
     },
     {
       "title": "Vaazha 2 – Movie Talk",
@@ -1693,9 +1687,7 @@
       "description": "A discussion on the currently successful film Vaazha 2 — what’s working, audience response, and the storytelling behind its success.\n",
       "date": "03/04/2026",
       "link": "https://mulearn.org/r/muv-officehour",
-      "interestGroups": [
-        "muv"
-      ]
+      "interestGroups": ["muv"]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 17) ",
@@ -1704,18 +1696,14 @@
       "description": "Learn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n",
       "date": "03/04/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": [
-        "game-dev"
-      ]
+      "interestGroups": ["game-dev"]
     },
     {
       "title": "Quiz Night",
       "performer": "IG LEADS",
       "date": "04/04/2026",
       "link": "https://mulearn.org/r/sp-officehour",
-      "interestGroups": [
-        "space"
-      ]
+      "interestGroups": ["space"]
     },
     {
       "title": "COMICS DISCUSSION",
@@ -1723,9 +1711,7 @@
       "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
       "date": "04/04/2026",
       "link": "https://mulearn.org/r/cm-officehour",
-      "interestGroups": [
-        "comics"
-      ]
+      "interestGroups": ["comics"]
     },
     {
       "title": "Impact Project Discussion",
@@ -1733,9 +1719,7 @@
       "designation": "UI/UX IG Lead - µLearn Foundation",
       "date": "07/04/2026",
       "link": "mulearn.org/r/uiux-officehour",
-      "interestGroups": [
-        "ui-ux"
-      ]
+      "interestGroups": ["ui-ux"]
     },
     {
       "title": "General Discussion",
@@ -1743,9 +1727,7 @@
       "designation": "DSA IG Lead",
       "date": "09/04/2026",
       "link": "https://mulearn.org/r/dsa-officehour/",
-      "interestGroups": [
-        "dsa"
-      ]
+      "interestGroups": ["dsa"]
     },
     {
       "title": "Image Segmentation Decoded II",
@@ -1753,9 +1735,7 @@
       "designation": "MD, Supe AI",
       "date": "09/04/2026",
       "link": "http://mulearn.org/r/ai-officehour/",
-      "interestGroups": [
-        "ai"
-      ]
+      "interestGroups": ["ai"]
     },
     {
       "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 18) ",
@@ -1764,9 +1744,7 @@
       "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 18) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.",
       "date": "10/04/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
-      "interestGroups": [
-        "game-dev"
-      ]
+      "interestGroups": ["game-dev"]
     },
     {
       "title": "Upcoming New Stars of Vaazha 2 ",
@@ -1775,9 +1753,7 @@
       "description": "A discussion on the rising talents of Vaazha 2 — their performances, potential, and what they bring to the future of cinema.",
       "date": "10/04/2026",
       "link": "https://mulearn.org/r/muv-officehour⁠",
-      "interestGroups": [
-        "muv"
-      ]
+      "interestGroups": ["muv"]
     },
     {
       "title": " Team Coordination",
@@ -1786,9 +1762,7 @@
       "description": "Working in a team is common—working well as a team is a skill.\n\nJoin us for the μLearn Office Hours on Team Coordination, where we explore how effective communication, collaboration, and alignment help teams perform better together.",
       "date": "10/04/2026",
       "link": "https://mulearn.org/r/sl-officehour⁠",
-      "interestGroups": [
-        "strategic-leadership"
-      ]
+      "interestGroups": ["strategic-leadership"]
     },
     {
       "title": "Space, Screens & Us | Artemis II Return Live ",
@@ -1796,18 +1770,14 @@
       "description": "A Session Regarding Artemis II, Current Space News   ",
       "date": "11/04/2026",
       "link": "mulearn.org/r/sp-officehour",
-      "interestGroups": [
-        "space"
-      ]
+      "interestGroups": ["space"]
     },
     {
       "title": "Quiz On Communication Protocols",
       "performer": "Core Team",
       "date": "12/04/2026",
       "link": "mulearn.org/r/iot-officehour",
-      "interestGroups": [
-        "iot-robotics"
-      ],
+      "interestGroups": ["iot-robotics"],
       "poster_thumbnail": "/assets/events/OH - Sunday- Post.png"
     }
   ]
