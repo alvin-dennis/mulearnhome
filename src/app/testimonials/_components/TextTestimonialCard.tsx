@@ -4,7 +4,6 @@ import axios from "axios";
 import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import MuImage from "@/components/MuImage";
-import { CardFooter } from "@/components/ui/card";
 import { clientEnv } from "@/lib/env/env.client";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -51,13 +50,13 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
 
   const getTypeColor = (type: TextTestimonial["type"]) => {
     switch (type) {
-      case "learner":
+      case "academia":
         return "bg-mulearn-trusty-blue text-mulearn-whitish";
-      case "mentor":
+      case "industry":
         return "bg-mulearn-duke-purple text-mulearn-whitish";
-      case "partner":
+      case "government":
         return "bg-mulearn-gray-600 text-mulearn-whitish";
-      case "community-leader":
+      case "civic-society":
         return "bg-mulearn-trusty-blue text-mulearn-whitish";
       default:
         return "bg-mulearn-gray-500 text-mulearn-whitish";
@@ -66,14 +65,14 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
 
   const getTypeLabel = (type: TextTestimonial["type"]) => {
     switch (type) {
-      case "learner":
-        return "Learner";
-      case "mentor":
-        return "Mentor";
-      case "partner":
-        return "Partner";
-      case "community-leader":
-        return "Community Leader";
+      case "academia":
+        return "Academia";
+      case "industry":
+        return "Industry";
+      case "government":
+        return "Government";
+      case "civic-society":
+        return "Civic Society";
       default:
         return type;
     }

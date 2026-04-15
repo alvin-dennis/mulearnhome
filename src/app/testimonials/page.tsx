@@ -8,14 +8,14 @@ import CountUp from "react-countup";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
-import type { Counts, TextTestimonial, VideoTestimonial } from "@/lib/types";
+import type { Counts } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
 import TextTestimonialsGrid, { type TextFilterType } from "./_components/TextTestimonialsGrid";
 import VideoCarousel from "./_components/VideoCarousel";
 
 export default function TestimonialsPage() {
-  const [videoTestimonialData] = useState<VideoTestimonial[]>(testimonials.video);
-  const [textTestimonialData] = useState<TextTestimonial[]>(testimonials.text);
+  const videoTestimonialData = testimonials.video;
+  const textTestimonialData = testimonials.text;
   const [activeTab, setActiveTab] = useState<"video" | "text">("video");
   const [categoryFilter, setCategoryFilter] = useState<TextFilterType>("all");
   const redirect = useRedirectToApp();

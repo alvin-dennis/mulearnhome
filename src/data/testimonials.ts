@@ -63,7 +63,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "https://placehold.co/600x600/AF2EE6/ffffff.png?text=AJ",
     quote:
       "I was first drawn to µLearn seeing my seniors succeed during the pandemic, and my initial goal was simple: earn karma points. But it quickly became about so much more than points. The learning circles provided a collaborative space where I could consistently build real skills and develop a professional mindset. When I joined the Launchpad program, everything came together. The interview wasn't about what I knew, but what I had done. My 'proof of work, built entirely within the µLearn community, was the key that helped me land my current role. µLearn provided the ecosystem to turn learning into a career.",
-    type: "learner",
+    type: "academia",
     rating: 5,
     date: "2025-07-17",
     socialProof: "Posted on Instagram",
@@ -77,7 +77,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "https://placehold.co/600x600/AF2EE6/ffffff.png?text=AV",
     quote:
       "My µLearn journey began at the GTA Codestorm hackathon, where I first discovered the community and the concept of karma points. I quickly got immersed in the Discord server, not just for the tasks, but for the late-night tech discussions and the connections I made. It became a space where someone was always ready to help whenever I got stuck. After college, Launchpad provided the perfect next step, and I began focusing my efforts on its tasks. That focus paid off, leading directly to interviews where my skills and even my karma points were valued, guiding me to my current role as a Junior Software Engineer.",
-    type: "learner",
+    type: "academia",
     rating: 5,
     date: "2025-07-18",
     socialProof: "Posted on Instagram",
@@ -91,7 +91,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/balagopal.webp",
     quote:
       "Reaching 16,000 students in its first year of operation demonstrates µLearn's influence and its potential for growth.",
-    type: "partner",
+    type: "government",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -105,7 +105,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/biju.webp",
     quote:
       "Concentrating technology, not at a single spot but making it accessible to everyone is the speciality of GTech µLearn.",
-    type: "partner",
+    type: "academia",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -119,7 +119,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/ksum.webp",
     quote:
       "µLearn helps to accelerate learning and discover the potential of every student so that they build their skills relevant to their passion and gain confidence and self efficacy.",
-    type: "partner",
+    type: "industry",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -132,7 +132,7 @@ export const textTestimonials: TextTestimonial[] = [
     muid: "",
     profileImage: "/assets/testimonials/kdu.webp",
     quote: "µLearn provides a revolutionalised way of learning in a very experienced manner.",
-    type: "partner",
+    type: "academia",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -146,7 +146,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/google.webp",
     quote:
       "Partnership with µLearn will strengthen our work in Kerala, especially in the space of educators and the student community.",
-    type: "partner",
+    type: "industry",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -160,7 +160,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/tata.webp",
     quote:
       "There is no doubt that µLearn will play an important role in sustainable development, job security, and the formation and growth of new industries in Kerala. This can be witnessed in the coming years.",
-    type: "partner",
+    type: "industry",
     rating: 5,
     date: "2024-01-01",
     socialProof: "Community",
@@ -174,7 +174,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/cto.webp",
     quote:
       "I began my journey at an In50Hrs event, and it has played a pivotal role in shaping who I am today. At µLearn, I see everyone in capable hands, sharing similar exposure and experiences. Make the most of it.",
-    type: "mentor",
+    type: "industry",
     rating: 5,
     date: "2024-01-01",
     socialProof: "LinkedIn",
@@ -188,7 +188,7 @@ export const textTestimonials: TextTestimonial[] = [
     profileImage: "/assets/testimonials/pathway.webp",
     quote:
       "µLearn has been our first partner in India. We have also collaborated with IITs and other premier institutions in the country. The conversion rates we achieved with µLearn are the best. I am inspired by what µLearn does.",
-    type: "partner",
+    type: "industry",
     rating: 5,
     date: "2024-01-01",
     socialProof: "LinkedIn",

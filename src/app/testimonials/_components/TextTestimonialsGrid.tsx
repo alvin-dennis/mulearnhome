@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import type { TextTestimonial } from "@/lib/types";
 import TextTestimonialCard from "./TextTestimonialCard";
 
-export type TextFilterType = "all" | "learner" | "mentor" | "partner" | "community-leader";
+export type TextFilterType = "all" | "academia" | "industry" | "government" | "civic-society";
 
 interface TextTestimonialsGridProps {
   testimonials: TextTestimonial[];
@@ -31,10 +31,10 @@ export default function TextTestimonialsGrid({
 
   const filterOptions: { value: TextFilterType; label: string }[] = [
     { value: "all", label: "All" },
-    { value: "learner", label: "Learners" },
-    { value: "mentor", label: "Mentors" },
-    { value: "partner", label: "Partners" },
-    { value: "community-leader", label: "Community Leaders" },
+    { value: "academia", label: "Academia" },
+    { value: "industry", label: "Industry" },
+    { value: "government", label: "Government" },
+    { value: "civic-society", label: "Civic Society" },
   ];
 
   const containerVariants = {
@@ -123,9 +123,7 @@ export default function TextTestimonialsGrid({
             animate={{ opacity: 1 }}
             className="col-span-full text-center py-20"
           >
-            <p className="text-mulearn-gray-600 text-lg">
-              No {filter === "all" ? "" : filter.replace("-", " ")} testimonials found.
-            </p>
+            <p className="text-mulearn-gray-600 text-lg">No testimonials found in this category.</p>
           </MotionDiv>
         )}
       </MotionDiv>

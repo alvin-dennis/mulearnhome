@@ -17,7 +17,7 @@ const Success = () => {
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center pt-20">
             <span className="text-mulearn-blackish">Success Stories From </span>
-            <span className="text-mulearn">µLearn community</span>
+            <span className="text-mulearn">µLearn partners</span>
           </h1>
         </MotionDiv>
 

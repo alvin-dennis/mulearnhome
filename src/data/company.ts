@@ -255,15 +255,6 @@ export const CompanyPartner = [
 export const SuccessStories = [
   {
     id: "t1",
-    name: "Shri K N Balagopal",
-    role: "Minister for Finance",
-    company: "Government of Kerala",
-    profileImage: "/assets/testimonials/balagopal.webp",
-    quote:
-      "Reaching 16,000 students in its first year of operation demonstrates µLearn's influence and its potential for growth.",
-  },
-  {
-    id: "t2",
     name: "Dr. P K Biju",
     role: "Syndicate Member",
     company: "APJ Abdul Kalam Technological University",
@@ -272,7 +263,7 @@ export const SuccessStories = [
       "Concentrating technology, not at a single spot but making it accessible to everyone is the speciality of GTech µLearn.",
   },
   {
-    id: "t3",
+    id: "t2",
     name: "Shri. Anoop Ambika",
     role: "Chief Executive Officer",
     company: "Kerala Startup Mission",
@@ -281,7 +272,7 @@ export const SuccessStories = [
       "µLearn helps to accelerate learning and discover the potential of every student so that they build their skills relevant to their passion and gain confidence and self efficacy.",
   },
   {
-    id: "t4",
+    id: "t3",
     name: "Dr. Saji Gopinath",
     role: "Vice Chancellor",
     company: "Kerala Digital University",
@@ -289,7 +280,7 @@ export const SuccessStories = [
     quote: "µLearn provides a revolutionalised way of learning in a very experienced manner.",
   },
   {
-    id: "t5",
+    id: "t4",
     name: "Farish C V",
     role: "Program Manager",
     company: "Google for Startups Accelerator",
@@ -298,7 +289,7 @@ export const SuccessStories = [
       "Partnership with µLearn will strengthen our work in Kerala, especially in the space of educators and the student community.",
   },
   {
-    id: "t6",
+    id: "t5",
     name: "Shri. Sreekumar V",
     role: "Secretary, GTech & Center Head",
     company: "Tata Elxsi",
@@ -307,7 +298,7 @@ export const SuccessStories = [
       "There is no doubt that µLearn will play an important role in sustainable development, job security, and the formation and growth of new industries in Kerala. This can be witnessed in the coming years.",
   },
   {
-    id: "t7",
+    id: "t6",
     name: "Ajeesh Achuthan",
     role: "Co-founder & CTO",
     company: "Open Finance",
@@ -316,7 +307,7 @@ export const SuccessStories = [
       "I began my journey at an In50Hrs event, and it has played a pivotal role in shaping who I am today. At µLearn, I see everyone in capable hands, sharing similar exposure and experiences. Make the most of it.",
   },
   {
-    id: "t8",
+    id: "t7",
     name: "Mudit Srivastava",
     role: "Growth Manager",
     company: "Pathway",
