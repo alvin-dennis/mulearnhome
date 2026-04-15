@@ -2,21 +2,22 @@
 
 import { MessageCircle, Star, TrendingUp, Users, Video } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
+
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
-import MuLoader from "@/components/MuLoader";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import type { Counts, TextTestimonial, VideoTestimonial } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
-import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
+import TextTestimonialsGrid, { type TextFilterType } from "./_components/TextTestimonialsGrid";
 import VideoCarousel from "./_components/VideoCarousel";
 
 export default function TestimonialsPage() {
-  const [videoTestimonialData, setVideoTestimonialData] = useState<VideoTestimonial[]>([]);
-  const [textTestimonialData, setTextTestimonialData] = useState<TextTestimonial[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [videoTestimonialData] = useState<VideoTestimonial[]>(testimonials.video);
+  const [textTestimonialData] = useState<TextTestimonial[]>(testimonials.text);
   const [activeTab, setActiveTab] = useState<"video" | "text">("video");
+  const [categoryFilter, setCategoryFilter] = useState<TextFilterType>("all");
   const redirect = useRedirectToApp();
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
@@ -24,90 +25,54 @@ export default function TestimonialsPage() {
     setRefreshToken(localStorage.getItem("refreshToken"));
   }, []);
 
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        setLoading(true);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        setVideoTestimonialData(testimonials.video);
-        setTextTestimonialData(testimonials.text);
-      } catch (error) {
-        console.error("Failed to load testimonials:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTestimonials();
-  }, []);
-
-  // Live counts websocket (same feed used by Stats.tsx) so numbers stay up-to-date
   const [counts, setCounts] = useState<Counts | null>(null);
-  const socketRef = useState<{ current: WebSocket | null }>({ current: null });
+  const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    if (!socketRef[0].current) {
-      try {
-        const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
-        socketRef[0].current = socket;
-        const handleMessage = (event: MessageEvent) => {
-          try {
-            setCounts(JSON.parse(event.data) as Counts);
-          } catch (e) {
-            void e;
-          }
-        };
-        const handleError = (ev: Event) => void ev;
-        socket.addEventListener("message", handleMessage);
-        socket.addEventListener("error", handleError);
-        return () => {
-          socket.removeEventListener("message", handleMessage);
-          socket.removeEventListener("error", handleError);
-          socket.close();
-          socketRef[0].current = null;
-        };
-      } catch (e) {
-        void e;
-      }
-    }
-  }, [socketRef[0]]);
+    if (!socketRef.current) {
+      const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
+      socketRef.current = socket;
 
-  const formatNumber = (n: number | undefined) => {
-    if (n == null) return "0";
-    if (n >= 1000000) return `${Math.floor(n / 1000000)}M+`;
-    if (n >= 1000) return `${n.toLocaleString()}+`;
-    return `${String(n)}+`;
-  };
+      const handleMessage = (event: MessageEvent) => {
+        setCounts(JSON.parse(event.data) as Counts);
+      };
+
+      const handleError = (event: Event) => {
+        void event;
+      };
+
+      socket.addEventListener("message", handleMessage);
+      socket.addEventListener("error", handleError);
+
+      return () => {
+        socket.removeEventListener("message", handleMessage);
+        socket.removeEventListener("error", handleError);
+        socket.close();
+        socketRef.current = null;
+      };
+    }
+  }, []);
 
   const stats = counts
     ? [
-        { icon: Users, number: formatNumber(counts.members), label: "Active Learners" },
+        {
+          icon: Users,
+          value: counts.members,
+          label: "Active Learners",
+        },
         {
           icon: Star,
-          number: formatNumber(
-            counts.enablers_mentors_count?.reduce(
-              (s: number, r: { role_count?: number }) => s + (r.role_count || 0),
-              0,
-            ) || 0,
-          ),
+          value:
+            counts.enablers_mentors_count?.find((r) => r.role__title === "Mentor")?.role_count || 0,
           label: "Expert Mentors",
         },
         {
           icon: TrendingUp,
-          number: formatNumber(
-            counts.org_type_counts?.reduce(
-              (s: number, o: { org_count?: number }) => s + (o.org_count || 0),
-              0,
-            ) || 0,
-          ),
+          value: counts.org_type_counts?.find((o) => o.org_type === "Company")?.org_count || 0,
           label: "Partner Companies",
         },
       ]
-    : [
-        { icon: Users, number: "50K+", label: "Active Learners" },
-        { icon: Star, number: "500+", label: "Expert Mentors" },
-        { icon: TrendingUp, number: "100+", label: "Partner Companies" },
-      ];
+    : [];
 
   return (
     <div className="min-h-screen">
@@ -137,27 +102,31 @@ export default function TestimonialsPage() {
               future of learning
             </MotionP>
 
-            <MotionDiv
-              className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              {stats.map((stat) => {
-                const Icon = stat.icon;
-                return (
-                  <div key={stat.label} className="text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-mulearn rounded-xl mx-auto mb-3">
-                      <Icon className="w-6 h-6 text-mulearn-whitish" />
+            {stats.length > 0 && (
+              <MotionDiv
+                className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {stats.map((stat) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div key={stat.label} className="text-center group">
+                      <div className="flex items-center justify-center w-12 h-12 bg-mulearn rounded-xl mx-auto mb-3 group-hover:bg-mulearn-blackish transition-colors">
+                        <Icon className="w-6 h-6 text-mulearn-whitish" />
+                      </div>
+                      <div className=" text-2xl font-bold text-mulearn-blackish">
+                        <CountUp end={stat.value} duration={2.5} separator="," />
+                      </div>
+                      <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide group-hover:text-mulearn transition-colors">
+                        {stat.label}
+                      </div>
                     </div>
-                    <div className=" text-2xl font-bold text-mulearn-blackish">{stat.number}</div>
-                    <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide">
-                      {stat.label}
-                    </div>
-                  </div>
-                );
-              })}
-            </MotionDiv>
+                  );
+                })}
+              </MotionDiv>
+            )}
           </MotionDiv>
         </div>
       </div>
@@ -191,57 +160,45 @@ export default function TestimonialsPage() {
         </div>
       </div>
 
-      <div className="py-12 sm:py-20">
-        {loading ? (
-          <div className="flex flex-col items-center justify-center py-32">
-            <MuLoader />
-            <MotionP
-              className="text-xl text-mulearn-gray-600 font-medium "
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Loading inspiring stories...
-            </MotionP>
+      <div id="testimonials-section" className="py-12 sm:py-20">
+        {activeTab === "video" && videoTestimonialData.length > 0 && (
+          <VideoCarousel testimonials={videoTestimonialData} />
+        )}
+        {activeTab === "text" && textTestimonialData.length > 0 && (
+          <div className="max-w-7xl mx-auto px-6">
+            <TextTestimonialsGrid
+              testimonials={textTestimonialData}
+              activeFilter={categoryFilter}
+              onFilterChange={setCategoryFilter}
+            />
           </div>
-        ) : (
-          <>
-            {activeTab === "video" && videoTestimonialData.length > 0 && (
-              <VideoCarousel testimonials={videoTestimonialData} />
-            )}
-            {activeTab === "text" && textTestimonialData.length > 0 && (
-              <div className="max-w-7xl mx-auto px-6">
-                <TextTestimonialsGrid testimonials={textTestimonialData} />
-              </div>
-            )}
-            {activeTab === "video" && videoTestimonialData.length === 0 && (
-              <div className="max-w-2xl mx-auto px-6 text-center py-32">
-                <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Video className="w-10 h-10 text-mulearn-gray-400" />
-                </div>
-                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
-                  No Video Testimonials Available
-                </h3>
-                <p className="text-mulearn-gray-500  text-lg">
-                  Check back soon for video testimonials from our community members.
-                </p>
-              </div>
-            )}
+        )}
+        {activeTab === "video" && videoTestimonialData.length === 0 && (
+          <div className="max-w-2xl mx-auto px-6 text-center py-32">
+            <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Video className="w-10 h-10 text-mulearn-gray-400" />
+            </div>
+            <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
+              No Video Testimonials Available
+            </h3>
+            <p className="text-mulearn-gray-500  text-lg">
+              Check back soon for video testimonials from our community members.
+            </p>
+          </div>
+        )}
 
-            {activeTab === "text" && textTestimonialData.length === 0 && (
-              <div className="max-w-2xl mx-auto px-6 text-center py-32">
-                <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="w-10 h-10 text-mulearn-gray-400" />
-                </div>
-                <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
-                  No Text Testimonials Available
-                </h3>
-                <p className="text-mulearn-gray-500  text-lg">
-                  Check back soon for community feedback and stories.
-                </p>
-              </div>
-            )}
-          </>
+        {activeTab === "text" && textTestimonialData.length === 0 && (
+          <div className="max-w-2xl mx-auto px-6 text-center py-32">
+            <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <MessageCircle className="w-10 h-10 text-mulearn-gray-400" />
+            </div>
+            <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
+              No Text Testimonials Available
+            </h3>
+            <p className="text-mulearn-gray-500  text-lg">
+              Check back soon for community feedback and stories.
+            </p>
+          </div>
         )}
       </div>
 

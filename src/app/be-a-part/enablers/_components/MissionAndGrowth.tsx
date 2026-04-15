@@ -81,21 +81,26 @@ export default function MissionandGrowth() {
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp} className="w-full">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 mt-6 px-4 sm:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-9 mt-6 px-4 sm:px-8">
               <StatCard value={counts.members} label="Members" />
               <StatCard value={counts.learning_circle_count} label="Learning Circles" />
-              {counts.org_type_counts.map((org) => (
-                <StatCard
-                  key={org.org_type}
-                  value={org.org_count}
-                  label={
-                    org.org_type.endsWith("y")
-                      ? `${org.org_type.slice(0, -1)}ies`
-                      : `${org.org_type}s`
-                  }
-                />
-              ))}
-              <StatCard value={counts.karma_pow_count.karma_count} label="Total Karma Mined" />
+              {counts.org_type_counts
+                .filter(
+                  (org) =>
+                    org.org_type.toLowerCase() === "college" ||
+                    org.org_type.toLowerCase() === "community",
+                )
+                .map((org) => (
+                  <StatCard
+                    key={org.org_type}
+                    value={org.org_count}
+                    label={
+                      org.org_type.endsWith("y")
+                        ? `${org.org_type.slice(0, -1)}ies`
+                        : `${org.org_type}s`
+                    }
+                  />
+                ))}
               {counts.enablers_mentors_count.map((role) => (
                 <StatCard
                   key={role.role__title}
@@ -125,7 +130,7 @@ function StatCard({
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
         {isString ? value : <CountUp end={value as number} duration={5} separator="," />}
       </p>
-      <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
+      <p className="text-sm sm:text-base font-medium mt-1">{label}</p>
     </div>
   );
 }
