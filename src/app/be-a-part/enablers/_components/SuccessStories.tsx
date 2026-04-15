@@ -7,7 +7,7 @@ import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { enablers } from "@/data/enablers";
 
 import "swiper/css";
@@ -32,6 +32,7 @@ const getEmbedUrl = (url: string) => {
 
     if (start) embedUrl.searchParams.set("start", start.replace("s", ""));
     if (si) embedUrl.searchParams.set("si", si);
+    embedUrl.searchParams.set("autoplay", "1");
 
     return embedUrl.toString();
   } catch {
@@ -74,6 +75,10 @@ function VideoCard({ story }: { story: (typeof stories)[0] }) {
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-6xl w-[90vw] px-2 pt-10">
+          <DialogTitle className="sr-only">{story.name} success story</DialogTitle>
+          <DialogDescription className="sr-only">
+            Youtube video of {story.name} sharing their success story.
+          </DialogDescription>
           <div className="mt-2 flex flex-col gap-4">
             <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
               <iframe
