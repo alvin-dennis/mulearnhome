@@ -94,10 +94,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 26,
-      "prs_opened": 8,
-      "prs_merged": 8,
-      "points": 42,
+      "commits": 31,
+      "prs_opened": 11,
+      "prs_merged": 11,
+      "points": 53,
       "displayname": "Alvin Dennis"
     },
     {
@@ -115,6 +115,14 @@
       "prs_merged": 4,
       "points": 22,
       "displayname": "Amith Abey Stephen"
+    },
+    {
+      "username": "sachin-raj-m",
+      "commits": 16,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "points": 16,
+      "displayname": "Sachin Raj"
     },
     {
       "username": "awindsr",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 4,
       "displayname": "Sharon Shaji"
-    },
-    {
-      "username": "Sidharth-sk-809",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 0,
-      "points": 3,
-      "displayname": "Sidharth s kumar"
     }
   ]
 }
