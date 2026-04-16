@@ -233,7 +233,7 @@ export interface TextTestimonial {
   muid?: string;
   profileImage: string;
   quote: string;
-  type: "learner" | "mentor" | "partner" | "community-leader";
+  type: "academia" | "industry" | "government" | "civic-society";
   rating: number;
   date: string;
   socialProof?: string;

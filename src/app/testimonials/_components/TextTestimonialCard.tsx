@@ -4,7 +4,6 @@ import axios from "axios";
 import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import MuImage from "@/components/MuImage";
-import { CardFooter } from "@/components/ui/card";
 import { clientEnv } from "@/lib/env/env.client";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -51,13 +50,13 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
 
   const getTypeColor = (type: TextTestimonial["type"]) => {
     switch (type) {
-      case "learner":
+      case "academia":
         return "bg-mulearn-trusty-blue text-mulearn-whitish";
-      case "mentor":
+      case "industry":
         return "bg-mulearn-duke-purple text-mulearn-whitish";
-      case "partner":
+      case "government":
         return "bg-mulearn-gray-600 text-mulearn-whitish";
-      case "community-leader":
+      case "civic-society":
         return "bg-mulearn-trusty-blue text-mulearn-whitish";
       default:
         return "bg-mulearn-gray-500 text-mulearn-whitish";
@@ -66,14 +65,14 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
 
   const getTypeLabel = (type: TextTestimonial["type"]) => {
     switch (type) {
-      case "learner":
-        return "Learner";
-      case "mentor":
-        return "Mentor";
-      case "partner":
-        return "Partner";
-      case "community-leader":
-        return "Community Leader";
+      case "academia":
+        return "Academia";
+      case "industry":
+        return "Industry";
+      case "government":
+        return "Government";
+      case "civic-society":
+        return "Civic Society";
       default:
         return type;
     }
@@ -101,45 +100,47 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
     });
 
   return (
-    <div className="bg-mulearn-whitish rounded-2xl border border-mulearn-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full overflow-hidden">
-            <MuImage
-              src={profileImage ?? testimonial.profileImage}
-              alt={testimonial.name}
-              width={48}
-              height={48}
-              className="w-full h-full object-cover rounded-full"
-              unoptimized
-            />
+    <div className="flex flex-col bg-mulearn-whitish rounded-2xl border border-mulearn-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      <div className="flex-none">
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full overflow-hidden flex-none">
+              <MuImage
+                src={profileImage ?? testimonial.profileImage}
+                alt={testimonial.name}
+                width={48}
+                height={48}
+                className="w-full h-full object-cover rounded-full"
+                unoptimized
+              />
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-mulearn-blackish">{testimonial.name}</h3>
+              <p className="text-sm text-mulearn-gray-600">
+                {testimonial.role}
+                {testimonial.company && ` • ${testimonial.company}`}
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3 className="font-semibold text-mulearn-blackish">{testimonial.name}</h3>
-            <p className="text-sm text-mulearn-gray-600">
-              {testimonial.role}
-              {testimonial.company && ` • ${testimonial.company}`}
-            </p>
+          <div
+            className={cn(
+              "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide flex-none",
+              getTypeColor(testimonial.type),
+            )}
+          >
+            {getTypeLabel(testimonial.type)}
           </div>
         </div>
 
-        <div
-          className={cn(
-            "px-2 py-1 rounded-full text-xs font-semibold uppercase tracking-wide",
-            getTypeColor(testimonial.type),
-          )}
-        >
-          {getTypeLabel(testimonial.type)}
-        </div>
+        <blockquote className="mb-4">
+          <p className="text-mulearn-gray-600 leading-relaxed">&quot;{testimonial.quote}&quot;</p>
+        </blockquote>
       </div>
 
-      <blockquote className="mb-4">
-        <p className="text-mulearn-gray-600 leading-relaxed">&quot;{testimonial.quote}&quot;</p>
-      </blockquote>
-
-      <CardFooter className="pt-0">
-        <div className="flex items-center justify-between pt-4 border-t border-mulearn-gray-100">
+      <div className="flex-none mt-auto pt-4 border-t border-mulearn-gray-100">
+        <div className="flex items-center justify-between">
           <StarRating rating={testimonial.rating} />
 
           <div className="flex items-center gap-2 text-sm text-mulearn-gray-600">
@@ -152,7 +153,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
             <span>{formatDate(testimonial.date)}</span>
           </div>
         </div>
-      </CardFooter>
+      </div>
     </div>
   );
 }

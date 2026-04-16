@@ -94,10 +94,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 26,
-      "prs_opened": 8,
-      "prs_merged": 8,
-      "points": 42,
+      "commits": 44,
+      "prs_opened": 14,
+      "prs_merged": 14,
+      "points": 72,
       "displayname": "Alvin Dennis"
     },
     {
@@ -117,6 +117,22 @@
       "displayname": "Amith Abey Stephen"
     },
     {
+      "username": "sachin-raj-m",
+      "commits": 20,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "points": 20,
+      "displayname": "Sachin Raj"
+    },
+    {
+      "username": "Devika123098",
+      "commits": 11,
+      "prs_opened": 4,
+      "prs_merged": 3,
+      "points": 18,
+      "displayname": "Devika Dileep"
+    },
+    {
       "username": "awindsr",
       "commits": 14,
       "prs_opened": 0,
@@ -133,12 +149,12 @@
       "displayname": "Salvin Sebastian"
     },
     {
-      "username": "Devika123098",
-      "commits": 5,
-      "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 10,
-      "displayname": "Devika Dileep"
+      "username": "codiing-5",
+      "commits": 4,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 7,
+      "displayname": "Rojan Jose"
     },
     {
       "username": "Nayadrika787",
@@ -147,22 +163,6 @@
       "prs_merged": 1,
       "points": 5,
       "displayname": "Nayana_Sen"
-    },
-    {
-      "username": "shaderone",
-      "commits": 0,
-      "prs_opened": 4,
-      "prs_merged": 0,
-      "points": 4,
-      "displayname": "Sharon Shaji"
-    },
-    {
-      "username": "Sidharth-sk-809",
-      "commits": 0,
-      "prs_opened": 3,
-      "prs_merged": 0,
-      "points": 3,
-      "displayname": "Sidharth s kumar"
     }
   ]
 }

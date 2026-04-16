@@ -2,7 +2,6 @@ import CTA from "@/app/be-a-part/learners/_components/CTA";
 import Hero from "@/app/be-a-part/learners/_components/Hero";
 import Intro from "@/app/be-a-part/learners/_components/Intro";
 import Onboarding from "@/app/be-a-part/learners/_components/Onboarding";
-import CompanyPartners from "@/app/be-a-part/learners/_components/Partners";
 import Ranking from "@/app/be-a-part/learners/_components/Ranking";
 import Status from "@/app/be-a-part/learners/_components/Status";
 import WhatYouGet from "@/app/be-a-part/learners/_components/WhatYouGet";
@@ -29,14 +28,11 @@ export default function LearnersPage() {
       <section id="what-you-get" className="py-12 md:py-16">
         <WhatYouGet />
       </section>
-      <section id="company-partners" className="py-12 md:py-16">
-        <CompanyPartners />
-      </section>
       <section id="why-karma-points" className="py-12 md:py-16">
         <WhyKarmaPoints />
       </section>
       <section id="onboarding" className="py-12 md:py-16 container mx-auto px-4">
-        <h2 className="text-center mb-8 md:mb-12 text-4xl md:text-5xl font-bold text-black">
+        <h2 className="text-center mb-8 md:mb-12 text-4xl md:text-5xl font-bold">
           How to Begin Your Journey
         </h2>
         <Onboarding data={onboardingSteps} />

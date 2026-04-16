@@ -1,7 +1,7 @@
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
-import { SucessStories } from "@/data/company";
+import { SuccessStories } from "@/data/company";
 import { cdnUrl } from "@/services/cdn";
 
 const Success = () => {
@@ -17,7 +17,7 @@ const Success = () => {
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center pt-20">
             <span className="text-mulearn-blackish">Success Stories From </span>
-            <span className="text-mulearn">µLearn community</span>
+            <span className="text-mulearn">µLearn partners</span>
           </h1>
         </MotionDiv>
 
@@ -46,23 +46,22 @@ const Success = () => {
             }}
             className="flex gap-8 mt-10 w-max"
           >
-            {[...SucessStories].map((feature, index) => (
+            {[...SuccessStories].map((feature) => (
               <Card
-                key={`${feature.image}-${index}`}
+                key={`${feature.id}`}
                 className="w-[320px] shrink-0 flex flex-col border-mulearn/10 bg-gradient-to-br from-mulearn-whitish to-mulearn/5"
               >
                 <CardContent className="flex flex-col items-center p-6 flex-1">
                   <MuImage
-                    src={feature.image || fallbackImage}
-                    alt={feature.title}
+                    src={feature.profileImage || fallbackImage}
+                    alt={feature.name}
                     width={100}
                     height={100}
                     className="rounded-full"
                   />
-                  <h3 className="text-xl font-bold text-center mt-4">{feature.title}</h3>
-                  <p className="text-center font-medium text-sm mt-2 flex-1">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-xl font-bold text-center mt-4">{feature.name}</h3>
+                  <p className="text-center font-medium text-sm">{feature.role}</p>
+                  <p className="text-center font-medium text-sm mt-2 flex-1">{feature.quote}</p>
                 </CardContent>
               </Card>
             ))}

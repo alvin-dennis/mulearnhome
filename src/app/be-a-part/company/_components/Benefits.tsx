@@ -63,7 +63,9 @@ const Benefits = () => {
                 className="h-full border-mulearn/10 bg-mulearn-whitish z-10 relative"
               >
                 <CardContent className="flex flex-col gap-5 p-6">
-                  <MuImage src={feature.image} alt={feature.title} width={60} height={60} />
+                  {feature.icon && (
+                    <feature.icon className="w-12 h-12 text-mulearn" strokeWidth={1.5} />
+                  )}
 
                   <MotionH1
                     className="text-xl sm:text-2xl font-bold text-mulearn-trusty-blue text-left leading-tight"
