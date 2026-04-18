@@ -2321,6 +2321,17 @@
       "interestGroups": [
         "comics"
       ]
+    },
+    {
+      "title": "INTRODUCTION TO PCB DESIGNING",
+      "performer": "Gokul R",
+      "designation": "Tech Content Creator ",
+      "date": "19/04/2026",
+      "link": "mulearn.org/r/iot-officehour",
+      "interestGroups": [
+        "iot-robotics"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Sunday- Post.png"
     }
   ]
 }
