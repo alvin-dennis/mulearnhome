@@ -3,6 +3,11 @@ import { MotionDiv } from "@/components/MuFramer";
 import { galleryEvents } from "@/data/gallery";
 import { GalleryClient } from "./_components";
 
+export const metadata = {
+  title: "Gallery | µLearn",
+  description: "Explore moments from µLearn events across campuses and communities.",
+};
+
 export const dynamic = "force-dynamic";
 
 export default function GalleryPage() {
