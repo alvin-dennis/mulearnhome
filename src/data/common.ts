@@ -45,6 +45,10 @@ export const navItems = [
           label: "Socials",
           href: "/socials",
         },
+        {
+          label: "Gallery",
+          href: "/gallery",
+        },
         // { label: "ANNUAL REPORTS",
         //   href: "/reports"
         // },
