@@ -1,11 +1,17 @@
 import type { LucideIcon } from "lucide-react";
 import { Building2, HelpCircle, Lightbulb, Target } from "lucide-react";
 import { cdnUrl } from "@/services/cdn";
+import collegesData from "./colleges.json";
 
 export interface EnablerFeature {
   text: string;
   icon: LucideIcon;
 }
+
+export const colleges = collegesData.map((college: { code: string; title: string }) => ({
+  code: college.code,
+  title: college.title,
+}));
 
 export const enablers = {
   benefits: [

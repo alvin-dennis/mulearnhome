@@ -1,33 +1,49 @@
+import { Card } from "@/components/ui/card";
+import LogoLoop from "@/components/ui/LogoLoop";
+import { colleges } from "@/data/enablers";
+
 export default function FiftyPlusColleges() {
+  const logos = colleges.map((college) => ({
+    node: (
+      <Card
+        variant="hoverable"
+        className="w-48 h-48 flex flex-col items-center justify-center shrink-0"
+      >
+        <div className="relative group mb-3">
+          <div className="relative w-20 h-20 rounded-full bg-mulearn flex items-center justify-center overflow-hidden">
+            <span className="text-mulearn-whitish font-black text-sm tracking-tight">
+              {college.code}
+            </span>
+          </div>
+        </div>
+        <span className="text-sm leading-tight font-semibold text-center uppercase tracking-widest px-1">
+          {college.title}
+        </span>
+      </Card>
+    ),
+    title: college.title,
+  }));
+
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+    <section className="mx-auto max-w-7xl px-4 py-12">
       <div className="flex flex-col items-center gap-10">
         <div className="text-center">
           <span className="text-5xl font-bold leading-[62.40px]">Over 50+ Colleges are</span>
           <span className="text-mulearn text-5xl font-bold leading-[62.40px]"> µLearn</span>
           <span className="text-5xl font-bold leading-[62.40px]">ified</span>
         </div>
-
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="flex justify-start items-center gap-9 overflow-x-auto px-4 py-6"
-            style={{ msOverflowStyle: "none", scrollbarWidth: "none" } as React.CSSProperties}
-          >
-            {Array.from({ length: 8 }).map((_, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-20 h-20 bg-white rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center overflow-hidden"
-              >
-                <div className="w-10 h-10 flex items-center justify-center"></div>
-              </div>
-            ))}
-          </div>
-
-          {/* Left fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
-          {/* Right fade */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
-        </div>
+        <LogoLoop
+          logos={logos}
+          speed={60}
+          direction="left"
+          gap={36}
+          logoHeight={100}
+          pauseOnHover
+          fadeOut
+          fadeOutColor="#ffffff"
+          ariaLabel="µLearn enabled colleges"
+          className="mb-10"
+        />
       </div>
     </section>
   );

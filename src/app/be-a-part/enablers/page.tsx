@@ -1,4 +1,4 @@
-// import FiftyPlusColleges from "@/app/be-a-part/enablers/_components/50+colleges";
+import FiftyPlusColleges from "@/app/be-a-part/enablers/_components/50+colleges";
 import Benefits from "@/app/be-a-part/enablers/_components/Benefits";
 import GetInTouch from "@/app/be-a-part/enablers/_components/GetInTouch";
 import Hero from "@/app/be-a-part/enablers/_components/Hero";
@@ -13,7 +13,7 @@ export default function EnablersPage() {
       <Hero />
       <WhoIsEnabler />
       <Benefits />
-      {/* <FiftyPlusColleges /> */}
+      <FiftyPlusColleges />
       <SuccessStories />
       <MissionAndGrowth />
       <HowToBegin />
