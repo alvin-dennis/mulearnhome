@@ -94,18 +94,26 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 48,
+      "commits": 50,
       "prs_opened": 17,
-      "prs_merged": 16,
-      "points": 81,
+      "prs_merged": 17,
+      "points": 84,
       "displayname": "Alvin Dennis"
+    },
+    {
+      "username": "rithviknishad",
+      "commits": 49,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "points": 49,
+      "displayname": "Rithvik Nishad"
     },
     {
       "username": "erzer12",
       "commits": 22,
-      "prs_opened": 6,
+      "prs_opened": 7,
       "prs_merged": 5,
-      "points": 33,
+      "points": 34,
       "displayname": "Harshil P"
     },
     {
@@ -155,14 +163,6 @@
       "prs_merged": 1,
       "points": 11,
       "displayname": "Salvin Sebastian"
-    },
-    {
-      "username": "codiing-5",
-      "commits": 4,
-      "prs_opened": 2,
-      "prs_merged": 1,
-      "points": 7,
-      "displayname": "Rojan Jose"
     }
   ]
 }
