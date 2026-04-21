@@ -1,17 +1,11 @@
 import type { LucideIcon } from "lucide-react";
 import { Building2, HelpCircle, Lightbulb, Target } from "lucide-react";
 import { cdnUrl } from "@/services/cdn";
-import collegesData from "./colleges.json";
 
 export interface EnablerFeature {
   text: string;
   icon: LucideIcon;
 }
-
-export const colleges = collegesData.map((college: { code: string; title: string }) => ({
-  code: college.code,
-  title: college.title,
-}));
 
 export const enablers = {
   benefits: [
@@ -157,6 +151,242 @@ export const enablers = {
       role: "Lead Enabler µLearn, Marian Engineering College",
       url: "https://youtu.be/oyvb4-decaY?si=fEPdIxDP4uanErYi&t=73",
       thumbnail: "/assets/be-a-part/thumbnails/m-manoj.webp",
+    },
+  ],
+  colleges: [
+    {
+      title: "Carmel College of Engineering and Technology",
+    },
+    {
+      title: "Providence College of Engineering & School of Business Chengannur",
+    },
+    {
+      title: "College of Engineering Chengannur",
+    },
+    {
+      title: "Sree Buddha College of Engineering Pattoor",
+    },
+    {
+      title: "Cochin University College of Engineering, Kuttanadu",
+    },
+    {
+      title: "Adi Shankara College of Engineering",
+    },
+    {
+      title: "Ilahia College of Engineering and Technology",
+    },
+    {
+      title: "Mar Elias College, Kottappady, Ernakulam",
+    },
+    {
+      title: "MES College of Engineering Technology Kunnukara",
+    },
+    {
+      title: "MES MK Mackar Pillai College for Advanced Studies",
+    },
+    {
+      title: "Muthoot Institute of Technology & Science",
+    },
+    {
+      title: "Rajagiri School of Engineering and Technology",
+    },
+    {
+      title: "SCMS School of Engineering and Technology",
+    },
+    {
+      title: "Sree Narayana Gurukulam College of Engineering",
+    },
+    {
+      title: "TocH Institute of Science and Technology",
+    },
+    {
+      title: "Visat Engineering College",
+    },
+    {
+      title: "Viswajyothy College of Engineering and Technology",
+    },
+    {
+      title: "Federal Institute of Science and Technology",
+    },
+    {
+      title: "Government Engineering College Idukki",
+    },
+    {
+      title: "Mar Baselios Christian College of Engineering & Technology",
+    },
+    {
+      title: "College of Engineering Thalassery",
+    },
+    {
+      title: "Government College of Engineering Kannur",
+    },
+    {
+      title: "Kodiyeri Balakrishnan Memorial Government College",
+    },
+    {
+      title: "College of Engineering Trikaripur",
+    },
+    {
+      title: "LBS College of Engineering",
+    },
+    {
+      title: "College of Engineering - Kottarakkara",
+    },
+    {
+      title: "College of Engineering - Pathanapuram",
+    },
+    {
+      title: "College of Engineering Karunagappally",
+    },
+    {
+      title: "College of Engineering Perumon",
+    },
+    {
+      title: "Amal Jyothi College of Engineering Kanjirappally",
+    },
+    {
+      title: "Kottayam Institute of Science and Technology",
+    },
+    {
+      title: "Kristu Jyoti College of Management and Technology",
+    },
+    {
+      title: "Rajiv Gandhi Institute of Technology Kottayam",
+    },
+    {
+      title: "Saintgits College of Engineering",
+    },
+    {
+      title: "St Josephs College of Engineering and Technology Palai",
+    },
+    {
+      title: "AWH Engineering College",
+    },
+    {
+      title: "College of Applied Science IHRD, Kozhikode",
+    },
+    {
+      title: "College of Engineering Vadakara",
+    },
+    {
+      title: "Govt. Engineering College - Kozhikode",
+    },
+    {
+      title: "Muhammad Abdurahiman Memorial Orphanage College",
+    },
+    {
+      title: "St. Josephs College Devagiri (Autonomous)",
+    },
+    {
+      title: "Sree Gokulam Arts and Science College Baluserry",
+    },
+    {
+      title: "Al Shifa College of Arts and Science",
+    },
+    {
+      title: "CHMKM Govt Arts and Science College Tanur",
+    },
+    {
+      title: "Malabar College of Advanced Studies",
+    },
+    {
+      title: "MES College of Engineering - Kuttippuram",
+    },
+    {
+      title: "MES Ponnani College",
+    },
+    {
+      title: "Government Engineering College Sreekrishnapuram",
+    },
+    {
+      title: "Mount Seena College of Arts and Science",
+    },
+    {
+      title: "NSS College of Engineering Palakkad",
+    },
+    {
+      title: "Sreepathy Institute of Management and Technology",
+    },
+    {
+      title: "Ahalia School of Engineering and Technology",
+    },
+    {
+      title: "Al Ameen Engineering College",
+    },
+    {
+      title: "College of Engineering Aranmula",
+    },
+    {
+      title: "College of Engineering Kallooppara",
+    },
+    {
+      title: "Musaliar College of Arts and Science Pathanamthitta",
+    },
+    {
+      title: "Christ College of Engineering",
+    },
+    {
+      title: "Government Engineering College Thrissur",
+    },
+    {
+      title: "Government Polytechnic College, Kunnamkulam",
+    },
+    {
+      title: "Jyothi Engineering College",
+    },
+    {
+      title: "Sahrdaya College of Engineering & Technology",
+    },
+    {
+      title: "Thejus Engineering College",
+    },
+    {
+      title: "Vidya Academy of Science and Technology",
+    },
+    {
+      title: "ACE College of Engineering",
+    },
+    {
+      title: "College of Engineering Muttathara",
+    },
+    {
+      title: "College of Engineering Trivandrum",
+    },
+    {
+      title: "LBS Institute of Technology for Women - Poojappura",
+    },
+    {
+      title: "Lourdes Matha College of Science and Technology",
+    },
+    {
+      title: "Mar Baselios College of Engineering and Technology",
+    },
+    {
+      title: "Marian Engineering College",
+    },
+    {
+      title: "Mohandas College of Engineering and Technology",
+    },
+    {
+      title: "Muslim Association College of Engineering",
+    },
+    {
+      title: "Rajadhani Institute of Engineering and Technology",
+    },
+    {
+      title: "Sree Chitra Thirunal College of Engineering",
+    },
+    {
+      title: "St. Thomas Institute for Science & Technology",
+    },
+    {
+      title: "Trinity College of Engineering",
+    },
+    {
+      title: "University College of Engineering Kariavattom",
+    },
+    {
+      title: "WMO Arts and Science College",
     },
   ],
 };
