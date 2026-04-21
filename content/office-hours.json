@@ -2332,6 +2332,18 @@
         "iot-robotics"
       ],
       "poster_thumbnail": ""
+    },
+    {
+      "title": "μLearn Website Audit",
+      "performer": "Core Team",
+      "designation": "UI/UX IG",
+      "description": "Join us for a hands-on UI/UX audit of the μLearn website, where we’ll critically analyze its user experience, interface design, and overall usability. This session will walk you through real-world evaluation techniques used by designers to identify friction points, improve user flows, and enhance product clarity.\n\nWhether you're a beginner or an experienced designer, you’ll gain practical insights into conducting audits, spotting usability issues, and thinking like a product designer. Expect actionable feedback, live discussions, and a deeper understanding of how good design decisions impact user engagement.",
+      "date": "21/04/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
     }
   ]
 }
