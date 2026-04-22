@@ -399,8 +399,7 @@ export const enablers = {
     {
       muid: "jibinn@mulearn",
       full_name: "Jibin N",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/846410364090056704/3aa11c6b8358b2ab121651ad0011e748.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "sonashaju@mulearn",
@@ -514,8 +513,7 @@ export const enablers = {
     {
       muid: "arunjs@mulearn",
       full_name: "Arun J S",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/753717737779363970/97b7579ed4f50c3f35030df5ac926dd1.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "bharathanss@mulearn",
@@ -593,8 +591,7 @@ export const enablers = {
     {
       muid: "sunilk.joseph@mulearn",
       full_name: "Sunil K. Joseph",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/1091375388334247936/61325e87c330d74344a8125aa7d664b1.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "rejimoanr@mulearn",
@@ -748,8 +745,7 @@ export const enablers = {
     {
       muid: "binduannthomas@mulearn",
       full_name: "Bindu Ann Thomas",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/1197453571973730335/26ad051b5a7b3fef58df22858c619c6f.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "anithkrishnan@mulearn",
@@ -845,8 +841,7 @@ export const enablers = {
     {
       muid: "aneesmuhammed@mulearn",
       full_name: "Anees Muhammed",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/697462206530584666/9f145144aa551a42a7e37ff2f8b58c4e.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "safnak-2@mulearn",
@@ -902,12 +897,6 @@ export const enablers = {
       muid: "jishamohan@mulearn",
       full_name: "Jisha Mohan",
       profile_pic: null,
-    },
-    {
-      muid: "aswinasok110@mulearn",
-      full_name: "Aswin Asok 110",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/565859821677445121/46b70ec5cc0ea1176fd67c6ac3f3f1dc.png?size=1024",
     },
     {
       muid: "sreeshps@mulearn",
@@ -969,8 +958,7 @@ export const enablers = {
     {
       muid: "sreejithkb@mulearn",
       full_name: "Sreejith K B",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/1160093781824114740/64ace8be4a2674aac885b12dfbbdee58.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "anjanathampys-1@mulearn",
@@ -1067,8 +1055,7 @@ export const enablers = {
     {
       muid: "shankarj@mulearn",
       full_name: "Shankar J",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/939161953711034389/a27e62e6471a0b801c9364086d734de0.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "nayanasuresh@mulearn",
@@ -1143,8 +1130,7 @@ export const enablers = {
     {
       muid: "ibrahimsalimm@mulearn",
       full_name: "Ibrahim Salim M",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/1169689838245662751/ffc49ae7efd8590ccff2de98f2b4d135.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "jamshi@mulearn",
@@ -1198,8 +1184,7 @@ export const enablers = {
     {
       muid: "smithac@mulearn",
       full_name: "Smitha C",
-      profile_pic:
-        "https://cdn.discordapp.com/avatars/1171730971058520102/79ee349b6511e2000af8a32fb8a6974e.png?size=1024",
+      profile_pic: null,
     },
     {
       muid: "arshaap@mulearn",
@@ -1603,7 +1588,7 @@ export const enablers = {
     {
       muid: "mssujithra@mulearn",
       full_name: "M S Sujithra",
-      profile_pic: "https://cdn.discordapp.com/embed/avatars/4.png",
+      profile_pic: null,
     },
     {
       muid: "nithyapaul@mulearn",
