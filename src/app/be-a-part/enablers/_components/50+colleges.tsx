@@ -1,32 +1,78 @@
+"use client";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
+import { Autoplay } from "swiper/modules";
+import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { enablers } from "@/data/enablers";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+const colleges = enablers.colleges;
+
 export default function FiftyPlusColleges() {
+  const swiperRef = useRef<SwiperRef>(null);
+
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+    <section className="mx-auto max-w-7xl py-10">
       <div className="flex flex-col items-center gap-10">
         <div className="text-center">
-          <span className="text-5xl font-bold leading-[62.40px]">Over 50+ Colleges are</span>
-          <span className="text-mulearn text-5xl font-bold leading-[62.40px]"> µLearn</span>
-          <span className="text-5xl font-bold leading-[62.40px]">ified</span>
+          <h2 className="text-5xl">
+            Over 50+ Colleges are <span className="text-mulearn">µLearn</span>ified
+          </h2>
         </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="flex justify-start items-center gap-9 overflow-x-auto px-4 py-6"
-            style={{ msOverflowStyle: "none", scrollbarWidth: "none" } as React.CSSProperties}
+        <div className="relative px-14 w-full">
+          <Button
+            variant="default"
+            onClick={() => swiperRef.current?.swiper.slidePrev()}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 rounded-full w-12 h-12"
           >
-            {Array.from({ length: 8 }).map((_, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-20 h-20 bg-white rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center justify-center overflow-hidden"
-              >
-                <div className="w-10 h-10 flex items-center justify-center"></div>
-              </div>
-            ))}
-          </div>
+            <ChevronLeft className="w-6 h-6 text-mulearn-whitish" />
+          </Button>
 
-          {/* Left fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
-          {/* Right fade */}
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
+          <Button
+            variant="default"
+            onClick={() => swiperRef.current?.swiper.slideNext()}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 rounded-full w-12 h-12"
+          >
+            <ChevronRight className="w-6 h-6 text-mulearn-whitish" />
+          </Button>
+
+          <Swiper
+            ref={swiperRef}
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{
+              reverseDirection: true,
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="!pb-4"
+          >
+            {colleges.map((college) => (
+              <SwiperSlide key={`${college.title}`} className="h-auto">
+                <Card
+                  key={`${college.title}`}
+                  className="h-40 shrink-0 flex flex-col border-mulearn/10 bg-linear-to-br from-mulearn-whitish to-mulearn/5"
+                >
+                  <CardContent className="flex items-center justify-center p-3 h-full">
+                    <p className="text-md font-bold text-center leading-snug">{college.title}</p>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
