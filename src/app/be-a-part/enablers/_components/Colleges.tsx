@@ -21,7 +21,7 @@ export default function FiftyPlusColleges() {
       <div className="flex flex-col items-center gap-10">
         <div className="text-center">
           <h2 className="text-5xl">
-            Over 50+ Colleges are <span className="text-mulearn">µLearn</span>ified
+            Over 80+ Colleges are <span className="text-mulearn">µLearn</span>ified
           </h2>
         </div>
 
