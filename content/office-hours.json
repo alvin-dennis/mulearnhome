@@ -1875,6 +1875,26 @@
       "link": "mulearn.org/r/uiux-officehour",
       "interestGroups": ["ui-ux"],
       "poster_thumbnail": "/assets/events/OH - Tuesday- Post.png"
+    },
+    {
+      "title": "HR and What Matters More",
+      "performer": "Shehenas Shereef",
+      "designation": "Team Leader - Finance, Hyatt Regency Oryx Doha ",
+      "date": "22/04/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "Core Team and Plans",
+      "performer": "Core team",
+      "designation": "Mulearn Web Dev IG",
+      "date": "22/04/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
     }
   ]
 }
