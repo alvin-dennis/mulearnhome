@@ -145,7 +145,7 @@ export const companies = [
   },
   {
     alt: "Softnotion",
-    src: "/public/assets/careers/companies/softnotions.webp",
+    src: "/public/assets/careers/companies/Softnotions.webp",
   },
   {
     alt: "SunTec",
@@ -165,7 +165,7 @@ export const companies = [
   },
   {
     alt: "Undaku",
-    src: "/public/assets/careers/companies/undaku.webp",
+    src: "/public/assets/careers/companies/undaku .webp",
   },
   {
     alt: "YIP",
