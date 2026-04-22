@@ -7,8 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import MuLoader from "@/components/MuLoader";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { enablers } from "@/data/enablers";
 import type { Counts } from "@/lib/types";
@@ -62,8 +60,8 @@ export default function MissionandGrowth() {
 
   if (!counts) {
     return (
-      <div className="px-14 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24 ">
-        <MuLoader />
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+        <div className="text-center">Loading stats...</div>
       </div>
     );
   }
@@ -124,14 +122,13 @@ export default function MissionandGrowth() {
                   href={`${process.env.NEXT_PUBLIC_APP_URL}profile/${c.muid}`}
                   className="flex flex-col items-center gap-1.5 group"
                 >
-                  <div className="rounded-full ring-2 ring-mulearn transition-all">
-                    <Avatar className="h-8 w-8">
-                      <AvatarImage src={fallbackImage} />
-                      <AvatarFallback>
-                        {c.full_name?.split(" ")[0][0].toUpperCase() ||
-                          c.full_name[0].toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
+                  <div className="rounded-full ring-2 ring-mulearn transition-all relative h-20 w-20">
+                    <MuImage
+                      src={c.profile_pic ?? fallbackImage}
+                      alt={c.full_name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
                   </div>
                   <p className="text-sm text-center leading-tight truncate w-full">{c.full_name}</p>
                 </Link>
