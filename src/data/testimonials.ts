@@ -60,7 +60,7 @@ export const textTestimonials: TextTestimonial[] = [
     role: "Jnr Software Test Engineer",
     company: "FAYA",
     muid: "ansanjohny@mulearn",
-    profileImage: "https://placehold.co/600x600/AF2EE6/ffffff.png?text=AJ",
+    profileImage: "",
     quote:
       "I was first drawn to µLearn seeing my seniors succeed during the pandemic, and my initial goal was simple: earn karma points. But it quickly became about so much more than points. The learning circles provided a collaborative space where I could consistently build real skills and develop a professional mindset. When I joined the Launchpad program, everything came together. The interview wasn't about what I knew, but what I had done. My 'proof of work, built entirely within the µLearn community, was the key that helped me land my current role. µLearn provided the ecosystem to turn learning into a career.",
     type: "academia",
@@ -74,7 +74,7 @@ export const textTestimonials: TextTestimonial[] = [
     role: "Jnr Software Engineer",
     company: "FAYA",
     muid: "aswanthvc@mulearn",
-    profileImage: "https://placehold.co/600x600/AF2EE6/ffffff.png?text=AV",
+    profileImage: "",
     quote:
       "My µLearn journey began at the GTA Codestorm hackathon, where I first discovered the community and the concept of karma points. I quickly got immersed in the Discord server, not just for the tasks, but for the late-night tech discussions and the connections I made. It became a space where someone was always ready to help whenever I got stuck. After college, Launchpad provided the perfect next step, and I began focusing my efforts on its tasks. That focus paid off, leading directly to interviews where my skills and even my karma points were valued, guiding me to my current role as a Junior Software Engineer.",
     type: "academia",

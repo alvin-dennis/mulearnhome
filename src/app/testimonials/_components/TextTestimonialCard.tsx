@@ -1,43 +1,22 @@
 "use client";
 
-import axios from "axios";
 import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
-import { useEffect, useState } from "react";
+import { use } from "react";
 import MuImage from "@/components/MuImage";
-import { clientEnv } from "@/lib/env/env.client";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { cdnUrl } from "@/services/cdn";
+import { fetchProfileImage } from "@/services/profile";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;
 }
 
 export default function TextTestimonialCard({ testimonial }: TextTestimonialCardProps) {
-  const [profileImage, setProfileImage] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!testimonial.muid) {
-      return;
-    }
-
-    const fetchProfileImage = async () => {
-      try {
-        const res = await axios.get(
-          `${clientEnv.NEXT_PUBLIC_API_BASE_URL}/dashboard/profile/user-profile/${testimonial.muid}/`,
-        );
-        const profilePic = res.data.response.profile_pic;
-
-        if (profilePic) {
-          setProfileImage(profilePic);
-        } else {
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchProfileImage();
-  }, [testimonial.muid]);
+  const profileImage = use(
+    testimonial.muid ? fetchProfileImage(testimonial.muid) : Promise.resolve(null),
+  );
+  const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
   const getSocialIcon = (socialProof?: string) => {
     if (!socialProof) return <MessageCircle className="w-4 h-4" />;
@@ -106,7 +85,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full overflow-hidden flex-none">
               <MuImage
-                src={profileImage ?? testimonial.profileImage}
+                src={profileImage ?? testimonial.profileImage ?? fallbackImage}
                 alt={testimonial.name}
                 width={48}
                 height={48}

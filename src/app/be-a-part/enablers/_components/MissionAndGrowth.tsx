@@ -2,11 +2,15 @@
 
 import type { Variants } from "framer-motion";
 import { Sparkle } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuLoader from "@/components/MuLoader";
+import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
+import { enablers } from "@/data/enablers";
 import type { Counts } from "@/lib/types";
+import { cdnUrl } from "@/services/cdn";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -19,7 +23,9 @@ const fadeInUp: Variants = {
 
 export default function MissionandGrowth() {
   const [counts, setCounts] = useState<Counts | null>(null);
+  const [displayedCount, setDisplayedCount] = useState(12);
   const socketRef = useRef<WebSocket | null>(null);
+  const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
   useEffect(() => {
     if (!socketRef.current) {
@@ -46,10 +52,16 @@ export default function MissionandGrowth() {
     }
   }, []);
 
+  const handleLoadMore = () => {
+    setDisplayedCount((prev) => prev + 18);
+  };
+
+  const hasMore = displayedCount < enablers.faculties.length;
+
   if (!counts) {
     return (
-      <div className="px-14 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24 ">
-        <MuLoader />
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+        <div className="text-center">Loading stats...</div>
       </div>
     );
   }
@@ -82,14 +94,8 @@ export default function MissionandGrowth() {
 
           <MotionDiv variants={fadeInUp} className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-9 mt-6 px-4 sm:px-8">
-              <StatCard value={counts.members} label="Members" />
-              <StatCard value={counts.learning_circle_count} label="Learning Circles" />
               {counts.org_type_counts
-                .filter(
-                  (org) =>
-                    org.org_type.toLowerCase() === "college" ||
-                    org.org_type.toLowerCase() === "community",
-                )
+                .filter((org) => org.org_type.toLowerCase() === "college")
                 .map((org) => (
                   <StatCard
                     key={org.org_type}
@@ -109,6 +115,32 @@ export default function MissionandGrowth() {
                 />
               ))}
             </div>
+            <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-3 mt-6">
+              {enablers.faculties.slice(0, displayedCount).map((c) => (
+                <Link
+                  key={c.muid}
+                  href={`${process.env.NEXT_PUBLIC_APP_URL}profile/${c.muid}`}
+                  className="flex flex-col items-center gap-1.5 group"
+                >
+                  <div className="rounded-full ring-2 ring-mulearn transition-all relative h-20 w-20">
+                    <MuImage
+                      src={c.profile_pic ?? fallbackImage}
+                      alt={c.full_name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  </div>
+                  <p className="text-sm text-center leading-tight truncate w-full">{c.full_name}</p>
+                </Link>
+              ))}
+            </div>
+            {hasMore && (
+              <div className="flex justify-center mt-6">
+                <Button variant={"default"} onClick={handleLoadMore}>
+                  Load more
+                </Button>
+              </div>
+            )}
           </MotionDiv>
         </MotionSection>
       </div>
