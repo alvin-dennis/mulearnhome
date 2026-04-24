@@ -104,10 +104,10 @@ export default function MissionandGrowth() {
   return (
     <div className="flex justify-center relative">
       <div className="hidden md:block absolute top-6 right-10 z-10">
-        <Sparkle className="w-6 h-6 text-mulearn" />
+        <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
       <div className="hidden md:block absolute bottom-6 left-8 z-10">
-        <Sparkle className="w-6 h-6 text-mulearn" />
+        <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
       <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl">
         <MotionSection
@@ -128,7 +128,7 @@ export default function MissionandGrowth() {
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp} className="w-full">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-9 mt-6 px-4 sm:px-8">
+            <div className="flex flex-wrap justify-center gap-9 mt-6 px-8">
               {counts.org_type_counts
                 .filter((org) => org.org_type.toLowerCase() === "college")
                 .map((org) => (
