@@ -85,20 +85,20 @@
   ],
   "monthly": [
     {
+      "username": "alvin-dennis",
+      "commits": 72,
+      "prs_opened": 23,
+      "prs_merged": 23,
+      "points": 118,
+      "displayname": "Alvin Dennis"
+    },
+    {
       "username": "DevWithPranav",
       "commits": 47,
       "prs_opened": 34,
       "prs_merged": 34,
       "points": 115,
       "displayname": "Pranav P"
-    },
-    {
-      "username": "alvin-dennis",
-      "commits": 68,
-      "prs_opened": 22,
-      "prs_merged": 22,
-      "points": 112,
-      "displayname": "Alvin Dennis"
     },
     {
       "username": "rithviknishad",
