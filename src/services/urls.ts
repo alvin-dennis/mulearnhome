@@ -8,4 +8,5 @@ export const donationRoutes = {
 
 export const profileRoutes = {
   userProfile: "/dashboard/profile/user-profile/",
+  profilePic: "/public/profile-pic/",
 };
