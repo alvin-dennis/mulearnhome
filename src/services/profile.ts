@@ -19,3 +19,21 @@ export const fetchProfileImage = async (muid: string) => {
     return null;
   }
 };
+
+export const fetchPublicProfileImage = async (muid: string) => {
+  try {
+    const res = await axios.get(
+      `${clientEnv.NEXT_PUBLIC_API_BASE_URL}${profileRoutes.profilePic}${muid}/`,
+    );
+    const profilePic = res.data.response.image;
+
+    if (profilePic) {
+      return profilePic;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};

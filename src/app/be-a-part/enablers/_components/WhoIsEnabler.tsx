@@ -12,7 +12,7 @@ export default function WhoIsEnabler() {
     <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
       <div className="relative w-full rounded-[20px] bg-mulearn shadow-md overflow-hidden">
         <div className="hidden md:block" style={{ minHeight: "480px" }}>
-          <Sparkle className="absolute left-10 top-8 z-20 text-mulearn-whitish" />
+          <Sparkle className="absolute left-10 top-8 z-20 fill-mulearn-whitish text-mulearn-whitish" />
           <div className="relative z-10 flex flex-col justify-start items-start gap-5 px-10 pt-24 pb-10 max-w-[620px]">
             <h2 className="text-5xl font-bold leading-[1.3]">
               <span>Who is an </span>
@@ -40,9 +40,9 @@ export default function WhoIsEnabler() {
             </div>
           </div>
 
-          <Sparkle className="absolute right-[430px] top-[380px] z-20 text-mulearn-whitish" />
-          <Sparkle className="absolute right-[320px] top-[270px] z-20 text-mulearn-whitish" />
-          <Sparkle className="absolute right-[130px] top-[320px] z-20 text-mulearn-whitish" />
+          <Sparkle className="absolute right-[430px] top-[380px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
+          <Sparkle className="absolute right-[320px] top-[270px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
+          <Sparkle className="absolute right-[130px] top-[320px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
 
           <Image
             style={{ right: 0, top: 0 }}

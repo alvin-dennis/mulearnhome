@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { enablers } from "@/data/enablers";
 import type { Counts } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
+import { fetchPublicProfileImage } from "@/services/profile";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -24,6 +25,7 @@ const fadeInUp: Variants = {
 export default function MissionandGrowth() {
   const [counts, setCounts] = useState<Counts | null>(null);
   const [displayedCount, setDisplayedCount] = useState(12);
+  const [publicProfileImages, setPublicProfileImages] = useState<Record<string, string | null>>({});
   const socketRef = useRef<WebSocket | null>(null);
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
@@ -52,6 +54,39 @@ export default function MissionandGrowth() {
     }
   }, []);
 
+  useEffect(() => {
+    const visibleFaculties = enablers.faculties.slice(0, displayedCount);
+    const missingMuidList = visibleFaculties
+      .map((faculty) => faculty.muid)
+      .filter((muid) => publicProfileImages[muid] === undefined);
+
+    if (missingMuidList.length === 0) return;
+
+    let isCancelled = false;
+
+    const loadPublicProfileImages = async () => {
+      const imageEntries = await Promise.all(
+        missingMuidList.map(async (muid) => [muid, await fetchPublicProfileImage(muid)] as const),
+      );
+
+      if (!isCancelled) {
+        setPublicProfileImages((prev) => {
+          const next = { ...prev };
+          for (const [muid, imageUrl] of imageEntries) {
+            next[muid] = imageUrl;
+          }
+          return next;
+        });
+      }
+    };
+
+    void loadPublicProfileImages();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [displayedCount, publicProfileImages]);
+
   const handleLoadMore = () => {
     setDisplayedCount((prev) => prev + 18);
   };
@@ -69,10 +104,10 @@ export default function MissionandGrowth() {
   return (
     <div className="flex justify-center relative">
       <div className="hidden md:block absolute top-6 right-10 z-10">
-        <Sparkle className="w-6 h-6 text-mulearn" />
+        <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
       <div className="hidden md:block absolute bottom-6 left-8 z-10">
-        <Sparkle className="w-6 h-6 text-mulearn" />
+        <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
       <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl">
         <MotionSection
@@ -93,7 +128,7 @@ export default function MissionandGrowth() {
           </MotionDiv>
 
           <MotionDiv variants={fadeInUp} className="w-full">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-9 mt-6 px-4 sm:px-8">
+            <div className="flex flex-wrap justify-center gap-9 mt-6 px-8">
               {counts.org_type_counts
                 .filter((org) => org.org_type.toLowerCase() === "college")
                 .map((org) => (
@@ -124,6 +159,7 @@ export default function MissionandGrowth() {
                 >
                   <div className="rounded-full ring-2 ring-mulearn transition-all relative h-20 w-20">
                     <MuImage
+                      // src={publicProfileImages[c.muid] ?? fallbackImage}
                       src={c.profile_pic ?? fallbackImage}
                       alt={c.full_name}
                       fill

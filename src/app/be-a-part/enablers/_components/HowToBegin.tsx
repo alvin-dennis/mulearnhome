@@ -1,6 +1,4 @@
-"use client";
-
-import Image from "next/image";
+import { Sparkle } from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
 
 const steps = [
@@ -32,23 +30,6 @@ const steps = [
   },
 ];
 
-const SparkleIcon = ({ size = 16 }: { size?: number }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 25 25"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M12.5001 24.587L12.2887 18.9019C12.1594 15.4238 9.35954 12.6345 5.87007 12.5073L-8.32618e-07 12.2935L5.87007 12.0796C9.35953 11.9525 12.1594 9.16315 12.2887 5.68505L12.5001 4.62925e-06L12.7115 5.68505C12.8408 9.16315 15.6407 11.9525 19.1301 12.0796L25.0002 12.2935L19.1301 12.5073C15.6407 12.6345 12.8408 15.4238 12.7115 18.9019L12.5001 24.587Z"
-      fill="black"
-    />
-  </svg>
-);
-
-// Dashed connector with dots at both ends
 const Connector = () => (
   <div className="flex items-center h-16 px-1 flex-shrink-0">
     <div className="relative flex items-center w-20 lg:w-28 h-0.5">
@@ -111,19 +92,11 @@ export default function Onboarding() {
     <section className="hidden md:block w-full relative overflow-hidden py-16 px-6">
       {/* Sparkle accents */}
       <div className="absolute top-8 right-16 opacity-60">
-        <SparkleIcon size={18} />
+        <Sparkle size={18} className="fill-mulearn text-mulearn" />
       </div>
       <div className="absolute bottom-10 left-10 opacity-60">
-        <SparkleIcon size={14} />
+        <Sparkle size={14} className="fill-mulearn text-mulearn" />
       </div>
-
-      <Image
-        src="/assets/be-a-part/enabler-character.svg"
-        alt="Enabler character"
-        width={100}
-        height={100}
-        className="absolute top-4 right-8 w-24 h-24 object-contain opacity-90 pointer-events-none"
-      />
 
       <div className="mx-auto max-w-5xl flex flex-col items-center gap-12">
         {/* Heading */}
