@@ -159,7 +159,8 @@ export default function MissionandGrowth() {
                 >
                   <div className="rounded-full ring-2 ring-mulearn transition-all relative h-20 w-20">
                     <MuImage
-                      src={publicProfileImages[c.muid] ?? fallbackImage}
+                      // src={publicProfileImages[c.muid] ?? fallbackImage}
+                      src={c.profile_pic ?? fallbackImage}
                       alt={c.full_name}
                       fill
                       className="rounded-full object-cover"
