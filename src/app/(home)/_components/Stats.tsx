@@ -43,7 +43,7 @@ export default function Stats() {
   if (!counts) {
     return (
       <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
-        <div className="text-center">Loading statistics...</div>
+        <div className="text-center">Loading stats...</div>
       </div>
     );
   }

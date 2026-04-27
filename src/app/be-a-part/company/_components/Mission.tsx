@@ -47,8 +47,8 @@ export default function Mission() {
 
   if (!counts) {
     return (
-      <div className="px-14 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24 ">
-        <MuLoader />
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+        <div className="text-center">Loading stats...</div>
       </div>
     );
   }

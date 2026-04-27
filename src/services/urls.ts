@@ -5,3 +5,8 @@ export const donationRoutes = {
   subscriptionVerify: "/donate/subscription/verify/",
   bankTransfer: "/donate/bank-transfer/",
 };
+
+export const profileRoutes = {
+  userProfile: "/dashboard/profile/user-profile/",
+  profilePic: "/public/profile-pic/",
+};
