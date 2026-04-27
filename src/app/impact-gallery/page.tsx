@@ -1,53 +1,125 @@
 "use client";
 
+import { Sparkle } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
-import { MotionH1, MotionP } from "@/components/MuFramer";
-import type { GalleryItem } from "@/lib/types";
+import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import FilterButtons from "./_components/FilterButtons";
 import GalleryGrid from "./_components/GalleryGrid";
 import ImpactStats from "./_components/ImpactStats";
-import LightboxModal from "./_components/LightboxModal";
 
 export default function ImpactGallery() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   return (
-    <div className="min-h-screen">
-      <section className="relative py-20 bg-mulearn">
+    <div className="min-h-screen overflow-x-hidden">
+      <section
+        className="relative pt-24 pb-16"
+        style={{
+          background: "linear-gradient(0deg, #ffffff 0%, #f1f2f7 50%, #F3F7FF 100%)",
+        }}
+      >
+        <div className="absolute top-20 left-10 md:left-20 opacity-30">
+          <Sparkle size={48} className="animate-pulse text-mulearn fill-mulearn" />
+        </div>
+        <div className="absolute top-40 right-10 md:right-32 opacity-20">
+          <Sparkle size={32} className="text-mulearn fill-mulearn" />
+        </div>
+        <div className="absolute bottom-20 left-1/4 opacity-10">
+          <Sparkle size={24} className="text-mulearn fill-mulearn" />
+        </div>
+
         <div className="container mx-auto px-4 text-center">
           <MotionH1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-mulearn-whitish "
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            μLearn Impact Gallery
+            <span>μLearn</span> <span className="text-mulearn">Impact Gallery</span>
           </MotionH1>
+
+          <div className="flex justify-center mb-8">
+            <MotionDiv
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative w-full max-w-2xl aspect-[4/3]"
+            >
+              <MuImage
+                src="/assets/impact-gallery/hero-pic.webp"
+                alt="μLearn Impact Gallery"
+                fill
+                className="object-contain"
+                preload
+                fetchPriority="high"
+                quality={85}
+              />
+            </MotionDiv>
+          </div>
+
           <MotionP
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-mulearn-whitish/90 "
+            transition={{ delay: 0.4 }}
+            className="text-lg md:text-xl max-w-2xl mx-auto mb-6 font-medium"
           >
-            Showcasing our journey, milestones, and the incredible impact we&apos;ve created
-            together
+            A journey of milestones, growth, and the impact we&apos;ve created together.
           </MotionP>
+
+          <MotionDiv
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm md:text-base font-semibold text-mulearn"
+          >
+            <span className="hover:underline cursor-pointer">Stay Curious</span>
+            <span className="text-mulearn-gray-600">|</span>
+            <span className="hover:underline cursor-pointer">Stay Active</span>
+            <span className="text-mulearn-gray-600">|</span>
+            <span className="hover:underline cursor-pointer">Grow Every Day.</span>
+          </MotionDiv>
+
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
+              <Button variant="default">Join µLearn</Button>
+            </Link>
+          </MotionDiv>
         </div>
       </section>
+
       <ImpactStats />
-      <section className="py-16 px-4">
+
+      <section className="py-24 px-4 relative">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-mulearn mb-4">Our Impact in Action</h2>
-            <p className="text-mulearn-gray-600 text-lg max-w-2xl mx-auto">
-              Explore the stories, events, and milestones that define our community&apos;s journey
-            </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Our <span className="text-mulearn">Impact</span> in Action
+            </h2>
+            <div className="h-1.5 w-24 bg-mulearn mx-auto rounded-full" />
           </div>
+
           <FilterButtons activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-          <GalleryGrid activeFilter={activeFilter} onItemClick={setSelectedItem} />
-          {selectedItem && (
-            <LightboxModal item={selectedItem} onClose={() => setSelectedItem(null)} />
-          )}
+
+          <div className="max-w-6xl mx-auto">
+            <GalleryGrid activeFilter={activeFilter} />
+          </div>
+        </div>
+
+        <div className="absolute top-1/4 left-5  opacity-20">
+          <Sparkle size={24} className="text-mulearn fill-mulearn" />
+        </div>
+        <div className="absolute top-3/4 right-10  opacity-20">
+          <Sparkle size={32} className="text-mulearn fill-mulearn" />
+        </div>
+        <div className="absolute bottom-10 left-1/3  opacity-10">
+          <Sparkle size={18} className="text-mulearn fill-mulearn" />
         </div>
       </section>
     </div>

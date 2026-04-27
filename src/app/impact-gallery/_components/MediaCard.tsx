@@ -1,151 +1,68 @@
-import {
-  Award,
-  Briefcase,
-  Building2,
-  Calendar,
-  Eye,
-  GraduationCap,
-  School,
-  Sparkles,
-  Target,
-  Users2,
-  UsersRound,
-} from "lucide-react";
+import { Sparkle } from "lucide-react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import type { GalleryItem } from "@/lib/types";
 
 interface MediaCardProps {
   item: GalleryItem;
-  onClick: () => void;
+  index: number;
 }
 
-export default function MediaCard({ item, onClick }: MediaCardProps) {
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "events":
-        return "bg-mulearn";
-      case "students":
-        return "bg-mulearn-duke-purple";
-      case "companies":
-        return "bg-mulearn-gray-600";
-      case "mentors":
-        return "bg-mulearn-blackish";
-      case "impact-stories":
-        return "bg-mulearn-trusty-blue";
-      default:
-        return "bg-mulearn";
-    }
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "events":
-        return <Calendar size={16} />;
-      case "students":
-        return <GraduationCap size={16} />;
-      case "companies":
-        return <Briefcase size={16} />;
-      case "mentors":
-        return <Users2 size={16} />;
-      case "impact-stories":
-        return <Sparkles size={16} />;
-      default:
-        return <Target size={16} />;
-    }
-  };
-
-  const getStatIcon = (statType: string) => {
-    switch (statType) {
-      case "participants":
-        return <UsersRound size={12} />;
-      case "campuses":
-        return <School size={12} />;
-      case "companies":
-        return <Building2 size={12} />;
-      default:
-        return <Award size={12} />;
-    }
-  };
+export default function MediaCard({ item, index }: MediaCardProps) {
+  const isEven = index % 2 === 0;
 
   return (
-    <MotionDiv
-      whileHover={{ scale: 1.05, y: -5 }}
-      whileTap={{ scale: 0.95 }}
-      className="bg-mulearn-whitish rounded-lg overflow-hidden cursor-pointer group border border-mulearn-greyish hover:shadow-xl transition-all h-full flex flex-col"
-      onClick={onClick}
+    <div
+      className={`flex flex-col ${
+        isEven ? "md:flex-row" : "md:flex-row-reverse"
+      } items-center gap-8 mb-20 group`}
     >
-      <div className="relative h-48 overflow-hidden">
-        {item.type === "image" && item.image ? (
-          <MuImage
-            src={item.image}
-            alt={item.title}
-            fill
-            className="w-full h-full z-0 object-cover"
-          />
-        ) : (
-          <div className="w-full h-full bg-mulearn-trusty flex items-center justify-center">
-            <span className="text-mulearn-whitish text-lg font-semibold text-center px-4">
-              {item.title}
-            </span>
-          </div>
-        )}
-
-        {}
-        <div className="absolute top-3 left-3 z-20">
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-semibold text-mulearn-whitish ${getCategoryColor(
-              item.category,
-            )} flex items-center gap-1`}
-          >
-            {getCategoryIcon(item.category)}
-            {item.category
-              .split("-")
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
-          </span>
+      <div className="w-full md:w-2/6 relative">
+        <div
+          className={`absolute -top-6 ${
+            isEven ? "-right-6" : "-left-6"
+          } opacity-40 group-hover:opacity-100 transition-opacity`}
+        >
+          <Sparkle size={32} className="text-mulearn fill-mulearn" />
         </div>
 
-        {}
-        <div className="absolute inset-0  group-hover:bg-mulearn-blackish/30 transition-all duration-300 flex items-center justify-center z-10">
-          <MotionDiv
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileHover={{ opacity: 1, scale: 1 }}
-            className="text-mulearn-whitish text-center"
-          >
-            <div className="bg-mulearn-blackish bg-opacity-70 rounded-full p-3">
-              <Eye size={20} />
+        <MotionDiv
+          whileHover={{ scale: 1.02 }}
+          className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
+        >
+          {item.image ? (
+            <MuImage src={item.image} alt={item.title} fill />
+          ) : (
+            <div className="w-full h-full bg-mulearn-gray-600 flex items-center justify-center">
+              <span className="text-mulearn font-bold">{item.title}</span>
             </div>
+          )}
+        </MotionDiv>
+
+        <div
+          className={`absolute -bottom-6 ${
+            isEven ? "-left-6" : "-right-6"
+          } opacity-40 group-hover:opacity-100 transition-opacity`}
+        >
+          <Sparkle size={24} className="text-mulearn fill-mulearn" />
+        </div>
+      </div>
+
+      <div className="w-full md:w-2/3">
+        <div className="relative">
+          <MotionDiv
+            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-mulearn/5 p-8 rounded-[2rem] relative z-10"
+          >
+            <h3 className="text-2xl lg:text-3xl font-bold text-mulearn mb-6 leading-tight">
+              {item.title}
+            </h3>
+            <p className="text-lg leading-relaxed">{item.description}</p>
           </MotionDiv>
         </div>
       </div>
-
-      <div className="p-4 flex-1 flex flex-col">
-        <h3 className="font-bold text-mulearn mb-2 line-clamp-2">{item.title}</h3>
-        <p className="text-mulearn-gray-600 text-sm line-clamp-2">{item.description}</p>
-
-        <div className="mt-auto pt-3 flex flex-wrap gap-2">
-          {item.stats &&
-            Object.entries(item.stats).map(([key, value]) => (
-              <span
-                key={key}
-                className="text-xs bg-mulearn-whitish text-mulearn-gray-600 px-2 py-1 rounded border border-mulearn-greyish flex items-center gap-1"
-              >
-                {getStatIcon(key)}
-                {value}+
-              </span>
-            ))}
-
-          {/* Always show category tag as a fallback stat-like item */}
-          <span className="text-xs bg-mulearn-whitish text-mulearn-gray-600 px-2 py-1 rounded border border-mulearn-greyish flex items-center gap-1">
-            {getCategoryIcon(item.category)}
-            {item.category
-              .split("-")
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
-          </span>
-        </div>
-      </div>
-    </MotionDiv>
+    </div>
   );
 }

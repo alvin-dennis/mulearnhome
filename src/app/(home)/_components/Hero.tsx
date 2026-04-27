@@ -6,9 +6,6 @@ import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFrame
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
-import OlympusEventButton from "./Olympus-event";
-
-// import OlympusEventButton from "./Olympus-event";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -93,19 +90,6 @@ export default function Hero() {
                 Join µLearn
               </Button>
             </MotionDiv>
-            {/* <MotionDiv
-              custom={4}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={textVariant}
-            >
-              <OlympusEventButton
-                onClick={() => {
-                  window.open("https://olympus.mulearn.org", "_blank");
-                }}
-              />
-            </MotionDiv> */}
           </div>
         </div>
       </div>

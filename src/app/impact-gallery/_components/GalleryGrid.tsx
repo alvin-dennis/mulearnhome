@@ -1,15 +1,13 @@
 import { AnimatePresence } from "framer-motion";
 import { MotionDiv } from "@/components/MuFramer";
 import { galleryData } from "@/data/impact-gallery";
-import type { GalleryItem } from "@/lib/types";
 import MediaCard from "./MediaCard";
 
 interface GalleryGridProps {
   activeFilter: string;
-  onItemClick: (item: GalleryItem) => void;
 }
 
-export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridProps) {
+export default function GalleryGrid({ activeFilter }: GalleryGridProps) {
   const filteredItems =
     activeFilter === "all"
       ? galleryData
@@ -26,8 +24,8 @@ export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridPr
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -35,10 +33,10 @@ export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridPr
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      className="flex flex-col gap-8"
     >
-      <AnimatePresence mode="wait">
-        {filteredItems.map((item) => (
+      <AnimatePresence mode="popLayout">
+        {filteredItems.map((item, index) => (
           <MotionDiv
             key={item.id}
             variants={itemVariants}
@@ -46,17 +44,18 @@ export default function GalleryGrid({ activeFilter, onItemClick }: GalleryGridPr
             initial="hidden"
             animate="visible"
             exit="hidden"
-            transition={{ duration: 0.3 }}
-            className="h-full"
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <MediaCard item={item} onClick={() => onItemClick(item)} />
+            <MediaCard item={item} index={index} />
           </MotionDiv>
         ))}
       </AnimatePresence>
 
       {filteredItems.length === 0 && (
-        <div className="col-span-full text-center py-12">
-          <p className="text-mulearn-gray-600 text-lg ">No items found for this category.</p>
+        <div className="col-span-full text-center py-24">
+          <p className="text-mulearn-gray-600 text-xl font-medium">
+            No stories found for this category yet.
+          </p>
         </div>
       )}
     </MotionDiv>
