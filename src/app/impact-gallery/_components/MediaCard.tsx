@@ -48,21 +48,19 @@ export default function MediaCard({ item, index }: MediaCardProps) {
         </div>
       </div>
 
-      <div className="w-full md:w-2/3">
-        <div className="relative">
-          <MotionDiv
-            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-mulearn/5 p-8 rounded-[2rem] relative z-10"
-          >
-            <h3 className="text-2xl lg:text-3xl font-bold text-mulearn mb-6 leading-tight">
-              {item.title}
-            </h3>
-            <p className="text-lg leading-relaxed">{item.description}</p>
-          </MotionDiv>
+      <MotionDiv
+        initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="w-full md:w-2/3"
+      >
+        <h3 className="text-2xl lg:text-3xl font-bold text-mulearn mb-4 leading-tight">
+          {item.title}
+        </h3>
+        <div className="bg-mulearn/5 p-8 rounded-[2rem] relative z-10">
+          <p className="text-lg leading-relaxed">{item.description}</p>
         </div>
-      </div>
+      </MotionDiv>
     </div>
   );
 }

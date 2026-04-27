@@ -14,11 +14,20 @@ export default function ImpactGallery() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden relative">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 opacity-50">
+        <div className="absolute top-[-5%] left-[-10%] w-[50%] aspect-square rounded-full bg-mulearn/[0.06] blur-[400px]" />
+        <div className="absolute top-[15%] right-[-10%] w-[40%] aspect-square rounded-full bg-mulearn/[0.04] blur-[400px]" />
+        <div className="absolute top-[40%] left-[-15%] w-[45%] aspect-square rounded-full bg-mulearn/[0.03] blur-[400px]" />
+        <div className="absolute top-[60%] right-[-15%] w-[50%] aspect-square rounded-full bg-mulearn/[0.05] blur-[400px]" />
+        <div className="absolute bottom-[15%] left-[-10%] w-[45%] aspect-square rounded-full bg-mulearn/[0.04] blur-[400px]" />
+        <div className="absolute bottom-[-5%] right-[-5%] w-[40%] aspect-square rounded-full bg-mulearn/[0.06] blur-[400px]" />
+      </div>
       <section
         className="relative pt-24 pb-16"
         style={{
-          background: "linear-gradient(0deg, #ffffff 0%, #f1f2f7 50%, #F3F7FF 100%)",
+          background:
+            "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(241,242,247,0.3) 50%, rgba(243,247,255,0.6) 100%)",
         }}
       >
         <div className="absolute top-20 left-10 md:left-20 opacity-30">
