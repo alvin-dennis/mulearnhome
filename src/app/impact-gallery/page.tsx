@@ -24,7 +24,7 @@ export default function ImpactGallery() {
         <div className="absolute bottom-[1%] left-[-5%] w-[40%] aspect-square rounded-full bg-mulearn/4 blur-[400px]" />
       </div>
       <main
-        className="pt-10 pb-10"
+        className="pt-10 pb-20"
         style={{
           background: "linear-gradient(0deg, #ffffff 0%, #f1f2f7 30%, #dce0f4 100%)",
         }}
@@ -43,7 +43,7 @@ export default function ImpactGallery() {
           <MotionH1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8"
           >
             <span>μLearn</span> <span className="text-mulearn">Impact Gallery</span>
           </MotionH1>
@@ -53,7 +53,7 @@ export default function ImpactGallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative w-full max-w-2xl aspect-[4/3]"
+              className="relative w-full max-w-2xl aspect-4/3"
             >
               <MuImage
                 src="/assets/impact-gallery/hero-pic.webp"
@@ -80,13 +80,13 @@ export default function ImpactGallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm md:text-base font-semibold text-mulearn"
+            className="flex flex-wrap justify-center gap-x-2 gap-y-2 mb-10 text-sm md:text-base font-semibold text-mulearn"
           >
             <span className="hover:underline cursor-pointer">Stay Curious</span>
             <span className="text-mulearn-gray-600">|</span>
             <span className="hover:underline cursor-pointer">Stay Active</span>
             <span className="text-mulearn-gray-600">|</span>
-            <span className="hover:underline cursor-pointer">Grow Every Day.</span>
+            <span className="hover:underline cursor-pointer">Grow Every Day</span>
           </MotionDiv>
 
           <MotionDiv
