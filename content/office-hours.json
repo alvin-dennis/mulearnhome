@@ -2420,6 +2420,17 @@
       ],
       "poster_thumbnail": "/assets/events/OH - Friday - Post (8).jpg"
     },
-    {}
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 21) ",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 21) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n\n",
+      "date": "01/05/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ],
+      "poster_thumbnail": "/assets/events/OH - Friday - Story (9).jpg"
+    }
   ]
 }
