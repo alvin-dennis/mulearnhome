@@ -21,10 +21,11 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "dod",
       name: "The Dawn of DPI",
-      date: "March 12, 2025",
-      location: "Thiruvananthapuram, Kerala",
+      date: "March 14, 2024",
+      location: "Concert Hall, Kerala Arts and Crafts Village, Trivandrum",
       coverImage: "/assets/gallery/dod/4.webp",
-      description: "Annual builders and makers showcase by µLearn.",
+      description:
+        "A high-impact event within the µLearn ecosystem that explores how India’s digital infrastructure is creating new frontiers for developers and entrepreneurs.",
       media: [
         {
           type: "image",
@@ -60,7 +61,7 @@ export const galleryEvents: GalleryEvent[] = (
       location: "Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/huddleglobal/1.webp",
       description:
-        "Global summit bringing together innovators, thought leaders, and tech enthusiasts from around the world to shape the future of technology and education.",
+        "Huddle Global 2025 brought together startups, investors, and innovators for a dynamic and impactful experience.With inspiring sessions, meaningful collaborations, and successful matchmaking, it marked a major milestone in India’s startup ecosystem.",
       media: [
         {
           type: "image",
@@ -106,12 +107,12 @@ export const galleryEvents: GalleryEvent[] = (
     },
     {
       slug: "in50hr",
-      name: "In 50 Hours",
-      date: "February 23, 2025",
-      location: "Thiruvananthapuram, Kerala",
+      name: "In50HRS",
+      date: "23 February 2024",
+      location: "Park Centre,Technopark, Phase 1, Thiruvananthapuram",
       coverImage: "/assets/gallery/in50hr/1.webp",
       description:
-        "A 50-hour hackathon where teams pitch ideas, build prototypes, and compete for funding and recognition.",
+        "A high-octane, 50-hour sprint where innovation meets execution, challenging creators to pitch, prototype, and power up their ideas.",
       media: [
         {
           type: "image",
@@ -167,7 +168,7 @@ export const galleryEvents: GalleryEvent[] = (
       location: "Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/launchpad/1.webp",
       description:
-        "Premier job fair connecting talented individuals with innovative companies in technical and engineering fields.",
+        "A skill-driven recruitment initiative by GTech MuLearn and IEEE Kerala Section to bridge the gap between fresh graduates and the IT industry.",
       media: [
         {
           type: "image",
@@ -199,11 +200,11 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "mutate",
       name: "Mutate",
-      date: "April 12, 2025",
-      location: "Thiruvananthapuram, Kerala",
+      date: "05 January 2025",
+      location: "Gokulam Grand, Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/mutate/1.webp",
       description:
-        "A dynamic hackathon fostering innovation and collaboration through creative problem-solving and rapid prototyping.",
+        "Mutate’25 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
       media: [
         {
           type: "image",
@@ -219,7 +220,7 @@ export const galleryEvents: GalleryEvent[] = (
       location: "Tagore Theatre, Vazhuthacaud, Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/permute/1.webp",
       description:
-        "The annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
+        "India’s largest skill festival brought together innovators, creators, and learners for an unforgettable experience. Filled with inspiring sessions, competitions, and connections, it celebrated talent and collaboration at its best.",
       media: [
         {
           type: "image",
