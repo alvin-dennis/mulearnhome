@@ -21,7 +21,7 @@ export default function GalleryPage() {
   };
 
   return (
-    <section className="min-h-screen">
+    <section className="px-6 py-8 min-h-screen">
       <div className="max-w-[1300px] mx-auto mb-16">
         <MotionDiv
           initial="hidden"
