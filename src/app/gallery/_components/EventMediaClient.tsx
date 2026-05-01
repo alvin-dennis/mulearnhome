@@ -40,7 +40,7 @@ export function EventMediaClient({ event }: EventMediaClientProps) {
   return (
     <section className="px-6 py-8 md:px-12 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <Button variant="ghost" onClick={() => router.back()} className="mb-6">
+        <Button variant="link" onClick={() => router.back()} className="mb-6 text-mulearn">
           <ArrowLeft className="w-4 h-4" />
           Back
         </Button>

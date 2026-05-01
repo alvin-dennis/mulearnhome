@@ -16,35 +16,325 @@ export interface GalleryEvent {
   media: GalleryMediaItem[];
 }
 
-export const galleryEvents: GalleryEvent[] = [
-  {
-    slug: "bc2025",
-    name: "BuildersCamp 2025",
-    date: "March 12, 2025",
-    location: "Thiruvananthapuram, Kerala",
-    coverImage: "/assets/gallery/bc2025/cover.jpg",
-    description: "Annual builders and makers showcase by µLearn.",
-    media: [
-      {
-        type: "image",
-        src: "/assets/gallery/bc2025/photo1.jpg",
-        alt: "BuildersCamp 2025 opening ceremony",
-      },
-      {
-        type: "image",
-        src: "/assets/gallery/bc2025/photo2.jpg",
-        alt: "Hackathon teams collaborating at BuildersCamp 2025",
-      },
-      {
-        type: "video",
-        src: "/assets/gallery/bc2025/highlight.mp4",
-        thumbnail: "/assets/gallery/bc2025/highlight-thumb.jpg",
-        caption: "Event highlights",
-      },
-    ],
-  },
-  // Add more events here following the same shape
-];
+export const galleryEvents: GalleryEvent[] = (
+  [
+    {
+      slug: "dod",
+      name: "The Dawn of DPI",
+      date: "March 12, 2025",
+      location: "Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/dod/4.webp",
+      description: "Annual builders and makers showcase by µLearn.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/dod/1.webp",
+          alt: "Keynote speaker presenting on the main stage at The Dawn of DPI conclave",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/dod/2.webp",
+          alt: "Panel discussion with technology leaders and government officials on DPI adoption",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/dod/3.webp",
+          alt: "Audience of developers and entrepreneurs listening to a session on India Stack",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/dod/4.webp",
+          alt: "Main stage with event branding and speaker addressing the crowd about digital public infrastructure",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/dod/5.webp",
+          alt: "Networking break with delegates discussing Aadhaar, UPI, and DigiLocker integrations",
+        },
+      ],
+    },
+    {
+      slug: "huddleglobal",
+      name: "Huddle Global Summit",
+      date: "July 19, 2025",
+      location: "Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/huddleglobal/1.webp",
+      description:
+        "Global summit bringing together innovators, thought leaders, and tech enthusiasts from around the world to shape the future of technology and education.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/1.webp",
+          alt: "Keynote speaker addressing the audience at Huddle Global summit",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/2.webp",
+          alt: "Panel discussion with industry leaders and innovators",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/3.webp",
+          alt: "Audience engaged during a tech talk session",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/4.webp",
+          alt: "Networking break with delegates exchanging ideas",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/5.webp",
+          alt: "Group photo of speakers and organizers on stage",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/6.webp",
+          alt: "Interactive workshop session with hands-on learning",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/7.webp",
+          alt: "Exhibition hall showcasing innovative projects",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/huddleglobal/8.webp",
+          alt: "Closing ceremony with prize distribution",
+        },
+      ],
+    },
+    {
+      slug: "in50hr",
+      name: "In 50 Hours",
+      date: "February 23, 2025",
+      location: "Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/in50hr/1.webp",
+      description:
+        "A 50-hour hackathon where teams pitch ideas, build prototypes, and compete for funding and recognition.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/1.webp",
+          alt: "Opening ceremony and team formation at In50Hrs hackathon",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/2.webp",
+          alt: "Participants brainstorming and sketching ideas on whiteboards",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/3.webp",
+          alt: "Teams coding intensively during the 50-hour development sprint",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/4.webp",
+          alt: "Mentor providing guidance to a team on their project",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/5.webp",
+          alt: "Team collaboration during late-night hacking session",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/6.webp",
+          alt: "Project demo setup and preparation for presentation",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/7.webp",
+          alt: "Final pitch presentation in front of judges and investors",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/8.webp",
+          alt: "Award ceremony celebrating winning teams and closing the event",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/in50hr/9.webp",
+          alt: "Group photo of all participants and organizers",
+        },
+      ],
+    },
+    {
+      slug: "launchpad",
+      name: "Launchpad Kerala",
+      date: "January 18, 2025",
+      location: "Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/launchpad/1.webp",
+      description:
+        "Premier job fair connecting talented individuals with innovative companies in technical and engineering fields.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/launchpad/1.webp",
+          alt: "Registration desk with attendees checking in at Launchpad Kerala",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/launchpad/2.webp",
+          alt: "Company representatives at recruitment booths interacting with candidates",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/launchpad/3.webp",
+          alt: "Technical interview session between recruiters and job seekers",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/launchpad/4.webp",
+          alt: "Networking session with professionals sharing contacts and opportunities",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/launchpad/5.webp",
+          alt: "Panel discussion on career opportunities in technology sector",
+        },
+      ],
+    },
+    {
+      slug: "mutate",
+      name: "Mutate",
+      date: "April 12, 2025",
+      location: "Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/mutate/1.webp",
+      description:
+        "A dynamic hackathon fostering innovation and collaboration through creative problem-solving and rapid prototyping.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/mutate/1.webp",
+          alt: "Mutate hackathon main stage with participants ready to innovate",
+        },
+      ],
+    },
+    {
+      slug: "permute",
+      name: "Permute",
+      date: "March 29, 2025",
+      location: "Tagore Theatre, Vazhuthacaud, Thiruvananthapuram, Kerala",
+      coverImage: "/assets/gallery/permute/1.webp",
+      description:
+        "The annual flagship celebration of the µLearn Foundation—an electrifying gathering that honors excellence, sparks bold ideas through thought-provoking panels, unveils visionary roadmaps, and ignites connections across a vibrant tapestry of talent and innovation.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/permute/1.webp",
+          alt: "Inaugural session with the Chief Minister of Kerala at Permute 2025",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/2.webp",
+          alt: "Keynote address by visionary leaders from the tech industry",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/3.webp",
+          alt: "Panel discussion on skill development and innovation in Kerala",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/4.webp",
+          alt: "Audience listening attentively during a thought-provoking session",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/5.webp",
+          alt: "MoU exchange ceremony between partner organizations",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/6.webp",
+          alt: "Student projects showcase in the exhibition area",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/7.webp",
+          alt: "Interactive learning zone with hands-on demonstrations",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/8.webp",
+          alt: "Networking session with delegates and speakers",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/9.webp",
+          alt: "Cultural program and talent show during the event",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/10.webp",
+          alt: "Student volunteers coordinating at the information desk",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/11.webp",
+          alt: "Workshop session on emerging technologies",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/12.webp",
+          alt: "Award ceremony recognizing outstanding contributions",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/13.webp",
+          alt: "Closing ceremony with reflections on the event's impact",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/14.webp",
+          alt: "Group photo of attendees at Tagore Theatre",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/15.webp",
+          alt: "Main stage with µLearn branding and lighting setup",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/permute/16.webp",
+          alt: "Stalls for interest groups showcasing their activities",
+        },
+        {
+          type: "image",
+          alt: "Interactive q&a session with speakers",
+          src: "/assets/gallery/permute/17.webp",
+        },
+        {
+          type: "image",
+          alt: "Press meet with media representatives interviewing guests",
+          src: "/assets/gallery/permute/18.webp",
+        },
+        {
+          type: "image",
+          alt: "Exhibition of innovative products and prototypes",
+          src: "/assets/gallery/permute/19.webp",
+        },
+        {
+          type: "image",
+          alt: "Delegates networking in the conference hall",
+          src: "/assets/gallery/permute/20.webp",
+        },
+        {
+          type: "image",
+          alt: "Chief guest lighting the inaugural lamp",
+          src: "/assets/gallery/permute/21.webp",
+        },
+        {
+          type: "image",
+          alt: "Youth audience engaged during the valedictory function",
+          src: "/assets/gallery/permute/22.webp",
+        },
+      ],
+    },
+  ] as GalleryEvent[]
+).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export function getGalleryEventBySlug(slug: string): GalleryEvent | undefined {
   return galleryEvents.find((e) => e.slug === slug);

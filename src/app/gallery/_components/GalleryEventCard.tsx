@@ -55,10 +55,10 @@ export function GalleryEventCard({ event, variant }: GalleryEventCardProps) {
             alt={event.name}
             width={600}
             height={400}
-            className="h-48 object-cover w-full"
+            className="w-full aspect-video object-cover"
           />
         ) : (
-          <div className="h-48 bg-mulearn w-full" />
+          <div className="w-full aspect-video bg-mulearn" />
         )}
 
         <div className="p-4 flex flex-col gap-2">
