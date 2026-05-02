@@ -64,7 +64,7 @@ export default function Level7Section() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-white border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition-all duration-300"
+              className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-mulearn-blackish mb-4">
                 {card.title}

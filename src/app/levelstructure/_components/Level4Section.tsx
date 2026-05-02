@@ -25,7 +25,7 @@ export default function Level4Section() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white flex flex-col items-center py-10 lg:py-20 overflow-hidden"
+      className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
       {/* Background Sparkles */}

@@ -54,7 +54,7 @@ export default function Level3Section() {
               </div>
             </div>
 
-            <Card className="bg-white border border-mulearn-blackish shadow-none rounded-xl mt-8">
+            <Card className="bg-mulearn-whitish border border-mulearn-blackish shadow-none rounded-xl mt-8">
               <CardContent className="p-6 space-y-2">
                 <h3 className="text-base font-bold text-mulearn-blackish">The Impact</h3>
                 <p className="text-sm text-mulearn-blackish leading-relaxed font-medium">

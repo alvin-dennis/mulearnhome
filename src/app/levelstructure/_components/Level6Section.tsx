@@ -13,7 +13,7 @@ export default function Level6Section() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white flex items-center py-10 lg:py-20 overflow-hidden"
+      className="relative bg-mulearn-whitish flex items-center py-10 lg:py-20 overflow-hidden"
       id="level-6"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
@@ -68,7 +68,7 @@ export default function Level6Section() {
             </div>
 
             {/* Impact Card */}
-            <div className="bg-white border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-2xl">
+            <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-2xl">
               <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed">
                 <span className="font-bold">The Impact</span>
                 <br />
