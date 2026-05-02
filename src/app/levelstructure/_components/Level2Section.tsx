@@ -77,7 +77,7 @@ export default function Level2Section() {
             alt="Line Path"
             width={1400}
             height={800}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[50%] z-0 w-[130%] max-w-[1400px] object-contain pointer-events-none"
+            className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-[50%] z-0 w-[150%] max-w-[1600px] object-contain pointer-events-none"
           />
 
           {/* Left Planet */}
@@ -86,7 +86,7 @@ export default function Level2Section() {
             alt="Planet"
             width={280}
             height={280}
-            className="absolute top-[45%] left-[-5%] lg:-left-[10%] z-20 w-[22%] max-w-[280px] object-contain"
+            className="absolute top-[55%] left-[-5%] lg:-left-[10%] z-20 w-[22%] max-w-[280px] object-contain"
           />
 
           {/* Center Astronaut */}
