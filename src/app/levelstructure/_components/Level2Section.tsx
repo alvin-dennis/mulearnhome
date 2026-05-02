@@ -13,7 +13,7 @@ export default function Level2Section() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center py-12 lg:py-24 overflow-hidden bg-mulearn-whitish"
+      className="relative flex flex-col items-center py-10 lg:py-20 overflow-hidden bg-mulearn-whitish"
       id="level-2"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center">

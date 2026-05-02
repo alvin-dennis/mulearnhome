@@ -14,7 +14,7 @@ export default function Level1Section() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex items-center py-12 lg:py-24 overflow-hidden"
+      className="relative flex items-center py-10 lg:py-20 overflow-hidden"
       id="level-1"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
