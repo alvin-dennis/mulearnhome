@@ -28,7 +28,6 @@ export default function Level4Section() {
       className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
-      {/* Background Sparkles */}
       <div className="absolute inset-0 pointer-events-none">
         <Sparkle className="absolute top-[15%] left-[5%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
         <Sparkle className="absolute top-[35%] right-[10%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-20" />
@@ -56,9 +55,7 @@ export default function Level4Section() {
           </p>
         </MotionDiv>
 
-        {/* Desktop View: Maintained 5 on top, 4 on bottom structure */}
         <div className="hidden lg:flex flex-col items-center gap-5 w-full">
-          {/* Top Row: 5 Cards */}
           <div className="grid grid-cols-5 gap-5 w-full">
             {INTEREST_GROUPS.slice(0, 5).map((group, index) => (
               <MotionDiv
@@ -79,7 +76,6 @@ export default function Level4Section() {
             ))}
           </div>
 
-          {/* Bottom Row: 4 Cards (Centered) */}
           <div className="grid grid-cols-4 gap-5 w-full max-w-6xl">
             {INTEREST_GROUPS.slice(5).map((group, index) => (
               <MotionDiv
@@ -101,7 +97,6 @@ export default function Level4Section() {
           </div>
         </div>
 
-        {/* Mobile & Tablet View: Single continuous grid to avoid gaps */}
         <div className="grid lg:hidden grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 w-full">
           {INTEREST_GROUPS.map((group, index) => (
             <MotionDiv

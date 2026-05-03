@@ -18,7 +18,6 @@ export default function Level6Section() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Text Section */}
           <MotionDiv
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
@@ -38,9 +37,7 @@ export default function Level6Section() {
               </p>
             </div>
 
-            {/* List with segmented line */}
             <div className="space-y-6 relative pl-8">
-              {/* Segmented Line Simulation */}
               <div className="absolute left-0 top-0 bottom-0 w-[3px] flex flex-col gap-2">
                 {[...Array(4)].map((_, i) => (
                   <div key={i} className="flex-1 bg-mulearn-trusty-blue rounded-full" />
@@ -67,7 +64,6 @@ export default function Level6Section() {
               ))}
             </div>
 
-            {/* Impact Card */}
             <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-2xl">
               <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed">
                 <span className="font-bold">The Impact</span>
@@ -82,7 +78,6 @@ export default function Level6Section() {
             </div>
           </MotionDiv>
 
-          {/* Right Visual Section: Astronauts */}
           <MotionDiv
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
@@ -99,11 +94,9 @@ export default function Level6Section() {
               />
             </div>
 
-            {/* Sparkles around astronauts */}
             <Sparkle className="absolute top-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
             <Sparkle className="absolute bottom-[40%] left-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-30" />
 
-            {/* Purple portal at bottom right - Moved even further down */}
             <div className="absolute bottom-[-30%] right-[10%] w-64 h-64 md:w-72 md:h-72 opacity-50 z-0">
               <MuImage
                 src="/assets/levelstructure/galaxy_lvl6.svg"

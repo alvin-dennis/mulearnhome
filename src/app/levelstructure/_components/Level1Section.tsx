@@ -26,7 +26,6 @@ export default function Level1Section() {
             className="relative flex items-center justify-center order-1 -mt-12 lg:-mt-24 lg:-ml-12"
           >
             <div className="relative w-full max-w-lg aspect-square flex flex-col items-center justify-center">
-              {/* Sparkles using lucide-react */}
               <Sparkle className="absolute top-10 left-4 text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
               <Sparkle className="absolute top-1/4 right-0 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-40" />
               <Sparkle className="absolute bottom-[40%] left-[-10%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
@@ -34,7 +33,6 @@ export default function Level1Section() {
               <Sparkle className="absolute bottom-4 left-1/2 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
               <Sparkle className="absolute top-[-5%] right-[-25%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-40" />
 
-              {/* Planet */}
               <MuImage
                 src="/assets/levelstructure/planet_lvl1.svg"
                 alt="Planet"
@@ -43,7 +41,6 @@ export default function Level1Section() {
                 className="absolute -bottom-12 -right-[25%] z-20 w-[50%] max-w-[240px] object-contain"
               />
 
-              {/* UFO and Astronaut Composition */}
               <div className="relative w-full h-[550px] mt-4">
                 <MuImage
                   src="/assets/levelstructure/ufo_lvl1.svg"

@@ -32,7 +32,6 @@ export default function LevelStructure() {
             className="min-h-screen"
           >
             <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-              {/* Background Image */}
               <div
                 className="absolute inset-0 z-0 pointer-events-none"
                 style={{
@@ -43,7 +42,6 @@ export default function LevelStructure() {
                 }}
               />
 
-              {/* Content */}
               <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto mt-16 sm:mt-0">
                 <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-mulearn-blackish tracking-tight mb-6 sm:mb-8 leading-[1.1]">
                   The <span className="text-mulearn">µLearn</span>

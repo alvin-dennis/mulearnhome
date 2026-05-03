@@ -16,7 +16,6 @@ export default function Level7Section() {
       className="relative flex flex-col items-center py-10 lg:py-20 overflow-hidden min-h-[90vh]"
       id="level-7"
     >
-      {/* Background Asset - Increased visibility as requested */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <MuImage
           src="/assets/levelstructure/bg_lvl7.svg"
@@ -42,7 +41,6 @@ export default function Level7Section() {
           </p>
         </MotionDiv>
 
-        {/* 3 Premium White Cards - Updated to match Level 6 style */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mb-24">
           {[
             {
@@ -76,7 +74,6 @@ export default function Level7Section() {
           ))}
         </div>
 
-        {/* Final Text */}
         <MotionDiv
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -90,7 +87,6 @@ export default function Level7Section() {
           </p>
         </MotionDiv>
 
-        {/* Static Blue Sparkles Spread Across */}
         <div className="absolute inset-0 pointer-events-none opacity-40">
           <Sparkle className="absolute top-[15%] left-[5%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue" />
           <Sparkle className="absolute top-[40%] right-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue" />

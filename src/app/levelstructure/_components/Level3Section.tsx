@@ -19,7 +19,6 @@ export default function Level3Section() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-start mt-8">
-          {/* Left Text Section */}
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -65,21 +64,18 @@ export default function Level3Section() {
             </Card>
           </MotionDiv>
 
-          {/* Right Visual Section */}
           <MotionDiv
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative hidden lg:flex items-start justify-end h-full min-h-[600px] lg:-mr-24"
           >
-            {/* Sparkles */}
             <Sparkle className="absolute top-[20%] left-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
             <Sparkle className="absolute top-[40%] left-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-40" />
             <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
             <Sparkle className="absolute top-[25%] right-[25%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-30" />
             <Sparkle className="absolute top-[50%] right-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
 
-            {/* Astronaut */}
             <MuImage
               src="/assets/levelstructure/astronaut1.svg"
               alt="Astronaut Level 3"
