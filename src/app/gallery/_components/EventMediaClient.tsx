@@ -40,7 +40,7 @@ export function EventMediaClient({ event }: EventMediaClientProps) {
   return (
     <section className="px-6 py-8 md:px-12 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <Button variant="ghost" onClick={() => router.back()} className="mb-6">
+        <Button variant="link" onClick={() => router.back()} className="mb-6 text-mulearn">
           <ArrowLeft className="w-4 h-4" />
           Back
         </Button>
@@ -51,7 +51,7 @@ export function EventMediaClient({ event }: EventMediaClientProps) {
           <div className="flex flex-wrap items-center gap-4 text-sm text-mulearn-gray-600 mb-3">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              {event.date}
+              {event.date || event.month}
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
