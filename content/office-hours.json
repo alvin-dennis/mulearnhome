@@ -1918,6 +1918,34 @@
       "date": "24/04/2026",
       "link": "https://mulearn.org/r/gdev-officehour",
       "interestGroups": ["game-dev"]
+    },
+    {
+      "title": "Task Doubt Clearence",
+      "performer": "Aysha Saliha",
+      "designation": "IG Lead",
+      "date": "28/04/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": ["ui-ux"]
+    },
+    {
+      "title": "Aura, Energy & Leadership",
+      "performer": "Agatha Anna Skariah",
+      "designation": "SL IG Core Team Member, μLearn Foundation",
+      "description": "Most people focus on what leaders do.\nBut what truly sets them apart is the energy they carry.\n\nJoin us for μLearn Office Hours on “Aura, Energy & Leadership” a session on how your presence, emotional energy, and mindset shape the way others perceive and follow you. Discover how intentional energy can elevate your leadership and influence.\n",
+      "date": "1/05/2026",
+      "link": "https://mulearn.org/r/sl-officehour⁠",
+      "interestGroups": ["strategic-leadership"],
+      "poster_thumbnail": "/assets/events/OH - Friday - Post (8).jpg"
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 21) ",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 21) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n\n",
+      "date": "01/05/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": ["game-dev"],
+      "poster_thumbnail": "/assets/events/OH - Friday - Story (9).jpg"
     }
   ]
 }

@@ -42,29 +42,22 @@ export default function Benefits() {
   return (
     <section className="mx-auto max-w-[1276px] px-6 py-16 lg:px-8 lg:py-20">
       <div className="w-full flex flex-col items-center gap-5">
-        {/* Heading */}
         <div className="self-stretch text-center">
           <span className="text-5xl font-bold leading-[62.40px]">Benefits of an </span>
           <span className="text-mulearn text-5xl font-bold leading-[62.40px]">Enabler</span>
           <span className="text-5xl font-bold leading-[62.40px]">?</span>
         </div>
 
-        {/* Cards grid — 1 col on mobile, row on xl */}
         <div className="w-full flex flex-col items-center gap-5 xl:flex-row xl:items-start xl:flex-wrap xl:justify-start">
-          {cards.map((card, i) => (
+          {cards.map((card) => (
             <Card
-              key={i}
+              key={card.title}
               className="relative w-full max-w-xs xl:w-72 h-60 p-6 flex flex-col justify-start items-start gap-5"
             >
-              {/* Icon */}
               <div className="w-12 h-12 relative overflow-hidden flex-shrink-0">
                 <Icon icon={card.icon} />
               </div>
-
-              {/* Title */}
               <div className="text-mulearn text-2xl font-semibold leading-6">{card.title}</div>
-
-              {/* Description */}
               <div className="self-stretch text-base font-normal leading-6">{card.description}</div>
             </Card>
           ))}
