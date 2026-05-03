@@ -145,11 +145,6 @@ h5 {
         animation: floatY 2.5s ease-in-out 1.6s infinite;
     }
 
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.5; transform: scale(0.8) rotate(0deg); }
-        50% { opacity: 1; transform: scale(1.2) rotate(15deg); filter: drop-shadow(0 0 8px rgba(175, 46, 230, 0.8)); }
-    }
-
 }
 
 @theme inline {
