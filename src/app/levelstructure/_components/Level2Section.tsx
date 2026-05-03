@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "framer-motion";
+import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
@@ -12,100 +13,92 @@ export default function Level2Section() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen relative bg-mulearn-whitish flex items-center py-20"
+      className="relative flex flex-col items-center py-10 lg:py-20 overflow-hidden bg-mulearn-whitish"
       id="level-2"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <MotionDiv
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.6 }}
-            className="relative flex items-center justify-center lg:justify-start"
-          >
-            <div className="w-full max-w-md lg:max-w-2xl">
-              <MuImage
-                src="/assets/levelstructure/help.svg"
-                alt="Help - Mindset Transformation"
-                width={700}
-                height={700}
-                className="w-full h-auto"
-              />
-            </div>
-          </MotionDiv>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center">
+        <MuImage
+          src="/assets/levelstructure/rocket_lvl2.svg"
+          alt="Rocket"
+          width={300}
+          height={400}
+          className="hidden md:block absolute top-0 right-[-10%] sm:right-[-5%] lg:right-[5%] z-20 w-[40%] sm:w-[30%] max-w-[300px] object-contain"
+        />
 
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <h2>
-                The Mindset <span className="text-mulearn">Shift</span>
-              </h2>
-              <p className="text-xl text-mulearn-gray-600">
-                From <span className="text-mulearn">Fixed</span> →{" "}
-                <span className="text-mulearn">Growth</span> →{" "}
-                <span className="text-mulearn">Abundance</span>
-              </p>
-            </div>
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+          className="text-center space-y-6 max-w-4xl mx-auto mb-4 lg:mb-4 relative z-40"
+        >
+          <div className="space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
+              The Mindset <span className="text-mulearn-trusty-blue">Shift</span>
+            </h2>
+            <p className="text-lg sm:text-xl font-medium text-mulearn-trusty-blue">
+              From Fixed &rarr; Growth &rarr; Abundance
+            </p>
+          </div>
 
-            <div className="space-y-6">
-              <p className="text-lg text-mulearn-blackish leading-relaxed">
-                Most students walk into μLearn trapped in{" "}
-                <span className="text-mulearn">invisble cages</span>
-              </p>
+          <div className="space-y-2 text-sm sm:text-base font-medium max-w-3xl mx-auto">
+            <p className="text-mulearn-blackish">
+              Most students walk into μLearn trapped in invisible cages
+            </p>
+            <p className="text-mulearn-gray-600">
+              μLearn rewires these narratives. Through experiences, reflection spaces, and peer
+              nudges, a fixed mindset stretches into a growth mindset... and finally into abundance
+              thinking.
+            </p>
+          </div>
+        </MotionDiv>
 
-              <p className="text-mulearn-gray-600">
-                μLearn rewires these narratives. Through experiences, reflection spaces, and peer
-                nudges, a fixed mindset stretches into a growth mindset… and finally into abundance
-                thinking.
-              </p>
+        <MotionDiv
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative w-full max-w-6xl aspect-square md:aspect-[2/1] lg:aspect-[2.5/1] flex items-center justify-center -mt-8 lg:-mt-16"
+        >
+          <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
+          <Sparkle className="absolute top-[30%] left-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-40" />
+          <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
+          <Sparkle className="absolute top-[15%] right-[25%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-30" />
+          <Sparkle className="absolute top-[40%] right-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
+          <Sparkle className="absolute bottom-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-40" />
+          <Sparkle className="absolute top-[50%] left-[30%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-50" />
+          <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
 
-              <div className="space-y-3 pt-4">
-                <div className="pl-4 border-l-2 border-mulearn-duke-purple">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold">Web Dev Student:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;I&apos;ll never be good enough to compete globally.&rdquo;
-                    </span>
-                  </p>
-                </div>
+          <MuImage
+            src="/assets/levelstructure/line_lvl2.svg"
+            alt="Line Path"
+            width={1400}
+            height={800}
+            className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-[50%] z-0 w-[150%] max-w-[1600px] object-contain pointer-events-none"
+          />
 
-                <div className="pl-4 border-l-2 border-mulearn-trusty-blue">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> Comics Artist:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;I doubt whether my passion has career potential.&rdquo;
-                    </span>
-                  </p>
-                </div>
+          <MuImage
+            src="/assets/levelstructure/planet_lvl2.svg"
+            alt="Planet"
+            width={280}
+            height={280}
+            className="absolute top-[55%] left-[-5%] lg:-left-[10%] z-20 w-[22%] max-w-[280px] object-contain"
+          />
 
-                <div className="pl-4 border-l-2 border-mulearn-duke-purple">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> Space Enthusiast:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;I feel locked out because labs are pricey.&rdquo;
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <MuImage
+            src="/assets/levelstructure/astronaut3.svg"
+            alt="Astronaut"
+            width={300}
+            height={340}
+            className="relative z-30 w-[40%] sm:w-[28%] min-w-[220px] max-w-[300px] object-contain hover:-translate-y-4 transition-transform duration-700 ease-in-out"
+          />
 
-            <div className="bg-mulearn-gray-50 rounded-2xl p-6 space-y-3">
-              <h3 className="text-lg font-bold text-mulearn-blackish">The Impact</h3>
-              <p className="text-mulearn-gray-600">
-                Students internalize grit, self-learning, and peer collaboration. Failure becomes
-                feedback.{" "}
-                <span className="font-semibold text-mulearn-blackish">
-                  Peers become allies, not competitors
-                </span>
-                .
-              </p>
-            </div>
-          </MotionDiv>
-        </div>
+          <MuImage
+            src="/assets/levelstructure/planets2_lvl2.svg"
+            alt="Planets"
+            width={450}
+            height={450}
+            className="absolute -bottom-[30%] lg:-bottom-[40%] -right-[15%] lg:-right-[20%] z-20 w-[35%] max-w-[450px] object-contain"
+          />
+        </MotionDiv>
       </div>
     </section>
   );
