@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   experimental: {
     // Optimize for modern browsers to reduce polyfill size
     esmExternals: true,
+    inlineCss: true,
   },
   images: {
     // Serve next-gen formats (AVIF > WebP > fallback)
@@ -16,16 +17,6 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 2592000,
     qualities: [75, 85, 90],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "placehold.co",
-        pathname: "/**",
-      },
       {
         protocol: "https",
         hostname: "s3.ap-south-1.amazonaws.com",
