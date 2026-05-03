@@ -88,7 +88,7 @@ export default function Features() {
               <Card
                 className="h-full border-mulearn-gray-600/20 transition-all duration-300"
                 style={{
-                  backgroundColor: isCardActive(i) ? feature.bgColor : "mulearn-whitish",
+                  backgroundColor: isCardActive(i) ? feature.bgColor : "white",
                   height: isMobile ? "auto" : "350px",
                 }}
               >
@@ -134,7 +134,9 @@ export default function Features() {
                       }
                       height={120}
                       className="object-contain max-w-full max-h-full"
-                      style={{ width: "auto", height: "auto" }}
+                      quality={85}
+                      preload={true}
+                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 40vw"
                     />
                   </div>
                 </CardContent>

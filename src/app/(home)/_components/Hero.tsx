@@ -51,7 +51,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight  max-w-3xl sm:max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-mulearn-blackish leading-snug sm:leading-tight lg:leading-tight max-w-3xl sm:max-w-4xl"
           >
             Your Ultimate Gateway
             <br />
@@ -82,8 +82,6 @@ export default function Hero() {
                 className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
                 onClick={() => {
                   const path = refreshToken ? "/dashboard/home" : "/register";
-                  console.log("Redirecting to:", path);
-                  console.log("Has refresh token:", !!refreshToken);
                   redirect(path);
                 }}
               >
@@ -100,7 +98,6 @@ export default function Hero() {
           alt="Community illustration showcasing µLearn peer learning platform"
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
           preload
-          fetchPriority="high"
           quality={85}
           width={1300}
           height={900}
