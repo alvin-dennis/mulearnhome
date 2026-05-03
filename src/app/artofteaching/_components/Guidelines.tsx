@@ -54,13 +54,13 @@ const Guidelines = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2">
-            <p className="text-lg lg:text-2xl text-gray-600 font-normal mb-2">
+            <p className="text-lg lg:text-2xl text-mulearn-gray-600 font-normal mb-2">
               Theme: Lessons of The Future.
             </p>
             <h2 className="text-4xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
               What is <span className="text-mulearn">Art of Teaching???</span>
             </h2>
-            <p className="mt-2 text-base lg:text-lg text-gray-600 lg:w-4/5">
+            <p className="mt-2 text-base lg:text-lg text-mulearn-gray-600 lg:w-4/5">
               The &apos;Art of Teaching&apos; is a contest that celebrates educators who creatively
               simplify complex topics for better student understanding and retention.
               <br />
@@ -82,7 +82,10 @@ const Guidelines = () => {
               <CardContent>
                 <div style={timelineStyle}>
                   <div className="mb-4">
-                    <Badge variant="default" className="bg-mulearn text-white text-base px-3 py-1">
+                    <Badge
+                      variant="default"
+                      className="bg-mulearn text-mulearn-whitish text-base px-3 py-1"
+                    >
                       Level 1
                     </Badge>
                   </div>
@@ -97,7 +100,10 @@ const Guidelines = () => {
                   </div>
 
                   <div className="mb-4 mt-6">
-                    <Badge variant="default" className="bg-mulearn text-white text-base px-3 py-1">
+                    <Badge
+                      variant="default"
+                      className="bg-mulearn text-mulearn-whitish text-base px-3 py-1"
+                    >
                       Level 2
                     </Badge>
                   </div>

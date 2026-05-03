@@ -11,7 +11,7 @@ export default function NotFoundPage() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-mulearn-whitish">
       <div className="absolute flex flex-col items-center left-6 top-12 sm:left-10 sm:top-16 md:left-20 md:top-20">
-        <div className="flex flex-row items-center gap-1 text-lg font-medium text-[#a1a1a1] sm:text-2xl md:text-4xl">
+        <div className="flex flex-row items-center gap-1 text-lg font-medium text-mulearn-gray-600 sm:text-2xl md:text-4xl">
           <div className="rotate-[6deg] animate-uh">uh,</div>
           <div className="relative top-1 rotate-[7deg] animate-oh">Oh!</div>
           <span className="flex flex-row relative top-1 -rotate-[12deg] animate-span">
@@ -19,7 +19,7 @@ export default function NotFoundPage() {
             <div className="rotate-[12deg]">&apos;ve</div>
           </span>
         </div>
-        <div className="flex flex-row items-center gap-1 font-bold text-[#a1a1a1] -mt-4 text-5xl sm:text-6xl md:text-8xl">
+        <div className="flex flex-row items-center gap-1 font-bold text-mulearn-gray-600 -mt-4 text-5xl sm:text-6xl md:text-8xl">
           <div className="animate-l">l</div>
           <MuImage
             src={stone}
@@ -31,7 +31,7 @@ export default function NotFoundPage() {
           <div className="animate-s">s</div>
           <div className="animate-t">t</div>
         </div>
-        <div className="flex flex-row items-center gap-1 font-semibold text-[#a1a1a1] -mt-6 text-2xl sm:text-3xl md:text-5xl">
+        <div className="flex flex-row items-center gap-1 font-semibold text-mulearn-gray-600 -mt-6 text-2xl sm:text-3xl md:text-5xl">
           <div className="rotate-[3deg] animate-in">in</div>
           <div className="-rotate-[2deg] animate-space">space</div>
         </div>

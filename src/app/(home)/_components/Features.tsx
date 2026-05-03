@@ -88,7 +88,7 @@ export default function Features() {
               <Card
                 className="h-full border-mulearn-gray-600/20 transition-all duration-300"
                 style={{
-                  backgroundColor: isCardActive(i) ? feature.bgColor : "white",
+                  backgroundColor: isCardActive(i) ? feature.bgColor : "mulearn-whitish",
                   height: isMobile ? "auto" : "350px",
                 }}
               >

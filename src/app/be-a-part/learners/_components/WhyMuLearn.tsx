@@ -10,7 +10,7 @@ const WhyMuLearn = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3">
             Why <span className="text-mulearn">μLearn</span>?
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 font-medium">
+          <p className="text-lg md:text-xl text-mulearn-blackish font-medium">
             Learn by doing. Grow with purpose.
           </p>
         </div>

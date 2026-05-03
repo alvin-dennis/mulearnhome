@@ -30,8 +30,8 @@ export default function PartnersPage() {
                   >
                     <defs>
                       <linearGradient id="trustyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#2E85FE" />
-                        <stop offset="100%" stopColor="#AF2EE6" />
+                        <stop offset="0%" stopColor="var(--mulearn-trusty-blue)" />
+                        <stop offset="100%" stopColor="var(--mulearn-duke-purple)" />
                       </linearGradient>
                     </defs>
                     <path
@@ -120,7 +120,7 @@ export default function PartnersPage() {
                       our vision of accessible, peer-driven education and collaborative growth.
                     </p>
 
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-mulearn-gray-600">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Student communities & clubs
@@ -137,7 +137,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Community Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[var(--mulearn-trusty-blue)] to-[var(--mulearn-duke-purple)] bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function PartnersPage() {
                 <div className="bg-mulearn-whitish rounded-2xl shadow-[1px_1px_45px_-5px_rgba(0,0,0,0.08)] overflow-hidden h-full hover:shadow-[1px_1px_60px_-5px_rgba(69,111,246,0.15)] transition-all duration-300 hover:-translate-y-2">
                   <div className="relative w-full h-64 sm:h-72 lg:h-80 overflow-hidden">
                     <MuImage
-                      src="/assets/company/stud.svg"
+                      src="/assets/partners/Collaboration-pana.svg"
                       alt="Company Partners"
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -176,7 +176,7 @@ export default function PartnersPage() {
                       careers.
                     </p>
 
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-mulearn-gray-600">
                       <li className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-mulearn" />
                         Technology companies
@@ -193,7 +193,7 @@ export default function PartnersPage() {
 
                     <div className="flex items-center gap-2 font-semibold pt-4 group-hover:gap-3 transition-all duration-300">
                       <span className="text-mulearn">Explore Company Partners</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-[#2E85FE] to-[#AF2EE6] bg-clip-text text-transparent" />
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform bg-gradient-to-br from-mulearn-trusty-blue to-mulearn-duke-purple bg-clip-text text-transparent" />
                     </div>
                   </div>
                 </div>

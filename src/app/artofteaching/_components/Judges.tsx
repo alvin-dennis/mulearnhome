@@ -9,7 +9,7 @@ const Judges = () => {
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
             The Former <span className="text-mulearn">Judging Panel</span>
           </h2>
-          <p className="text-base lg:text-lg text-gray-600 lg:w-2/5">
+          <p className="text-base lg:text-lg text-mulearn-gray-600 lg:w-2/5">
             We needed some really creative people with amazing mentoring skills to judge all your
             submissions. Listed below were our judges for the first edition of Art of Teaching.
           </p>

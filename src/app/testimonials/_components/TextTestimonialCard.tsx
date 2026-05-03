@@ -64,7 +64,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
           key={i}
           className={cn(
             "w-4 h-4",
-            i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-300 text-gray-300",
+            i < rating ? "fill-mulearn text-mulearn" : "fill-mulearn-greyish text-mulearn-greyish",
           )}
         />
       ))}

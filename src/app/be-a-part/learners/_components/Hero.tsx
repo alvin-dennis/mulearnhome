@@ -22,7 +22,7 @@ const LearnersHero = () => {
           </span>
         </p>
 
-        <p className="font-bold text-base sm:text-lg lg:text-xl leading-relaxed tracking-normal text-center text-[#456FF6] mb-6 lg:whitespace-nowrap">
+        <p className="font-bold text-base sm:text-lg lg:text-xl leading-relaxed tracking-normal text-center text-mulearn-trusty-blue mb-6 lg:whitespace-nowrap">
           Stay Curious | Stay Active | Grow Every Day.
         </p>
 

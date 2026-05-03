@@ -17,14 +17,14 @@ const StripesBackground = ({ className = "" }: { className?: string }) => (
 );
 
 const colorToFilter = (color: string): string => {
-  if (color.startsWith("linear-gradient") || color.includes("--mulearn-trusty)")) {
+  if (color.startsWith("linear-gradient") || color.includes("--mulearn-trusty")) {
     return "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(1180%) hue-rotate(200deg) brightness(95%) contrast(101%)"; // Default to blue for gradient
   }
 
-  if (color === "#FEFEFE") return "brightness(0) invert(1)";
-  if (color === "#AF2EE6" || color.includes("--mulearn-duke-purple"))
+  if (color.includes("--mulearn-whitish") || color === "#FEFEFE") return "brightness(0) invert(1)";
+  if (color.includes("--mulearn-duke-purple"))
     return "brightness(0) saturate(100%) invert(45%) sepia(84%) saturate(2274%) hue-rotate(244deg) brightness(97%) contrast(98%)"; // Purple
-  if (color === "#2E85FE" || color.includes("--mulearn-trusty-blue"))
+  if (color.includes("--mulearn-trusty-blue"))
     return "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(1180%) hue-rotate(200deg) brightness(95%) contrast(101%)"; // Blue
 
   return "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(1180%) hue-rotate(200deg) brightness(95%) contrast(101%)";
@@ -39,7 +39,7 @@ const MuLearnLogo = ({
   width?: number;
   height?: number;
 }) => {
-  const isGradient = color.startsWith("linear-gradient") || color.includes("--mulearn-trusty)");
+  const isGradient = color.startsWith("linear-gradient") || color.includes("--mulearn-trusty");
 
   if (isGradient) {
     return (
@@ -148,7 +148,7 @@ export default function CampusLogoGenerator() {
   const squareLogoRef = useRef<HTMLDivElement>(null);
 
   const foregroundColors = [
-    { name: "White", value: "#FEFEFE" },
+    { name: "White", value: "var(--mulearn-whitish)" },
     { name: "Purple", value: "var(--mulearn-duke-purple)" },
     { name: "Blue", value: "var(--mulearn-trusty-blue)" },
     { name: "Gradient", value: "var(--mulearn-trusty)" },
@@ -249,9 +249,7 @@ export default function CampusLogoGenerator() {
         //     : await htmlToImage.toSvg(squareLogoRef.current, simpleConfig);
 
         const link = document.createElement("a");
-        link.download = `${
-          formData.campusCode || "mulearn"
-        }-logo.${formData.fileType.toLowerCase()}`;
+        link.download = `${formData.campusCode || "mulearn"}-logo.${formData.fileType.toLowerCase()}`;
         // link.href = fallbackDataUrl;
         document.body.appendChild(link);
         link.click();
@@ -266,9 +264,9 @@ export default function CampusLogoGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-[var(--font-plus-jakarta)]">
-      <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish">
-        <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-[var(--font-plus-jakarta)]}">
+      <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish}">
+        <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto}">
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -276,7 +274,7 @@ export default function CampusLogoGenerator() {
               backgroundSize: "30px 30px",
             }}
           ></div>
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10}">
             {formData.logoType === "YIP" ? (
               <>
                 {/* <div className="relative group">
@@ -309,9 +307,9 @@ export default function CampusLogoGenerator() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div
+                {/* <div
                   className="hidden lg:block w-64 h-64 rounded-full flex items-center justify-center text-mulearn-whitish relative overflow-hidden shadow-2xl"
                   style={{
                     backgroundColor:
@@ -396,7 +394,7 @@ export default function CampusLogoGenerator() {
           </div>
         </div>
 
-        <div className="order-2 lg:order-1 w-full lg:w-110 bg-mulearn-whitish p-4 lg:p-10 shadow overflow-y-auto">
+        <div className="order-2 lg:order-1 w-full lg:w-110 bg-mulearn-whitish p-4 lg:p-10 shadow overflow-y-auto}">
           <div className="space-y-6">
             <div>
               <h1 className="font-bold mb-2 text-3xl">Logo Generator</h1>
@@ -407,11 +405,11 @@ export default function CampusLogoGenerator() {
               <Input
                 type="text"
                 placeholder="Enter Campus Code"
-                className="w-full p-3 border-0 bg-gray-50 focus:bg-mulearn-whitish transition-all duration-200"
+                className="w-full p-3 border-0 bg-mulearn-whitish/50 focus:bg-mulearn-whitish transition-all duration-200"
                 value={formData.campusCode}
                 onChange={(e) => handleInputChange("campusCode", e.target.value)}
               />
-              <div className="text-right text-xs text-gray-400 mt-1">
+              <div className="text-right text-xs text-mulearn-gray-600 mt-1">
                 {formData.campusCode.length}/15
               </div>
             </div>
@@ -493,7 +491,7 @@ export default function CampusLogoGenerator() {
                       <button
                         type="button"
                         key={color.value}
-                        className={`w-12 h-12 rounded border border-gray-200 transition-all ${
+                        className={`w-12 h-12 rounded border border-mulearn-greyish transition-all ${
                           formData.foregroundColor === color.value
                             ? "scale-110 ring-2 ring-mulearn-trusty-blue"
                             : "hover:opacity-80"
@@ -521,7 +519,7 @@ export default function CampusLogoGenerator() {
                         type="button"
                         key={color.value}
                         disabled={formData.logoVariant === "Transparent Bg"}
-                        className={`w-12 h-12 rounded border border-gray-200 transition-all ${
+                        className={`w-12 h-12 rounded border border-mulearn-greyish transition-all ${
                           formData.backgroundColor === color.value
                             ? "scale-110 ring-2 ring-mulearn-trusty-blue"
                             : "hover:opacity-80"

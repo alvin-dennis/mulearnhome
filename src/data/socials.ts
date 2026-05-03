@@ -24,7 +24,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://instagram.com/mulearn.official?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaYoutube,
@@ -64,7 +64,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.careers/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -72,7 +72,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.campus/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -80,7 +80,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.tech_/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -88,7 +88,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.designers/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -96,7 +96,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu__tv/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -104,7 +104,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/muplay.gg?igsh=b2U4MHc5OGFyZ2kx",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -112,7 +112,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.comics?igsh=NW9oYm1wc29jd3Zs",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -120,7 +120,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.v_filmclub?igsh=cTdydGV3Z2w2NWF3",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaInstagram,
@@ -128,7 +128,7 @@ export const socialLinks: SocialLinksGroup = {
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mument.mulearn?igsh=aWk3c3V3ejk2M2U1",
       action: "follow",
-      color: "bg-gradient-to-br from-pink-500 to-mulearn-duke-purple",
+      color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
       icon: FaWhatsapp,
