@@ -1,4 +1,4 @@
-import type { AnnualReport, Counts, GalleryItem, ImpactStat } from "@/lib/types";
+import type { Counts, GalleryItem, ImpactStat } from "@/lib/types";
 
 export const galleryData: GalleryItem[] = [
   {
@@ -9,9 +9,6 @@ export const galleryData: GalleryItem[] = [
     image: "/assets/impact-gallery/00.webp",
     category: "students",
     type: "image",
-    // stats: {
-    //   companies: 50,
-    // },
   },
   {
     id: "2",
@@ -89,10 +86,6 @@ export const galleryCategories = [
   },
 ];
 
-// Helper: derive ImpactStat[] from live `Counts` (same source used in `Stats.tsx`).
-// This lets UI components use live numbers from an API or websocket rather
-// than the static fallback above. Fields that are not present in `Counts`
-// will fall back to reasonable defaults.
 export function impactStatsFromCounts(counts: Counts): ImpactStat[] {
   const learners = counts.members ?? 0;
   const institutions = counts.org_type_counts
@@ -110,8 +103,6 @@ export function impactStatsFromCounts(counts: Counts): ImpactStat[] {
     : undefined;
   const mentors = mentorsObj ? mentorsObj.role_count : 0;
 
-  // `Counts` does not currently expose `events` or `success stories` directly.
-  // Keep sensible fallbacks for those values.
   const eventsHosted = 500;
   const successStories = "100+";
 
@@ -127,56 +118,56 @@ export function impactStatsFromCounts(counts: Counts): ImpactStat[] {
   ];
 }
 
-export const annualReports: AnnualReport[] = [
-  {
-    id: "2024",
-    year: "2024",
-    title: "2024 Annual Report",
-    summary:
-      "A year of unprecedented growth and community impact. We expanded to 1,900+ institutions, hosted 500+ events, and empowered 59,000+ learners across India.",
-    pdfUrl: "/assets/report/2024-annual-report.pdf",
-    imageUrl: "/assets/report/2024-report-cover.jpg",
-    highlights: [
-      "59,000+ active learners across India",
-      "1,900+ educational institutions partnered",
-      "500+ events and workshops conducted",
-      "50+ company partnerships established",
-      "1,000+ mentors actively engaged",
-    ],
-    publishedDate: "2025-01-15",
-  },
-  {
-    id: "2023",
-    year: "2023",
-    title: "2023 Annual Report",
-    summary:
-      "Building the foundation for peer-led learning. We established our core programs, launched key partnerships, and created the framework for sustainable community growth.",
-    pdfUrl: "/assets/report/2023-annual-report.pdf",
-    imageUrl: "/assets/report/2023-report-cover.jpg",
-    highlights: [
-      "25,000+ learners onboarded",
-      "500+ institutions joined our network",
-      "200+ events organized",
-      "20+ strategic partnerships formed",
-      "500+ mentors recruited",
-    ],
-    publishedDate: "2024-01-10",
-  },
-  {
-    id: "2022",
-    year: "2022",
-    title: "2022 Annual Report",
-    summary:
-      "The year we began our journey. From a small community of passionate learners to establishing µLearn as a recognized platform for peer-led education.",
-    pdfUrl: "/assets/report/2022-annual-report.pdf",
-    imageUrl: "/assets/report/2022-report-cover.jpg",
-    highlights: [
-      "10,000+ early adopters",
-      "100+ institutions piloted our programs",
-      "50+ initial events conducted",
-      "10+ founding partnerships",
-      "100+ pioneer mentors",
-    ],
-    publishedDate: "2023-01-05",
-  },
-];
+// export const annualReports: AnnualReport[] = [
+//   {
+//     id: "2024",
+//     year: "2024",
+//     title: "2024 Annual Report",
+//     summary:
+//       "A year of unprecedented growth and community impact. We expanded to 1,900+ institutions, hosted 500+ events, and empowered 59,000+ learners across India.",
+//     pdfUrl: "/assets/report/2024-annual-report.pdf",
+//     imageUrl: "/assets/report/2024-report-cover.jpg",
+//     highlights: [
+//       "59,000+ active learners across India",
+//       "1,900+ educational institutions partnered",
+//       "500+ events and workshops conducted",
+//       "50+ company partnerships established",
+//       "1,000+ mentors actively engaged",
+//     ],
+//     publishedDate: "2025-01-15",
+//   },
+//   {
+//     id: "2023",
+//     year: "2023",
+//     title: "2023 Annual Report",
+//     summary:
+//       "Building the foundation for peer-led learning. We established our core programs, launched key partnerships, and created the framework for sustainable community growth.",
+//     pdfUrl: "/assets/report/2023-annual-report.pdf",
+//     imageUrl: "/assets/report/2023-report-cover.jpg",
+//     highlights: [
+//       "25,000+ learners onboarded",
+//       "500+ institutions joined our network",
+//       "200+ events organized",
+//       "20+ strategic partnerships formed",
+//       "500+ mentors recruited",
+//     ],
+//     publishedDate: "2024-01-10",
+//   },
+//   {
+//     id: "2022",
+//     year: "2022",
+//     title: "2022 Annual Report",
+//     summary:
+//       "The year we began our journey. From a small community of passionate learners to establishing µLearn as a recognized platform for peer-led education.",
+//     pdfUrl: "/assets/report/2022-annual-report.pdf",
+//     imageUrl: "/assets/report/2022-report-cover.jpg",
+//     highlights: [
+//       "10,000+ early adopters",
+//       "100+ institutions piloted our programs",
+//       "50+ initial events conducted",
+//       "10+ founding partnerships",
+//       "100+ pioneer mentors",
+//     ],
+//     publishedDate: "2023-01-05",
+//   },
+// ];
