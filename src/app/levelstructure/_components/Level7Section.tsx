@@ -1,6 +1,5 @@
 "use client";
 
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
@@ -8,7 +7,6 @@ import MuImage from "@/components/MuImage";
 
 export default function Level7Section() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
   return (
     <section
@@ -22,14 +20,14 @@ export default function Level7Section() {
           alt="μVerse Background"
           fill
           className="object-cover object-center opacity-90"
-          priority
+          preload
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10 flex flex-col items-center text-center">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-6 mb-20"
         >
@@ -59,9 +57,10 @@ export default function Level7Section() {
             <MotionDiv
               key={card.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
               whileHover={{ y: -10 }}
+              viewport={{ once: true }}
               className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-10 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-mulearn-blackish mb-4">
@@ -75,9 +74,9 @@ export default function Level7Section() {
         </div>
 
         <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="space-y-8 max-w-4xl mx-auto"
         >
           <div className="w-24 h-[3px] bg-mulearn-duke-purple mx-auto rounded-full" />

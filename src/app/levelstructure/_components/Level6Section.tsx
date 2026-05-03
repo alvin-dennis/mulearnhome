@@ -1,6 +1,5 @@
 "use client";
 
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
@@ -8,7 +7,6 @@ import MuImage from "@/components/MuImage";
 
 export default function Level6Section() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
   return (
     <section
@@ -19,9 +17,9 @@ export default function Level6Section() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <MotionDiv
-            initial={{ opacity: 0, x: -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="space-y-8"
           >
             <div className="space-y-4">
@@ -79,9 +77,9 @@ export default function Level6Section() {
           </MotionDiv>
 
           <MotionDiv
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="relative flex items-center justify-center lg:justify-end"
           >
             <div className="relative z-10 w-full max-w-[550px] hover:-translate-y-4 transition-transform duration-700 ease-in-out">

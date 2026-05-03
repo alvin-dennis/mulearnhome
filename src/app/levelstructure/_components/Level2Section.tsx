@@ -1,6 +1,5 @@
 "use client";
 
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
@@ -8,15 +7,14 @@ import MuImage from "@/components/MuImage";
 
 export default function Level2Section() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center py-10 lg:py-20 overflow-hidden bg-mulearn-whitish"
+      className="relative flex flex-col items-center py-15 overflow-hidden bg-mulearn-whitish"
       id="level-2"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-4 w-full z-10 flex flex-col items-center">
         <MuImage
           src="/assets/levelstructure/rocket_lvl2.svg"
           alt="Rocket"
@@ -27,8 +25,8 @@ export default function Level2Section() {
 
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="text-center space-y-6 max-w-4xl mx-auto mb-4 lg:mb-4 relative z-40"
         >
           <div className="space-y-4">
@@ -53,9 +51,9 @@ export default function Level2Section() {
         </MotionDiv>
 
         <MotionDiv
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="relative w-full max-w-6xl aspect-square md:aspect-[2/1] lg:aspect-[2.5/1] flex items-center justify-center -mt-8 lg:-mt-16"
         >
           <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />

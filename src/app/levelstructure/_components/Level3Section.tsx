@@ -1,6 +1,5 @@
 "use client";
 
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
@@ -9,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level3Section() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
   return (
     <section
@@ -21,8 +19,8 @@ export default function Level3Section() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-start mt-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="space-y-8 max-w-xl"
           >
             <div className="space-y-3">
@@ -65,9 +63,9 @@ export default function Level3Section() {
           </MotionDiv>
 
           <MotionDiv
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="relative hidden lg:flex items-start justify-end h-full min-h-[600px] lg:-mr-24"
           >
             <Sparkle className="absolute top-[20%] left-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
