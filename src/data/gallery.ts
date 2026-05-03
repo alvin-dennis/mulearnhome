@@ -57,7 +57,7 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "huddleglobal",
       name: "Huddle Global Summit",
-      date: "July 19, 2025",
+      date: "Nov 16,17,18 2023",
       location: "Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/huddleglobal/1.webp",
       description:
@@ -198,144 +198,150 @@ export const galleryEvents: GalleryEvent[] = (
       ],
     },
     {
-      slug: "mutate",
-      name: "Mutate",
+      slug: "mutate2025",
+      name: "Mutate 2025",
       date: "05 January 2025",
       location: "Gokulam Grand, Thiruvananthapuram, Kerala",
-      coverImage: "/assets/gallery/mutate/1.webp",
+      coverImage: "/assets/gallery/mutate2025/1.webp",
       description:
         "Mutate’25 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
       media: [
         {
           type: "image",
-          src: "/assets/gallery/mutate/1.webp",
+          src: "/assets/gallery/mutate2025/1.webp",
           alt: "Mutate hackathon main stage with participants ready to innovate",
         },
       ],
     },
     {
-      slug: "permute",
-      name: "Permute",
+      slug: "permute2025",
+      name: "Permute 2025",
       date: "March 29, 2025",
       location: "Tagore Theatre, Vazhuthacaud, Thiruvananthapuram, Kerala",
-      coverImage: "/assets/gallery/permute/1.webp",
+      coverImage: "/assets/gallery/permute2025/1.webp",
       description:
         "India’s largest skill festival brought together innovators, creators, and learners for an unforgettable experience. Filled with inspiring sessions, competitions, and connections, it celebrated talent and collaboration at its best.",
       media: [
         {
           type: "image",
-          src: "/assets/gallery/permute/1.webp",
+          src: "/assets/gallery/permute2025/1.webp",
           alt: "Inaugural session with the Chief Minister of Kerala at Permute 2025",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/2.webp",
+          src: "/assets/gallery/permute2025/2.webp",
           alt: "Keynote address by visionary leaders from the tech industry",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/3.webp",
+          src: "/assets/gallery/permute2025/3.webp",
           alt: "Panel discussion on skill development and innovation in Kerala",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/4.webp",
+          src: "/assets/gallery/permute2025/4.webp",
           alt: "Audience listening attentively during a thought-provoking session",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/5.webp",
+          src: "/assets/gallery/permute2025/5.webp",
           alt: "MoU exchange ceremony between partner organizations",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/6.webp",
+          src: "/assets/gallery/permute2025/6.webp",
           alt: "Student projects showcase in the exhibition area",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/7.webp",
+          src: "/assets/gallery/permute2025/7.webp",
           alt: "Interactive learning zone with hands-on demonstrations",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/8.webp",
+          src: "/assets/gallery/permute2025/8.webp",
           alt: "Networking session with delegates and speakers",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/9.webp",
+          src: "/assets/gallery/permute2025/9.webp",
           alt: "Cultural program and talent show during the event",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/10.webp",
+          src: "/assets/gallery/permute2025/10.webp",
           alt: "Student volunteers coordinating at the information desk",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/11.webp",
+          src: "/assets/gallery/permute2025/11.webp",
           alt: "Workshop session on emerging technologies",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/12.webp",
+          src: "/assets/gallery/permute2025/12.webp",
           alt: "Award ceremony recognizing outstanding contributions",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/13.webp",
+          src: "/assets/gallery/permute2025/13.webp",
           alt: "Closing ceremony with reflections on the event's impact",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/14.webp",
+          src: "/assets/gallery/permute2025/14.webp",
           alt: "Group photo of attendees at Tagore Theatre",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/15.webp",
+          src: "/assets/gallery/permute2025/15.webp",
           alt: "Main stage with µLearn branding and lighting setup",
         },
         {
           type: "image",
-          src: "/assets/gallery/permute/16.webp",
+          src: "/assets/gallery/permute2025/16.webp",
           alt: "Stalls for interest groups showcasing their activities",
         },
         {
           type: "image",
           alt: "Interactive q&a session with speakers",
-          src: "/assets/gallery/permute/17.webp",
+          src: "/assets/gallery/permute2025/17.webp",
         },
         {
           type: "image",
           alt: "Press meet with media representatives interviewing guests",
-          src: "/assets/gallery/permute/18.webp",
+          src: "/assets/gallery/permute2025/18.webp",
         },
         {
           type: "image",
           alt: "Exhibition of innovative products and prototypes",
-          src: "/assets/gallery/permute/19.webp",
+          src: "/assets/gallery/permute2025/19.webp",
         },
         {
           type: "image",
           alt: "Delegates networking in the conference hall",
-          src: "/assets/gallery/permute/20.webp",
+          src: "/assets/gallery/permute2025/20.webp",
         },
         {
           type: "image",
           alt: "Chief guest lighting the inaugural lamp",
-          src: "/assets/gallery/permute/21.webp",
+          src: "/assets/gallery/permute2025/21.webp",
         },
         {
           type: "image",
           alt: "Youth audience engaged during the valedictory function",
-          src: "/assets/gallery/permute/22.webp",
+          src: "/assets/gallery/permute2025/22.webp",
         },
       ],
     },
   ] as GalleryEvent[]
-).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+).sort((a, b) => {
+  const getSortableDate = (dateStr: string) => {
+    const cleanedStr = dateStr.replace(/([a-zA-Z]+)\s+(\d+)(?:,\d+)+\s+(\d{4})/, "$1 $2, $3");
+    return new Date(cleanedStr).getTime() || 0;
+  };
+  return getSortableDate(b.date) - getSortableDate(a.date);
+});
 
 export function getGalleryEventBySlug(slug: string): GalleryEvent | undefined {
   return galleryEvents.find((e) => e.slug === slug);
