@@ -24,9 +24,9 @@ export default function WhoIsEnabler() {
               community engagement.
             </p>
             <div className="flex flex-col gap-2.5 w-full">
-              {enablers.features.map((feature, i) => (
+              {enablers.features.map((feature) => (
                 <div
-                  key={i}
+                  key={feature.text}
                   className="flex items-center gap-4 w-full max-w-[511px] min-h-[80px] bg-mulearn rounded-2xl px-6 py-4"
                 >
                   <div className="shrink-0">
@@ -68,9 +68,9 @@ export default function WhoIsEnabler() {
             </p>
 
             <div className="flex flex-col gap-2.5 w-full">
-              {enablers.features.map((feature, i) => (
+              {enablers.features.map((feature) => (
                 <div
-                  key={i}
+                  key={feature.text}
                   className="w-full p-5 bg-mulearn rounded-2xl flex flex-col justify-start items-start gap-2.5"
                 >
                   <div className="shrink-0">

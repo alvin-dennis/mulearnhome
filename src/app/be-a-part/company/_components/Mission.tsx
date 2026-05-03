@@ -4,7 +4,6 @@ import type { Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuLoader from "@/components/MuLoader";
 import type { Counts } from "@/lib/types";
 
 const fadeInUp: Variants = {
