@@ -9,7 +9,8 @@ export interface GalleryMediaItem {
 export interface GalleryEvent {
   slug: string;
   name: string;
-  date: string;
+  date?: string;
+  month?: string;
   location: string;
   coverImage: string;
   description?: string;
@@ -164,7 +165,7 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "launchpad",
       name: "Launchpad Kerala",
-      date: "January 18, 2025",
+      month: "April 2025",
       location: "Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/launchpad/1.webp",
       description:
@@ -336,11 +337,17 @@ export const galleryEvents: GalleryEvent[] = (
     },
   ] as GalleryEvent[]
 ).sort((a, b) => {
-  const getSortableDate = (dateStr: string) => {
-    const cleanedStr = dateStr.replace(/([a-zA-Z]+)\s+(\d+)(?:,\d+)+\s+(\d{4})/, "$1 $2, $3");
-    return new Date(cleanedStr).getTime() || 0;
+  const getSortableDate = (event: GalleryEvent) => {
+    if (event.date) {
+      const cleanedStr = event.date.replace(/([a-zA-Z]+)\s+(\d+)(?:,\d+)+\s+(\d{4})/, "$1 $2, $3");
+      return new Date(cleanedStr).getTime() || 0;
+    }
+    if (event.month) {
+      return new Date(event.month).getTime() || 0;
+    }
+    return 0;
   };
-  return getSortableDate(b.date) - getSortableDate(a.date);
+  return getSortableDate(b) - getSortableDate(a);
 });
 
 export function getGalleryEventBySlug(slug: string): GalleryEvent | undefined {

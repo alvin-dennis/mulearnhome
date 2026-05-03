@@ -33,7 +33,7 @@ export function GalleryEventCard({ event, variant }: GalleryEventCardProps) {
           <div className="flex-1 min-w-0">
             <h3 className="line-clamp-1">{event.name}</h3>
             <p className="text-sm text-mulearn-gray-600">
-              {event.date} · {event.location}
+              {event.date || event.month} · {event.location}
             </p>
             <Badge className="bg-mulearn-greyish/20 text-mulearn-trusty-blue mt-1">
               {images.length} photos · {videos.length} videos
@@ -66,7 +66,7 @@ export function GalleryEventCard({ event, variant }: GalleryEventCardProps) {
 
           <div className="flex items-center gap-2 text-sm text-mulearn-gray-600">
             <Calendar className="w-4 h-4" />
-            {event.date}
+            {event.date || event.month}
           </div>
 
           <div className="flex items-center gap-2 text-sm text-mulearn-gray-600">
