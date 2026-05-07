@@ -35,20 +35,20 @@
       "displayname": "Jovit Mathew"
     },
     {
+      "username": "awindsr",
+      "commits": 881,
+      "prs_opened": 232,
+      "prs_merged": 226,
+      "points": 1339,
+      "displayname": "Awindsr"
+    },
+    {
       "username": "MZaFaRM",
       "commits": 753,
       "prs_opened": 292,
       "prs_merged": 285,
       "points": 1330,
       "displayname": "Muhammed Zafar "
-    },
-    {
-      "username": "awindsr",
-      "commits": 873,
-      "prs_opened": 230,
-      "prs_merged": 224,
-      "points": 1327,
-      "displayname": "Awindsr"
     },
     {
       "username": "bijomathewjose",
@@ -86,26 +86,26 @@
   "monthly": [
     {
       "username": "alvin-dennis",
-      "commits": 16,
-      "prs_opened": 5,
-      "prs_merged": 5,
-      "points": 26,
+      "commits": 20,
+      "prs_opened": 6,
+      "prs_merged": 6,
+      "points": 32,
       "displayname": "Alvin Dennis"
     },
     {
       "username": "Devika123098",
-      "commits": 11,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 13,
+      "commits": 16,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "points": 20,
       "displayname": "Devika Dileep"
     },
     {
       "username": "awindsr",
-      "commits": 2,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 2,
+      "commits": 10,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "points": 14,
       "displayname": "Awindsr"
     },
     {
