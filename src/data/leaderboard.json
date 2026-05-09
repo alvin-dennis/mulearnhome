@@ -109,6 +109,14 @@
       "displayname": "Awindsr"
     },
     {
+      "username": "DevWithPranav",
+      "commits": 5,
+      "prs_opened": 4,
+      "prs_merged": 3,
+      "points": 12,
+      "displayname": "Pranav P"
+    },
+    {
       "username": "febin-d",
       "commits": 0,
       "prs_opened": 1,
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": " Chaitanya Liz"
-    },
-    {
-      "username": "athul-2003",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "H ATHULKRISHNAN "
     }
   ]
 }
