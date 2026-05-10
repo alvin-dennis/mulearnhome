@@ -93,6 +93,14 @@
       "displayname": "Alvin Dennis"
     },
     {
+      "username": "DevWithPranav",
+      "commits": 10,
+      "prs_opened": 6,
+      "prs_merged": 5,
+      "points": 21,
+      "displayname": "Pranav P"
+    },
+    {
       "username": "Devika123098",
       "commits": 16,
       "prs_opened": 2,
@@ -109,20 +117,20 @@
       "displayname": "Awindsr"
     },
     {
-      "username": "DevWithPranav",
-      "commits": 5,
-      "prs_opened": 4,
-      "prs_merged": 3,
-      "points": 12,
-      "displayname": "Pranav P"
+      "username": "febin-d",
+      "commits": 3,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "Febin Daniel"
     },
     {
-      "username": "febin-d",
-      "commits": 0,
+      "username": "frizzycodes",
+      "commits": 3,
       "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "Febin Daniel"
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "Adithya S Pai"
     },
     {
       "username": "rejahrehim",
@@ -155,14 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": "Vishakh Abhayan"
-    },
-    {
-      "username": "CLiz17",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": " Chaitanya Liz"
     }
   ]
 }
