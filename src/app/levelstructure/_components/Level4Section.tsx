@@ -1,167 +1,120 @@
 "use client";
 
 import { useInView } from "framer-motion";
+import { Sparkle } from "lucide-react";
 import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
-import { Card, CardContent } from "@/components/ui/card";
+
+const INTEREST_GROUPS = [
+  { name: "Web Development", icon: "/assets/interestgroups/webdev.svg" },
+  { name: "UI/UX Design", icon: "/assets/interestgroups/design.svg" },
+  { name: "Game Development", icon: "/assets/interestgroups/game.svg" },
+  { name: "AR/VR", icon: "/assets/interestgroups/arvr.svg" },
+  { name: "Cloud and DevOps", icon: "/assets/interestgroups/cloud.svg" },
+  { name: "Digital Marketing", icon: "/assets/interestgroups/marketing.svg" },
+  { name: "Cybersecurity", icon: "/assets/interestgroups/cyber.svg" },
+  { name: "Internet Of Things (IOT) And Robotics", icon: "/assets/interestgroups/iot.svg" },
+  { name: "Product Management", icon: "/assets/interestgroups/product.svg" },
+];
 
 export default function Level4Section() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { amount: 0.3, once: false });
 
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen relative bg-mulearn-whitish flex items-center py-20"
+      className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <h2>
-                The Path of <span className="text-mulearn">Choice</span>
-              </h2>
-              <p className="text-xl text-mulearn-gray-600">Choose Your Interest Group</p>
-            </div>
+      <div className="absolute inset-0 pointer-events-none">
+        <Sparkle className="absolute top-[15%] left-[5%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
+        <Sparkle className="absolute top-[35%] right-[10%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-20" />
+        <Sparkle className="absolute bottom-[25%] left-[10%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-40" />
+        <Sparkle className="absolute top-[8%] right-[25%] text-mulearn-trusty-blue w-2 h-2 fill-mulearn-trusty-blue opacity-20" />
+        <Sparkle className="absolute bottom-[15%] right-[8%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-30" />
+      </div>
 
-            <div className="space-y-6">
-              <p className="text-lg text-mulearn-blackish leading-relaxed">
-                This is where the hero chooses their <span className="text-mulearn">tribe</span>.
-                Students anchor under mentors & industry-aligned pathways.
-              </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center text-center">
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-4 mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
+            The Path of <span className="text-mulearn-trusty-blue">Choice</span>
+          </h2>
+          <p className="text-sm md:text-base font-bold text-mulearn-blackish tracking-widest">
+            Choose Your Interest Group
+          </p>
+          <p className="text-xs md:text-sm text-mulearn-blackish max-w-2xl mx-auto leading-relaxed font-medium">
+            This is where the hero chooses their tribe. Students anchor under mentors &
+            industry-aligned pathways.
+          </p>
+        </MotionDiv>
 
-              <div className="space-y-3 pt-4">
-                <div className="pl-4 border-l-2 border-mulearn-duke-purple">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> AI Guild:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;Driven by algorithms and machine learning.&rdquo;
-                    </span>
-                  </p>
-                </div>
+        <div className="hidden lg:flex flex-col items-center gap-5 w-full">
+          <div className="grid grid-cols-5 gap-5 w-full">
+            {INTEREST_GROUPS.slice(0, 5).map((group, index) => (
+              <MotionDiv
+                key={group.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
+              >
+                <MuImage
+                  src={group.icon}
+                  alt={group.name}
+                  width={400}
+                  height={250}
+                  className="w-full h-auto drop-shadow-xl rounded-2xl"
+                />
+              </MotionDiv>
+            ))}
+          </div>
 
-                <div className="pl-4 border-l-2 border-mulearn-trusty-blue">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> Web Tribe:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;Chasing digital experiences and interfaces.&rdquo;
-                    </span>
-                  </p>
-                </div>
+          <div className="grid grid-cols-4 gap-5 w-full max-w-6xl">
+            {INTEREST_GROUPS.slice(5).map((group, index) => (
+              <MotionDiv
+                key={group.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: (index + 5) * 0.1 }}
+                className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
+              >
+                <MuImage
+                  src={group.icon}
+                  alt={group.name}
+                  width={400}
+                  height={250}
+                  className="w-full h-auto drop-shadow-xl rounded-2xl"
+                />
+              </MotionDiv>
+            ))}
+          </div>
+        </div>
 
-                <div className="pl-4 border-l-2 border-mulearn-duke-purple">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> Film & Animation:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;Telling stories with light and motion.&rdquo;
-                    </span>
-                  </p>
-                </div>
-
-                <div className="pl-4 border-l-2 border-mulearn-trusty-blue">
-                  <p className="text-sm text-mulearn-blackish">
-                    <span className="font-semibold"> Space/Hardware:</span>{" "}
-                    <span className="text-mulearn-gray-600">
-                      &ldquo;Bold ones touching the stars and circuits.&rdquo;
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <Card className="bg-mulearn-gray-50 rounded-2xl">
-              <CardContent className="p-6 space-y-3">
-                <h3>The Impact</h3>
-                <p className="text-mulearn-gray-600">
-                  Learners start building{" "}
-                  <span className="font-semibold text-mulearn-blackish">
-                    portfolios of proof-of-work
-                  </span>{" "}
-                  within their chosen interest group. No more drifting through scattered learning.
-                </p>
-              </CardContent>
-            </Card>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.8 }}
-            className="relative flex items-center justify-center lg:justify-end"
-          >
-            <div className="grid grid-cols-3 gap-6 w-full max-w-md">
+        <div className="grid lg:hidden grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 w-full">
+          {INTEREST_GROUPS.map((group, index) => (
+            <MotionDiv
+              key={group.name + "-mobile"}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
+            >
               <MuImage
-                src="/assets/interestgroups/webdev.svg"
-                alt="Web Development"
-                width={120}
-                height={120}
-                className="w-full h-auto"
+                src={group.icon}
+                alt={group.name}
+                width={400}
+                height={250}
+                className="w-full h-auto drop-shadow-xl rounded-2xl"
               />
-              <MuImage
-                src="/assets/interestgroups/design.svg"
-                alt="Design"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/game.svg"
-                alt="Game Development"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/arvr.svg"
-                alt="AR/VR"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/cloud.svg"
-                alt="Cloud Computing"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/marketing.svg"
-                alt="Marketing"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/cyber.svg"
-                alt="Cyber Security"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/iot.svg"
-                alt="IoT"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-              <MuImage
-                src="/assets/interestgroups/product.svg"
-                alt="Product Management"
-                width={120}
-                height={120}
-                className="w-full h-auto"
-              />
-            </div>
-          </MotionDiv>
+            </MotionDiv>
+          ))}
         </div>
       </div>
     </section>
