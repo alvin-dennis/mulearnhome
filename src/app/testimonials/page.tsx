@@ -132,7 +132,6 @@ export default function TestimonialsPage() {
             className="bg-mulearn rounded-[3.5rem] p-12 sm:p-24 text-center text-mulearn-whitish shadow-2xl relative overflow-hidden group"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-6xl font-black mb-8 relative text-mulearn-whitish z-10">
