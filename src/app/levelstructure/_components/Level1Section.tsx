@@ -1,31 +1,20 @@
-"use client";
-
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
-import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level1Section() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex items-center py-10 lg:py-20 overflow-hidden"
-      id="level-1"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-1">
+      <div className="max-w-7xl mx-auto px-4 w-full z-10">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
           <MotionDiv
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.6 }}
-            className="relative flex items-center justify-center order-1 -mt-12 lg:-mt-24 lg:-ml-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex items-center justify-center order-1"
           >
-            <div className="relative w-full max-w-lg aspect-square flex flex-col items-center justify-center">
+            <div className="relative w-full max-w-lg aspect-square hidden md:flex flex-col items-center justify-center">
               <Sparkle className="absolute top-10 left-4 text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
               <Sparkle className="absolute top-1/4 right-0 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-40" />
               <Sparkle className="absolute bottom-[40%] left-[-10%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
@@ -41,7 +30,7 @@ export default function Level1Section() {
                 className="absolute -bottom-12 -right-[25%] z-20 w-[50%] max-w-[240px] object-contain"
               />
 
-              <div className="relative w-full h-[550px] mt-4">
+              <div className="relative w-full h-[550px] hidden md:block mt-4">
                 <MuImage
                   src="/assets/levelstructure/ufo_lvl1.svg"
                   alt="UFO"
@@ -63,7 +52,7 @@ export default function Level1Section() {
 
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="space-y-8 order-2"
           >

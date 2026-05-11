@@ -1,18 +1,10 @@
-"use client";
-
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
-import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
 export default function Level5Section() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
-
   return (
     <section
-      ref={sectionRef}
       className="relative bg-mulearn-whitish flex items-center py-10 lg:py-20 overflow-hidden"
       id="level-5"
     >
@@ -30,9 +22,9 @@ export default function Level5Section() {
             </div>
 
             <MotionDiv
-              initial={{ opacity: 0, x: -100 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="relative z-10 w-full max-w-[480px] hover:-translate-y-4 transition-transform duration-700 ease-in-out"
             >
               <MuImage
@@ -51,9 +43,9 @@ export default function Level5Section() {
           </div>
 
           <MotionDiv
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="space-y-8 relative z-20"
           >
             <div className="space-y-4">

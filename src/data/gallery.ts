@@ -58,7 +58,7 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "huddleglobal",
       name: "Huddle Global Summit",
-      date: "Nov 16,17,18 2023",
+      date: "November 16-18, 2023",
       location: "Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/huddleglobal/1.webp",
       description:
@@ -109,8 +109,8 @@ export const galleryEvents: GalleryEvent[] = (
     {
       slug: "in50hr",
       name: "In50HRS",
-      date: "23 February 2024",
-      location: "Park Centre,Technopark, Phase 1, Thiruvananthapuram",
+      date: "July 5-7, 2024",
+      location: "Integrated Start-up Complex, KSUM, Kochi",
       coverImage: "/assets/gallery/in50hr/1.webp",
       description:
         "A high-octane, 50-hour sprint where innovation meets execution, challenging creators to pitch, prototype, and power up their ideas.",
@@ -163,53 +163,53 @@ export const galleryEvents: GalleryEvent[] = (
       ],
     },
     {
-      slug: "launchpad",
-      name: "Launchpad Kerala",
-      month: "April 2025",
-      location: "Thiruvananthapuram, Kerala",
-      coverImage: "/assets/gallery/launchpad/1.webp",
+      slug: "launchpad2024",
+      name: "Launchpad Kerala 2024",
+      month: "July 15, 2024",
+      location: "Clubhouse, Technopark, Thiruvananthapuram",
+      coverImage: "/assets/gallery/launchpad2024/1.webp",
       description:
         "A skill-driven recruitment initiative by GTech MuLearn and IEEE Kerala Section to bridge the gap between fresh graduates and the IT industry.",
       media: [
         {
           type: "image",
-          src: "/assets/gallery/launchpad/1.webp",
+          src: "/assets/gallery/launchpad2024/1.webp",
           alt: "Registration desk with attendees checking in at Launchpad Kerala",
         },
         {
           type: "image",
-          src: "/assets/gallery/launchpad/2.webp",
+          src: "/assets/gallery/launchpad2024/2.webp",
           alt: "Company representatives at recruitment booths interacting with candidates",
         },
         {
           type: "image",
-          src: "/assets/gallery/launchpad/3.webp",
+          src: "/assets/gallery/launchpad2024/3.webp",
           alt: "Technical interview session between recruiters and job seekers",
         },
         {
           type: "image",
-          src: "/assets/gallery/launchpad/4.webp",
+          src: "/assets/gallery/launchpad2024/4.webp",
           alt: "Networking session with professionals sharing contacts and opportunities",
         },
         {
           type: "image",
-          src: "/assets/gallery/launchpad/5.webp",
+          src: "/assets/gallery/launchpad2024/5.webp",
           alt: "Panel discussion on career opportunities in technology sector",
         },
       ],
     },
     {
-      slug: "mutate2025",
-      name: "Mutate 2025",
-      date: "05 January 2025",
-      location: "Gokulam Grand, Thiruvananthapuram, Kerala",
-      coverImage: "/assets/gallery/mutate2025/1.webp",
+      slug: "mutate2026",
+      name: "Mutate 2026",
+      date: "March 7-8, 2026",
+      location: "Ospyn Technologies, Technopark, Phase 4, Thiruvananthapuram",
+      coverImage: "/assets/gallery/mutate2026/1.webp",
       description:
-        "Mutate’25 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
+        "Mutate’26 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
       media: [
         {
           type: "image",
-          src: "/assets/gallery/mutate2025/1.webp",
+          src: "/assets/gallery/mutate2026/1.webp",
           alt: "Mutate hackathon main stage with participants ready to innovate",
         },
       ],
@@ -335,12 +335,46 @@ export const galleryEvents: GalleryEvent[] = (
         },
       ],
     },
+    {
+      slug: "sandshore",
+      name: "The Grand Tech Adventure: SandShore",
+      date: "November 11-12, 2023",
+      location: "Abideep's Paradise, Vadanapilly, Thrissur",
+      coverImage: "/assets/gallery/sandshore/1.webp",
+      description:
+        "A 24-hour offline hackathon by KKEM and Mulearn KMEA featuring AI/ML, AR/VR, Web, and App Development tracks, aimed at fostering creativity and problem-solving beyond traditional boundaries.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/1.webp",
+          alt: "Participants working at The Grand Tech Adventure: SandShore",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/2.webp",
+          alt: "Hackathon session in progress at Vadanapilly",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/3.webp",
+          alt: "Mentorship and collaboration during SandShore hackathon",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/4.webp",
+          alt: "Closing ceremony of The Grand Tech Adventure: SandShore",
+        },
+      ],
+    },
   ] as GalleryEvent[]
 ).sort((a, b) => {
   const getSortableDate = (event: GalleryEvent) => {
     if (event.date) {
-      const cleanedStr = event.date.replace(/([a-zA-Z]+)\s+(\d+)(?:,\d+)+\s+(\d{4})/, "$1 $2, $3");
-      return new Date(cleanedStr).getTime() || 0;
+      const match = event.date.match(/([a-zA-Z]+)\s+(\d+).*?(\d{4})/);
+      if (match) {
+        return new Date(`${match[1]} ${match[2]}, ${match[3]}`).getTime() || 0;
+      }
+      return new Date(event.date).getTime() || 0;
     }
     if (event.month) {
       return new Date(event.month).getTime() || 0;

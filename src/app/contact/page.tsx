@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import MuImage from "@/components/MuImage";
 import { contactInfo, contactPage } from "@/data/common";
@@ -93,16 +93,6 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
                     <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-mulearn-whitish" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-mulearn-blackish mb-1">Phone</h4>
-                      <p className="text-mulearn-gray-600">{contactInfo.phone}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                    <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-mulearn-whitish" />
                     </div>
                     <div>
@@ -140,16 +130,6 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-mulearn-blackish mb-1">Email</h4>
                     <p className="text-mulearn-gray-600">{contactInfo.email}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-mulearn-gray-50 hover:bg-mulearn-gray-100 transition-colors">
-                  <div className="w-12 h-12 bg-mulearn rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-mulearn-whitish" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-mulearn-blackish mb-1">Phone</h4>
-                    <p className="text-mulearn-gray-600">{contactInfo.phone}</p>
                   </div>
                 </div>
 

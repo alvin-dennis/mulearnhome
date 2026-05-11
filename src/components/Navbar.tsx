@@ -184,7 +184,7 @@ export default function Navbar() {
                 />
 
                 <MotionDiv
-                  className="fixed top-0 right-0 h-full w-full max-w-[400px] bg-linear-to-br from-white to-slate-50 shadow-[-5px_0_25px_rgba(0,0,0,0.15)] z-1002 flex flex-col p-8 overflow-y-auto"
+                  className="fixed top-0 right-0 h-full w-full max-w-[400px] bg-linear-to-br from-mulearn-whitish to-slate-50 shadow-[-5px_0_25px_rgba(0,0,0,0.15)] z-1002 flex flex-col p-8 overflow-y-auto"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}

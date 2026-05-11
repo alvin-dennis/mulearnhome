@@ -1,35 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
+import { Button } from "@/components/ui/button";
 
-const FinalCTA = () => {
+const CTA = () => {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-mulearn-whitish">
       <div className="container mx-auto px-4">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative bg-[#456FF6] rounded-3xl overflow-hidden"
+          className="relative bg-mulearn rounded-3xl overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 md:p-12 lg:p-16">
             {/* Left Content */}
-            <div className="text-white z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white">
+            <div className="text-mulearn-whitish z-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-mulearn-whitish">
                 Start building your future with µLearn.
               </h2>
-              <p className="text-lg md:text-xl mb-8 text-blue-50 leading-relaxed">
+              <p className="text-lg md:text-xl mb-8 text-mulearn-whitish leading-relaxed">
                 Gain real skills, collaborate with learners, and earn <br /> recognition as you
                 grow.
               </p>
-              <Link
-                href="https://app.mulearn.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Join µLearn
+              <Link href="https://app.mulearn.org" target="_blank" rel="noopener noreferrer">
+                <Button variant={"inverted"} className="inline-block">
+                  Join µLearn
+                </Button>
               </Link>
             </div>
 
@@ -46,14 +44,10 @@ const FinalCTA = () => {
               </div>
             </div>
           </div>
-
-          {/* Background Decorative Elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full opacity-20 blur-3xl -mr-32 -mt-32"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-700 rounded-full opacity-20 blur-3xl -ml-32 -mb-32"></div>
         </MotionDiv>
       </div>
     </section>
   );
 };
 
-export default FinalCTA;
+export default CTA;

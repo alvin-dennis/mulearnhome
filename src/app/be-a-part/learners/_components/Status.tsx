@@ -66,23 +66,21 @@ const LearnersStatus = () => {
 
   if (!stats) {
     return (
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-mulearn-whitish">
         <div className="container mx-auto px-4">
-          <div className="border-t border-gray-300 mb-16"></div>
-          <div className="text-center text-gray-500">Loading statistics...</div>
-          <div className="border-t border-gray-300 mt-16"></div>
+          <div className="border-t border-mulearn-gray-600 mb-16"></div>
+          <div className="text-center">Loading statistics...</div>
+          <div className="border-t border-mulearn-gray-600 mt-16"></div>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-mulearn-whitish">
       <div className="container mx-auto px-4">
-        {/* Top Border Line */}
-        <div className="border-t border-gray-300 mb-16"></div>
+        <div className="border-t border-mulearn-gray-600 mb-16"></div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <MotionDiv
@@ -97,13 +95,11 @@ const LearnersStatus = () => {
                 <CountUp end={stat.number} duration={2.5} separator="," />
               </h3>
 
-              <p className="text-lg md:text-xl font-medium text-black">{stat.label}</p>
+              <p className="text-lg md:text-xl font-medium">{stat.label}</p>
             </MotionDiv>
           ))}
         </div>
-
-        {/* Bottom Border Line */}
-        <div className="border-t border-gray-300 mt-16"></div>
+        <div className="border-t border-mulearn-gray-600 mt-16"></div>
       </div>
     </section>
   );

@@ -59,6 +59,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://s3.ap-south-1.amazonaws.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body
         className={`${plusJakarta.variable} ${circe.variable} ${retro.variable} font-sans antialiased`}

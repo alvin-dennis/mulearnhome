@@ -118,14 +118,6 @@ export default function Footer() {
             </Link>
 
             <Link
-              href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-              className="flex items-center space-x-2 text-mulearn-gray-600 hover:text-mulearn-trusty-blue transition-colors duration-300 group"
-            >
-              <Phone className="w-4 h-4 text-mulearn-trusty-blue group-hover:scale-110 transition-transform duration-300" />
-              <span>{contactInfo.phone}</span>
-            </Link>
-
-            <Link
               href={`https://${contactInfo.website}`}
               className="flex items-center space-x-2 text-mulearn-gray-600 hover:text-mulearn-trusty-blue transition-colors duration-300 group"
             >

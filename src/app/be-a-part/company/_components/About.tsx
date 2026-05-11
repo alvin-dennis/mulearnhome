@@ -34,7 +34,7 @@ const About = () => {
             <span className="text-mulearn-blackish">?</span>
           </MotionH1>
 
-          <div className="text-center text-gray-600 max-w-5xl  sm:text-lg  mx-auto mb-16 font-light flex flex-col gap-2 mt-3">
+          <div className="text-center text-mulearn-gray-600 max-w-5xl  sm:text-lg  mx-auto mb-16 font-light flex flex-col gap-2 mt-3">
             <MotionP
               custom={2}
               variants={textVariant}

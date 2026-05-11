@@ -41,8 +41,8 @@ const Action = () => {
               viewport={{ once: true }}
             >
               <MuImage
-                src="/assets/Trivial/Browser.svg"
-                alt="Trivial-img"
+                src="/assets/trivial/Browser.svg"
+                alt="trivial-img"
                 fill
                 className="object-contain"
               />

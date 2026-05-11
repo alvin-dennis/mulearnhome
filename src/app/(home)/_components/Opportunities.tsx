@@ -52,8 +52,10 @@ export default function Opportunities() {
                       alt={opportunity.name}
                       width={200}
                       height={200}
-                      className="w-auto h-auto mx-auto"
-                      style={{ width: "auto", height: "auto", maxHeight: "140px" }}
+                      className="object-contain max-w-full max-h-full"
+                      loading="lazy"
+                      quality={75}
+                      sizes="200px"
                     />
                   </span>
                   <h6 className="text-xl font-semibold text-center mt-auto">{opportunity.name}</h6>

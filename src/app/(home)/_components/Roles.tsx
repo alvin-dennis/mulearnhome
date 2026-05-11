@@ -91,6 +91,9 @@ export default function Roles() {
                         width={300}
                         height={200}
                         className="w-full min-h-[220px] object-cover rounded-t-lg"
+                        loading="lazy"
+                        quality={75}
+                        sizes="(max-width: 768px) 100vw, 250px"
                       />
                     </CardHeader>
                     <CardContent className="p-5 text-center">

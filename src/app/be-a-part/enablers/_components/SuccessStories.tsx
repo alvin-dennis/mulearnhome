@@ -80,7 +80,7 @@ function VideoCard({ story }: { story: (typeof stories)[0] }) {
             Youtube video of {story.name} sharing their success story.
           </DialogDescription>
           <div className="mt-2 flex flex-col gap-4">
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-mulearn-blackish">
               <iframe
                 src={getEmbedUrl(story.url)}
                 title={`${story.name} success story`}
