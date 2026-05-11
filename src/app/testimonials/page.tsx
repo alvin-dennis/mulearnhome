@@ -1,32 +1,28 @@
 "use client";
 
-import { MessageCircle, Star, TrendingUp, Users, Video } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import CountUp from "react-countup";
-
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import type { Counts } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
-import TextTestimonialsGrid, { type TextFilterType } from "./_components/TextTestimonialsGrid";
-import VideoCarousel from "./_components/VideoCarousel";
+import TestimonialStats from "./_components/TestimonialStats";
+import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
+import VideoSection from "./_components/VideoSection";
 
 export default function TestimonialsPage() {
   const videoTestimonialData = testimonials.video;
   const textTestimonialData = testimonials.text;
-  const [activeTab, setActiveTab] = useState<"video" | "text">("video");
-  const [categoryFilter, setCategoryFilter] = useState<TextFilterType>("all");
   const redirect = useRedirectToApp();
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
+  const [counts, setCounts] = useState<Counts | null>(null);
+  const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
     setRefreshToken(localStorage.getItem("refreshToken"));
   }, []);
-
-  const [counts, setCounts] = useState<Counts | null>(null);
-  const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
     if (!socketRef.current) {
@@ -34,205 +30,144 @@ export default function TestimonialsPage() {
       socketRef.current = socket;
 
       const handleMessage = (event: MessageEvent) => {
-        setCounts(JSON.parse(event.data) as Counts);
-      };
-
-      const handleError = (event: Event) => {
-        void event;
+        try {
+          const data = JSON.parse(event.data) as Counts;
+          setCounts(data);
+        } catch (error) {
+          console.error("WebSocket message parsing error:", error);
+        }
       };
 
       socket.addEventListener("message", handleMessage);
-      socket.addEventListener("error", handleError);
 
       return () => {
         socket.removeEventListener("message", handleMessage);
-        socket.removeEventListener("error", handleError);
         socket.close();
         socketRef.current = null;
       };
     }
   }, []);
 
-  const stats = counts
-    ? [
-        {
-          icon: Users,
-          value: counts.members,
-          label: "Active Learners",
-        },
-        {
-          icon: Star,
-          value:
-            counts.enablers_mentors_count?.find((r) => r.role__title === "Mentor")?.role_count || 0,
-          label: "Expert Mentors",
-        },
-        {
-          icon: TrendingUp,
-          value: counts.org_type_counts?.find((o) => o.org_type === "Company")?.org_count || 0,
-          label: "Partner Companies",
-        },
-      ]
-    : [];
-
   return (
-    <div className="min-h-screen">
-      <div className="relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-32 pb-12 sm:pb-24">
-          <MotionDiv
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
+    <div className="min-h-screen bg-mulearn-whitish relative overflow-x-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
+        <div className="absolute top-0 -left-4 md:top-10 md:-left-50 w-48 md:w-80 lg:w-[35rem] pointer-events-none select-none">
+          <MuImage
+            src="/assets/impact-gallery/mu.svg"
+            alt=""
+            width={600}
+            height={600}
+            className="w-full h-auto"
+            preload
+          />
+        </div>
+
+        <MotionDiv
+          className="text-center relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border border-mulearn/10 shadow-sm mb-8">
+            <div className="w-2 h-2 rounded-full bg-mulearn mr-2 animate-pulse" />
+            <span className="text-[10px] font-extrabold text-mulearn-blackish uppercase tracking-[0.2em]">
+              Community Stories
+            </span>
+          </div>
+
+          <MotionH1
+            className="text-5xl sm:text-7xl lg:text-8xl font-black text-center max-w-5xl mx-auto mb-8 leading-[1.1]"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <MotionH1
-              className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center max-w-6xl mx-auto mb-6 leading-normal"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Voices of <span className="text-mulearn">Impact</span>
-            </MotionH1>
-            <MotionP
-              className="text-base sm:text-xl md:text-2xl text-mulearn-gray-600  max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Discover authentic stories and feedback from our community members who are shaping the
-              future of learning
-            </MotionP>
+            Voices of{" "}
+            <span className="text-mulearn relative inline-block">
+              Impact
+              <div className="absolute -bottom-2 left-0 w-full h-2 bg-mulearn/20 rounded-full" />
+            </span>
+          </MotionH1>
 
-            {stats.length > 0 && (
-              <MotionDiv
-                className="flex justify-center items-center gap-6 sm:gap-8 mt-6 sm:mt-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                {stats.map((stat) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div key={stat.label} className="text-center group">
-                      <div className="flex items-center justify-center w-12 h-12 bg-mulearn rounded-xl mx-auto mb-3 group-hover:bg-mulearn-blackish transition-colors">
-                        <Icon className="w-6 h-6 text-mulearn-whitish" />
-                      </div>
-                      <div className=" text-2xl font-bold text-mulearn-blackish">
-                        <CountUp end={stat.value} duration={2.5} separator="," />
-                      </div>
-                      <div className="text-sm text-mulearn-gray-500  uppercase tracking-wide group-hover:text-mulearn transition-colors">
-                        {stat.label}
-                      </div>
-                    </div>
-                  );
-                })}
-              </MotionDiv>
-            )}
-          </MotionDiv>
-        </div>
+          <MotionP
+            className="text-lg sm:text-xl text-mulearn-gray-600 max-w-3xl mx-auto leading-relaxed mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Discover how μLearn is empowering thousands to learn, build, and lead through a global
+            peer-to-peer ecosystem.
+          </MotionP>
+
+          {counts && <TestimonialStats counts={counts} />}
+        </MotionDiv>
       </div>
 
-      <div className="sticky top-0 z-10 bg-mulearn-whitish/80 backdrop-blur-sm border-b border-mulearn-gray-200">
+      {/* Video Section */}
+      <section id="video-testimonials" className="py-24 sm:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+          <h2 className="text-4xl sm:text-6xl font-black text-mulearn-blackish mb-6 tracking-tight">
+            Video Stories
+          </h2>
+          <div className="w-20 h-1.5 bg-mulearn mx-auto rounded-full" />
+        </div>
+        <VideoSection testimonials={videoTestimonialData} />
+      </section>
+
+      {/* Text Testimonials Section */}
+      <section
+        id="community-feedback"
+        className="py-24 sm:py-32 relative z-10 bg-mulearn-whitish/30"
+      >
+        <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+          <h2 className="text-4xl sm:text-6xl font-black text-mulearn-blackish mb-6 tracking-tight">
+            Community Echoes
+          </h2>
+          <p className="text-xl text-mulearn-gray-600 mb-8 max-w-2xl mx-auto font-medium">
+            Raw, authentic experiences from our diverse ecosystem
+          </p>
+          <div className="w-20 h-1.5 bg-mulearn mx-auto rounded-full" />
+        </div>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-center">
-            <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 my-6 max-w-full">
-              <Button
-                onClick={() => setActiveTab("video")}
-                variant={activeTab === "video" ? "default" : "ghost"}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
-                  activeTab === "video" ? "shadow-sm" : "text-mulearn-gray-600"
-                }`}
-              >
-                <Video className="w-5 h-5" />
-                Video Testimonials
-              </Button>
-              <Button
-                onClick={() => setActiveTab("text")}
-                variant={activeTab === "text" ? "default" : "ghost"}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 w-full sm:w-auto min-w-0 ${
-                  activeTab === "text" ? "shadow-sm" : "text-mulearn-gray-600"
-                }`}
-              >
-                <MessageCircle className="w-5 h-5" />
-                Community Feedback
-              </Button>
-            </div>
-          </div>
+          <TextTestimonialsGrid testimonials={textTestimonialData} />
         </div>
-      </div>
+      </section>
 
-      <div id="testimonials-section" className="py-12 sm:py-20">
-        {activeTab === "video" && videoTestimonialData.length > 0 && (
-          <VideoCarousel testimonials={videoTestimonialData} />
-        )}
-        {activeTab === "text" && textTestimonialData.length > 0 && (
-          <div className="max-w-7xl mx-auto px-6">
-            <TextTestimonialsGrid
-              testimonials={textTestimonialData}
-              activeFilter={categoryFilter}
-              onFilterChange={setCategoryFilter}
-            />
-          </div>
-        )}
-        {activeTab === "video" && videoTestimonialData.length === 0 && (
-          <div className="max-w-2xl mx-auto px-6 text-center py-32">
-            <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Video className="w-10 h-10 text-mulearn-gray-400" />
-            </div>
-            <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
-              No Video Testimonials Available
-            </h3>
-            <p className="text-mulearn-gray-500  text-lg">
-              Check back soon for video testimonials from our community members.
-            </p>
-          </div>
-        )}
-
-        {activeTab === "text" && textTestimonialData.length === 0 && (
-          <div className="max-w-2xl mx-auto px-6 text-center py-32">
-            <div className="w-20 h-20 bg-mulearn-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <MessageCircle className="w-10 h-10 text-mulearn-gray-400" />
-            </div>
-            <h3 className="text-2xl font-semibold text-mulearn-gray-700 mb-3 ">
-              No Text Testimonials Available
-            </h3>
-            <p className="text-mulearn-gray-500  text-lg">
-              Check back soon for community feedback and stories.
-            </p>
-          </div>
-        )}
-      </div>
-
-      <div className="py-12 sm:py-20 mb-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      {/* CTA Section */}
+      <div className="py-24 sm:py-32 px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
           <MotionDiv
+            className="bg-mulearn rounded-[3.5rem] p-12 sm:p-24 text-center text-mulearn-whitish shadow-2xl relative overflow-hidden group"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-6">Ready to Share Your Story?</h2>
-            <p className="text-xl text-mulearn-gray-600 mb-10  max-w-3xl mx-auto leading-relaxed">
-              Join thousands of learners, mentors, and partners who are transforming education
-              through collaborative learning
+            <h2 className="text-4xl sm:text-6xl font-black mb-8 relative text-mulearn-whitish z-10">
+              Ready to write your story?
+            </h2>
+            <p className="text-xl opacity-90 mb-16 max-w-3xl mx-auto leading-relaxed font-medium relative z-10">
+              Join the movement that&apos;s redefining education. Whether you&apos;re a student,
+              mentor, or industry partner, your impact starts here.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center relative z-20">
               <Button
-                variant={"default"}
-                className=" px-10 py-4 text-lg font-semibold rounded-2xl"
+                variant="inverted"
+                className="w-full sm:w-auto px-12 py-7 text-lg font-bold"
                 onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
               >
-                Join Our Community
+                Join the Community
               </Button>
               <Link
                 href="https://airtable.com/appzJZWzMWidJ0KHo/pagqcMn08HSvFjj7R/form"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button
-                  variant={"default"}
-                  className="px-6 sm:px-10 py-3 sm:py-4 text-lg font-semibold"
+                  variant="inverted"
+                  className="w-full sm:w-auto px-12 py-7 text-lg font-bold"
                 >
-                  Share Your Experience
+                  Share Your Journey
                 </Button>
               </Link>
             </div>

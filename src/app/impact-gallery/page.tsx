@@ -35,6 +35,22 @@ export default function ImpactGallery() {
         <div className="absolute top-40 right-10 md:right-32 opacity-20">
           <Sparkle size={32} className="text-mulearn fill-mulearn" />
         </div>
+
+        <MotionDiv
+          initial={{ opacity: 0, x: -30, rotate: -5 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+          className="absolute top-0 -left-5 md:top-10 md:-left-5 w-48 md:w-80 lg:w-[30rem] pointer-events-none select-none"
+        >
+          <MuImage
+            src="/assets/impact-gallery/mu.svg"
+            alt="μLearn Logo Backdrop"
+            width={500}
+            height={500}
+            className="w-full h-auto"
+            preload
+          />
+        </MotionDiv>
         <div className="absolute bottom-20 left-1/4 opacity-10">
           <Sparkle size={24} className="text-mulearn fill-mulearn" />
         </div>
