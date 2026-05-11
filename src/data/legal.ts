@@ -315,9 +315,8 @@ export const termsAndConditions = {
       heading: "Contact Information",
       content: [
         "If you have any comments, questions or concerns about any of the information in this Agreement, or any other issues relating to the Processing of Personal Data carried out by us, or on our behalf, you can contact us by any of the following methods:",
-        "Email: mulearnadmin@gtechindia.org",
+        "Email: info@mulearn.org",
         "Postal Address: Technopark Trivandrum, Kazhakkoottam, Trivandrum - 695581, Kerala, India",
-        "Telephone: +91 99957 10101",
       ],
       subsections: [],
     },
