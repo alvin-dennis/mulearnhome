@@ -51,13 +51,13 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-mulearn-whitish relative overflow-x-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
-        <div className="absolute top-0 -left-4 md:top-10 md:-left-50 w-48 md:w-80 lg:w-[35rem] pointer-events-none select-none">
+        <div className="absolute top-0 -left-4 md:top-10 md:-left-50 w-48 md:w-200 pointer-events-none select-none">
           <MuImage
             src="/assets/impact-gallery/mu.svg"
             alt=""
             width={600}
             height={600}
-            className="w-full h-auto"
+            className="w-full h-full"
             preload
           />
         </div>
