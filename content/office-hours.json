@@ -1946,6 +1946,32 @@
       "link": "https://mulearn.org/r/gdev-officehour",
       "interestGroups": ["game-dev"],
       "poster_thumbnail": "/assets/events/OH - Friday - Story (9).jpg"
+    },
+    {
+      "title": "Task Doubt Clearance",
+      "performer": "IG Core Team",
+      "designation": "IG Core",
+      "date": "05/05/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": ["ui-ux"]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 22) ",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG lead ,μLearn Foundation",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 22) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n\n ",
+      "date": "08/05/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": ["game-dev"]
+    },
+    {
+      "title": "Stress Coping Strategies",
+      "performer": "Agatha Anna Skariah",
+      "designation": "SL IG Core Team Member, μLearn Foundation",
+      "description": "Leadership is not just about making decisions, it’s also about handling pressure, adapting to challenges, and staying composed during difficult situations.\n\nJoin us for Strategic Leadership IG Office Hours on “Stress Coping Strategies”, a session focused on understanding stress, building emotional resilience, and learning practical ways to manage pressure effectively as a student, team member, and future leader.\n",
+      "date": "08/05/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": ["strategic-leadership"]
     }
   ]
 }

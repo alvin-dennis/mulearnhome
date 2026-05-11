@@ -108,6 +108,10 @@ export default function ContactForm() {
 
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    } else if (!/^[a-zA-Z\s]+$/.test(formData.name.trim())) {
+      newErrors.name = "Name can only contain letters and spaces";
     }
 
     if (!formData.email.trim()) {
@@ -116,8 +120,19 @@ export default function ContactForm() {
       newErrors.email = "Please enter a valid email address";
     }
 
+    if (formData.phone.trim()) {
+      const phone = formData.phone.trim();
+      const digits = phone.replace(/\D/g, "");
+      if (!/^\+?[0-9\s\-().]{7,20}$/.test(phone) || digits.length < 7 || digits.length > 15) {
+        newErrors.phone =
+          "Please enter a valid phone number — include your country code for international numbers (e.g. +91 9876543210)";
+      }
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
+    } else if (formData.message.trim().length > 5000) {
+      newErrors.message = "Message must be less than 5000 characters";
     }
 
     if (!formData.consent) {
@@ -193,11 +208,14 @@ export default function ContactForm() {
         if (data.errors && Array.isArray(data.errors)) {
           const errorMap: Record<string, string> = {};
           data.errors.forEach((error: string) => {
-            if (error.toLowerCase().includes("name")) errorMap.name = error;
-            else if (error.toLowerCase().includes("email")) errorMap.email = error;
-            else if (error.toLowerCase().includes("message")) errorMap.message = error;
-            else if (error.toLowerCase().includes("intent")) errorMap.intent = error;
-            else if (error.toLowerCase().includes("consent")) errorMap.consent = error;
+            const e = error.toLowerCase();
+            if (e.includes("phone")) errorMap.phone = error;
+            else if (e.includes("name")) errorMap.name = error;
+            else if (e.includes("email")) errorMap.email = error;
+            else if (e.includes("message")) errorMap.message = error;
+            else if (e.includes("intent")) errorMap.intent = error;
+            else if (e.includes("consent") || e.includes("privacy policy"))
+              errorMap.consent = error;
           });
           setErrors(errorMap);
         }
@@ -693,8 +711,16 @@ export default function ContactForm() {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder="e.g. +91 9876543210 or +1 555 123 4567"
+                className={errors.phone ? "border-red-500" : ""}
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? "phone-error" : undefined}
               />
+              {errors.phone && (
+                <p id="phone-error" className="text-sm text-red-600">
+                  {errors.phone}
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -734,7 +760,16 @@ export default function ContactForm() {
               className="mt-1"
             />
             <Label htmlFor="consent" className="text-sm text-mulearn-gray-700 font-normal">
-              I agree to the privacy policy and to be contacted about my query. *
+              I agree to the{" "}
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                privacy policy
+              </a>{" "}
+              and to be contacted about my query. <span className="text-red-500">*</span>
             </Label>
           </div>
           {errors.consent && <p className="text-sm text-destructive">{errors.consent}</p>}

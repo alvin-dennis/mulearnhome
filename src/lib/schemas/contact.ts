@@ -3,7 +3,7 @@
  * Used by contact form, mail service, and API routes
  */
 import { z } from "zod";
-import { emailSchema, messageSchema, nameSchema, phoneSchema } from "./common";
+import { emailSchema, internationalPhoneSchema, messageSchema, nameSchema } from "./common";
 
 // ============================================================================
 // Contact Intent Schema
@@ -30,7 +30,7 @@ export const contactFormSchema = z.object({
   intent: contactIntentSchema,
   name: nameSchema,
   email: emailSchema,
-  phone: phoneSchema.optional().or(z.literal("")),
+  phone: internationalPhoneSchema.optional().or(z.literal("")),
   region: z.string().optional(),
   message: messageSchema,
   consent: z.boolean().refine((val) => val === true, {

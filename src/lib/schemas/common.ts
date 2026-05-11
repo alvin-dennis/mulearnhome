@@ -26,6 +26,26 @@ export const phoneSchema = z
   .min(10, "Phone number must be 10 digits");
 
 /**
+ * International phone number validation.
+ * Accepts E.164-style input with optional spaces, hyphens, parentheses, and dots
+ * as visual separators. Requires 7-15 digits total (ITU-T E.164 max).
+ */
+export const internationalPhoneSchema = z
+  .string()
+  .transform((val) => val.trim())
+  .pipe(
+    z
+      .string()
+      .regex(
+        /^\+?[0-9\s\-().]{7,20}$/,
+        "Please enter a valid phone number (digits, optional + prefix)",
+      )
+      .refine((val) => val.replace(/\D/g, "").length >= 7 && val.replace(/\D/g, "").length <= 15, {
+        message: "Phone number must have 7-15 digits",
+      }),
+  );
+
+/**
  * Name validation - letters and spaces only
  */
 export const nameSchema = z
