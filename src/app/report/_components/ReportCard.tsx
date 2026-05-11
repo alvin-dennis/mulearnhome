@@ -38,7 +38,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
 
   return (
     <MotionDiv variants={cardVariants} whileHover="hover" className="w-full">
-      <Card className="overflow-hidden bg-mulearn-whitish border-2 border-gray-100 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
+      <Card className="overflow-hidden bg-mulearn-whitish border-2 border-mulearn-whitish/50 hover:border-mulearn-trusty-blue/30 transition-all duration-300 group">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/3 relative overflow-hidden">
             <div className="aspect-[4/3] lg:aspect-square bg-linear-to-br from-mulearn-trusty-blue/10 to-mulearn-duke-purple/10 flex items-center justify-center">
@@ -63,7 +63,7 @@ export default function ReportCard({ report, onDownload }: ReportCardProps) {
               {report.year}
             </div>
 
-            <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-mulearn-blackish/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
           <CardContent className="lg:w-2/3 p-6 lg:p-8 flex flex-col justify-between">

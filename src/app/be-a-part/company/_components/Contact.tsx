@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Card } from "@/components/ui/card";
 
@@ -47,28 +48,27 @@ const Contact = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center relative px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center relative px-4 sm:px-6 lg:px-8">
         <MotionDiv
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="w-full relative"
         >
-          <Card variant="muted" className="bg-mulearn-whitish p-6 sm:p-10 w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center md:text-left text-xl sm:text-2xl">
+          <Card variant="muted" className="bg-mulearn-whitish p-6 w-full">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-60 text-center md:text-left text-xl sm:text-2xl">
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-mulearn-gray-600">Email</p>
-                <p className="font-semibold text-2xl">partners@mulearn.org</p>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold text-mulearn-gray-600">Phone</p>
-                <p className="font-semibold text-2xl">+91 89436 47000</p>
+                <Link href="mailto:partners@mulearn.org" className="font-semibold text-2xl">
+                  partners@mulearn.org
+                </Link>
               </div>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-mulearn-gray-600">Website</p>
-                <p className="font-semibold text-2xl">www.mulearn.org</p>
+                <Link href="https://mulearn.org" className="font-semibold text-2xl">
+                  mulearn.org
+                </Link>
               </div>
             </div>
           </Card>

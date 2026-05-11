@@ -1,8 +1,4 @@
-"use client";
-
-import { useInView } from "framer-motion";
 import { Sparkle } from "lucide-react";
-import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
@@ -19,12 +15,8 @@ const INTEREST_GROUPS = [
 ];
 
 export default function Level4Section() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3, once: false });
-
   return (
     <section
-      ref={sectionRef}
       className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
@@ -39,7 +31,7 @@ export default function Level4Section() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center text-center">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-4 mb-16"
         >
@@ -61,8 +53,9 @@ export default function Level4Section() {
               <MotionDiv
                 key={group.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
               >
                 <MuImage
@@ -76,13 +69,14 @@ export default function Level4Section() {
             ))}
           </div>
 
-          <div className="grid grid-cols-4 gap-5 w-full max-w-6xl">
+          <div className="flex flex-row gap-5 w-full">
             {INTEREST_GROUPS.slice(5).map((group, index) => (
               <MotionDiv
                 key={group.name}
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: (index + 5) * 0.1 }}
+                viewport={{ once: true }}
                 className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
               >
                 <MuImage
@@ -102,7 +96,7 @@ export default function Level4Section() {
             <MotionDiv
               key={group.name + "-mobile"}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="relative group cursor-pointer hover:scale-[1.03] transition-transform duration-300"
             >

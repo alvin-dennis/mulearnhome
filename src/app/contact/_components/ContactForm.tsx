@@ -654,7 +654,7 @@ export default function ContactForm() {
               if (errors.intent) setErrors((p) => ({ ...p, intent: "" }));
             }}
           >
-            <SelectTrigger className={`w-full ${errors.intent ? "border-red-500" : ""}`}>
+            <SelectTrigger className={`w-full ${errors.intent ? "border-destructive" : ""}`}>
               <SelectValue placeholder="Select one" />
             </SelectTrigger>
             <SelectContent>
@@ -667,7 +667,7 @@ export default function ContactForm() {
                 ))}
             </SelectContent>
           </Select>
-          {errors.intent && <p className="text-sm text-red-600">{errors.intent}</p>}
+          {errors.intent && <p className="text-sm text-destructive">{errors.intent}</p>}
         </div>
 
         {formData.intent && renderConditionalFields()}
@@ -682,9 +682,9 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className={errors.name ? "border-red-500" : ""}
+                className={errors.name ? "border-destructive" : ""}
               />
-              {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+              {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
             </div>
 
             <div className="space-y-2">
@@ -696,9 +696,9 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email address"
-                className={errors.email ? "border-red-500" : ""}
+                className={errors.email ? "border-destructive" : ""}
               />
-              {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
             </div>
           </div>
 
@@ -745,9 +745,9 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="Tell us about your query or provide a brief description..."
             rows={5}
-            className={`w-full ${errors.message ? "border-red-500" : ""}`}
+            className={`w-full ${errors.message ? "border-destructive" : ""}`}
           />
-          {errors.message && <p className="text-sm text-red-600">{errors.message}</p>}
+          {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
         </div>
 
         <div className="space-y-2">
@@ -772,7 +772,7 @@ export default function ContactForm() {
               and to be contacted about my query. <span className="text-red-500">*</span>
             </Label>
           </div>
-          {errors.consent && <p className="text-sm text-red-600">{errors.consent}</p>}
+          {errors.consent && <p className="text-sm text-destructive">{errors.consent}</p>}
         </div>
 
         <Button
@@ -782,7 +782,7 @@ export default function ContactForm() {
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-mulearn-whitish mr-2" />
               Sending...
             </>
           ) : (

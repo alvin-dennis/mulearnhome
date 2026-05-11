@@ -129,7 +129,7 @@ export default function InterestGroups() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">Built on Community Values</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto">
             At µLearn, we believe in the power of learning together
           </p>
         </MotionDiv>
@@ -146,7 +146,7 @@ export default function InterestGroups() {
             >
               <div className="text-5xl mb-4">{value.icon}</div>
               <h3 className="mb-2">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <p className="text-mulearn-gray-600">{value.description}</p>
             </MotionDiv>
           ))}
         </div>
@@ -239,7 +239,9 @@ export default function InterestGroups() {
 
                   <div className="bg-mulearn-whitish p-6 rounded-xl shadow-md border border-mulearn-greyish/20">
                     <h3 className="mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                    <p className="text-mulearn-gray-600 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </MotionDiv>
               );
@@ -257,12 +259,12 @@ export default function InterestGroups() {
           className="text-center mb-12"
         >
           <h2 className="mb-4">Explore Interest Groups</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-mulearn-gray-600 max-w-2xl mx-auto mb-8">
             Choose a domain that excites you and start your learning journey today
           </p>
 
           <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-mulearn-gray-600 w-5 h-5" />
             <Input
               type="text"
               placeholder="Search interest groups..."
@@ -303,7 +305,9 @@ export default function InterestGroups() {
 
                 <CardContent className="p-6">
                   <CardTitle className="mb-2 text-mulearn">{group.name}</CardTitle>
-                  <CardDescription className="text-gray-600 mb-4">{group.tagline}</CardDescription>
+                  <CardDescription className="text-mulearn-gray-600 mb-4">
+                    {group.tagline}
+                  </CardDescription>
 
                   <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
                     Explore <ArrowRight className="w-4 h-4" />
@@ -330,7 +334,9 @@ export default function InterestGroups() {
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
-            <p className="text-gray-500 text-lg">No interest groups found matching your search.</p>
+            <p className="text-mulearn-gray-600 text-lg">
+              No interest groups found matching your search.
+            </p>
           </MotionDiv>
         )}
       </section>

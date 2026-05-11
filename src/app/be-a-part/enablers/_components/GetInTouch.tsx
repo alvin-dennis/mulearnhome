@@ -1,4 +1,5 @@
 import { SparklesIcon } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function GetInTouch() {
@@ -56,9 +57,11 @@ export default function GetInTouch() {
           </div>
 
           {/* CTA Button */}
-          <Button variant={"inverted"} className="w-72">
-            Get in touch
-          </Button>
+          <Link href="/contact">
+            <Button variant={"inverted"} className="w-72">
+              Get in touch
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

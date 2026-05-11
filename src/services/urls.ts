@@ -10,3 +10,7 @@ export const profileRoutes = {
   userProfile: "/dashboard/profile/user-profile/",
   profilePic: "/public/profile-pic/",
 };
+
+export const leaderboardRoutes = {
+  topLearners: "/leaderboard/students/",
+};

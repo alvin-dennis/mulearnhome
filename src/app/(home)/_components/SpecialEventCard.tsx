@@ -33,7 +33,7 @@ const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialeve
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
         />
-        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-mulearn-blackish/60 to-transparent">
           <Button
             variant={"default"}
             className="py-3 px-8 flex items-center justify-center w-full font-semibold"

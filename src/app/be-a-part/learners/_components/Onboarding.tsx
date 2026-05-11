@@ -23,8 +23,8 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 transition={{ delay: index * 0.2, duration: 0.5 }}
                 className="relative z-10 mb-6"
               >
-                <div className="w-16 h-16 bg-[#456FF6] rounded-lg flex items-center justify-center shadow-md">
-                  <span className="text-white text-2xl font-bold">{step.step}</span>
+                <div className="w-16 h-16 bg-mulearn-trusty-blue rounded-lg flex items-center justify-center shadow-md">
+                  <span className="text-mulearn-whitish text-2xl font-bold">{step.step}</span>
                 </div>
               </MotionDiv>
 
@@ -36,7 +36,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 + 0.1, duration: 0.5 }}
                 >
-                  <h3 className="text-base font-bold text-gray-900 mb-1 leading-tight">
+                  <h3 className="text-base font-bold text-mulearn-blackish mb-1 leading-tight">
                     {step.title}
                   </h3>
                 </MotionDiv>
@@ -47,7 +47,7 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 + 0.2, duration: 0.5 }}
                 >
-                  <p className="text-[10px] lg:text-xs text-gray-500 leading-relaxed italic">
+                  <p className="text-[10px] lg:text-xs text-mulearn-gray-600 leading-relaxed italic">
                     {step.description}
                   </p>
                 </MotionDiv>
@@ -60,13 +60,13 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
                 {/* Minimal px-0.5 brings the dots nearly flush with the boxes */}
                 <div className="relative w-20 lg:w-32 h-0.5 flex items-center">
                   {/* The Dashed Line */}
-                  <div className="w-full border-t-2 border-dashed border-[#456FF6]"></div>
+                  <div className="w-full border-t-2 border-dashed border-mulearn-trusty-blue"></div>
 
                   {/* Start Dot */}
-                  <div className="absolute left-0 w-2 h-2 bg-[#456FF6] rounded-full -translate-x-1/2"></div>
+                  <div className="absolute left-0 w-2 h-2 bg-mulearn-trusty-blue rounded-full -translate-x-1/2"></div>
 
                   {/* End Dot */}
-                  <div className="absolute right-0 w-2 h-2 bg-[#456FF6] rounded-full translate-x-1/2"></div>
+                  <div className="absolute right-0 w-2 h-2 bg-mulearn-trusty-blue rounded-full translate-x-1/2"></div>
                 </div>
               </div>
             )}
@@ -78,17 +78,17 @@ const OnboardingSteps: React.FC<OnboardingStepsProps> = ({ data }) => {
       <div className="md:hidden flex flex-col items-center space-y-8">
         {data.map((step, index) => (
           <div key={step.step} className="flex flex-col items-center text-center max-w-xs">
-            <div className="w-16 h-16 bg-[#456FF6] rounded-lg flex items-center justify-center shadow-md mb-4">
-              <span className="text-white text-2xl font-bold">{step.step}</span>
+            <div className="w-16 h-16 bg-mulearn-trusty-blue rounded-lg flex items-center justify-center shadow-md mb-4">
+              <span className="text-mulearn-whitish text-2xl font-bold">{step.step}</span>
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-1">{step.title}</h3>
-            <p className="text-xs text-gray-500 italic px-4">{step.description}</p>
+            <h3 className="text-lg font-bold text-mulearn-blackish mb-1">{step.title}</h3>
+            <p className="text-xs text-mulearn-gray-600 italic px-4">{step.description}</p>
 
             {index < data.length - 1 && (
               <div className="flex flex-col items-center mt-4 h-12">
-                <div className="w-2 h-2 bg-[#456FF6] rounded-full"></div>
-                <div className="flex-1 border-l-2 border-dashed border-[#456FF6] my-0.5"></div>
-                <div className="w-2 h-2 bg-[#456FF6] rounded-full"></div>
+                <div className="w-2 h-2 bg-mulearn-trusty-blue rounded-full"></div>
+                <div className="flex-1 border-l-2 border-dashed border-mulearn-trusty-blue my-0.5"></div>
+                <div className="w-2 h-2 bg-mulearn-trusty-blue rounded-full"></div>
               </div>
             )}
           </div>

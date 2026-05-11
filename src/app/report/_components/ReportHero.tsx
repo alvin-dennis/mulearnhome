@@ -57,7 +57,7 @@ const values = [
 export default function ReportHero() {
   return (
     <MotionSection
-      className="relative overflow-hidden bg-linear-to-br from-mulearn-whitish via-blue-50 to-purple-50"
+      className="relative overflow-hidden bg-linear-to-br from-mulearn-whitish via-mulearn-whitish to-mulearn-duke-purple/30"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
@@ -121,7 +121,7 @@ export default function ReportHero() {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-[#2E85FE]">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 bg-[var(--mulearn-trusty-blue)]">
                 <value.icon className="w-8 h-8 text-mulearn-whitish" />
               </div>
               <h3 className="text-lg font-semibold text-mulearn-blackish mb-2">{value.title}</h3>

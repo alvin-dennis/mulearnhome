@@ -59,8 +59,11 @@ export default function Community() {
             alt="Join community"
             height={640}
             width={640}
-            className="h-[40rem] w-auto max-w-full object-contain"
+            className="object-contain max-w-full max-h-full"
             style={{ width: "auto" }}
+            loading="lazy"
+            quality={75}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </MotionDiv>
       </MotionSection>

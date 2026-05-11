@@ -222,6 +222,8 @@ export interface AnnualReport {
 export interface VideoTestimonial {
   id: string;
   name: string;
+  role: string;
+  company: string;
   videoUrl: string;
 }
 

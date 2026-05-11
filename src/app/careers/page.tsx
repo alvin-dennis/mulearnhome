@@ -216,7 +216,7 @@ export default function Careers() {
                   {getPageNumbers().map((item) => {
                     if (item.type === "ellipsis" || item.number === undefined) {
                       return (
-                        <span key={item.key} className="px-2 text-gray-400">
+                        <span key={item.key} className="px-2 text-mulearn-gray-600">
                           ...
                         </span>
                       );
@@ -247,7 +247,7 @@ export default function Careers() {
                   <ChevronRight className="w-5 h-5" />
                 </Button>
               </div>
-              <p className="mt-4 text-center text-sm text-gray-600">
+              <p className="mt-4 text-center text-sm text-mulearn-gray-600">
                 Showing {startIndex + 1}-{Math.min(endIndex, previousHiring.length)} of{" "}
                 {previousHiring.length} positions
               </p>

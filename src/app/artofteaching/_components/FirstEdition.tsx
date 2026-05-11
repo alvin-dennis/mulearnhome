@@ -4,7 +4,7 @@ import { artOfTeachingUrls } from "@/data/events";
 
 const FirstEdition = () => {
   return (
-    <div className="px-8 py-8 bg-white lg:px-12">
+    <div className="px-8 py-8 bg-mulearn-whitish lg:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-2/5">

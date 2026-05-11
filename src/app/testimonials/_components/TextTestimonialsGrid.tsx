@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-import { MotionDiv, MotionH2, MotionP } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import type { TextTestimonial } from "@/lib/types";
 import TextTestimonialCard from "./TextTestimonialCard";
@@ -22,12 +22,16 @@ export default function TextTestimonialsGrid({
   onFilterChange,
 }: TextTestimonialsGridProps) {
   const [internalFilter, setInternalFilter] = useState<TextFilterType>("all");
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const filter = activeFilter ?? internalFilter;
   const setFilter = onFilterChange ?? setInternalFilter;
 
   const filteredTestimonials =
     filter === "all" ? testimonials : testimonials.filter((t) => t.type === filter);
+
+  const visibleTestimonials = filteredTestimonials.slice(0, visibleCount);
+  const hasMore = filteredTestimonials.length > visibleCount;
 
   const filterOptions: { value: TextFilterType; label: string }[] = [
     { value: "all", label: "All" },
@@ -48,46 +52,24 @@ export default function TextTestimonialsGrid({
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.9 },
-  };
-
-  const itemTransition = {
-    duration: 0.3,
-    ease: "easeOut" as const,
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, scale: 0.95 },
   };
 
   return (
     <div className="w-full">
-      <div className="text-center mb-12">
-        <MotionH2
-          className=" text-4xl md:text-5xl font-bold text-mulearn-blackish mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Community Voices
-        </MotionH2>
-        <MotionP
-          className="text-xl text-mulearn-gray-600  max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          Read what our community members are saying about their µLearn experience
-        </MotionP>
-      </div>
-
-      <div className="flex justify-center mb-8">
-        <div className="flex flex-wrap justify-center items-center gap-2 bg-mulearn-gray-100 rounded-2xl p-2 max-w-full">
+      <div className="flex justify-center mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-4">
           {filterOptions.map((option) => (
             <Button
               key={option.value}
-              onClick={() => setFilter(option.value)}
-              variant={filter === option.value ? "default" : "ghost"}
-              className={`px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
-                filter === option.value ? "shadow-sm" : "text-mulearn-gray-600"
-              }`}
+              variant={filter === option.value ? "default" : "outline"}
+              onClick={() => {
+                setFilter(option.value);
+                setVisibleCount(6);
+              }}
+              className="px-8 py-2 rounded-full font-bold transition-all duration-300 border-2"
             >
               {option.label}
             </Button>
@@ -98,11 +80,12 @@ export default function TextTestimonialsGrid({
       <MotionDiv
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]"
       >
-        <AnimatePresence mode="wait">
-          {filteredTestimonials.map((testimonial) => (
+        <AnimatePresence mode="popLayout">
+          {visibleTestimonials.map((testimonial) => (
             <MotionDiv
               key={testimonial.id}
               layout
@@ -110,7 +93,7 @@ export default function TextTestimonialsGrid({
               initial="hidden"
               animate="visible"
               exit="hidden"
-              transition={itemTransition}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <TextTestimonialCard testimonial={testimonial} />
             </MotionDiv>
@@ -127,6 +110,34 @@ export default function TextTestimonialsGrid({
           </MotionDiv>
         )}
       </MotionDiv>
+
+      {(hasMore || visibleCount > 6) && (
+        <div className="flex justify-center items-center gap-4 mt-16">
+          {hasMore && (
+            <Button
+              variant="default"
+              onClick={() => setVisibleCount((prev) => prev + 6)}
+              className="font-semibold"
+            >
+              View More Stories
+            </Button>
+          )}
+          {visibleCount > 6 && (
+            <Button
+              variant="default"
+              onClick={() => {
+                setVisibleCount(6);
+                document
+                  .getElementById("community-feedback")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="font-semibold"
+            >
+              View Less
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

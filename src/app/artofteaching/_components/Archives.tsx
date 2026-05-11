@@ -3,7 +3,7 @@ import { artOfTeachingUrls } from "@/data/events";
 
 const Archives = () => {
   return (
-    <div className="px-8 py-8 bg-white">
+    <div className="px-8 py-8 bg-mulearn-whitish">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">

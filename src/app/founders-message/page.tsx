@@ -45,7 +45,7 @@ export default function FoundersMessage() {
         {/* Main Content */}
         <MotionDiv
           variants={fadeInUp}
-          className="prose prose-lg md:prose-xl prose-slate max-w-none text-mulearn-gray-600 leading-relaxed"
+          className="prose prose-lg md:prose-xl prose max-w-none text-mulearn-gray-600 leading-relaxed"
         >
           <p className="text-xl md:text-2xl font-medium text-mulearn-blackish mb-10 leading-relaxed">
             μLearn was not born out of policy, funding, or disruption theatre. It was born out of a
@@ -76,19 +76,19 @@ export default function FoundersMessage() {
 
           {/* Stakeholder Messages */}
           <div className="my-16 space-y-12">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
+            <div className="bg-mulearn-whitish p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
               <p className="font-bold text-lg text-mulearn-blackish mb-3 flex items-center gap-2">
                 <span className="text-mulearn text-2xl">→</span> To students,
               </p>
               <p className="text-base md:text-lg pl-8 text-mulearn-gray-600">
                 μLearn exists to return something that was taken away early—agency. You are not here
                 to fit into predefined roles. You are here to explore, to build, to fail safely, to
-                find your edge, and to contribute before you are "ready." Your curiosity is not a
-                distraction. It is your signal.
+                find your edge, and to contribute before you are &quot;ready&quot;. Your curiosity
+                is not a distraction. It is your signal.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
+            <div className="bg-mulearn-whitish p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
               <p className="font-bold text-lg text-mulearn-blackish mb-3 flex items-center gap-2">
                 <span className="text-mulearn-duke-purple text-2xl">→</span> To industry,
               </p>
@@ -100,7 +100,7 @@ export default function FoundersMessage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
+            <div className="bg-mulearn-whitish p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
               <p className="font-bold text-lg text-mulearn-blackish mb-3 flex items-center gap-2">
                 <span className="text-mulearn-trusty-blue text-2xl">→</span> To governments,
               </p>
@@ -112,7 +112,7 @@ export default function FoundersMessage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
+            <div className="bg-mulearn-whitish p-8 rounded-2xl shadow-sm border border-mulearn-gray-200">
               <p className="font-bold text-lg text-mulearn-blackish mb-3 flex items-center gap-2">
                 <span className="text-mulearn-gray-500 text-2xl">→</span> To NGOs and civil society,
               </p>
@@ -140,8 +140,8 @@ export default function FoundersMessage() {
 
           <div className="bg-gradient-to-r from-mulearn/5 to-mulearn-duke-purple/5 rounded-2xl p-10 mb-16 border border-mulearn/10">
             <p className="text-mulearn-gray-600 italic text-xl mb-4 font-serif">
-              "This is not an invitation to join a platform. It is a call to participate in a
-              learning civilization."
+              &quot;This is not an invitation to join a platform. It is a call to participate in a
+              learning civilization.&quot;
             </p>
             <div className="flex flex-wrap items-center gap-3 mt-4">
               <span className="text-mulearn-blackish font-bold text-2xl md:text-3xl mb-2">
@@ -163,7 +163,7 @@ export default function FoundersMessage() {
           variants={fadeInUp}
           className="flex items-center gap-6 pt-8 border-t border-mulearn-gray-200"
         >
-          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-md">
+          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-mulearn-whitish shadow-md">
             <MuImage
               src="/assets/founders-message/deepu-s-nath.jpg"
               alt="Deepu S Nath"
@@ -178,21 +178,18 @@ export default function FoundersMessage() {
             <Link
               href="https://deepusnath.com"
               target="_blank"
-              className="text-mulearn-gray-400 text-sm hover:text-mulearn transition-colors block mt-1"
+              className="text-mulearn-gray-600 text-sm hover:text-mulearn transition-colors block mt-1"
             >
               deepusnath.com
             </Link>
-            <p className="text-mulearn-gray-500 text-sm">Mulearn Foundation</p>
+            <p className="text-mulearn-gray-600 text-sm">Mulearn Foundation</p>
           </div>
         </MotionDiv>
 
         {/* CTA */}
         <MotionDiv variants={fadeInUp} className="mt-20 text-center">
           <Link href="https://app.mulearn.org" target="_blank" rel="noreferrer">
-            <Button
-              size="lg"
-              className="rounded-full px-10 py-7 text-lg font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-            >
+            <Button variant={"default"} className="px-7 py-7 font-semibold">
               Join the Movement
             </Button>
           </Link>

@@ -41,11 +41,11 @@ const MentorCard = ({ name, designation, image, linkedIn }: MentorCardProps) => 
             rel="noopener noreferrer"
             className="mb-3 inline-block"
           >
-            <FaLinkedin className="w-7 h-7 text-[#0077b5] hover:scale-110 transition-transform duration-300 hover:opacity-80" />
+            <FaLinkedin className="w-7 h-7 text-mulearn-trusty-blue hover:scale-110 transition-transform duration-300 hover:opacity-80" />
           </Link>
         )}
 
-        <p className="text-sm text-gray-600 leading-relaxed px-4">{designation}</p>
+        <p className="text-sm text-mulearn-gray-600 leading-relaxed px-4">{designation}</p>
       </CardContent>
     </Card>
   );

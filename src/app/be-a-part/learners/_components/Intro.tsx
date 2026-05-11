@@ -8,7 +8,7 @@ const LearnerIntro = () => {
     >
       <div className="max-w-7xl mx-auto -mt-25">
         {/* Blue Card */}
-        <div className="bg-[#456FF6] rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        <div className="bg-mulearn rounded-[3rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side - Illustration */}
           <div className="flex-shrink-0 w-full lg:w-1/3 flex justify-center">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 flex items-end justify-center">
@@ -33,10 +33,10 @@ const LearnerIntro = () => {
           </div>
 
           {/* Right side - Content */}
-          <div className="flex-1 text-white">
+          <div className="flex-1 text-mulearn-whitish">
             <h2
               id="learners-intro-heading"
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-white"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight"
             >
               Who is a Learner?
             </h2>
