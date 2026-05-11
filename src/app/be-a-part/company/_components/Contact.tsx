@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Card } from "@/components/ui/card";
 
@@ -58,12 +59,16 @@ const Contact = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-60 text-center md:text-left text-xl sm:text-2xl">
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-mulearn-gray-600">Email</p>
-                <p className="font-semibold text-2xl">partners@mulearn.org</p>
+                <Link href="mailto:partners@mulearn.org" className="font-semibold text-2xl">
+                  partners@mulearn.org
+                </Link>
               </div>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-mulearn-gray-600">Website</p>
-                <p className="font-semibold text-2xl">www.mulearn.org</p>
+                <Link href="https://mulearn.org" className="font-semibold text-2xl">
+                  mulearn.org
+                </Link>
               </div>
             </div>
           </Card>

@@ -335,6 +335,37 @@ export const galleryEvents: GalleryEvent[] = (
         },
       ],
     },
+    {
+      slug: "sandshore",
+      name: "The Grand Tech Adventure: SandShore",
+      date: "November 11-12, 2023",
+      location: "Abideep's Paradise, Vadanapilly, Thrissur",
+      coverImage: "/assets/gallery/sandshore/1.webp",
+      description:
+        "A 24-hour offline hackathon by KKEM and Mulearn KMEA featuring AI/ML, AR/VR, Web, and App Development tracks, aimed at fostering creativity and problem-solving beyond traditional boundaries.",
+      media: [
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/1.webp",
+          alt: "Participants working at The Grand Tech Adventure: SandShore",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/2.webp",
+          alt: "Hackathon session in progress at Vadanapilly",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/3.webp",
+          alt: "Mentorship and collaboration during SandShore hackathon",
+        },
+        {
+          type: "image",
+          src: "/assets/gallery/sandshore/4.webp",
+          alt: "Closing ceremony of The Grand Tech Adventure: SandShore",
+        },
+      ],
+    },
   ] as GalleryEvent[]
 ).sort((a, b) => {
   const getSortableDate = (event: GalleryEvent) => {

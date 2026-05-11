@@ -39,8 +39,6 @@ export const refundPolicy = {
       heading: "Contact Information",
       content: `**Email:** <em>info@mulearn.org</em>
 
-**Phone:** <em>+91 89436 47000</em>
-
 **Address:** GTech Nila Building, Phase 1, Technopark, Karyavattom, Trivandrum - 695581
 
 **Website:** <em>www.mulearn.org</em>`,
