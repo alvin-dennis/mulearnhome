@@ -51,10 +51,10 @@ export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-mulearn-whitish relative overflow-x-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
-        <div className="absolute top-0 -left-4 md:top-10 md:-left-50 w-48 md:w-200 pointer-events-none select-none">
+        <div className="hidden md:block absolute top-10 -left-50 w-200 pointer-events-none select-none">
           <MuImage
             src="/assets/impact-gallery/mu.svg"
-            alt=""
+            alt="μLearn Logo Backdrop"
             width={600}
             height={600}
             className="w-full h-full"
@@ -66,7 +66,7 @@ export default function TestimonialsPage() {
           className="text-center relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ delay: 0.2 }}
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border border-mulearn/10 shadow-sm mb-8">
             <div className="w-2 h-2 rounded-full bg-mulearn mr-2 animate-pulse" />
@@ -79,7 +79,7 @@ export default function TestimonialsPage() {
             className="text-5xl sm:text-7xl lg:text-8xl font-black text-center max-w-5xl mx-auto mb-8 leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ delay: 0.4 }}
           >
             Voices of{" "}
             <span className="text-mulearn relative inline-block">
@@ -92,13 +92,13 @@ export default function TestimonialsPage() {
             className="text-lg sm:text-xl text-mulearn-gray-600 max-w-3xl mx-auto leading-relaxed mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ delay: 0.6 }}
           >
             Discover how μLearn is empowering thousands to learn, build, and lead through a global
             peer-to-peer ecosystem.
           </MotionP>
 
-          {counts && <TestimonialStats counts={counts} />}
+          <TestimonialStats counts={counts} />
         </MotionDiv>
       </div>
 
@@ -139,7 +139,7 @@ export default function TestimonialsPage() {
             className="bg-mulearn rounded-[3.5rem] p-12 sm:p-24 text-center text-mulearn-whitish shadow-2xl relative overflow-hidden group"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ delay: 0.8 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-6xl font-black mb-8 relative text-mulearn-whitish z-10">

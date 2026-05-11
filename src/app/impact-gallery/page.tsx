@@ -40,7 +40,7 @@ export default function ImpactGallery() {
           initial={{ opacity: 0, x: -30, rotate: -5 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
-          className="absolute top-0 -left-5 md:top-10 md:left-5 w-48 md:w-200 pointer-events-none select-none"
+          className="hidden md:block absolute top-10 left-5 w-200 pointer-events-none select-none"
         >
           <MuImage
             src="/assets/impact-gallery/mu.svg"
