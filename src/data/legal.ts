@@ -90,7 +90,7 @@ You agree that while creating a profile, it implies a transfer of your profile d
     },
     {
       heading: "Storage of Information",
-      content: `We save your Information in our database in order to improve our Website and user experience and in accordance with our TOS. If you wish that your Information be permanently deleted from our database when you stop using our Services, please notify us at mulearnadmin@gtechindia.org
+      content: `We save your Information in our database in order to improve our Website and user experience and in accordance with our TOS. If you wish that your Information be permanently deleted from our database when you stop using our Services, please notify us at info@mulearn.org
 
 µLearn is an Indian company. If you are located outside India and choose to provide information to us, µLearn transfers your Information to our servers in India. India may not have the same data protection laws as the country in which you initially provided the Information. Therefore while we transfer your Information to India, we will protect it as described in this Privacy Policy.
 
@@ -315,9 +315,8 @@ export const termsAndConditions = {
       heading: "Contact Information",
       content: [
         "If you have any comments, questions or concerns about any of the information in this Agreement, or any other issues relating to the Processing of Personal Data carried out by us, or on our behalf, you can contact us by any of the following methods:",
-        "Email: mulearnadmin@gtechindia.org",
+        "Email: info@mulearn.org",
         "Postal Address: Technopark Trivandrum, Kazhakkoottam, Trivandrum - 695581, Kerala, India",
-        "Telephone: +91 99957 10101",
       ],
       subsections: [],
     },
@@ -331,7 +330,7 @@ export const termsAndConditions = {
     {
       heading: "Terms of Service",
       content: [
-        "Please use English language for all official communications. Should you have any questions regarding these Terms, please feel free to reach out to mulearnadmin@gtechindia.org.",
+        "Please use English language for all official communications. Should you have any questions regarding these Terms, please feel free to reach out to info@mulearn.org.",
         "All use of our Website(s), or our Services is subject to these Terms. We recommend that you review our Terms of Use regularly, in order to review any changes we might make from time to time. Any changes to this Agreement will be posted on the Website and will become effective and be binding on you immediately upon posting in our Website. µLearn may also change the terms by notifying you by any other reasonable form of notification, effective immediately upon notice being provided. Your continued use of the µLearn platform constitutes your acceptance of those changes.",
       ],
       subsections: [],
