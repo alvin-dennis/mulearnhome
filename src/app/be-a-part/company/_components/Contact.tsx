@@ -59,8 +59,8 @@ const Contact = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-60 text-center md:text-left text-xl sm:text-2xl">
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-mulearn-gray-600">Email</p>
-                <Link href="mailto:partners@mulearn.org" className="font-semibold text-2xl">
-                  partners@mulearn.org
+                <Link href="mailto:info@mulearn.org" className="font-semibold text-2xl">
+                  info@mulearn.org
                 </Link>
               </div>
 
