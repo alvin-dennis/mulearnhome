@@ -21,7 +21,7 @@ const colorToFilter = (color: string): string => {
     return "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(1180%) hue-rotate(200deg) brightness(95%) contrast(101%)"; // Default to blue for gradient
   }
 
-  if (color.includes("--mulearn-whitish") || color === "#FEFEFE") return "brightness(0) invert(1)";
+  if (color.includes("--mulearn-whitish")) return "brightness(0) invert(1)";
   if (color.includes("--mulearn-duke-purple"))
     return "brightness(0) saturate(100%) invert(45%) sepia(84%) saturate(2274%) hue-rotate(244deg) brightness(97%) contrast(98%)"; // Purple
   if (color.includes("--mulearn-trusty-blue"))
@@ -264,9 +264,9 @@ export default function CampusLogoGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-[var(--font-plus-jakarta)]}">
-      <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish}">
-        <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto}">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex font-(--font-plus-jakarta)]">
+      <div className="flex-1 flex flex-col lg:flex-row mr-2 overflow-hidden bg-mulearn-whitish">
+        <div className="order-1 lg:order-2 flex-1 bg-mulearn-blackish flex items-center justify-center p-6 lg:p-12 relative min-h-[50vh] lg:min-h-auto">
           <div
             className="absolute inset-0 opacity-10"
             style={{
@@ -274,7 +274,7 @@ export default function CampusLogoGenerator() {
               backgroundSize: "30px 30px",
             }}
           ></div>
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10}">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center relative z-10">
             {formData.logoType === "YIP" ? (
               <>
                 {/* <div className="relative group">

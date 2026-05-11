@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
-import { fetchProfileImage } from "@/services/profile";
+import { fetchPublicProfileImage } from "@/services/profile";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;
@@ -20,7 +20,7 @@ export default function TextTestimonialCard({ testimonial }: TextTestimonialCard
 
   useEffect(() => {
     if (testimonial.muid) {
-      fetchProfileImage(testimonial.muid)
+      fetchPublicProfileImage(testimonial.muid)
         .then(setProfileImage)
         .catch(() => setProfileImage(null));
     }
