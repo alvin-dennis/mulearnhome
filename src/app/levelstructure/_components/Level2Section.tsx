@@ -1,16 +1,10 @@
-"use client";
-
 import { Sparkle } from "lucide-react";
-import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
 export default function Level2Section() {
-  const sectionRef = useRef<HTMLElement>(null);
-
   return (
     <section
-      ref={sectionRef}
       className="relative flex flex-col items-center py-15 overflow-hidden bg-mulearn-whitish"
       id="level-2"
     >

@@ -205,7 +205,7 @@ export const galleryEvents: GalleryEvent[] = (
       location: "Ospyn Technologies, Technopark, Phase 4, Thiruvananthapuram",
       coverImage: "/assets/gallery/mutate2026/1.webp",
       description:
-        "Mutate’25 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
+        "Mutate’26 united passionate minds for a day of innovation, collaboration, and learning. Inspiring sessions and meaningful connections made it a truly impactful µLearn experience.",
       media: [
         {
           type: "image",

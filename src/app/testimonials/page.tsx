@@ -68,13 +68,6 @@ export default function TestimonialsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border border-mulearn/10 shadow-sm mb-8">
-            <div className="w-2 h-2 rounded-full bg-mulearn mr-2 animate-pulse" />
-            <span className="text-[10px] font-extrabold text-mulearn-blackish uppercase tracking-[0.2em]">
-              Community Stories
-            </span>
-          </div>
-
           <MotionH1
             className="text-5xl sm:text-7xl lg:text-8xl font-black text-center max-w-5xl mx-auto mb-8 leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}

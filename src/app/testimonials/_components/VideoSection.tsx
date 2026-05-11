@@ -125,23 +125,18 @@ export default function VideoSection({ testimonials }: VideoSectionProps) {
                 )}
               >
                 <MuImage
-                  src={`https://img.youtube.com/vi/${video.videoUrl}/maxresdefault.jpg`}
+                  src={`https://i.ytimg.com/vi_webp/${video.videoUrl}/hqdefault.webp`}
                   alt={video.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                   fill
-                  onError={(e) => {
-                    // Fallback if maxresdefault is not available
-                    (e.target as HTMLImageElement).src =
-                      `https://img.youtube.com/vi/${video.videoUrl}/mqdefault.jpg`;
-                  }}
                 />
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all flex items-center justify-center">
+                <div className="absolute inset-0 bg-mulearn-blackish/50 group-hover:bg-mulearn-blackish/30 transition-all flex items-center justify-center">
                   <div
                     className={cn(
                       "w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500",
                       activeIndex === index
-                        ? "bg-mulearn text-white scale-110"
-                        : "bg-white/30 text-white group-hover:bg-mulearn group-hover:scale-120",
+                        ? "bg-mulearn text-mulearn-whitish scale-110"
+                        : "bg-mulearn-whitish/30 text-mulearn-whitish group-hover:bg-mulearn group-hover:scale-120",
                     )}
                   >
                     <Play className="w-5 h-5 fill-current" />

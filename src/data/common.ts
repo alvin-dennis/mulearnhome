@@ -16,7 +16,7 @@ export const navItems = [
         { label: "Events", href: "/events" },
       ],
       "Flagship Initiatives": [
-        { label: "Launchpad", href: "https://launchpad.mulearn.org//" },
+        { label: "Launchpad", href: "https://launchpad.mulearn.org/" },
         { label: "Permute", href: "https://permute.mulearn.org/" },
         { label: "Top100 Series", href: "https://top100series.com/" },
         { label: "Art of Teaching", href: "/artofteaching" },

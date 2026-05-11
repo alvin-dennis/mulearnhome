@@ -1,7 +1,4 @@
-"use client";
-
 import { Sparkle } from "lucide-react";
-import { useRef } from "react";
 import { MotionDiv } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 
@@ -18,11 +15,8 @@ const INTEREST_GROUPS = [
 ];
 
 export default function Level4Section() {
-  const sectionRef = useRef<HTMLElement>(null);
-
   return (
     <section
-      ref={sectionRef}
       className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
