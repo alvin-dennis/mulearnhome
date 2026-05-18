@@ -155,18 +155,18 @@ const MotionTR = React.forwardRef<HTMLTableRowElement, HTMLMotionProps<"tr">>(fu
 });
 
 export {
-  MotionDiv,
-  MotionSection,
+  MotionA,
+  MotionBQ,
   MotionButton,
-  MotionHeader,
+  MotionDiv,
+  MotionFooter,
   MotionH1,
   MotionH2,
-  MotionP,
-  MotionNav,
-  MotionBQ,
-  MotionFooter,
-  MotionA,
+  MotionHeader,
   MotionLi,
+  MotionNav,
+  MotionP,
+  MotionSection,
   MotionTBody,
   MotionTR,
 };

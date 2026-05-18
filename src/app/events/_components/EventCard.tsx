@@ -102,7 +102,7 @@ export default function EventCard({ event }: Props) {
                   variant={"default"}
                   className="w-full flex items-center justify-center gap-3 text-mulearn-whitish rounded-xl px-5 py-3 font-semibold text-sm shadow-sm hover:shadow-md"
                 >
-                  <a target="_blank" href={event.link}>
+                  <a target="_blank" href={event.link} rel="noopener">
                     Go to Event
                   </a>
                 </Button>
