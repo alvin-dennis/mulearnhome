@@ -86,10 +86,10 @@
   "monthly": [
     {
       "username": "alvin-dennis",
-      "commits": 75,
+      "commits": 76,
       "prs_opened": 24,
       "prs_merged": 23,
-      "points": 122,
+      "points": 123,
       "displayname": "Alvin Dennis"
     },
     {
@@ -102,18 +102,18 @@
     },
     {
       "username": "DevWithPranav",
-      "commits": 14,
-      "prs_opened": 10,
-      "prs_merged": 9,
-      "points": 33,
+      "commits": 18,
+      "prs_opened": 14,
+      "prs_merged": 13,
+      "points": 45,
       "displayname": "Pranav P"
     },
     {
       "username": "erzer12",
-      "commits": 9,
+      "commits": 11,
       "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 14,
+      "prs_merged": 3,
+      "points": 17,
       "displayname": "Harshil P"
     },
     {
