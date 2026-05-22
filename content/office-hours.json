@@ -2508,7 +2508,17 @@
         "strategic-leadership"
       ]
     },
-    {},
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 24) ",
+      "performer": "Ashiq Muhammed M",
+      "designation": "Game Dev IG lead",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 24) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n\n ",
+      "date": "22/05/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
     {}
   ]
 }
