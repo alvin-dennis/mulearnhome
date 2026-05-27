@@ -27,20 +27,20 @@
       "displayname": "Jenin Joseph"
     },
     {
+      "username": "awindsr",
+      "commits": 930,
+      "prs_opened": 246,
+      "prs_merged": 240,
+      "points": 1416,
+      "displayname": "Awindsr"
+    },
+    {
       "username": "Jovit-Mathew236",
       "commits": 989,
       "prs_opened": 221,
       "prs_merged": 201,
       "points": 1411,
       "displayname": "Jovit Mathew"
-    },
-    {
-      "username": "awindsr",
-      "commits": 918,
-      "prs_opened": 243,
-      "prs_merged": 237,
-      "points": 1398,
-      "displayname": "Awindsr"
     },
     {
       "username": "MZaFaRM",
@@ -86,18 +86,18 @@
   "monthly": [
     {
       "username": "alvin-dennis",
-      "commits": 82,
+      "commits": 86,
       "prs_opened": 24,
       "prs_merged": 24,
-      "points": 130,
+      "points": 134,
       "displayname": "Alvin Dennis"
     },
     {
       "username": "awindsr",
-      "commits": 47,
-      "prs_opened": 13,
-      "prs_merged": 13,
-      "points": 73,
+      "commits": 57,
+      "prs_opened": 16,
+      "prs_merged": 16,
+      "points": 89,
       "displayname": "Awindsr"
     },
     {
@@ -127,9 +127,9 @@
     {
       "username": "frizzycodes",
       "commits": 4,
-      "prs_opened": 2,
+      "prs_opened": 3,
       "prs_merged": 2,
-      "points": 8,
+      "points": 9,
       "displayname": "Adithya S Pai"
     },
     {
@@ -149,20 +149,20 @@
       "displayname": "Febin Daniel"
     },
     {
+      "username": "NKKONLINE",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Nandhan KK"
+    },
+    {
       "username": "JilsJoseph3030",
       "commits": 0,
       "prs_opened": 1,
       "prs_merged": 0,
       "points": 1,
       "displayname": "Jilsjoseph"
-    },
-    {
-      "username": "nandhanab147-debug",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "nandhanab147-debug"
     }
   ]
 }
