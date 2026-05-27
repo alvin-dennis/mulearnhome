@@ -25,23 +25,45 @@ export default function LevelStructure() {
               }}
             />
 
-            <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto mt-16 sm:mt-0">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-mulearn-blackish tracking-tight mb-6 sm:mb-8 leading-[1.1]">
-                The <span className="text-mulearn">µLearn</span>
-                <br />
-                Learning Odyssey
+            <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto mt-16 sm:mt-0 space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-mulearn-blackish tracking-tight leading-[1.1]">
+                The <span className="text-mulearn">µLearn</span> Odyssey
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-mulearn-gray-600 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed font-medium">
-                Step into an unexplored universe where you design your own trajectory through 7
-                levels of transformation
-              </p>
+              <div className="text-sm sm:text-base md:text-lg text-mulearn-gray-600 max-w-3xl mx-auto space-y-4 leading-relaxed font-medium">
+                <p>
+                  Every college student enters their college life with a bag full of hopes and
+                  pocket full dreams. However,for the majority of them,the next 3 or 4 years will be
+                  predictable-attend lectures,write some exams,finish the degree and so on.
+                </p>
+                <p>Like every single one around them,they hold some quiet dreams within them.</p>
+                <ul className="list-none inline-block text-left space-y-2 py-2 border-y border-mulearn/20">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-mulearn" />
+                    Maybe they love coding
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-mulearn" />
+                    Maybe they sketch during lectures
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-mulearn" />
+                    Maybe they dream of building things on their own
+                  </li>
+                </ul>
+                <p>But all of these remain invisible until spoken aloud.</p>
+                <p className="font-semibold text-mulearn-blackish text-base sm:text-lg md:text-xl">
+                  And exactly at this point,their journey with mulearn begins.
+                </p>
+              </div>
 
-              <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/levelstructure/mujourney">
-                  <Button variant={"default"}>Begin Your Journey</Button>
-                </Link>
-              </MotionDiv>
+              <div className="pt-4">
+                <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/levelstructure/mujourney">
+                    <Button variant={"default"}>Begin Your Journey</Button>
+                  </Link>
+                </MotionDiv>
+              </div>
             </div>
           </main>
         </MotionDiv>

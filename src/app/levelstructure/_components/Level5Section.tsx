@@ -50,50 +50,52 @@ export default function Level5Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
-                The <span className="text-mulearn-trusty-blue">Global Arena</span>
+                Level 5:{" "}
+                <span className="text-mulearn-trusty-blue">
+                  After conquering level 4,the real battle begins.
+                </span>
               </h2>
-              <p className="text-xl font-bold text-mulearn-blackish">
-                Challenges, Hackathons & Competitions
-              </p>
-              <p className="text-sm md:text-base text-mulearn-blackish  leading-relaxed max-w-2xl">
-                The student now steps onto global battlegrounds. Facing global peers raises the bar,
-                sharpens skills, and builds recognition.
+              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
+                Hackathons,design competitions,film festivals and global challenges appear. The
+                competition might be intense,but it is not something that will push the learners
+                away. They face global peers raising their bars,sharpening their skills,and thus
+                building recognition.
               </p>
             </div>
 
             <div className="space-y-6 relative pl-8">
               <div className="absolute left-0 top-0 bottom-0 w-[3px] flex flex-col gap-2">
-                {[...Array(4)].map((_, i) => (
+                {[...Array(3)].map((_, i) => (
                   <div key={i} className="flex-1 bg-mulearn-trusty-blue rounded-full" />
                 ))}
               </div>
 
-              {[
-                { label: "AI Students", text: '"Competing in Kaggle & LLM hackathons."' },
-                { label: "Film Group", text: '"Submitting to online festivals & comic cons."' },
-                {
-                  label: "Civil Engineers",
-                  text: '"Sustainable city models in design challenges."',
-                },
-                {
-                  label: "Space/Cosmos Tribe",
-                  text: '"Writing proposals for CubeSat challenges."',
-                },
-              ].map((item, i) => (
-                <div key={i} className="py-1">
-                  <p className="text-sm md:text-base text-mulearn-blackish">
-                    <span className="font-bold">{item.label}:</span> <span>{item.text}</span>
-                  </p>
-                </div>
-              ))}
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  An AI student competes in an LLM hackathon while a civil learner participates in
+                  design challenges.
+                </p>
+              </div>
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  At the same time,a project management learner may take a part in global case
+                  competitions.
+                </p>
+              </div>
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  The level is not exclusive for anyone-every interest group has their own
+                  battlefield which may be different from the other.
+                </p>
+              </div>
             </div>
 
             <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-xl">
               <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed">
-                <span className="font-bold">The Impact</span>
+                <span className="font-bold">The End Goal</span>
                 <br />
-                Learners transform into contributors, not just participants. Global competition
-                builds real-world credibility and industry recognition.
+                But,there is only one end goal for level 5-transform into contributors,not just stay
+                there as participants.
               </p>
             </div>
           </MotionDiv>

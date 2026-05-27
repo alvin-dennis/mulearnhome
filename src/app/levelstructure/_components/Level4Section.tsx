@@ -35,15 +35,21 @@ export default function Level4Section() {
           transition={{ duration: 0.8 }}
           className="space-y-4 mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
-            The Path of <span className="text-mulearn-trusty-blue">Choice</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-mulearn-blackish tracking-tight leading-tight">
+            Level 4:{" "}
+            <span className="text-mulearn-trusty-blue">
+              Now here comes the bigger question.Which path will you choose?
+            </span>
           </h2>
-          <p className="text-sm md:text-base font-bold text-mulearn-blackish tracking-widest">
-            Choose Your Interest Group
+          <p className="text-sm md:text-base font-semibold text-mulearn-blackish max-w-3xl mx-auto leading-relaxed">
+            This is the level 4,where students enter different interest groups. Some walk with
+            AI,while some others choose the Web tribe. A few others move into film,animation or
+            comics to weave their imagination. Many of them choose civil/mechanical,or space shaping
+            physical reality and touching the stars.
           </p>
-          <p className="text-xs md:text-sm text-mulearn-blackish max-w-2xl mx-auto leading-relaxed font-medium">
-            This is where the hero chooses their tribe. Students anchor under mentors &
-            industry-aligned pathways.
+          <p className="text-xs md:text-sm text-mulearn-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
+            At this point,there is no more scattered learning.The learners can start building proof
+            of work within their chosen interest group.
           </p>
         </MotionDiv>
 

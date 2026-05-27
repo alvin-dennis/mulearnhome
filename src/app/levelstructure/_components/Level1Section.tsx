@@ -58,44 +58,22 @@ export default function Level1Section() {
           >
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
-                The First <span className="text-mulearn-trusty-blue">Hello</span>
+                Level 1: <span className="text-mulearn-trusty-blue">The First Hello</span>
               </h2>
 
-              <p className="text-lg text-mulearn-blackish leading-relaxed font-medium">
-                Every explorer in μLearn&apos;s galaxy starts by saying:{" "}
-                <span className="text-mulearn-blackish">&ldquo;Here I am.&rdquo;</span>
+              <p className="text-lg text-mulearn-blackish leading-relaxed font-semibold">
+                The first thing that a student is asked to do is to introduce themselves:
               </p>
 
               <p className="text-base text-mulearn-blackish font-medium">
-                This is not a roll call. It&apos;s an act of visibility—letting peers, mentors, and
-                opportunities discover you.
+                Not with their CGPA or ranks,but with a simple statement about who they are.
               </p>
 
               <div className="space-y-4 pt-4">
                 <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
-                  <p className="text-sm text-mulearn-blackish font-semibold">
-                    Civil Engineering Student:{" "}
-                    <span className="text-mulearn-blackish font-normal">
-                      &ldquo;curious about green buildings.&rdquo;
-                    </span>
-                  </p>
-                </div>
-
-                <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
-                  <p className="text-sm text-mulearn-blackish font-semibold">
-                    Mechanical Engineer:{" "}
-                    <span className="text-mulearn-blackish font-normal">
-                      &ldquo;I sketch machines but want to learn 3D modeling.&rdquo;
-                    </span>
-                  </p>
-                </div>
-
-                <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
-                  <p className="text-sm text-mulearn-blackish font-semibold">
-                    Film Enthusiast:{" "}
-                    <span className="text-mulearn-blackish font-normal">
-                      &ldquo;I make short reels in my hostel room.&rdquo;
-                    </span>
+                  <p className="text-sm sm:text-base text-mulearn-blackish font-medium">
+                    One can write ” I’m curious about green buildings” and another one can write “ I
+                    make short reels in my hostel room. ”
                   </p>
                 </div>
               </div>
@@ -103,10 +81,10 @@ export default function Level1Section() {
 
             <Card className="border border-mulearn-blackish shadow-none rounded-xl mt-8">
               <CardContent className="p-6 space-y-2">
-                <h3 className="text-base font-bold text-mulearn-blackish">The Impact</h3>
+                <h3 className="text-base font-bold text-mulearn-blackish">The Aim</h3>
                 <p className="text-sm text-mulearn-blackish leading-relaxed font-medium">
-                  Students realize that their journey begins not with skills, but with identity and
-                  courage to show up.
+                  No matter who they are or what they aspire to be,the aim of this first task is
+                  simple-to break hesitation and help the student to own their story.
                 </p>
               </CardContent>
             </Card>

@@ -25,21 +25,20 @@ export default function Level2Section() {
         >
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
-              The Mindset <span className="text-mulearn-trusty-blue">Shift</span>
+              Level 2: <span className="text-mulearn-trusty-blue">Then comes level 2.</span>
             </h2>
-            <p className="text-lg sm:text-xl font-medium text-mulearn-trusty-blue">
-              From Fixed &rarr; Growth &rarr; Abundance
-            </p>
           </div>
 
-          <div className="space-y-2 text-sm sm:text-base font-medium max-w-3xl mx-auto">
-            <p className="text-mulearn-blackish">
-              Most students walk into μLearn trapped in invisible cages
+          <div className="space-y-4 text-sm sm:text-base font-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-mulearn-blackish font-semibold text-base sm:text-lg">
+              Most students walk into this level with invisible cages. A web development student may
+              think that they are not good enough to compete globally while a comic artist may doubt
+              a future for his passion.
             </p>
             <p className="text-mulearn-gray-600">
-              μLearn rewires these narratives. Through experiences, reflection spaces, and peer
-              nudges, a fixed mindset stretches into a growth mindset... and finally into abundance
-              thinking.
+              Mulearn rewrite all these narratives through experiences,reflections and peer nudge.
+              Skills at this level are refreshed every 18 months and the students are equipped with
+              a growth mindset from this level.
             </p>
           </div>
         </MotionDiv>

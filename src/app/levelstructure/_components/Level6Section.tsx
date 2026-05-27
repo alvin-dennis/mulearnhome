@@ -18,54 +18,48 @@ export default function Level6Section() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
-                Build & <span className="text-mulearn-trusty-blue">Ship</span>
+                Level 6:{" "}
+                <span className="text-mulearn-trusty-blue">
+                  Every hero needs to build their sword,especially after they are exposed to the
+                  global battlefield. This is exactly what level 6 does.
+                </span>
               </h2>
-              <p className="text-xl font-bold text-mulearn-blackish">
-                Proof-of-Impact & Real Users
-              </p>
-              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl">
-                Every hero must build their sword. Here, they don&apos;t just make prototypes. They
-                ship to real users.
+              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
+                At this level,learners grow into builders and instead of making prototypes,they ship
+                them to real users.
               </p>
             </div>
 
             <div className="space-y-6 relative pl-8">
               <div className="absolute left-0 top-0 bottom-0 w-[3px] flex flex-col gap-2">
-                {[...Array(4)].map((_, i) => (
+                {[...Array(3)].map((_, i) => (
                   <div key={i} className="flex-1 bg-mulearn-trusty-blue rounded-full" />
                 ))}
               </div>
 
-              {[
-                { label: "AI Team", text: '"Mental wellness chatbot → deployed in colleges."' },
-                { label: "Web Dev Team", text: '"Alumni-network portal → adopted by campus."' },
-                {
-                  label: "Civil + Mechanical",
-                  text: '"Water filter prototype → tested with NGOs."',
-                },
-                {
-                  label: "Film + Comics",
-                  text: '"Gamified storytelling series → shared in schools."',
-                },
-              ].map((item, i) => (
-                <div key={i} className="py-1">
-                  <p className="text-sm md:text-base text-mulearn-blackish">
-                    <span className="font-bold">{item.label}:</span> <span>{item.text}</span>
-                  </p>
-                </div>
-              ))}
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  A game developer may launch their first game,while the AI team may build a mental
+                  wellness chatbot.
+                </p>
+              </div>
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  On the other side,a civil-mechanical duo prototypes a low cost water filter for
+                  rural areas.
+                </p>
+              </div>
+              <div className="py-1">
+                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                  Their paths may be different,but the end goal is the same.
+                </p>
+              </div>
             </div>
 
             <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-2xl">
-              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed">
-                <span className="font-bold">The Impact</span>
-                <br />
-                Shipping builds accountability, feedback flow, and real-world value. Proof-of-work
-                matures into proof-of-impact.
-                <br />
-                <br />
-                Students grow into builders & interdisciplinary collaborators who create things that
-                others use.
+              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed font-semibold">
+                Proof of works turn into proof of impact and that is exactly how the learners get
+                their key for entering the Muverse.
               </p>
             </div>
           </MotionDiv>

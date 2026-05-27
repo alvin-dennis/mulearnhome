@@ -19,38 +19,32 @@ export default function Level3Section() {
           >
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
-                Tool <span className="text-mulearn-trusty-blue">Mastery</span>
+                Level 3: <span className="text-mulearn-trusty-blue">Now there is level 3.</span>
               </h2>
-              <p className="text-lg font-bold text-mulearn-blackish">The Explorer&apos;s Compass</p>
             </div>
 
             <div className="space-y-6">
-              <p className="text-base text-mulearn-gray-600 leading-relaxed font-medium">
-                At this point, tools become the compass.
-                <br />
-                Knowledge transforms from abstract to actionable.
+              <p className="text-base text-mulearn-blackish leading-relaxed font-semibold">
+                Here the challenge is to learn tools-not theoretically,but practically.A web student
+                learns GitHub,hosting and Figma. At the same time,a film enthusiast may learn
+                editing software or storytelling workflows.
               </p>
 
-              <div className="space-y-4 pt-2">
-                {[
-                  "Web Dev Student: “GitHub, hosting, and Figma become my workflow.”",
-                  "AI Student: “HuggingFace and ChatGPT streamline my workflows.”",
-                  "Film Student: “DaVinci Resolve and AI editing tools unlock creativity.”",
-                  "Civil Engineer: “AutoCAD + Project Management tools bring ideas to life.”",
-                ].map((text, i) => (
-                  <div key={i} className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
-                    <p className="text-sm text-mulearn-blackish font-medium">{text}</p>
-                  </div>
-                ))}
+              <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
+                <p className="text-sm sm:text-base text-mulearn-gray-600 font-medium leading-relaxed">
+                  At first,the tools may feel overwhelming-there are errors everywhere and nothing
+                  may seem to work.But soon,the students move from being a passive learner to an
+                  active learner.
+                </p>
               </div>
             </div>
 
             <Card className="bg-mulearn-whitish border border-mulearn-blackish shadow-none rounded-xl mt-8">
               <CardContent className="p-6 space-y-2">
-                <h3 className="text-base font-bold text-mulearn-blackish">The Impact</h3>
+                <h3 className="text-base font-bold text-mulearn-blackish">The Ultimate Survival</h3>
                 <p className="text-sm text-mulearn-blackish leading-relaxed font-medium">
-                  Students move from passive learners to active creators. They command technology
-                  instead of being commanded by it.
+                  They command technology instead of being commanded by it.Because,in today’s
+                  age,tool literacy is the ultimate survival.
                 </p>
               </CardContent>
             </Card>
