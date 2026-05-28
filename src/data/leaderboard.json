@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 930,
+      "commits": 943,
       "prs_opened": 246,
       "prs_merged": 240,
-      "points": 1416,
+      "points": 1429,
       "displayname": "Awindsr"
     },
     {
@@ -94,19 +94,27 @@
     },
     {
       "username": "awindsr",
-      "commits": 57,
+      "commits": 70,
       "prs_opened": 16,
       "prs_merged": 16,
-      "points": 89,
+      "points": 102,
       "displayname": "Awindsr"
     },
     {
       "username": "DevWithPranav",
-      "commits": 30,
-      "prs_opened": 21,
-      "prs_merged": 20,
-      "points": 71,
+      "commits": 42,
+      "prs_opened": 24,
+      "prs_merged": 23,
+      "points": 89,
       "displayname": "Pranav P"
+    },
+    {
+      "username": "frizzycodes",
+      "commits": 18,
+      "prs_opened": 13,
+      "prs_merged": 9,
+      "points": 40,
+      "displayname": "Adithya S Pai"
     },
     {
       "username": "erzer12",
@@ -125,14 +133,6 @@
       "displayname": "Devika Dileep"
     },
     {
-      "username": "frizzycodes",
-      "commits": 4,
-      "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 9,
-      "displayname": "Adithya S Pai"
-    },
-    {
       "username": "sachin-raj-m",
       "commits": 6,
       "prs_opened": 0,
@@ -149,20 +149,20 @@
       "displayname": "Febin Daniel"
     },
     {
+      "username": "GokulShaji2005",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Gokul Shaji"
+    },
+    {
       "username": "NKKONLINE",
       "commits": 0,
       "prs_opened": 1,
       "prs_merged": 0,
       "points": 1,
       "displayname": "Nandhan KK"
-    },
-    {
-      "username": "JilsJoseph3030",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "Jilsjoseph"
     }
   ]
 }
