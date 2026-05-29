@@ -2540,6 +2540,19 @@
       "interestGroups": [
         "ui-ux"
       ]
-    }
+    },
+    {
+      "title": "AI and Cognitive Thinking",
+      "performer": " Naveen S ",
+      "designation": " SL IG Core Team Member, μLearn Foundation",
+      "description": "The way we think inspires the way machines learn.\n\nJoin us for μLearn Office Hours on “AI and Cognitive Thinking” — an engaging session that explores the connection between human cognition and artificial intelligence. Learn how concepts such as learning, reasoning, memory, and decision-making have shaped modern AI systems and discover what the future holds for intelligent technologies.\n\nExplore the science behind thinking minds and intelligent machines.",
+      "date": "29-05-2026",
+      "link": "mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {},
+    {}
   ]
 }
