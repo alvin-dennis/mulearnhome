@@ -2552,7 +2552,17 @@
         "strategic-leadership"
       ]
     },
-    {},
+    {
+      "title": "Movie Talk: Blockbuster Spotlight",
+      "performer": "Muv Team",
+      "designation": "Muv IG Leads",
+      "description": "🎬 Movie Talk: Blockbuster Spotlight | μLearn Office Hours\nLet’s discuss a film that’s currently running successfully — what makes it work, audience reactions, and the storytelling behind its success.",
+      "date": "29-05-2026",
+      "link": "https://mulearn.org/r/muv-officehour⁠",
+      "interestGroups": [
+        "muv"
+      ]
+    },
     {}
   ]
 }
