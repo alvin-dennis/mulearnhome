@@ -2,6 +2,13 @@ import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
+import Level1Section from "./_components/Level1Section";
+import Level2Section from "./_components/Level2Section";
+import Level3Section from "./_components/Level3Section";
+import Level4Section from "./_components/Level4Section";
+import Level5Section from "./_components/Level5Section";
+import Level6Section from "./_components/Level6Section";
+import Level7Section from "./_components/Level7Section";
 
 export default function LevelStructure() {
   return (
@@ -14,7 +21,7 @@ export default function LevelStructure() {
           transition={{ duration: 0.5 }}
           className="min-h-screen"
         >
-          <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+          <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
             <div
               className="absolute inset-0 z-0 pointer-events-none"
               style={{
@@ -32,8 +39,8 @@ export default function LevelStructure() {
 
               <div className="text-sm sm:text-base md:text-lg text-mulearn-gray-600 max-w-3xl mx-auto space-y-4 leading-relaxed font-medium">
                 <p>
-                  Every college student enters their college life with a bag full of hopes and
-                  pocket full dreams. However,for the majority of them,the next 3 or 4 years will be
+                  All learners enter their college life with a bag full of hopes and pocket full
+                  dreams. However,for the majority of them,the next 3 or 4 years will be
                   predictable-attend lectures,write some exams,finish the degree and so on.
                 </p>
                 <p>Like every single one around them,they hold some quiet dreams within them.</p>
@@ -53,19 +60,27 @@ export default function LevelStructure() {
                 </ul>
                 <p>But all of these remain invisible until spoken aloud.</p>
                 <p className="font-semibold text-mulearn-blackish text-base sm:text-lg md:text-xl">
-                  And exactly at this point,their journey with mulearn begins.
+                  And exactly at this point,their journey with µlearn begins.
                 </p>
               </div>
 
               <div className="pt-4">
                 <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="/levelstructure/mujourney">
+                  <Link href="#level-1">
                     <Button variant={"default"}>Begin Your Journey</Button>
                   </Link>
                 </MotionDiv>
               </div>
             </div>
-          </main>
+          </div>
+
+          <Level1Section />
+          <Level2Section />
+          <Level3Section />
+          <Level4Section />
+          <Level5Section />
+          <Level6Section />
+          <Level7Section />
         </MotionDiv>
       </AnimatePresence>
     </div>

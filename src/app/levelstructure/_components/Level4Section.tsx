@@ -48,8 +48,8 @@ export default function Level4Section() {
             physical reality and touching the stars.
           </p>
           <p className="text-xs md:text-sm text-mulearn-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
-            At this point,there is no more scattered learning.The learners can start building proof
-            of work within their chosen interest group.
+            At this point, there is no more scattered learning. The learners can start building
+            proof of work within their chosen interest group.
           </p>
         </MotionDiv>
 

@@ -25,15 +25,15 @@ export default function Level3Section() {
 
             <div className="space-y-6">
               <p className="text-base text-mulearn-blackish leading-relaxed font-semibold">
-                Here the challenge is to learn tools-not theoretically,but practically.A web student
-                learns GitHub,hosting and Figma. At the same time,a film enthusiast may learn
-                editing software or storytelling workflows.
+                Here the challenge is to learn tools-not theoretically, but practically. A web
+                student learns GitHub, hosting and Figma. At the same time, a film enthusiast may
+                learn editing software or storytelling workflows.
               </p>
 
               <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
                 <p className="text-sm sm:text-base text-mulearn-gray-600 font-medium leading-relaxed">
-                  At first,the tools may feel overwhelming-there are errors everywhere and nothing
-                  may seem to work.But soon,the students move from being a passive learner to an
+                  At first, the tools may feel overwhelming-there are errors everywhere and nothing
+                  may seem to work. But soon, the students move from being a passive learner to an
                   active learner.
                 </p>
               </div>
@@ -43,8 +43,8 @@ export default function Level3Section() {
               <CardContent className="p-6 space-y-2">
                 <h3 className="text-base font-bold text-mulearn-blackish">The Ultimate Survival</h3>
                 <p className="text-sm text-mulearn-blackish leading-relaxed font-medium">
-                  They command technology instead of being commanded by it.Because,in today’s
-                  age,tool literacy is the ultimate survival.
+                  They command technology instead of being commanded by it. Because, in today&apos;s
+                  age, tool literacy is the ultimate survival.
                 </p>
               </CardContent>
             </Card>

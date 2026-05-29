@@ -39,13 +39,13 @@ export default function Level6Section() {
 
               <div className="py-1">
                 <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  A game developer may launch their first game,while the AI team may build a mental
+                  A game developer may launch their first game, while the AI team may build a mental
                   wellness chatbot.
                 </p>
               </div>
               <div className="py-1">
                 <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  On the other side,a civil-mechanical duo prototypes a low cost water filter for
+                  On the other side, a civil-mechanical duo prototypes a low cost water filter for
                   rural areas.
                 </p>
               </div>

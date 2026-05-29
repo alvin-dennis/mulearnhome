@@ -72,8 +72,8 @@ export default function Level1Section() {
               <div className="space-y-4 pt-4">
                 <div className="pl-4 border-l-[3px] border-mulearn-trusty-blue py-1">
                   <p className="text-sm sm:text-base text-mulearn-blackish font-medium">
-                    One can write ” I’m curious about green buildings” and another one can write “ I
-                    make short reels in my hostel room. ”
+                    One can write ” I&apos;m curious about green buildings” and another one can
+                    write “ I make short reels in my hostel room. ”
                   </p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Level1Section() {
               <CardContent className="p-6 space-y-2">
                 <h3 className="text-base font-bold text-mulearn-blackish">The Aim</h3>
                 <p className="text-sm text-mulearn-blackish leading-relaxed font-medium">
-                  No matter who they are or what they aspire to be,the aim of this first task is
+                  No matter who they are or what they aspire to be, the aim of this first task is
                   simple-to break hesitation and help the student to own their story.
                 </p>
               </CardContent>

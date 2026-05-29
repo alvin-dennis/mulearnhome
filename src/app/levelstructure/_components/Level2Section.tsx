@@ -36,7 +36,7 @@ export default function Level2Section() {
               a future for his passion.
             </p>
             <p className="text-mulearn-gray-600">
-              Mulearn rewrite all these narratives through experiences,reflections and peer nudge.
+              µlearn rewrite all these narratives through experiences, reflections and peer nudge.
               Skills at this level are refreshed every 18 months and the students are equipped with
               a growth mindset from this level.
             </p>

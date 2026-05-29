@@ -52,7 +52,7 @@ export default function Level5Section() {
               <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
                 Level 5:{" "}
                 <span className="text-mulearn-trusty-blue">
-                  After conquering level 4,the real battle begins.
+                  After conquering level 4, the real battle begins.
                 </span>
               </h2>
               <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
@@ -78,7 +78,7 @@ export default function Level5Section() {
               </div>
               <div className="py-1">
                 <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  At the same time,a project management learner may take a part in global case
+                  At the same time, a project management learner may take a part in global case
                   competitions.
                 </p>
               </div>

@@ -26,10 +26,10 @@ export default function Level7Section() {
           className="space-y-6 mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-mulearn-blackish tracking-tight">
-            MuVerse:The Endgame
+            Level 7: µVerse
           </h2>
           <p className="text-lg md:text-2xl text-mulearn-blackish max-w-4xl mx-auto font-medium leading-relaxed">
-            At level 7,the path now opens to the MuVerse.Learners are connected to opportunities
+            At level 7,the path now opens to the µVerse. Learners are connected to opportunities
             instead of just stopping it right there at skill development.
           </p>
           <p className="text-base md:text-lg text-mulearn-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -43,8 +43,8 @@ export default function Level7Section() {
 
         <div className="w-full max-w-4xl mx-auto mb-16 p-8 bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem]">
           <p className="text-base md:text-lg text-mulearn-blackish leading-relaxed font-semibold">
-            This could possibly be how a student’s life could change. Instead of falling into the
-            vicious cycle that they find during their college,they can find their own path.A
+            This could possibly be how a student&apos;s life could change. Instead of falling into
+            the vicious cycle that they find during their college,they can find their own path.A
             predictable college life could be turned extraordinary by investing in the right skill
             set that compliments their passion.
           </p>
@@ -93,7 +93,7 @@ export default function Level7Section() {
           className="space-y-8 max-w-4xl mx-auto pt-6 border-t border-mulearn/20"
         >
           <p className="text-xl md:text-2xl text-mulearn font-bold leading-relaxed">
-            Mulearn is not just about learning-it is a regenerative talent engine that transforms
+            µlearn is not just about learning-it is a regenerative talent engine that transforms
             students into innovators builders and global contributors.
           </p>
         </MotionDiv>
