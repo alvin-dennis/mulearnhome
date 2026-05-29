@@ -2563,6 +2563,16 @@
         "muv"
       ]
     },
-    {}
+    {
+      "title": "Learning Game Prototype Creation in Unity",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "Learning Game Prototype Creation in Unity\n\nhow to turn a simple game idea into a playable prototype in Unity during this office hour session. This session focuses on project-based game development workflows including prototyping core mechanics, structuring gameplay systems, testing features, and improving the overall gameplay experience.",
+      "date": "29-05-2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    }
   ]
 }
