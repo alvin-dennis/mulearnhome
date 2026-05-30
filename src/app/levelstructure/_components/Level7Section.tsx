@@ -5,7 +5,7 @@ import MuImage from "@/components/MuImage";
 export default function Level7Section() {
   return (
     <section
-      className="relative flex flex-col items-center py-10 lg:py-20 overflow-hidden min-h-[90vh]"
+      className="relative flex flex-col items-center min-h-screen py-10 lg:py-20 overflow-hidden min-h-[90vh]"
       id="level-7"
     >
       <div className="absolute inset-0 pointer-events-none z-0">

@@ -17,15 +17,33 @@ const INTEREST_GROUPS = [
 export default function Level4Section() {
   return (
     <section
-      className="relative bg-mulearn-whitish flex flex-col items-center py-10 lg:py-20 overflow-hidden"
+      className="relative bg-mulearn-whitish flex flex-col items-center min-h-screen py-10 lg:py-20 overflow-hidden"
       id="level-4"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <Sparkle className="absolute top-[15%] left-[5%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
-        <Sparkle className="absolute top-[35%] right-[10%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-20" />
-        <Sparkle className="absolute bottom-[25%] left-[10%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-40" />
-        <Sparkle className="absolute top-[8%] right-[25%] text-mulearn-trusty-blue w-2 h-2 fill-mulearn-trusty-blue opacity-20" />
-        <Sparkle className="absolute bottom-[15%] right-[8%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-30" />
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <MuImage
+          src="/assets/levelstructure/line_lvl2.svg"
+          alt="Line Path"
+          width={1400}
+          height={800}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-[1600px] object-contain opacity-40"
+        />
+        <MuImage
+          src="/assets/levelstructure/rocket_lvl2.svg"
+          alt="Rocket"
+          width={300}
+          height={400}
+          className="hidden md:block absolute top-0 right-[-10%] sm:right-[-5%] lg:right-[5%] z-20 w-[40%] sm:w-[30%] max-w-[300px] object-contain"
+        />
+        <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute top-[30%] left-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-40" />
+        <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
+        <Sparkle className="absolute top-[15%] right-[25%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
+        <Sparkle className="absolute top-[40%] right-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute bottom-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-40" />
+        <Sparkle className="absolute top-[50%] left-[30%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10 flex flex-col items-center text-center">

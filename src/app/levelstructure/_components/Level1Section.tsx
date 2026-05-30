@@ -5,7 +5,33 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level1Section() {
   return (
-    <section className="relative flex items-center py-15 overflow-hidden" id="level-1">
+    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-1">
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <MuImage
+          src="/assets/levelstructure/line_lvl2.svg"
+          alt="Line Path"
+          width={1400}
+          height={800}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-[1600px] object-contain opacity-40 scale-x-[-1]"
+        />
+        <MuImage
+          src="/assets/levelstructure/rocket_lvl2.svg"
+          alt="Rocket"
+          width={300}
+          height={400}
+          className="hidden md:block absolute top-0 left-[-10%] sm:left-[-5%] lg:left-[5%] z-20 w-[40%] sm:w-[30%] max-w-[300px] object-contain scale-x-[-1]"
+        />
+        <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute top-[30%] left-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-40" />
+        <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
+        <Sparkle className="absolute top-[15%] right-[25%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
+        <Sparkle className="absolute top-[40%] right-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute bottom-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-40" />
+        <Sparkle className="absolute top-[50%] left-[30%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-50" />
+        <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 w-full z-10">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <MotionDiv
@@ -27,10 +53,10 @@ export default function Level1Section() {
                 alt="Planet"
                 width={240}
                 height={240}
-                className="absolute -bottom-12 -right-[25%] z-20 w-[50%] max-w-[240px] object-contain"
+                className="absolute -bottom-12 -right-[30%] w-[50%] z-0 max-w-[240px] object-contain opacity-80"
               />
 
-              <div className="relative w-full h-[550px] hidden md:block mt-4">
+              <div className="relative w-full h-[550px] hidden md:block mt-4 z-10">
                 <MuImage
                   src="/assets/levelstructure/ufo_lvl1.svg"
                   alt="UFO"
@@ -54,7 +80,7 @@ export default function Level1Section() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8 order-2"
+            className="space-y-8 order-2 relative z-10"
           >
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
