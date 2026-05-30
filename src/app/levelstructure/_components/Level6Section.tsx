@@ -4,10 +4,7 @@ import MuImage from "@/components/MuImage";
 
 export default function Level6Section() {
   return (
-    <section
-      className="relative bg-mulearn-whitish flex items-center min-h-screen py-10 lg:py-20 overflow-hidden"
-      id="level-6"
-    >
+    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-6">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
@@ -34,59 +31,54 @@ export default function Level6Section() {
         <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-4 w-full z-10">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="relative flex items-center justify-center order-2 md:order-1"
           >
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
-                Level 6:{" "}
-                <span className="text-mulearn-trusty-blue">
-                  Every hero needs to build their sword,especially after they are exposed to the
-                  global battlefield. This is exactly what level 6 does.
-                </span>
-              </h2>
-              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
-                At this level,learners grow into builders and instead of making prototypes,they ship
-                them to real users.
-              </p>
-            </div>
-
-            <div className="space-y-6 relative pl-8">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] flex flex-col gap-2">
-                {[...Array(3)].map((_, i) => (
-                  <div key={i} className="flex-1 bg-mulearn-trusty-blue rounded-full" />
-                ))}
-              </div>
-
-              <div className="py-1">
-                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  A game developer may launch their first game, while the AI team may build a mental
-                  wellness chatbot.
+            <div className="relative w-full max-w-lg aspect-square hidden md:flex flex-col items-center justify-center">
+              {/* LEFT SIDE: REDESIGNED CONTENT for even level */}
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
+                  Level 6: <span className="text-mulearn-trusty-blue">Build. Ship. Impact.</span>
+                </h2>
+                <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
+                  At this level, learners grow into builders and instead of making prototypes, they
+                  ship them to real users.
                 </p>
-              </div>
-              <div className="py-1">
-                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  On the other side, a civil-mechanical duo prototypes a low cost water filter for
-                  rural areas.
-                </p>
-              </div>
-              <div className="py-1">
-                <p className="text-sm md:text-base text-mulearn-blackish font-medium">
-                  Their paths may be different,but the end goal is the same.
-                </p>
-              </div>
-            </div>
 
-            <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-8 shadow-sm max-w-2xl">
-              <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed font-semibold">
-                Proof of works turn into proof of impact and that is exactly how the learners get
-                their key for entering the Muverse.
-              </p>
+                {/* Impact Examples Section */}
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                      A game developer may launch their first game, while the AI team may build a
+                      mental wellness chatbot.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                      On the other side, a civil-mechanical duo prototypes a low cost water filter
+                      for rural areas.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="text-sm md:text-base text-mulearn-blackish font-medium">
+                      Their paths may be different, but the end goal is the same.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Proof of Impact Section */}
+                <div className="bg-mulearn-whitish border-[1.5px] border-mulearn-blackish rounded-[2.5rem] p-6">
+                  <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed font-semibold">
+                    Proof of works turn into proof of impact and that is exactly how the learners
+                    get their key for entering the Muverse.
+                  </p>
+                </div>
+              </div>
             </div>
           </MotionDiv>
 
@@ -94,14 +86,14 @@ export default function Level6Section() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative flex items-center justify-center lg:justify-end"
+            className="relative flex items-center justify-center order-1 md:order-2"
           >
             <div className="relative z-10 w-full max-w-[550px] hover:-translate-y-4 transition-transform duration-700 ease-in-out">
               <MuImage
                 src="/assets/levelstructure/astronauts.svg"
                 alt="Build & Ship Astronauts"
-                width={600}
-                height={600}
+                width={500}
+                height={500}
                 className="w-full h-auto object-contain"
               />
             </div>

@@ -5,10 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level3Section() {
   return (
-    <section
-      className="relative bg-mulearn-whitish flex items-center min-h-screen py-10 lg:py-20 overflow-hidden"
-      id="level-3"
-    >
+    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-3">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
@@ -35,17 +32,42 @@ export default function Level3Section() {
         <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-start mt-8">
+      <div className="max-w-7xl mx-auto px-4 w-full z-10">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8 max-w-xl"
+            className="relative flex items-center justify-center order-1"
           >
-            <div className="space-y-3">
+            <div className="relative w-full max-w-lg aspect-square hidden md:flex flex-col items-center justify-center">
+              <Sparkle className="absolute top-10 left-4 text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
+              <Sparkle className="absolute top-1/4 right-0 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-40" />
+              <Sparkle className="absolute bottom-[40%] left-[-10%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
+              <Sparkle className="absolute top-[60%] right-[-15%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-30" />
+              <Sparkle className="absolute bottom-4 left-1/2 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
+              <Sparkle className="absolute top-[-5%] right-[-25%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-40" />
+
+              <MuImage
+                src="/assets/levelstructure/astronaut1.svg"
+                alt="Astronaut Level 3"
+                width={280}
+                height={350}
+                className="absolute bottom-0 left-[25%] z-10 max-w-[280px] object-contain"
+              />
+            </div>
+          </MotionDiv>
+
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8 order-2 relative z-10"
+          >
+            <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
-                Level 3: <span className="text-mulearn-trusty-blue">Now there is level 3.</span>
+                Level 3:{" "}
+                <span className="text-mulearn-trusty-blue">Tools Are Your New Superpowers</span>
               </h2>
             </div>
 
@@ -74,27 +96,6 @@ export default function Level3Section() {
                 </p>
               </CardContent>
             </Card>
-          </MotionDiv>
-
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative hidden lg:flex items-start justify-end h-full min-h-[600px] lg:-mr-24"
-          >
-            <Sparkle className="absolute top-[20%] left-[20%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
-            <Sparkle className="absolute top-[40%] left-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-40" />
-            <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
-            <Sparkle className="absolute top-[25%] right-[25%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-30" />
-            <Sparkle className="absolute top-[50%] right-[5%] text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
-
-            <MuImage
-              src="/assets/levelstructure/astronaut1.svg"
-              alt="Astronaut Level 3"
-              width={400}
-              height={500}
-              className="relative z-30 w-[70%] max-w-[400px] object-contain hover:-translate-y-4 transition-transform duration-700 ease-in-out -mt-4"
-            />
           </MotionDiv>
         </div>
       </div>

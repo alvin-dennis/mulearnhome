@@ -4,10 +4,7 @@ import MuImage from "@/components/MuImage";
 
 export default function Level5Section() {
   return (
-    <section
-      className="relative bg-mulearn-whitish flex items-center min-h-screen py-10 lg:py-20 overflow-hidden"
-      id="level-5"
-    >
+    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-5">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
@@ -34,52 +31,56 @@ export default function Level5Section() {
         <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="relative flex items-center justify-center lg:justify-start lg:-ml-32 min-h-[500px]">
-            <div className="absolute top-[40%] left-[55%] w-[450px] md:w-[500px] h-auto opacity-80 pointer-events-none z-0">
-              <MuImage
-                src="/assets/levelstructure/planets_lvl5.svg"
-                alt="Floating Planets"
-                width={500}
-                height={500}
-                className="w-full h-auto"
-              />
+      <div className="max-w-7xl mx-auto px-4 w-full z-10">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex items-center justify-center order-1"
+          >
+            <div className="relative flex items-center justify-center lg:justify-start lg:-ml-32 min-h-[500px]">
+              <div className="absolute top-[40%] left-[55%] w-[450px] md:w-[500px] h-auto opacity-80 pointer-events-none z-0">
+                <MuImage
+                  src="/assets/levelstructure/planets_lvl5.svg"
+                  alt="Floating Planets"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto"
+                />
+              </div>
+
+              <MotionDiv
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative z-10 w-full max-w-[480px] hover:-translate-y-4 transition-transform duration-700 ease-in-out"
+              >
+                <MuImage
+                  src="/assets/levelstructure/astronaut4.svg"
+                  alt="The Global Arena Astronaut"
+                  width={480}
+                  height={480}
+                  className="w-full h-auto object-contain"
+                />
+              </MotionDiv>
+
+              <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
+              <Sparkle className="absolute bottom-[20%] right-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-30" />
+              <Sparkle className="absolute top-[50%] left-[5%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-25" />
+              <Sparkle className="absolute bottom-[10%] left-[40%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-20" />
             </div>
-
-            <MotionDiv
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10 w-full max-w-[480px] hover:-translate-y-4 transition-transform duration-700 ease-in-out"
-            >
-              <MuImage
-                src="/assets/levelstructure/astronaut4.svg"
-                alt="The Global Arena Astronaut"
-                width={480}
-                height={480}
-                className="w-full h-auto object-contain"
-              />
-            </MotionDiv>
-
-            <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
-            <Sparkle className="absolute bottom-[20%] right-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-30" />
-            <Sparkle className="absolute top-[50%] left-[5%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-25" />
-            <Sparkle className="absolute bottom-[10%] left-[40%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-20" />
-          </div>
+          </MotionDiv>
 
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8 relative z-20"
+            className="space-y-8 relative z-20 order-2"
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-mulearn-blackish tracking-tight">
-                Level 5:{" "}
-                <span className="text-mulearn-trusty-blue">
-                  After conquering level 4, the real battle begins.
-                </span>
+                Level 5: <span className="text-mulearn-trusty-blue">The Global Arena Awaits</span>
               </h2>
               <p className="text-sm md:text-base text-mulearn-blackish leading-relaxed max-w-2xl font-semibold">
                 Hackathons,design competitions,film festivals and global challenges appear. The

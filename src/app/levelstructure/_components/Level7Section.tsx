@@ -4,10 +4,7 @@ import MuImage from "@/components/MuImage";
 
 export default function Level7Section() {
   return (
-    <section
-      className="relative flex flex-col items-center min-h-screen py-10 lg:py-20 overflow-hidden min-h-[90vh]"
-      id="level-7"
-    >
+    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-7">
       <div className="absolute inset-0 pointer-events-none z-0">
         <MuImage
           src="/assets/levelstructure/bg_lvl7.svg"
@@ -18,7 +15,7 @@ export default function Level7Section() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10 flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto px-4 w-full relative z-10 flex flex-col items-center text-center">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +23,7 @@ export default function Level7Section() {
           className="space-y-6 mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-mulearn-blackish tracking-tight">
-            Level 7: µVerse
+            Level 7: Where Talent Meets Opportunity
           </h2>
           <p className="text-lg md:text-2xl text-mulearn-blackish max-w-4xl mx-auto font-medium leading-relaxed">
             At level 7,the path now opens to the µVerse. Learners are connected to opportunities

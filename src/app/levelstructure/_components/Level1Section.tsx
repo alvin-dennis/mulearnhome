@@ -84,7 +84,7 @@ export default function Level1Section() {
           >
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-mulearn-blackish tracking-tight">
-                Level 1: <span className="text-mulearn-trusty-blue">The First Hello</span>
+                Level 1: <span className="text-mulearn-trusty-blue">Who Are You Really?</span>
               </h2>
 
               <p className="text-lg text-mulearn-blackish leading-relaxed font-semibold">
