@@ -16,7 +16,7 @@ const INTEREST_GROUPS = [
 
 export default function Level4Section() {
   return (
-    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-4">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-4">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage

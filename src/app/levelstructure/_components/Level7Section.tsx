@@ -4,7 +4,7 @@ import MuImage from "@/components/MuImage";
 
 export default function Level7Section() {
   return (
-    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-7">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-7">
       <div className="absolute inset-0 pointer-events-none z-0">
         <MuImage
           src="/assets/levelstructure/bg_lvl7.svg"

@@ -4,7 +4,7 @@ import MuImage from "@/components/MuImage";
 
 export default function Level6Section() {
   return (
-    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-6">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-6">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage

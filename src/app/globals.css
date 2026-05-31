@@ -68,6 +68,20 @@ h5 {
     display: none;
 }
 
+
+@layer utilities {
+    @keyframes floatY {
+
+        0%,
+        100% {
+            transform: translateY(0%);
+        }
+
+        50% {
+            transform: translateY(5%);
+        }
+    }
+
     @keyframes rocks {
 
         0%,
@@ -136,6 +150,8 @@ h5 {
         0%, 100% { opacity: 0.5; transform: scale(0.8) rotate(0deg); }
         50% { opacity: 1; transform: scale(1.2) rotate(15deg); filter: drop-shadow(0 0 8px rgba(175, 46, 230, 0.8)); }
     }
+
+}
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);

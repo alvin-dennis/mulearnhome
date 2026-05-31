@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level3Section() {
   return (
-    <section className="relative flex items-center min-h-screen py-15 overflow-hidden" id="level-3">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-3">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
