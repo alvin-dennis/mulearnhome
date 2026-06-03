@@ -2596,7 +2596,10 @@
       "performer": "Joel Basil Kurian",
       "designation": "MD, Supe AI",
       "date": "04/06/2026",
-      "link": "http://mulearn.org/r/ai-officehour/"
+      "link": "http://mulearn.org/r/ai-officehour/",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
