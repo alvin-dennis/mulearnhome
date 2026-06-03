@@ -2583,6 +2583,13 @@
       "interestGroups": [
         "human-resources"
       ]
+    },
+    {
+      "title": "Introduction to Blender",
+      "performer": "Aradhana Rose",
+      "designation": "Blender IG Lead",
+      "date": "03/06/2026",
+      "link": "https://mulearn.org/r/blender-oh"
     }
   ]
 }
