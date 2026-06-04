@@ -86,11 +86,27 @@
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 2,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 6,
+      "commits": 4,
+      "prs_opened": 4,
+      "prs_merged": 4,
+      "points": 12,
       "displayname": "Pranav P"
+    },
+    {
+      "username": "GokulShaji2005",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Gokul Shaji"
+    },
+    {
+      "username": "frizzycodes",
+      "commits": 0,
+      "prs_opened": 1,
+      "prs_merged": 0,
+      "points": 1,
+      "displayname": "Adithya S Pai"
     },
     {
       "username": "rejahrehim",
@@ -147,22 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": "Alan K Anil"
-    },
-    {
-      "username": "umavm",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Uma V Menon "
-    },
-    {
-      "username": "aravinds-arv",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Aravind S"
     }
   ]
 }
