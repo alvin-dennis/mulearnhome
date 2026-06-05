@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 948,
-      "prs_opened": 248,
-      "prs_merged": 242,
-      "points": 1438,
+      "commits": 954,
+      "prs_opened": 249,
+      "prs_merged": 243,
+      "points": 1446,
       "displayname": "Awindsr"
     },
     {
@@ -86,27 +86,43 @@
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 4,
-      "prs_opened": 4,
-      "prs_merged": 4,
-      "points": 12,
+      "commits": 11,
+      "prs_opened": 8,
+      "prs_merged": 8,
+      "points": 27,
       "displayname": "Pranav P"
     },
     {
-      "username": "GokulShaji2005",
-      "commits": 0,
+      "username": "awindsr",
+      "commits": 6,
       "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "Gokul Shaji"
+      "prs_merged": 1,
+      "points": 8,
+      "displayname": "Awindsr"
     },
     {
       "username": "frizzycodes",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
+      "commits": 3,
+      "prs_opened": 3,
+      "prs_merged": 1,
+      "points": 7,
       "displayname": "Adithya S Pai"
+    },
+    {
+      "username": "GokulShaji2005",
+      "commits": 4,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 6,
+      "displayname": "Gokul Shaji"
+    },
+    {
+      "username": "febin-d",
+      "commits": 1,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 3,
+      "displayname": "Febin Daniel"
     },
     {
       "username": "rejahrehim",
@@ -147,22 +163,6 @@
       "prs_merged": 0,
       "points": 0,
       "displayname": " Chaitanya Liz"
-    },
-    {
-      "username": "athul-2003",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "H ATHULKRISHNAN "
-    },
-    {
-      "username": "Alan0602",
-      "commits": 0,
-      "prs_opened": 0,
-      "prs_merged": 0,
-      "points": 0,
-      "displayname": "Alan K Anil"
     }
   ]
 }
