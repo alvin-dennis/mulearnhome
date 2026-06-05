@@ -36,7 +36,7 @@ export default function Stats() {
   const stats = [
     { value: counts.members, label: "Active Learners" },
     {
-      value: counts.org_type_counts?.find((o) => o.org_type === "College")?.org_count,
+      value: counts.org_type_counts?.find((o) => o.org_type === "Company")?.org_count,
       label: "Companies",
     },
     {
@@ -44,8 +44,10 @@ export default function Stats() {
         ?.role_count,
       label: "Mentors",
     },
-    { value: 287, label: "Active Campuses" },
-    { value: 100, label: "Impact Stories" },
+    {
+      value: counts.org_type_counts?.find((o) => o.org_type === "College")?.org_count,
+      label: "Active Campuses",
+    },
   ];
 
   return (
