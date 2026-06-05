@@ -184,18 +184,21 @@ export default function Careers() {
           </p>
 
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {currentItems.map((role) => (
-              <ClosedCareersCard
-                key={role.title}
-                title={role.title}
-                qualifications={role.qualifications}
-                date={role.date}
-                role={role.role}
-                remuneration={role.remuneration}
-                location={role.location}
-                duration={role.duration}
-              />
-            ))}
+            {currentItems.map((role, index) => {
+              return (
+                <ClosedCareersCard
+                  key={index}
+                  title={role.title}
+                  qualifications={role.qualifications}
+                  date={role.date}
+                  role={role.role}
+                  remuneration={role.remuneration}
+                  location={role.location}
+                  duration={role.duration}
+                  organization={role.company}
+                />
+              );
+            })}
           </div>
 
           {totalPages > 1 && (
