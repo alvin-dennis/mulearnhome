@@ -2612,7 +2612,17 @@
         "strategic-leadership"
       ]
     },
-    {},
+    {
+      "title": "Unity Play – Showcase, Play",
+      "performer": "Ashiq Muhammed M",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "Unity Play – Showcase, Play \n\nJoin Unity Play and explore exciting game projects created by the community. This session is focused on showcasing playable games, sharing development experiences, receiving feedback, and discovering creative ideas from fellow game developers.\n\nParticipants will have the opportunity to present their games, discuss design decisions, learn from other projects, and connect with developers who share a passion for game creation.\n\n ",
+      "date": "05/06/2026",
+      "link": "https://mulearn.org/r/g",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
     {}
   ]
 }
