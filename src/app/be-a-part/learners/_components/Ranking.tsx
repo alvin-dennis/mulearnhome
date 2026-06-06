@@ -26,18 +26,6 @@ export default function RankingSection() {
 
   return (
     <section className="py-16 md:py-20 container mx-auto px-4 relative">
-      <div className="absolute inset-0 pointer-events-none hidden lg:block ">
-        {/* Left Side Sparkles */}
-        <Sparkles className="absolute top-[15%] left-[18%] w-8 h-8 text-mulearn-blackish fill-mulearn-blackish" />
-        <Sparkles className="absolute top-[35%] left-[8%] w-4 h-4 text-mulearn-blackish fill-mulearn-blackish" />
-
-        {/* Right Side Sparkles */}
-        <Sparkles className="absolute top-[28%] right-[15%] w-6 h-6 text-mulearn-blackish fill-mulearn-blackish" />
-        <Sparkles className="absolute top-[32%] right-[13%] w-3 h-3 text-mulearn-blackish fill-mulearn-blackish" />
-
-        {/* Bottom Sparkle */}
-        <Sparkles className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-5 h-5 text-mulearn-blackish fill-mulearn-blackish" />
-      </div>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
