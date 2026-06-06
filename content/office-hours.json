@@ -2644,6 +2644,16 @@
       "interestGroups": [
         "space"
       ]
+    },
+    {
+      "title": "Comics Discussion",
+      "performer": "Deepak S Raj",
+      "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "06/06/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
     }
   ]
 }
