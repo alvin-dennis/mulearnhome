@@ -2633,6 +2633,17 @@
       "interestGroups": [
         "muv"
       ]
+    },
+    {
+      "title": "The Curious Case of Mr.C",
+      "performer": "Jubit A Jacob",
+      "designation": "Core Team Member",
+      "description": "Exploring into the world of \"C\" ,the light.",
+      "date": "06/06/2026",
+      "link": "mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
     }
   ]
 }
