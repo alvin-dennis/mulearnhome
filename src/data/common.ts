@@ -12,7 +12,7 @@ export const navItems = [
           label: "Impact Gallery",
           href: "/impact-gallery",
         },
-        { label: "Contributon Leaderboard", href: "/leaderboard" },
+        { label: "Contribution Leaderboard", href: "/leaderboard" },
         { label: "Events", href: "/events" },
       ],
       "Flagship Initiatives": [
