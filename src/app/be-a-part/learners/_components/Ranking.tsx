@@ -37,7 +37,7 @@ export default function RankingSection() {
         {/* Learners Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto ">
           {topLearners.map((learner, index) => (
-            <Card key={index} className="p-6 flex flex-col items-center text-center">
+            <Card className="p-6 flex flex-col items-center text-center" key={index}>
               {/* Profile Image */}
               <div className="w-20 h-20 mb-4 rounded-full overflow-hidden">
                 {learner.avatar ? (

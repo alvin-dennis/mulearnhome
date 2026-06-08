@@ -184,7 +184,7 @@ export default function Careers() {
           </p>
 
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {currentItems.map((role, index) => {
+            {currentItems.map((role) => {
               return (
                 <ClosedCareersCard
                   key={`${role.title}-${role.location}-${role.company}`}

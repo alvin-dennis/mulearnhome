@@ -10,7 +10,7 @@ const LearnersHero = () => {
     { id: 5, bottom: "6rem", right: "4rem", size: 50 },
     { id: 6, bottom: "10rem", right: "8rem", size: 12 },
   ];
-  stars.map((star, index) => (
+  stars.map((star) => (
     <div key={star.id} className="absolute hidden lg:block text-mulearn-blackish" style={star}>
       <svg
         width={star.size}
