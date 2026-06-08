@@ -1,6 +1,5 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import MuImage from "@/components/MuImage";
 import { Card } from "@/components/ui/card";

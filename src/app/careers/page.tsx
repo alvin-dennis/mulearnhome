@@ -187,7 +187,7 @@ export default function Careers() {
             {currentItems.map((role, index) => {
               return (
                 <ClosedCareersCard
-                  key={index}
+                  key={`${role.title}-${role.location}-${role.company}`}
                   title={role.title}
                   qualifications={role.qualifications}
                   date={role.date}
