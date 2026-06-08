@@ -3,15 +3,15 @@ import { Button } from "@/components/ui/button";
 
 const LearnersHero = () => {
   const stars = [
-    { top: "5rem", left: "4rem", size: 18 },
-    { top: "8rem", left: "6rem", size: 40 },
-    { top: "50%", right: "5rem", size: 25 },
-    { top: "50%", left: "6rem", size: 15 },
-    { bottom: "6rem", right: "4rem", size: 50 },
-    { bottom: "10rem", right: "8rem", size: 12 },
+    { id: 1, top: "5rem", left: "4rem", size: 18 },
+    { id: 2, top: "8rem", left: "6rem", size: 40 },
+    { id: 3, top: "50%", right: "5rem", size: 25 },
+    { id: 4, top: "50%", left: "6rem", size: 15 },
+    { id: 5, bottom: "6rem", right: "4rem", size: 50 },
+    { id: 6, bottom: "10rem", right: "8rem", size: 12 },
   ];
   stars.map((star, index) => (
-    <div key={index} className="absolute hidden lg:block text-mulearn-blackish" style={star}>
+    <div key={star.id} className="absolute hidden lg:block text-mulearn-blackish" style={star}>
       <svg
         width={star.size}
         height={star.size}
