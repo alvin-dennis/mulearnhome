@@ -2693,6 +2693,15 @@
       "date": "10/06/2026",
       "link": "https://mulearn.org/r/blender-oh"
     },
-    {}
+    {
+      "title": "End to End Data Science Pipeline",
+      "performer": "Sonu Varghese K ",
+      "designation": "Assistant Professor  CSE(Sahrdaya College of Engineering)",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    }
   ]
 }
