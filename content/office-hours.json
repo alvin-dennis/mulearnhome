@@ -2677,7 +2677,15 @@
         "human-resources"
       ]
     },
-    {},
+    {
+      "title": "Styling the Web",
+      "performer": "Web Core team",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
     {},
     {}
   ]
