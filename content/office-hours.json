@@ -2686,7 +2686,13 @@
         "web-development"
       ]
     },
-    {},
+    {
+      "title": "Low Poly Modelling",
+      "performer": "Aradhana Rose",
+      "designation": "Blender IG Lead",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/blender-oh"
+    },
     {}
   ]
 }
