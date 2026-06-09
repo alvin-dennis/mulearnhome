@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 965,
-      "prs_opened": 251,
-      "prs_merged": 245,
-      "points": 1461,
+      "commits": 969,
+      "prs_opened": 253,
+      "prs_merged": 247,
+      "points": 1469,
       "displayname": "Awindsr"
     },
     {
@@ -86,27 +86,35 @@
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 21,
-      "prs_opened": 13,
-      "prs_merged": 13,
-      "points": 47,
+      "commits": 24,
+      "prs_opened": 15,
+      "prs_merged": 15,
+      "points": 54,
       "displayname": "Pranav P"
     },
     {
       "username": "awindsr",
-      "commits": 17,
-      "prs_opened": 3,
-      "prs_merged": 3,
-      "points": 23,
+      "commits": 21,
+      "prs_opened": 5,
+      "prs_merged": 5,
+      "points": 31,
       "displayname": "Awindsr"
     },
     {
       "username": "frizzycodes",
-      "commits": 10,
-      "prs_opened": 6,
-      "prs_merged": 4,
-      "points": 20,
+      "commits": 11,
+      "prs_opened": 7,
+      "prs_merged": 5,
+      "points": 23,
       "displayname": "Adithya S Pai"
+    },
+    {
+      "username": "Arya3077",
+      "commits": 14,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 16,
+      "displayname": "Arya Shibu Dhanya"
     },
     {
       "username": "erzer12",
@@ -149,20 +157,12 @@
       "displayname": "Joshna Jojo"
     },
     {
-      "username": "Yadhuthhiyyakat",
-      "commits": 0,
-      "prs_opened": 2,
+      "username": "alvin-dennis",
+      "commits": 2,
+      "prs_opened": 0,
       "prs_merged": 0,
       "points": 2,
-      "displayname": "yadhuKrishna T M"
-    },
-    {
-      "username": "AdhiNarayan206",
-      "commits": 0,
-      "prs_opened": 1,
-      "prs_merged": 0,
-      "points": 1,
-      "displayname": "ADHI NARAYAN"
+      "displayname": "Alvin Dennis"
     }
   ]
 }
