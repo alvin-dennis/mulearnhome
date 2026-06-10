@@ -6,6 +6,7 @@ import MuImage from "@/components/MuImage";
 import { contactInfo, contactPage } from "@/data/common";
 import { clientEnv } from "@/lib/env/env.client";
 import ContactForm from "./_components/ContactForm";
+import ContactStats from "./_components/ContactStats";
 
 export default function ContactPage() {
   const recaptchaKey: string | undefined = clientEnv.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
@@ -24,32 +25,7 @@ export default function ContactPage() {
                 {contactPage.hero.description}
               </p>
 
-              <div className="grid grid-cols-3 gap-6 pt-6">
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
-                    {contactPage.hero.stats[0].value}
-                  </div>
-                  <div className="text-sm text-mulearn-gray-600">
-                    {contactPage.hero.stats[0].label}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
-                    {contactPage.hero.stats[1].value}
-                  </div>
-                  <div className="text-sm text-mulearn-gray-600">
-                    {contactPage.hero.stats[1].label}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-mulearn">
-                    {contactPage.hero.stats[2].value}
-                  </div>
-                  <div className="text-sm text-mulearn-gray-600">
-                    {contactPage.hero.stats[2].label}
-                  </div>
-                </div>
-              </div>
+              <ContactStats />
             </div>
 
             <div className="flex justify-center lg:justify-end">
