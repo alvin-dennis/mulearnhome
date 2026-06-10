@@ -1998,7 +1998,215 @@
       "description": "People may forget the exact words you say,\nbut they always remember how confidently you said them.\n\nJoin us for μLearn Office Hours on “Speak So People Listen” — an engaging session focused on communication that captures attention, builds trust, and leaves a lasting impact. Learn how strategic leaders use voice, expression, and storytelling to truly connect with people.\n",
       "date": "15/05/206",
       "link": "mulearn.org/r/sl-officehour",
-      "interestGroups": ["strategic-leadership"]
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Growth vs Fixed Mindset",
+      "performer": "Agatha Anna Skariah",
+      "designation": "SL Core Team Member",
+      "description": "Your mindset shapes your journey more than your talent ever will.\n\nJoin us for μLearn Office Hours: Growth vs Fixed Mindset as we dive into how mindset affects learning, confidence, leadership, and personal growth. Learn how embracing challenges and failures can help you unlock new possibilities..\n",
+      "date": "22/05/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 24) ",
+      "performer": "Ashiq Muhammed M",
+      "designation": "Game Dev IG lead",
+      "description": "Unity Tasks Unlocked – Office Hour Walkthrough (Part 24) \nLearn Start and complete your Unity tasks during the office hour. A simple walkthrough session focused on doing tasks understanding the basics, and clearing doubts while working inside Unity.\n\n ",
+      "date": "22/05/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Do Trilogy Films Always Go Wrong? | feat. Drishyam 3 |",
+      "performer": "Muv Team ",
+      "designation": "Muv IG Leads ",
+      "description": "🎬 Do Trilogy Films Always Go Wrong? | feat. Drishyam 3 | μLearn Office Hours\nA discussion on trilogies in cinema — do sequels strengthen the story or ruin the legacy? Featuring thoughts and expectations around Drishyam 3.\n ",
+      "date": "22/05/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "UI vs UX: The Difference Everyone Confuses",
+      "performer": "IG Core",
+      "designation": "UI/UX IG",
+      "description": "In the world of digital products, UI and UX are often used interchangeably — but they represent two very different aspects of design. UI (User Interface) focuses on the visual and interactive elements users see and touch, such as buttons, colors, typography, layouts, and animations. UX (User Experience), on the other hand, is about the overall journey and feeling a user has while interacting with a product — including usability, accessibility, flow, efficiency, and satisfaction.\n\nA product can look visually stunning with excellent UI but still frustrate users if the UX is poor. Similarly, a product with strong UX but weak UI may work well but fail to engage users emotionally. Understanding the distinction between UI and UX helps teams build products that are not only beautiful, but also meaningful, intuitive, and user-centered.\n\nThis topic explores how UI and UX work together, where they differ, and why confusing the two can lead to ineffective digital experiences.",
+      "date": "27/05/2026",
+      "link": "mulearn.org/r/uiux-officehour",
+      "interestGroups": [
+        "ui-ux"
+      ]
+    },
+    {
+      "title": "AI and Cognitive Thinking",
+      "performer": " Naveen S ",
+      "designation": " SL IG Core Team Member, μLearn Foundation",
+      "description": "The way we think inspires the way machines learn.\n\nJoin us for μLearn Office Hours on “AI and Cognitive Thinking” — an engaging session that explores the connection between human cognition and artificial intelligence. Learn how concepts such as learning, reasoning, memory, and decision-making have shaped modern AI systems and discover what the future holds for intelligent technologies.\n\nExplore the science behind thinking minds and intelligent machines.",
+      "date": "29-05-2026",
+      "link": "mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Movie Talk: Blockbuster Spotlight",
+      "performer": "Muv Team",
+      "designation": "Muv IG Leads",
+      "description": "🎬 Movie Talk: Blockbuster Spotlight | μLearn Office Hours\nLet’s discuss a film that’s currently running successfully — what makes it work, audience reactions, and the storytelling behind its success.",
+      "date": "29-05-2026",
+      "link": "https://mulearn.org/r/muv-officehour⁠",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "Learning Game Prototype Creation in Unity",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "Learning Game Prototype Creation in Unity\n\nhow to turn a simple game idea into a playable prototype in Unity during this office hour session. This session focuses on project-based game development workflows including prototyping core mechanics, structuring gameplay systems, testing features, and improving the overall gameplay experience.",
+      "date": "29-05-2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": "Getting Your 1st Job",
+      "performer": "Sajin Paul ",
+      "designation": "HR Executive Cubet",
+      "date": "03/06/2026",
+      "link": "https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "Introduction to Blender",
+      "performer": "Aradhana Rose",
+      "designation": "Blender IG Lead",
+      "date": "03/06/2026",
+      "link": "https://mulearn.org/r/blender-oh"
+    },
+    {
+      "title": "Introduction to Gemma 4",
+      "performer": "Joel Basil Kurian",
+      "designation": "MD, Supe AI",
+      "date": "04/06/2026",
+      "link": "http://mulearn.org/r/ai-officehour/",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Winning by not Competing",
+      "performer": "Elsa Maria ",
+      "designation": " SL IG Core Team Member, μLearn Foundation",
+      "description": "Winning isn’t always about competing against other\n\nit’s about growing beyond who you were yesterday. Join us for μLearn Office Hours on “ Winning by not Competing”, an inspiring session that explores how personal growth, collaboration, continuous learning, and self-improvement can lead to meaningful success. Discover how focusing on your own journey, building valuable connections, and creating impact can help you achieve your goals without constantly comparing yourself to others.\n\n ",
+      "date": "05/06/2026",
+      "link": "https://mulearn.org/r/sl-officehour",
+      "interestGroups": [
+        "strategic-leadership"
+      ]
+    },
+    {
+      "title": "Unity Play – Showcase, Play",
+      "performer": "Ashiq Muhammed M",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "Unity Play – Showcase, Play \n\nJoin Unity Play and explore exciting game projects created by the community. This session is focused on showcasing playable games, sharing development experiences, receiving feedback, and discovering creative ideas from fellow game developers.\n\nParticipants will have the opportunity to present their games, discuss design decisions, learn from other projects, and connect with developers who share a passion for game creation.\n\n ",
+      "date": "05/06/2026",
+      "link": "https://mulearn.org/r/g",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {
+      "title": " Influencers as Actors ",
+      "performer": "Muv Team",
+      "designation": "Muv Leads",
+      "description": "🎬 Influencers as Actors | μLearn Office Hours\n\nFrom social media fame to the big screen — do influencers bring something new to cinema, or should acting be left to trained performers?\n\nJoin us for a discussion on the growing trend of influencers entering the film industry and its impact on cinema.\n\n ",
+      "date": "05/06/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
+    {
+      "title": "The Curious Case of Mr.C",
+      "performer": "Jubit A Jacob",
+      "designation": "Core Team Member",
+      "description": "Exploring into the world of \"C\" ,the light.",
+      "date": "06/06/2026",
+      "link": "mulearn.org/r/sp-officehour",
+      "interestGroups": [
+        "space"
+      ]
+    },
+    {
+      "title": "Comics Discussion",
+      "performer": "Deepak S Raj",
+      "designation": "Illustrator, Animator & Comic Artist  | Co-Creator of “Battle of The Winds” |  Co-Founder Director - Pava Creative Studios",
+      "description": "Discussion on streamlining the project framework and the storyline, character design and world building.",
+      "date": "06/06/2026",
+      "link": "https://mulearn.org/r/cm-officehour",
+      "interestGroups": [
+        "comics"
+      ]
+    },
+    {
+      "title": "Unfold the recent attack chains",
+      "performer": "Akhil S",
+      "designation": "Cybersecurity District Lead",
+      "description": "Join this session to know about recent attack chains",
+      "date": "09/06/2026",
+      "link": "mulearn.org/r/cyb-officehour",
+      "interestGroups": [
+        "cyber-security"
+      ]
+    },
+    {
+      "title": "HR as a Career From Fresher to HR Leader",
+      "performer": "Geo Mathew Joseph",
+      "designation": "Pre-sales Intern, Defence and Aerospace, Acsia Technologies",
+      "date": "10/06/2026",
+      "link": " https://mulearn.org/r/hr-officehour",
+      "interestGroups": [
+        "human-resources"
+      ]
+    },
+    {
+      "title": "Styling the Web",
+      "performer": "Web Core team",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
+    {
+      "title": "Low Poly Modelling",
+      "performer": "Aradhana Rose",
+      "designation": "Blender IG Lead",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/blender-oh"
+    },
+    {
+      "title": "End to End Data Science Pipeline",
+      "performer": "Sonu Varghese K ",
+      "designation": "Assistant Professor  CSE(Sahrdaya College of Engineering)",
+      "date": "10/06/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
     }
   ]
 }
