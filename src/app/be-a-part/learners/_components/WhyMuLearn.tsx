@@ -24,6 +24,7 @@ const WhyMuLearn = () => {
 
             return (
               <Card
+                variant={"interactive"}
                 key={benefit.title}
                 className={`p-7 
                            ${isMiddleColumn ? "lg:-translate-y-10" : "lg:translate-y-0"}`}
