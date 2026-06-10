@@ -149,6 +149,6 @@ export async function getInspirationStation() {
   return response.data.inspirationStationConnection.edges?.map((edge) => edge?.node) || [];
 }
 
-// Types for external use
-export type { Event, SpecialEvent, OfficeHours };
 export type { InspirationStation, SaltMangoTree } from "@/tina/__generated__/types";
+// Types for external use
+export type { Event, OfficeHours, SpecialEvent };
