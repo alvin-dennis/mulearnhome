@@ -2713,6 +2713,17 @@
       "interestGroups": [
         "ai"
       ]
+    },
+    {
+      "title": "Discussion on DSA in  Campus placements",
+      "performer": "Core Team",
+      "designation": "DSA",
+      "description": "An interactive discussion on the role of Data Structures and Algorithms (DSA) in campus recruitment, focusing on interview preparation strategies, commonly asked problem types, coding rounds, and tips to improve problem-solving skills for placement success.",
+      "date": "11/06/2026",
+      "link": "mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "dsa"
+      ]
     }
   ]
 }
