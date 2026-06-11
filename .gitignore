@@ -42,8 +42,3 @@ next-env.d.ts
 # TinaCMS - Admin panel contains embedded tokens (regenerated at build time)
 /public/admin
 
-
-tina/__generated__/client.ts
-# Ignore TinaCMS generated files
-tina/__generated__
-tina

@@ -46,7 +46,7 @@ export default function Stats() {
     },
     {
       value: counts.org_type_counts?.find((o) => o.org_type === "College")?.org_count,
-      label: "Active Institutions",
+      label: "Total Institutions",
     },
   ];
 
