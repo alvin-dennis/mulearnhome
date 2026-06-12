@@ -9,11 +9,12 @@ const ClosedCareersCard = ({
   role,
   duration,
   remuneration,
+  organization,
 }: ClosedCareersCardProps) => {
   return (
     <Card className="relative w-[350px] rounded-2xl bg-mulearn-whitish shadow-lg border border-mulearn-greyish overflow-hidden hover:shadow-xl transition-all duration-300">
       <div className="bg-mulearn p-4 text-center">
-        <h2 className="text-lg font-semibold text-mulearn-whitish">μLearn Hiring Call</h2>
+        <h2 className="text-lg font-semibold text-mulearn-whitish">{organization}</h2>
       </div>
 
       <CardContent className="p-5 space-y-2 text-mulearn-blackish text-sm">

@@ -150,6 +150,7 @@ export interface ClosedCareersCardProps {
   role?: string;
   duration?: string;
   remuneration?: string;
+  organization?: string;
 }
 
 export interface NewHiringRole {

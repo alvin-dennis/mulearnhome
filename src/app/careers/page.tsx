@@ -4,6 +4,7 @@ import axios from "axios";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import CareersCard from "@/app/careers/_components/CareersCard";
+import CareersStats from "@/app/careers/_components/CareersStats";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
@@ -92,24 +93,7 @@ export default function Careers() {
               opportunities from the industry.
             </p>
 
-            <div className="mt-4 sm:mt-6 flex flex-wrap justify-center lg:justify-start gap-6">
-              <div className="flex flex-col items-center lg:items-start">
-                <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-                  600+
-                </span>
-                <span className="text-base">Hired Candidates</span>
-              </div>
-              <div className="flex flex-col items-center lg:items-start">
-                <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-                  100+
-                </span>
-                <span className="text-base">Companies</span>
-              </div>
-              <div className="flex flex-col items-center lg:items-start">
-                <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">60+</span>
-                <span className="text-base">Hiring Calls</span>
-              </div>
-            </div>
+            <CareersStats />
           </div>
 
           <div className="flex justify-center lg:justify-end mt-6 lg:mt-0">
@@ -184,18 +168,21 @@ export default function Careers() {
           </p>
 
           <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {currentItems.map((role) => (
-              <ClosedCareersCard
-                key={role.title}
-                title={role.title}
-                qualifications={role.qualifications}
-                date={role.date}
-                role={role.role}
-                remuneration={role.remuneration}
-                location={role.location}
-                duration={role.duration}
-              />
-            ))}
+            {currentItems.map((role) => {
+              return (
+                <ClosedCareersCard
+                  key={`${role.title}-${role.location}-${role.company}`}
+                  title={role.title}
+                  qualifications={role.qualifications}
+                  date={role.date}
+                  role={role.role}
+                  remuneration={role.remuneration}
+                  location={role.location}
+                  duration={role.duration}
+                  organization={role.company}
+                />
+              );
+            })}
           </div>
 
           {totalPages > 1 && (
