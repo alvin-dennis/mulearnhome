@@ -2736,7 +2736,17 @@
         "strategic-leadership"
       ]
     },
-    {},
+    {
+      "title": "Impact Project Discussion",
+      "performer": "By MuV Team",
+      "designation": "Muv IG Leads ",
+      "description": "🎬 Impact Project Discussion | μLearn Office Hours\nJoin us as we explore MuV’s first Impact Project. Learn about the project's vision, goals, and progress, while sharing ideas, feedback, and suggestions to help shape its journey.\n ",
+      "date": "12/06/2026",
+      "link": "https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
     {}
   ]
 }
