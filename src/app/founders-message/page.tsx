@@ -54,7 +54,7 @@ export default function FoundersMessage() {
           {/* Main bold opening statement */}
           <p className="text-lg md:text-xl font-bold text-neutral-900 leading-relaxed mb-8">
             μLearn was not born out of policy, funding, or disruption theatre. It was born out of a
-            simple discomfort the quiet but persistent feeling that we are wasting human potential
+            simple discomfort: the quiet but persistent feeling that we are wasting human potential
             at scale.
           </p>
 
@@ -74,9 +74,9 @@ export default function FoundersMessage() {
 
           <p className="mb-8">
             At its core, μLearn is not a platform. It is a belief system made operational. A belief
-            that learning is not something delivered it is something activated. A belief that talent
+            that learning is not something delivered; it is something activated. A belief that talent
             is universal, but opportunity, context, and confidence are not. A belief that motivation
-            cannot be commanded it must be designed for. And a belief that the future will not be
+            cannot be commanded; it must be designed for. And a belief that the future will not be
             built by institutions alone, but by empowered individuals connected through purpose.
           </p>
 
@@ -85,7 +85,7 @@ export default function FoundersMessage() {
             <li className="relative pl-6">
               <span className="absolute left-0 text-mulearn font-black">•</span>
               <span className="font-bold text-mulearn">To students, </span>
-              μLearn exists to return something that was taken away early agency. You are not here
+              μLearn exists to return something that was taken away early: agency. You are not here
               to fit into predefined roles. You are here to explore, to build, to fail safely, to
               find your edge, and to contribute before you are &quot;ready&quot;. Your curiosity is
               not a distraction. It is your signal.
@@ -95,7 +95,7 @@ export default function FoundersMessage() {
               <span className="font-bold text-mulearn">To industry, </span>
               μLearn exists as a mirror and an invitation. The skills you seek cannot be
               manufactured through hiring alone. They must be cultivated through ecosystems that
-              reward learning, collaboration, and real world contribution. μLearn connects you not
+              reward learning, collaboration, and real-world contribution. μLearn connects you not
               to resumes, but to capability in motion.
             </li>
             <li className="relative pl-6">
