@@ -2787,7 +2787,16 @@
         "human-resources"
       ]
     },
-    {},
+    {
+      "title": "AI in Webdev",
+      "performer": "Webdev core team",
+      "designation": "MuLearn Foundation",
+      "date": "17/06/2026",
+      "link": "https://mulearn.org/r/web-officehour",
+      "interestGroups": [
+        "web-development"
+      ]
+    },
     {},
     {}
   ]
