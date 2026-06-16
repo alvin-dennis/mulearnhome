@@ -2797,7 +2797,16 @@
         "web-development"
       ]
     },
-    {},
+    {
+      "title": "Predictive Analytics in Data Science",
+      "performer": "Pranavkrishna Vadhyar",
+      "designation": "Artificial Intelligence Consultant HashRoot",
+      "date": "17/06/2026",
+      "link": "https://mulearn.org/r/dsa-officehour",
+      "interestGroups": [
+        "data-science"
+      ]
+    },
     {}
   ]
 }
