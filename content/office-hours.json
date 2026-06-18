@@ -2813,6 +2813,17 @@
       "designation": "Blender IG Lead",
       "date": "17/06/2026",
       "link": "https://mulearn.org/r/blender-oh"
-    }
+    },
+    {
+      "title": "Evals and Benchmark",
+      "performer": "US Sooraj",
+      "designation": "ML Intern @ ICFOSS",
+      "date": "18/06/2026",
+      "link": "mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
+    },
+    {}
   ]
 }
