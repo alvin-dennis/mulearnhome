@@ -2845,7 +2845,17 @@
         "game-dev"
       ]
     },
-    {},
+    {
+      "title": "🎬 Movie Talk: Blockbuster Spotlight ",
+      "performer": "MuV Team",
+      "designation": "MuV IG leads",
+      "description": " Let’s discuss a film that’s currently running successfully — what makes it work, audience reactions, and the storytelling behind its success.\n ",
+      "date": "19/06/2026",
+      "link": " https://mulearn.org/r/muv-officehour",
+      "interestGroups": [
+        "muv"
+      ]
+    },
     {}
   ]
 }
