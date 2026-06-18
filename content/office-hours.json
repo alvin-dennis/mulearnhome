@@ -2833,6 +2833,19 @@
       "interestGroups": [
         "dsa"
       ]
-    }
+    },
+    {
+      "title": "Building Impact Project",
+      "performer": "Ashiq Muhammed M",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "\nJoin this session to explore the process of creating cinematic sequences and storytelling elements using Unity Timeline. This session will focus on designing cutscenes, character animations, camera movements, sequencing events, and integrating Timeline into an Impact Project.\n ",
+      "date": "19/06/2026",
+      "link": "https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    },
+    {},
+    {}
   ]
 }
