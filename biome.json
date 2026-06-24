@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs", "**/*.json", "!tina/__generated__/"]
+    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs", "**/*.json", "!tina/__generated__"]
   },
   "formatter": {
     "enabled": true,
