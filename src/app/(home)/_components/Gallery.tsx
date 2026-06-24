@@ -131,11 +131,7 @@ export default function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
           {bentoLayouts.map((layout, index) => (
-            <RotatingImage
-              key={`bento-${layout}`}
-              images={boxImages[index] || []}
-              className={layout}
-            />
+            <RotatingImage key={index} images={boxImages[index] || []} className={layout} />
           ))}
         </div>
 
