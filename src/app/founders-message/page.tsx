@@ -74,10 +74,11 @@ export default function FoundersMessage() {
 
           <p className="mb-8">
             At its core, μLearn is not a platform. It is a belief system made operational. A belief
-            that learning is not something delivered; it is something activated. A belief that talent
-            is universal, but opportunity, context, and confidence are not. A belief that motivation
-            cannot be commanded; it must be designed for. And a belief that the future will not be
-            built by institutions alone, but by empowered individuals connected through purpose.
+            that learning is not something delivered; it is something activated. A belief that
+            talent is universal, but opportunity, context, and confidence are not. A belief that
+            motivation cannot be commanded; it must be designed for. And a belief that the future
+            will not be built by institutions alone, but by empowered individuals connected through
+            purpose.
           </p>
 
           {/* Stakeholder Messages List */}
