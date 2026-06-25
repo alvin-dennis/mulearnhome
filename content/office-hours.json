@@ -2904,6 +2904,16 @@
       "interestGroups": [
         "devops"
       ]
+    },
+    {
+      "title": "Can AI be a better friend than a human?",
+      "performer": "AI Core Team",
+      "designation": "AI IG",
+      "date": "25/06/2026",
+      "link": "mulearn.org/r/ai-officehour",
+      "interestGroups": [
+        "ai"
+      ]
     }
   ]
 }
