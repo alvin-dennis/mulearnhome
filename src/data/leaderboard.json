@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 971,
-      "prs_opened": 254,
-      "prs_merged": 248,
-      "points": 1473,
+      "commits": 1044,
+      "prs_opened": 272,
+      "prs_merged": 264,
+      "points": 1580,
       "displayname": "Awindsr"
     },
     {
@@ -67,102 +67,102 @@
       "displayname": "Vishakh Abhayan"
     },
     {
+      "username": "alvin-dennis",
+      "commits": 774,
+      "prs_opened": 158,
+      "prs_merged": 146,
+      "points": 1078,
+      "displayname": "Alvin Dennis"
+    },
+    {
       "username": "jelanmathewjames",
       "commits": 547,
       "prs_opened": 265,
       "prs_merged": 265,
       "points": 1077,
       "displayname": "Jelan Mathew James"
-    },
-    {
-      "username": "aswanthabam",
-      "commits": 462,
-      "prs_opened": 277,
-      "prs_merged": 266,
-      "points": 1005,
-      "displayname": "Aswanth Vc"
     }
   ],
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 24,
-      "prs_opened": 15,
-      "prs_merged": 15,
-      "points": 54,
+      "commits": 143,
+      "prs_opened": 107,
+      "prs_merged": 106,
+      "points": 356,
       "displayname": "Pranav P"
     },
     {
+      "username": "alvin-dennis",
+      "commits": 127,
+      "prs_opened": 22,
+      "prs_merged": 21,
+      "points": 170,
+      "displayname": "Alvin Dennis"
+    },
+    {
       "username": "awindsr",
-      "commits": 23,
-      "prs_opened": 6,
-      "prs_merged": 6,
-      "points": 35,
+      "commits": 96,
+      "prs_opened": 24,
+      "prs_merged": 22,
+      "points": 142,
       "displayname": "Awindsr"
     },
     {
-      "username": "frizzycodes",
-      "commits": 11,
-      "prs_opened": 7,
-      "prs_merged": 5,
-      "points": 23,
-      "displayname": "Adithya S Pai"
-    },
-    {
-      "username": "Devika123098",
-      "commits": 16,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 20,
-      "displayname": "Devika Dileep"
-    },
-    {
-      "username": "Arya3077",
-      "commits": 14,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 16,
-      "displayname": "Arya Shibu Dhanya"
-    },
-    {
       "username": "erzer12",
-      "commits": 9,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 13,
+      "commits": 92,
+      "prs_opened": 13,
+      "prs_merged": 13,
+      "points": 118,
       "displayname": "Harshil P"
     },
     {
-      "username": "GokulShaji2005",
-      "commits": 6,
-      "prs_opened": 2,
-      "prs_merged": 2,
-      "points": 10,
-      "displayname": "Gokul Shaji"
+      "username": "Akshayvs-Tech",
+      "commits": 75,
+      "prs_opened": 14,
+      "prs_merged": 12,
+      "points": 101,
+      "displayname": "Akshay v s"
     },
     {
-      "username": "febin-d",
-      "commits": 2,
-      "prs_opened": 3,
-      "prs_merged": 2,
-      "points": 7,
-      "displayname": "Febin Daniel"
+      "username": "vedhavk",
+      "commits": 61,
+      "prs_opened": 13,
+      "prs_merged": 13,
+      "points": 87,
+      "displayname": "Vedha"
     },
     {
-      "username": "joshnajojo12",
-      "commits": 1,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 3,
-      "displayname": "Joshna Jojo"
+      "username": "Devika123098",
+      "commits": 61,
+      "prs_opened": 10,
+      "prs_merged": 10,
+      "points": 81,
+      "displayname": "Devika Dileep"
     },
     {
-      "username": "alvin-dennis",
-      "commits": 2,
+      "username": "afifshowfeer",
+      "commits": 17,
+      "prs_opened": 11,
+      "prs_merged": 10,
+      "points": 38,
+      "displayname": "Afif Showfeer"
+    },
+    {
+      "username": "sachin-raj-m",
+      "commits": 36,
       "prs_opened": 0,
       "prs_merged": 0,
-      "points": 2,
-      "displayname": "Alvin Dennis"
+      "points": 36,
+      "displayname": "Sachin Raj"
+    },
+    {
+      "username": "Arya3077",
+      "commits": 24,
+      "prs_opened": 6,
+      "prs_merged": 4,
+      "points": 34,
+      "displayname": "Arya Shibu Dhanya"
     }
   ]
 }
