@@ -2937,6 +2937,16 @@
         "muv"
       ]
     },
-    {}
+    {
+      "title": "🐞 Funny Bugs That Became Features",
+      "performer": "Ashiq Muhammed M ",
+      "designation": "Game Dev IG Lead, μLearn Foundation",
+      "description": "🐞 Funny Bugs That Became Features\n\nEver wondered how some of the most iconic mechanics in gaming started as mistakes? Join this session to explore famous bugs, glitches, and unintended behaviors that developers chose to keep because they made games more fun. From rocket jumping and combo systems to unexpected AI behaviors, we'll uncover how accidents shaped gaming history and what aspiring developers can learn from them.\n ",
+      "date": "26-06-2026",
+      "link": " https://mulearn.org/r/gdev-officehour",
+      "interestGroups": [
+        "game-dev"
+      ]
+    }
   ]
 }
