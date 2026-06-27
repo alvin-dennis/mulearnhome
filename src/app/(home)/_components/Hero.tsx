@@ -1,6 +1,8 @@
 "use client";
 
 import type { Variants } from "framer-motion";
+import { ArrowRight, Info } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
@@ -68,7 +70,27 @@ export default function Hero() {
           >
             An open community for learners, makers, and innovators
           </MotionP>
-
+          <MotionDiv
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={textVariant}
+          >
+            {/* badge linking to the self-determination theory page */}
+            <Link
+              href="/self-determination-theory"
+              className="group inline-flex mb-4 items-center gap-2 rounded-full border border-mulearn/20 bg-mulearn/5 py-2 pl-2 pr-4 transition-colors hover:bg-mulearn/10"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mulearn text-white">
+                <Info className="h-3.5 w-3.5" />
+              </span>
+              <span className="text-sm font-semibold text-mulearn sm:text-base">
+                Backed by Self-Determination Theory — Deci &amp; Ryan
+              </span>
+              <ArrowRight className="h-4 w-4 text-mulearn transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </MotionDiv>
           <div className="flex flex-col md:flex-row gap-4">
             <MotionDiv
               custom={3}
@@ -82,8 +104,6 @@ export default function Hero() {
                 className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
                 onClick={() => {
                   const path = refreshToken ? "/dashboard/home" : "/register";
-                  console.log("Redirecting to:", path);
-                  console.log("Has refresh token:", !!refreshToken);
                   redirect(path);
                 }}
               >
