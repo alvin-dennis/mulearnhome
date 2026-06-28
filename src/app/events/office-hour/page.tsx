@@ -1,5 +1,5 @@
 import OfficeHoursClient from "./_components/OfficeHoursClient";
 
-export default function OfficeHoursPage() {
+export default async function OfficeHoursPage() {
   return <OfficeHoursClient />;
 }

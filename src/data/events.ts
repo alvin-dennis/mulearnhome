@@ -10,16 +10,15 @@ export const events: {
     monthly: Event[];
   };
 } = {
-  latestEvents: [
+  latestEvents: [],
+  pastEvents: [
     {
       title: "NUDGE Studio Design Challenge",
-      date: "Nov - Jan 2026",
+      date: "Nov 2025 - Jan 2026",
       description:
         "The NUDGE Studio Design Challenge is a three-month program using behavioral science to solve real-world problems in finance, farming, and women’s leadership, ending with a showcase at BC2026 and cash prizes for winners.",
-      link: "www.example.com",
+      link: "",
     },
-  ],
-  pastEvents: [
     {
       title: "Acsia Hackathon 2025",
       date: "31 Oct - 1 Nov 2025",
@@ -63,14 +62,14 @@ export const events: {
       date: "Sept 20 - 23 2025",
       description:
         "The Quantum Computing Challenge by μLearn, held from September 20th to 23rd, 2025, was an engaging online event designed to help participants explore the fundamentals of quantum computing. Through short explainer video challenges, students demonstrated their understanding of concepts like quantum gates and the differences between quantum and classical computing. Hosted on Discord, the challenge encouraged creativity, learning, and knowledge sharing, with participants earning up to 800 Karma points for their contributions.",
-      link: "www.example.com",
+      link: "",
     },
     {
       title: "3 Day VR Bootcamp",
       date: "Sept 20 - 22 2025",
       description:
         "The 3-Day VR Bootcamp by μLearn was an immersive learning experience held on September 20–22 at 7 PM. Led by Fahad P N, a Unity Certified Educator and CTO of Soft Served Web, the bootcamp covered the fundamentals of VR, hands-on Unity sessions, and project showcases. Participants learned to build and explore in VR through practical sessions, tips, and live demos.",
-      link: "www.example.com",
+      link: "",
     },
     {
       title: "CareHack 2025",

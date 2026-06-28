@@ -1,5 +1,5 @@
 import SaltMangoTreeClient from "./_components/SaltMangoTreeClient";
 
-export default function SaltMangoTreePage() {
+export default async function SaltMangoTreePage() {
   return <SaltMangoTreeClient />;
 }

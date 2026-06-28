@@ -1,5 +1,5 @@
 import InspirationStationClient from "./_components/InspirationStationClient";
 
-export default function InspirationStationPage() {
+export default async function InspirationStationPage() {
   return <InspirationStationClient />;
 }

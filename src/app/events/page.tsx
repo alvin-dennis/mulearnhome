@@ -83,7 +83,11 @@ export default async function Events() {
               <div className="w-20 h-1 bg-mulearn mx-auto md:mx-0 rounded-full" />
             </div>
 
-            {shouldUseCarousel(evs) ? <EventCarousel events={evs} /> : <Grid events={evs} />}
+            {shouldUseCarousel(evs) ? (
+              <EventCarousel events={evs} rtl={type === "latest" || type === "past"} />
+            ) : (
+              <Grid events={evs} />
+            )}
           </MotionDiv>
         ))}
       </div>
