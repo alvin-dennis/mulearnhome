@@ -14,3 +14,9 @@ export const profileRoutes = {
 export const leaderboardRoutes = {
   topLearners: "/leaderboard/students/",
 };
+
+export const weeklyTwitchesRoutes = {
+  officeHours: "/dashboard/media-content/office-hours/",
+  saltMangoTree: "/dashboard/media-content/salt-mango-tree/",
+  inspirationStation: "/dashboard/media-content/inspiration-station/",
+};
