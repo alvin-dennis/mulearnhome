@@ -39,6 +39,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# TinaCMS - Admin panel contains embedded tokens (regenerated at build time)
-/public/admin
-
