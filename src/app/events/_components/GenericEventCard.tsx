@@ -43,7 +43,7 @@ interface GenericEventCardProps {
   };
 }
 
-const IG_LABELS: Record<string, string> = {
+export const IG_LABELS: Record<string, string> = {
   "ui-ux": "UI/UX",
   "web-development": "Web Development",
   devops: "DevOps",

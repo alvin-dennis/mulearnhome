@@ -33,9 +33,6 @@ const clientEnvSchema = z.object({
   // Contact form google captcha
   NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
 
-  // TinaCMS Client ID (Optional - for CMS authentication)
-  NEXT_PUBLIC_TINA_CLIENT_ID: z.string().optional(),
-
   // Google Analytics 4 Measurement ID (Optional - for analytics tracking)
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional(),
 });
@@ -67,7 +64,6 @@ function validateClientEnv(): ClientEnv {
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
     NEXT_PUBLIC_CDN_URL: process.env.NEXT_PUBLIC_CDN_URL,
     NEXT_PUBLIC_RAZORPAY_KEY_ID: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-    NEXT_PUBLIC_TINA_CLIENT_ID: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
     NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
   });

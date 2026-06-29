@@ -14,9 +14,10 @@ import type { Event } from "@/lib/types";
 
 interface Props {
   events: Event[];
+  rtl?: boolean;
 }
 
-export default function EventCarousel({ events }: Props) {
+export default function EventCarousel({ events, rtl = false }: Props) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
@@ -40,6 +41,7 @@ export default function EventCarousel({ events }: Props) {
 
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
+        dir={rtl ? "rtl" : "ltr"}
         spaceBetween={24}
         slidesPerView={1}
         autoplay={{

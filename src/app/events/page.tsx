@@ -2,53 +2,16 @@ import type { Variants } from "framer-motion";
 import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
 import { MotionDiv } from "@/components/MuFramer";
-import { getLatestEvents, getPastEvents, getRecurringEvents } from "@/lib/tina";
+import { events } from "@/data/events";
 import type { Event } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
-
-// Transform TinaCMS event to local Event type
-function transformEvent(
-  tinaEvent: NonNullable<Awaited<ReturnType<typeof getLatestEvents>>[number]>,
-): Event {
-  return {
-    title: tinaEvent.title,
-    date: tinaEvent.date || "",
-    description: tinaEvent.description || "",
-    link: tinaEvent.link || "",
-    image: tinaEvent.image || "",
-    isLive: tinaEvent.isLive || false,
-  };
-}
-
 export default async function Events() {
-  // Fetch events from TinaCMS
-  const [latestEvents, pastEvents, recurringEvents] = await Promise.all([
-    getLatestEvents(),
-    getPastEvents(),
-    getRecurringEvents(),
-  ]);
+  const { latestEvents, pastEvents, recurringEvents } = events;
 
-  // Transform TinaCMS events to local Event type
-  const transformedLatest = latestEvents
-    .filter((e): e is NonNullable<typeof e> => e != null)
-    .map(transformEvent);
-  const transformedPast = pastEvents
-    .filter((e): e is NonNullable<typeof e> => e != null)
-    .map(transformEvent);
-  const transformedRecurring = {
-    weekly: recurringEvents.weekly
-      .filter((e): e is NonNullable<typeof e> => e != null)
-      .map(transformEvent),
-    biweekly: recurringEvents.biweekly
-      .filter((e): e is NonNullable<typeof e> => e != null)
-      .map(transformEvent),
-    monthly: recurringEvents.monthly
-      .filter((e): e is NonNullable<typeof e> => e != null)
-      .map(transformEvent),
-    flagship: recurringEvents.flagship
-      .filter((e): e is NonNullable<typeof e> => e != null)
-      .map(transformEvent),
+  const recurring: Record<string, Event[]> = {
+    weekly: recurringEvents.weekly,
+    biweekly: recurringEvents.biweekly,
+    monthly: recurringEvents.monthly,
   };
 
   const fadeInUp: Variants = {
@@ -66,23 +29,23 @@ export default async function Events() {
       weekly: "Weekly Twitch Events",
       biweekly: "Biweekly Events",
       monthly: "Monthly Events",
-      flagship: "Flagship Events",
       past: "Past Events",
     };
     return titles[type] || type;
   };
 
-  const recurringEventsEntries: [string, Event[]][] = Object.entries(transformedRecurring).filter(
-    ([, events]) => events.length > 0,
-  );
+  const recurringEventsEntries = Object.entries(recurring).filter(([, evs]) => evs.length > 0) as [
+    string,
+    Event[],
+  ][];
 
-  const shouldUseCarousel = (events: Event[]) => events.length > 3;
+  const shouldUseCarousel = (evs: Event[]) => evs.length > 3;
 
   const allEventsSections: [string, Event[]][] = [
-    ["latest", transformedLatest],
+    ["latest", latestEvents],
     ...recurringEventsEntries,
-    ["past", transformedPast],
-  ] as [string, Event[]][];
+    ["past", pastEvents],
+  ];
 
   return (
     <section className="px-6 py-8 md:px-12 min-h-screen">
@@ -106,7 +69,7 @@ export default async function Events() {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        {allEventsSections.map(([type, events]) => (
+        {allEventsSections.map(([type, evs]) => (
           <MotionDiv
             key={type}
             initial="hidden"
@@ -120,10 +83,10 @@ export default async function Events() {
               <div className="w-20 h-1 bg-mulearn mx-auto md:mx-0 rounded-full" />
             </div>
 
-            {shouldUseCarousel(events) ? (
-              <EventCarousel events={events} />
+            {shouldUseCarousel(evs) ? (
+              <EventCarousel events={evs} rtl={type === "latest" || type === "past"} />
             ) : (
-              <Grid events={events} />
+              <Grid events={evs} />
             )}
           </MotionDiv>
         ))}
