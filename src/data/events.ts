@@ -1,4 +1,4 @@
-import type { Event, OMEvent } from "@/lib/types";
+import type { Event } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
 export const events: {
@@ -116,13 +116,6 @@ export const events: {
         date: "Every Tuesday",
       },
       {
-        title: "Open Mic",
-        description:
-          "Already too exhausted by your weekly chores? Insert Open Mic 🎤 into the equation and your week becomes much more fun! The event aims to provide members an open stage to exhibit their skills and talents to the community.",
-        link: "/events/openmic",
-        date: "Every Saturday",
-      },
-      {
         title: "Salt Mango Tree",
         description:
           "English! English! English! I avoid I don't like it, but English likes me, I can't avoid! Well since avoiding English isn't an option, let's try to work towards improving our knowledge of English, by practicing, together.",
@@ -172,48 +165,6 @@ export const in50hrs = {
       stepSpan: "3",
       description:
         "You will receive a confirmation mail having the ticket for joining the event on the 23rd of February.",
-    },
-  ],
-};
-
-export interface OpenMicData {
-  events: OMEvent[];
-}
-
-export const openMicData: OpenMicData = {
-  events: [
-    {
-      id: 1,
-      title: "Open Mic #1 ft. @s.o.d.666 & sabareesh__k",
-      performer: "George Ben Chirby & Sabareesh K",
-      description:
-        "This time we house with us George Ben Chirby & Sabareesh k. John is live on Instagram at 8pm on the 18th of December and witness the magic of music.",
-      date: "15/12/2022",
-      tags: ["Music", "Performance"],
-      thumbnail: cdnUrl("public/assets/team/default.webp"),
-      isUpcoming: false,
-    },
-    {
-      id: 2,
-      title: "Open Mic #2 ft. Ramakrishnan",
-      performer: "Ramakrishnan Haraden",
-      description:
-        "This time we have with us Ramakrishnan Haraden, a ship near Engineering Student at MBECT. Ramakrishnan is a music composer and loves to experiment with music.",
-      date: "08/12/2022",
-      tags: ["Music", "Composition"],
-      thumbnail: cdnUrl("public/assets/team/default.webp"),
-      isUpcoming: false,
-    },
-    {
-      id: 3,
-      title: "Open Mic #3 ft. Arjun",
-      performer: "Arjun",
-      description:
-        "Wouldn't a little music make your day better? Join the Open Mic at 8:00 PM today on our Instagram Hands. This edition of Open Mic we have...",
-      date: "01/12/2022",
-      tags: ["Music", "Singing"],
-      thumbnail: cdnUrl("public/assets/team/default.webp"),
-      isUpcoming: false,
     },
   ],
 };
