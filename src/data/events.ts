@@ -10,7 +10,15 @@ export const events: {
     monthly: Event[];
   };
 } = {
-  latestEvents: [],
+  latestEvents: [
+    {
+      title: "μFIFA",
+      date: "Jun 2026 - Jul 2026",
+      description:
+        "μFIFA is a six-week innovation movement by μLearn that transforms learning into a collaborative, gamified experience inspired by the FIFA World Cup. Participants join national squads, choose a domain of expertise, and collaborate with peers to solve real-world challenges while representing their team.",
+      link: "https://mufifa.mulearn.org",
+    },
+  ],
   pastEvents: [
     {
       title: "NUDGE Studio Design Challenge",
