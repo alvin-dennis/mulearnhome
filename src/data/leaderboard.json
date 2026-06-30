@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 1053,
+      "commits": 1056,
       "prs_opened": 279,
       "prs_merged": 270,
-      "points": 1602,
+      "points": 1605,
       "displayname": "Awindsr"
     },
     {
@@ -60,10 +60,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 795,
-      "prs_opened": 164,
-      "prs_merged": 152,
-      "points": 1111,
+      "commits": 811,
+      "prs_opened": 167,
+      "prs_merged": 155,
+      "points": 1133,
       "displayname": "Alvin Dennis"
     },
     {
@@ -94,18 +94,18 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 148,
-      "prs_opened": 28,
-      "prs_merged": 27,
-      "points": 203,
+      "commits": 164,
+      "prs_opened": 31,
+      "prs_merged": 30,
+      "points": 225,
       "displayname": "Alvin Dennis"
     },
     {
       "username": "awindsr",
-      "commits": 105,
+      "commits": 108,
       "prs_opened": 31,
       "prs_merged": 28,
-      "points": 164,
+      "points": 167,
       "displayname": "Awindsr"
     },
     {
@@ -117,20 +117,20 @@
       "displayname": "Harshil P"
     },
     {
+      "username": "vedhavk",
+      "commits": 78,
+      "prs_opened": 14,
+      "prs_merged": 14,
+      "points": 106,
+      "displayname": "Vedha"
+    },
+    {
       "username": "Akshayvs-Tech",
       "commits": 75,
       "prs_opened": 14,
       "prs_merged": 12,
       "points": 101,
       "displayname": "Akshay v s"
-    },
-    {
-      "username": "vedhavk",
-      "commits": 61,
-      "prs_opened": 14,
-      "prs_merged": 13,
-      "points": 88,
-      "displayname": "Vedha"
     },
     {
       "username": "Devika123098",
@@ -149,20 +149,20 @@
       "displayname": "Sachin Raj"
     },
     {
+      "username": "Yadhuthhiyyakat",
+      "commits": 35,
+      "prs_opened": 8,
+      "prs_merged": 4,
+      "points": 47,
+      "displayname": "yadhuKrishna T M"
+    },
+    {
       "username": "afifshowfeer",
       "commits": 17,
       "prs_opened": 11,
       "prs_merged": 10,
       "points": 38,
       "displayname": "Afif Showfeer"
-    },
-    {
-      "username": "Arya3077",
-      "commits": 24,
-      "prs_opened": 6,
-      "prs_merged": 4,
-      "points": 34,
-      "displayname": "Arya Shibu Dhanya"
     }
   ]
 }
