@@ -2948,7 +2948,12 @@
         "game-dev"
       ]
     },
-    {},
+    {
+      "title": "Using bezier curves",
+      "performer": "Aradhana Rose",
+      "designation": "Blender IG lead",
+      "date": "1/07/2026"
+    },
     {}
   ]
 }
