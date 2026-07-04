@@ -1,56 +1,108 @@
 "use client";
 
+import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
+import Pagination from "@/app/events/_components/Pagination";
+import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
 import { TabButton } from "@/app/events/_components/TabButton";
+import { MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useDebounce } from "@/hooks/useDebounce";
+import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "@/lib/types";
+import { fetchInspirationStation } from "@/services/weeklyTwitches";
 
-export interface InspirationStationEpisode {
-  topic: string;
-  campus: string;
-  zone?: string | null;
-  date?: string | null;
-  description?: string | null;
-  isUpcoming?: boolean | null;
-  link?: string | null;
+type ViewType = "upcoming" | "previous";
+
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr + "T00:00:00");
+  return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
 }
 
-interface InspirationStationClientProps {
-  episodes: InspirationStationEpisode[];
-}
+const EMPTY_PAGINATION: WeeklyTwitchPagination = {
+  count: 0,
+  totalPages: 0,
+  isNext: false,
+  isPrev: false,
+  nextPage: null,
+};
 
-export default function InspirationStationClient({ episodes }: InspirationStationClientProps) {
-  // Parse YYYY-MM-DD date format and check if it's upcoming (today or future)
-  const isDateUpcoming = (dateStr: string): boolean => {
-    if (!dateStr) return false;
-    const eventDate = new Date(dateStr);
-    if (Number.isNaN(eventDate.getTime())) return false;
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return eventDate >= today;
+const ZONES = ["Central", "North", "South"];
+
+export default function InspirationStationClient() {
+  const [view, setView] = useState<ViewType>("upcoming");
+  const [searchInput, setSearchInput] = useState("");
+  const [page, setPage] = useState(1);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [episodes, setEpisodes] = useState<WeeklyTwitchEpisode[]>([]);
+  const [pagination, setPagination] = useState<WeeklyTwitchPagination>(EMPTY_PAGINATION);
+  const [error, setError] = useState(false);
+
+  const debouncedSearch = useDebounce(searchInput, 400);
+
+  useEffect(() => {
+    setError(false);
+    fetchInspirationStation({
+      status: view === "previous" ? "completed" : "upcoming",
+      search: debouncedSearch || undefined,
+      pageIndex: page,
+      perPage: 6,
+    })
+      .then(({ data, pagination: p }) => {
+        setEpisodes(data);
+        setPagination(p);
+      })
+      .catch(() => {
+        setEpisodes([]);
+        setPagination(EMPTY_PAGINATION);
+        setError(true);
+      });
+  }, [view, debouncedSearch, page]);
+
+  const handleViewChange = (v: ViewType) => {
+    setView(v);
+    setPage(1);
+    setSelectedTags([]);
   };
 
-  // Transform episodes to match WeeklyTwitchEvent type
-  const events = episodes.map((episode, index) => ({
+  const handleSearchChange = (s: string) => {
+    setSearchInput(s);
+    setPage(1);
+  };
+
+  const toggleTag = (tag: string) =>
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
+    );
+
+  const filteredEpisodes =
+    selectedTags.length === 0
+      ? episodes
+      : episodes.filter(
+          (e) => e.zone && selectedTags.includes(e.zone.charAt(0).toUpperCase() + e.zone.slice(1)),
+        );
+
+  const events = filteredEpisodes.map((episode, index) => ({
     id: index + 1,
     topic: episode.topic,
     campus: episode.campus,
-    zone: episode.zone || "",
-    date: episode.date || "",
+    zone: episode.zone ? episode.zone.charAt(0).toUpperCase() + episode.zone.slice(1) : undefined,
+    date: formatDate(episode.date),
     description: episode.description || "",
-    isUpcoming: isDateUpcoming(episode.date || ""),
+    isUpcoming: episode.status === "upcoming" || episode.status === "ongoing",
     link: episode.link || undefined,
   }));
 
-  const upcomingEvents = events.filter((event) => event.isUpcoming);
-  const pastEvents = events.filter((event) => !event.isUpcoming);
-
-  const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
+  const motionVariants = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
 
   return (
     <div className="min-h-screen">
@@ -110,62 +162,79 @@ export default function InspirationStationClient({ episodes }: InspirationStatio
             <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-base md:text-lg mb-6 md:mb-8">
               Discover inspiring stories from our community
             </p>
-
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto">
-              <TabButton
-                icon={Clock}
-                label="Upcoming"
-                isActive={activeTab === "upcoming"}
-                onClick={() => setActiveTab("upcoming")}
-              />
-              <TabButton
-                icon={Calendar}
-                label="Previous"
-                isActive={activeTab === "past"}
-                onClick={() => setActiveTab("past")}
-              />
-            </div>
           </div>
 
-          <div className="transition-all duration-300">
-            {activeTab === "upcoming" && (
-              <div>
-                {upcomingEvents.length > 0 ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {upcomingEvents.map((event) => (
-                      <GenericEventCard
-                        key={event.id}
-                        event={event}
-                        variant="episode"
-                        icon={Radio}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <EmptyState
-                    title="No Upcoming Episodes"
-                    description="Check back later for new inspiring stories!"
-                  />
-                )}
-              </div>
-            )}
+          <SearchAndFilter
+            search={searchInput}
+            onSearchChange={handleSearchChange}
+            selectedTags={selectedTags}
+            onTagToggle={toggleTag}
+            allTags={ZONES}
+            view={view}
+          />
 
-            {activeTab === "past" && (
-              <div>
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8 max-w-md mx-auto mt-6 mb-8">
+            <TabButton
+              icon={Clock}
+              label="Upcoming"
+              isActive={view === "upcoming"}
+              onClick={() => handleViewChange("upcoming")}
+            />
+            <TabButton
+              icon={Calendar}
+              label="Previous"
+              isActive={view === "previous"}
+              onClick={() => handleViewChange("previous")}
+            />
+          </div>
+
+          <AnimatePresence mode="wait">
+            <MotionSection
+              key={view}
+              variants={motionVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.35 }}
+            >
+              {view === "previous" && (
                 <div className="text-center mb-6 md:mb-8">
                   <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-sm md:text-base">
                     Listed below are the speakers who came to the inspiration stations and inspired
                     our listeners with their stories and experiences.
                   </p>
                 </div>
+              )}
+
+              {events.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                  {pastEvents.map((event) => (
+                  {events.map((event) => (
                     <GenericEventCard key={event.id} event={event} variant="episode" icon={Radio} />
                   ))}
                 </div>
-              </div>
-            )}
-          </div>
+              ) : (
+                <EmptyState
+                  title={
+                    error
+                      ? "Something Went Wrong"
+                      : view === "upcoming"
+                        ? "No Upcoming Episodes"
+                        : "No Previous Episodes"
+                  }
+                  description={
+                    error
+                      ? "We couldn't load episodes right now. Please try again later."
+                      : "Check back later or try a different search."
+                  }
+                  isError={error}
+                />
+              )}
+
+              {selectedTags.length === 0 && (
+                <Pagination page={page} setPage={setPage} total={pagination.count} perPage={6} />
+              )}
+            </MotionSection>
+          </AnimatePresence>
         </div>
       </section>
     </div>
