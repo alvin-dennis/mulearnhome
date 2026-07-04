@@ -148,10 +148,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 * Unified formatter and linter
 * Replaces ESLint + Prettier for speed and simplicity
 
-### **ESLint & eslint-config-next**
-
-* Used for Next.js specific linting rules
-
 ### **Husky**
 
 * Git hooks (pre-commit, commit-msg)
@@ -204,4 +200,4 @@ This stack prioritizes:
 * 🧠 Type Safety (TypeScript + Zod)
 * 🧩 Scalability (Next.js App Router)
 
-If you plan to add a dependency, ensure it aligns with these goals. ALso dont install packages which has similar functions of the above packages.
+If you plan to add a dependency, ensure it aligns with these goals. Also dont install packages which has similar functions of the above packages.

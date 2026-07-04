@@ -27,8 +27,6 @@ const serverEnvSchema = z.object({
 
   // Captcha secret key
   RECAPTCHA_SECRET_KEY: z.string().optional(),
-  // TinaCMS Token (Optional - for CMS authentication with TinaCloud)
-  TINA_TOKEN: z.string().optional(),
 });
 
 // ============================================================================

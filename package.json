@@ -1,5 +1,5 @@
 {
-  "name": "mulearn",
+  "name": "mulearnhome",
   "version": "0.1.0",
   "type": "module",
   "private": true,
@@ -9,11 +9,8 @@
   },
   "scripts": {
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('bun')===-1){console.error('\\x1b[31m❌ This project requires bun. Please use bun install instead.\\x1b[0m');process.exit(1)}\"",
-    "dev": "tinacms dev -c \"next dev --turbopack\"",
-    "dev:next": "next dev --turbopack",
-    "build": "tinacms build && next build",
-    "build:local": "next build",
-    "build:next": "next build",
+    "dev": "next dev --turbopack",
+    "build": "next build",
     "start": "next start",
     "prepare": "husky",
     "lint": "biome check .",
@@ -36,7 +33,6 @@
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tabs": "^1.1.13",
-    "@tinacms/cli": "^2.0.3",
     "@types/canvas-confetti": "^1.9.0",
     "@types/dompurify": "^3.2.0",
     "axios": "^1.12.2",
@@ -62,27 +58,18 @@
     "swiper": "^12.0.2",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "tinacms": "^3.1.0",
     "zod": "^4.1.12"
-  },
-  "overrides": {
-    "@tinacms/cli": {
-      "tailwindcss": "^3.4.17"
-    }
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.15",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.15",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.9.3",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.4",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
