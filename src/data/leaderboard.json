@@ -1,6 +1,6 @@
 {
-  "month": "2026-06",
-  "date": "June 2026",
+  "month": "2026-07",
+  "date": "July 2026",
   "overall": [
     {
       "username": "AswinAsok",
@@ -28,10 +28,10 @@
     },
     {
       "username": "awindsr",
-      "commits": 1053,
-      "prs_opened": 279,
-      "prs_merged": 270,
-      "points": 1602,
+      "commits": 1067,
+      "prs_opened": 282,
+      "prs_merged": 274,
+      "points": 1623,
       "displayname": "Awindsr"
     },
     {
@@ -60,10 +60,10 @@
     },
     {
       "username": "alvin-dennis",
-      "commits": 795,
-      "prs_opened": 164,
-      "prs_merged": 152,
-      "points": 1111,
+      "commits": 811,
+      "prs_opened": 169,
+      "prs_merged": 155,
+      "points": 1135,
       "displayname": "Alvin Dennis"
     },
     {
@@ -86,83 +86,83 @@
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 163,
-      "prs_opened": 119,
-      "prs_merged": 117,
-      "points": 399,
+      "commits": 24,
+      "prs_opened": 27,
+      "prs_merged": 26,
+      "points": 77,
       "displayname": "Pranav P"
     },
     {
-      "username": "alvin-dennis",
-      "commits": 148,
-      "prs_opened": 28,
-      "prs_merged": 27,
-      "points": 203,
-      "displayname": "Alvin Dennis"
-    },
-    {
       "username": "awindsr",
-      "commits": 105,
-      "prs_opened": 31,
-      "prs_merged": 28,
-      "points": 164,
+      "commits": 3,
+      "prs_opened": 2,
+      "prs_merged": 2,
+      "points": 7,
       "displayname": "Awindsr"
     },
     {
-      "username": "erzer12",
-      "commits": 97,
-      "prs_opened": 14,
-      "prs_merged": 14,
-      "points": 125,
-      "displayname": "Harshil P"
+      "username": "irfanfarisf",
+      "commits": 1,
+      "prs_opened": 4,
+      "prs_merged": 1,
+      "points": 6,
+      "displayname": "Irfan Faris F "
     },
     {
-      "username": "Akshayvs-Tech",
-      "commits": 75,
-      "prs_opened": 14,
-      "prs_merged": 12,
-      "points": 101,
-      "displayname": "Akshay v s"
-    },
-    {
-      "username": "vedhavk",
-      "commits": 61,
-      "prs_opened": 14,
-      "prs_merged": 13,
-      "points": 88,
-      "displayname": "Vedha"
-    },
-    {
-      "username": "Devika123098",
-      "commits": 65,
-      "prs_opened": 11,
-      "prs_merged": 11,
-      "points": 87,
-      "displayname": "Devika Dileep"
-    },
-    {
-      "username": "sachin-raj-m",
-      "commits": 69,
+      "username": "AdhwaithAS",
+      "commits": 5,
       "prs_opened": 0,
       "prs_merged": 0,
-      "points": 69,
-      "displayname": "Sachin Raj"
+      "points": 5,
+      "displayname": "Adhwaith A S"
     },
     {
-      "username": "afifshowfeer",
-      "commits": 17,
-      "prs_opened": 11,
-      "prs_merged": 10,
-      "points": 38,
-      "displayname": "Afif Showfeer"
+      "username": "diyakrishnah",
+      "commits": 1,
+      "prs_opened": 3,
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "DIYA KRISHNA"
     },
     {
-      "username": "Arya3077",
-      "commits": 24,
-      "prs_opened": 6,
-      "prs_merged": 4,
-      "points": 34,
-      "displayname": "Arya Shibu Dhanya"
+      "username": "LijoThomas2004",
+      "commits": 1,
+      "prs_opened": 3,
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "Lijo Thomas"
+    },
+    {
+      "username": "princeshejivarghese",
+      "commits": 1,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 4,
+      "displayname": "Prince Sheji varghese"
+    },
+    {
+      "username": "jumanajalal",
+      "commits": 1,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 4,
+      "displayname": "Jumana Jalal"
+    },
+    {
+      "username": "krishnapriya609",
+      "commits": 1,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 4,
+      "displayname": "Krishnapriya"
+    },
+    {
+      "username": "eldhoseabrahamemerson",
+      "commits": 1,
+      "prs_opened": 1,
+      "prs_merged": 1,
+      "points": 3,
+      "displayname": "Eldhose Abraham Emerson"
     }
   ]
 }
