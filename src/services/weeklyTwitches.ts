@@ -17,7 +17,7 @@ function buildParams(params: WeeklyTwitchParams): Record<string, string> {
   const out: Record<string, string> = {};
   if (params.status) out.status = params.status;
   if (params.search) out.search = params.search;
-  if (params.pageIndex) out.pageIndex = String(params.pageIndex);
+  if (params.pageIndex !== undefined) out.pageIndex = String(params.pageIndex);
   if (params.perPage) out.perPage = String(params.perPage);
   return out;
 }

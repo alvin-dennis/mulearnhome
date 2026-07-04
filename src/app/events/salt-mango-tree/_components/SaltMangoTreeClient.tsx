@@ -40,19 +40,27 @@ export default function SaltMangoTreeClient() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [episodes, setEpisodes] = useState<WeeklyTwitchEpisode[]>([]);
   const [pagination, setPagination] = useState<WeeklyTwitchPagination>(EMPTY_PAGINATION);
+  const [error, setError] = useState(false);
 
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
+    setError(false);
     fetchSaltMangoTree({
       status: view === "previous" ? "completed" : "upcoming",
       search: debouncedSearch || undefined,
       pageIndex: page,
       perPage: 6,
-    }).then(({ data, pagination: p }) => {
-      setEpisodes(data);
-      setPagination(p);
-    });
+    })
+      .then(({ data, pagination: p }) => {
+        setEpisodes(data);
+        setPagination(p);
+      })
+      .catch(() => {
+        setEpisodes([]);
+        setPagination(EMPTY_PAGINATION);
+        setError(true);
+      });
   }, [view, debouncedSearch, page]);
 
   const handleViewChange = (v: ViewType) => {
@@ -204,12 +212,25 @@ export default function SaltMangoTreeClient() {
                 </div>
               ) : (
                 <EmptyState
-                  title={view === "upcoming" ? "No Upcoming Sessions" : "No Previous Sessions"}
-                  description="Check back later or try a different search."
+                  title={
+                    error
+                      ? "Something Went Wrong"
+                      : view === "upcoming"
+                        ? "No Upcoming Sessions"
+                        : "No Previous Sessions"
+                  }
+                  description={
+                    error
+                      ? "We couldn't load sessions right now. Please try again later."
+                      : "Check back later or try a different search."
+                  }
+                  isError={error}
                 />
               )}
 
-              <Pagination page={page} setPage={setPage} total={pagination.count} perPage={6} />
+              {selectedTags.length === 0 && (
+                <Pagination page={page} setPage={setPage} total={pagination.count} perPage={6} />
+              )}
             </MotionSection>
           </AnimatePresence>
         </div>
