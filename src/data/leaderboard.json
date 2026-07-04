@@ -61,9 +61,9 @@
     {
       "username": "alvin-dennis",
       "commits": 811,
-      "prs_opened": 168,
+      "prs_opened": 169,
       "prs_merged": 155,
-      "points": 1134,
+      "points": 1135,
       "displayname": "Alvin Dennis"
     },
     {
@@ -86,10 +86,10 @@
   "monthly": [
     {
       "username": "DevWithPranav",
-      "commits": 20,
-      "prs_opened": 22,
-      "prs_merged": 22,
-      "points": 64,
+      "commits": 24,
+      "prs_opened": 27,
+      "prs_merged": 26,
+      "points": 77,
       "displayname": "Pranav P"
     },
     {
@@ -109,12 +109,36 @@
       "displayname": "Irfan Faris F "
     },
     {
+      "username": "AdhwaithAS",
+      "commits": 5,
+      "prs_opened": 0,
+      "prs_merged": 0,
+      "points": 5,
+      "displayname": "Adhwaith A S"
+    },
+    {
+      "username": "diyakrishnah",
+      "commits": 1,
+      "prs_opened": 3,
+      "prs_merged": 1,
+      "points": 5,
+      "displayname": "DIYA KRISHNA"
+    },
+    {
       "username": "LijoThomas2004",
       "commits": 1,
       "prs_opened": 3,
       "prs_merged": 1,
       "points": 5,
       "displayname": "Lijo Thomas"
+    },
+    {
+      "username": "princeshejivarghese",
+      "commits": 1,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 4,
+      "displayname": "Prince Sheji varghese"
     },
     {
       "username": "jumanajalal",
@@ -125,44 +149,20 @@
       "displayname": "Jumana Jalal"
     },
     {
+      "username": "krishnapriya609",
+      "commits": 1,
+      "prs_opened": 2,
+      "prs_merged": 1,
+      "points": 4,
+      "displayname": "Krishnapriya"
+    },
+    {
       "username": "eldhoseabrahamemerson",
       "commits": 1,
       "prs_opened": 1,
       "prs_merged": 1,
       "points": 3,
       "displayname": "Eldhose Abraham Emerson"
-    },
-    {
-      "username": "alphonsbiju7",
-      "commits": 1,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 3,
-      "displayname": "Alphons Biju"
-    },
-    {
-      "username": "Vinayapriya",
-      "commits": 1,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 3,
-      "displayname": "Vinayapriya  C C"
-    },
-    {
-      "username": "Sreee444",
-      "commits": 1,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 3,
-      "displayname": "Sreenandhu Jacy"
-    },
-    {
-      "username": "Nandana90",
-      "commits": 1,
-      "prs_opened": 1,
-      "prs_merged": 1,
-      "points": 3,
-      "displayname": "Nandana Rajendran"
     }
   ]
 }
