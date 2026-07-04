@@ -39,7 +39,7 @@ export default async function Events() {
     Event[],
   ][];
 
-  const shouldUseCarousel = (evs: Event[]) => evs.length > 3;
+  const shouldUseCarousel = (evs: Event[]) => evs.length >= 3;
 
   const allEventsSections: [string, Event[]][] = [
     ["latest", latestEvents],
