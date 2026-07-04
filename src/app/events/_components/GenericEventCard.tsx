@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Briefcase,
   Calendar,
   Clock,
   ExternalLink,
@@ -43,7 +44,7 @@ interface GenericEventCardProps {
   };
 }
 
-const IG_LABELS: Record<string, string> = {
+export const IG_LABELS: Record<string, string> = {
   "ui-ux": "UI/UX",
   "web-development": "Web Development",
   devops: "DevOps",
@@ -177,10 +178,16 @@ export function GenericEventCard({
 
         {/* Performer/Campus info */}
         {event.performer && variant === "office-hour" && (
-          <p className="text-sm text-mulearn-gray-400 flex items-center gap-1">
-            <User className="w-4 h-4" /> {event.performer}{" "}
-            {event.designation ? `- ${event.designation}` : ""}
-          </p>
+          <div className="text-sm text-mulearn-gray-400">
+            <p className="flex items-center gap-1">
+              <User className="w-4 h-4" /> {event.performer}
+            </p>
+            {event.designation && (
+              <p className="flex items-center gap-1">
+                <Briefcase className="w-4 h-4" /> {event.designation}
+              </p>
+            )}
+          </div>
         )}
         {event.performer && variant === "open-mic" && (
           <p className="text-mulearn-gray-700 font-medium mb-3 flex items-center">

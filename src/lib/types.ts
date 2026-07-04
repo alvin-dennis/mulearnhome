@@ -386,3 +386,42 @@ export type SocialLinks = {
   action?: "follow" | "subscribe";
   color: string;
 };
+
+export interface WeeklyTwitchPagination {
+  count: number;
+  totalPages: number;
+  isNext: boolean;
+  isPrev: boolean;
+  nextPage: number | null;
+}
+
+export interface WeeklyTwitchParams {
+  status?: "upcoming" | "completed";
+  search?: string;
+  pageIndex?: number;
+  perPage?: number;
+}
+
+export interface OfficeHoursSession {
+  id: string;
+  title: string;
+  performer?: string | null;
+  designation?: string | null;
+  description?: string | null;
+  date: string;
+  link?: string | null;
+  interest_groups: string[] | null;
+  poster_thumbnail?: string | null;
+  status: "upcoming" | "ongoing" | "completed";
+}
+
+export interface WeeklyTwitchEpisode {
+  id: string;
+  topic: string;
+  campus: string;
+  zone?: "north" | "central" | "south" | null;
+  date: string;
+  description?: string | null;
+  link?: string | null;
+  status: "upcoming" | "ongoing" | "completed";
+}
