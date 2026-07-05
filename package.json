@@ -18,7 +18,6 @@
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit",
     "validate": "bun run typecheck && bun run lint",
-    "generate": "bun run ./src/services/leaderboard.ts",
     "optimize:images": "bun run scripts/optimize-images.ts"
   },
   "dependencies": {
