@@ -43,15 +43,48 @@ export default function OfficeHoursClient() {
 
   useEffect(() => {
     setError(false);
-    fetchOfficeHours({
-      status: view === "previous" ? "completed" : "upcoming",
-      search: debouncedSearch || undefined,
-      pageIndex: page,
-      perPage: 6,
-    })
-      .then(({ data, pagination: p }) => {
-        setSessions(data);
-        setPagination(p);
+
+    if (view === "previous") {
+      fetchOfficeHours({
+        status: "completed",
+        search: debouncedSearch || undefined,
+        pageIndex: page,
+        perPage: 6,
+      })
+        .then(({ data, pagination: p }) => {
+          setSessions(data);
+          setPagination(p);
+        })
+        .catch(() => {
+          setSessions([]);
+          setPagination(EMPTY_PAGINATION);
+          setError(true);
+        });
+      return;
+    }
+
+    // status filter accepts one value only, so upcoming + ongoing need two calls merged.
+    Promise.all([
+      fetchOfficeHours({
+        status: "ongoing",
+        search: debouncedSearch || undefined,
+        pageIndex: 1,
+        perPage: 6,
+      }),
+      fetchOfficeHours({
+        status: "upcoming",
+        search: debouncedSearch || undefined,
+        pageIndex: page,
+        perPage: 6,
+      }),
+    ])
+      .then(([ongoing, upcoming]) => {
+        const merged = page === 1 ? [...ongoing.data, ...upcoming.data] : upcoming.data;
+        setSessions(merged);
+        setPagination({
+          ...upcoming.pagination,
+          count: upcoming.pagination.count + ongoing.pagination.count,
+        });
       })
       .catch(() => {
         setSessions([]);
