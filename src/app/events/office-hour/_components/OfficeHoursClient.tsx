@@ -36,52 +36,40 @@ export default function OfficeHoursClient() {
   const [page, setPage] = useState(1);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sessions, setSessions] = useState<OfficeHoursSession[]>([]);
+  const [ongoingSessions, setOngoingSessions] = useState<OfficeHoursSession[]>([]);
   const [pagination, setPagination] = useState<WeeklyTwitchPagination>(EMPTY_PAGINATION);
   const [error, setError] = useState(false);
 
   const debouncedSearch = useDebounce(searchInput, 400);
 
+  // Ongoing sessions are shown as a standalone "Live Now" strip, independent of
+  // the upcoming grid's pagination, since the API can't paginate a merged set.
+  useEffect(() => {
+    if (view !== "upcoming") return;
+
+    fetchOfficeHours({
+      status: "ongoing",
+      search: debouncedSearch || undefined,
+      pageIndex: 1,
+      perPage: 6,
+    })
+      .then(({ data }) => setOngoingSessions(data))
+      .catch(() => setOngoingSessions([]));
+  }, [view, debouncedSearch]);
+
   useEffect(() => {
     setError(false);
 
-    if (view === "previous") {
-      fetchOfficeHours({
-        status: "completed",
-        search: debouncedSearch || undefined,
-        pageIndex: page,
-        perPage: 6,
-      })
-        .then(({ data, pagination: p }) => {
-          setSessions(data);
-          setPagination(p);
-        })
-        .catch(() => {
-          setSessions([]);
-          setPagination(EMPTY_PAGINATION);
-          setError(true);
-        });
-      return;
-    }
-
-    // status filter accepts one value only, so upcoming + ongoing need two calls merged.
-    Promise.all([
-      fetchOfficeHours({
-        status: "ongoing",
-        search: debouncedSearch || undefined,
-        pageIndex: 1,
-        perPage: 6,
-      }),
-      fetchOfficeHours({
-        status: "upcoming",
-        search: debouncedSearch || undefined,
-        pageIndex: page,
-        perPage: 6,
-      }),
-    ])
-      .then(([ongoing, upcoming]) => {
-        const merged = page === 1 ? [...ongoing.data, ...upcoming.data].slice(0, 6) : upcoming.data;
-        setSessions(merged);
-        setPagination(upcoming.pagination);
+    const status = view === "previous" ? "completed" : "upcoming";
+    fetchOfficeHours({
+      status,
+      search: debouncedSearch || undefined,
+      pageIndex: page,
+      perPage: 6,
+    })
+      .then(({ data, pagination: p }) => {
+        setSessions(data);
+        setPagination(p);
       })
       .catch(() => {
         setSessions([]);
@@ -108,7 +96,7 @@ export default function OfficeHoursClient() {
 
   const allTags = Array.from(
     new Set(
-      sessions.flatMap((s) =>
+      [...sessions, ...ongoingSessions].flatMap((s) =>
         (s.interest_groups ?? []).map((ig) => IG_LABELS[ig.toLowerCase()] || ig),
       ),
     ),
@@ -123,7 +111,7 @@ export default function OfficeHoursClient() {
           ),
         );
 
-  const events = filteredSessions.map((session, index) => ({
+  const toEvent = (session: OfficeHoursSession, index: number) => ({
     id: index + 1,
     title: session.title,
     performer: session.performer || "",
@@ -134,7 +122,19 @@ export default function OfficeHoursClient() {
     isUpcoming: session.status === "upcoming" || session.status === "ongoing",
     link: session.link || undefined,
     thumbnail: session.poster_thumbnail || undefined,
-  }));
+  });
+
+  const events = filteredSessions.map(toEvent);
+
+  const filteredLive =
+    selectedTags.length === 0
+      ? ongoingSessions
+      : ongoingSessions.filter((s) =>
+          (s.interest_groups ?? []).some((ig) =>
+            selectedTags.includes(IG_LABELS[ig.toLowerCase()] || ig),
+          ),
+        );
+  const liveEvents = view === "upcoming" ? filteredLive.map(toEvent) : [];
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -207,6 +207,28 @@ export default function OfficeHoursClient() {
           className="py-12 pb-20"
         >
           <div className="max-w-7xl mx-auto px-4">
+            {liveEvents.length > 0 && (
+              <div className="mb-10">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+                  </span>
+                  <span className="font-semibold text-mulearn-gray-800">Live Now</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {liveEvents.map((event) => (
+                    <GenericEventCard
+                      key={`live-${event.id}`}
+                      event={event}
+                      variant="office-hour"
+                      icon={Mic}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
             {events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {events.map((event) => (
