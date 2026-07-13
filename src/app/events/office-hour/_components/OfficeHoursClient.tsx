@@ -119,12 +119,11 @@ export default function OfficeHoursClient() {
     description: session.description || "",
     date: formatDate(session.date),
     interestGroups: (session.interest_groups ?? []).map((ig) => ig.toLowerCase()),
-    isUpcoming: session.status === "upcoming" || session.status === "ongoing",
+    isUpcoming: session.status === "upcoming",
+    isLive: session.status === "ongoing",
     link: session.link || undefined,
     thumbnail: session.poster_thumbnail || undefined,
   });
-
-  const events = filteredSessions.map(toEvent);
 
   const filteredLive =
     selectedTags.length === 0
@@ -134,7 +133,12 @@ export default function OfficeHoursClient() {
             selectedTags.includes(IG_LABELS[ig.toLowerCase()] || ig),
           ),
         );
-  const liveEvents = view === "upcoming" ? filteredLive.map(toEvent) : [];
+  const liveEvents = view === "upcoming" ? filteredLive.map((s, i) => toEvent(s, i)) : [];
+
+  const events = [
+    ...liveEvents,
+    ...filteredSessions.map((s, i) => toEvent(s, liveEvents.length + i)),
+  ];
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -207,28 +211,6 @@ export default function OfficeHoursClient() {
           className="py-12 pb-20"
         >
           <div className="max-w-7xl mx-auto px-4">
-            {liveEvents.length > 0 && (
-              <div className="mb-10">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-                  </span>
-                  <span className="font-semibold text-mulearn-gray-800">Live Now</span>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {liveEvents.map((event) => (
-                    <GenericEventCard
-                      key={`live-${event.id}`}
-                      event={event}
-                      variant="office-hour"
-                      icon={Mic}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
             {events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {events.map((event) => (
