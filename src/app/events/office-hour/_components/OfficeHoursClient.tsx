@@ -79,12 +79,9 @@ export default function OfficeHoursClient() {
       }),
     ])
       .then(([ongoing, upcoming]) => {
-        const merged = page === 1 ? [...ongoing.data, ...upcoming.data] : upcoming.data;
+        const merged = page === 1 ? [...ongoing.data, ...upcoming.data].slice(0, 6) : upcoming.data;
         setSessions(merged);
-        setPagination({
-          ...upcoming.pagination,
-          count: upcoming.pagination.count + ongoing.pagination.count,
-        });
+        setPagination(upcoming.pagination);
       })
       .catch(() => {
         setSessions([]);
