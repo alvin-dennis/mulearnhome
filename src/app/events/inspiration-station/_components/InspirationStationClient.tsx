@@ -47,7 +47,10 @@ export default function InspirationStationClient() {
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
-    if (view !== "upcoming") return;
+    if (view !== "upcoming") {
+      setOngoingEpisodes([]);
+      return;
+    }
 
     fetchInspirationStation({
       status: "ongoing",

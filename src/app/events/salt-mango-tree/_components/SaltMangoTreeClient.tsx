@@ -46,7 +46,10 @@ export default function SaltMangoTreeClient() {
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
-    if (view !== "upcoming") return;
+    if (view !== "upcoming") {
+      setOngoingEpisodes([]);
+      return;
+    }
 
     fetchSaltMangoTree({
       status: "ongoing",

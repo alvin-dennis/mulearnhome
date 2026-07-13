@@ -45,7 +45,10 @@ export default function OfficeHoursClient() {
   // Ongoing sessions are shown as a standalone "Live Now" strip, independent of
   // the upcoming grid's pagination, since the API can't paginate a merged set.
   useEffect(() => {
-    if (view !== "upcoming") return;
+    if (view !== "upcoming") {
+      setOngoingSessions([]);
+      return;
+    }
 
     fetchOfficeHours({
       status: "ongoing",
