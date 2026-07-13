@@ -98,7 +98,6 @@ export function GenericEventCard({
   variant = "episode",
   icon: IconComponent = Radio,
   igLabels = IG_LABELS,
-  actionButton,
 }: GenericEventCardProps) {
   const { displayText, isExpanded, shouldTruncate, toggleExpand } = useReadMore(
     event.description || "",
@@ -238,7 +237,7 @@ export function GenericEventCard({
 
         {/* Footer */}
         <div
-          className={`flex ${actionButton || (event.link && (event.isUpcoming || event.isLive)) ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
+          className={`flex ${event.link && (event.isUpcoming || event.isLive) ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
         >
           <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
             <Calendar className="w-4 h-4 mr-1" />
@@ -249,15 +248,6 @@ export function GenericEventCard({
               <a href={eventLink} target="_blank" rel="noopener noreferrer">
                 Join <ExternalLink className="w-3.5 h-3.5" />
               </a>
-            </Button>
-          )}
-          {actionButton && (
-            <Button
-              variant={event.isUpcoming ? "default" : "outline"}
-              className="gap-1 px-4 py-2 text-sm rounded-full"
-              onClick={actionButton.onClick}
-            >
-              {actionButton.label}
             </Button>
           )}
         </div>
