@@ -30,6 +30,7 @@ interface GenericEventCardProps {
     time?: string;
     description?: string;
     isUpcoming?: boolean;
+    isLive?: boolean;
     thumbnail?: string;
     interestGroups?: string[];
     tags?: string[];
@@ -69,6 +70,7 @@ export const IG_LABELS: Record<string, string> = {
   "strategic-leadership": "Strategic Leadership",
   civil: "Civil",
   "iot-robotics": "IoT & Robotics",
+  "internet-of-things-(iot)-and-robotics": "IoT & Robotics",
   "creative-design": "Creative Design",
   beckn: "Beckn",
   "quality-assurance": "QA",
@@ -128,16 +130,30 @@ export function GenericEventCard({
           <IconComponent className="w-16 h-16 text-mulearn-trusty-blue" />
         )}
         <div className="absolute top-4 right-4">
-          <Badge
-            className={`flex items-center ${
-              event.isUpcoming
-                ? "bg-mulearn-whitish text-mulearn-trusty-blue border border-mulearn-trusty-blue"
-                : "bg-gray-100 text-mulearn-blackish"
-            }`}
-          >
-            <Clock className="w-3 h-3 mr-1" />
-            {event.isUpcoming ? "Upcoming" : variant === "episode" ? "Past Episode" : "Past Event"}
-          </Badge>
+          {event.isLive ? (
+            <Badge className="flex items-center bg-mulearn-whitish text-destructive border border-red-500 hover:bg-mulearn-whitish">
+              <span className="relative flex h-2 w-2 mr-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-destructive  opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-destructive" />
+              </span>
+              Happening Today
+            </Badge>
+          ) : (
+            <Badge
+              className={`flex items-center ${
+                event.isUpcoming
+                  ? "bg-mulearn-whitish text-mulearn-trusty-blue border border-mulearn-trusty-blue"
+                  : "bg-gray-100 text-mulearn-blackish"
+              }`}
+            >
+              <Clock className="w-3 h-3 mr-1" />
+              {event.isUpcoming
+                ? "Upcoming"
+                : variant === "episode"
+                  ? "Past Episode"
+                  : "Past Event"}
+            </Badge>
+          )}
         </div>
       </div>
 
