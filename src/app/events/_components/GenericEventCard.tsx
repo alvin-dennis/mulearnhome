@@ -238,13 +238,13 @@ export function GenericEventCard({
 
         {/* Footer */}
         <div
-          className={`flex ${actionButton || (event.link && event.isUpcoming) ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
+          className={`flex ${actionButton || (event.link && (event.isUpcoming || event.isLive)) ? "justify-between" : "justify-start"} items-center pt-4 border-t border-gray-100 mt-auto`}
         >
           <span className="text-sm text-mulearn-gray-500 font-medium flex items-center">
             <Calendar className="w-4 h-4 mr-1" />
             {event.date} {event.time ? `• ${event.time}` : ""}
           </span>
-          {eventLink && event.isUpcoming && (
+          {eventLink && (event.isUpcoming || event.isLive) && (
             <Button variant="default" className="gap-1 px-4 py-2 text-sm rounded-full" asChild>
               <a href={eventLink} target="_blank" rel="noopener noreferrer">
                 Join <ExternalLink className="w-3.5 h-3.5" />
