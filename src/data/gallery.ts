@@ -478,7 +478,7 @@ export const galleryEvents: GalleryEvent[] = (
       location: "Gokulam Grand, Thiruvananthapuram, Kerala",
       coverImage: "/assets/gallery/quantum-tech-matrix/3.webp",
       description:
-        "Welcome to Quantum Tech Matrix — the premier launch event of the MuLearn Quantum Technologies IG. Join industry leaders, researchers, and students for a full-day summit featuring keynote sessions, interactive lab simulations, and the unveiling of Kerala's first quantum community.",
+        "Quantum Tech Matrix is the launch event of the Quantum Technologies Interest Group (IG), the first of its kind in Kerala. Sponsored by Altos and supported by ChatQLM and nanostuffs, and inaugurated by CP John, Hon Minister for Transport, Government of Kerala. Held at Gokulam Grand, Thiruvananthapuram, Kerala, bringing together students, researchers, faculty, and industry leaders under one roof for keynote sessions, interactive lab simulations, and the unveiling of Kerala's first quantum community.",
       media: [
         {
           type: "image",

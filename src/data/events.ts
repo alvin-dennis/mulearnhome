@@ -24,7 +24,7 @@ export const events: {
       title: "Quantum Tech Matrix",
       date: "Jul 12, 2026",
       description:
-        "Quantum Tech Matrix is the launch event of the MuLearn Quantum Technologies Interest Group (IG) — the first of its kind in Kerala. Held at Gokulam Grand, Thiruvananthapuram, Kerala, bringing together students, researchers, faculty, and industry leaders under one roof for keynote sessions, interactive lab simulations, and the unveiling of Kerala's first quantum community.",
+        "Quantum Tech Matrix is the launch event of the Quantum Technologies Interest Group (IG), the first of its kind in Kerala. Sponsored by Altos and supported by ChatQLM and nanostuffs, and inaugurated by CP John, Hon Minister for Transport, Government of Kerala. Held at Gokulam Grand, Thiruvananthapuram, Kerala, bringing together students, researchers, faculty, and industry leaders under one roof for keynote sessions, interactive lab simulations, and the unveiling of Kerala's first quantum community.",
       link: "",
     },
     {
