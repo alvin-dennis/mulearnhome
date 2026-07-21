@@ -1,6 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
+import Cookies from "js-cookie";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -26,7 +27,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
   useEffect(() => {
-    setRefreshToken(localStorage.getItem("refreshToken"));
+    setRefreshToken(Cookies.get("refreshToken") ?? null);
   }, []);
 
   return (
@@ -62,7 +63,7 @@ const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
             <Button
               variant="inverted"
               className="cursor-pointer mt-6 px-6 sm:px-8 md:px-10 py-3 sm:py-4 sm:text-lg md:text-lg gap-1 mx-auto md:mx-0"
-              onClick={() => redirect?.(refreshToken ? "/dashboard/home" : "/register")}
+              onClick={() => redirect?.(refreshToken ? "/dashboard" : "/register")}
             >
               Get Started
             </Button>

@@ -1,6 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
+import Cookies from "js-cookie";
 import { ArrowRight, Atom, Info } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -32,7 +33,7 @@ export default function Hero() {
   const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
   useEffect(() => {
-    setRefreshToken(localStorage.getItem("refreshToken"));
+    setRefreshToken(Cookies.get("refreshToken") ?? null);
   }, []);
 
   return (
@@ -103,7 +104,7 @@ export default function Hero() {
                 variant={"default"}
                 className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-lg md:text-lg"
                 onClick={() => {
-                  const path = refreshToken ? "/dashboard/home" : "/register";
+                  const path = refreshToken ? "/dashboard" : "/register";
                   redirect(path);
                 }}
               >

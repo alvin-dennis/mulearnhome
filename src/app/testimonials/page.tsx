@@ -1,5 +1,6 @@
 "use client";
 
+import Cookies from "js-cookie";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
@@ -21,7 +22,7 @@ export default function TestimonialsPage() {
   const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    setRefreshToken(localStorage.getItem("refreshToken"));
+    setRefreshToken(Cookies.get("refreshToken") ?? null);
   }, []);
 
   useEffect(() => {
@@ -145,7 +146,7 @@ export default function TestimonialsPage() {
               <Button
                 variant="inverted"
                 className="w-full sm:w-auto px-12 py-7 text-lg font-bold"
-                onClick={() => (refreshToken ? redirect("/dashboard/home") : redirect("/register"))}
+                onClick={() => (refreshToken ? redirect("/dashboard") : redirect("/register"))}
               >
                 Join the Community
               </Button>
