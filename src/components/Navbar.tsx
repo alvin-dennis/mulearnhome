@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import Cookies from "js-cookie";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -18,13 +17,11 @@ export default function Navbar() {
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<number | null>(null);
   const redirect = useRedirectToApp();
-  const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobileView(window.innerWidth <= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
-    setRefreshToken(Cookies.get("refreshToken") ?? null);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -35,10 +32,6 @@ export default function Navbar() {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen, isMobileView]);
-
-  useEffect(() => {
-    setRefreshToken(Cookies.get("refreshToken") ?? null);
-  }, []);
 
   const handleMouseEnter = (index: number, hasSubmenu: boolean) => {
     if (!isMobileView && hasSubmenu) setActiveSubmenu(index);
@@ -140,9 +133,9 @@ export default function Navbar() {
             <Button
               variant={"default"}
               className="w-full py-2 px-8 font-semibold text-lg"
-              onClick={() => (refreshToken ? redirect("/dashboard") : redirect("/login"))}
+              onClick={() => redirect("/")}
             >
-              {refreshToken ? "Dashboard" : "Login"}
+              Get Started
             </Button>
           </MotionDiv>
         </MotionDiv>
@@ -252,9 +245,9 @@ export default function Navbar() {
                     <Button
                       variant={"default"}
                       className="w-full p-4 mb-20"
-                      onClick={() => (refreshToken ? redirect("/dashboard") : redirect("/login"))}
+                      onClick={() => redirect("/")}
                     >
-                      {refreshToken ? "Dashboard" : "Login"}
+                      Get Started
                     </Button>
                   </MotionDiv>
                 </MotionDiv>
