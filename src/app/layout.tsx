@@ -37,7 +37,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const poppins = Bricolage_Grotesque({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
@@ -64,7 +64,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body
-        className={`${plusJakarta.variable} ${poppins.variable} ${retro.variable} font-sans antialiased`}
+        className={`${plusJakarta.variable} ${bricolage.variable} ${retro.variable} font-sans antialiased`}
       >
         <AnalyticsProvider>
           <Navbar />
