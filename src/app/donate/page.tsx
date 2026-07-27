@@ -9,8 +9,8 @@ const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
 
 export default function DonatePage() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 md:p-8 min-h-screen">
-      <div className="flex flex-col lg:justify-center lg:-mt-15 items-center lg:col-span-1">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 md:p-8">
+      <div className="flex flex-col items-center lg:col-span-1 lg:sticky lg:top-8 lg:self-start">
         <div className="p-4 text-center lg:text-left lg:max-w-md">
           <h1>
             Help us sustain

@@ -216,8 +216,8 @@ export default function DonationForm() {
 
   if (!mounted) {
     return (
-      <div className="w-full bg-mulearn-whitish rounded-lg border border-mulearn-gray-600/20 shadow-sm flex flex-col max-h-[calc(100vh-10rem)] overflow-hidden">
-        <div className="flex-1 p-8 flex items-center justify-center">
+      <div className="w-full bg-mulearn-whitish rounded-lg border border-mulearn-gray-600/20 shadow-sm">
+        <div className="p-8 flex items-center justify-center min-h-[20rem]">
           <div className="text-mulearn-gray-600">Loading form...</div>
         </div>
       </div>
@@ -227,8 +227,8 @@ export default function DonationForm() {
   // Founding Patron View
   if (showFoundingPatron) {
     return (
-      <div className="w-full bg-mulearn-whitish rounded-xl border border-mulearn-gray-600/20 shadow-xl flex flex-col max-h-[calc(100vh-5rem)] overflow-hidden">
-        <div className="flex-1 overflow-y-auto px-6 sm:px-8 py-8 min-h-0 bg-white">
+      <div className="w-full bg-mulearn-whitish rounded-xl border border-mulearn-gray-600/20 shadow-xl overflow-hidden">
+        <div className="px-6 sm:px-8 py-8 bg-white">
           {/* Header with Back Button */}
           <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
@@ -550,7 +550,7 @@ export default function DonationForm() {
 
         {/* Sticky Footer for Founding Patron */}
         {foundingPatronTier && (
-          <div className="border-t border-mulearn-gray-600/10 bg-white px-6 sm:px-8 py-5">
+          <div className="sticky bottom-0 border-t border-mulearn-gray-600/10 bg-white/95 backdrop-blur-sm px-6 sm:px-8 py-5">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Checkbox id="termsAccepted" {...register("termsAccepted")} className="mt-0.5" />
@@ -621,8 +621,8 @@ export default function DonationForm() {
 
   // Main Subscription View (Monthly/Annual)
   return (
-    <div className="w-full bg-mulearn-whitish rounded-xl border border-mulearn-gray-600/20 shadow-xl flex flex-col max-h-[calc(100vh-5rem)] overflow-hidden">
-      <div className="flex-1 overflow-y-auto px-6 sm:px-8 py-8 min-h-0 bg-white">
+    <div className="w-full bg-mulearn-whitish rounded-xl border border-mulearn-gray-600/20 shadow-xl overflow-hidden">
+      <div className="px-6 sm:px-8 py-8 bg-white">
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-mulearn-blackish">
@@ -965,7 +965,7 @@ export default function DonationForm() {
       </div>
 
       {/* Sticky Footer for Action */}
-      <div className="border-t border-mulearn-gray-600/10 bg-white px-6 sm:px-8 py-5">
+      <div className="sticky bottom-0 border-t border-mulearn-gray-600/10 bg-white/95 backdrop-blur-sm px-6 sm:px-8 py-5">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="flex items-start space-x-3">
             <Checkbox id="termsAccepted" {...register("termsAccepted")} className="mt-0.5" />
