@@ -13,7 +13,7 @@ const ClosedCareersCard = ({
 }: ClosedCareersCardProps) => {
   return (
     <Card className="relative w-[350px] rounded-2xl bg-mulearn-whitish shadow-lg border border-mulearn-greyish overflow-hidden hover:shadow-xl transition-all duration-300">
-      <div className="bg-mulearn p-4 text-center">
+      <div className="bg-mulearn p-4 pr-20 text-left">
         <h2 className="text-lg font-semibold text-mulearn-whitish">{organization}</h2>
       </div>
 
@@ -50,7 +50,7 @@ const ClosedCareersCard = ({
         )}
       </CardContent>
 
-      <Badge variant={"destructive"} className="absolute top-3 right-3">
+      <Badge variant={"destructive"} className="absolute top-3 right-3 z-10">
         Closed
       </Badge>
     </Card>

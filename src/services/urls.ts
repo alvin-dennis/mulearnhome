@@ -19,4 +19,5 @@ export const weeklyTwitchesRoutes = {
   officeHours: "/dashboard/media-content/office-hours/",
   saltMangoTree: "/dashboard/media-content/salt-mango-tree/",
   inspirationStation: "/dashboard/media-content/inspiration-station/",
+  grabYourSuperpowers: "/dashboard/media-content/grab-your-superpowers/",
 };

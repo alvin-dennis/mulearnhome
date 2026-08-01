@@ -1,6 +1,7 @@
 import axios from "axios";
 import { clientEnv } from "@/lib/env/env.client";
 import type {
+  GrabYourSuperpowersSession,
   OfficeHoursSession,
   WeeklyTwitchEpisode,
   WeeklyTwitchPagination,
@@ -47,6 +48,16 @@ export async function fetchInspirationStation(
 ): Promise<WeeklyTwitchResponse<WeeklyTwitchEpisode>> {
   const res = await axios.get(
     `${clientEnv.NEXT_PUBLIC_API_BASE_URL}${weeklyTwitchesRoutes.inspirationStation}`,
+    { params: buildParams(params) },
+  );
+  return res.data.response;
+}
+
+export async function fetchGrabYourSuperpowers(
+  params: WeeklyTwitchParams,
+): Promise<WeeklyTwitchResponse<GrabYourSuperpowersSession>> {
+  const res = await axios.get(
+    `${clientEnv.NEXT_PUBLIC_API_BASE_URL}${weeklyTwitchesRoutes.grabYourSuperpowers}`,
     { params: buildParams(params) },
   );
   return res.data.response;

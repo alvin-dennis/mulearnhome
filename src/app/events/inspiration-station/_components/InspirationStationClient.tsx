@@ -155,15 +155,6 @@ export default function InspirationStationClient() {
                 µLearn&apos;s storytelling-driven radio experience featuring real journeys,
                 insights, and life-changing moments from the community.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <Link href="https://discord.gg/wqwTYuCR" target="_blank" rel="noopener noreferrer">
-                  <Button variant={"default"} className="px-6 py-2.5 gap-2 font-semibold">
-                    <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
-                    Join
-                  </Button>
-                </Link>
-              </div>
             </div>
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">

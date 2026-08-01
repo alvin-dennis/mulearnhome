@@ -48,7 +48,10 @@ export default function EventCard({ event }: Props) {
             {event.date && (
               <Badge className="bg-mulearn-greyish/20 text-mulearn-trusty-blue hover:bg-mulearn-greyish/20 text-xs px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap shrink-0">
                 <Calendar className="w-3 h-3 shrink-0" />
-                <span className="whitespace-nowrap">{event.date}</span>
+                <span className="whitespace-nowrap">
+                  {event.date}
+                  {event.time ? ` • ${event.time}` : ""}
+                </span>
               </Badge>
             )}
           </div>
@@ -79,7 +82,10 @@ export default function EventCard({ event }: Props) {
               {event.date && (
                 <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
                   <Calendar className="w-4 h-4" />
-                  <span>{event.date}</span>
+                  <span>
+                    {event.date}
+                    {event.time ? ` • ${event.time}` : ""}
+                  </span>
                 </div>
               )}
               {event.image && (

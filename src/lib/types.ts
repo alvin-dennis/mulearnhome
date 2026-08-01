@@ -45,6 +45,7 @@ export interface Event {
   image?: string;
   isLive?: boolean;
   date?: string;
+  time?: string;
   link?: string;
 }
 
@@ -391,6 +392,19 @@ export interface WeeklyTwitchEpisode {
   zone?: "north" | "central" | "south" | null;
   date: string;
   description?: string | null;
+  link?: string | null;
+  status: "upcoming" | "ongoing" | "completed";
+}
+
+export interface GrabYourSuperpowersSession {
+  id: string;
+  title: string;
+  date: string;
+  time?: string | null;
+  description?: string | null;
+  performer?: string | null;
+  designation?: string | null;
+  campus: string;
   link?: string | null;
   status: "upcoming" | "ongoing" | "completed";
 }

@@ -36,7 +36,7 @@ interface GenericEventCardProps {
     tags?: string[];
     link?: string;
   };
-  variant?: "episode" | "office-hour" | "open-mic";
+  variant?: "episode" | "office-hour" | "open-mic" | "superpower";
   icon?: LucideIcon;
   igLabels?: Record<string, string>;
   actionButton?: {
@@ -192,7 +192,7 @@ export function GenericEventCard({
         <CardTitle className="text-xl mb-2 line-clamp-2">{title}</CardTitle>
 
         {/* Performer/Campus info */}
-        {event.performer && variant === "office-hour" && (
+        {event.performer && (variant === "office-hour" || variant === "superpower") && (
           <div className="text-sm text-mulearn-gray-400">
             <p className="flex items-start gap-1 leading-5">
               <User className="w-4 h-4 shrink-0 mt-0.5" /> {event.performer}
@@ -210,7 +210,7 @@ export function GenericEventCard({
             Featuring: {event.performer}
           </p>
         )}
-        {event.campus && variant === "episode" && (
+        {event.campus && (variant === "episode" || variant === "superpower") && (
           <p className="text-mulearn-gray-700 font-medium mb-3 flex items-start leading-5">
             <MapPin className="w-4 h-4 mr-2 mt-0.5 shrink-0 text-mulearn-gray-500" />
             {event.campus}

@@ -4,12 +4,59 @@ import Grid from "@/app/events/_components/Grid";
 import { MotionDiv } from "@/components/MuFramer";
 import { events } from "@/data/events";
 import type { Event } from "@/lib/types";
+import {
+  fetchGrabYourSuperpowers,
+  fetchInspirationStation,
+  fetchOfficeHours,
+  fetchSaltMangoTree,
+} from "@/services/weeklyTwitches";
+
+function formatDate(dateStr: string): string {
+  const d = new Date(`${dateStr}T00:00:00`);
+  return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+}
+
+const WEEKLY_TWITCH_FETCHERS: Record<
+  string,
+  (params: { status: "upcoming"; pageIndex: number; perPage: number }) => Promise<{
+    data: { date: string; time?: string | null }[];
+  }>
+> = {
+  "Office Hour": fetchOfficeHours,
+  "Inspiration Station Radio": fetchInspirationStation,
+  "Salt Mango Tree": fetchSaltMangoTree,
+  "Grab Your Superpowers": fetchGrabYourSuperpowers,
+};
+
+async function withNextSessionDate(weekly: Event[]): Promise<Event[]> {
+  return Promise.all(
+    weekly.map(async (item) => {
+      const fetcher = WEEKLY_TWITCH_FETCHERS[item.title];
+      if (!fetcher) return item;
+
+      try {
+        const { data } = await fetcher({ status: "upcoming", pageIndex: 1, perPage: 1 });
+        const next = data[0];
+        if (!next) return item;
+        return {
+          ...item,
+          date: formatDate(next.date),
+          time: next.time ? next.time.slice(0, 5) : undefined,
+        };
+      } catch {
+        return item;
+      }
+    }),
+  );
+}
 
 export default async function Events() {
   const { latestEvents, pastEvents, recurringEvents } = events;
 
+  const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
+
   const recurring: Record<string, Event[]> = {
-    weekly: recurringEvents.weekly,
+    weekly: weeklyWithDates,
     biweekly: recurringEvents.biweekly,
     monthly: recurringEvents.monthly,
   };

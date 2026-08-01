@@ -16,7 +16,7 @@ export const features = [
     image: cdnUrl("public/assets/landing/searching.png"),
     bgColor: "#ffb0a1",
     cta: "Find a Mentor",
-    url: "https://app.mulearn.org/dashboard/search?activetab=mentors",
+    url: "https://app.mulearn.org/dashboard/search/mentors",
   },
   {
     title: "Interest Groups",
@@ -32,7 +32,7 @@ export const features = [
     image: cdnUrl("public/assets/landing/Roadmap.png"),
     bgColor: "#ffe399",
     cta: "View Roadmaps",
-    url: "https://app.mulearn.org/dashboard/search?activetab=mulearners",
+    url: "https://app.mulearn.org/dashboard/mujourney",
   },
   {
     title: "Challenges",

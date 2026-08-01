@@ -155,13 +155,6 @@ export default function SaltMangoTreeClient() {
                 can&apos;t avoid it! Since avoiding English isn&apos;t an option, let&apos;s work
                 together to improve our skills by practicing.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
-                <Button variant={"default"} className="px-6 py-2.5 md:px-8 md:py-3 gap-2">
-                  <PlayCircle className="w-4 h-4 md:w-5 md:h-5" />
-                  Join Session
-                </Button>
-              </div>
             </div>
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
