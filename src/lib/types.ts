@@ -379,6 +379,7 @@ export interface OfficeHoursSession {
   designation?: string | null;
   description?: string | null;
   date: string;
+  time?: string | null;
   link?: string | null;
   interest_groups: string[] | null;
   poster_thumbnail?: string | null;
@@ -391,6 +392,7 @@ export interface WeeklyTwitchEpisode {
   campus: string;
   zone?: "north" | "central" | "south" | null;
   date: string;
+  time?: string | null;
   description?: string | null;
   link?: string | null;
   status: "upcoming" | "ongoing" | "completed";
