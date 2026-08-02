@@ -45,7 +45,6 @@ export interface Event {
   image?: string;
   isLive?: boolean;
   date?: string;
-  time?: string;
   link?: string;
 }
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
 import Link from "next/link";
@@ -22,6 +23,10 @@ type ViewType = "upcoming" | "previous";
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr + "T00:00:00");
   return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+}
+
+function formatTime(timeStr?: string | null): string | undefined {
+  return timeStr ? format(parse(timeStr.slice(0, 5), "HH:mm", new Date()), "h:mm a") : undefined;
 }
 
 const EMPTY_PAGINATION: WeeklyTwitchPagination = {
@@ -110,6 +115,7 @@ export default function InspirationStationClient() {
     campus: episode.campus,
     zone: episode.zone ? episode.zone.charAt(0).toUpperCase() + episode.zone.slice(1) : undefined,
     date: formatDate(episode.date),
+    time: formatTime(episode.time),
     description: episode.description || "",
     isUpcoming: episode.status === "upcoming",
     isLive: episode.status === "ongoing",

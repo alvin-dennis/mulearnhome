@@ -1,5 +1,6 @@
 "use client";
 
+import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -20,6 +21,10 @@ type ViewType = "upcoming" | "previous";
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr + "T00:00:00");
   return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+}
+
+function formatTime(timeStr?: string | null): string | undefined {
+  return timeStr ? format(parse(timeStr.slice(0, 5), "HH:mm", new Date()), "h:mm a") : undefined;
 }
 
 const EMPTY_PAGINATION: WeeklyTwitchPagination = {
@@ -121,6 +126,7 @@ export default function OfficeHoursClient() {
     designation: session.designation || "",
     description: session.description || "",
     date: formatDate(session.date),
+    time: formatTime(session.time),
     interestGroups: (session.interest_groups ?? []).map((ig) => ig.toLowerCase()),
     isUpcoming: session.status === "upcoming",
     isLive: session.status === "ongoing",

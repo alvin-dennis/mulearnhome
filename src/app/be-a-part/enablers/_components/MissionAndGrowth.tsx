@@ -9,6 +9,7 @@ import { MotionDiv, MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import { enablers } from "@/data/enablers";
+import { clientEnv } from "@/lib/env/env.client";
 import type { Counts } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 import { fetchPublicProfileImage } from "@/services/profile";
@@ -154,7 +155,7 @@ export default function MissionandGrowth() {
               {enablers.faculties.slice(0, displayedCount).map((c) => (
                 <Link
                   key={c.muid}
-                  href={`${process.env.NEXT_PUBLIC_APP_URL}profile/${c.muid}`}
+                  href={`${clientEnv.NEXT_PUBLIC_APP_URL}profile/${c.muid}`}
                   className="flex flex-col items-center gap-1.5 group"
                 >
                   <div className="rounded-full ring-2 ring-mulearn transition-all relative h-20 w-20">

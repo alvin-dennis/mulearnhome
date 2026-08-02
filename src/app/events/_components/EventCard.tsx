@@ -45,15 +45,6 @@ export default function EventCard({ event }: Props) {
             <h3 className="text-mulearn transition-colors duration-300 line-clamp-2 text-xl">
               {event.title}
             </h3>
-            {event.date && (
-              <Badge className="bg-mulearn-greyish/20 text-mulearn-trusty-blue hover:bg-mulearn-greyish/20 text-xs px-2 py-1 rounded-full flex items-center gap-1 whitespace-nowrap shrink-0">
-                <Calendar className="w-3 h-3 shrink-0" />
-                <span className="whitespace-nowrap">
-                  {event.date}
-                  {event.time ? ` • ${event.time}` : ""}
-                </span>
-              </Badge>
-            )}
           </div>
 
           <p className="text-mulearn-blackish text-sm leading-relaxed overflow-hidden line-clamp-4">
@@ -82,10 +73,7 @@ export default function EventCard({ event }: Props) {
               {event.date && (
                 <div className="flex items-center gap-2 text-mulearn-blackish text-sm mb-2">
                   <Calendar className="w-4 h-4" />
-                  <span>
-                    {event.date}
-                    {event.time ? ` • ${event.time}` : ""}
-                  </span>
+                  <span>{event.date}</span>
                 </div>
               )}
               {event.image && (

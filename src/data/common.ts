@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { clientEnv } from "@/lib/env/env.client";
 
 export const navItems = [
   {
@@ -77,7 +78,7 @@ export const navItems = [
   },
   {
     label: "Mentorship",
-    href: "https://app.mulearn.org/dashboard/search/mentors",
+    href: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/search/mentors`,
     submenu: null,
   },
   {
@@ -99,7 +100,7 @@ export const navItems = [
         },
         {
           label: "Learning Paths",
-          href: "https://app.mulearn.org/dashboard/mujourney",
+          href: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/mujourney`,
         },
       ],
     },
@@ -140,7 +141,7 @@ export const footer = [
       },
       {
         title: "Mentors",
-        url: "https://app.mulearn.org/dashboard/search/mentors",
+        url: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/search/mentors`,
       },
     ],
   },

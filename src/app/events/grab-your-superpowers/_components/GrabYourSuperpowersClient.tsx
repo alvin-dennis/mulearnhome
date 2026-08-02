@@ -1,5 +1,6 @@
 "use client";
 
+import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -22,7 +23,7 @@ function formatDate(dateStr: string): string {
 }
 
 function formatTime(timeStr?: string | null): string | undefined {
-  return timeStr ? timeStr.slice(0, 5) : undefined;
+  return timeStr ? format(parse(timeStr.slice(0, 5), "HH:mm", new Date()), "h:mm a") : undefined;
 }
 
 const EMPTY_PAGINATION: WeeklyTwitchPagination = {
