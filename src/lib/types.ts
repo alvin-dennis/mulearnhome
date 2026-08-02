@@ -365,7 +365,7 @@ export interface WeeklyTwitchPagination {
 }
 
 export interface WeeklyTwitchParams {
-  status?: "upcoming" | "ongoing" | "completed";
+  status?: "upcoming" | "ongoing" | "completed" | Array<"upcoming" | "ongoing" | "completed">;
   search?: string;
   pageIndex?: number;
   perPage?: number;

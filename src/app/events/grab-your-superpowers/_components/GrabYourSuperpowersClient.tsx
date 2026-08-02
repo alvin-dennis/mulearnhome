@@ -39,32 +39,15 @@ export default function GrabYourSuperpowersClient() {
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(1);
   const [sessions, setSessions] = useState<GrabYourSuperpowersSession[]>([]);
-  const [ongoingSessions, setOngoingSessions] = useState<GrabYourSuperpowersSession[]>([]);
   const [pagination, setPagination] = useState<WeeklyTwitchPagination>(EMPTY_PAGINATION);
   const [error, setError] = useState(false);
 
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
-    if (view !== "upcoming") {
-      setOngoingSessions([]);
-      return;
-    }
-
-    fetchGrabYourSuperpowers({
-      status: "ongoing",
-      search: debouncedSearch || undefined,
-      pageIndex: 1,
-      perPage: 6,
-    })
-      .then(({ data }) => setOngoingSessions(data))
-      .catch(() => setOngoingSessions([]));
-  }, [view, debouncedSearch]);
-
-  useEffect(() => {
     setError(false);
     fetchGrabYourSuperpowers({
-      status: view === "previous" ? "completed" : "upcoming",
+      status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
       search: debouncedSearch || undefined,
       pageIndex: page,
       perPage: 6,
@@ -104,9 +87,7 @@ export default function GrabYourSuperpowersClient() {
     link: session.link || undefined,
   });
 
-  const liveEvents = view === "upcoming" ? ongoingSessions.map((s, i) => toEvent(s, i)) : [];
-
-  const events = [...liveEvents, ...sessions.map((s, i) => toEvent(s, liveEvents.length + i))];
+  const events = sessions.map((s, i) => toEvent(s, i));
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },

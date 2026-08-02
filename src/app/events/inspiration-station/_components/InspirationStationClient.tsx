@@ -45,32 +45,15 @@ export default function InspirationStationClient() {
   const [page, setPage] = useState(1);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [episodes, setEpisodes] = useState<WeeklyTwitchEpisode[]>([]);
-  const [ongoingEpisodes, setOngoingEpisodes] = useState<WeeklyTwitchEpisode[]>([]);
   const [pagination, setPagination] = useState<WeeklyTwitchPagination>(EMPTY_PAGINATION);
   const [error, setError] = useState(false);
 
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
-    if (view !== "upcoming") {
-      setOngoingEpisodes([]);
-      return;
-    }
-
-    fetchInspirationStation({
-      status: "ongoing",
-      search: debouncedSearch || undefined,
-      pageIndex: 1,
-      perPage: 6,
-    })
-      .then(({ data }) => setOngoingEpisodes(data))
-      .catch(() => setOngoingEpisodes([]));
-  }, [view, debouncedSearch]);
-
-  useEffect(() => {
     setError(false);
     fetchInspirationStation({
-      status: view === "previous" ? "completed" : "upcoming",
+      status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
       search: debouncedSearch || undefined,
       pageIndex: page,
       perPage: 6,
@@ -123,13 +106,7 @@ export default function InspirationStationClient() {
   });
 
   const filteredEpisodes = filterByZone(episodes);
-  const liveEvents =
-    view === "upcoming" ? filterByZone(ongoingEpisodes).map((e, i) => toEvent(e, i)) : [];
-
-  const events = [
-    ...liveEvents,
-    ...filteredEpisodes.map((e, i) => toEvent(e, liveEvents.length + i)),
-  ];
+  const events = filteredEpisodes.map((e, i) => toEvent(e, i));
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },

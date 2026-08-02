@@ -13,12 +13,16 @@ interface WeeklyTwitchResponse<T> {
   pagination: WeeklyTwitchPagination;
 }
 
-function buildParams(params: WeeklyTwitchParams): Record<string, string> {
-  const out: Record<string, string> = {};
-  if (params.status) out.status = params.status;
-  if (params.search) out.search = params.search;
-  if (params.pageIndex !== undefined) out.pageIndex = String(params.pageIndex);
-  if (params.perPage) out.perPage = String(params.perPage);
+function buildParams(params: WeeklyTwitchParams): URLSearchParams {
+  const out = new URLSearchParams();
+  if (params.status) {
+    for (const status of Array.isArray(params.status) ? params.status : [params.status]) {
+      out.append("status", status);
+    }
+  }
+  if (params.search) out.append("search", params.search);
+  if (params.pageIndex !== undefined) out.append("pageIndex", String(params.pageIndex));
+  if (params.perPage) out.append("perPage", String(params.perPage));
   return out;
 }
 
