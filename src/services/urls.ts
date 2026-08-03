@@ -21,3 +21,7 @@ export const weeklyTwitchesRoutes = {
   inspirationStation: "/dashboard/media-content/inspiration-station/",
   grabYourSuperpowers: "/dashboard/media-content/grab-your-superpowers/",
 };
+
+export const publicEventsRoutes = {
+  getEvents: "/public/events/",
+};

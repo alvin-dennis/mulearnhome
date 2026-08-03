@@ -409,3 +409,63 @@ export interface GrabYourSuperpowersSession {
   link?: string | null;
   status: "upcoming" | "ongoing" | "completed";
 }
+
+export interface PublicEventVenue {
+  venue_type: "physical" | "online" | "hybrid" | string;
+  venue_address: string | null;
+  venue_city: string | null;
+  venue_maps_url: string | null;
+  venue_online_link: string | null;
+  venue_platform: string | null;
+}
+
+export interface PublicEventOrganizer {
+  organiser_type: string;
+  organiser_ig: {
+    id: string;
+    name: string;
+    code: string;
+  } | null;
+  organiser_campus: {
+    id: string;
+    title: string;
+    code: string;
+  } | null;
+  organiser_company: any | null;
+  organiser_ci_id: any | null;
+}
+
+export interface PublicEvent {
+  id: string;
+  title: string;
+  slug: string;
+  cover_image: string | null;
+  description?: string | null;
+  status: string;
+  scope: string;
+  event_scope: string;
+  event_type: string;
+  start_datetime: string;
+  end_datetime: string;
+  venue: PublicEventVenue | null;
+  organizer: PublicEventOrganizer | null;
+  is_featured: boolean;
+  is_collaboration: boolean;
+  interest_count: number;
+  min_karma: number | null;
+  tags: string[];
+  user_limit: number | null;
+  category_id: string | null;
+  category_name: string | null;
+  viewer_interest_status: string | null;
+}
+
+export interface PublicEventsResponse {
+  data: PublicEvent[];
+  pagination: {
+    count: number;
+    totalPages: number;
+    isFirst: boolean;
+    isLast: boolean;
+  };
+}

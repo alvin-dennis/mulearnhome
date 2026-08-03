@@ -1,28 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
-import type { Counts } from "@/lib/types";
+import { useLandingStats } from "@/services/useLandingStats";
 
 export default function CareersStats() {
-  const [counts, setCounts] = useState<Counts | null>(null);
-  const socketRef = useRef<WebSocket | null>(null);
+  const { counts, hasError } = useLandingStats();
 
-  useEffect(() => {
-    if (!socketRef.current) {
-      const socket = new WebSocket("wss://mulearn.org/ws/v1/public/landing-stats/");
-      socketRef.current = socket;
-      const handleMessage = (event: MessageEvent) => {
-        setCounts(JSON.parse(event.data) as Counts);
-      };
-      socket.addEventListener("message", handleMessage);
-      return () => {
-        socket.removeEventListener("message", handleMessage);
-        socket.close();
-        socketRef.current = null;
-      };
-    }
-  }, []);
+  if (hasError || !counts) {
+    return null;
+  }
 
   const companyCount =
     counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 100;

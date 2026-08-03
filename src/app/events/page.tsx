@@ -3,7 +3,9 @@ import EventCarousel from "@/app/events/_components/EventCarousel";
 import Grid from "@/app/events/_components/Grid";
 import { MotionDiv } from "@/components/MuFramer";
 import { events } from "@/data/events";
-import type { Event } from "@/lib/types";
+import { clientEnv } from "@/lib/env/env.client";
+import type { Event, PublicEvent } from "@/lib/types";
+import { fetchPublicEvents } from "@/services/publicEvents";
 import {
   fetchGrabYourSuperpowers,
   fetchInspirationStation,
@@ -14,6 +16,40 @@ import {
 function formatDate(dateStr: string): string {
   const d = new Date(`${dateStr}T00:00:00`);
   return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+}
+
+function mapPublicEventToEvent(item: PublicEvent): Event {
+  const start = new Date(item.start_datetime);
+  const end = new Date(item.end_datetime);
+
+  const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "short", year: "numeric" };
+  const startFormatted = start.toLocaleDateString("en-IN", options);
+  const endFormatted = end.toLocaleDateString("en-IN", options);
+
+  let dateRange = startFormatted;
+  if (startFormatted !== endFormatted) {
+    if (start.getFullYear() === end.getFullYear()) {
+      const startMonthDay = start.toLocaleDateString("en-IN", { day: "2-digit", month: "short" });
+      dateRange = `${startMonthDay} - ${endFormatted}`;
+    } else {
+      dateRange = `${startFormatted} - ${endFormatted}`;
+    }
+  }
+
+  const description =
+    item.description ||
+    `Event Category: ${item.category_name || item.event_type || "General"}. Organised by ${
+      item.organizer?.organiser_ig?.name || item.organizer?.organiser_campus?.title || "MuLearn"
+    }.`;
+
+  return {
+    title: item.title,
+    description: description,
+    image: item.cover_image || undefined,
+    isLive: item.status === "ongoing",
+    date: dateRange,
+    link: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/event/${item.id}`,
+  };
 }
 
 const WEEKLY_TWITCH_FETCHERS: Record<
@@ -51,7 +87,18 @@ async function withNextSessionDate(weekly: Event[]): Promise<Event[]> {
 }
 
 export default async function Events() {
-  const { latestEvents, pastEvents, recurringEvents } = events;
+  const { pastEvents, recurringEvents } = events;
+
+  let latestEvents: Event[] = [];
+  try {
+    const publicEventsData = await fetchPublicEvents();
+    if (publicEventsData && Array.isArray(publicEventsData.data)) {
+      latestEvents = publicEventsData.data.map(mapPublicEventToEvent);
+    }
+  } catch (error) {
+    console.error("Failed to fetch public events:", error);
+    latestEvents = events.latestEvents;
+  }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
 
@@ -91,7 +138,6 @@ export default async function Events() {
   const allEventsSections: [string, Event[]][] = [
     ["latest", latestEvents],
     ...recurringEventsEntries,
-    ["past", pastEvents],
   ];
 
   return (
