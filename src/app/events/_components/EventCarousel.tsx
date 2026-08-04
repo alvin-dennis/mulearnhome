@@ -67,8 +67,8 @@ export default function EventCarousel({ events, rtl = false }: Props) {
         }}
         className="!pb-12"
       >
-        {events.map((event) => (
-          <SwiperSlide key={event.title} dir="ltr">
+        {events.map((event, i) => (
+          <SwiperSlide key={`${event.title}-${event.date || i}`} dir="ltr">
             <MotionDiv
               layout={false}
               initial={{ opacity: 0, y: 20 }}

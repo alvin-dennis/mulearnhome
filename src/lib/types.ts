@@ -460,12 +460,17 @@ export interface PublicEvent {
   viewer_interest_status: string | null;
 }
 
-export interface PublicEventsResponse {
-  data: PublicEvent[];
-  pagination: {
-    count: number;
-    totalPages: number;
-    isFirst: boolean;
-    isLast: boolean;
-  };
+export interface PublicEventsParams {
+  status?: "upcoming" | "ongoing" | "completed" | Array<"upcoming" | "ongoing" | "completed">;
+  start_date?: string;
+  end_date?: string;
+  event_type?: string;
+  scope?: string;
+  ig_id?: string;
+  campus_id?: string;
+  cluster?: string;
+  is_featured?: boolean;
+  tags?: string;
+  search?: string;
+  sortBy?: string;
 }

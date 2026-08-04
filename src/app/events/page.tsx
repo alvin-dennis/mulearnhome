@@ -21,6 +21,7 @@ function formatDate(dateStr: string): string {
 function mapPublicEventToEvent(item: PublicEvent): Event {
   const start = new Date(item.start_datetime);
   const end = new Date(item.end_datetime);
+  const now = new Date();
 
   const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "short", year: "numeric" };
   const startFormatted = start.toLocaleDateString("en-IN", options);
@@ -46,7 +47,7 @@ function mapPublicEventToEvent(item: PublicEvent): Event {
     title: item.title,
     description: description,
     image: item.cover_image || undefined,
-    isLive: item.status === "ongoing",
+    isLive: now >= start && now <= end,
     date: dateRange,
     link: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/event/${item.id}`,
   };
@@ -87,25 +88,36 @@ async function withNextSessionDate(weekly: Event[]): Promise<Event[]> {
 }
 
 export default async function Events() {
-  const { pastEvents, recurringEvents } = events;
+  const { recurringEvents } = events;
 
-  let latestEvents: Event[] = [];
+  let ongoingEvents: Event[] = [];
+  let upcomingEvents: Event[] = [];
+  let completedEvents: Event[] = [];
+
   try {
-    const publicEventsData = await fetchPublicEvents();
-    if (publicEventsData && Array.isArray(publicEventsData.data)) {
-      latestEvents = publicEventsData.data.map(mapPublicEventToEvent);
+    const [ongoingData, upcomingData, completedData] = await Promise.all([
+      fetchPublicEvents({ status: "ongoing" }),
+      fetchPublicEvents({ status: "upcoming" }),
+      fetchPublicEvents({ status: "completed" }),
+    ]);
+
+    if (ongoingData && Array.isArray(ongoingData)) {
+      ongoingEvents = ongoingData.map(mapPublicEventToEvent);
+    }
+    if (upcomingData && Array.isArray(upcomingData)) {
+      upcomingEvents = upcomingData.map(mapPublicEventToEvent);
+    }
+    if (completedData && Array.isArray(completedData)) {
+      completedEvents = completedData.map(mapPublicEventToEvent);
     }
   } catch (error) {
     console.error("Failed to fetch public events:", error);
-    latestEvents = events.latestEvents;
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
 
   const recurring: Record<string, Event[]> = {
     weekly: weeklyWithDates,
-    biweekly: recurringEvents.biweekly,
-    monthly: recurringEvents.monthly,
   };
 
   const fadeInUp: Variants = {
@@ -120,6 +132,7 @@ export default async function Events() {
   const formatSectionTitle = (type: string) => {
     const titles: Record<string, string> = {
       latest: "Ongoing Events",
+      upcoming: "Upcoming Events",
       weekly: "Weekly Twitch Events",
       biweekly: "Biweekly Events",
       monthly: "Monthly Events",
@@ -135,10 +148,17 @@ export default async function Events() {
 
   const shouldUseCarousel = (evs: Event[]) => evs.length >= 3;
 
-  const allEventsSections: [string, Event[]][] = [
-    ["latest", latestEvents],
-    ...recurringEventsEntries,
-  ];
+  const allEventsSections: [string, Event[]][] = [];
+  if (ongoingEvents.length > 0) {
+    allEventsSections.push(["latest", ongoingEvents]);
+  }
+  if (upcomingEvents.length > 0) {
+    allEventsSections.push(["upcoming", upcomingEvents]);
+  }
+  allEventsSections.push(...recurringEventsEntries);
+  if (completedEvents.length > 0) {
+    allEventsSections.push(["past", completedEvents]);
+  }
 
   return (
     <section className="px-6 py-8 md:px-12 min-h-screen">

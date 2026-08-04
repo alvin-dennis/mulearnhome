@@ -47,6 +47,16 @@ const nextConfig: NextConfig = {
         hostname: "dev.mulearn.org",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.madhyamam.com",
+        pathname: "/**",
+      },
     ],
   },
 
