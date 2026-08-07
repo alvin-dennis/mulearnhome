@@ -41,7 +41,7 @@ export default function WhereItGoes() {
         </MotionDiv>
       </div>
 
-      <div className="mx-auto mt-16 grid max-w-7xl grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mx-auto mt-16 grid max-w-7xl grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
         {whereItGoesCategories.map((category, i) => {
           const Icon = category.icon;
           return (

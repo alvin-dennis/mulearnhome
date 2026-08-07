@@ -207,7 +207,7 @@ export default function DonationForm() {
       className="w-full scroll-mt-24 px-4 py-20 sm:px-6 md:px-12 lg:px-24 xl:px-40"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Tabs value={donorType} onValueChange={handleDonorTypeChange}>
             <TabsList className="grid grid-cols-2 rounded-full bg-mulearn-greyish/10 p-1">
               <TabsTrigger

@@ -62,29 +62,14 @@ export default function DonateHero() {
         <MotionDiv
           custom={1}
           variants={fadeInUp}
-          className="relative mx-auto aspect-4/3 w-full max-w-lg lg:mx-0 lg:max-w-none"
+          className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
         >
-          <div className="absolute inset-8 rounded-[3rem] bg-mulearn/15" aria-hidden="true" />
           <MuImage
             src={heroImg}
             alt="µLearn community members collaborating"
-            width={420}
-            height={520}
-            className="absolute right-0 top-0 h-[70%] w-[62%] rounded-3xl object-cover shadow-xl"
-          />
-          <MuImage
-            src={heroImg}
-            alt="µLearn community members learning together"
-            width={220}
-            height={220}
-            className="absolute right-[38%] top-[8%] h-[28%] w-[30%] rounded-2xl border-4 border-mulearn-whitish object-cover shadow-lg"
-          />
-          <MuImage
-            src={heroImg}
-            alt="µLearn peer learning circle working on laptops"
-            width={320}
-            height={260}
-            className="absolute bottom-0 left-0 h-[52%] w-[58%] rounded-3xl object-cover shadow-xl"
+            width={600}
+            height={480}
+            className="h-auto w-full rounded-3xl object-cover shadow-xl"
           />
         </MotionDiv>
       </div>

@@ -22,7 +22,7 @@ export default function TierCard({ tier, isSelected, cadenceLabel, onSelect }: T
       onClick={onSelect}
       onKeyDown={(e) => e.key === "Enter" && onSelect()}
       className={cn(
-        "relative flex flex-col items-center rounded-xl border p-5 text-center transition-all duration-200 cursor-pointer",
+        "relative flex h-full flex-col items-center rounded-xl border p-5 text-center transition-all duration-200 cursor-pointer",
         isSelected
           ? "border-mulearn bg-mulearn/5 ring-2 ring-mulearn/30"
           : "border-mulearn-gray-600/20 bg-white hover:border-mulearn/40",
@@ -44,7 +44,7 @@ export default function TierCard({ tier, isSelected, cadenceLabel, onSelect }: T
       <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-mulearn-gray-600/60">
         {cadenceLabel}
       </p>
-      <p className="mt-2 text-sm leading-snug text-mulearn-gray-600">{tier.description}</p>
+      <p className="mt-2 flex-1 text-sm leading-snug text-mulearn-gray-600">{tier.description}</p>
 
       <Button type="button" variant="outline" size="sm" className="mt-4 w-full rounded-full">
         {isSelected ? (

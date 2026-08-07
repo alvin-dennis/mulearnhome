@@ -1,7 +1,6 @@
 "use client";
 
-import { ArrowRight, Heart } from "lucide-react";
-import Link from "next/link";
+import { Heart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import type { Counts } from "@/lib/types";
@@ -29,6 +28,15 @@ export default function TrustBar() {
   const learnersCount = counts?.members ?? 60000;
   const campusCount =
     counts?.org_type_counts?.find((o) => o.org_type === "College")?.org_count ?? 500;
+  const learningCircleCount = counts?.learning_circle_count ?? 1000;
+  const interestGroupCount = counts?.ig_count ?? 30;
+
+  const stats = [
+    { value: learnersCount, label: "Learners empowered" },
+    { value: campusCount, label: "Campus communities" },
+    { value: learningCircleCount, label: "Learning circles" },
+    { value: interestGroupCount, label: "Interest groups" },
+  ];
 
   return (
     <section className="w-full border-t border-mulearn-gray-600/10 bg-mulearn-whitish px-4 py-12 sm:px-6 md:px-12 lg:px-24 xl:px-40">
@@ -40,36 +48,21 @@ export default function TrustBar() {
               Transparent. Accountable. Community first.
             </h4>
             <p className="mt-1 text-sm text-mulearn-gray-600">
-              We share our updates, finances, and impact reports openly with our community. Because
-              trust builds everything we do.
+              We share our updates, finances, and impact openly with our community. Because trust
+              builds everything we do.
             </p>
-            <Link
-              href="/report"
-              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-mulearn hover:underline"
-            >
-              View our transparency reports
-              <ArrowRight className="size-3.5" />
-            </Link>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-10">
-          <div className="text-center">
-            <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
-              <CountUp end={learnersCount} duration={2.5} separator="," />+
-            </p>
-            <p className="text-sm text-mulearn-gray-600">Learners empowered</p>
-          </div>
-          <div className="text-center">
-            <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
-              <CountUp end={campusCount} duration={2.5} separator="," />+
-            </p>
-            <p className="text-sm text-mulearn-gray-600">Campus communities</p>
-          </div>
-          <div className="text-center">
-            <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">All</p>
-            <p className="text-sm text-mulearn-gray-600">For everyone, always</p>
-          </div>
+        <div className="grid grid-cols-2 gap-x-10 gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
+                <CountUp end={stat.value} duration={2.5} separator="," />+
+              </p>
+              <p className="text-sm text-mulearn-gray-600">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
