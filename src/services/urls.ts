@@ -25,3 +25,8 @@ export const weeklyTwitchesRoutes = {
 export const publicEventsRoutes = {
   getEvents: "/public/events/",
 };
+
+export const careerLabRoutes = {
+  ongoing: "/public/career-lab/ongoing/",
+  previous: "/public/career-lab/previous/",
+};

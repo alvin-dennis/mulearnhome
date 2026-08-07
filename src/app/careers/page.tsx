@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,75 +9,129 @@ import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import LogoLoop from "@/components/ui/LogoLoop";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { companies } from "@/data/company";
-import type { Company, NewHiringRole, PreviousHiringRole } from "@/lib/types";
+import type { Company, OngoingHiring, PaginationMeta, PreviousHiring } from "@/lib/types";
+import {
+  fetchOngoingHiringPage,
+  fetchPreviousHiringPage,
+  type PaginatedCareersResponse,
+} from "@/services/careers";
 import { cdnUrl } from "@/services/cdn";
 
+type TabValue = "ongoing" | "previous";
+
 export default function Careers() {
-  const [newHiring, setNewHiring] = useState<NewHiringRole[]>([]);
-  const [previousHiring, setPreviousHiring] = useState<PreviousHiringRole[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const [activeTab, setActiveTab] = useState<TabValue>("ongoing");
+  const [ongoingPage, setOngoingPage] = useState(1);
+  const [previousPage, setPreviousPage] = useState(1);
+  const [ongoingData, setOngoingData] = useState<OngoingHiring[]>([]);
+  const [previousData, setPreviousData] = useState<PreviousHiring[]>([]);
+  const [ongoingPagination, setOngoingPagination] = useState<PaginationMeta | null>(null);
+  const [previousPagination, setPreviousPagination] = useState<PaginationMeta | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const companyData: Company[] = companies;
 
+  const ITEMS_PER_PAGE = 12;
+
+  const loadOngoing = async (page: number) => {
+    try {
+      const result: PaginatedCareersResponse<OngoingHiring> = await fetchOngoingHiringPage(
+        page,
+        ITEMS_PER_PAGE,
+      );
+      setOngoingData(result.data);
+      setOngoingPagination(result.pagination);
+    } catch (err) {
+      console.error("Failed to load ongoing hiring:", err);
+    }
+  };
+
+  const loadPrevious = async (page: number) => {
+    try {
+      const result: PaginatedCareersResponse<PreviousHiring> = await fetchPreviousHiringPage(
+        page,
+        ITEMS_PER_PAGE,
+      );
+      setPreviousData(result.data);
+      setPreviousPagination(result.pagination);
+    } catch (err) {
+      console.error("Failed to load previous hiring:", err);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get("https://opensheet.elk.sh/1hD8IsJvvQ-aJuIjJlPMfwFOkFKo5TRveUeq0rY2SlWk/careersOld")
-      .then((response) => {
-        setPreviousHiring(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    axios
-      .get("https://opensheet.elk.sh/1hD8IsJvvQ-aJuIjJlPMfwFOkFKo5TRveUeq0rY2SlWk/careersNew")
-      .then((response) => {
-        setNewHiring(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    let isMounted = true;
+
+    const load = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        await Promise.all([loadOngoing(1), loadPrevious(1)]);
+        setOngoingPage(1);
+        setPreviousPage(1);
+      } catch {
+        if (isMounted) setError("Failed to load career listings.");
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    load();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  const totalPages = Math.ceil(previousHiring.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = previousHiring.slice(startIndex, endIndex);
-
-  const goToPage = (page: number) => {
-    setCurrentPage(page);
-    document.getElementById("previous-hiring")?.scrollIntoView({
+  const handleOngoingPage = (page: number) => {
+    setOngoingPage(page);
+    loadOngoing(page);
+    document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
 
-  const goToPrevious = () => {
-    if (currentPage > 1) goToPage(currentPage - 1);
+  const handlePreviousPage = (page: number) => {
+    setPreviousPage(page);
+    loadPrevious(page);
+    document.getElementById("careers-listing")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
-  const goToNext = () => {
-    if (currentPage < totalPages) goToPage(currentPage + 1);
-  };
-
-  const getPageNumbers = () => {
-    const pages = [];
+  const getPageNumbers = (totalPages: number, currentPage: number) => {
+    const pages: any[] = [];
     for (let i = 1; i <= totalPages; i++) {
       const showPage =
         i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1);
-
       const showEllipsis =
         (i === currentPage - 2 && currentPage > 3) ||
         (i === currentPage + 2 && currentPage < totalPages - 2);
 
       if (showEllipsis) {
-        pages.push({ type: "ellipsis", key: `ellipsis-${i}` });
+        if (!pages.length || pages[pages.length - 1].type !== "ellipsis") {
+          pages.push({ type: "ellipsis", key: `ellipsis-${i}` });
+        }
       } else if (showPage) {
         pages.push({ type: "page", number: i, key: i });
       }
     }
     return pages;
   };
+
+  const currentOngoing = ongoingData;
+  const currentPrevious = previousData;
 
   return (
     <div className="min-h-screen">
@@ -135,120 +188,228 @@ export default function Careers() {
         />
       </div>
 
-      {newHiring && newHiring.length > 0 && (
-        <div className="mx-auto mt-30 block max-w-[1300px]">
-          <div className="m-8">
-            <h2 className="mt-8 text-center text-mulearn">New Hiring Calls</h2>
-            <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
-              Unlock your potential and accelerate your career growth with the endless opportunities
-              available on Career Labs
-            </p>
-            <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-              {newHiring.map((role) => (
-                <CareersCard
-                  key={role.role}
-                  logo={role.logo}
-                  role={role.role}
-                  remuneration={role.remuneration}
-                  vacancies={role.vacancies}
-                  location={role.location}
-                  lastdate={role.lastdate}
-                  applylink={role.applylink}
-                  jdlink={role.jdlink}
-                  duration={role.duration}
-                  extraField={role.extrafieldname}
-                  extraContent={role.extrafieldvalue}
-                  extraButton={role.extrafieldlink}
-                  organization={role.organization}
-                />
-              ))}
-            </div>
-          </div>
+      {error && (
+        <div className="mx-auto mt-12 max-w-[1300px] px-4">
+          <p className="text-center text-red-600">{error}</p>
         </div>
       )}
 
-      <div id="previous-hiring" className="mx-auto mt-30 block max-w-[1300px]">
-        <div className="m-8">
-          <h2 className="mt-8 text-center text-mulearn">Previous Hiring Calls</h2>
-          <p className="mx-auto mb-4 block max-w-[40rem] text-center text-base">
-            Listed below are the list of hiring calls that were announced through career labs
-            previously.
-          </p>
-
-          <div className="mt-8 flex flex-row flex-wrap items-stretch justify-around gap-4">
-            {currentItems.map((role) => {
-              return (
-                <ClosedCareersCard
-                  key={`${role.title}-${role.location}-${role.company}`}
-                  title={role.title}
-                  qualifications={role.qualifications}
-                  date={role.date}
-                  role={role.role}
-                  remuneration={role.remuneration}
-                  location={role.location}
-                  duration={role.duration}
-                  organization={role.company}
-                />
-              );
-            })}
+      <div
+        id="careers-listing"
+        className="mx-auto mt-12 mb-12 sm:mb-16 max-w-[1300px] px-4 sm:px-6 lg:px-8"
+      >
+        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as TabValue)}>
+          <div className="md:hidden flex justify-center mb-6">
+            <Select value={activeTab} onValueChange={(value) => setActiveTab(value as TabValue)}>
+              <SelectTrigger className="w-[220px]">
+                <SelectValue placeholder="Select tab" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ongoing">
+                  Open Positions {ongoingPagination ? `(${ongoingPagination.count})` : ""}
+                </SelectItem>
+                <SelectItem value="previous">
+                  Closed Positions {previousPagination ? `(${previousPagination.count})` : ""}
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
-          {totalPages > 1 && (
-            <div className="mt-12 mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button
-                  variant="outline"
-                  onClick={goToPrevious}
-                  disabled={currentPage === 1}
-                  className="flex items-center gap-2 px-4 py-2"
-                  aria-label="Previous page"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                  <span className="text-sm font-medium">Previous</span>
-                </Button>
+          <div className="hidden md:flex justify-center">
+            <TabsList className="mb-8 inline-flex">
+              <TabsTrigger value="ongoing" className="gap-1 whitespace-nowrap w-auto">
+                Open Positions
+                {ongoingPagination && (
+                  <span className="ml-1.5 text-xs opacity-80">({ongoingPagination.count})</span>
+                )}
+              </TabsTrigger>
+              <TabsTrigger value="previous" className="gap-1 whitespace-nowrap w-auto">
+                Closed Positions
+                {previousPagination && (
+                  <span className="ml-1.5 text-xs opacity-80">({previousPagination.count})</span>
+                )}
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
-                <div className="flex items-center gap-2">
-                  {getPageNumbers().map((item) => {
-                    if (item.type === "ellipsis" || item.number === undefined) {
-                      return (
-                        <span key={item.key} className="px-2 text-mulearn-gray-600">
-                          ...
-                        </span>
-                      );
-                    }
-                    const pageNumber = item.number;
-                    return (
-                      <Button
-                        variant={currentPage === pageNumber ? "default" : "secondary"}
-                        key={item.key}
-                        onClick={() => goToPage(pageNumber)}
-                        className="w-10 h-10 text-sm font-medium"
-                        aria-label={`Go to page ${pageNumber}`}
-                        aria-current={currentPage === pageNumber ? "page" : undefined}
-                      >
-                        {pageNumber}
-                      </Button>
-                    );
-                  })}
-                </div>
-                <Button
-                  variant="outline"
-                  onClick={goToNext}
-                  disabled={currentPage === totalPages}
-                  className="flex items-center gap-2 px-4 py-2"
-                  aria-label="Next page"
-                >
-                  <span className="text-sm font-medium">Next</span>
-                  <ChevronRight className="w-5 h-5" />
-                </Button>
+          <TabsContent value="ongoing">
+            {loading && ongoingData.length === 0 ? (
+              <div className="flex justify-center py-20">
+                <p className="text-mulearn-gray-600">Loading open positions…</p>
               </div>
-              <p className="mt-4 text-center text-sm text-mulearn-gray-600">
-                Showing {startIndex + 1}-{Math.min(endIndex, previousHiring.length)} of{" "}
-                {previousHiring.length} positions
-              </p>
-            </div>
-          )}
-        </div>
+            ) : currentOngoing.length === 0 ? (
+              <div className="flex justify-center py-20">
+                <p className="text-mulearn-gray-600">No open positions right now.</p>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-wrap items-stretch justify-center gap-4">
+                  {currentOngoing.map((role) => (
+                    <CareersCard
+                      key={role.id}
+                      id={role.id}
+                      role={role.role}
+                      organization={role.organization}
+                      title={role.title}
+                      location={role.location}
+                      lastdate={role.lastdate}
+                      remuneration={role.remuneration}
+                      vacancies={role.vacancies}
+                      duration={role.duration}
+                      applylink={role.applylink}
+                      jdlink={role.jdlink}
+                      posted_date={role.posted_date}
+                    />
+                  ))}
+                </div>
+                {ongoingPagination && ongoingPagination.totalPages > 1 && (
+                  <div className="mt-12 mb-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                      <Button
+                        variant="outline"
+                        onClick={() => handleOngoingPage(ongoingPage - 1)}
+                        disabled={ongoingPage === 1}
+                        className="flex items-center gap-2 px-4 py-2"
+                        aria-label="Previous page"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                        <span className="text-sm font-medium">Previous</span>
+                      </Button>
+                      <div className="flex items-center gap-2">
+                        {getPageNumbers(ongoingPagination.totalPages, ongoingPage).map((item) => {
+                          if (item.type === "ellipsis") {
+                            return (
+                              <span key={item.key} className="px-2 text-mulearn-gray-600">
+                                ...
+                              </span>
+                            );
+                          }
+                          const pageNumber = item.number;
+                          return (
+                            <Button
+                              key={pageNumber}
+                              variant={ongoingPage === pageNumber ? "default" : "secondary"}
+                              onClick={() => handleOngoingPage(pageNumber)}
+                              className="w-10 h-10 text-sm font-medium"
+                              aria-label={`Go to page ${pageNumber}`}
+                              aria-current={ongoingPage === pageNumber ? "page" : undefined}
+                            >
+                              {pageNumber}
+                            </Button>
+                          );
+                        })}
+                      </div>
+                      <Button
+                        variant="outline"
+                        onClick={() => handleOngoingPage(ongoingPage + 1)}
+                        disabled={ongoingPage === ongoingPagination.totalPages}
+                        className="flex items-center gap-2 px-4 py-2"
+                        aria-label="Next page"
+                      >
+                        <span className="text-sm font-medium">Next</span>
+                        <ChevronRight className="w-5 h-5" />
+                      </Button>
+                    </div>
+                    <p className="mt-4 text-center text-sm text-mulearn-gray-600">
+                      Showing{" "}
+                      {ongoingData.length === 0 ? 0 : (ongoingPage - 1) * ITEMS_PER_PAGE + 1}-
+                      {Math.min(ongoingPage * ITEMS_PER_PAGE, ongoingPagination.count)} of{" "}
+                      {ongoingPagination.count} positions
+                    </p>
+                  </div>
+                )}
+              </>
+            )}
+          </TabsContent>
+
+          <TabsContent value="previous">
+            {loading && previousData.length === 0 ? (
+              <div className="flex justify-center py-20">
+                <p className="text-mulearn-gray-600">Loading closed positions…</p>
+              </div>
+            ) : currentPrevious.length === 0 ? (
+              <div className="flex justify-center py-20">
+                <p className="text-mulearn-gray-600">No closed positions yet.</p>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-wrap items-stretch justify-center gap-4">
+                  {currentPrevious.map((role) => (
+                    <ClosedCareersCard
+                      key={role.id}
+                      id={role.id}
+                      title={role.title}
+                      role={role.role}
+                      organization={role.organization}
+                      location={role.location}
+                      lastdate={role.lastdate}
+                      remuneration={role.remuneration}
+                      vacancies={role.vacancies}
+                      duration={role.duration}
+                      extracontent={role.extracontent}
+                    />
+                  ))}
+                </div>
+                {previousPagination && previousPagination.totalPages > 1 && (
+                  <div className="mt-12 mb-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                      <Button
+                        variant="outline"
+                        onClick={() => handlePreviousPage(previousPage - 1)}
+                        disabled={previousPage === 1}
+                        className="flex items-center gap-2 px-4 py-2"
+                        aria-label="Previous page"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                        <span className="text-sm font-medium">Previous</span>
+                      </Button>
+                      <div className="flex items-center gap-2">
+                        {getPageNumbers(previousPagination.totalPages, previousPage).map((item) => {
+                          if (item.type === "ellipsis") {
+                            return (
+                              <span key={item.key} className="px-2 text-mulearn-gray-600">
+                                ...
+                              </span>
+                            );
+                          }
+                          const pageNumber = item.number;
+                          return (
+                            <Button
+                              key={pageNumber}
+                              variant={previousPage === pageNumber ? "default" : "outline"}
+                              onClick={() => handlePreviousPage(pageNumber)}
+                              className="w-10 h-10 text-sm font-medium"
+                              aria-label={`Go to page ${pageNumber}`}
+                              aria-current={previousPage === pageNumber ? "page" : undefined}
+                            >
+                              {pageNumber}
+                            </Button>
+                          );
+                        })}
+                      </div>
+                      <Button
+                        variant="outline"
+                        onClick={() => handlePreviousPage(previousPage + 1)}
+                        disabled={previousPage === previousPagination.totalPages}
+                        className="flex items-center gap-2 px-4 py-2"
+                        aria-label="Next page"
+                      >
+                        <span className="text-sm font-medium">Next</span>
+                        <ChevronRight className="w-5 h-5" />
+                      </Button>
+                    </div>
+                    <p className="mt-4 text-center text-sm text-mulearn-gray-600">
+                      Showing{" "}
+                      {previousData.length === 0 ? 0 : (previousPage - 1) * ITEMS_PER_PAGE + 1}-
+                      {Math.min(previousPage * ITEMS_PER_PAGE, previousPagination.count)} of{" "}
+                      {previousPagination.count} positions
+                    </p>
+                  </div>
+                )}
+              </>
+            )}
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

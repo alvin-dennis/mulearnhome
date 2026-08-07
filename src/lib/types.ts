@@ -126,62 +126,74 @@ export interface TeamCardProps {
   team?: string;
 }
 
+export interface PaginationMeta {
+  count: number;
+  totalPages: number;
+  isNext: boolean;
+  isPrev: boolean;
+  nextPage: number | null;
+  prevPage: number | null;
+  current_page: number;
+}
+
+export interface OngoingHiring {
+  id: string;
+  posted_date: string;
+  role: string;
+  organization: string;
+  title: string;
+  location: string;
+  lastdate: string;
+  applylink: string;
+  jdlink: string;
+  duration: string;
+  remuneration: string;
+  vacancies: number;
+  created_by: string;
+  created_at: string;
+  updated_by: string;
+  updated_at: string;
+}
+
+export interface PreviousHiring {
+  id: string;
+  role: string;
+  organization: string;
+  title: string;
+  location: string;
+  lastdate: string;
+  remuneration: string;
+  vacancies: number;
+  duration: string;
+  extracontent?: string;
+}
+
 export interface CareersCardProps {
+  id?: string;
   role?: string;
-  remuneration?: string;
-  vacancies?: string;
+  organization?: string;
+  title?: string;
   location?: string;
   lastdate?: string;
+  remuneration?: string;
+  vacancies?: number;
   duration?: string;
-  logo?: string;
   applylink?: string;
   jdlink?: string;
-  extraField?: string;
-  extraContent?: string;
-  extraButton?: string;
-  organization?: string;
+  posted_date?: string;
 }
 
 export interface ClosedCareersCardProps {
-  date?: string;
+  id?: string;
   title?: string;
-  location?: string;
-  qualifications?: string;
   role?: string;
-  duration?: string;
-  remuneration?: string;
   organization?: string;
-}
-
-export interface NewHiringRole {
-  logo?: string;
-  role?: string;
-  remuneration?: string;
-  vacancies?: string;
   location?: string;
   lastdate?: string;
-  applylink?: string;
-  jdlink?: string;
-  duration?: string;
-  extrafieldname?: string;
-  extrafieldvalue?: string;
-  extrafieldlink?: string;
-  organization?: string;
-}
-
-export interface PreviousHiringRole {
-  logo?: string;
-  title?: string;
-  company?: string;
-  qualifications?: string;
-  remumeration?: string;
-  date?: string;
-  role?: string;
   remuneration?: string;
-  location?: string;
-  lastdate?: string;
-  poster?: string;
+  vacancies?: number;
   duration?: string;
+  extracontent?: string;
 }
 
 export interface Company {
