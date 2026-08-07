@@ -161,7 +161,6 @@ export default function DonationForm() {
     setValue("donationAmount", parseFloat(value) || 0, { shouldValidate: true });
   };
 
-
   const onSubmit = async (data: DonationFormData) => {
     try {
       const isOneTime = data.donationType === "one-time";
@@ -220,8 +219,6 @@ export default function DonationForm() {
               </TabsTrigger>
             </TabsList>
           </Tabs>
-
-    
         </div>
 
         <Tabs value={mode} onValueChange={handleModeChange} className="mt-6">
@@ -256,7 +253,13 @@ export default function DonationForm() {
           </p>
         </div>
 
-        <div className={mode === 'subscription' && !isOrganisation ? 'mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5' : 'mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4'}>
+        <div
+          className={
+            mode === "subscription" && !isOrganisation
+              ? "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5"
+              : "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
+          }
+        >
           {currentTiers.map((tier) => (
             <TierCard
               key={tier.id}

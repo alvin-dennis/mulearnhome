@@ -185,5 +185,4 @@ export const whereItGoesCategories: DonationCategory[] = [
     description: "Maintain servers, platforms, and tools that power the µLearn ecosystem.",
     icon: Server,
   },
-
 ];
