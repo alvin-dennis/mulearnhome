@@ -9,11 +9,11 @@ export default function DonatePage() {
   return (
     <div className="min-h-screen">
       <DonateHero />
-      <WhereItGoes />
-      <GallerySneakPeek />
       <Suspense fallback={null}>
         <DonationForm />
       </Suspense>
+      <WhereItGoes />
+      <GallerySneakPeek />
       <TrustBar />
     </div>
   );

@@ -30,12 +30,17 @@ export default function TrustBar() {
     counts?.org_type_counts?.find((o) => o.org_type === "College")?.org_count ?? 500;
   const learningCircleCount = counts?.learning_circle_count ?? 1000;
   const interestGroupCount = counts?.ig_count ?? 30;
+  const companyCount =
+    counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 400;
+  const eventsCount = 378;
 
   const stats = [
     { value: learnersCount, label: "Learners empowered" },
     { value: campusCount, label: "Campus communities" },
     { value: learningCircleCount, label: "Learning circles" },
     { value: interestGroupCount, label: "Interest groups" },
+    { value: companyCount, label: "Companies" },
+    { value: eventsCount, label: "Events" },
   ];
 
   return (

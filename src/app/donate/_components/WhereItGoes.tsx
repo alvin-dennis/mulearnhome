@@ -16,20 +16,20 @@ const fadeInUp: Variants = {
 export default function WhereItGoes() {
   return (
     <MotionSection
-      className="w-full bg-mulearn-blackish px-4 py-20 text-mulearn-whitish sm:px-6 md:px-12 lg:px-24 xl:px-40"
+      className="w-full bg-mulearn px-4 py-20 text-mulearn-whitish sm:px-6 md:px-12 lg:px-24 xl:px-40"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:items-end">
         <MotionDiv custom={0} variants={fadeInUp}>
-          <p className="text-sm font-bold uppercase tracking-widest text-mulearn-trusty-blue">
+          <p className="text-sm font-bold uppercase tracking-widest text-mulearn-whitish/70">
             Where your donation goes
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold uppercase leading-tight text-mulearn-whitish sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 text-3xl font-black leading-tight text-mulearn-whitish sm:text-4xl lg:text-5xl">
             Small support.
             <br />
-            <span className="italic text-mulearn-trusty-blue">Big community energy.</span>
+            <span className="italic">Big community energy.</span>
           </h2>
         </MotionDiv>
 
@@ -51,11 +51,11 @@ export default function WhereItGoes() {
               variants={fadeInUp}
               className="flex flex-col items-center text-center"
             >
-              <div className="flex size-16 items-center justify-center rounded-full bg-mulearn-whitish text-mulearn-blackish">
+              <div className="flex size-16 items-center justify-center rounded-full bg-mulearn-whitish text-mulearn">
                 <Icon className="size-7" />
               </div>
               <h4 className="mt-4 font-bold text-mulearn-whitish">{category.label}</h4>
-              <p className="mt-2 text-sm leading-snug text-mulearn-whitish/60">
+              <p className="mt-2 text-sm leading-snug text-mulearn-whitish/70">
                 {category.description}
               </p>
             </MotionDiv>

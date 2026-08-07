@@ -31,9 +31,9 @@ export default function DonateHero() {
             variants={fadeInUp}
             className="text-4xl font-black leading-tight text-mulearn-blackish sm:text-5xl"
           >
-            Small support.
+            Your contribution doesn&apos;t end with a receipt.
             <br />
-            <span className="text-mulearn">Big learning impact.</span>
+            <span className="text-mulearn">It begins with a learner.</span>
           </MotionH1>
 
           <MotionP
@@ -41,8 +41,8 @@ export default function DonateHero() {
             variants={fadeInUp}
             className="mt-4 max-w-md text-mulearn-gray-600 lg:mx-0"
           >
-            Your donation helps us build a peer-powered learning ecosystem that&apos;s open,
-            inclusive, and accessible to all.
+            Powering communities, learning spaces, events, technology, and opportunities across the
+            µLearn ecosystem.
           </MotionP>
 
           <MotionDiv
@@ -52,9 +52,6 @@ export default function DonateHero() {
           >
             <Button asChild size="lg">
               <a href="#donate-form">Donate now</a>
-            </Button>
-            <Button variant="outline" size="lg" type="button">
-              Watch video
             </Button>
           </MotionDiv>
         </div>

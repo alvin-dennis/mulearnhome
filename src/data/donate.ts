@@ -185,10 +185,5 @@ export const whereItGoesCategories: DonationCategory[] = [
     description: "Maintain servers, platforms, and tools that power the µLearn ecosystem.",
     icon: Server,
   },
-  {
-    label: "Scholarships & Access",
-    description:
-      "Back scholarships, learning resources, and access for everyone, regardless of background.",
-    icon: Gift,
-  },
+
 ];

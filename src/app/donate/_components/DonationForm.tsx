@@ -161,10 +161,6 @@ export default function DonationForm() {
     setValue("donationAmount", parseFloat(value) || 0, { shouldValidate: true });
   };
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    toast.success("Link copied — it will open with your current selection");
-  };
 
   const onSubmit = async (data: DonationFormData) => {
     try {
@@ -225,9 +221,7 @@ export default function DonationForm() {
             </TabsList>
           </Tabs>
 
-          <Button type="button" variant="outline" size="sm" onClick={handleCopyLink}>
-            <LinkIcon className="size-4" /> Copy link
-          </Button>
+    
         </div>
 
         <Tabs value={mode} onValueChange={handleModeChange} className="mt-6">
@@ -262,7 +256,7 @@ export default function DonationForm() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className={mode === 'subscription' && !isOrganisation ? 'mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5' : 'mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4'}>
           {currentTiers.map((tier) => (
             <TierCard
               key={tier.id}
