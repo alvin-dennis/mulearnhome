@@ -3,14 +3,10 @@ import {
   Anchor,
   Award,
   BookOpen,
-  Box,
-  Building,
   Crown,
-  Gift,
   Handshake,
   Heart,
   Home,
-  Landmark,
   Server,
   TrendingUp,
   UserRound,
@@ -23,7 +19,7 @@ export interface DonationTier {
   label: string;
   amount: number;
   description: string;
-  icon: LucideIcon;
+  icon: LucideIcon | string;
 }
 
 export const individualOneTimeTiers: DonationTier[] = [
@@ -32,28 +28,28 @@ export const individualOneTimeTiers: DonationTier[] = [
     label: "Brick",
     amount: 1500,
     description: "Support a small action that creates big change.",
-    icon: Box,
+    icon: "/assets/donate/brick.png",
   },
   {
     id: "beam",
     label: "Beam",
     amount: 5000,
     description: "Strengthen our community initiatives.",
-    icon: Landmark,
+    icon: "/assets/donate/Beam.png",
   },
   {
     id: "pillar",
     label: "Pillar",
     amount: 7500,
     description: "Help build core infrastructure.",
-    icon: Building,
+    icon: "/assets/donate/Pillar.png",
   },
   {
     id: "cornerstone",
     label: "Cornerstone",
     amount: 15000,
     description: "Make a lasting impact on the ecosystem.",
-    icon: Award,
+    icon: "/assets/donate/Corner-stone.png",
   },
 ];
 

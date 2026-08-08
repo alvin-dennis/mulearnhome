@@ -53,6 +53,9 @@ export default function DonateHero() {
             <Button asChild size="lg">
               <a href="#donate-form">Donate now</a>
             </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="https://youtu.be/6vewFUcWk_A?si=F9nW2zL9tpIvejvl">Watch Video</a>
+            </Button>
           </MotionDiv>
         </div>
 

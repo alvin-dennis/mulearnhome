@@ -1,6 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
+import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import type { DonationTier } from "@/data/donate";
 import { cn } from "@/lib/utils";
@@ -13,7 +14,8 @@ interface TierCardProps {
 }
 
 export default function TierCard({ tier, isSelected, cadenceLabel, onSelect }: TierCardProps) {
-  const Icon = tier.icon;
+  const isImageIcon = typeof tier.icon === "string";
+  const Icon = isImageIcon ? null : tier.icon;
 
   return (
     <div
@@ -28,14 +30,26 @@ export default function TierCard({ tier, isSelected, cadenceLabel, onSelect }: T
           : "border-mulearn-gray-600/20 bg-white hover:border-mulearn/40",
       )}
     >
-      <div
-        className={cn(
-          "flex size-12 items-center justify-center rounded-full",
-          isSelected ? "bg-mulearn text-mulearn-whitish" : "bg-mulearn/10 text-mulearn",
-        )}
-      >
-        <Icon className="size-6" />
-      </div>
+      {isImageIcon ? (
+        <MuImage
+          src={tier.icon as string}
+          alt=""
+          width={72}
+          height={72}
+          className="h-18 w-18 object-contain"
+        />
+      ) : (
+        Icon && (
+          <div
+            className={cn(
+              "flex size-12 items-center justify-center rounded-full",
+              isSelected ? "bg-mulearn text-mulearn-whitish" : "bg-mulearn/10 text-mulearn",
+            )}
+          >
+            <Icon className="size-6" />
+          </div>
+        )
+      )}
 
       <h4 className="mt-3 text-lg font-bold text-mulearn">{tier.label}</h4>
       <p className="mt-1 text-2xl font-bold tabular-nums text-mulearn-blackish">
