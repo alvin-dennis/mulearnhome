@@ -1,18 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  Anchor,
-  Award,
-  BookOpen,
-  Crown,
-  Handshake,
-  Heart,
-  Home,
-  Server,
-  TrendingUp,
-  UserRound,
-  Users,
-  Zap,
-} from "lucide-react";
+import { BookOpen, Home, Server, Users } from "lucide-react";
 
 export interface DonationTier {
   id: string;
@@ -59,35 +46,35 @@ export const individualSubscriptionTiers: DonationTier[] = [
     label: "Friend",
     amount: 500,
     description: "Be a friend of the µLearn movement.",
-    icon: UserRound,
+    icon: "/assets/donate/Friend.png",
   },
   {
     id: "supporter",
     label: "Supporter",
     amount: 1250,
     description: "Support consistent learning opportunities.",
-    icon: Heart,
+    icon: "/assets/donate/Supporter.png",
   },
   {
     id: "patron",
     label: "Patron",
     amount: 2500,
     description: "Enable more learners to grow and build.",
-    icon: Award,
+    icon: "/assets/donate/Patron.png",
   },
   {
     id: "contributor",
     label: "Contributor",
     amount: 5000,
     description: "Power programs, spaces, and resources.",
-    icon: Users,
+    icon: "/assets/donate/Contributor.png",
   },
   {
     id: "champion",
     label: "Champion",
     amount: 10000,
     description: "Champion the future of peer learning.",
-    icon: Crown,
+    icon: "/assets/donate/Champion.png",
   },
 ];
 
@@ -97,28 +84,28 @@ export const orgOneTimeTiers: DonationTier[] = [
     label: "Community Partner",
     amount: 125000,
     description: "Fuel grassroots campus programs.",
-    icon: Handshake,
+    icon: "/assets/donate/Community-partner.png",
   },
   {
     id: "catalyst-partner",
     label: "Catalyst Partner",
     amount: 275000,
     description: "Spark new initiatives across the ecosystem.",
-    icon: Zap,
+    icon: "/assets/donate/Catalyst-partner.png",
   },
   {
     id: "growth-partner",
     label: "Growth Partner",
     amount: 500000,
     description: "Drive sustained growth for learners nationwide.",
-    icon: TrendingUp,
+    icon: "/assets/donate/Growth-partner.png",
   },
   {
     id: "anchor-partner",
     label: "Anchor Partner",
     amount: 1000000,
     description: "Anchor µLearn's long-term mission.",
-    icon: Anchor,
+    icon: "/assets/donate/Anchor-partner.png",
   },
 ];
 
@@ -128,28 +115,28 @@ export const orgSubscriptionTiers: DonationTier[] = [
     label: "Community Partner",
     amount: 50000,
     description: "Fuel grassroots campus programs, every year.",
-    icon: Handshake,
+    icon: "/assets/donate/Community-partner.png",
   },
   {
     id: "catalyst-partner",
     label: "Catalyst Partner",
     amount: 100000,
     description: "Spark new initiatives, year after year.",
-    icon: Zap,
+    icon: "/assets/donate/Catalyst-partner.png",
   },
   {
     id: "growth-partner",
     label: "Growth Partner",
     amount: 250000,
     description: "Drive sustained growth for learners nationwide.",
-    icon: TrendingUp,
+    icon: "/assets/donate/Growth-partner.png",
   },
   {
     id: "anchor-partner",
     label: "Anchor Partner",
     amount: 500000,
     description: "Anchor µLearn's long-term mission, annually.",
-    icon: Anchor,
+    icon: "/assets/donate/Anchor-partner.png",
   },
 ];
 
