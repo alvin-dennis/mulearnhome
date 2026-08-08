@@ -1,7 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Building2, Link as LinkIcon, User } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Building2, User } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -13,6 +14,7 @@ import {
   parseDonationParams,
 } from "@/app/donate/_components/donationUrlParams";
 import TierCard from "@/app/donate/_components/TierCard";
+import { MotionDiv } from "@/components/MuFramer";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -202,41 +204,55 @@ export default function DonationForm() {
       className="w-full scroll-mt-24 px-4 py-20 sm:px-6 md:px-12 lg:px-24 xl:px-40"
     >
       <div className="mx-auto max-w-4xl">
-        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="flex flex-col items-center gap-3">
           <Tabs value={donorType} onValueChange={handleDonorTypeChange}>
-            <TabsList className="grid grid-cols-2 rounded-full bg-mulearn-greyish/10 p-1">
-              <TabsTrigger
-                value="individual"
-                className="gap-2 rounded-full px-4 py-2 data-[state=active]:bg-mulearn data-[state=active]:text-mulearn-whitish"
-              >
-                <User className="size-4" /> Individual / Alumni
-              </TabsTrigger>
-              <TabsTrigger
-                value="org"
-                className="gap-2 rounded-full px-4 py-2 data-[state=active]:bg-mulearn data-[state=active]:text-mulearn-whitish"
-              >
-                <Building2 className="size-4" /> Organisation / Institution
-              </TabsTrigger>
+            <TabsList className="rounded-full bg-mulearn-greyish/10 p-1">
+              <div className="relative grid w-full grid-cols-2">
+                <MotionDiv
+                  className="absolute inset-y-0 left-0 w-1/2 rounded-full bg-mulearn"
+                  animate={{ x: isOrganisation ? "100%" : "0%" }}
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                />
+                <TabsTrigger
+                  value="individual"
+                  className="relative z-10 gap-2 rounded-full px-4 py-2 data-[state=active]:bg-transparent data-[state=active]:text-mulearn-whitish"
+                >
+                  <User className="size-4" /> Individual / Alumni
+                </TabsTrigger>
+                <TabsTrigger
+                  value="org"
+                  className="relative z-10 gap-2 rounded-full px-4 py-2 data-[state=active]:bg-transparent data-[state=active]:text-mulearn-whitish"
+                >
+                  <Building2 className="size-4" /> Organisation / Institution
+                </TabsTrigger>
+              </div>
+            </TabsList>
+          </Tabs>
+
+          <Tabs value={mode} onValueChange={handleModeChange}>
+            <TabsList className="w-full max-w-xs rounded-full bg-mulearn-greyish/10 p-1">
+              <div className="relative grid w-full grid-cols-2">
+                <MotionDiv
+                  className="absolute inset-y-0 left-0 w-1/2 rounded-full bg-mulearn"
+                  animate={{ x: mode === "subscription" ? "100%" : "0%" }}
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                />
+                <TabsTrigger
+                  value="one-time"
+                  className="relative z-10 rounded-full data-[state=active]:bg-transparent data-[state=active]:text-mulearn-whitish"
+                >
+                  One-time
+                </TabsTrigger>
+                <TabsTrigger
+                  value="subscription"
+                  className="relative z-10 rounded-full data-[state=active]:bg-transparent data-[state=active]:text-mulearn-whitish"
+                >
+                  Subscription
+                </TabsTrigger>
+              </div>
             </TabsList>
           </Tabs>
         </div>
-
-        <Tabs value={mode} onValueChange={handleModeChange} className="mt-6">
-          <TabsList className="mx-auto grid w-full max-w-xs grid-cols-2 rounded-full bg-mulearn-greyish/10 p-1">
-            <TabsTrigger
-              value="one-time"
-              className="rounded-full data-[state=active]:bg-mulearn data-[state=active]:text-mulearn-whitish"
-            >
-              One-time
-            </TabsTrigger>
-            <TabsTrigger
-              value="subscription"
-              className="rounded-full data-[state=active]:bg-mulearn data-[state=active]:text-mulearn-whitish"
-            >
-              Subscription
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
 
         <div className="mt-10 text-center">
           <h2 className="text-2xl font-bold text-mulearn-blackish sm:text-3xl">
@@ -260,15 +276,25 @@ export default function DonationForm() {
               : "mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
           }
         >
-          {currentTiers.map((tier) => (
-            <TierCard
-              key={tier.id}
-              tier={tier}
-              isSelected={selectedTierId === tier.id}
-              cadenceLabel={cadenceLabel}
-              onSelect={() => handleTierSelect(tier)}
-            />
-          ))}
+          <AnimatePresence mode="popLayout">
+            {currentTiers.map((tier, i) => (
+              <MotionDiv
+                key={`${donorType}-${mode}-${tier.id}`}
+                layout
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25, delay: i * 0.04 }}
+              >
+                <TierCard
+                  tier={tier}
+                  isSelected={selectedTierId === tier.id}
+                  cadenceLabel={cadenceLabel}
+                  onSelect={() => handleTierSelect(tier)}
+                />
+              </MotionDiv>
+            ))}
+          </AnimatePresence>
         </div>
 
         <div className="mt-6 flex flex-col items-center gap-3 rounded-xl border border-mulearn-gray-600/20 bg-white p-5 sm:flex-row sm:justify-between">

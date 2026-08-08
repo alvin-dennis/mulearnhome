@@ -50,11 +50,17 @@ export default function DonateHero() {
             variants={fadeInUp}
             className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
           >
-            <Button asChild size="lg">
+            <Button asChild size="lg" variant="default">
               <a href="#donate-form">Donate now</a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://youtu.be/6vewFUcWk_A?si=F9nW2zL9tpIvejvl">Watch Video</a>
+              <a
+                target="_blank"
+                href="https://youtu.be/6vewFUcWk_A?si=F9nW2zL9tpIvejvl"
+                rel="noopener"
+              >
+                Watch Video
+              </a>
             </Button>
           </MotionDiv>
         </div>
