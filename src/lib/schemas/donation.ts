@@ -66,19 +66,32 @@ export type DonationFormData = z.infer<typeof donationFormSchema>;
 // Donation API Payload Schema (Backend)
 // ============================================================================
 
-export const donationPayloadSchema = z.object({
-  amount: z.number().positive("Amount must be positive"),
-  currency: z.string().default("INR"),
-  name: nameSchema,
-  donation_name: z.string().optional(),
-  email: emailSchema,
-  company: z.string().optional(),
-  phone_number: phoneSchema,
-  pan_number: panSchema,
-  address: addressSchema,
-  donation_type: z.string(),
-  is_organisation: z.boolean(),
-});
+export const donationPayloadSchema = z
+  .object({
+    amount: z.number().positive("Amount must be positive"),
+    currency: z.string().default("INR"),
+    name: nameSchema,
+    donation_name: z.string().optional(),
+    email: emailSchema,
+    company: z.string().optional(),
+    phone_number: phoneSchema,
+    pan_number: panSchema,
+    address: addressSchema.optional(),
+    donation_type: z.string(),
+    is_organisation: z.boolean(),
+  })
+  .refine(
+    (data) => {
+      if (data.is_organisation) {
+        return addressSchema.safeParse(data.address).success;
+      }
+      return true;
+    },
+    {
+      message: "Address is required when paying as an organisation",
+      path: ["address"],
+    },
+  );
 
 export type DonationPayload = z.infer<typeof donationPayloadSchema>;
 
