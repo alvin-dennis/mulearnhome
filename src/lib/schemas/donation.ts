@@ -23,7 +23,7 @@ export const donationFormSchema = z
     email: emailSchema,
     phone: phoneSchema,
     panNumber: panSchema,
-    address: addressSchema,
+    address: addressSchema.optional(),
     isOrganisation: z.boolean(),
     organisationName: z.string().optional(),
     termsAccepted: z.boolean().refine((val) => val === true, {
@@ -45,6 +45,18 @@ export const donationFormSchema = z
     {
       message: "Organisation name is required when paying as an organisation",
       path: ["organisationName"],
+    },
+  )
+  .refine(
+    (data) => {
+      if (data.isOrganisation) {
+        return addressSchema.safeParse(data.address).success;
+      }
+      return true;
+    },
+    {
+      message: "Address is required when paying as an organisation",
+      path: ["address"],
     },
   );
 
@@ -111,7 +123,7 @@ export interface DonationFormPayload {
   email: string;
   mobile: string;
   pan: string;
-  address: string;
+  address?: string;
   donationType: DonationType;
   isOrganisation: boolean;
   organisationName?: string;

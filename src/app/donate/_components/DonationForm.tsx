@@ -396,13 +396,20 @@ export default function DonationForm() {
               )}
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="address">
-                Address <span className="text-red-500">*</span>
-              </Label>
-              <Textarea id="address" {...register("address")} placeholder="Full address" rows={3} />
-              {errors.address && <p className="text-xs text-red-500">{errors.address.message}</p>}
-            </div>
+            {isOrganisation && (
+              <div className="space-y-2">
+                <Label htmlFor="address">
+                  Address <span className="text-red-500">*</span>
+                </Label>
+                <Textarea
+                  id="address"
+                  {...register("address")}
+                  placeholder="Full address"
+                  rows={3}
+                />
+                {errors.address && <p className="text-xs text-red-500">{errors.address.message}</p>}
+              </div>
+            )}
           </div>
 
           <div className="flex items-start space-x-3">
