@@ -23,7 +23,7 @@ export const donationFormSchema = z
     email: emailSchema,
     phone: phoneSchema,
     panNumber: panSchema,
-    address: addressSchema.optional(),
+    address: z.string().optional(),
     isOrganisation: z.boolean(),
     organisationName: z.string().optional(),
     termsAccepted: z.boolean().refine((val) => val === true, {
@@ -76,7 +76,7 @@ export const donationPayloadSchema = z
     company: z.string().optional(),
     phone_number: phoneSchema,
     pan_number: panSchema,
-    address: addressSchema.optional(),
+    address: z.string().optional(),
     donation_type: z.string(),
     is_organisation: z.boolean(),
   })
