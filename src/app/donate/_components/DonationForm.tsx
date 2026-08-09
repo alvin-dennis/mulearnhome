@@ -126,6 +126,9 @@ export default function DonationForm() {
     const next = value as DonorType;
     setDonorType(next);
     setValue("isOrganisation", next === "org", { shouldValidate: true });
+    if (next !== "org") {
+      setValue("address", "", { shouldValidate: true });
+    }
     setSelectedTierId(null);
     setCustomAmount("");
     setValue("donationAmount", 0, { shouldValidate: true });
@@ -178,7 +181,7 @@ export default function DonationForm() {
         email: data.email,
         mobile: data.phone,
         pan: data.panNumber,
-        address: data.address,
+        address: data.isOrganisation ? data.address : undefined,
         donationType: data.donationType,
         isOrganisation: data.isOrganisation,
         organisationName: data.organisationName,
