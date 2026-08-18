@@ -96,12 +96,13 @@ export default function Careers() {
   }, []);
 
   const handleOngoingPage = (page: number) => {
-    setOngoingPage(page);
     setOngoingError(null);
-    loadOngoing(page).catch((err) => {
-      console.error("Failed to load ongoing hiring:", err);
-      setOngoingError("Failed to load career listings.");
-    });
+    loadOngoing(page)
+      .then(() => setOngoingPage(page))
+      .catch((err) => {
+        console.error("Failed to load ongoing hiring:", err);
+        setOngoingError("Failed to load career listings.");
+      });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -109,12 +110,13 @@ export default function Careers() {
   };
 
   const handlePreviousPage = (page: number) => {
-    setPreviousPage(page);
     setPreviousError(null);
-    loadPrevious(page).catch((err) => {
-      console.error("Failed to load previous hiring:", err);
-      setPreviousError("Failed to load career listings.");
-    });
+    loadPrevious(page)
+      .then(() => setPreviousPage(page))
+      .catch((err) => {
+        console.error("Failed to load previous hiring:", err);
+        setPreviousError("Failed to load career listings.");
+      });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
