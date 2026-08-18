@@ -1,11 +1,11 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import CareersCard from "@/app/careers/_components/CareersCard";
 import CareersStats from "@/app/careers/_components/CareersStats";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
+import Pagination from "@/app/events/_components/Pagination";
 import MuImage from "@/components/MuImage";
 import { Button } from "@/components/ui/button";
 import LogoLoop from "@/components/ui/LogoLoop";
@@ -19,132 +19,79 @@ import {
 import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { companies } from "@/data/company";
-import type { Company, OngoingHiring, PaginationMeta, PreviousHiring } from "@/lib/types";
-import {
-  fetchOngoingHiringPage,
-  fetchPreviousHiringPage,
-  type PaginatedCareersResponse,
-} from "@/services/careers";
+import type { Company, OngoingHiring, PreviousHiring } from "@/lib/types";
+import { fetchOngoingHiringPage, fetchPreviousHiringPage } from "@/services/careers";
 import { cdnUrl } from "@/services/cdn";
 
 type TabValue = "ongoing" | "previous";
 
+const ITEMS_PER_PAGE = 12;
+
 export default function Careers() {
   const [activeTab, setActiveTab] = useState<TabValue>("ongoing");
-  const [ongoingPage, setOngoingPage] = useState(1);
-  const [previousPage, setPreviousPage] = useState(1);
-  const [ongoingData, setOngoingData] = useState<OngoingHiring[]>([]);
-  const [previousData, setPreviousData] = useState<PreviousHiring[]>([]);
-  const [ongoingPagination, setOngoingPagination] = useState<PaginationMeta | null>(null);
-  const [previousPagination, setPreviousPagination] = useState<PaginationMeta | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [ongoingError, setOngoingError] = useState<string | null>(null);
-  const [previousError, setPreviousError] = useState<string | null>(null);
   const companyData: Company[] = companies;
 
-  const ITEMS_PER_PAGE = 12;
+  const [ongoingPage, setOngoingPage] = useState(1);
+  const [ongoingData, setOngoingData] = useState<OngoingHiring[]>([]);
+  const [ongoingCount, setOngoingCount] = useState(0);
+  const [ongoingLoading, setOngoingLoading] = useState(true);
+  const [ongoingError, setOngoingError] = useState(false);
 
-  const loadOngoing = async (page: number) => {
-    const result: PaginatedCareersResponse<OngoingHiring> = await fetchOngoingHiringPage(
-      page,
-      ITEMS_PER_PAGE,
-    );
-    setOngoingData(result.data);
-    setOngoingPagination(result.pagination);
-  };
-
-  const loadPrevious = async (page: number) => {
-    const result: PaginatedCareersResponse<PreviousHiring> = await fetchPreviousHiringPage(
-      page,
-      ITEMS_PER_PAGE,
-    );
-    setPreviousData(result.data);
-    setPreviousPagination(result.pagination);
-  };
+  const [previousPage, setPreviousPage] = useState(1);
+  const [previousData, setPreviousData] = useState<PreviousHiring[]>([]);
+  const [previousCount, setPreviousCount] = useState(0);
+  const [previousLoading, setPreviousLoading] = useState(true);
+  const [previousError, setPreviousError] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
+    let ignore = false;
+    setOngoingLoading(true);
+    setOngoingError(false);
 
-    const load = async () => {
-      setLoading(true);
-      setOngoingError(null);
-      setPreviousError(null);
-      const [ongoingResult, previousResult] = await Promise.allSettled([
-        loadOngoing(1),
-        loadPrevious(1),
-      ]);
-      if (isMounted) {
-        if (ongoingResult.status === "fulfilled") {
-          setOngoingPage(1);
-        } else {
-          setOngoingError("Failed to load career listings.");
-        }
-        if (previousResult.status === "fulfilled") {
-          setPreviousPage(1);
-        } else {
-          setPreviousError("Failed to load career listings.");
-        }
-        setLoading(false);
-      }
-    };
-
-    load();
+    fetchOngoingHiringPage(ongoingPage, ITEMS_PER_PAGE)
+      .then(({ data, pagination }) => {
+        if (ignore) return;
+        setOngoingData(data);
+        setOngoingCount(pagination.count);
+      })
+      .catch((err) => {
+        if (ignore) return;
+        console.error("Failed to load ongoing hiring:", err);
+        setOngoingError(true);
+      })
+      .finally(() => {
+        if (!ignore) setOngoingLoading(false);
+      });
 
     return () => {
-      isMounted = false;
+      ignore = true;
     };
-  }, []);
+  }, [ongoingPage]);
 
-  const handleOngoingPage = (page: number) => {
-    setOngoingError(null);
-    loadOngoing(page)
-      .then(() => setOngoingPage(page))
-      .catch((err) => {
-        console.error("Failed to load ongoing hiring:", err);
-        setOngoingError("Failed to load career listings.");
-      });
-    document.getElementById("careers-listing")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+  useEffect(() => {
+    let ignore = false;
+    setPreviousLoading(true);
+    setPreviousError(false);
 
-  const handlePreviousPage = (page: number) => {
-    setPreviousError(null);
-    loadPrevious(page)
-      .then(() => setPreviousPage(page))
+    fetchPreviousHiringPage(previousPage, ITEMS_PER_PAGE)
+      .then(({ data, pagination }) => {
+        if (ignore) return;
+        setPreviousData(data);
+        setPreviousCount(pagination.count);
+      })
       .catch((err) => {
+        if (ignore) return;
         console.error("Failed to load previous hiring:", err);
-        setPreviousError("Failed to load career listings.");
+        setPreviousError(true);
+      })
+      .finally(() => {
+        if (!ignore) setPreviousLoading(false);
       });
-    document.getElementById("careers-listing")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
 
-  const getPageNumbers = (totalPages: number, currentPage: number) => {
-    const pages: any[] = [];
-    for (let i = 1; i <= totalPages; i++) {
-      const showPage =
-        i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1);
-      const showEllipsis =
-        (i === currentPage - 2 && currentPage > 3) ||
-        (i === currentPage + 2 && currentPage < totalPages - 2);
-
-      if (showEllipsis) {
-        if (!pages.length || pages[pages.length - 1].type !== "ellipsis") {
-          pages.push({ type: "ellipsis", key: `ellipsis-${i}` });
-        }
-      } else if (showPage) {
-        pages.push({ type: "page", number: i, key: i });
-      }
-    }
-    return pages;
-  };
-
-  const currentOngoing = ongoingData;
-  const currentPrevious = previousData;
+    return () => {
+      ignore = true;
+    };
+  }, [previousPage]);
 
   return (
     <div className="min-h-screen">
@@ -212,12 +159,8 @@ export default function Careers() {
                 <SelectValue placeholder="Select tab" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="ongoing">
-                  Open Positions {ongoingPagination ? `(${ongoingPagination.count})` : ""}
-                </SelectItem>
-                <SelectItem value="previous">
-                  Closed Positions {previousPagination ? `(${previousPagination.count})` : ""}
-                </SelectItem>
+                <SelectItem value="ongoing">Open Positions ({ongoingCount})</SelectItem>
+                <SelectItem value="previous">Closed Positions ({previousCount})</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -226,42 +169,40 @@ export default function Careers() {
             <TabsList className="mb-8 inline-flex">
               <TabsTrigger value="ongoing" className="gap-1 whitespace-nowrap w-auto">
                 Open Positions
-                {ongoingPagination && (
-                  <span className="ml-1.5 text-xs opacity-80">({ongoingPagination.count})</span>
-                )}
+                <span className="ml-1.5 text-xs opacity-80">({ongoingCount})</span>
               </TabsTrigger>
               <TabsTrigger value="previous" className="gap-1 whitespace-nowrap w-auto">
                 Closed Positions
-                {previousPagination && (
-                  <span className="ml-1.5 text-xs opacity-80">({previousPagination.count})</span>
-                )}
+                <span className="ml-1.5 text-xs opacity-80">({previousCount})</span>
               </TabsTrigger>
             </TabsList>
           </div>
 
           <TabsContent value="ongoing">
-            {loading && ongoingData.length === 0 ? (
+            {ongoingLoading && ongoingData.length === 0 ? (
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading open positions…</p>
               </div>
-            ) : ongoingError && currentOngoing.length === 0 ? (
-              <StateDisplay
-                variant="no-results"
-                title="Couldn't load open positions"
-                description="Something went wrong while fetching career listings. Please try again later."
-                size="md"
-              />
-            ) : currentOngoing.length === 0 ? (
-              <StateDisplay
-                variant="no-results"
-                title="No open positions right now."
-                description="Check back soon — new opportunities are posted regularly."
-                size="md"
-              />
+            ) : ongoingData.length === 0 ? (
+              ongoingError ? (
+                <StateDisplay
+                  variant="no-results"
+                  title="Couldn't load open positions"
+                  description="Something went wrong while fetching career listings. Please try again later."
+                  size="md"
+                />
+              ) : (
+                <StateDisplay
+                  variant="no-results"
+                  title="No open positions right now."
+                  description="Check back soon — new opportunities are posted regularly."
+                  size="md"
+                />
+              )
             ) : (
               <>
                 <div className="flex flex-wrap items-stretch justify-center gap-4">
-                  {currentOngoing.map((role) => (
+                  {ongoingData.map((role) => (
                     <CareersCard
                       key={role.id}
                       id={role.id}
@@ -279,89 +220,42 @@ export default function Careers() {
                     />
                   ))}
                 </div>
-                {ongoingPagination && ongoingPagination.totalPages > 1 && (
-                  <div className="mt-12 mb-8">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <Button
-                        variant="outline"
-                        onClick={() => handleOngoingPage(ongoingPage - 1)}
-                        disabled={ongoingPage === 1}
-                        className="flex items-center gap-2 px-4 py-2"
-                        aria-label="Previous page"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                        <span className="text-sm font-medium">Previous</span>
-                      </Button>
-                      <div className="flex items-center gap-2">
-                        {getPageNumbers(ongoingPagination.totalPages, ongoingPage).map((item) => {
-                          if (item.type === "ellipsis") {
-                            return (
-                              <span key={item.key} className="px-2 text-mulearn-gray-600">
-                                ...
-                              </span>
-                            );
-                          }
-                          const pageNumber = item.number;
-                          return (
-                            <Button
-                              key={pageNumber}
-                              variant={ongoingPage === pageNumber ? "default" : "secondary"}
-                              onClick={() => handleOngoingPage(pageNumber)}
-                              className="w-10 h-10 text-sm font-medium"
-                              aria-label={`Go to page ${pageNumber}`}
-                              aria-current={ongoingPage === pageNumber ? "page" : undefined}
-                            >
-                              {pageNumber}
-                            </Button>
-                          );
-                        })}
-                      </div>
-                      <Button
-                        variant="outline"
-                        onClick={() => handleOngoingPage(ongoingPage + 1)}
-                        disabled={ongoingPage === ongoingPagination.totalPages}
-                        className="flex items-center gap-2 px-4 py-2"
-                        aria-label="Next page"
-                      >
-                        <span className="text-sm font-medium">Next</span>
-                        <ChevronRight className="w-5 h-5" />
-                      </Button>
-                    </div>
-                    <p className="mt-4 text-center text-sm text-mulearn-gray-600">
-                      Showing{" "}
-                      {ongoingData.length === 0 ? 0 : (ongoingPage - 1) * ITEMS_PER_PAGE + 1}-
-                      {Math.min(ongoingPage * ITEMS_PER_PAGE, ongoingPagination.count)} of{" "}
-                      {ongoingPagination.count} positions
-                    </p>
-                  </div>
-                )}
+                <Pagination
+                  page={ongoingPage}
+                  setPage={setOngoingPage}
+                  total={ongoingCount}
+                  perPage={ITEMS_PER_PAGE}
+                  scrollToId="careers-listing"
+                />
               </>
             )}
           </TabsContent>
 
           <TabsContent value="previous">
-            {loading && previousData.length === 0 ? (
+            {previousLoading && previousData.length === 0 ? (
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading closed positions…</p>
               </div>
-            ) : previousError && currentPrevious.length === 0 ? (
-              <StateDisplay
-                variant="no-results"
-                title="Couldn't load closed positions"
-                description="Something went wrong while fetching career listings. Please try again later."
-                size="md"
-              />
-            ) : currentPrevious.length === 0 ? (
-              <StateDisplay
-                variant="no-results"
-                title="No closed positions yet."
-                description="Past hiring rounds will show up here once they're closed."
-                size="md"
-              />
+            ) : previousData.length === 0 ? (
+              previousError ? (
+                <StateDisplay
+                  variant="no-results"
+                  title="Couldn't load closed positions"
+                  description="Something went wrong while fetching career listings. Please try again later."
+                  size="md"
+                />
+              ) : (
+                <StateDisplay
+                  variant="no-results"
+                  title="No closed positions yet."
+                  description="Past hiring rounds will show up here once they're closed."
+                  size="md"
+                />
+              )
             ) : (
               <>
                 <div className="flex flex-wrap items-stretch justify-center gap-4">
-                  {currentPrevious.map((role) => (
+                  {previousData.map((role) => (
                     <ClosedCareersCard
                       key={role.id}
                       id={role.id}
@@ -377,62 +271,13 @@ export default function Careers() {
                     />
                   ))}
                 </div>
-                {previousPagination && previousPagination.totalPages > 1 && (
-                  <div className="mt-12 mb-8">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <Button
-                        variant="outline"
-                        onClick={() => handlePreviousPage(previousPage - 1)}
-                        disabled={previousPage === 1}
-                        className="flex items-center gap-2 px-4 py-2"
-                        aria-label="Previous page"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                        <span className="text-sm font-medium">Previous</span>
-                      </Button>
-                      <div className="flex items-center gap-2">
-                        {getPageNumbers(previousPagination.totalPages, previousPage).map((item) => {
-                          if (item.type === "ellipsis") {
-                            return (
-                              <span key={item.key} className="px-2 text-mulearn-gray-600">
-                                ...
-                              </span>
-                            );
-                          }
-                          const pageNumber = item.number;
-                          return (
-                            <Button
-                              key={pageNumber}
-                              variant={previousPage === pageNumber ? "default" : "outline"}
-                              onClick={() => handlePreviousPage(pageNumber)}
-                              className="w-10 h-10 text-sm font-medium"
-                              aria-label={`Go to page ${pageNumber}`}
-                              aria-current={previousPage === pageNumber ? "page" : undefined}
-                            >
-                              {pageNumber}
-                            </Button>
-                          );
-                        })}
-                      </div>
-                      <Button
-                        variant="outline"
-                        onClick={() => handlePreviousPage(previousPage + 1)}
-                        disabled={previousPage === previousPagination.totalPages}
-                        className="flex items-center gap-2 px-4 py-2"
-                        aria-label="Next page"
-                      >
-                        <span className="text-sm font-medium">Next</span>
-                        <ChevronRight className="w-5 h-5" />
-                      </Button>
-                    </div>
-                    <p className="mt-4 text-center text-sm text-mulearn-gray-600">
-                      Showing{" "}
-                      {previousData.length === 0 ? 0 : (previousPage - 1) * ITEMS_PER_PAGE + 1}-
-                      {Math.min(previousPage * ITEMS_PER_PAGE, previousPagination.count)} of{" "}
-                      {previousPagination.count} positions
-                    </p>
-                  </div>
-                )}
+                <Pagination
+                  page={previousPage}
+                  setPage={setPreviousPage}
+                  total={previousCount}
+                  perPage={ITEMS_PER_PAGE}
+                  scrollToId="careers-listing"
+                />
               </>
             )}
           </TabsContent>
