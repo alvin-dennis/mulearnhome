@@ -38,7 +38,8 @@ export default function Careers() {
   const [ongoingPagination, setOngoingPagination] = useState<PaginationMeta | null>(null);
   const [previousPagination, setPreviousPagination] = useState<PaginationMeta | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [ongoingError, setOngoingError] = useState<string | null>(null);
+  const [previousError, setPreviousError] = useState<string | null>(null);
   const companyData: Company[] = companies;
 
   const ITEMS_PER_PAGE = 12;
@@ -66,15 +67,24 @@ export default function Careers() {
 
     const load = async () => {
       setLoading(true);
-      setError(null);
-      try {
-        await Promise.all([loadOngoing(1), loadPrevious(1)]);
-        setOngoingPage(1);
-        setPreviousPage(1);
-      } catch {
-        if (isMounted) setError("Failed to load career listings.");
-      } finally {
-        if (isMounted) setLoading(false);
+      setOngoingError(null);
+      setPreviousError(null);
+      const [ongoingResult, previousResult] = await Promise.allSettled([
+        loadOngoing(1),
+        loadPrevious(1),
+      ]);
+      if (isMounted) {
+        if (ongoingResult.status === "fulfilled") {
+          setOngoingPage(1);
+        } else {
+          setOngoingError("Failed to load career listings.");
+        }
+        if (previousResult.status === "fulfilled") {
+          setPreviousPage(1);
+        } else {
+          setPreviousError("Failed to load career listings.");
+        }
+        setLoading(false);
       }
     };
 
@@ -87,10 +97,10 @@ export default function Careers() {
 
   const handleOngoingPage = (page: number) => {
     setOngoingPage(page);
-    setError(null);
+    setOngoingError(null);
     loadOngoing(page).catch((err) => {
       console.error("Failed to load ongoing hiring:", err);
-      setError("Failed to load career listings.");
+      setOngoingError("Failed to load career listings.");
     });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
@@ -100,10 +110,10 @@ export default function Careers() {
 
   const handlePreviousPage = (page: number) => {
     setPreviousPage(page);
-    setError(null);
+    setPreviousError(null);
     loadPrevious(page).catch((err) => {
       console.error("Failed to load previous hiring:", err);
-      setError("Failed to load career listings.");
+      setPreviousError("Failed to load career listings.");
     });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
@@ -232,7 +242,7 @@ export default function Careers() {
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading open positions…</p>
               </div>
-            ) : error && currentOngoing.length === 0 ? (
+            ) : ongoingError && currentOngoing.length === 0 ? (
               <StateDisplay
                 variant="no-results"
                 title="Couldn't load open positions"
@@ -332,7 +342,7 @@ export default function Careers() {
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading closed positions…</p>
               </div>
-            ) : error && currentPrevious.length === 0 ? (
+            ) : previousError && currentPrevious.length === 0 ? (
               <StateDisplay
                 variant="no-results"
                 title="Couldn't load closed positions"
