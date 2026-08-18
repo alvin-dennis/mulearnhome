@@ -58,6 +58,8 @@ export default function Careers() {
         if (ignore) return;
         console.error("Failed to load ongoing hiring:", err);
         setOngoingError(true);
+        setOngoingData([]);
+        setOngoingCount(0);
       })
       .finally(() => {
         if (!ignore) setOngoingLoading(false);
@@ -83,6 +85,8 @@ export default function Careers() {
         if (ignore) return;
         console.error("Failed to load previous hiring:", err);
         setPreviousError(true);
+        setPreviousData([]);
+        setPreviousCount(0);
       })
       .finally(() => {
         if (!ignore) setPreviousLoading(false);
