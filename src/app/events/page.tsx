@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
-import EventCarousel from "@/app/events/_components/EventCarousel";
-import Grid from "@/app/events/_components/Grid";
+import { CalendarClock, History, Radio, Repeat } from "lucide-react";
+import EventCategoryTabs, { type EventCategory } from "@/app/events/_components/EventCategoryTabs";
 import { MotionDiv } from "@/components/MuFramer";
 import { events } from "@/data/events";
 import { clientEnv } from "@/lib/env/env.client";
@@ -90,9 +90,9 @@ async function withNextSessionDate(weekly: Event[]): Promise<Event[]> {
 export default async function Events() {
   const { recurringEvents } = events;
 
-  let ongoingEvents: Event[] = [];
-  let upcomingEvents: Event[] = [];
-  let completedEvents: Event[] = [];
+  let ongoingEvents: Event[] | null = null;
+  let upcomingEvents: Event[] | null = null;
+  let completedEvents: Event[] | null = null;
 
   try {
     const [ongoingData, upcomingData, completedData] = await Promise.all([
@@ -101,24 +101,16 @@ export default async function Events() {
       fetchPublicEvents({ status: "completed" }),
     ]);
 
-    if (ongoingData && Array.isArray(ongoingData)) {
-      ongoingEvents = ongoingData.map(mapPublicEventToEvent);
-    }
-    if (upcomingData && Array.isArray(upcomingData)) {
-      upcomingEvents = upcomingData.map(mapPublicEventToEvent);
-    }
-    if (completedData && Array.isArray(completedData)) {
-      completedEvents = completedData.map(mapPublicEventToEvent);
-    }
+    ongoingEvents = Array.isArray(ongoingData) ? ongoingData.map(mapPublicEventToEvent) : null;
+    upcomingEvents = Array.isArray(upcomingData) ? upcomingData.map(mapPublicEventToEvent) : null;
+    completedEvents = Array.isArray(completedData)
+      ? completedData.map(mapPublicEventToEvent)
+      : null;
   } catch (error) {
     console.error("Failed to fetch public events:", error);
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
-
-  const recurring: Record<string, Event[]> = {
-    weekly: weeklyWithDates,
-  };
 
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -129,40 +121,53 @@ export default async function Events() {
     },
   };
 
-  const formatSectionTitle = (type: string) => {
-    const titles: Record<string, string> = {
-      latest: "Ongoing Events",
-      upcoming: "Upcoming Events",
-      weekly: "Weekly Twitch Events",
-      biweekly: "Biweekly Events",
-      monthly: "Monthly Events",
-      past: "Past Events",
-    };
-    return titles[type] || type;
-  };
-
-  const recurringEventsEntries = Object.entries(recurring).filter(([, evs]) => evs.length > 0) as [
-    string,
-    Event[],
-  ][];
-
-  const shouldUseCarousel = (evs: Event[]) => evs.length >= 3;
-
-  const allEventsSections: [string, Event[]][] = [];
-  if (ongoingEvents.length > 0) {
-    allEventsSections.push(["latest", ongoingEvents]);
-  }
-  if (upcomingEvents.length > 0) {
-    allEventsSections.push(["upcoming", upcomingEvents]);
-  }
-  allEventsSections.push(...recurringEventsEntries);
-  if (completedEvents.length > 0) {
-    allEventsSections.push(["past", completedEvents]);
-  }
+  const categories: EventCategory[] = [
+    {
+      id: "ongoing",
+      navLabel: "Ongoing",
+      title: "Ongoing Events",
+      icon: <Radio className="h-4 w-4" />,
+      events: ongoingEvents,
+      emptyTitle: "Nothing's live right now",
+      emptyDescription:
+        "μLearn's stage is quiet at the moment. Check back soon to catch something happening live.",
+      live: !!ongoingEvents && ongoingEvents.length > 0,
+    },
+    {
+      id: "upcoming",
+      navLabel: "Upcoming",
+      title: "Upcoming Events",
+      icon: <CalendarClock className="h-4 w-4" />,
+      events: upcomingEvents,
+      emptyTitle: "No upcoming events yet",
+      emptyDescription:
+        "Nothing's on the calendar just yet. New events get added often, so check back soon.",
+    },
+    {
+      id: "weekly",
+      navLabel: "Weekly Twitch",
+      title: "Weekly Twitch Events",
+      icon: <Repeat className="h-4 w-4" />,
+      events: weeklyWithDates,
+      emptyTitle: "No sessions scheduled",
+      emptyDescription:
+        "Our weekly shows are between sessions right now. The next one will land here soon.",
+    },
+    {
+      id: "past",
+      navLabel: "Past",
+      title: "Past Events",
+      icon: <History className="h-4 w-4" />,
+      events: completedEvents,
+      emptyTitle: "The archive is empty",
+      emptyDescription:
+        "Once events wrap up, they'll show up here so you can look back on what happened.",
+    },
+  ];
 
   return (
     <section className="px-6 py-8 md:px-12 min-h-screen">
-      <div className="max-w-[1300px] mx-auto mb-16">
+      <div className="max-w-7xl mx-auto mb-16">
         <MotionDiv
           initial="hidden"
           animate="visible"
@@ -181,28 +186,8 @@ export default async function Events() {
         </MotionDiv>
       </div>
 
-      <div className="max-w-6xl mx-auto">
-        {allEventsSections.map(([type, evs]) => (
-          <MotionDiv
-            key={type}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="mb-12"
-          >
-            <div className="mb-3 text-center md:text-left">
-              <h2 className="mb-1">{formatSectionTitle(type)}</h2>
-              <div className="w-20 h-1 bg-mulearn mx-auto md:mx-0 rounded-full" />
-            </div>
-
-            {shouldUseCarousel(evs) ? (
-              <EventCarousel events={evs} rtl={type === "latest" || type === "past"} />
-            ) : (
-              <Grid events={evs} />
-            )}
-          </MotionDiv>
-        ))}
+      <div className="mx-auto max-w-7xl">
+        <EventCategoryTabs categories={categories} />
       </div>
     </section>
   );

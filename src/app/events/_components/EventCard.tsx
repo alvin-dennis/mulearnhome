@@ -109,7 +109,8 @@ export default function EventCard({ event }: Props) {
           <DialogFooter className="mt-6 pt-4 border-t border-mulearn-greyish/20">
             <Button
               asChild
-              className="w-full bg-mulearn hover:bg-mulearn-trusty-blue text-mulearn-whitish rounded-xl py-6 font-semibold text-sm shadow-md transition-all duration-300"
+              size="icon"
+              className="w-full bg-mulearn hover:bg-mulearn-trusty-blue text-mulearn-whitish rounded-xl py-6 font-semibold text-sm transition-all duration-300"
             >
               <a target="_blank" href={event.link} rel="noopener noreferrer">
                 Go to Event
