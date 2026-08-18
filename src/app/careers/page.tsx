@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CareersCard from "@/app/careers/_components/CareersCard";
 import CareersStats from "@/app/careers/_components/CareersStats";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
@@ -30,72 +30,87 @@ const ITEMS_PER_PAGE = 12;
 export default function Careers() {
   const [activeTab, setActiveTab] = useState<TabValue>("ongoing");
   const companyData: Company[] = companies;
-
   const [ongoingPage, setOngoingPage] = useState(1);
   const [ongoingData, setOngoingData] = useState<OngoingHiring[]>([]);
   const [ongoingCount, setOngoingCount] = useState(0);
   const [ongoingLoading, setOngoingLoading] = useState(true);
   const [ongoingError, setOngoingError] = useState(false);
+  const [ongoingFailedPage, setOngoingFailedPage] = useState<number | null>(null);
+  const ongoingRequestId = useRef(0);
 
   const [previousPage, setPreviousPage] = useState(1);
   const [previousData, setPreviousData] = useState<PreviousHiring[]>([]);
   const [previousCount, setPreviousCount] = useState(0);
   const [previousLoading, setPreviousLoading] = useState(true);
   const [previousError, setPreviousError] = useState(false);
+  const [previousFailedPage, setPreviousFailedPage] = useState<number | null>(null);
+  const previousRequestId = useRef(0);
 
-  useEffect(() => {
-    let ignore = false;
+  const goToOngoingPage = (page: number) => {
+    const requestId = ++ongoingRequestId.current;
     setOngoingLoading(true);
-    setOngoingError(false);
 
-    fetchOngoingHiringPage(ongoingPage, ITEMS_PER_PAGE)
+    fetchOngoingHiringPage(page, ITEMS_PER_PAGE)
       .then(({ data, pagination }) => {
-        if (ignore) return;
+        if (requestId !== ongoingRequestId.current) return;
         setOngoingData(data);
         setOngoingCount(pagination.count);
+        setOngoingPage(page);
+        setOngoingError(false);
+        setOngoingFailedPage(null);
       })
       .catch((err) => {
-        if (ignore) return;
+        if (requestId !== ongoingRequestId.current) return;
         console.error("Failed to load ongoing hiring:", err);
-        setOngoingError(true);
-        setOngoingData([]);
-        setOngoingCount(0);
+        setOngoingFailedPage(page);
+        setOngoingData((prev) => {
+          if (prev.length === 0) {
+            setOngoingError(true);
+            setOngoingCount(0);
+          }
+          return prev;
+        });
       })
       .finally(() => {
-        if (!ignore) setOngoingLoading(false);
+        if (requestId === ongoingRequestId.current) setOngoingLoading(false);
       });
+  };
 
-    return () => {
-      ignore = true;
-    };
-  }, [ongoingPage]);
-
-  useEffect(() => {
-    let ignore = false;
+  const goToPreviousPage = (page: number) => {
+    const requestId = ++previousRequestId.current;
     setPreviousLoading(true);
-    setPreviousError(false);
 
-    fetchPreviousHiringPage(previousPage, ITEMS_PER_PAGE)
+    fetchPreviousHiringPage(page, ITEMS_PER_PAGE)
       .then(({ data, pagination }) => {
-        if (ignore) return;
+        if (requestId !== previousRequestId.current) return;
         setPreviousData(data);
         setPreviousCount(pagination.count);
+        setPreviousPage(page);
+        setPreviousError(false);
+        setPreviousFailedPage(null);
       })
       .catch((err) => {
-        if (ignore) return;
+        if (requestId !== previousRequestId.current) return;
         console.error("Failed to load previous hiring:", err);
-        setPreviousError(true);
-        setPreviousData([]);
-        setPreviousCount(0);
+        setPreviousFailedPage(page);
+        setPreviousData((prev) => {
+          if (prev.length === 0) {
+            setPreviousError(true);
+            setPreviousCount(0);
+          }
+          return prev;
+        });
       })
       .finally(() => {
-        if (!ignore) setPreviousLoading(false);
+        if (requestId === previousRequestId.current) setPreviousLoading(false);
       });
+  };
 
-    return () => {
-      ignore = true;
-    };
-  }, [previousPage]);
+  useEffect(() => {
+    goToOngoingPage(1);
+    goToPreviousPage(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -192,8 +207,13 @@ export default function Careers() {
                 <StateDisplay
                   variant="no-results"
                   title="Couldn't load open positions"
-                  description="Something went wrong while fetching career listings. Please try again later."
+                  description="Something went wrong while fetching career listings. Please try again."
                   size="md"
+                  action={
+                    <Button onClick={() => goToOngoingPage(ongoingFailedPage ?? 1)}>
+                      Try again
+                    </Button>
+                  }
                 />
               ) : (
                 <StateDisplay
@@ -205,6 +225,20 @@ export default function Careers() {
               )
             ) : (
               <>
+                {ongoingFailedPage !== null && (
+                  <div className="mb-6 flex flex-wrap items-center justify-center gap-3 rounded-lg bg-mulearn-gray-50 px-4 py-3 text-sm text-mulearn-gray-600">
+                    <span>
+                      Couldn&apos;t load page {ongoingFailedPage}. Still showing page {ongoingPage}.
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => goToOngoingPage(ongoingFailedPage)}
+                    >
+                      Retry
+                    </Button>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-stretch justify-center gap-4">
                   {ongoingData.map((role) => (
                     <CareersCard
@@ -226,7 +260,7 @@ export default function Careers() {
                 </div>
                 <Pagination
                   page={ongoingPage}
-                  setPage={setOngoingPage}
+                  setPage={goToOngoingPage}
                   total={ongoingCount}
                   perPage={ITEMS_PER_PAGE}
                   scrollToId="careers-listing"
@@ -245,8 +279,13 @@ export default function Careers() {
                 <StateDisplay
                   variant="no-results"
                   title="Couldn't load closed positions"
-                  description="Something went wrong while fetching career listings. Please try again later."
+                  description="Something went wrong while fetching career listings. Please try again."
                   size="md"
+                  action={
+                    <Button onClick={() => goToPreviousPage(previousFailedPage ?? 1)}>
+                      Try again
+                    </Button>
+                  }
                 />
               ) : (
                 <StateDisplay
@@ -258,6 +297,21 @@ export default function Careers() {
               )
             ) : (
               <>
+                {previousFailedPage !== null && (
+                  <div className="mb-6 flex flex-wrap items-center justify-center gap-3 rounded-lg bg-mulearn-gray-50 px-4 py-3 text-sm text-mulearn-gray-600">
+                    <span>
+                      Couldn&apos;t load page {previousFailedPage}. Still showing page{" "}
+                      {previousPage}.
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => goToPreviousPage(previousFailedPage)}
+                    >
+                      Retry
+                    </Button>
+                  </div>
+                )}
                 <div className="flex flex-wrap items-stretch justify-center gap-4">
                   {previousData.map((role) => (
                     <ClosedCareersCard
@@ -277,7 +331,7 @@ export default function Careers() {
                 </div>
                 <Pagination
                   page={previousPage}
-                  setPage={setPreviousPage}
+                  setPage={goToPreviousPage}
                   total={previousCount}
                   perPage={ITEMS_PER_PAGE}
                   scrollToId="careers-listing"
