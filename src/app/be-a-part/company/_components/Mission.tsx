@@ -71,7 +71,11 @@ function StatCard({
   return (
     <div className="bg-card rounded-2xl shadow-sm flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-xl sm:text-2xl lg:text-[2rem]">
-        {isString ? value : <CountUp end={value as number} duration={5} separator="," />}
+        {isString ? (
+          value
+        ) : (
+          <CountUp end={value as number} duration={5} separator="," autoAnimate autoAnimateOnce />
+        )}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
     </div>

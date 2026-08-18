@@ -4,7 +4,6 @@ import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic, PlayCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard, IG_LABELS } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
@@ -12,6 +11,7 @@ import { TabButton } from "@/app/events/_components/TabButton";
 import { MotionSection } from "@/components/MuFramer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/useDebounce";
 import type { OfficeHoursSession, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchOfficeHours } from "@/services/weeklyTwitches";
@@ -115,6 +115,31 @@ export default function OfficeHoursClient() {
   });
 
   const events = filteredSessions.map((s, i) => toEvent(s, i));
+  const hasActiveFilters = Boolean(debouncedSearch) || selectedTags.length > 0;
+
+  const emptyStateCopy = error
+    ? {
+        title: "Something Went Wrong",
+        description:
+          "We couldn't load Office Hour sessions right now. This might be a temporary connection issue — please refresh the page or try again in a few minutes.",
+      }
+    : hasActiveFilters
+      ? {
+          title: "No Matching Sessions",
+          description:
+            "No sessions matched your search or the selected tags. Try a different keyword, or clear the filters to browse all sessions.",
+        }
+      : view === "upcoming"
+        ? {
+            title: "No Upcoming Sessions",
+            description:
+              "There are no upcoming Office Hour sessions scheduled right now. New sessions are added regularly, so check back soon.",
+          }
+        : {
+            title: "No Previous Sessions",
+            description:
+              "No past Office Hour sessions to show yet. Once sessions wrap up, they'll appear here.",
+          };
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -189,20 +214,11 @@ export default function OfficeHoursClient() {
                 ))}
               </div>
             ) : (
-              <EmptyState
-                title={
-                  error
-                    ? "Something Went Wrong"
-                    : view === "upcoming"
-                      ? "No Upcoming Sessions"
-                      : "No Previous Sessions"
-                }
-                description={
-                  error
-                    ? "We couldn't load sessions right now. Please try again later."
-                    : "Check back later or try a different search."
-                }
-                isError={error}
+              <StateDisplay
+                variant="no-results"
+                title={emptyStateCopy.title}
+                description={emptyStateCopy.description}
+                size="md"
               />
             )}
 

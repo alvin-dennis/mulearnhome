@@ -53,7 +53,13 @@ export default function TestimonialStats({ counts, hasError }: TestimonialStatsP
                 <Icon className="w-6 h-6" />
               </div>
               <div className="text-3xl sm:text-4xl font-black text-mulearn mb-2">
-                <CountUp end={stat.value} duration={2.5} separator="," />
+                <CountUp
+                  end={stat.value}
+                  duration={2.5}
+                  separator=","
+                  autoAnimate
+                  autoAnimateOnce
+                />
                 <span className="text-2xl ml-0.5">+</span>
               </div>
               <div className="text-sm font-bold text-mulearn-gray-600 uppercase tracking-widest">

@@ -4,13 +4,13 @@ import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
-import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
 import { TabButton } from "@/app/events/_components/TabButton";
 import { MotionSection } from "@/components/MuFramer";
 import { Badge } from "@/components/ui/badge";
+import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/useDebounce";
 import type { GrabYourSuperpowersSession, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchGrabYourSuperpowers } from "@/services/weeklyTwitches";
@@ -88,6 +88,31 @@ export default function GrabYourSuperpowersClient() {
   });
 
   const events = sessions.map((s, i) => toEvent(s, i));
+  const hasActiveFilters = Boolean(debouncedSearch);
+
+  const emptyStateCopy = error
+    ? {
+        title: "Something Went Wrong",
+        description:
+          "We couldn't load Grab Your Superpowers sessions right now. This might be a temporary connection issue — please refresh the page or try again in a few minutes.",
+      }
+    : hasActiveFilters
+      ? {
+          title: "No Matching Sessions",
+          description:
+            "No sessions matched your search. Try a different keyword, or clear the search to browse all sessions.",
+        }
+      : view === "upcoming"
+        ? {
+            title: "No Upcoming Sessions",
+            description:
+              "There are no upcoming Grab Your Superpowers sessions scheduled right now. New sessions are added regularly, so check back soon.",
+          }
+        : {
+            title: "No Previous Sessions",
+            description:
+              "No past Grab Your Superpowers sessions to show yet. Once sessions wrap up, they'll appear here.",
+          };
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -167,20 +192,11 @@ export default function GrabYourSuperpowersClient() {
                 ))}
               </div>
             ) : (
-              <EmptyState
-                title={
-                  error
-                    ? "Something Went Wrong"
-                    : view === "upcoming"
-                      ? "No Upcoming Sessions"
-                      : "No Previous Sessions"
-                }
-                description={
-                  error
-                    ? "We couldn't load sessions right now. Please try again later."
-                    : "Check back later or try a different search."
-                }
-                isError={error}
+              <StateDisplay
+                variant="no-results"
+                title={emptyStateCopy.title}
+                description={emptyStateCopy.description}
+                size="md"
               />
             )}
 

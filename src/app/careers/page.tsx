@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { companies } from "@/data/company";
 import type { Company, OngoingHiring, PaginationMeta, PreviousHiring } from "@/lib/types";
@@ -43,29 +44,21 @@ export default function Careers() {
   const ITEMS_PER_PAGE = 12;
 
   const loadOngoing = async (page: number) => {
-    try {
-      const result: PaginatedCareersResponse<OngoingHiring> = await fetchOngoingHiringPage(
-        page,
-        ITEMS_PER_PAGE,
-      );
-      setOngoingData(result.data);
-      setOngoingPagination(result.pagination);
-    } catch (err) {
-      console.error("Failed to load ongoing hiring:", err);
-    }
+    const result: PaginatedCareersResponse<OngoingHiring> = await fetchOngoingHiringPage(
+      page,
+      ITEMS_PER_PAGE,
+    );
+    setOngoingData(result.data);
+    setOngoingPagination(result.pagination);
   };
 
   const loadPrevious = async (page: number) => {
-    try {
-      const result: PaginatedCareersResponse<PreviousHiring> = await fetchPreviousHiringPage(
-        page,
-        ITEMS_PER_PAGE,
-      );
-      setPreviousData(result.data);
-      setPreviousPagination(result.pagination);
-    } catch (err) {
-      console.error("Failed to load previous hiring:", err);
-    }
+    const result: PaginatedCareersResponse<PreviousHiring> = await fetchPreviousHiringPage(
+      page,
+      ITEMS_PER_PAGE,
+    );
+    setPreviousData(result.data);
+    setPreviousPagination(result.pagination);
   };
 
   useEffect(() => {
@@ -94,7 +87,11 @@ export default function Careers() {
 
   const handleOngoingPage = (page: number) => {
     setOngoingPage(page);
-    loadOngoing(page);
+    setError(null);
+    loadOngoing(page).catch((err) => {
+      console.error("Failed to load ongoing hiring:", err);
+      setError("Failed to load career listings.");
+    });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -103,7 +100,11 @@ export default function Careers() {
 
   const handlePreviousPage = (page: number) => {
     setPreviousPage(page);
-    loadPrevious(page);
+    setError(null);
+    loadPrevious(page).catch((err) => {
+      console.error("Failed to load previous hiring:", err);
+      setError("Failed to load career listings.");
+    });
     document.getElementById("careers-listing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -188,12 +189,6 @@ export default function Careers() {
         />
       </div>
 
-      {error && (
-        <div className="mx-auto mt-12 max-w-[1300px] px-4">
-          <p className="text-center text-red-600">{error}</p>
-        </div>
-      )}
-
       <div
         id="careers-listing"
         className="mx-auto mt-12 mb-12 sm:mb-16 max-w-[1300px] px-4 sm:px-6 lg:px-8"
@@ -237,10 +232,20 @@ export default function Careers() {
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading open positions…</p>
               </div>
+            ) : error && currentOngoing.length === 0 ? (
+              <StateDisplay
+                variant="no-results"
+                title="Couldn't load open positions"
+                description="Something went wrong while fetching career listings. Please try again later."
+                size="md"
+              />
             ) : currentOngoing.length === 0 ? (
-              <div className="flex justify-center py-20">
-                <p className="text-mulearn-gray-600">No open positions right now.</p>
-              </div>
+              <StateDisplay
+                variant="no-results"
+                title="No open positions right now."
+                description="Check back soon — new opportunities are posted regularly."
+                size="md"
+              />
             ) : (
               <>
                 <div className="flex flex-wrap items-stretch justify-center gap-4">
@@ -327,10 +332,20 @@ export default function Careers() {
               <div className="flex justify-center py-20">
                 <p className="text-mulearn-gray-600">Loading closed positions…</p>
               </div>
+            ) : error && currentPrevious.length === 0 ? (
+              <StateDisplay
+                variant="no-results"
+                title="Couldn't load closed positions"
+                description="Something went wrong while fetching career listings. Please try again later."
+                size="md"
+              />
             ) : currentPrevious.length === 0 ? (
-              <div className="flex justify-center py-20">
-                <p className="text-mulearn-gray-600">No closed positions yet.</p>
-              </div>
+              <StateDisplay
+                variant="no-results"
+                title="No closed positions yet."
+                description="Past hiring rounds will show up here once they're closed."
+                size="md"
+              />
             ) : (
               <>
                 <div className="flex flex-wrap items-stretch justify-center gap-4">

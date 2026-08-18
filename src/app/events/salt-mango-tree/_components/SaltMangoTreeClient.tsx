@@ -4,7 +4,6 @@ import { format, parse } from "date-fns";
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
 import { useEffect, useState } from "react";
-import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
@@ -13,6 +12,7 @@ import { MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/useDebounce";
 import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchSaltMangoTree } from "@/services/weeklyTwitches";
@@ -106,6 +106,31 @@ export default function SaltMangoTreeClient() {
 
   const filteredEpisodes = filterByZone(episodes);
   const events = filteredEpisodes.map((e, i) => toEvent(e, i));
+  const hasActiveFilters = Boolean(debouncedSearch) || selectedTags.length > 0;
+
+  const emptyStateCopy = error
+    ? {
+        title: "Something Went Wrong",
+        description:
+          "We couldn't load Salt Mango Tree sessions right now. This might be a temporary connection issue — please refresh the page or try again in a few minutes.",
+      }
+    : hasActiveFilters
+      ? {
+          title: "No Matching Sessions",
+          description:
+            "No sessions matched your search or the selected zone. Try a different keyword, or clear the filters to browse all sessions.",
+        }
+      : view === "upcoming"
+        ? {
+            title: "No Upcoming Sessions",
+            description:
+              "There are no upcoming Salt Mango Tree sessions scheduled right now. New sessions are added regularly, so check back soon.",
+          }
+        : {
+            title: "No Previous Sessions",
+            description:
+              "No past Salt Mango Tree sessions to show yet. Once sessions wrap up, they'll appear here.",
+          };
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -214,20 +239,11 @@ export default function SaltMangoTreeClient() {
                   ))}
                 </div>
               ) : (
-                <EmptyState
-                  title={
-                    error
-                      ? "Something Went Wrong"
-                      : view === "upcoming"
-                        ? "No Upcoming Sessions"
-                        : "No Previous Sessions"
-                  }
-                  description={
-                    error
-                      ? "We couldn't load sessions right now. Please try again later."
-                      : "Check back later or try a different search."
-                  }
-                  isError={error}
+                <StateDisplay
+                  variant="no-results"
+                  title={emptyStateCopy.title}
+                  description={emptyStateCopy.description}
+                  size="md"
                 />
               )}
 

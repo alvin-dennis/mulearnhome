@@ -57,7 +57,13 @@ const LearnersStatus = () => {
               className="text-center"
             >
               <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn mb-4">
-                <CountUp end={stat.number} duration={2.5} separator="," />
+                <CountUp
+                  end={stat.number}
+                  duration={2.5}
+                  separator=","
+                  autoAnimate
+                  autoAnimateOnce
+                />
               </h3>
 
               <p className="text-lg md:text-xl font-medium">{stat.label}</p>

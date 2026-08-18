@@ -5,7 +5,6 @@ import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, PlayCircle, Radio } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { EmptyState } from "@/app/events/_components/EmptyState";
 import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
@@ -14,6 +13,7 @@ import { MotionSection } from "@/components/MuFramer";
 import MuImage from "@/components/MuImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/useDebounce";
 import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchInspirationStation } from "@/services/weeklyTwitches";
@@ -107,6 +107,31 @@ export default function InspirationStationClient() {
 
   const filteredEpisodes = filterByZone(episodes);
   const events = filteredEpisodes.map((e, i) => toEvent(e, i));
+  const hasActiveFilters = Boolean(debouncedSearch) || selectedTags.length > 0;
+
+  const emptyStateCopy = error
+    ? {
+        title: "Something Went Wrong",
+        description:
+          "We couldn't load Inspiration Station episodes right now. This might be a temporary connection issue — please refresh the page or try again in a few minutes.",
+      }
+    : hasActiveFilters
+      ? {
+          title: "No Matching Episodes",
+          description:
+            "No episodes matched your search or the selected zone. Try a different keyword, or clear the filters to browse all episodes.",
+        }
+      : view === "upcoming"
+        ? {
+            title: "No Upcoming Episodes",
+            description:
+              "There are no upcoming Inspiration Station episodes scheduled right now. New episodes are added regularly, so check back soon.",
+          }
+        : {
+            title: "No Previous Episodes",
+            description:
+              "No past Inspiration Station episodes to show yet. Once episodes wrap up, they'll appear here.",
+          };
 
   const motionVariants = {
     initial: { opacity: 0, y: 30 },
@@ -214,20 +239,11 @@ export default function InspirationStationClient() {
                   ))}
                 </div>
               ) : (
-                <EmptyState
-                  title={
-                    error
-                      ? "Something Went Wrong"
-                      : view === "upcoming"
-                        ? "No Upcoming Episodes"
-                        : "No Previous Episodes"
-                  }
-                  description={
-                    error
-                      ? "We couldn't load episodes right now. Please try again later."
-                      : "Check back later or try a different search."
-                  }
-                  isError={error}
+                <StateDisplay
+                  variant="no-results"
+                  title={emptyStateCopy.title}
+                  description={emptyStateCopy.description}
+                  size="md"
                 />
               )}
 

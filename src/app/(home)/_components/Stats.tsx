@@ -3,8 +3,6 @@
 import type { Variants } from "framer-motion";
 import CountUp from "react-countup";
 import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import type { Counts } from "@/lib/types";
-
 import { useLandingStats } from "@/services/useLandingStats";
 
 const fadeInUp: Variants = {
@@ -92,7 +90,11 @@ function StatCard({
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
-        {isString ? value : <CountUp end={value as number} duration={5} separator="," />}
+        {isString ? (
+          value
+        ) : (
+          <CountUp end={value as number} duration={10} separator="," autoAnimate autoAnimateOnce />
+        )}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
     </div>

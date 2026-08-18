@@ -19,13 +19,13 @@ export default function ContactStats() {
     <div className="grid grid-cols-3 gap-6 pt-6">
       <div className="text-center">
         <div className="text-2xl md:text-3xl font-bold text-mulearn">
-          <CountUp end={learnersCount} duration={2.5} separator="," />+
+          <CountUp end={learnersCount} duration={2.5} separator="," autoAnimate autoAnimateOnce />+
         </div>
         <div className="text-sm text-mulearn-gray-600">Learners</div>
       </div>
       <div className="text-center">
         <div className="text-2xl md:text-3xl font-bold text-mulearn">
-          <CountUp end={partnersCount} duration={2.5} separator="," />+
+          <CountUp end={partnersCount} duration={2.5} separator="," autoAnimate autoAnimateOnce />+
         </div>
         <div className="text-sm text-mulearn-gray-600">Partners</div>
       </div>
