@@ -28,42 +28,42 @@ const CareersCard = ({
   const formattedLastDate = formatDate(lastdate);
 
   return (
-    <Card className="w-80 rounded-2xl border border-mulearn-trusty-blue bg-mulearn-whitish p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center gap-4">
-      {organization && <h4 className="text-center text-lg font-semibold">{organization}</h4>}
-      {role && <h2 className="text-center text-2xl font-bold text-mulearn">{role}</h2>}
-      {title && <p className="text-center text-base text-mulearn-blackish">{title}</p>}
+    <Card className="w-80 rounded-2xl border border-mulearn-trusty-blue bg-mulearn-whitish p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-start gap-4">
+      {organization && <h4 className="text-left text-lg font-semibold">{organization}</h4>}
+      {role && <h2 className="text-left text-2xl font-bold text-mulearn">{role}</h2>}
+      {title && <p className="text-left text-base text-mulearn-blackish">{title}</p>}
 
-      <div className="flex flex-col items-center gap-2 text-sm text-mulearn-blackish">
+      <div className="flex flex-col items-start gap-2 text-sm text-mulearn-blackish">
         {formattedPostedDate && (
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 flex-shrink-0" />
-            <span className="text-center">Posted: {formattedPostedDate}</span>
+            <span className="text-left">Posted: {formattedPostedDate}</span>
           </div>
         )}
         {duration && (
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 flex-shrink-0" />
-            <span className="text-center">{duration}</span>
+            <span className="text-left">{duration}</span>
           </div>
         )}
         {location && (
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 flex-shrink-0" />
-            <span className="text-center">{location}</span>
+            <span className="text-left">{location}</span>
           </div>
         )}
         {remuneration && (
-          <p className="text-center text-base text-mulearn-blackish">
+          <p className="text-left text-base text-mulearn-blackish">
             <span className="font-semibold">Remuneration:</span> {remuneration}
           </p>
         )}
         {vacancies !== undefined && vacancies !== null && (
-          <p className="text-center text-base text-mulearn-blackish">
+          <p className="text-left text-base text-mulearn-blackish">
             <span className="font-semibold">Vacancies:</span> {vacancies}
           </p>
         )}
         {formattedLastDate && (
-          <p className="text-center text-base text-mulearn-blackish">
+          <p className="text-left text-base text-mulearn-blackish">
             <span className="font-semibold">Last Date:</span> {formattedLastDate}
           </p>
         )}
