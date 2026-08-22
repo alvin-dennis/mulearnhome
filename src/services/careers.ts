@@ -7,6 +7,20 @@ export interface PaginatedCareersResponse<T> {
   pagination: PaginationMeta;
 }
 
+function parsePaginatedResponse<T>(raw: unknown): PaginatedCareersResponse<T> {
+  if (
+    !raw ||
+    typeof raw !== "object" ||
+    !Array.isArray((raw as { data?: unknown }).data) ||
+    !(raw as { pagination?: unknown }).pagination ||
+    typeof (raw as { pagination?: unknown }).pagination !== "object"
+  ) {
+    throw new Error("Malformed career listing response");
+  }
+  const { data, pagination } = raw as { data: T[]; pagination: PaginationMeta };
+  return { data, pagination };
+}
+
 export async function fetchOngoingHiringPage(
   pageIndex = 1,
   perPage = 12,
@@ -14,18 +28,7 @@ export async function fetchOngoingHiringPage(
   const res = await publicGateway.get(careerLabRoutes.ongoing, {
     params: { pageIndex, perPage },
   });
-  const raw = res.data?.response;
-  const data: OngoingHiring[] = Array.isArray(raw?.data) ? raw.data : [];
-  const pagination: PaginationMeta = raw?.pagination ?? {
-    count: data.length,
-    totalPages: 1,
-    isNext: false,
-    isPrev: false,
-    nextPage: null,
-    prevPage: null,
-    current_page: pageIndex,
-  };
-  return { data, pagination };
+  return parsePaginatedResponse<OngoingHiring>(res.data?.response);
 }
 
 export async function fetchPreviousHiringPage(
@@ -35,16 +38,5 @@ export async function fetchPreviousHiringPage(
   const res = await publicGateway.get(careerLabRoutes.previous, {
     params: { pageIndex, perPage },
   });
-  const raw = res.data?.response;
-  const data: PreviousHiring[] = Array.isArray(raw?.data) ? raw.data : [];
-  const pagination: PaginationMeta = raw?.pagination ?? {
-    count: data.length,
-    totalPages: 1,
-    isNext: false,
-    isPrev: false,
-    nextPage: null,
-    prevPage: null,
-    current_page: pageIndex,
-  };
-  return { data, pagination };
+  return parsePaginatedResponse<PreviousHiring>(res.data?.response);
 }
