@@ -53,6 +53,15 @@ function mapPublicEventToEvent(item: PublicEvent): Event {
   };
 }
 
+function safeMapEvents(items: PublicEvent[], label: string): Event[] | null {
+  try {
+    return items.map(mapPublicEventToEvent);
+  } catch (error) {
+    console.error(`Failed to map ${label} events:`, error);
+    return null;
+  }
+}
+
 const WEEKLY_TWITCH_FETCHERS: Record<
   string,
   (params: { status: "upcoming"; pageIndex: number; perPage: number }) => Promise<{
@@ -94,20 +103,28 @@ export default async function Events() {
   let upcomingEvents: Event[] | null = null;
   let completedEvents: Event[] | null = null;
 
-  try {
-    const [ongoingData, upcomingData, completedData] = await Promise.all([
-      fetchPublicEvents({ status: "ongoing" }),
-      fetchPublicEvents({ status: "upcoming" }),
-      fetchPublicEvents({ status: "completed" }),
-    ]);
+  const [ongoingResult, upcomingResult, completedResult] = await Promise.allSettled([
+    fetchPublicEvents({ status: "ongoing" }),
+    fetchPublicEvents({ status: "upcoming" }),
+    fetchPublicEvents({ status: "completed" }),
+  ]);
 
-    ongoingEvents = Array.isArray(ongoingData) ? ongoingData.map(mapPublicEventToEvent) : null;
-    upcomingEvents = Array.isArray(upcomingData) ? upcomingData.map(mapPublicEventToEvent) : null;
-    completedEvents = Array.isArray(completedData)
-      ? completedData.map(mapPublicEventToEvent)
-      : null;
-  } catch (error) {
-    console.error("Failed to fetch public events:", error);
+  if (ongoingResult.status === "fulfilled" && Array.isArray(ongoingResult.value)) {
+    ongoingEvents = safeMapEvents(ongoingResult.value, "ongoing");
+  } else if (ongoingResult.status === "rejected") {
+    console.error("Failed to fetch ongoing events:", ongoingResult.reason);
+  }
+
+  if (upcomingResult.status === "fulfilled" && Array.isArray(upcomingResult.value)) {
+    upcomingEvents = safeMapEvents(upcomingResult.value, "upcoming");
+  } else if (upcomingResult.status === "rejected") {
+    console.error("Failed to fetch upcoming events:", upcomingResult.reason);
+  }
+
+  if (completedResult.status === "fulfilled" && Array.isArray(completedResult.value)) {
+    completedEvents = safeMapEvents(completedResult.value, "completed");
+  } else if (completedResult.status === "rejected") {
+    console.error("Failed to fetch completed events:", completedResult.reason);
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
