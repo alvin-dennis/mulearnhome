@@ -94,20 +94,28 @@ export default async function Events() {
   let upcomingEvents: Event[] | null = null;
   let completedEvents: Event[] | null = null;
 
-  try {
-    const [ongoingData, upcomingData, completedData] = await Promise.all([
-      fetchPublicEvents({ status: "ongoing" }),
-      fetchPublicEvents({ status: "upcoming" }),
-      fetchPublicEvents({ status: "completed" }),
-    ]);
+  const [ongoingResult, upcomingResult, completedResult] = await Promise.allSettled([
+    fetchPublicEvents({ status: "ongoing" }),
+    fetchPublicEvents({ status: "upcoming" }),
+    fetchPublicEvents({ status: "completed" }),
+  ]);
 
-    ongoingEvents = Array.isArray(ongoingData) ? ongoingData.map(mapPublicEventToEvent) : null;
-    upcomingEvents = Array.isArray(upcomingData) ? upcomingData.map(mapPublicEventToEvent) : null;
-    completedEvents = Array.isArray(completedData)
-      ? completedData.map(mapPublicEventToEvent)
-      : null;
-  } catch (error) {
-    console.error("Failed to fetch public events:", error);
+  if (ongoingResult.status === "fulfilled" && Array.isArray(ongoingResult.value)) {
+    ongoingEvents = ongoingResult.value.map(mapPublicEventToEvent);
+  } else if (ongoingResult.status === "rejected") {
+    console.error("Failed to fetch ongoing events:", ongoingResult.reason);
+  }
+
+  if (upcomingResult.status === "fulfilled" && Array.isArray(upcomingResult.value)) {
+    upcomingEvents = upcomingResult.value.map(mapPublicEventToEvent);
+  } else if (upcomingResult.status === "rejected") {
+    console.error("Failed to fetch upcoming events:", upcomingResult.reason);
+  }
+
+  if (completedResult.status === "fulfilled" && Array.isArray(completedResult.value)) {
+    completedEvents = completedResult.value.map(mapPublicEventToEvent);
+  } else if (completedResult.status === "rejected") {
+    console.error("Failed to fetch completed events:", completedResult.reason);
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
