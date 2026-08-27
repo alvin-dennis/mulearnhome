@@ -37,19 +37,29 @@ function mapPublicEventToEvent(item: PublicEvent): Event {
     }
   }
 
-  const description =
-    item.description ||
-    `Event Category: ${item.category_name || item.event_type || "General"}. Organised by ${
-      item.organizer?.organiser_ig?.name || item.organizer?.organiser_campus?.title || "MuLearn"
-    }.`;
+  const category = item.category_name || item.event_type || "General";
+  const organizedBy =
+    item.organizer?.organiser_ig?.name || item.organizer?.organiser_campus?.title || "MuLearn";
+
+  const venueType = item.venue?.venue_type;
+  const venueLabel =
+    venueType === "online"
+      ? "Online"
+      : [item.venue?.venue_address, item.venue?.venue_city].filter(Boolean).join(", ") ||
+        (venueType ? venueType.charAt(0).toUpperCase() + venueType.slice(1) : undefined);
 
   return {
     title: item.title,
-    description: description,
+    description: item.description || "",
     image: item.cover_image || undefined,
     isLive: now >= start && now <= end,
     date: dateRange,
     link: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/event/${item.id}`,
+    category,
+    organizedBy,
+    tags: item.tags?.length ? item.tags : undefined,
+    venueType,
+    venueLabel,
   };
 }
 
@@ -162,7 +172,7 @@ export default async function Events() {
     },
     {
       id: "weekly",
-      navLabel: "Weekly Twitch",
+      navLabel: "Weekly Twitches",
       title: "Weekly Twitch Events",
       icon: <Repeat className="h-4 w-4" />,
       events: weeklyWithDates,
