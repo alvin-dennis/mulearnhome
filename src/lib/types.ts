@@ -46,6 +46,11 @@ export interface Event {
   isLive?: boolean;
   date?: string;
   link?: string;
+  category?: string;
+  organizedBy?: string;
+  venueType?: string;
+  venueLabel?: string;
+  tags?: string[];
 }
 
 interface OrgTypeCount {

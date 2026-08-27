@@ -115,7 +115,7 @@ export function GenericEventCard({
     <MotionDiv
       whileHover={{ y: -8, scale: 1.01 }}
       transition={{ duration: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
-      className="group relative bg-mulearn-whitish rounded-tl-[32px] rounded-br-[32px] rounded-tr-xl rounded-bl-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/30 hover:border-mulearn/40 w-full h-full flex flex-col before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1.5 before:bg-gradient-to-b before:from-mulearn-trusty-blue before:to-mulearn-duke-purple before:rounded-l-full"
+      className="group relative bg-mulearn-whitish rounded-tl-[32px] rounded-br-[32px] rounded-tr-xl rounded-bl-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-mulearn-greyish/30 hover:border-mulearn/40 w-full h-full flex flex-col before:absolute before:rounded-l-full"
     >
       {/* Thumbnail Section */}
       <div className="relative w-full h-48 overflow-hidden p-3 flex items-center justify-center shrink-0">
