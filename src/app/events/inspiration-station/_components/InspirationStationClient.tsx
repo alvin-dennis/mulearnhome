@@ -51,6 +51,7 @@ export default function InspirationStationClient() {
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
+    let isCurrent = true;
     setError(false);
     fetchInspirationStation({
       status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
@@ -59,14 +60,19 @@ export default function InspirationStationClient() {
       perPage: 6,
     })
       .then(({ data, pagination: p }) => {
+        if (!isCurrent) return;
         setEpisodes(data);
         setPagination(p);
       })
       .catch(() => {
+        if (!isCurrent) return;
         setEpisodes([]);
         setPagination(EMPTY_PAGINATION);
         setError(true);
       });
+    return () => {
+      isCurrent = false;
+    };
   }, [view, debouncedSearch, page]);
 
   const handleViewChange = (v: ViewType) => {

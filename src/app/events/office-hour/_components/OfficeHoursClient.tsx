@@ -47,6 +47,7 @@ export default function OfficeHoursClient() {
   const debouncedSearch = useDebounce(searchInput, 400);
 
   useEffect(() => {
+    let isCurrent = true;
     setError(false);
 
     fetchOfficeHours({
@@ -56,14 +57,19 @@ export default function OfficeHoursClient() {
       perPage: 6,
     })
       .then(({ data, pagination: p }) => {
+        if (!isCurrent) return;
         setSessions(data);
         setPagination(p);
       })
       .catch(() => {
+        if (!isCurrent) return;
         setSessions([]);
         setPagination(EMPTY_PAGINATION);
         setError(true);
       });
+    return () => {
+      isCurrent = false;
+    };
   }, [view, debouncedSearch, page]);
 
   const handleViewChange = (v: ViewType) => {
