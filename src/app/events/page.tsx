@@ -53,6 +53,15 @@ function mapPublicEventToEvent(item: PublicEvent): Event {
   };
 }
 
+function safeMapEvents(items: PublicEvent[], label: string): Event[] | null {
+  try {
+    return items.map(mapPublicEventToEvent);
+  } catch (error) {
+    console.error(`Failed to map ${label} events:`, error);
+    return null;
+  }
+}
+
 const WEEKLY_TWITCH_FETCHERS: Record<
   string,
   (params: { status: "upcoming"; pageIndex: number; perPage: number }) => Promise<{
@@ -101,19 +110,19 @@ export default async function Events() {
   ]);
 
   if (ongoingResult.status === "fulfilled" && Array.isArray(ongoingResult.value)) {
-    ongoingEvents = ongoingResult.value.map(mapPublicEventToEvent);
+    ongoingEvents = safeMapEvents(ongoingResult.value, "ongoing");
   } else if (ongoingResult.status === "rejected") {
     console.error("Failed to fetch ongoing events:", ongoingResult.reason);
   }
 
   if (upcomingResult.status === "fulfilled" && Array.isArray(upcomingResult.value)) {
-    upcomingEvents = upcomingResult.value.map(mapPublicEventToEvent);
+    upcomingEvents = safeMapEvents(upcomingResult.value, "upcoming");
   } else if (upcomingResult.status === "rejected") {
     console.error("Failed to fetch upcoming events:", upcomingResult.reason);
   }
 
   if (completedResult.status === "fulfilled" && Array.isArray(completedResult.value)) {
-    completedEvents = completedResult.value.map(mapPublicEventToEvent);
+    completedEvents = safeMapEvents(completedResult.value, "completed");
   } else if (completedResult.status === "rejected") {
     console.error("Failed to fetch completed events:", completedResult.reason);
   }
