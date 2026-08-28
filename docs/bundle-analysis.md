@@ -301,7 +301,71 @@ moderate-effort win to schedule after the zero-risk fixes elsewhere in this doc 
 
 ---
 
-## 8. Findings that confirm existing recommendations with real numbers
+## 8. Investigation: replacing `react-icons` with `lucide-react` (already a dependency)
+
+`lucide-react` is already installed and, unlike `swiper`, is already on Next.js's *default*
+`optimizePackageImports` list — meaning it already gets automatic per-icon tree-shaking with
+zero config. `react-icons` is not on that default list (the same gap already flagged for
+`swiper` in §4/§9d), so every icon pulled from it is more exposure to the same class of
+bundling risk, for a dependency the app could plausibly drop to zero.
+
+### 8.0 Where `react-icons` is used — all 7 call sites, all single icons
+
+| File | Icons imported | Subpath |
+|---|---|---|
+| `src/shared/data/common.data.ts` | `FaFacebook`, `FaInstagram`, `FaLinkedin`, `FaYoutube` | `react-icons/fa` |
+| `src/features/socials/data/socials.data.ts` | (brand icons, same set) | `react-icons/fa` |
+| `src/features/socials/types/socials.types.ts` | `IconType` (type only) | `react-icons` |
+| `src/features/team/components/team-card.tsx` | `FaGithub`, `FaLinkedin`, `FaTwitter` | `react-icons/fa` |
+| `src/features/be-a-part/components/campus/why.tsx` | `BiSolidRightArrow` | `react-icons/bi` |
+| `src/features/artofteaching/components/mentor-card.tsx` | `FaLinkedin` | `react-icons/fa` |
+| `src/features/home/components/special-event-card.tsx` | `FaMapMarkerAlt`, `FiCalendar`, `FiClock` | `react-icons/fa`, `react-icons/fi` |
+
+Every non-brand icon here (`FiCalendar`, `FiClock`, `BiSolidRightArrow`, `FaMapMarkerAlt`) has a
+direct 1:1 `lucide-react` equivalent (`Calendar`, `Clock`, `ArrowRight`, `MapPin`). The brand
+logos (`FaGithub`, `FaLinkedin`, `FaTwitter`, `FaFacebook`, `FaInstagram`, `FaYoutube`) don't
+exist in Lucide's icon set — Lucide is a generic UI-icon library, not a brand-mark library — so
+those 6 need to become small hand-written inline SVGs (a brand logo is a fixed, static path;
+this is exactly what `lucide-react`'s own docs recommend for logos it doesn't carry).
+
+### 8.1 Expected bundle-size difference
+
+This wasn't a separately-attributed line item in the `client.html` treemap pulled for this doc
+(`react-icons` didn't surface as its own top-level chunk the way `swiper`/`zod`/`date-fns` did —
+it's likely folded into one of the unattributed chunks like `5301-*.js`, 67 KB, not broken down
+in this pass). So, unlike §4's Swiper number, **this is an estimate, not a measurement** — flag
+it as such until a real before/after `bun run analyze` confirms it:
+
+| | `react-icons` (current) | `lucide-react` + inline SVGs (proposed) |
+|---|---|---|
+| Non-brand icons (4: `Fi`/`Bi` set) | Part of whatever `react-icons/fa`+`/fi`+`/bi` module chunks cost — react-icons v5 ships ESM and *can* tree-shake per-icon, but only as well as the bundler's tree-shaking reaches into its large per-family barrel files (`react-icons/fa` alone re-exports 1000+ icons in one module) | `lucide-react`'s already-optimized import — each icon is its own tiny module, typically well under 1 KB each once tree-shaken |
+| Brand logos (6: GitHub/LinkedIn/Twitter/Facebook/Instagram/YouTube) | Same barrel-file tree-shaking dependency as above | ~200-400 bytes each as static inline SVG (no library, no runtime icon-component overhead) |
+| Whole dependency | `react-icons` stays installed for just these 7 call sites | `react-icons` removed entirely from `package.json` |
+
+**Expected total savings: likely in the low tens of KB** — meaningfully smaller than the Swiper
+win (§4/§7) in absolute terms, since `react-icons` was never observed as a large standalone
+chunk the way Swiper's 360 KB was. The bigger win here isn't the KB count, it's **removing an
+entire dependency** for something the app already has a fully-tree-shaken, zero-extra-cost
+alternative to (`lucide-react` is paid for regardless — it's used elsewhere already, per the
+main audit's icon-library survey) — the marginal cost of `react-icons` staying installed is
+close to 100% avoidable overhead, however small it turns out to be in absolute KB.
+
+### 8.2 Migration shape, if pursued
+
+1. Swap the 4 non-brand icons for their Lucide equivalents (`Calendar`, `Clock`, `ArrowRight`,
+   `MapPin`) — direct prop-compatible replacements (both libraries take `size`/`className`).
+2. Add 6 small inline SVG components (or a single `<BrandIcon name="github" />` component with a
+   switch) for the brand logos — sourced from each brand's official SVG mark, not traced from the
+   `react-icons/fa` output, to keep them accurate and license-clean.
+3. Remove `react-icons` and `IconType` usage (`socials.types.ts`) — replace `IconType` with
+   `React.ComponentType<{ size?: number; className?: string }>` or Lucide's own `LucideIcon`
+   type, whichever matches the new brand-icon component's shape.
+4. Re-run `bun run analyze` before and after to get the real delta — this section's KB estimate
+   should be replaced with a measured number once this migration actually happens.
+
+---
+
+## 9. Findings that confirm existing recommendations with real numbers
 
 - **`axios` + a `buffer` polyfill (27.7 KB) ship together** in the `7105-*.js` chunk — some part
   of axios's dependency chain (likely its Node-compat code paths, even though the app only uses
@@ -326,7 +390,7 @@ moderate-effort win to schedule after the zero-risk fixes elsewhere in this doc 
 
 ---
 
-## 9. What's done vs. still to do
+## 10. What's done vs. still to do
 
 | Item | Status |
 |---|---|
@@ -336,6 +400,7 @@ moderate-effort win to schedule after the zero-risk fixes elsewhere in this doc 
 | Investigate whether `framework-*.js` actually loads anywhere (§3) | Not applied — needs a live DevTools check, not just static analysis |
 | Split `/events/*` sub-routes out of the shared barrel-driven chunk (§5) | Not applied |
 | De-duplicate the repeated `<Sparkle>` blocks in `levelstructure` (§6) | Not applied |
+| `react-icons` → `lucide-react` + inline brand SVGs investigation (§8) | Documented — investigation only, no package/import changes made |
 | Swiper → Embla Carousel migration investigation (§7) | Documented — investigation only, no migration started, no `embla-carousel*` packages installed |
 | Re-run `bun run analyze` after each fix above to confirm the measured delta | Not applied — do this after every fix, not just at the end |
 
