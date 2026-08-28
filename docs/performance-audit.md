@@ -923,7 +923,11 @@ Ranked by impact-to-effort ratio, not strictly by section order:
    reduces render cost even before/regardless of whether the data-shipping fix lands.
 4. **Add `experimental.optimizePackageImports: ["react-icons", "swiper"]`** to
    `next.config.ts` (§5d) — a one-line, zero-risk config change with no reason not to do
-   it immediately alongside any other `next.config.ts` edit.
+   it immediately alongside any other `next.config.ts` edit. If a **Swiper → Embla
+   Carousel** replacement is pursued afterward (measured ~7-10x bundle-size case, pros/cons,
+   and a 3-file migration plan fully documented in `docs/bundle-analysis.md` §7), this
+   config line becomes moot for the migrated files but is still worth landing first since
+   it's zero-risk and the migration itself is a larger, scheduled effort, not a quick win.
 5. **Wrap `EventsView` in a `<Suspense>` boundary with a real `loading.tsx`/skeleton**
    (§6b) — `/events` is the one route that does a genuine server-side backend fetch and
    currently blocks fully on it with no streaming and no per-route loading state anywhere
@@ -1281,6 +1285,7 @@ versus proposed.
 | `/events` sub-routes bundled into one shared chunk (barrel-import cost) | `docs/bundle-analysis.md` §5 | Documented — not applied |
 | Possibly-orphaned duplicate React DOM chunk | `docs/bundle-analysis.md` §3 | Needs a live DevTools check before it's even confirmed as a bug |
 | Repeated `<Sparkle>` JSX blocks inflating `/levelstructure`'s chunk | `docs/bundle-analysis.md` §6 | Documented — not applied |
+| Swiper → Embla Carousel replacement (bundle-size case, pros/cons, migration plan) | `docs/bundle-analysis.md` §7 | Documented — investigation only, no packages changed |
 | `/events` Suspense + `loading.tsx` | §7b | Documented — not applied |
 | `/team` pagination | §7c | Documented — not applied |
 | Security headers (`headers()` block, CSP report-only rollout) | §8 | Documented — not applied; live-confirmed missing (§11b) |

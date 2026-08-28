@@ -961,6 +961,18 @@ failing in a live run — see `docs/performance-audit.md` §11b).
 
 ---
 
+## Related investigation: Swiper → Embla Carousel (dependency-swap analysis, not folder structure)
+
+Not a folder-structure or SEO topic, but the same "is this dependency choice still the right
+one" lens this doc already applies to `fetch` vs. `axios` above was also applied to this
+codebase's carousel library. Documented in full — all 3 current Swiper call sites
+(`success-stories.tsx`, `colleges.tsx`, `video-section.tsx`), a measured bundle-size comparison,
+pros/cons (manual-scroll/drag support, autoplay, loop-mode behavioral differences, hand-rolled
+UI vs. Swiper's built-in navigation/pagination), and a 5-step migration plan — in
+`docs/bundle-analysis.md` §7. Cross-referenced here only so a reader of this doc's
+architecture-decision sections doesn't miss it; the full analysis lives in the bundle doc since
+it's fundamentally a bundle-size investigation, not a structural one.
+
 ## Bonus finding: donation form allows double-submit (from a scoped usability check)
 
 Not part of the fetch/axios or SEO work above, but surfaced while auditing this codebase

@@ -161,7 +161,147 @@ coordinates passed as data instead of JSX. Doesn't change what renders, reduces 
 for this route by however much the repeated markup currently costs (not separately measured
 here — the fix is cheap enough to just do and re-run `bun run analyze` to see the delta).
 
-## 7. Findings that confirm existing recommendations with real numbers
+## 7. Investigation: replacing Swiper with Embla Carousel
+
+`docs/performance-audit.md` §5d already flagged `swiper` as needing
+`optimizePackageImports`, and §4 above measured the specific cost that fix would recover
+(~150 KB of unused modules). A deeper question worth asking on top of that: is Swiper the
+right library at all, or would swapping it for **Embla Carousel** cut the fixed cost, not just
+the currently-wasted portion of it? Investigated below — no code changed, this is analysis only.
+
+### 7.0 Where Swiper is actually used in this codebase (all 3 call sites)
+
+| File | Modules imported | Behavior |
+|---|---|---|
+| `src/features/be-a-part/components/enablers/success-stories.tsx` | `Autoplay` | Autoplay carousel, `loop`, responsive `slidesPerView` (1/2/3), external prev/next buttons via `swiperRef.current?.swiper.slidePrev()/slideNext()` |
+| `src/features/be-a-part/components/enablers/colleges.tsx` | `Autoplay` | Identical pattern to `success-stories.tsx` — autoplay, loop, external prev/next buttons |
+| `src/features/testimonials/components/video-section.tsx` | `Navigation`, `Pagination` | No autoplay; `slidesPerView={1.2}` (peek-next-slide effect), responsive breakpoints (2/3/4 slides), a synced external index (`activeIndex` state calls `swiperInstance.slideTo(index)`, and clicking a thumbnail also calls `slideTo`) |
+
+None of the three use Swiper's `Zoom`, `Virtual`, `Scrollbar`, `Mousewheel`, `A11y`, or
+`FreeMode` modules — confirming §4's finding that those are pure dead weight in the current
+bundle. **Every feature actually used across all 3 files — autoplay, loop, responsive slide
+counts, external prev/next controls, programmatic `slideTo`, and native touch/drag ("manual
+scroll") — has a direct Embla equivalent**, detailed below.
+
+### 7.1 What Embla Carousel is
+
+A carousel *engine* with no built-in UI — it manages drag/scroll physics, slide positioning, and
+snap points, and hands you refs + a small imperative API (`scrollNext`, `scrollPrev`,
+`scrollTo`, `canScrollNext`, `selectedScrollSnap`, `on(event, callback)`) to build your own
+buttons/dots/indicators with. Autoplay, loop, and a handful of other behaviors are opt-in
+**plugins** (`embla-carousel-autoplay`, etc.) rather than baked into the core, which is the
+direct cause of its much smaller footprint — you only pay for what you import, and unlike
+Swiper's current bundling problem (§4), Embla's plugin architecture makes it structurally hard
+to accidentally ship a plugin you don't use, since each one is its own package.
+
+### 7.2 Bundle-size comparison (measured Swiper vs. published Embla figures)
+
+| | Swiper (current, as shipped) | Swiper (if `optimizePackageImports` fix from §4 lands) | Embla (core + `react` + `autoplay`) |
+|---|---|---|---|
+| Core carousel engine | 133 KB (`swiper-core`, measured) | 133 KB (unchanged — this part isn't the waste) | ~5-6 KB gzipped (`embla-carousel` core is commonly cited around this size; verify with a real `bun run analyze` after integrating, don't take a citation as measured fact) |
+| React bindings | included in `swiper-react` (12.7 KB, measured) | included, same | `embla-carousel-react` — a thin hook wrapper, low single-digit KB |
+| Autoplay | 9.1 KB (measured, already imported) | 9.1 KB | `embla-carousel-autoplay` — low single-digit KB |
+| Navigation/Pagination (video-section.tsx only) | ~30 KB combined (measured: pagination 17.5 KB + navigation folded into core) | same | Hand-rolled with `scrollPrev`/`scrollNext`/`on("select", ...)` — effectively 0 KB extra, since you're already writing button `onClick` handlers today (Swiper's `swiperRef.current?.swiper.slideNext()` calls already prove this codebase is comfortable wiring its own buttons) |
+| Dead modules currently shipped (Zoom/Virtual/Scrollbar/Mousewheel/A11y/FreeMode) | ~72 KB (measured, §4) | 0 KB (fixed by the config change) | N/A — architecturally impossible to accidentally include a plugin you didn't import |
+| **Total, this codebase's actual usage** | **~360 KB** (measured, `6993-*.js`) | **~170-190 KB** (core + react + autoplay + pagination/navigation, dead modules removed) | **~15-25 KB** (core + react + autoplay, unverified estimate — confirm with `bun run analyze` post-migration) |
+
+Even after applying §4's `optimizePackageImports` fix (which should ship regardless, it's a
+one-line no-risk change either way), Embla is estimated to be **roughly 7-10x smaller** for the
+exact feature set this codebase actually uses, because Swiper's core alone (133 KB, the
+non-negotiable part) is far heavier than Embla's entire footprint including plugins.
+
+### 7.3 Pros of migrating to Embla Carousel
+
+- **Large, measured bundle-size win** — even the conservative estimate (~150-170 KB saved) is
+  bigger than several other findings in this doc combined (bigger than the Swiper dead-module
+  fix in §4 alone, bigger than the `/events` chunk-splitting win in §5).
+- **No unused-code risk by construction** — plugin-per-package architecture means the
+  `optimizePackageImports`-style problem found in §4 structurally can't recur here; there's no
+  "all modules" barrel to accidentally import from.
+- **Manual scroll (native touch/drag) is a first-class citizen, not a bolt-on** — Embla's whole
+  design center is physics-based drag scrolling; Swiper supports this too, but Embla's API
+  surface is built around it (`emblaApi.scrollProgress()`, drag-free mode, momentum) rather than
+  it being one of a dozen modules. Directly relevant since the user asked specifically for
+  "autoplay and manual scroll" — both are core, well-documented Embla patterns, not edge cases.
+- **Actively maintained, framework-agnostic core** — `embla-carousel-react` is a thin wrapper
+  over the same core used for Vue/Svelte/vanilla bindings, so the core logic isn't
+  React-release-cadence-coupled the way some older carousel libraries can be.
+- **No CSS import needed** — Swiper requires importing `swiper/css`, `swiper/css/navigation`,
+  `swiper/css/pagination` per file (visible in all 3 current call sites); Embla ships unstyled by
+  default, so all carousel-chrome styling is just the Tailwind classes this codebase already uses
+  everywhere else — one less CSS-import footgun, and one less thing to keep in sync with the
+  design system.
+
+### 7.4 Cons / migration costs — be honest about the other side
+
+- **UI is fully hand-rolled** — Swiper's `Navigation`/`Pagination` modules render actual
+  prev/next arrows and dot indicators for you (CSS + DOM included); Embla gives you the
+  scroll-state data (`canScrollNext()`, `selectedScrollSnap()`) and you build the buttons/dots
+  yourself. For `video-section.tsx` specifically, this is close to zero extra work (it already
+  renders custom thumbnail dots synced to `activeIndex`, not Swiper's built-in pagination UI —
+  check whether `swiper/css/pagination`'s import is even doing anything visually there before
+  assuming this is free, but it's likely already mostly custom). For `success-stories.tsx`/
+  `colleges.tsx`, the prev/next buttons are already custom-rendered JSX calling
+  `swiperRef.current?.swiper.slideNext()` — porting to `emblaApi.scrollNext()` is a
+  near-mechanical rename, not new UI work.
+- **Three files to migrate, three slightly different configurations** — `slidesPerView={1.2}`
+  (peek effect) and responsive breakpoints (`640:`, `768:`, `1024:`) need Embla's equivalent
+  (`slidesToScroll`/CSS-based flex-basis percentages per breakpoint, since Embla doesn't take a
+  `slidesPerView` prop — slide width is controlled by CSS on the slide elements themselves). This
+  is a real, non-zero porting task, not a drop-in prop-for-prop swap.
+- **Programmatic `slideTo` sync** (`video-section.tsx`'s `activeIndex` ↔ thumbnail click sync)
+  needs Embla's `scrollTo(index)` plus subscribing to its `"select"` event to keep `activeIndex`
+  in sync in both directions — doable, documented, but requires rewriting that
+  effect/state-sync logic, not just swapping an import.
+- **Loses Swiper's `loop` mode's specific implementation** — Swiper's infinite loop uses slide
+  cloning under the hood; Embla has its own `loop: true` option with different internal
+  mechanics (it recalculates snap points rather than cloning DOM nodes) — behaviorally similar
+  for a visitor, but worth a manual QA pass on `success-stories.tsx`/`colleges.tsx` specifically
+  since they're the two files using `loop`, to confirm no visual jump/flicker at the loop seam
+  that Swiper's approach happened to avoid.
+- **Team unfamiliarity cost** — Swiper is already integrated and understood; Embla's
+  "build your own UI" model requires the team to learn a different mental model (subscribing to
+  events, reading scroll-snap state) even though the total code written may end up similar or
+  less.
+- **No `pagination`/`navigation` CSS to inherit-and-tweak** — cuts both ways (listed as a pro
+  above for reducing footguns), but also means any visual polish Swiper's default pagination
+  dots/arrows already provide has to be rebuilt from scratch in Tailwind, even if the current
+  design already overrides most of Swiper's default look (worth checking how much custom CSS
+  currently targets `.swiper-pagination-bullet`/`.swiper-button-next` etc. before assuming zero
+  visual rework).
+
+### 7.5 Recommended approach, if this migration is pursued
+
+1. **Land §4's `optimizePackageImports` fix first regardless** — it's a one-line, zero-risk win
+   independent of whether Embla ever happens, and removes the ~72 KB of dead modules immediately.
+2. **Migrate `video-section.tsx` first**, not the two autoplay carousels — it has no `loop`
+   mode (the trickiest behavioral difference, per §7.4) and its pagination is arguably already
+   mostly custom-rendered (thumbnail dots), making it the lowest-risk file to prove the pattern
+   on before touching the two `loop`-mode carousels.
+3. **Build one small shared wrapper** (e.g. a `use-embla-carousel.ts` hook or a thin
+   `<Carousel>`/`<CarouselSlide>` component pair under `src/components/ui/`) encapsulating the
+   `embla-carousel-react` + `embla-carousel-autoplay` setup once, rather than wiring Embla's
+   hooks independently in all 3 files — this codebase already has a `src/components/ui/`
+   directory for exactly this kind of shared primitive (see `select.tsx`, `command.tsx` in the
+   same directory per §5's chunk breakdown), so this matches an existing pattern rather than
+   introducing a new one.
+4. **Migrate `success-stories.tsx` and `colleges.tsx` last**, together (they're near-identical
+   in structure per §7.0), reusing the shared wrapper from step 3, and manually QA the loop-seam
+   behavior called out in §7.4 before shipping.
+5. **Remove `swiper` from `package.json` and re-run `bun run analyze`** only after all 3 files
+   are migrated and QA'd — don't leave both libraries installed longer than the migration takes,
+   since that's strictly worse than doing nothing (paying for both bundles at once mid-migration
+   if any file is left half-done across a deploy).
+
+**Verdict:** the bundle-size case is strong and measured (§7.2), the manual-scroll/autoplay
+requirement the user asked about is exactly Embla's core strength (§7.3), and the porting cost
+is real but bounded to 3 files with one shared wrapper absorbing most of the complexity (§7.5).
+Not a "must do immediately" the way §2's image-optimization bug is — this is a worthwhile,
+moderate-effort win to schedule after the zero-risk fixes elsewhere in this doc land first.
+
+---
+
+## 8. Findings that confirm existing recommendations with real numbers
 
 - **`axios` + a `buffer` polyfill (27.7 KB) ship together** in the `7105-*.js` chunk — some part
   of axios's dependency chain (likely its Node-compat code paths, even though the app only uses
@@ -186,7 +326,7 @@ here — the fix is cheap enough to just do and re-run `bun run analyze` to see 
 
 ---
 
-## 8. What's done vs. still to do
+## 9. What's done vs. still to do
 
 | Item | Status |
 |---|---|
@@ -196,6 +336,7 @@ here — the fix is cheap enough to just do and re-run `bun run analyze` to see 
 | Investigate whether `framework-*.js` actually loads anywhere (§3) | Not applied — needs a live DevTools check, not just static analysis |
 | Split `/events/*` sub-routes out of the shared barrel-driven chunk (§5) | Not applied |
 | De-duplicate the repeated `<Sparkle>` blocks in `levelstructure` (§6) | Not applied |
+| Swiper → Embla Carousel migration investigation (§7) | Documented — investigation only, no migration started, no `embla-carousel*` packages installed |
 | Re-run `bun run analyze` after each fix above to confirm the measured delta | Not applied — do this after every fix, not just at the end |
 
 Cross-reference: `docs/performance-audit.md` §12 tracks the status of every other finding from
