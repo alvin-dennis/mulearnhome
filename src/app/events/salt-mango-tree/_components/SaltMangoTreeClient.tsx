@@ -12,8 +12,8 @@ import { MotionSection, MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StateDisplay } from "@/components/ui/state-display";
+import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "@/features/events";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchSaltMangoTree } from "@/services/weeklyTwitches";
 
 type ViewType = "upcoming" | "previous";

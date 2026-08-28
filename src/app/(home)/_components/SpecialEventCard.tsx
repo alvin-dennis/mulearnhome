@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import type { SpecialEvent } from "@/lib/types";
+import type { SpecialEvent } from "@/features/home";
 
 const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ specialevent }) => {
   const [isOpen, setIsOpen] = useState(false);

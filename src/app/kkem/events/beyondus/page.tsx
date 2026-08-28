@@ -3,7 +3,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { kkem } from "@/data/kkem";
-import type { cardProps } from "@/lib/types";
+import type { cardProps } from "@/features/kkem";
 import { cdnUrl } from "@/services/cdn";
 
 const fadeInUp: Variants = {

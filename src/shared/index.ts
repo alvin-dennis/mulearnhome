@@ -27,10 +27,12 @@ export {
   phoneSchema,
 } from "./schemas";
 export type {
+  Captcha,
   Counts,
   ExtendedTopLearner,
   Learner,
   LearnerResponse,
   LearnerRoleTag,
+  SubItem,
   TopLearner,
 } from "./types";

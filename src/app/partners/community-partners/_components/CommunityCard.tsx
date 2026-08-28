@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MuImage } from "@/components/layouts";
-import type { CommunityCardProps } from "@/lib/types";
+import type { CommunityCardProps } from "@/features/community-partners";
 import { cdnUrl } from "@/services/cdn";
 
 const CommunityCard: React.FC<CommunityCardProps> = ({ name, image, link, customlink }) => {

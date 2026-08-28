@@ -19,7 +19,7 @@ import {
 import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { companies } from "@/data/company";
-import type { Company, OngoingHiring, PreviousHiring } from "@/lib/types";
+import type { Company, OngoingHiring, PreviousHiring } from "@/features/careers";
 import { fetchOngoingHiringPage, fetchPreviousHiringPage } from "@/services/careers";
 import { cdnUrl } from "@/services/cdn";
 

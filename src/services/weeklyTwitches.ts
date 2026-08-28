@@ -4,7 +4,7 @@ import type {
   WeeklyTwitchEpisode,
   WeeklyTwitchPagination,
   WeeklyTwitchParams,
-} from "@/lib/types";
+} from "@/features/events";
 import { publicGateway } from "./apiGateway";
 import { weeklyTwitchesRoutes } from "./urls";
 

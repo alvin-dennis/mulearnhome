@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { Clock, File, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import type { CareersCardProps } from "@/lib/types";
+import type { CareersCardProps } from "@/features/careers";
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return null;

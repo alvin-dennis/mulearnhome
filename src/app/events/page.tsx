@@ -3,8 +3,8 @@ import { CalendarClock, History, Radio, Repeat } from "lucide-react";
 import EventCategoryTabs, { type EventCategory } from "@/app/events/_components/EventCategoryTabs";
 import { MotionDiv } from "@/components/layouts";
 import { events } from "@/data/events";
+import type { Event, PublicEvent } from "@/features/events";
 import { clientEnv } from "@/lib/env/env.client";
-import type { Event, PublicEvent } from "@/lib/types";
 import { fetchPublicEvents } from "@/services/publicEvents";
 import {
   fetchGrabYourSuperpowers,

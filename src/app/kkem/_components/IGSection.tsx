@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import type { cardProps, IGSectionProps } from "@/lib/types";
+import type { cardProps, IGSectionProps } from "@/features/kkem";
 import { useRedirectToApp } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
 

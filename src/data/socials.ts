@@ -8,7 +8,7 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
-import type { SocialLinks } from "@/lib/types";
+import type { SocialLinks } from "@/features/socials";
 
 export interface SocialLinksGroup {
   socials: SocialLinks[];

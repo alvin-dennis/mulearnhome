@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/layouts";
-import type { OnboardingStep } from "@/lib/types";
+import type { OnboardingStep } from "@/features/be-a-part";
 
 interface OnboardingStepsProps {
   data: OnboardingStep[];

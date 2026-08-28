@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MotionDiv } from "@/components/layouts";
-import type { VideoTestimonial } from "@/lib/types";
+import type { VideoTestimonial } from "@/features/testimonials";
 import { cn } from "@/lib/utils";
 import "swiper/css";
 import "swiper/css/navigation";

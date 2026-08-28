@@ -1,4 +1,4 @@
-import type { OngoingHiring, PaginationMeta, PreviousHiring } from "@/lib/types";
+import type { OngoingHiring, PaginationMeta, PreviousHiring } from "@/features/careers";
 import { publicGateway } from "./apiGateway";
 import { careerLabRoutes } from "./urls";
 

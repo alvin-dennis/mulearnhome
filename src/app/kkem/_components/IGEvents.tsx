@@ -2,7 +2,7 @@ import type { Variants } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv, MuImage } from "@/components/layouts";
-import type { cardProps, IGSectionProps } from "@/lib/types";
+import type { cardProps, IGSectionProps } from "@/features/kkem";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

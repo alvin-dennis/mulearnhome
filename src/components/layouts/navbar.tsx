@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems } from "@/data/common";
-import type { SubItem } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
+import type { SubItem } from "@/shared";
 import { MotionDiv, MotionLi } from "./mu-framer";
 import { MuImage } from "./mu-image";
 

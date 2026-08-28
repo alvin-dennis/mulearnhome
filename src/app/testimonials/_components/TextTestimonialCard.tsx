@@ -4,7 +4,7 @@ import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide
 import { useEffect, useState } from "react";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import type { TextTestimonial } from "@/lib/types";
+import type { TextTestimonial } from "@/features/testimonials";
 import { cn } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
 import { fetchPublicProfileImage } from "@/shared";

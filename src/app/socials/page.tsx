@@ -4,7 +4,7 @@ import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { socialLinks } from "@/data/socials";
-import type { SocialLinks } from "@/lib/types";
+import type { SocialLinks } from "@/features/socials";
 import { cn } from "@/lib/utils";
 
 const container: Variants = {

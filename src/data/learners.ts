@@ -12,7 +12,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import type { OnboardingStep } from "@/lib/types";
+import type { OnboardingStep } from "@/features/be-a-part";
 
 export const onboardingSteps: OnboardingStep[] = [
   {

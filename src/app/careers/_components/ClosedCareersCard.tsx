@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import type { ClosedCareersCardProps } from "@/lib/types";
+import type { ClosedCareersCardProps } from "@/features/careers";
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return null;

@@ -1,4 +1,4 @@
-import type { Event } from "@/lib/types";
+import type { Event } from "@/features/events";
 import { cdnUrl } from "@/services/cdn";
 
 export const events: {

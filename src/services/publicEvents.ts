@@ -1,4 +1,4 @@
-import type { PublicEvent, PublicEventsParams } from "@/lib/types";
+import type { PublicEvent, PublicEventsParams } from "@/features/events";
 import { publicGateway } from "./apiGateway";
 import { publicEventsRoutes } from "./urls";
 

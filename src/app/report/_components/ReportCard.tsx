@@ -5,7 +5,7 @@ import { Calendar, ChevronRight, Download, FileText } from "lucide-react";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import type { AnnualReport } from "@/lib/types";
+import type { AnnualReport } from "@/features/report";
 
 interface ReportCardProps {
   report: AnnualReport;

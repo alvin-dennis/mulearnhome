@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { rolesContent, rolesTitle } from "@/data/home";
-import type { Role, RoleItem } from "@/lib/types";
+import type { Role, RoleItem } from "@/features/home";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },

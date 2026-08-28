@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import type { TextTestimonial } from "@/lib/types";
+import type { TextTestimonial } from "@/features/testimonials";
 import TextTestimonialCard from "./TextTestimonialCard";
 
 export type TextFilterType = "all" | "academia" | "industry" | "government" | "civic-society";

@@ -3,7 +3,7 @@ import type { Variants } from "framer-motion";
 import CommunityCard from "@/app/partners/community-partners/_components/CommunityCard";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { communityPartners } from "@/data/community";
-import type { Partner } from "@/lib/types";
+import type { Partner } from "@/features/community-partners";
 
 export default function CommmunityPartners() {
   const fadeInLeft: Variants = {

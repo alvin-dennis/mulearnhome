@@ -3,7 +3,7 @@
 import { Heart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
-import type { Counts } from "@/lib/types";
+import type { Counts } from "@/shared";
 
 export default function TrustBar() {
   const [counts, setCounts] = useState<Counts | null>(null);

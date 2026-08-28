@@ -1,4 +1,5 @@
-import type { Counts, GalleryItem, ImpactStat } from "@/lib/types";
+import type { GalleryItem, ImpactStat } from "@/features/impact-gallery";
+import type { Counts } from "@/shared";
 
 export const galleryData: GalleryItem[] = [
   {

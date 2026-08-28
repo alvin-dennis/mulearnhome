@@ -4,7 +4,7 @@ import { Star, TrendingUp, Users } from "lucide-react";
 import CountUp from "react-countup";
 import { MotionDiv } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
-import type { Counts } from "@/lib/types";
+import type { Counts } from "@/shared";
 import { StatsLoader } from "@/shared";
 
 interface TestimonialStatsProps {

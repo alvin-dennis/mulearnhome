@@ -1,6 +1,6 @@
 import { ArrowUpRight, Calendar, Globe, MapPin, Radio, School } from "lucide-react";
 import { MotionDiv, MuImage } from "@/components/layouts";
-import type { Event } from "@/lib/types";
+import type { Event } from "@/features/events";
 
 interface Props {
   event: Event;

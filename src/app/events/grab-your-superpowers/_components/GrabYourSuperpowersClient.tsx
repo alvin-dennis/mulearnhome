@@ -11,8 +11,8 @@ import { TabButton } from "@/app/events/_components/TabButton";
 import { MotionSection } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
+import type { GrabYourSuperpowersSession, WeeklyTwitchPagination } from "@/features/events";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { GrabYourSuperpowersSession, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchGrabYourSuperpowers } from "@/services/weeklyTwitches";
 
 type ViewType = "upcoming" | "previous";

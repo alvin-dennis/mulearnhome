@@ -6,7 +6,9 @@ module.exports = {
       severity: "error",
       comment: "Import from a feature's barrel (index.ts), not its internals.",
       from: { pathNot: "^src/features/[^/]+/" },
-      to: { path: "^src/features/[^/]+/(api|hooks|schemas|types|utils|components)/" },
+      to: {
+        path: "^src/features/[^/]+/(api|hooks|schemas|types|utils|components)/|^src/features/[^/]+/[^/]+/(api|hooks|schemas|types|utils|components)/",
+      },
     },
     {
       name: "no-deep-shared-imports",

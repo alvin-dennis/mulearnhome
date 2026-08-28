@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { team } from "@/data/team";
-import type { Teams, YearData } from "@/lib/types";
+import type { Teams, YearData } from "@/features/team";
 import { cdnUrl } from "@/services/cdn";
 
 const containerVariants: Variants = {

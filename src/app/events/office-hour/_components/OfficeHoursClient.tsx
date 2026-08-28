@@ -12,8 +12,8 @@ import { MotionSection } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StateDisplay } from "@/components/ui/state-display";
+import type { OfficeHoursSession, WeeklyTwitchPagination } from "@/features/events";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { OfficeHoursSession, WeeklyTwitchPagination } from "@/lib/types";
 import { fetchOfficeHours } from "@/services/weeklyTwitches";
 
 type ViewType = "upcoming" | "previous";

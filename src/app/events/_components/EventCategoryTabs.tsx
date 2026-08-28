@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { Event } from "@/lib/types";
+import type { Event } from "@/features/events";
 
 export interface EventCategory {
   id: string;

@@ -1,5 +1,5 @@
+import type { Role, RolesContent } from "@/features/home";
 import { clientEnv } from "@/lib/env/env.client";
-import type { Role, RolesContent } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 
 export const features = [

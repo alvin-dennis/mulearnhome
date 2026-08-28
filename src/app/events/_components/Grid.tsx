@@ -1,5 +1,5 @@
 import { MotionDiv } from "@/components/layouts";
-import type { Event } from "@/lib/types";
+import type { Event } from "@/features/events";
 import EventCard from "./EventCard";
 
 interface Props {

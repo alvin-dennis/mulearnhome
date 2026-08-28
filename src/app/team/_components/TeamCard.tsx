@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
-import type { TeamCardProps } from "@/lib/types";
+import type { TeamCardProps } from "@/features/team";
 import { cn } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
 

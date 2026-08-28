@@ -1,3 +1,5 @@
+export type { Captcha } from "./captcha.types";
+export type { SubItem } from "./nav.types";
 export type {
   ExtendedTopLearner,
   Learner,
