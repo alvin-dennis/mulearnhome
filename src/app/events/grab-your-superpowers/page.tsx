@@ -1,5 +1,5 @@
-import GrabYourSuperpowersClient from "./_components/GrabYourSuperpowersClient";
+import { GrabYourSuperpowersView } from "@/features/events";
 
 export default async function GrabYourSuperpowersPage() {
-  return <GrabYourSuperpowersClient />;
+  return <GrabYourSuperpowersView />;
 }

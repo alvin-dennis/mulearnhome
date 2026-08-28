@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { galleryEvents } from "@/data/gallery";
+import { galleryEvents } from "@/features/gallery";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

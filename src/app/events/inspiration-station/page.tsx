@@ -1,5 +1,5 @@
-import InspirationStationClient from "./_components/InspirationStationClient";
+import { InspirationStationView } from "@/features/events";
 
 export default async function InspirationStationPage() {
-  return <InspirationStationClient />;
+  return <InspirationStationView />;
 }

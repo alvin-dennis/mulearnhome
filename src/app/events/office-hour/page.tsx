@@ -1,5 +1,5 @@
-import OfficeHoursClient from "./_components/OfficeHoursClient";
+import { OfficeHoursView } from "@/features/events";
 
 export default async function OfficeHoursPage() {
-  return <OfficeHoursClient />;
+  return <OfficeHoursView />;
 }

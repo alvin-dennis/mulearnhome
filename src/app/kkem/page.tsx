@@ -1,5 +1,5 @@
 import { kkem } from "@/data/kkem";
-import { interestGroups } from "@/data/lc-ig";
+import { interestGroups } from "@/features/interest-groups";
 import IGAbout from "./_components/IGAbout";
 import IGEvents from "./_components/IGEvents";
 import IGSection from "./_components/IGSection";

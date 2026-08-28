@@ -1,5 +1,5 @@
-import SaltMangoTreeClient from "./_components/SaltMangoTreeClient";
+import { SaltMangoTreeView } from "@/features/events";
 
 export default async function SaltMangoTreePage() {
-  return <SaltMangoTreeClient />;
+  return <SaltMangoTreeView />;
 }

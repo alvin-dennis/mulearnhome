@@ -1,18 +1,11 @@
-"use client";
-
 import { Sparkle } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { clientEnv } from "@/lib/env/env.client";
-import FilterButtons from "./_components/FilterButtons";
-import GalleryGrid from "./_components/GalleryGrid";
-import ImpactStats from "./_components/ImpactStats";
+import { clientEnv } from "@/config/env.client";
+import { ImpactGalleryView, ImpactStats } from "@/features/impact-gallery";
 
-export default function ImpactGallery() {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-
+export default async function ImpactGallery() {
   return (
     <div className="min-h-screen overflow-x-hidden relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
@@ -129,11 +122,7 @@ export default function ImpactGallery() {
             <div className="h-1.5 w-24 bg-mulearn mx-auto rounded-full" />
           </div>
 
-          <FilterButtons activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-
-          <div className="max-w-6xl mx-auto">
-            <GalleryGrid activeFilter={activeFilter} />
-          </div>
+          <ImpactGalleryView />
         </div>
 
         <div className="absolute top-1/4 left-5  opacity-20">

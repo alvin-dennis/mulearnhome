@@ -1,7 +1,6 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv } from "@/components/layouts";
-import { galleryEvents } from "@/data/gallery";
-import { GalleryClient } from "./_components";
+import { GalleryClient, galleryEvents } from "@/features/gallery";
 
 export const metadata = {
   title: "Gallery | µLearn",
@@ -10,7 +9,7 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {

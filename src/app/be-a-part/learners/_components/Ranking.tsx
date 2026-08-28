@@ -1,11 +1,9 @@
-"use client";
-
 import { MuImage } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
-import { useTopLearners } from "@/shared";
+import { fetchTopLearners } from "@/shared";
 
-export default function RankingSection() {
-  const { data: topLearners = [] } = useTopLearners(10);
+export default async function RankingSection() {
+  const topLearners = await fetchTopLearners(10);
 
   return (
     <section className="py-16 md:py-20 container mx-auto px-4 relative">

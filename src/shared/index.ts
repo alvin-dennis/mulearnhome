@@ -8,13 +8,8 @@ export {
   StatsLoader,
   useAnalyticsContext,
 } from "./components";
-export {
-  getApiResponseError,
-  profileKeys,
-  useLandingStats,
-  useProfileImage,
-  useTopLearners,
-} from "./hooks";
+export { getApiResponseError } from "./hooks";
+export { useLandingStats } from "./hooks/stats.hooks";
 export type { Address, Email, Name, PAN, Phone } from "./schemas";
 export {
   addressSchema,
