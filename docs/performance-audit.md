@@ -648,18 +648,19 @@ Cross-referencing `.next/static/chunks/` across three unrelated routes (`/team`,
 paragraphs and no visible interactivity. This is the "First Load JS shared by all" floor
 every page on the site pays regardless of content — for context, that's larger than most
 individual page-specific chunks measured (`/team`'s own unique chunk was ~118KB on top of
-this floor). This number wasn't broken down further in this pass (Turbopack's opaque
-build output makes attributing it to a specific dependency non-trivial without
-`@next/bundle-analyzer` — see 5a), but it's the single largest lever on *every* page's
-load time site-wide, larger than any individual finding above. **Recommended next step,
-not done in this audit:** wire in `@next/bundle-analyzer` for one local build
-(`ANALYZE=true bun run build`, temporarily switching off `--turbopack` for that one run
-since the analyzer plugin hooks into webpack) to get a treemap of what's actually inside
-that 614KB and confirm/deny suspicion that it's dominated by `framer-motion` +
-Radix UI primitives + the analytics/cookie-consent stack (`AnalyticsProvider`,
-`CookieConsent`, `DebugPanel` all mount globally in `src/app/layout.tsx` today, per §3's
-"Third-party scripts" findings — global layout mounts are exactly what would land in a
-shared-by-all chunk).
+this floor).
+
+**Update — this has now been measured, not just suspected.** `@next/bundle-analyzer` has been
+added to the repo (`next.config.ts`, `package.json`'s `analyze` script — `bun run analyze`) and
+run once against a real production build. Full module-level breakdown, real dependency
+attribution, and every fix this data points to is in the dedicated companion doc
+**`docs/bundle-analysis.md`** — including confirmation that `framer-motion` and Radix UI are part
+of the floor as suspected (alongside `tailwind-merge`, `zod`, `date-fns`, `axios`, and Next's own
+React DOM/router internals), a measured ~150KB of dead Swiper-module weight fixable by the
+`optimizePackageImports` change already proposed in §6d, and one unresolved anomaly (a possibly
+orphaned duplicate React DOM chunk) that needs a live DevTools check before it can be called a
+confirmed bug. Treat that doc as the authoritative answer to this section's open question — this
+paragraph is kept for context on how the question arose.
 
 ---
 
@@ -927,9 +928,11 @@ Ranked by impact-to-effort ratio, not strictly by section order:
    (§6b) — `/events` is the one route that does a genuine server-side backend fetch and
    currently blocks fully on it with no streaming and no per-route loading state anywhere
    in the app. Requires splitting the static hero out of the fetch-dependent list first.
-6. **Run `@next/bundle-analyzer` once** to attribute the ~614KB shared-JS floor (§5e) — a
-   measurement task, not a code change, but a prerequisite for knowing whether the next
-   round of bundle work should target `framer-motion`, Radix UI, or the analytics stack.
+6. ~~Run `@next/bundle-analyzer` once to attribute the ~614KB shared-JS floor (§5e)~~ —
+   **done.** See `docs/bundle-analysis.md` for the full breakdown. The fixes it surfaced
+   (Swiper's `optimizePackageImports`, the `/events` barrel-chunking, the `levelstructure`
+   duplication, the possibly-orphaned framework chunk) are still open — treat that doc's own
+   checklist as the next set of priority items, roughly at this same rank.
 6a. **Add the security headers block** (§7) — start with the 5 non-CSP headers
     immediately (zero risk: DNS-prefetch, HSTS without `preload` yet, frame-options,
     nosniff, upgraded referrer-policy, permissions-policy). Ship the CSP separately in
@@ -1262,17 +1265,22 @@ Performance line items in one change.
 
 ## 12. Status: Done vs. To-Do
 
-**Nothing described in this document or in `docs/feature-folder-structure.md` has been applied
-to the codebase.** Every session that has touched these two files did so in documentation-only
-mode, by explicit request — this table exists so a future reader (or session) doesn't have to
-re-read either doc end-to-end to find out what's real versus proposed.
+**Almost nothing described in this document or in `docs/feature-folder-structure.md` has been
+applied to the codebase — one exception noted below.** Every other session that has touched
+these two files did so in documentation-only mode, by explicit request — this table exists so a
+future reader (or session) doesn't have to re-read either doc end-to-end to find out what's real
+versus proposed.
 
 | Finding | Section | Status |
 |---|---|---|
+| `@next/bundle-analyzer` wired into `next.config.ts` + `bun run analyze` script | §6e, `docs/bundle-analysis.md` | **Applied** — the one real code change made so far |
 | `mu-image.tsx` private-IP/`unoptimized` bug | §2.0-2.4 | Documented — not applied |
 | `MuImage` dead code, `alt` default, missing `sizes`/`onError`/tests | §2.5-2.6 | Documented — not applied |
 | `team.data.ts`/`enablers.data.ts` shipped as client JS | §6b-c | Documented — not applied |
-| `next.config.ts` `optimizePackageImports` | §6d | Documented — not applied |
+| `next.config.ts` `optimizePackageImports` (now with measured ~150KB Swiper savings, see `docs/bundle-analysis.md` §4) | §6d | Documented — not applied |
+| `/events` sub-routes bundled into one shared chunk (barrel-import cost) | `docs/bundle-analysis.md` §5 | Documented — not applied |
+| Possibly-orphaned duplicate React DOM chunk | `docs/bundle-analysis.md` §3 | Needs a live DevTools check before it's even confirmed as a bug |
+| Repeated `<Sparkle>` JSX blocks inflating `/levelstructure`'s chunk | `docs/bundle-analysis.md` §6 | Documented — not applied |
 | `/events` Suspense + `loading.tsx` | §7b | Documented — not applied |
 | `/team` pagination | §7c | Documented — not applied |
 | Security headers (`headers()` block, CSP report-only rollout) | §8 | Documented — not applied; live-confirmed missing (§11b) |
@@ -1292,7 +1300,10 @@ re-read either doc end-to-end to find out what's real versus proposed.
 - Localize the exact elements behind Lighthouse's live "Buttons do not have an accessible name"
   and "Elements use prohibited ARIA attributes" findings (§11b) — needs a live inspector pass.
 - Confirm production source-map configuration (§11b).
-- Run `@next/bundle-analyzer` to attribute the ~614KB shared-JS floor (§6e) and the 149KB of
-  unused first-party JS confirmed live (§11b).
+- ~~Run `@next/bundle-analyzer` to attribute the ~614KB shared-JS floor~~ — done, see
+  `docs/bundle-analysis.md`. Still open from that doc: confirm live whether the orphaned-looking
+  `framework-*.js` chunk (§3 of that doc) actually loads anywhere in a browser, which would
+  explain some of the 149KB of unused first-party JS Lighthouse flagged live (§11b) — the two
+  findings may be the same root cause, not yet confirmed.
 - `color-contrast`, `target-size`, `font-size`, `link-text` — manual-only Lighthouse audits per
   §10's Accessibility/SEO tables, not verifiable by source review.
