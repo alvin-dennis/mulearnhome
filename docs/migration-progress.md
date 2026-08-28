@@ -5,7 +5,7 @@ the *target* shape; this doc tracks *actual progress* and the real conventions s
 during implementation — several of which deviate from the original doc's literal examples.
 Read this before continuing the migration.
 
-## Status: Phase 0, 1, 2 complete. Phase 3 ~60% complete (by route count).
+## Status: Phase 0, 1, 2, 3 complete. Phase 4 (cleanup) not started.
 
 ---
 
@@ -170,6 +170,88 @@ change.
    `campus-logo-generator` (large self-contained client tool, moved wholesale),
    `levelstructure` (7 sub-components), `trivial-ideas` (7 sub-components, incl. renaming
    `Q&A.tsx` → `qna.tsx`).
+8. **home** — `features/home/`. `HomeView` preserves original `next/dynamic` lazy-load
+   pattern for below-the-fold sections. `data/home.ts` moved wholesale to
+   `data/home.data.ts`.
+9. **be-a-part/campus** — `features/be-a-part/components/campus/`, `CampusView`.
+   `data/campus.ts` moved wholesale to `data/campus.data.ts`.
+10. **be-a-part/company** — `features/be-a-part/components/company/`, `CompanyView`.
+    `data/company.ts` was **shared across 3 features** (careers, be-a-part/company,
+    partners/company-partners) — split into `be-a-part/data/company.data.ts`
+    (`CompanyFeatures`/`CompanyPartners`/`CompanyPartners1`/`SuccessStories`),
+    `careers/data/careers.data.ts` (`companies`), and a new staged-ahead
+    `features/company-partners/` stub (`CompanyPartner`); old `data/company.ts` deleted.
+    `Hero`→`CompanyHero`, `Benefits`→`CompanyBenefits` renamed pre-emptively to avoid
+    collision with `be-a-part/enablers`'s same-named components once merged into the
+    single flat `features/be-a-part/index.ts` barrel — **apply the same prefixing to any
+    `enablers` component that collides** (`Hero`, `Benefits` at minimum) when migrating it
+    next. Also renamed `partners.tsx`'s component `CompanyPartners` → `CompanyPartnersSection`
+    (it collided with the data array of the same name).
+
+11. **be-a-part/enablers** — `features/be-a-part/components/enablers/`, `EnablersView`.
+    `data/enablers.ts` moved wholesale to `data/enablers.data.ts` (single-feature, big
+    faculties array). `Hero`→`EnablersHero`, `Benefits`→`EnablersBenefits`,
+    `SuccessStories`→`EnablersSuccessStories` (collided with the `SuccessStories` data
+    const re-exported from `company.data.ts`) — same collision-prefixing pattern as
+    `company`. `MissionandGrowth` typo-fixed to `MissionAndGrowth` on rename.
+12. **be-a-part/learners** — `features/be-a-part/components/learners/`, `LearnersView`.
+    `data/learners.ts` moved wholesale to `data/learners.data.ts`. All components were
+    arrow-function-const + trailing `export default X;` — converted to `export const X`
+    inline (rule 2). `Ranking.tsx`'s `RankingSection` — async Server Component reading
+    `fetchTopLearners` from `@/shared`, unchanged otherwise. No name collisions found
+    against campus/company/enablers.
+
+`be-a-part` feature is now **fully migrated** (all 4 sub-routes) and verified clean:
+typecheck, biome, `lint:boundaries`, and `bun run build` all pass with zero errors.
+`features/be-a-part/index.ts` re-exports all 4 sub-route component barrels + `data`.
+
+13. **kkem** (+ `kkem/events/beyondus`) — `features/kkem/`. Main-page components flat in
+    `components/` (`IGAbout`, `IGEvents`, `IGSection` — `IGSection` cross-imports
+    `interestGroups` from `@/features/interest-groups` unchanged), `KkemView`. Sub-route
+    `kkem/events/beyondus` nested per rule 3 bullet 2 in
+    `components/events-beyondus/beyondus-view.tsx` (`BeyondusView`, renamed from
+    `BeyondUs`). `data/kkem.ts` moved wholesale to `data/kkem.data.ts` (single-feature).
+    `IGSection` keeps its `"use client"` (`useRedirectToApp` hook usage) — genuine
+    interactivity, not stripped. Verified clean: typecheck, biome, `lint:boundaries`,
+    `bun run build`.
+14. **report** — `features/report/`. Page is a confirmed **stub**: `app/report/page.tsx`
+    literally calls `notFound()`; all real content is dead/commented-out code referencing
+    a nonexistent `annualReports` array. Moved `ReportCard`/`ReportHero` components as-is
+    (flat, main-route) so the code lives in the right place, but did **not** invent a
+    `ReportView` or uncomment the dead body — `app/report/page.tsx` still calls
+    `notFound()`, matching current live behavior. `report/layout.tsx` (metadata only)
+    stays in `app/` untouched. Revisit if/when this page gets real content.
+15. **team** — `features/team/`. `TeamCard` moved (already used named export). `TeamView`
+    built from the old page body, kept `"use client"` (genuine `useState` for year
+    filter). `data/team.ts` (**177KB**, largest data file in the repo) moved wholesale via
+    `git mv` to `data/team.data.ts` without reading it in full — only its export line was
+    referenced. Verified clean: typecheck, biome, `lint:boundaries`, `bun run build`.
+16. **testimonials** — `features/testimonials/`. `TestimonialsView` built from the old
+    page body, kept `"use client"` (uses `useLandingStats` + `useRedirectToApp`).
+    `data/testimonials.ts` moved wholesale to `data/testimonials.data.ts`. Note:
+    `TextTestimonialCard.tsx` and `MissionAndGrowth.tsx` (be-a-part/enablers) both do their
+    own per-item `fetchPublicProfileImage` batch-fetching via `useEffect`/`Promise.all` —
+    deliberately left as plain calls rather than forced into a `useProfileImage` hook,
+    since batch-per-item doesn't fit a single-item hook shape well. Verified clean:
+    typecheck, biome, `lint:boundaries`, `bun run build`.
+17. **community-partners** — `features/community-partners/`. Already had a type stub
+    (`CommunityCardProps`/`Partner`). `data/community.ts` moved wholesale to
+    `data/community-partners.data.ts` (single-consumer). `CommunityPartnersView` built
+    from the old page body — plain async Server Component, no client state.
+18. **company-partners** — `features/company-partners/`. Had a data stub only (from the
+    earlier `company.ts` 3-way split); **no type stub existed** — added
+    `types/company-partners.types.ts` with `CompanyPartnerCard` (named to avoid colliding
+    with the `CompanyPartner` data-array export; TS allows a type and a differently-named
+    value to coexist in one barrel, so this was just a naming-clarity choice, not a
+    workaround). `CompanyPartnersView` built from the old page body, plain async Server
+    Component. Confirmed both are two separate single-page features (`features/
+    community-partners/`, `features/company-partners/`, both flat) not one `partners`
+    feature with sub-routes. Verified clean: typecheck, biome, `lint:boundaries`,
+    `bun run build`.
+
+**Phase 3 is now fully complete** — every route listed in `feature-folder-structure.md`'s
+migration order has been moved into its feature folder. Next steps are Phase 4 cleanup
+(see below).
 
 Deleted as fully dead (zero remaining importers, confirmed by repo-wide grep before
 deletion): `services/careers.ts`, `services/discord.ts`, `services/publicEvents.ts`,
@@ -191,80 +273,9 @@ everything above — types are the easy 10% already done, api/data/components ar
 
 Per `feature-folder-structure.md`'s suggested order, next up, roughly in priority:
 
-### `home` (route: `src/app/(home)/page.tsx`)
-Components in `src/app/(home)/_components/`: `Hero`, `Stats` (already uses
-`useLandingStats` — check it's using the shared one, not a local duplicate), `Community`,
-`Comparison`, `Features`, `Gallery` (note: named `Gallery.tsx`, imports `galleryEvents`
-from `@/features/gallery` already — just needs relocating), `Newsletter`, `Opportunities`,
-`Roles`, `SpecialEventCard`, `SpecialEvents`, `Story`. All flat in
-`features/home/components/` (main page, rule 3 bullet 1). Home page composition itself
-becomes `HomeView`.
-
-### `be-a-part/*` — 4 sub-routes, each a distinct page
-- `be-a-part/campus` — `Activities`, `Apply`, `BestPractices`, `Hero`, `Journey`, `Quote`,
-  `Structure`, `Why`. Nest per rule 3 bullet 2: `features/be-a-part/components/campus/`.
-- `be-a-part/company` — `About`, `Benefits`, `Change`, `Contact`, `Hero`, `Mission`
-  (already uses shared `useLandingStats`), `Partners`, `Success`. →
-  `features/be-a-part/components/company/`.
-- `be-a-part/enablers` — `Benefits`, `Colleges`, `GetInTouch`, `Hero`, `HowToBegin`,
-  `MissionAndGrowth` (already uses `useLandingStats` + `fetchPublicProfileImage` from
-  `@/shared` — just relocate), `SuccessStories`, `WhoIsEnabler`. →
-  `features/be-a-part/components/enablers/`.
-- `be-a-part/learners` — `CTA`, `Hero`, `Intro`, `Onboarding` (uses `OnboardingStep` type
-  already in `features/be-a-part/types/learners.types.ts`), `Ranking` (**already fully
-  migrated** — reads `fetchTopLearners` from `@/shared`, async Server Component, no client
-  hook — this one's actually done, just needs its import path double-checked once the
-  rest of the feature exists), `Status` (uses `useLandingStats`), `WhatYouGet`,
-  `WhyKarmaPoints`, `WhyMuLearn`. → `features/be-a-part/components/learners/`.
-
-Note: `be-a-part` has no single "main page" of its own (no `/be-a-part` route, only the
-4 sub-routes) — so there's no rule-3-bullet-1 flat case here, every sub-route nests.
-
-### `kkem` (+ `kkem/events/beyondus` sub-route)
-- Main: `IGAbout`, `IGEvents`, `IGSection` (uses `interestGroups` from
-  `@/features/interest-groups` already — cross-feature import, fine as-is) →
-  `features/kkem/components/` flat.
-- Sub-route `kkem/events/beyondus` — single page, uses `cardProps` type (already in
-  `features/kkem/types/kkem.types.ts`) → nest per rule 3 bullet 2:
-  `features/kkem/components/events-beyondus/` (or similar — pick a folder name matching
-  the URL segment structure; this is a two-level nested route, use judgement, ask if
-  unsure).
-
-### `report`
-`ReportCard`, `ReportHero` in `src/app/report/_components/`. Note `report/layout.tsx`
-exists too — check what it does (likely just metadata, stays in `app/`). `AnnualReport`
-type already in `features/report/types/report.types.ts`. The `annualReports` data array is
-currently **commented out** in `data/impact-gallery.ts` (dead, never migrated — check if
-report page actually renders real data or is stubbed/placeholder; handle accordingly,
-don't invent data that doesn't exist).
-
-### `team`
-`TeamCard` in `src/app/team/_components/`. Data: `data/team.ts` is **177KB** — the
-largest data file in the repo by far. Do not read it in full into context; move it with
-`git mv` + a `sed` on the export line only, same mechanical approach used for
-`campus-logo-generator`. Types already in `features/team/types/team.types.ts`.
-
-### `testimonials`
-`TestimonialStats`, `TextTestimonialCard`, `TextTestimonialsGrid`, `VideoSection` in
-`src/app/testimonials/_components/`. Types already in
-`features/testimonials/types/testimonials.types.ts`. `data/testimonials.ts` needs
-relocating. Note: `TextTestimonialCard.tsx` and `MissionAndGrowth.tsx` (be-a-part/enablers)
-both do their own per-item `fetchPublicProfileImage` batch-fetching via
-`useEffect`/`Promise.all` — this was a deliberate earlier decision (documented in this
-session) to leave as plain `fetchPublicProfileImage` calls rather than force into a
-`useProfileImage` hook, since batch-per-item doesn't fit a single-item hook shape well.
-Keep that pattern.
-
-### `partners/community-partners` and `partners/company-partners`
-`community-partners` has a type stub already
-(`features/community-partners/types/community-partners.types.ts`,
-`CommunityCardProps`/`Partner`). `company-partners` has **no stub at all** yet — plan its
-types from scratch when you get there (check `src/app/partners/company-partners/_components/CompanyCard.tsx`
-for shape). These are two separate single-page features (per "one route = one feature"),
-not one `partners` feature with two sub-routes — confirm this reading matches the
-`community-partners` stub's existing structure (it's flat at
-`features/community-partners/`, not nested under a `partners/` parent) before starting
-`company-partners`.
+`be-a-part` is now fully done (campus, company, enablers, learners — see items 9-12
+above). Note it never had a single "main page" of its own (no `/be-a-part` route, only
+the 4 sub-routes) — so there was no rule-3-bullet-1 flat case, every sub-route nests.
 
 ---
 

@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/select";
 import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { companies } from "@/data/company";
 import { Pagination } from "@/features/events";
 import { cdnUrl } from "@/services/cdn";
+import { companies } from "../data/careers.data";
 import { useOngoingHiring, usePreviousHiring } from "../hooks/careers.hooks";
 import type { Company } from "../types/careers.types";
 import { CareersCard } from "./careers-card";
