@@ -1,6 +1,6 @@
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { SuccessStories } from "../../data/company.data";
 
 export const Success = () => {

@@ -45,19 +45,7 @@
   },
   "overrides": [
     {
-      "includes": ["src/lib/env/**"],
-      "linter": {
-        "enabled": true
-      }
-    },
-    {
-      "includes": [
-        "src/features/**",
-        "src/shared/**",
-        "src/components/layouts/**",
-        "src/components/providers/**",
-        "config/**"
-      ],
+      "includes": ["**/*.ts", "**/*.tsx"],
       "linter": {
         "rules": {
           "style": {

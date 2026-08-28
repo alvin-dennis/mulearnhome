@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MuImage } from "@/components/layouts";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { communityPartners } from "../data/community-partners.data";
 import type { Partner } from "../types";
 import { CommunityCard } from "./community-card";

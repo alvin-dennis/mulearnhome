@@ -1,8 +1,7 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { MotionFooter, MuImage } from "@/components/layouts";
-import { contactInfo, footer, socials } from "@/data/common";
-import { CookieSettingsLink } from "@/shared";
+import { CookieSettingsLink, contactInfo, footer, socials } from "@/shared";
 
 export function Footer() {
   return (

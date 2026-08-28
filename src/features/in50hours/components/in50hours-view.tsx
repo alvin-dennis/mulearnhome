@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { in50hrs } from "../data/in50hours.data";
 
 const heroimg = cdnUrl("src/modules/Public/In50Hours/heroimg.png");

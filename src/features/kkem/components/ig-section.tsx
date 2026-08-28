@@ -7,7 +7,7 @@ import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useRedirectToApp } from "@/lib/utils";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import type { cardProps, IGSectionProps } from "../types";
 
 const fadeInUp: Variants = {

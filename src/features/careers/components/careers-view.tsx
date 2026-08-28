@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import LogoLoop from "@/components/ui/LogoLoop";
+import LogoLoop from "@/components/ui/logo-loop";
 import {
   Select,
   SelectContent,
@@ -15,7 +15,7 @@ import {
 import { StateDisplay } from "@/components/ui/state-display";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Pagination } from "@/features/events";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { companies } from "../data/careers.data";
 import { useOngoingHiring, usePreviousHiring } from "../hooks/careers.hooks";
 import type { Company } from "../types/careers.types";

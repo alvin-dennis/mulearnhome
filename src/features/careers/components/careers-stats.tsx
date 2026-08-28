@@ -15,7 +15,7 @@ export function CareersStats() {
   }
 
   const companyCount =
-    counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 100;
+    counts.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 0;
   const hiredCandidates = 1222; // Hardcoded count of hired candidates
   const hiringCalls = 233; // Hardcoded count of hiring calls
 

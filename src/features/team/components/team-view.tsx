@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { team } from "../data/team.data";
 import type { Teams, YearData } from "../types";
 import { TeamCard } from "./team-card";

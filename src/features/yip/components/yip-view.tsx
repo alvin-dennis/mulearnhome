@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { yip } from "../data/yip.data";
 
 export function YipView() {

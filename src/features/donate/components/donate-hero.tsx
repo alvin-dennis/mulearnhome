@@ -3,7 +3,7 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MotionH1, MotionHeader, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 
 const heroImg = cdnUrl("src/modules/Public/Donation/assets/heroImg.jpg");
 

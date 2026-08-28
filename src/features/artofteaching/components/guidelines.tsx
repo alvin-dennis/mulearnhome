@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { artOfTeachingUrls } from "../data/artofteaching.data";
 
 export const Guidelines = () => {

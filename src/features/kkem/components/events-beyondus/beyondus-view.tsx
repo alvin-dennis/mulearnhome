@@ -2,7 +2,7 @@ import type { Variants } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv, MuImage } from "@/components/layouts";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { kkem } from "../../data/kkem.data";
 import type { cardProps } from "../../types";
 

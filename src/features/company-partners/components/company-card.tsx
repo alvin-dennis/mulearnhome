@@ -1,6 +1,6 @@
 import { MotionA, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import type { CompanyPartnerCard } from "../types";
 
 interface CompanyCardProps {

@@ -5,7 +5,7 @@ the *target* shape; this doc tracks *actual progress* and the real conventions s
 during implementation — several of which deviate from the original doc's literal examples.
 Read this before continuing the migration.
 
-## Status: Phase 0, 1, 2, 3 complete. Phase 4 (cleanup) not started.
+## Status: Phase 0, 1, 2, 3, 4 all complete.
 
 ---
 
@@ -329,16 +329,44 @@ the 4 sub-routes) — so there was no rule-3-bullet-1 flat case, every sub-route
 
 Per `feature-folder-structure.md`:
 
-- **Phase 4 cleanup**: delete `src/data/` once fully empty, delete `src/lib/env/` (fully
-  superseded by `config/env.client.ts`/`env.server.ts` — confirm zero remaining
-  importers first), sweep for any `export *` (should already be zero — this
-  implementation used named re-exports throughout), promote `lint:boundaries` to a
-  required CI check if not already wired in.
-- **`biome.json`'s `useFilenamingConvention`** is currently scoped to
-  `src/features/**`, `src/shared/**`, `src/components/{layouts,providers}/**`, `config/**`
-  only (not repo-wide) — once every route is migrated and `src/app/**/_components/` no
-  longer exists anywhere, widen that override to the whole repo.
-- Sweep `src/services/` and `src/components/` (non-`ui`) for anything left — by the end
-  of Phase 3 both should be empty or contain only genuinely global infra
-  (`services/cdn.ts`, `services/apiGateway.ts` if still referenced by anything not yet
-  migrated — check before deleting).
+- **Phase 4 cleanup** (done):
+  - `src/data/` deleted (was already empty except `common.ts`, which was split:
+    `contactPage` → `features/contact/data/contact.data.ts`; `navItems`/`footer`/
+    `socials`/`contactInfo` — genuinely cross-feature, consumed by `navbar.tsx`/
+    `footer.tsx` (global layout) as well as the contact feature — → new
+    `shared/data/common.data.ts`, re-exported from `@/shared`).
+  - `src/lib/env/` deleted (fully superseded by `config/env.client.ts`/`env.server.ts` —
+    confirmed zero remaining importers after repointing `services/cdn.ts`,
+    `services/api-gateway.ts`, `lib/utils.ts` (client) and `app/api/captcha/route.ts`
+    (server)).
+  - `export *` sweep: **16 instances exist**, all internal feature-root barrels
+    re-exporting their own `components`/`data` kind-folders (e.g.
+    `features/kkem/index.ts` → `export * from "./components"`). This does not violate
+    the barrel-only rule — outside consumers still only ever import `@/features/<name>`,
+    never a deeper path. The original "should be zero" note was aspirational and wrong;
+    named re-exports of every single component would be needless verbosity here.
+  - `lint:boundaries` (dependency-cruiser) already wired as an npm script
+    (`bun run lint:boundaries`); promoting it to a required CI gate is an infra/CI-config
+    change outside this repo's migration scope — flag to the user if CI wiring is wanted.
+- **`biome.json`'s `useFilenamingConvention`** widened to repo-wide (`**/*.ts`,
+  `**/*.tsx`) — `src/app/**/_components/` no longer exists anywhere. Fixed the 6
+  pre-existing camelCase filenames this surfaced outside `features/`/`shared/`:
+  `src/hooks/use-analytics.ts` (was `useAnalytics.ts`), `use-consent-manager.ts`,
+  `use-debounce.ts`, `use-track-event.ts`, `use-track-page-view.ts`, and
+  `src/services/api-gateway.ts` (was `apiGateway.ts`); also renamed
+  `src/components/ui/logo-loop.tsx` (was `LogoLoop.tsx`, PascalCase). Removed the dead
+  `src/lib/env/**` override entry (directory no longer exists).
+- Swept `src/services/` and `src/components/` (non-`ui`): `src/components/` is now only
+  `layouts/` + `ui/` (both genuinely global). `api-gateway.ts` and `urls.ts` had **zero
+  remaining importers** (confirmed by repo-wide grep) and were deleted as dead code.
+  `cdn.ts` (`cdnUrl`) was moved into `shared/api/cdn.ts` and re-exported from `@/shared`
+  (per user instruction — it's consumed by 20+ features plus global layout components,
+  so it's shared infra, not a standalone service) — `src/services/` is now fully deleted.
+  All 25 consumers repointed from `@/services/cdn` (and one stray `@services/cdn` alias
+  in `not-found.tsx`) to `@/shared`.
+- While in `useLandingStats` consumers, removed hardcoded numeric fallbacks
+  (`?? 60000`, `?? 400`, etc.) in `careers-stats.tsx`, `contact-stats.tsx`, and
+  `donate/trust-bar.tsx` — these now fall back to `0` instead of a fake stat, per
+  explicit user instruction. The static "48h Response" stat in
+  `contact/data/contact.data.ts` and `contact-stats.tsx` was intentionally left as-is
+  (not backed by `useLandingStats`, kept static per user instruction).

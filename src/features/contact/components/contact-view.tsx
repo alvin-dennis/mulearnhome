@@ -5,7 +5,8 @@ import { Suspense } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { MuImage } from "@/components/layouts";
 import { clientEnv } from "@/config/env.client";
-import { contactInfo, contactPage } from "@/data/common";
+import { contactInfo } from "@/shared";
+import { contactPage } from "../data/contact.data";
 import { ContactForm } from "./contact-form";
 import { ContactStats } from "./contact-stats";
 

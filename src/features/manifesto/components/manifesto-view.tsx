@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MotionH1, MotionH2, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 
 const bglogo = cdnUrl("/src/modules/Public/Manifesto/assets/µ.png");
 const handimg = cdnUrl("src/modules/Public/Manifesto/assets/hand.png");

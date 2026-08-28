@@ -1,5 +1,6 @@
 export { sendContactNotification } from "./api";
 export { ContactForm, ContactStats, ContactView } from "./components";
+export { contactPage } from "./data";
 export type {
   ContactApiRequest,
   ContactFormData,

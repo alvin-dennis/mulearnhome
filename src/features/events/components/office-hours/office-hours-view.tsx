@@ -6,7 +6,7 @@ import { useState } from "react";
 import { MotionSection } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
-import { useDebounce } from "@/hooks/useDebounce";
+import { useDebounce } from "@/hooks/use-debounce";
 import { useOfficeHours } from "../../hooks/events.hooks";
 import type { OfficeHoursSession, WeeklyTwitchPagination } from "../../types/events.types";
 import { formatDate, formatTime } from "../../utils/events.utils";

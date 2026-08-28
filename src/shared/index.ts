@@ -1,4 +1,4 @@
-export { endpoints, fetchPublicProfileImage, fetchTopLearners } from "./api";
+export { cdnUrl, endpoints, fetchPublicProfileImage, fetchTopLearners } from "./api";
 export {
   AnalyticsProvider,
   CookieConsent,
@@ -8,6 +8,7 @@ export {
   StatsLoader,
   useAnalyticsContext,
 } from "./components";
+export { contactInfo, footer, navItems, socials } from "./data";
 export { getApiResponseError } from "./hooks";
 export { useLandingStats } from "./hooks/stats.hooks";
 export type { Address, Email, Name, PAN, Phone } from "./schemas";

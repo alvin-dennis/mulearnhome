@@ -6,7 +6,7 @@ import { useState } from "react";
 import { MotionSection, MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
-import { useDebounce } from "@/hooks/useDebounce";
+import { useDebounce } from "@/hooks/use-debounce";
 import { useInspirationStation } from "../../hooks/events.hooks";
 import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "../../types/events.types";
 import { formatDate, formatTime } from "../../utils/events.utils";

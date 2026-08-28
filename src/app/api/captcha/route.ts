@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { serverEnv } from "@/lib/env/env.server";
+import { serverEnv } from "@/config/env.server";
 import type { Captcha } from "@/shared";
 
 export async function POST(req: NextRequest) {

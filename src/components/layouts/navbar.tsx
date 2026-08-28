@@ -5,9 +5,9 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { navItems } from "@/data/common";
 import { useRedirectToApp } from "@/lib/utils";
 import type { SubItem } from "@/shared";
+import { navItems } from "@/shared";
 import { MotionDiv, MotionLi } from "./mu-framer";
 import { MuImage } from "./mu-image";
 

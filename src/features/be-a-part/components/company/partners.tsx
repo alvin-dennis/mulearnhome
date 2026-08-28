@@ -1,4 +1,4 @@
-import LogoLoop from "@/components/ui/LogoLoop";
+import LogoLoop from "@/components/ui/logo-loop";
 import { CompanyPartners1, CompanyPartners as CompanyPartnersData } from "../../data/company.data";
 
 export const CompanyPartnersSection = () => {

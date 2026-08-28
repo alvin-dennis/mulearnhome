@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import type { TeamCardProps } from "../types";
 
 const fallbackImage = cdnUrl("public/assets/team/default.webp");

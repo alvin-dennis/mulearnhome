@@ -12,7 +12,7 @@ import { Cookie, Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { useConsentManager } from "@/hooks/useConsentManager";
+import { useConsentManager } from "@/hooks/use-consent-manager";
 import { CookiePreferencesModal } from "./cookie-preferences-modal";
 
 export function CookieConsent() {

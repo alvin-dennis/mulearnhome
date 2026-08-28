@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import { MotionDiv, MotionP, MuImage } from "@/components/layouts";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 
 const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -100 },

@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { cdnUrl } from "@/services/cdn";
-import { fetchPublicProfileImage } from "@/shared";
+import { cdnUrl, fetchPublicProfileImage } from "@/shared";
 import type { TextTestimonial } from "../types";
 
 interface TextTestimonialCardProps {

@@ -9,7 +9,7 @@
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
-import { useConsentManager } from "@/hooks/useConsentManager";
+import { useConsentManager } from "@/hooks/use-consent-manager";
 import { GA4_CONFIG } from "@/lib/analytics/config";
 import { getStoredConsent, getVisitorId, isBrowser } from "@/lib/analytics/consent";
 import { processEventQueue, sendEvent, trackPageView } from "@/lib/analytics/events";

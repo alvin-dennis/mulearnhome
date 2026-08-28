@@ -14,10 +14,10 @@ export function ContactStats() {
     return <StatsLoader count={3} className="grid-cols-3" />;
   }
 
-  const learnersCount = counts?.members ?? 60000;
+  const learnersCount = counts.members ?? 0;
   // Partners count is mapped to the number of companies from landing stats
   const partnersCount =
-    counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 400;
+    counts.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 0;
 
   return (
     <div className="grid grid-cols-3 gap-6 pt-6">

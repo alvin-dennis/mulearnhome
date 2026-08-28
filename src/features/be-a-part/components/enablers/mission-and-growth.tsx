@@ -8,8 +8,7 @@ import CountUp from "react-countup";
 import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
-import { cdnUrl } from "@/services/cdn";
-import { fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
+import { cdnUrl, fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
 import { enablers } from "../../data/enablers.data";
 
 const fadeInUp: Variants = {

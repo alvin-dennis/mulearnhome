@@ -1,5 +1,5 @@
 import { clientEnv } from "@/config/env.client";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import type { Role, RolesContent } from "../types/home.types";
 
 export const features = [

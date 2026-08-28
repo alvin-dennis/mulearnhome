@@ -1,6 +1,6 @@
-import { cdnUrl } from "@services/cdn";
 import Link from "next/link";
 import { MuImage } from "@/components/layouts";
+import { cdnUrl } from "@/shared";
 
 export function NotFoundPage() {
   const stone = cdnUrl("src/components/assests/NotFound/Stone.webp");

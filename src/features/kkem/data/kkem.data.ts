@@ -1,4 +1,4 @@
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 
 export const kkem = {
   pastEventCardData: [

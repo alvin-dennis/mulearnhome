@@ -7,13 +7,13 @@ import { useLandingStats } from "@/shared";
 export function TrustBar() {
   const { counts } = useLandingStats();
 
-  const learnersCount = counts?.members ?? 60000;
+  const learnersCount = counts?.members ?? 0;
   const campusCount =
-    counts?.org_type_counts?.find((o) => o.org_type === "College")?.org_count ?? 500;
-  const learningCircleCount = counts?.learning_circle_count ?? 1000;
-  const interestGroupCount = counts?.ig_count ?? 30;
+    counts?.org_type_counts?.find((o) => o.org_type === "College")?.org_count ?? 0;
+  const learningCircleCount = counts?.learning_circle_count ?? 0;
+  const interestGroupCount = counts?.ig_count ?? 0;
   const companyCount =
-    counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 400;
+    counts?.org_type_counts?.find((o) => o.org_type === "Company")?.org_count ?? 0;
   const eventsCount = 378;
 
   const stats = [

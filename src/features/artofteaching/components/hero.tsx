@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { artOfTeachingUrls } from "../data/artofteaching.data";
 
 export const Hero = () => {

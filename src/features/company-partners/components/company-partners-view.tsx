@@ -1,5 +1,5 @@
 import { MotionDiv, MuImage } from "@/components/layouts";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 import { CompanyPartner } from "../data/company-partners.data";
 import { CompanyCard } from "./company-card";
 

@@ -6,7 +6,7 @@
  * Client component for the footer that opens the cookie preferences modal.
  */
 
-import { useConsentManager } from "@/hooks/useConsentManager";
+import { useConsentManager } from "@/hooks/use-consent-manager";
 import { CookiePreferencesModal } from "./cookie-preferences-modal";
 
 interface CookieSettingsLinkProps {

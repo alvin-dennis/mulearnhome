@@ -1,4 +1,4 @@
-import { clientEnv } from "@/lib/env/env.client";
+import { clientEnv } from "@/config/env.client";
 
 export function cdnUrl(path: string): string {
   const base = clientEnv.NEXT_PUBLIC_CDN_URL;

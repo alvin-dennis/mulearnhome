@@ -2,7 +2,7 @@ import type { Variants } from "framer-motion";
 import Link from "next/link";
 import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
-import { cdnUrl } from "@/services/cdn";
+import { cdnUrl } from "@/shared";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
