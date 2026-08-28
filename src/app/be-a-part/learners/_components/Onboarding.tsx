@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import type { OnboardingStep } from "@/lib/types";
 
 interface OnboardingStepsProps {

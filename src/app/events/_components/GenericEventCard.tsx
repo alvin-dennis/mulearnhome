@@ -12,8 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { useState } from "react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 

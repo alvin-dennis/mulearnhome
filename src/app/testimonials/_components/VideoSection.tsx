@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import type { VideoTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import "swiper/css";
@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import type SwiperCore from "swiper";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 interface VideoSectionProps {

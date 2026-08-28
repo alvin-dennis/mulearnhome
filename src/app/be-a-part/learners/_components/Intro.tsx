@@ -1,4 +1,4 @@
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 
 const LearnerIntro = () => {
   return (

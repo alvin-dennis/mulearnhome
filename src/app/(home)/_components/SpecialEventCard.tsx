@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FiCalendar, FiClock } from "react-icons/fi";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {

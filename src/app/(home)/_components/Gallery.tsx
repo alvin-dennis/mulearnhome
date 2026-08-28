@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { galleryEvents } from "@/data/gallery";
 

@@ -1,27 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
-import type { TopLearner } from "@/lib/types";
-import { fetchTopLearners } from "@/services/profile";
-
-interface ExtendedTopLearner extends TopLearner {
-  email?: string;
-  avatar?: string;
-}
+import { useTopLearners } from "@/shared";
 
 export default function RankingSection() {
-  const [topLearners, setTopLearners] = useState<ExtendedTopLearner[]>([]);
-
-  const fetchData = useCallback(async () => {
-    const learners = await fetchTopLearners(10);
-    setTopLearners(learners);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  const { data: topLearners = [] } = useTopLearners(10);
 
   return (
     <section className="py-16 md:py-20 container mx-auto px-4 relative">

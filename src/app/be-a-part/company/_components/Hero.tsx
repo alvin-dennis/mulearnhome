@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {

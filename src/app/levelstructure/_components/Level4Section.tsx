@@ -1,6 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 
 const INTEREST_GROUPS = [
   { name: "Web Development", icon: "/assets/interestgroups/webdev.svg" },

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 export default function Apply() {

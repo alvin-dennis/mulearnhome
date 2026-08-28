@@ -1,5 +1,4 @@
-import { MotionA } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionA, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/services/cdn";
 

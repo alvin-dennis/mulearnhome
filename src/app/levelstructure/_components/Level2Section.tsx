@@ -1,6 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 
 export default function Level2Section() {
   return (

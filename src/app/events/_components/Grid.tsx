@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import type { Event } from "@/lib/types";
 import EventCard from "./EventCard";
 

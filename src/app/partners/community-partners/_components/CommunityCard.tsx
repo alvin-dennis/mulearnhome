@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import type { CommunityCardProps } from "@/lib/types";
 import { cdnUrl } from "@/services/cdn";
 

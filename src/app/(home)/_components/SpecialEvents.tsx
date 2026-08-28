@@ -1,7 +1,7 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
 import SpecialEventCard from "@/app/(home)/_components/SpecialEventCard";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { specialevents } from "@/data/home";
 

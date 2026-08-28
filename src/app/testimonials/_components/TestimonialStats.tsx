@@ -2,9 +2,10 @@
 
 import { Star, TrendingUp, Users } from "lucide-react";
 import CountUp from "react-countup";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 import type { Counts } from "@/lib/types";
+import { StatsLoader } from "@/shared";
 
 interface TestimonialStatsProps {
   counts: Counts | null;
@@ -33,8 +34,17 @@ export default function TestimonialStats({ counts, hasError }: TestimonialStatsP
       ]
     : [];
 
-  if (hasError || stats.length === 0) {
+  if (hasError) {
     return null;
+  }
+
+  if (stats.length === 0) {
+    return (
+      <StatsLoader
+        count={3}
+        className="grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 max-w-5xl mx-auto"
+      />
+    );
   }
 
   return (

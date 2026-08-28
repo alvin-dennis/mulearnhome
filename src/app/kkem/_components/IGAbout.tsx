@@ -1,6 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionP, MuImage } from "@/components/layouts";
 import { cdnUrl } from "@/services/cdn";
 
 const slideInLeft: Variants = {

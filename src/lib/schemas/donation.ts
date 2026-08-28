@@ -3,7 +3,7 @@
  * Used by donation form, donation service, and API routes
  */
 import { z } from "zod";
-import { addressSchema, emailSchema, nameSchema, panSchema, phoneSchema } from "./common";
+import { addressSchema, emailSchema, nameSchema, panSchema, phoneSchema } from "@/shared";
 
 // ============================================================================
 // Donation Type Schema

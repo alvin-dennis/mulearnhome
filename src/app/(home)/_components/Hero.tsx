@@ -3,8 +3,7 @@
 import type { Variants } from "framer-motion";
 import { ArrowRight, Atom, Info } from "lucide-react";
 import Link from "next/link";
-import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH1, MotionHeader, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
 

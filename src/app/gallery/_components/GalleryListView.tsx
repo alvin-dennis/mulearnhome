@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import type { GalleryEvent } from "@/data/gallery";
 import { GalleryEventCard } from "./GalleryEventCard";
 

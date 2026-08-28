@@ -1,11 +1,10 @@
 import { Globe, Mail, Phone } from "lucide-react";
 import Link from "next/link";
-import CookieSettingsLink from "@/components/analytics/CookieSettingsLink";
-import { MotionFooter } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionFooter, MuImage } from "@/components/layouts";
 import { contactInfo, footer, socials } from "@/data/common";
+import { CookieSettingsLink } from "@/shared";
 
-export default function Footer() {
+export function Footer() {
   return (
     <MotionFooter
       className="bg-mulearn-whitish text-mulearn-blackish px-4 sm:px-6 py-8 sm:py-6 border-t border-mulearn-gray-200"

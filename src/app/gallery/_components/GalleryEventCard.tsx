@@ -1,7 +1,6 @@
 import { ArrowRight, Calendar, MapPin } from "lucide-react";
 import Link from "next/link";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import type { GalleryEvent } from "@/data/gallery";
 

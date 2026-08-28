@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { socialLinks } from "@/data/socials";

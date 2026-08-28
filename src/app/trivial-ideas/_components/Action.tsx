@@ -1,5 +1,4 @@
-import { MotionDiv, MotionH2 } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH2, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 const Action = () => {

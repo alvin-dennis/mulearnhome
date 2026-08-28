@@ -1,6 +1,6 @@
 "use client";
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import { MotionDiv, MotionH1, MotionP } from "@/components/layouts";
 
 const About = () => {
   const textVariant: Variants = {

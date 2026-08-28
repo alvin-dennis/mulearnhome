@@ -1,34 +1,16 @@
-import type { Metadata } from "next";
 import { Black_Ops_One, Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import type React from "react";
 import { Suspense } from "react";
-import Footer from "@/components/Footer";
-import MuLoader from "@/components/MuLoader";
-import Navbar from "@/components/Navbar";
+import { Footer, MuLoader, Navbar } from "@/components/layouts";
+import { QueryProvider } from "@/components/providers/query-provider";
 import "./globals.css";
 import { Toaster } from "sonner";
-import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/components/analytics";
-import BackToTop from "@/components/BacktoTop";
+import { BackToTop } from "@/components/layouts";
+import { constructMetadata } from "@/lib/metadata";
+import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/shared";
 
-export const metadata: Metadata = {
-  title: "µLearn",
-  description: "Break the echo chamber",
-  authors: [{ name: "µLearn" }],
-  openGraph: {
-    title: "µLearn",
-    description:
-      "µLearn is a synergic philosophy of education, with a culture of mutual learning through micro groups of peers. µLearn is here to assist you in breaking through the echo chambers and free you from the shackles that have you grounded.",
-    siteName: "µLearn",
-    url: "https://mulearn.org/",
-    type: "website",
-    images: ["/assets/logo.png"],
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-  metadataBase: new URL("https://mulearn.org/"),
-};
+export const metadata = constructMetadata();
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -67,17 +49,19 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${bricolage.variable} ${blackopsone.variable} font-sans antialiased`}
       >
-        <AnalyticsProvider>
-          <Navbar />
-          <Suspense fallback={<MuLoader />}>{children}</Suspense>
-          <Footer />
-          <Toaster richColors theme="light" position="bottom-right" />
-          <div className="fixed bottom-4 right-4 z-50">
-            <BackToTop />
-          </div>
-          <CookieConsent />
-          <DebugPanel />
-        </AnalyticsProvider>
+        <QueryProvider>
+          <AnalyticsProvider>
+            <Navbar />
+            <Suspense fallback={<MuLoader />}>{children}</Suspense>
+            <Footer />
+            <Toaster richColors theme="light" position="bottom-right" />
+            <div className="fixed bottom-4 right-4 z-50">
+              <BackToTop />
+            </div>
+            <CookieConsent />
+            <DebugPanel />
+          </AnalyticsProvider>
+        </QueryProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import type { DonationTier } from "@/data/donate";
 import { cn } from "@/lib/utils";

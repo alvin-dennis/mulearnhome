@@ -10,15 +10,15 @@
 import { AnimatePresence } from "framer-motion";
 import { Activity, Bug, ChevronDown, ChevronUp, EyeOff, Trash2, User } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { MotionButton, MotionDiv } from "@/components/layouts";
 import { CONSENT_CONFIG } from "@/lib/analytics/config";
 import { getStoredConsent, getVisitorId, isBrowser } from "@/lib/analytics/consent";
 import type { ConsentState, DebugEventEntry } from "@/lib/analytics/types";
-import { MotionButton, MotionDiv } from "../MuFramer";
 
 // Only render in development
 const isDev = process.env.NODE_ENV === "development";
 
-export default function DebugPanel() {
+export function DebugPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(true);
   const [events, setEvents] = useState<DebugEventEntry[]>([]);

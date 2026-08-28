@@ -6,7 +6,7 @@ import CareersCard from "@/app/careers/_components/CareersCard";
 import CareersStats from "@/app/careers/_components/CareersStats";
 import ClosedCareersCard from "@/app/careers/_components/ClosedCareersCard";
 import Pagination from "@/app/events/_components/Pagination";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import LogoLoop from "@/components/ui/LogoLoop";
 import {

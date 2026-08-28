@@ -3,7 +3,7 @@
 import * as htmlToImage from "html-to-image";
 import { useEffect, useRef, useState } from "react";
 import { HexColorPicker } from "react-colorful";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

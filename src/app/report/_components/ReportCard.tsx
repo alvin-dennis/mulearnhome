@@ -2,8 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import { Calendar, ChevronRight, Download, FileText } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import type { AnnualReport } from "@/lib/types";

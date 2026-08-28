@@ -8,7 +8,7 @@ import { GenericEventCard } from "@/app/events/_components/GenericEventCard";
 import Pagination from "@/app/events/_components/Pagination";
 import SearchAndFilter from "@/app/events/_components/SearchAndFilter";
 import { TabButton } from "@/app/events/_components/TabButton";
-import { MotionSection } from "@/components/MuFramer";
+import { MotionSection } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/useDebounce";

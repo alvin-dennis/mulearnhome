@@ -3,8 +3,7 @@
 import type { Variants } from "framer-motion";
 import { useState } from "react";
 import { TeamCard } from "@/app/team/_components/TeamCard";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import {
   Select,
   SelectContent,

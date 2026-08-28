@@ -10,9 +10,9 @@
 import { AnimatePresence } from "framer-motion";
 import { BarChart3, Cookie, Megaphone, Settings, Shield, X } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import type { ConsentCategories } from "@/lib/analytics/types";
-import { MotionDiv } from "../MuFramer";
 
 interface CookiePreferencesModalProps {
   isOpen: boolean;
@@ -69,7 +69,7 @@ const categories: (
   },
 ];
 
-export default function CookiePreferencesModal({
+export function CookiePreferencesModal({
   isOpen,
   onClose,
   pendingCategories,

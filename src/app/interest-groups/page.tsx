@@ -3,8 +3,7 @@
 import { useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, Lightbulb, Search, Target, TrendingUp, Users } from "lucide-react";
 import { useState } from "react";
-import { MotionA, MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionA, MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";

@@ -1,8 +1,7 @@
 import { cdnUrl } from "@services/cdn";
 import type { Variants } from "framer-motion";
 import CommunityCard from "@/app/partners/community-partners/_components/CommunityCard";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { communityPartners } from "@/data/community";
 import type { Partner } from "@/lib/types";
 

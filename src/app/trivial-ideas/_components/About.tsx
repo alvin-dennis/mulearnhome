@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
 
 const About = () => {

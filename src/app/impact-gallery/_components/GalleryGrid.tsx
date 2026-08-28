@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { galleryData } from "@/data/impact-gallery";
 import MediaCard from "./MediaCard";
 

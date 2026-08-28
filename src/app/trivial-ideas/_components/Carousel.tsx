@@ -1,5 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 
 type CarouselItem = {

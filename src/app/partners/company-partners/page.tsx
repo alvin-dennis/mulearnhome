@@ -1,6 +1,5 @@
 import CompanyCard from "@/app/partners/company-partners/_components/CompanyCard";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { CompanyPartner } from "@/data/company";
 import { cdnUrl } from "@/services/cdn";
 

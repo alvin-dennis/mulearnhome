@@ -1,5 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 
 const steps = [
   {

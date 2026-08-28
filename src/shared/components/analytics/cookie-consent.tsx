@@ -10,12 +10,12 @@
 import { AnimatePresence } from "framer-motion";
 import { Cookie, Settings } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { useConsentManager } from "@/hooks/useConsentManager";
-import { MotionDiv } from "../MuFramer";
-import CookiePreferencesModal from "./CookiePreferencesModal";
+import { CookiePreferencesModal } from "./cookie-preferences-modal";
 
-export default function CookieConsent() {
+export function CookieConsent() {
   const {
     showBanner,
     acceptAll,

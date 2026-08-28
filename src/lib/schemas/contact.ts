@@ -3,7 +3,7 @@
  * Used by contact form, mail service, and API routes
  */
 import { z } from "zod";
-import { emailSchema, internationalPhoneSchema, messageSchema, nameSchema } from "./common";
+import { emailSchema, internationalPhoneSchema, messageSchema, nameSchema } from "@/shared";
 
 // ============================================================================
 // Contact Intent Schema

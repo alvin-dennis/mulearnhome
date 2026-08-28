@@ -1,4 +1,4 @@
-import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
+import { MotionDiv, MotionH1, MotionP } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import About from "./_components/About";
 import Action from "./_components/Action";

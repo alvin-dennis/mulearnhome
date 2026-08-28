@@ -1,6 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Level1Section() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 
 import Level1Section from "./_components/Level1Section";
 import Level2Section from "./_components/Level2Section";

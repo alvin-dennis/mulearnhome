@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { campusChapter } from "@/data/campus";
 

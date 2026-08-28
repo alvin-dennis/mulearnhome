@@ -1,4 +1,4 @@
-import { MotionBQ } from "@/components/MuFramer";
+import { MotionBQ } from "@/components/layouts";
 
 export default function Quote() {
   return (

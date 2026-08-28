@@ -1,6 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import type { GalleryItem } from "@/lib/types";
 
 interface MediaCardProps {

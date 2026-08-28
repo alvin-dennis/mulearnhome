@@ -1,5 +1,4 @@
-import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { CompanyFeatures } from "@/data/company";
 

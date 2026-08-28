@@ -2,13 +2,23 @@
 
 import CountUp from "react-countup";
 import { Separator } from "@/components/ui/separator";
-import { useLandingStats } from "@/services/useLandingStats";
+import { StatsLoader, useLandingStats } from "@/shared";
 
 export default function Stats() {
   const { counts, hasError } = useLandingStats();
 
-  if (hasError || !counts) {
+  if (hasError) {
     return null;
+  }
+
+  if (!counts) {
+    return (
+      <section className="w-full py-12 border-y border-mulearn-gray-600">
+        <div className="container mx-auto px-4">
+          <StatsLoader count={4} className="grid-cols-2 md:grid-cols-4" />
+        </div>
+      </section>
+    );
   }
 
   const stats = [

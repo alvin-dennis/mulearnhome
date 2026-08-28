@@ -2,12 +2,12 @@
 
 import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import type { TextTestimonial } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { cdnUrl } from "@/services/cdn";
-import { fetchPublicProfileImage } from "@/services/profile";
+import { fetchPublicProfileImage } from "@/shared";
 
 interface TextTestimonialCardProps {
   testimonial: TextTestimonial;

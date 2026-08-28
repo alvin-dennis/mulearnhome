@@ -1,6 +1,6 @@
 import { BookOpen, Users } from "lucide-react";
 import { BiSolidRightArrow } from "react-icons/bi";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function WhyChapter() {

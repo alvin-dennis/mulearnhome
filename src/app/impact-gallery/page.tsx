@@ -3,8 +3,7 @@
 import { Sparkle } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/lib/env/env.client";
 import FilterButtons from "./_components/FilterButtons";

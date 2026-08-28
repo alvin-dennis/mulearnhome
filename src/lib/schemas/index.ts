@@ -3,8 +3,8 @@
  * Import from '@/lib/schemas' for all validation needs
  */
 
-export type { Address, Email, Name, PAN, Phone } from "./common";
-// Common reusable schemas
+export type { Address, Email, Name, PAN, Phone } from "@/shared";
+// Common reusable schemas — relocated to shared/schemas (used across multiple domains)
 export {
   addressSchema,
   consentSchema,
@@ -13,7 +13,7 @@ export {
   nameSchema,
   panSchema,
   phoneSchema,
-} from "./common";
+} from "@/shared";
 export type {
   ContactApiRequest,
   ContactFormData,

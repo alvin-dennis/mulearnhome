@@ -1,8 +1,8 @@
 import { cdnUrl } from "@services/cdn";
 import Link from "next/link";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 
-export default function NotFoundPage() {
+export function NotFoundPage() {
   const stone = cdnUrl("src/components/assests/NotFound/Stone.webp");
   const ufo = cdnUrl("src/components/assests/NotFound/UFO.webp");
   const fourNotFour = cdnUrl("src/components/assests/NotFound/FourNotFour.webp");

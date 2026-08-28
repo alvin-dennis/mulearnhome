@@ -4,14 +4,14 @@ import { AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import MuImage from "@/components/MuImage";
+import { Button } from "@/components/ui/button";
 import { navItems } from "@/data/common";
 import type { SubItem } from "@/lib/types";
 import { useRedirectToApp } from "@/lib/utils";
-import { MotionDiv, MotionLi } from "./MuFramer";
-import { Button } from "./ui/button";
+import { MotionDiv, MotionLi } from "./mu-framer";
+import { MuImage } from "./mu-image";
 
-export default function Navbar() {
+export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);

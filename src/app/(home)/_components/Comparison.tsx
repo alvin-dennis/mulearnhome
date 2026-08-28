@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { comparisons } from "@/data/home";
 
 const fadeInUp: Variants = {

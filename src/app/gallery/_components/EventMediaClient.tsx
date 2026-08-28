@@ -3,7 +3,7 @@
 import { ArrowLeft, Calendar, MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { GalleryEvent, GalleryMediaItem } from "@/data/gallery";

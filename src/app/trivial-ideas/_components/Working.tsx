@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 
 const Working = () => {
   const steps = [1, 2, 3, 4, 5, 6];

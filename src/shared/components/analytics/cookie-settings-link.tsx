@@ -7,14 +7,14 @@
  */
 
 import { useConsentManager } from "@/hooks/useConsentManager";
-import CookiePreferencesModal from "./CookiePreferencesModal";
+import { CookiePreferencesModal } from "./cookie-preferences-modal";
 
 interface CookieSettingsLinkProps {
   className?: string;
   children: React.ReactNode;
 }
 
-export default function CookieSettingsLink({ className, children }: CookieSettingsLinkProps) {
+export function CookieSettingsLink({ className, children }: CookieSettingsLinkProps) {
   const {
     openPreferences,
     closePreferences,

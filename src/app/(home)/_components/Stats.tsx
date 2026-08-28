@@ -2,8 +2,8 @@
 
 import type { Variants } from "framer-motion";
 import CountUp from "react-countup";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import { useLandingStats } from "@/services/useLandingStats";
+import { MotionDiv, MotionSection } from "@/components/layouts";
+import { StatsLoader, useLandingStats } from "@/shared";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -17,8 +17,19 @@ const fadeInUp: Variants = {
 export default function Stats() {
   const { counts, hasError } = useLandingStats();
 
-  if (hasError || !counts) {
+  if (hasError) {
     return null;
+  }
+
+  if (!counts) {
+    return (
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+        <StatsLoader
+          count={10}
+          className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-4 sm:px-8"
+        />
+      </div>
+    );
   }
 
   return (

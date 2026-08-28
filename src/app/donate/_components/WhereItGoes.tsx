@@ -1,7 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { whereItGoesCategories } from "@/data/donate";
 
 const fadeInUp: Variants = {

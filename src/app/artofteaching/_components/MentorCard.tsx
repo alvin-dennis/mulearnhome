@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/services/cdn";
 

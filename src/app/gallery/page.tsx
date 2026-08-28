@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { galleryEvents } from "@/data/gallery";
 import { GalleryClient } from "./_components";
 

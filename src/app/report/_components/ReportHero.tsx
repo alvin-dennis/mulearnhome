@@ -2,7 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import { FileText, Target, TrendingUp, Users } from "lucide-react";
-import { MotionDiv, MotionH1, MotionP, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionH1, MotionP, MotionSection } from "@/components/layouts";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

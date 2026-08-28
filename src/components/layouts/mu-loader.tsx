@@ -1,6 +1,6 @@
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 
-export default function MuLoader() {
+export function MuLoader() {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <MuImage

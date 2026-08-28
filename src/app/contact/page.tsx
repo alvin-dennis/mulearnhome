@@ -3,7 +3,7 @@
 import { Mail, MapPin } from "lucide-react";
 import { Suspense } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { contactInfo, contactPage } from "@/data/common";
 import { clientEnv } from "@/lib/env/env.client";
 import ContactForm from "./_components/ContactForm";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { galleryEvents } from "@/data/gallery";
 

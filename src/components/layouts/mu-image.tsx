@@ -5,7 +5,7 @@ import React from "react";
  * MuImage: A wrapper for Next.js Image that ensures aspect ratio is preserved.
  * If only width or height is set, sets the other to 'auto' via style prop.
  */
-const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
+export const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   const { width, height, style, ...rest } = props;
   const newStyle = { ...style } as React.CSSProperties;
 
@@ -140,5 +140,3 @@ const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
 });
 
 MuImage.displayName = "MuImage";
-
-export default MuImage;

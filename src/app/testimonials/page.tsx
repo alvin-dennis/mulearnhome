@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { MotionDiv, MotionH1, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { testimonials } from "@/data/testimonials";
 import { useRedirectToApp } from "@/lib/utils";
-import { useLandingStats } from "@/services/useLandingStats";
+import { useLandingStats } from "@/shared";
 import TestimonialStats from "./_components/TestimonialStats";
 import TextTestimonialsGrid from "./_components/TextTestimonialsGrid";
 import VideoSection from "./_components/VideoSection";

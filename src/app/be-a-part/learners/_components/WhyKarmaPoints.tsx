@@ -1,5 +1,5 @@
 import type { ElementType } from "react";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { whyKarma } from "@/data/learners";
 
 interface Benefit {

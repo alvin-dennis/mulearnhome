@@ -1,6 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { opportunities } from "@/data/home";
 

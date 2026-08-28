@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionH2, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionH2, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";

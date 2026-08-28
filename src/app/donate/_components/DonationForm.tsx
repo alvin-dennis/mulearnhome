@@ -14,7 +14,7 @@ import {
   parseDonationParams,
 } from "@/app/donate/_components/donationUrlParams";
 import TierCard from "@/app/donate/_components/TierCard";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";

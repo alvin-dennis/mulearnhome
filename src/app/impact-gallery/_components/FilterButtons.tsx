@@ -7,7 +7,7 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { galleryCategories } from "@/data/impact-gallery";
 

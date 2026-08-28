@@ -1,6 +1,6 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },

@@ -1,13 +1,17 @@
 "use client";
 
 import CountUp from "react-countup";
-import { useLandingStats } from "@/services/useLandingStats";
+import { StatsLoader, useLandingStats } from "@/shared";
 
 export default function ContactStats() {
   const { counts, hasError } = useLandingStats();
 
-  if (hasError || !counts) {
+  if (hasError) {
     return null;
+  }
+
+  if (!counts) {
+    return <StatsLoader count={3} className="grid-cols-3" />;
   }
 
   const learnersCount = counts?.members ?? 60000;

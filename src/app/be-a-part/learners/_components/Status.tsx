@@ -1,8 +1,8 @@
 "use client";
 
 import CountUp from "react-countup";
-import { MotionDiv } from "@/components/MuFramer";
-import { useLandingStats } from "@/services/useLandingStats";
+import { MotionDiv } from "@/components/layouts";
+import { StatsLoader, useLandingStats } from "@/shared";
 
 const LearnersStatus = () => {
   const { counts, hasError } = useLandingStats();
@@ -37,8 +37,23 @@ const LearnersStatus = () => {
       ]
     : null;
 
-  if (hasError || !stats) {
+  if (hasError) {
     return null;
+  }
+
+  if (!stats) {
+    return (
+      <section className="py-16 md:py-20 bg-mulearn-whitish">
+        <div className="container mx-auto px-4">
+          <div className="border-t border-mulearn-gray-600 mb-16"></div>
+          <StatsLoader
+            count={3}
+            className="grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-5xl mx-auto"
+          />
+          <div className="border-t border-mulearn-gray-600 mt-16"></div>
+        </div>
+      </section>
+    );
   }
 
   return (

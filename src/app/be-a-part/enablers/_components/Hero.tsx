@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/lib/env/env.client";
 

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { learningCircleData } from "@/data/lc-ig";
 

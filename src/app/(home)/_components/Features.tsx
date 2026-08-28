@@ -3,8 +3,7 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { features } from "@/data/home";

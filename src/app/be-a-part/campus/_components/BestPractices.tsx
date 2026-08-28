@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/MuFramer";
+import { MotionDiv } from "@/components/layouts";
 import { campusChapter } from "@/data/campus";
 
 type PracticeItem = {

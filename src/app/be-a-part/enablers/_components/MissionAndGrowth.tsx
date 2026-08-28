@@ -5,14 +5,12 @@ import { Sparkle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { enablers } from "@/data/enablers";
 import { clientEnv } from "@/lib/env/env.client";
 import { cdnUrl } from "@/services/cdn";
-import { fetchPublicProfileImage } from "@/services/profile";
-import { useLandingStats } from "@/services/useLandingStats";
+import { fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -67,8 +65,18 @@ export default function MissionandGrowth() {
 
   const hasMore = displayedCount < enablers.faculties.length;
 
-  if (hasError || !counts) {
+  if (hasError) {
     return null;
+  }
+
+  if (!counts) {
+    return (
+      <div className="flex justify-center">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-32 max-w-7xl w-full py-24">
+          <StatsLoader count={4} className="flex flex-wrap justify-center gap-9 px-8" />
+        </div>
+      </div>
+    );
   }
 
   return (

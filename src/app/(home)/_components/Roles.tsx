@@ -2,8 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import { useState } from "react";
-import { MotionDiv, MotionSection } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,

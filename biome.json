@@ -49,6 +49,25 @@
       "linter": {
         "enabled": true
       }
+    },
+    {
+      "includes": [
+        "src/features/**",
+        "src/shared/**",
+        "src/components/layouts/**",
+        "src/components/providers/**",
+        "config/**"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": {
+              "level": "error",
+              "options": { "filenameCases": ["kebab-case"] }
+            }
+          }
+        }
+      }
     }
   ],
   "javascript": {

@@ -1,8 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionH1, MotionHeader, MotionP } from "@/components/MuFramer";
-import MuImage from "@/components/MuImage";
+import { MotionDiv, MotionH1, MotionHeader, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { cdnUrl } from "@/services/cdn";
 

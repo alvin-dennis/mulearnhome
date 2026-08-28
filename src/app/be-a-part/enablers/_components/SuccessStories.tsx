@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react";
-import MuImage from "@/components/MuImage";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MotionH2 } from "@/components/MuFramer";
+import { MotionH2 } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 
 const Qna = () => {
