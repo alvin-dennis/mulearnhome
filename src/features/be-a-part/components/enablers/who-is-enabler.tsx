@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Sparkle } from "lucide-react";
 import Image from "next/image";
+import { MuImage } from "@/components/layouts";
 import { enablers } from "../../data/enablers.data";
 
 const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
@@ -44,7 +45,7 @@ export function WhoIsEnabler() {
           <Sparkle className="absolute right-[320px] top-[270px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
           <Sparkle className="absolute right-[130px] top-[320px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
 
-          <Image
+          <MuImage
             style={{ right: 0, top: 0 }}
             width={515}
             height={480}
@@ -83,7 +84,7 @@ export function WhoIsEnabler() {
           </div>
 
           <div className="w-full flex justify-center items-end px-4 pb-0">
-            <Image
+            <MuImage
               src="/assets/be-a-part/enabler-character.svg"
               alt="Campus Enabler Illustration"
               width={515}

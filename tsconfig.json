@@ -19,14 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/config/*": ["./config/*"],
-      "@/tina/*": ["./tina/*"],
-      "@components/*": ["./src/components/*"],
-      "@app/*": ["./src/app/*"],
-      "@services/*": ["./src/services/*"],
-      "@data/*": ["./src/data/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

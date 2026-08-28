@@ -7,8 +7,6 @@ export const metadata = {
   description: "Explore moments from µLearn events across campuses and communities.",
 };
 
-export const dynamic = "force-dynamic";
-
 export default async function GalleryPage() {
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },

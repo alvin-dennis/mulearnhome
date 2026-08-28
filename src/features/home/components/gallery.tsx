@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MotionSection } from "@/components/layouts";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { galleryEvents } from "@/features/gallery";
 
@@ -96,7 +96,7 @@ const RotatingImage = ({
           className="absolute inset-0"
         >
           {images[currentIndex] && (
-            <Image
+            <MuImage
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
               fill

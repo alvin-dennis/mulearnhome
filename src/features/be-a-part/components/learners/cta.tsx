@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MotionDiv } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 
@@ -35,7 +35,7 @@ export const CTA = () => {
             {/* Right Illustration */}
             <div className="relative hidden lg:flex justify-center items-center">
               <div className="relative w-full max-w-md aspect-square">
-                <Image
+                <MuImage
                   src="/assets/learners/learner-cta.png"
                   alt="Student learning with laptop"
                   fill
