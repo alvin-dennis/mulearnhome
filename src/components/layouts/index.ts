@@ -1,5 +1,6 @@
 export { BackToTop } from "./backto-top";
 export { Footer } from "./footer";
+export { LayoutWidgets } from "./layout-widgets";
 export {
   MotionA,
   MotionBQ,

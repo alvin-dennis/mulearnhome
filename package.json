@@ -7,6 +7,11 @@
   "engines": {
     "node": ">=20.0.0"
   },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not < 0.5%"
+  ],
   "scripts": {
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('bun')===-1){console.error('\\x1b[31m❌ This project requires bun. Please use bun install instead.\\x1b[0m');process.exit(1)}\"",
     "dev": "next dev --turbopack",

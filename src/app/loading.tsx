@@ -1,5 +1,5 @@
 import { MuLoader } from "@/components/layouts";
 
-export default function Loading() {
+export default function Loader() {
   return <MuLoader />;
 }

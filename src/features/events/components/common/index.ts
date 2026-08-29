@@ -5,5 +5,5 @@ export { GenericEventCard, IG_LABELS } from "./generic-event-card";
 export { GenericEventCardSkeletonGrid } from "./generic-event-card-skeleton";
 export { Grid } from "./grid";
 export { Pagination } from "./pagination";
-export { SearchAndFilter } from "./search-and-filter";
+export { SearchAndFilter } from "./search-and-filter-lazy";
 export { TabButton } from "./tab-button";

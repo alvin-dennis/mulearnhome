@@ -2,12 +2,11 @@ import type { Viewport } from "next";
 import { Black_Ops_One, Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import type React from "react";
 import { Suspense } from "react";
-import { Footer, MuLoader, Navbar } from "@/components/layouts";
+import { Footer, LayoutWidgets, Navbar } from "@/components/layouts";
 import "./globals.css";
-import { Toaster } from "sonner";
-import { BackToTop } from "@/components/layouts";
 import { constructMetadata } from "@/lib/metadata";
-import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/shared";
+import { AnalyticsProvider } from "@/shared";
+import Loader from "./loading";
 
 export const metadata = constructMetadata();
 
@@ -47,22 +46,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
-        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body
         className={`${plusJakarta.variable} ${bricolage.variable} ${blackopsone.variable} font-sans antialiased`}
       >
         <AnalyticsProvider>
           <Navbar />
-          <Suspense fallback={<MuLoader />}>{children}</Suspense>
+          <Suspense fallback={<Loader />}>{children}</Suspense>
           <Footer />
-          <Toaster richColors theme="light" position="bottom-right" />
-          <div className="fixed bottom-4 right-4 z-50">
-            <BackToTop />
-          </div>
-          <CookieConsent />
-          <DebugPanel />
+          <LayoutWidgets />
         </AnalyticsProvider>
       </body>
     </html>

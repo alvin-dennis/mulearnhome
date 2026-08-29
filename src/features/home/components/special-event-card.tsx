@@ -30,7 +30,7 @@ export const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ spe
           alt={specialevent.title}
           fill
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
+          sizes="(max-width: 640px) 90vw, 400px"
         />
         <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-mulearn-blackish/60 to-transparent">
           <Button

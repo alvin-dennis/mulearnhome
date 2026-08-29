@@ -25,11 +25,6 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn.mulearn",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
         hostname: "mulearn.org",
         pathname: "/**",
       },
@@ -65,8 +60,6 @@ const nextConfig: NextConfig = {
             value: "on",
           },
           {
-            // No "; preload" yet — add only after a deliberate hstspreload.org submission,
-            // see docs/implementation-plan.md Phase 5.
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains",
           },
