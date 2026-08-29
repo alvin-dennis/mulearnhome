@@ -12,6 +12,7 @@ import { BarChart3, Cookie, Megaphone, Settings, Shield, X } from "lucide-react"
 import { useEffect, useRef } from "react";
 import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import type { ConsentCategories } from "@/lib/analytics/types";
 
 interface CookiePreferencesModalProps {
@@ -143,30 +144,36 @@ export function CookiePreferencesModal({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-gray-950"
+            className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-mulearn-whitish shadow-2xl dark:bg-gray-950"
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4 dark:border-gray-800">
+            <div className="flex items-center justify-between border-b border-mulearn-greyish/30 px-5 py-4 dark:border-gray-800">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
-                  <Cookie className="h-4 w-4 text-gray-600 dark:text-gray-400" aria-hidden="true" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-mulearn-greyish/20 dark:bg-gray-800">
+                  <Cookie
+                    className="h-4 w-4 text-mulearn-gray-600 dark:text-gray-400"
+                    aria-hidden="true"
+                  />
                 </div>
                 <h2
                   id="preferences-title"
-                  className="text-lg font-semibold text-gray-900 dark:text-white"
+                  className="text-lg font-semibold text-mulearn-blackish dark:text-white"
                 >
                   Cookie Settings
                 </h2>
               </div>
 
-              <button
+              <Button
+                type="button"
                 ref={closeButtonRef}
                 onClick={onClose}
-                className="rounded-full p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                variant="ghost"
+                size="icon-sm"
+                className="bg-transparent text-mulearn-gray-600 hover:text-mulearn-whitish"
                 aria-label="Close"
               >
                 <X className="h-5 w-5" />
-              </button>
+              </Button>
             </div>
 
             {/* Categories */}
@@ -184,17 +191,17 @@ export function CookiePreferencesModal({
                   return (
                     <div
                       key={category.key}
-                      className="flex items-start justify-between gap-4 rounded-xl border border-gray-100 p-4 dark:border-gray-800"
+                      className="flex items-start justify-between gap-4 rounded-xl border border-mulearn-greyish/30 p-4 dark:border-gray-800"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="mt-0.5 text-gray-400 dark:text-gray-500">
+                        <div className="mt-0.5 text-mulearn-gray-600 dark:text-gray-500">
                           <Icon className="h-4 w-4" aria-hidden="true" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                          <h3 className="text-sm font-medium text-mulearn-blackish dark:text-white">
                             {category.title}
                           </h3>
-                          <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">
+                          <p className="mt-0.5 text-xs text-mulearn-gray-600 dark:text-gray-400">
                             {category.description}
                           </p>
                         </div>
@@ -203,33 +210,18 @@ export function CookiePreferencesModal({
                       {/* Toggle */}
                       <div className="shrink-0">
                         {isEssential ? (
-                          <div className="flex h-6 w-10 items-center justify-end rounded-full bg-gray-900 px-1 dark:bg-white">
-                            <div className="h-4 w-4 rounded-full bg-white dark:bg-gray-900" />
-                          </div>
+                          <Switch checked disabled aria-label="Essential (always on)" />
                         ) : (
-                          <button
-                            type="button"
-                            role="switch"
-                            aria-checked={isEnabled}
+                          <Switch
+                            checked={isEnabled}
                             aria-label={`Toggle ${category.title}`}
-                            onClick={() =>
+                            onCheckedChange={(checked) =>
                               onUpdateCategory(
                                 category.key as keyof Omit<ConsentCategories, "essential">,
-                                !isEnabled,
+                                checked,
                               )
                             }
-                            className={`relative flex h-6 w-10 items-center rounded-full px-1 transition-colors ${
-                              isEnabled
-                                ? "bg-gray-900 dark:bg-white"
-                                : "bg-gray-200 dark:bg-gray-700"
-                            }`}
-                          >
-                            <span
-                              className={`h-4 w-4 rounded-full bg-white shadow-sm transition-transform dark:bg-gray-900 ${
-                                isEnabled ? "translate-x-4" : "translate-x-0"
-                              }`}
-                            />
-                          </button>
+                          />
                         )}
                       </div>
                     </div>
@@ -239,29 +231,27 @@ export function CookiePreferencesModal({
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between border-t border-gray-100 px-5 py-4 dark:border-gray-800">
-              <div className="flex gap-2">
-                <button
+            <div className="flex items-center justify-between border-t border-mulearn-greyish/30 px-5 py-4 dark:border-gray-800">
+              <div className="flex items-center gap-2">
+                <Button
                   type="button"
+                  variant="link"
                   onClick={onRejectAll}
-                  className="text-sm text-gray-500 transition-colors hover:text-gray-900 dark:hover:text-white"
+                  className="h-auto p-0 text-sm text-mulearn-gray-600 no-underline hover:text-mulearn-blackish hover:underline dark:hover:text-white"
                 >
                   Reject all
-                </button>
-                <span className="text-gray-300 dark:text-gray-700">·</span>
-                <button
+                </Button>
+                <span className="text-mulearn-greyish dark:text-gray-700">·</span>
+                <Button
                   type="button"
+                  variant="link"
                   onClick={onAcceptAll}
-                  className="text-sm text-gray-500 transition-colors hover:text-gray-900 dark:hover:text-white"
+                  className="h-auto p-0 text-sm text-mulearn-gray-600 no-underline hover:text-mulearn-blackish hover:underline dark:hover:text-white"
                 >
                   Accept all
-                </button>
+                </Button>
               </div>
-              <Button
-                size="sm"
-                onClick={onSave}
-                className="bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
-              >
+              <Button size="sm" onClick={onSave}>
                 Save
               </Button>
             </div>

@@ -1,28 +1,22 @@
+import { SanitizedHtml } from "@/components/ui/sanitized-html";
 import { privacyPolicy } from "../data/privacy-policy.data";
 
-const formatText = (text: string) =>
-  text
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.*?)\*/g, "<em>$1</em>")
-    .replace(
-      /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-      '<a href="mailto:$1" class="font-medium text-mulearn underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>',
-    );
-
 const Paragraph = ({ text }: { text: string }) => (
-  <p
+  <SanitizedHtml
+    as="p"
     className="text-[15px] sm:text-base leading-7 text-mulearn-blackish text-justify"
-    dangerouslySetInnerHTML={{ __html: formatText(text) }}
+    text={text}
   />
 );
 
 const SubsectionList = ({ subsections }: { subsections: string[] }) => (
   <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish text-justify list-[lower-roman]">
     {subsections.map((subsection) => (
-      <li
+      <SanitizedHtml
         key={subsection.slice(0, 50)}
+        as="li"
         className="pl-2 leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: formatText(subsection) }}
+        text={subsection}
       />
     ))}
   </ol>

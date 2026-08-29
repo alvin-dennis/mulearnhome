@@ -10,7 +10,13 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { useSaltMangoTree } from "../../hooks/events.hooks";
 import type { WeeklyTwitchEpisode, WeeklyTwitchPagination } from "../../types/events.types";
 import { formatDate, formatTime } from "../../utils/events.utils";
-import { GenericEventCard, Pagination, SearchAndFilter, TabButton } from "../common";
+import {
+  GenericEventCard,
+  GenericEventCardSkeletonGrid,
+  Pagination,
+  SearchAndFilter,
+  TabButton,
+} from "../common";
 
 type ViewType = "upcoming" | "previous";
 
@@ -36,6 +42,7 @@ export function SaltMangoTreeView() {
     data: episodes,
     pagination: fetchedPagination,
     error,
+    isLoading,
   } = useSaltMangoTree({
     status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
     search: debouncedSearch || undefined,
@@ -209,7 +216,9 @@ export function SaltMangoTreeView() {
                 </div>
               )}
 
-              {events.length > 0 ? (
+              {isLoading && events.length === 0 ? (
+                <GenericEventCardSkeletonGrid />
+              ) : events.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {events.map((event) => (
                     <GenericEventCard key={event.id} event={event} variant="episode" icon={Radio} />

@@ -1,20 +1,11 @@
+import { SanitizedHtml } from "@/components/ui/sanitized-html";
 import { refundPolicy } from "../data/refund-policy.data";
 
-const formatText = (text: string) =>
-  text
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.*?)\*/g, "<em>$1</em>")
-    .replace(
-      /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-      '<a href="mailto:$1" class="font-medium text-mulearn underline underline-offset-4 hover:text-mulearn-duke-purple">$1</a>',
-    );
-
 const Paragraph = ({ text }: { text: string }) => (
-  <p
+  <SanitizedHtml
+    as="p"
     className="text-[15px] sm:text-base leading-7 text-mulearn-blackish"
-    dangerouslySetInnerHTML={{
-      __html: formatText(text),
-    }}
+    text={text}
   />
 );
 
@@ -52,11 +43,7 @@ export function RefundPolicyView() {
                 <ol className="ml-6 space-y-3 text-[15px] sm:text-base text-mulearn-blackish list-[lower-roman]">
                   {section.subsections.map((subsection) => (
                     <li key={subsection.slice(0, 50)} className="pl-2 leading-relaxed">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: formatText(subsection),
-                        }}
-                      />
+                      <SanitizedHtml text={subsection} />
                     </li>
                   ))}
                 </ol>

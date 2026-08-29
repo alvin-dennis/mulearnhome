@@ -1,13 +1,55 @@
 import type { Variants } from "framer-motion";
 import { CalendarClock, History, Radio, Repeat } from "lucide-react";
+import { Suspense } from "react";
 import { MotionDiv } from "@/components/layouts";
 import { fetchPublicEvents } from "../../api/events.api";
 import { events } from "../../data/events.data";
 import type { Event } from "../../types/events.types";
 import { safeMapEvents, withNextSessionDate } from "../../utils/events.utils";
 import { type EventCategory, EventCategoryTabs } from "./event-category-tabs";
+import { EventsSkeleton } from "./events-skeleton";
 
-export async function EventsView() {
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
+  },
+};
+
+export function EventsView() {
+  return (
+    <section className="px-6 py-8 md:px-12 min-h-screen">
+      <div className="max-w-7xl mx-auto mb-16">
+        <MotionDiv
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex-1 w-full text-center px-2 sm:px-0"
+        >
+          <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] text-mulearn-blackish font-bold leading-tight mb-6">
+            <span className="text-mulearn">µLearn</span> Events
+          </h1>
+          <p className="text-base md:text-lg lg:text-xl text-mulearn-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Several recurring activities are conducted at µLearn each week. There will be events
+            filled with stories, learning experiences, inspirations, and much more. Join in and
+            let&apos;s learn something new.
+          </p>
+        </MotionDiv>
+      </div>
+
+      <div className="mx-auto max-w-7xl">
+        <Suspense fallback={<EventsSkeleton />}>
+          <EventsList />
+        </Suspense>
+      </div>
+    </section>
+  );
+}
+
+async function EventsList() {
   const { recurringEvents } = events;
 
   let ongoingEvents: Event[] | null = null;
@@ -39,15 +81,6 @@ export async function EventsView() {
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
-
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
-    },
-  };
 
   const categories: EventCategory[] = [
     {
@@ -93,30 +126,5 @@ export async function EventsView() {
     },
   ];
 
-  return (
-    <section className="px-6 py-8 md:px-12 min-h-screen">
-      <div className="max-w-7xl mx-auto mb-16">
-        <MotionDiv
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex-1 w-full text-center px-2 sm:px-0"
-        >
-          <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] text-mulearn-blackish font-bold leading-tight mb-6">
-            <span className="text-mulearn">µLearn</span> Events
-          </h1>
-          <p className="text-base md:text-lg lg:text-xl text-mulearn-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Several recurring activities are conducted at µLearn each week. There will be events
-            filled with stories, learning experiences, inspirations, and much more. Join in and
-            let&apos;s learn something new.
-          </p>
-        </MotionDiv>
-      </div>
-
-      <div className="mx-auto max-w-7xl">
-        <EventCategoryTabs categories={categories} />
-      </div>
-    </section>
-  );
+  return <EventCategoryTabs categories={categories} />;
 }

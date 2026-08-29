@@ -10,7 +10,14 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { useOfficeHours } from "../../hooks/events.hooks";
 import type { OfficeHoursSession, WeeklyTwitchPagination } from "../../types/events.types";
 import { formatDate, formatTime } from "../../utils/events.utils";
-import { GenericEventCard, IG_LABELS, Pagination, SearchAndFilter, TabButton } from "../common";
+import {
+  GenericEventCard,
+  GenericEventCardSkeletonGrid,
+  IG_LABELS,
+  Pagination,
+  SearchAndFilter,
+  TabButton,
+} from "../common";
 
 type ViewType = "upcoming" | "previous";
 
@@ -34,6 +41,7 @@ export function OfficeHoursView() {
     data: sessions,
     pagination: fetchedPagination,
     error,
+    isLoading,
   } = useOfficeHours({
     status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
     search: debouncedSearch || undefined,
@@ -184,7 +192,9 @@ export function OfficeHoursView() {
           className="py-12 pb-20"
         >
           <div className="max-w-7xl mx-auto px-4">
-            {events.length > 0 ? (
+            {isLoading && events.length === 0 ? (
+              <GenericEventCardSkeletonGrid />
+            ) : events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {events.map((event) => (
                   <GenericEventCard key={event.id} event={event} variant="office-hour" icon={Mic} />

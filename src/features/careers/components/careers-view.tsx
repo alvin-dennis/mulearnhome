@@ -20,6 +20,7 @@ import { companies } from "../data/careers.data";
 import { useOngoingHiring, usePreviousHiring } from "../hooks/careers.hooks";
 import type { Company } from "../types/careers.types";
 import { CareersCard } from "./careers-card";
+import { CareersCardSkeletonGrid } from "./careers-card-skeleton";
 import { CareersStats } from "./careers-stats";
 import { ClosedCareersCard } from "./closed-careers-card";
 
@@ -138,9 +139,7 @@ export function CareersView() {
 
           <TabsContent value="ongoing">
             {ongoingLoading && ongoingData.length === 0 ? (
-              <div className="flex justify-center py-20">
-                <p className="text-mulearn-gray-600">Loading open positions…</p>
-              </div>
+              <CareersCardSkeletonGrid />
             ) : ongoingData.length === 0 ? (
               ongoingError ? (
                 <StateDisplay
@@ -210,9 +209,7 @@ export function CareersView() {
 
           <TabsContent value="previous">
             {previousLoading && previousData.length === 0 ? (
-              <div className="flex justify-center py-20">
-                <p className="text-mulearn-gray-600">Loading closed positions…</p>
-              </div>
+              <CareersCardSkeletonGrid />
             ) : previousData.length === 0 ? (
               previousError ? (
                 <StateDisplay

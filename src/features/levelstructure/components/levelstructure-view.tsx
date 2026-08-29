@@ -103,6 +103,7 @@ export function LevelstructureView() {
                       stroke="currentColor"
                       strokeWidth="2.5"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -120,6 +121,7 @@ export function LevelstructureView() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.5"
+                      aria-hidden="true"
                     >
                       <path
                         d="M12 2L14.8 8.6L22 9.2L16.5 13.9L18.3 21L12 17.3L5.7 21L7.5 13.9L2 9.2L9.2 8.6L12 2Z"

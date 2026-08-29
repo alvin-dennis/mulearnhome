@@ -52,7 +52,7 @@ export function DonationForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
     watch,
     setValue,
   } = useForm<DonationFormData>({
@@ -474,9 +474,13 @@ export function DonationForm() {
               type="submit"
               size="lg"
               className="w-full text-base font-semibold sm:w-auto"
-              disabled={!isValid || totalAmount === 0}
+              disabled={!isValid || totalAmount === 0 || isSubmitting}
             >
-              {mode === "one-time" ? "Proceed to Payment" : "Subscribe"}
+              {isSubmitting
+                ? "Processing..."
+                : mode === "one-time"
+                  ? "Proceed to Payment"
+                  : "Subscribe"}
             </Button>
           </div>
         </form>

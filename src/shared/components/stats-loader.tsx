@@ -1,3 +1,4 @@
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
 interface StatsLoaderProps {
@@ -13,9 +14,9 @@ export function StatsLoader({ count = 4, className }: StatsLoaderProps) {
     <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4", className)} aria-busy="true">
       {Array.from({ length: count }).map((_, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: static placeholder list, never reordered
-        <div key={index} className="flex flex-col items-center gap-2 p-4 animate-pulse">
-          <div className="h-8 w-16 rounded-md bg-mulearn/10" />
-          <div className="h-3 w-20 rounded-md bg-mulearn/10" />
+        <div key={index} className="flex flex-col items-center gap-2 p-4">
+          <Skeleton className="h-8 w-16" />
+          <Skeleton className="h-3 w-20" />
         </div>
       ))}
     </div>

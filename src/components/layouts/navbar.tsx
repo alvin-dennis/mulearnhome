@@ -196,26 +196,34 @@ export function Navbar() {
 
                   <ul className="list-none mt-16 mb-8 p-0 flex-1">
                     {activeMobileSubmenu === null ? (
-                      navItems.map((item) => (
-                        <li
-                          key={item.label}
-                          className="mb-4 py-4 border-b border-mulearn-greyish text-mulearn-gray-600 font-medium text-[1.1rem] cursor-pointer transition-all duration-300 hover:text-mulearn-trusty-blue hover:pl-4 hover:bg-mulearn-whitish hover:rounded-lg "
-                          onClick={() =>
-                            item.submenu
-                              ? setActiveMobileSubmenu(navItems.indexOf(item))
-                              : window.location.assign(item.href!)
-                          }
-                        >
-                          {item.label} {item.submenu && <span className="float-right">{">"}</span>}
-                        </li>
-                      ))
+                      navItems.map((item) => {
+                        const activate = () =>
+                          item.submenu
+                            ? setActiveMobileSubmenu(navItems.indexOf(item))
+                            : window.location.assign(item.href!);
+                        return (
+                          <li key={item.label} className="border-b border-mulearn-greyish">
+                            <button
+                              type="button"
+                              className="w-full text-left mb-4 py-4 text-mulearn-gray-600 font-medium text-[1.1rem] cursor-pointer transition-all duration-300 hover:text-mulearn-trusty-blue hover:pl-4 hover:bg-mulearn-whitish hover:rounded-lg "
+                              onClick={activate}
+                            >
+                              {item.label}{" "}
+                              {item.submenu && <span className="float-right">{">"}</span>}
+                            </button>
+                          </li>
+                        );
+                      })
                     ) : (
                       <>
-                        <li
-                          className="font-semibold mb-4 py-2 cursor-pointer text-mulearn-trusty-blue"
-                          onClick={() => setActiveMobileSubmenu(null)}
-                        >
-                          {"< Back"}
+                        <li>
+                          <button
+                            type="button"
+                            className="w-full text-left font-semibold mb-4 py-2 cursor-pointer text-mulearn-trusty-blue"
+                            onClick={() => setActiveMobileSubmenu(null)}
+                          >
+                            {"< Back"}
+                          </button>
                         </li>
                         {Object.entries(navItems[activeMobileSubmenu].submenu!).map(
                           ([category, items]) => (
@@ -224,15 +232,20 @@ export function Navbar() {
                                 {category}
                               </div>
                               <ul className="pl-4 list-none">
-                                {items.map((subItem: SubItem) => (
-                                  <li
-                                    key={subItem.label}
-                                    className="py-2 text-mulearn-gray-600 cursor-pointer hover:text-mulearn-duke-purple hover:pl-2"
-                                    onClick={() => window.location.assign(subItem.href!)}
-                                  >
-                                    {subItem.label}
-                                  </li>
-                                ))}
+                                {items.map((subItem: SubItem) => {
+                                  const activate = () => window.location.assign(subItem.href!);
+                                  return (
+                                    <li key={subItem.label}>
+                                      <button
+                                        type="button"
+                                        className="w-full text-left py-2 text-mulearn-gray-600 cursor-pointer hover:text-mulearn-duke-purple hover:pl-2"
+                                        onClick={activate}
+                                      >
+                                        {subItem.label}
+                                      </button>
+                                    </li>
+                                  );
+                                })}
                               </ul>
                             </div>
                           ),

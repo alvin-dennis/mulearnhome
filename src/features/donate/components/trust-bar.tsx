@@ -2,10 +2,10 @@
 
 import { Heart } from "lucide-react";
 import CountUp from "react-countup";
-import { useLandingStats } from "@/shared";
+import { StatsLoader, useLandingStats } from "@/shared";
 
 export function TrustBar() {
-  const { counts } = useLandingStats();
+  const { counts, hasError } = useLandingStats();
 
   const learnersCount = counts?.members ?? 0;
   const campusCount =
@@ -40,22 +40,29 @@ export function TrustBar() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-10 gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
-                <CountUp
-                  end={stat.value}
-                  duration={2.5}
-                  separator=","
-                  autoAnimate
-                  autoAnimateOnce
-                />
-              </p>
-              <p className="text-sm text-mulearn-gray-600">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        {!counts && !hasError ? (
+          <StatsLoader
+            count={5}
+            className="grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center"
+          />
+        ) : (
+          <div className="grid grid-cols-2 gap-x-10 gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
+                  <CountUp
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                    autoAnimate
+                    autoAnimateOnce
+                  />
+                </p>
+                <p className="text-sm text-mulearn-gray-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

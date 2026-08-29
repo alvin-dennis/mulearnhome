@@ -3,6 +3,7 @@
 import * as htmlToImage from "html-to-image";
 import { useEffect, useRef, useState } from "react";
 import { HexColorPicker } from "react-colorful";
+import { toast } from "sonner";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -194,17 +195,14 @@ export function CampusLogoGeneratorView() {
   const handleDownload = async () => {
     if (!squareLogoRef.current) {
       console.error("Logo reference not found");
-      alert("Logo not ready for download. Please wait a moment and try again.");
+      toast.error("Logo not ready for download. Please wait a moment and try again.");
       return;
     }
 
     setIsDownloading(true);
 
     try {
-      console.log("Starting download process...");
-
       const rect = squareLogoRef.current.getBoundingClientRect();
-      console.log("Element dimensions:", rect);
 
       const config = {
         backgroundColor:
@@ -230,20 +228,14 @@ export function CampusLogoGeneratorView() {
 
       let dataUrl: string;
 
-      console.log("Generating image with config:", config);
-
       if (formData.fileType === "PNG") {
-        console.log("Generating PNG...");
         dataUrl = await htmlToImage.toPng(squareLogoRef.current, config);
       } else {
-        console.log("Generating SVG...");
         dataUrl = await htmlToImage.toSvg(squareLogoRef.current, {
           ...config,
           pixelRatio: 1,
         });
       }
-
-      console.log("Image generated successfully");
 
       const link = document.createElement("a");
       link.download = `${formData.campusCode || "mulearn"}-logo.${formData.fileType.toLowerCase()}`;
@@ -253,7 +245,7 @@ export function CampusLogoGeneratorView() {
       link.click();
       document.body.removeChild(link);
 
-      console.log("Download triggered successfully");
+      toast.success("Logo downloaded successfully.");
     } catch (error) {
       console.error("Error generating logo:", error);
       try {
@@ -278,7 +270,7 @@ export function CampusLogoGeneratorView() {
         document.body.removeChild(link);
       } catch (fallbackError) {
         console.error("All download methods failed:", fallbackError);
-        alert("Download failed. Please try a different browser or format.");
+        toast.error("Download failed. Please try a different browser or format.");
       }
     } finally {
       setIsDownloading(false);

@@ -135,6 +135,7 @@ export function DebugPanel() {
               </div>
               <div className="flex items-center gap-1">
                 <button
+                  type="button"
                   onClick={() => setIsMinimized((prev) => !prev)}
                   className="rounded p-1 hover:bg-gray-700"
                   title={isMinimized ? "Expand" : "Collapse"}
@@ -146,6 +147,7 @@ export function DebugPanel() {
                   )}
                 </button>
                 <button
+                  type="button"
                   onClick={toggleOpen}
                   className="rounded p-1 hover:bg-gray-700"
                   title="Close"
@@ -215,6 +217,7 @@ export function DebugPanel() {
                         Recent Events ({events.length})
                       </h3>
                       <button
+                        type="button"
                         onClick={clearEvents}
                         className="rounded p-1 text-gray-500 hover:bg-gray-700 hover:text-white"
                         title="Clear events"

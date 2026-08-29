@@ -72,14 +72,17 @@ export function TeamCard({
                   </li>
                 ))}
                 {!showAllRoles && hiddenCount > 0 && (
-                  <li
-                    className="bg-mulearn-greyish/20 text-mulearn-gray-600 px-2.5 py-1 rounded-xl text-xs font-medium cursor-pointer hover:bg-mulearn-greyish/40  transition-colors"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setShowAllRoles(true);
-                    }}
-                  >
-                    +{hiddenCount} more
+                  <li>
+                    <button
+                      type="button"
+                      className="bg-mulearn-greyish/20 text-mulearn-gray-600 px-2.5 py-1 rounded-xl text-xs font-medium cursor-pointer hover:bg-mulearn-greyish/40  transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowAllRoles(true);
+                      }}
+                    >
+                      +{hiddenCount} more
+                    </button>
                   </li>
                 )}
               </ul>

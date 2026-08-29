@@ -10,7 +10,13 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { useGrabYourSuperpowers } from "../../hooks/events.hooks";
 import type { GrabYourSuperpowersSession, WeeklyTwitchPagination } from "../../types/events.types";
 import { formatDate, formatTime } from "../../utils/events.utils";
-import { GenericEventCard, Pagination, SearchAndFilter, TabButton } from "../common";
+import {
+  GenericEventCard,
+  GenericEventCardSkeletonGrid,
+  Pagination,
+  SearchAndFilter,
+  TabButton,
+} from "../common";
 
 type ViewType = "upcoming" | "previous";
 
@@ -33,6 +39,7 @@ export function GrabYourSuperpowersView() {
     data: sessions,
     pagination: fetchedPagination,
     error,
+    isLoading,
   } = useGrabYourSuperpowers({
     status: view === "previous" ? "completed" : ["ongoing", "upcoming"],
     search: debouncedSearch || undefined,
@@ -159,7 +166,9 @@ export function GrabYourSuperpowersView() {
           className="py-12 pb-20"
         >
           <div className="max-w-7xl mx-auto px-4">
-            {events.length > 0 ? (
+            {isLoading && events.length === 0 ? (
+              <GenericEventCardSkeletonGrid />
+            ) : events.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {events.map((event) => (
                   <GenericEventCard
