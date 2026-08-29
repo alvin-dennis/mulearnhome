@@ -1,11 +1,17 @@
 import { publicGateway } from "@/lib/fetcher";
-import type { ExtendedTopLearner, Learner, LearnerResponse } from "../types/profile.types";
+import type { ApiResponse } from "@/shared";
+import type {
+  ExtendedTopLearner,
+  Learner,
+  LearnerResponse,
+  ProfilePicApiResponse,
+} from "../types/profile.types";
 import { endpoints } from "./endpoints";
 
 export const fetchTopLearners = async (limit: number = 10): Promise<ExtendedTopLearner[]> => {
   try {
-    const res = await publicGateway.get(endpoints.profile.topLearners);
-    const learners: Learner[] = Array.isArray(res.data.response) ? res.data.response : [];
+    const envelope = await publicGateway.get<ApiResponse<Learner[]>>(endpoints.profile.topLearners);
+    const learners = envelope.response;
 
     return learners.slice(0, limit).map((item) => ({
       name: item.full_name,
@@ -23,14 +29,10 @@ export const fetchTopLearners = async (limit: number = 10): Promise<ExtendedTopL
 
 export const fetchPublicProfileImage = async (muid: string) => {
   try {
-    const res = await publicGateway.get(`${endpoints.profile.profilePic}${muid}/`);
-    const profilePic = res.data.response.image;
-
-    if (profilePic) {
-      return profilePic;
-    } else {
-      return null;
-    }
+    const envelope = await publicGateway.get<ApiResponse<ProfilePicApiResponse>>(
+      `${endpoints.profile.profilePic}${muid}/`,
+    );
+    return envelope.response.image ?? null;
   } catch (error) {
     console.error(error);
     return null;

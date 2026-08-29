@@ -31,17 +31,13 @@ export {
 export type {
   Event,
   GrabYourSuperpowersSession,
-  OfficeHours,
-  OfficeHoursData,
   OfficeHoursSession,
-  OMEvent,
   PublicEvent,
   PublicEventOrganizer,
+  PublicEventsListResponse,
   PublicEventsParams,
   PublicEventVenue,
-  WeeklyTwitchData,
   WeeklyTwitchEpisode,
-  WeeklyTwitchEvent,
   WeeklyTwitchPagination,
   WeeklyTwitchParams,
 } from "./types";

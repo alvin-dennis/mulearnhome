@@ -1,9 +1,11 @@
 import { publicGateway } from "@/lib/fetcher";
+import type { ApiResponse } from "@/shared";
 import { endpoints } from "@/shared";
 import type {
   GrabYourSuperpowersSession,
   OfficeHoursSession,
   PublicEvent,
+  PublicEventsListResponse,
   PublicEventsParams,
   WeeklyTwitchEpisode,
   WeeklyTwitchPagination,
@@ -33,12 +35,17 @@ function buildPublicEventsParams(params: PublicEventsParams): URLSearchParams {
   return out;
 }
 
-// response is a plain array — no data/pagination wrapper
+/**
+ * Backend response is `{ data: PublicEvent[], pagination }`, not a plain array — see
+ * docs/api-schema-audit-2026-08-29.md, Bug 1. Extracting `.response.data` (not `.response`
+ * itself) is the fix; `pagination` is discarded since no caller paginates events today.
+ */
 export async function fetchPublicEvents(params?: PublicEventsParams): Promise<PublicEvent[]> {
-  const res = await publicGateway.get(endpoints.publicEvents.getEvents, {
-    params: params ? buildPublicEventsParams(params) : undefined,
-  });
-  return res.data.response;
+  const qs = params ? buildPublicEventsParams(params).toString() : "";
+  const envelope = await publicGateway.get<ApiResponse<PublicEventsListResponse>>(
+    qs ? `${endpoints.publicEvents.getEvents}?${qs}` : endpoints.publicEvents.getEvents,
+  );
+  return envelope.response.data;
 }
 
 interface WeeklyTwitchResponse<T> {
@@ -59,38 +66,37 @@ function buildWeeklyTwitchParams(params: WeeklyTwitchParams): URLSearchParams {
   return out;
 }
 
-export async function fetchOfficeHours(
+async function fetchWeeklyTwitch<T>(
+  endpoint: string,
+  params: WeeklyTwitchParams,
+): Promise<WeeklyTwitchResponse<T>> {
+  const qs = buildWeeklyTwitchParams(params).toString();
+  const envelope = await publicGateway.get<ApiResponse<WeeklyTwitchResponse<T>>>(
+    qs ? `${endpoint}?${qs}` : endpoint,
+  );
+  return envelope.response;
+}
+
+export function fetchOfficeHours(
   params: WeeklyTwitchParams,
 ): Promise<WeeklyTwitchResponse<OfficeHoursSession>> {
-  const res = await publicGateway.get(endpoints.weeklyTwitches.officeHours, {
-    params: buildWeeklyTwitchParams(params),
-  });
-  return res.data.response;
+  return fetchWeeklyTwitch(endpoints.weeklyTwitches.officeHours, params);
 }
 
-export async function fetchSaltMangoTree(
+export function fetchSaltMangoTree(
   params: WeeklyTwitchParams,
 ): Promise<WeeklyTwitchResponse<WeeklyTwitchEpisode>> {
-  const res = await publicGateway.get(endpoints.weeklyTwitches.saltMangoTree, {
-    params: buildWeeklyTwitchParams(params),
-  });
-  return res.data.response;
+  return fetchWeeklyTwitch(endpoints.weeklyTwitches.saltMangoTree, params);
 }
 
-export async function fetchInspirationStation(
+export function fetchInspirationStation(
   params: WeeklyTwitchParams,
 ): Promise<WeeklyTwitchResponse<WeeklyTwitchEpisode>> {
-  const res = await publicGateway.get(endpoints.weeklyTwitches.inspirationStation, {
-    params: buildWeeklyTwitchParams(params),
-  });
-  return res.data.response;
+  return fetchWeeklyTwitch(endpoints.weeklyTwitches.inspirationStation, params);
 }
 
-export async function fetchGrabYourSuperpowers(
+export function fetchGrabYourSuperpowers(
   params: WeeklyTwitchParams,
 ): Promise<WeeklyTwitchResponse<GrabYourSuperpowersSession>> {
-  const res = await publicGateway.get(endpoints.weeklyTwitches.grabYourSuperpowers, {
-    params: buildWeeklyTwitchParams(params),
-  });
-  return res.data.response;
+  return fetchWeeklyTwitch(endpoints.weeklyTwitches.grabYourSuperpowers, params);
 }

@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { Pagination } from "@/shared";
 import { fetchOngoingHiringPage, fetchPreviousHiringPage } from "../api/careers.api";
-import type { PaginationMeta } from "../types/careers.types";
 
 interface HiringPageResult<T> {
   data: T[];
@@ -18,7 +18,7 @@ function useHiringPage<T>(
   fetcher: (
     pageIndex: number,
     perPage: number,
-  ) => Promise<{ data: T[]; pagination: PaginationMeta }>,
+  ) => Promise<{ data: T[]; pagination: Pagination | null }>,
   perPage: number,
 ): HiringPageResult<T> {
   const [page, setPage] = useState(1);
@@ -38,7 +38,9 @@ function useHiringPage<T>(
         .then(({ data: items, pagination }) => {
           if (id !== requestId.current) return;
           setData(items);
-          setCount(pagination.count);
+          // `pagination` is null for the ongoing-hiring endpoint (backend never sends one) —
+          // fall back to the returned page's item count instead of assuming a total exists.
+          setCount(pagination?.count ?? items.length);
           setPage(nextPage);
           setError(false);
           setFailedPage(null);

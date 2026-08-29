@@ -1,3 +1,5 @@
+import type { Pagination } from "@/shared";
+
 export interface Event {
   title: string;
   description: string;
@@ -12,13 +14,7 @@ export interface Event {
   tags?: string[];
 }
 
-export interface WeeklyTwitchPagination {
-  count: number;
-  totalPages: number;
-  isNext: boolean;
-  isPrev: boolean;
-  nextPage: number | null;
-}
+export type WeeklyTwitchPagination = Pagination;
 
 export interface WeeklyTwitchParams {
   status?: "upcoming" | "ongoing" | "completed" | Array<"upcoming" | "ongoing" | "completed">;
@@ -131,48 +127,8 @@ export interface PublicEventsParams {
   sortBy?: string;
 }
 
-export interface OMEvent {
-  id: number;
-  title: string;
-  description: string;
-  date?: string;
-  time?: string;
-  performer?: string;
-  designation?: string;
-  tags?: string[];
-  interestGroups?: string[];
-  thumbnail?: string;
-  link?: string;
-  isUpcoming: boolean;
-}
-
-export interface OfficeHours {
-  id: number;
-  title: string;
-  date?: string;
-  description: string;
-  performer?: string;
-  tags: string[];
-  ig?: string;
-  thumbnail?: string;
-  isUpcoming: boolean;
-}
-
-export interface OfficeHoursData {
-  events: OfficeHours[];
-}
-
-export interface WeeklyTwitchEvent {
-  id: number;
-  topic: string;
-  campus: string;
-  zone: string;
-  date: string;
-  description: string;
-  isUpcoming: boolean;
-}
-
-export interface WeeklyTwitchData {
-  "salt mango tree": WeeklyTwitchEvent[];
-  "inspiration station radio": WeeklyTwitchEvent[];
+/** `GET /public/events/` response shape — an object with `data`/`pagination`, not a plain array. */
+export interface PublicEventsListResponse {
+  data: PublicEvent[];
+  pagination: Pagination;
 }

@@ -8,6 +8,7 @@ export type {
   ClosedCareersCardProps,
   Company,
   OngoingHiring,
-  PaginationMeta,
+  OngoingHiringApiResponse,
   PreviousHiring,
+  PreviousHiringApiResponse,
 } from "./types";

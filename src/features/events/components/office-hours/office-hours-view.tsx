@@ -210,7 +210,7 @@ export function OfficeHoursView() {
             )}
 
             {selectedTags.length === 0 && (
-              <Pagination page={page} setPage={setPage} total={pagination.count} perPage={6} />
+              <Pagination page={page} setPage={setPage} total={pagination.count ?? 0} perPage={6} />
             )}
           </div>
         </MotionSection>

@@ -23,12 +23,15 @@ export {
   phoneSchema,
 } from "./schemas";
 export type {
+  ApiResponse,
   Captcha,
   Counts,
   ExtendedTopLearner,
   Learner,
   LearnerResponse,
   LearnerRoleTag,
+  Pagination,
   SubItem,
   TopLearner,
 } from "./types";
+export { ApiResponseSchema, PaginationSchema } from "./types";

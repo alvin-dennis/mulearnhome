@@ -1,8 +1,12 @@
 import { toast } from "sonner";
 import { clientEnv } from "@/config/env.client";
 import { publicGateway } from "@/lib/fetcher";
+import type { ApiResponse } from "@/shared";
 import { endpoints, getApiResponseError } from "@/shared";
 import type {
+  DonateOrderApiResponse,
+  DonateSubscriptionCreateApiResponse,
+  DonateVerifyApiResponse,
   DonationFormPayload,
   RazorpayErrorResponse,
   RazorpayOrderResponse,
@@ -29,7 +33,7 @@ const createBaseRazorpayOptions = (data: DonationFormPayload, razorpayKey: strin
 });
 
 const handlePaymentSuccess = (
-  pdfData: Record<string, unknown>,
+  pdfData: DonateVerifyApiResponse,
   data: DonationFormPayload,
   paymentId: string,
   orderId?: string,
@@ -90,23 +94,26 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
   await loadRazorpayScript();
 
   try {
-    const response = await publicGateway.post(endpoints.donation.order, {
-      amount: data.amount,
-      currency: data.currency || "INR",
-      name: data.name,
-      donation_name: data.donationName,
-      company: data.isOrganisation ? data.organisationName : undefined,
-      email: data.email,
-      phone_number: data.mobile,
-      pan_number: data.pan,
-      address: data.address,
-      donation_type: data.donationType,
-      is_organisation: data.isOrganisation,
-    });
+    const envelope = await publicGateway.post<ApiResponse<DonateOrderApiResponse>>(
+      endpoints.donation.order,
+      {
+        amount: data.amount,
+        currency: data.currency || "INR",
+        name: data.name,
+        donation_name: data.donationName,
+        company: data.isOrganisation ? data.organisationName : undefined,
+        email: data.email,
+        phone_number: data.mobile,
+        pan_number: data.pan,
+        address: data.address,
+        donation_type: data.donationType,
+        is_organisation: data.isOrganisation,
+      },
+    );
 
-    const paymentId: string = response.data.response.id;
-    const paymentAmount: string = response.data.response.amount;
-    const currency: string = response.data.response.currency;
+    const paymentId = envelope.response.id;
+    const paymentAmount = envelope.response.amount;
+    const currency = envelope.response.currency;
 
     const razorpayKey = getRazorpayKey();
     const baseOptions = createBaseRazorpayOptions(data, razorpayKey);
@@ -119,18 +126,17 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
       order_id: paymentId,
       handler: (response: RazorpayOrderResponse) => {
         publicGateway
-          .post(endpoints.donation.verify, {
+          .post<ApiResponse<DonateVerifyApiResponse>>(endpoints.donation.verify, {
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           })
           .then((res) => {
             toast.success(
-              res?.data?.message?.general?.[0] ||
-                "Payment Successful! Thank you for your donation.",
+              res.message?.general?.[0] || "Payment Successful! Thank you for your donation.",
             );
             handlePaymentSuccess(
-              res?.data,
+              res.response,
               data,
               response.razorpay_payment_id,
               response.razorpay_order_id,
@@ -169,22 +175,25 @@ export const submitSubscription = async (data: DonationFormPayload) => {
   await loadRazorpayScript();
 
   try {
-    const response = await publicGateway.post(endpoints.donation.subscription, {
-      amount: data.amount,
-      currency: data.currency || "INR",
-      name: data.name,
-      donation_name: data.donationName,
-      company: data.isOrganisation ? data.organisationName : undefined,
-      email: data.email,
-      phone_number: data.mobile,
-      pan_number: data.pan,
-      address: data.address,
-      donation_type: data.donationType,
-      is_organisation: data.isOrganisation,
-    });
+    const envelope = await publicGateway.post<ApiResponse<DonateSubscriptionCreateApiResponse>>(
+      endpoints.donation.subscription,
+      {
+        amount: data.amount,
+        currency: data.currency || "INR",
+        name: data.name,
+        donation_name: data.donationName,
+        company: data.isOrganisation ? data.organisationName : undefined,
+        email: data.email,
+        phone_number: data.mobile,
+        pan_number: data.pan,
+        address: data.address,
+        donation_type: data.donationType,
+        is_organisation: data.isOrganisation,
+      },
+    );
 
-    const subscriptionId: string = response.data.response.subscription_id;
-    const amount: number = response.data.response.amount;
+    const subscriptionId = envelope.response.subscription_id;
+    const amount = envelope.response.amount;
 
     const razorpayKey = getRazorpayKey();
     const baseOptions = createBaseRazorpayOptions(data, razorpayKey);
@@ -195,18 +204,18 @@ export const submitSubscription = async (data: DonationFormPayload) => {
       description: `${data.donationType.charAt(0).toUpperCase() + data.donationType.slice(1)} Recurring Donation - ₹${(amount / 100).toLocaleString("en-IN")}`,
       handler: (response: RazorpaySubscriptionResponse) => {
         publicGateway
-          .post(endpoints.donation.subscriptionVerify, {
+          .post<ApiResponse<DonateVerifyApiResponse>>(endpoints.donation.subscriptionVerify, {
             razorpay_subscription_id: response.razorpay_subscription_id,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           })
           .then((res) => {
             toast.success(
-              res?.data?.message?.general?.[0] ||
+              res.message?.general?.[0] ||
                 "Subscription Successful! Thank you for your recurring donation.",
             );
             handlePaymentSuccess(
-              res?.data,
+              res.response,
               data,
               response.razorpay_payment_id,
               undefined,

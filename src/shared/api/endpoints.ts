@@ -58,8 +58,6 @@ export const endpoints = {
   profile: {
     /** GET - Top learners leaderboard */
     topLearners: "/leaderboard/students/",
-    /** GET - Authenticated user profile (private gateway) */
-    userProfile: "/dashboard/profile/user-profile/",
     /** GET - Public profile image by muid, path segment appended by caller */
     profilePic: "/public/profile-pic/",
   },

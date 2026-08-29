@@ -1,73 +1,157 @@
-import axios, { type AxiosInstance } from "axios";
+// Client-side API gateway. Native `fetch()` — no axios (axios was the only consumer in the
+// bundle; its browser build dragged in a dead ~22.5KB Buffer polyfill on top of axios itself,
+// see docs/js-floor-investigation-2026-08-29.md). Request/error pipeline cloned from
+// mulearn-dashboard's src/api/client.ts (same backend, same CustomResponse envelope), minus
+// the authStore/token-refresh machinery — mulearnhome has no login, so there's only ever one
+// gateway, no `authenticated` flag to thread through.
+
+import type { z } from "zod";
 import { apiConfig } from "@/config/api";
-import type { ApiError } from "@/types/api.types";
 import { extractDjangoMessage } from "./errors";
 
-export class FetcherError extends Error {
-  status?: number;
-  statusText?: string;
-  url?: string;
-  errors?: Record<string, string[]>;
-
-  constructor(error: ApiError) {
-    super(error.message);
-    this.name = "FetcherError";
-    this.status = error.status;
-    this.statusText = error.statusText;
-    this.url = error.url;
-    this.errors = error.errors;
+/** Thrown by `publicGateway` on any network failure, HTTP error, or Django business error (`hasError: true`). */
+export class ApiError extends Error {
+  constructor(
+    public status: number,
+    message: string,
+    public data?: unknown,
+  ) {
+    super(message);
+    this.name = "ApiError";
   }
 }
 
-/** No auth today — returns undefined until the site has a login. Swap this to read a real token store later. */
-function getAuthToken(): string | undefined {
-  return undefined;
+function logSchemaMismatch(endpoint: string, issues: unknown): void {
+  if (process.env.NODE_ENV === "development") {
+    console.error(`⚠️ API schema mismatch [${endpoint}]`, issues);
+  }
 }
 
-function createClient(authenticated: boolean): AxiosInstance {
-  const client = axios.create({
-    baseURL: apiConfig.baseUrl,
-    timeout: apiConfig.timeout,
-    headers: { "Content-Type": "application/json" },
-  });
-
-  client.interceptors.request.use((config) => {
-    if (authenticated) {
-      const token = getAuthToken();
-      if (token) config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  });
-
-  client.interceptors.response.use(
-    (response) => response,
-    (error) => Promise.reject(error),
+/** True for Django's `{ hasError: true, ... }` business-error envelope, which can ride on an HTTP 200. */
+function isBusinessError(data: unknown): boolean {
+  return (
+    !!data &&
+    typeof data === "object" &&
+    "hasError" in data &&
+    (data as { hasError: unknown }).hasError === true
   );
-
-  return client;
 }
 
-/** No Authorization header — every feature uses this today. */
-export const publicGateway = createClient(false);
+/**
+ * Mirrors axios's `baseURL` + `url` behavior: plain string concatenation, not WHATWG `URL`
+ * resolution — `new URL("/donate/order/", "https://mulearn.org/api/v1")` would resolve to
+ * `https://mulearn.org/donate/order/`, silently dropping the `/api/v1` path segment.
+ */
+function buildUrl(endpoint: string): string {
+  return apiConfig.baseUrl.replace(/\/$/, "") + endpoint;
+}
 
-/** Attaches a Bearer token when getAuthToken() returns one. Scaffolded for a future authenticated area; unused until then. */
-export const privateGateway = createClient(true);
+interface RequestOptions<T> {
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+  body?: unknown;
+  schema?: z.ZodSchema<T>;
+  headers?: HeadersInit;
+  responseType?: "json" | "blob";
+  /** When true, sends body as FormData (no JSON.stringify, no Content-Type). */
+  isFormData?: boolean;
+  /** When true, a Zod parse failure throws instead of returning the raw body. */
+  strictSchema?: boolean;
+}
 
-/** Normalizes an axios (or FetcherError) rejection into a human-readable message via the Django error envelope. */
-export function toFetcherError(
-  error: unknown,
-  fallback = "Something went wrong. Please try again.",
-): FetcherError {
-  if (error instanceof FetcherError) return error;
-  if (axios.isAxiosError(error)) {
-    const message = extractDjangoMessage(error.response?.data) ?? error.message ?? fallback;
-    return new FetcherError({
-      message,
-      status: error.response?.status,
-      statusText: error.response?.statusText,
-      url: error.config?.url,
+type ClientOptions = {
+  headers?: HeadersInit;
+  responseType?: "json" | "blob";
+  isFormData?: boolean;
+  strictSchema?: boolean;
+};
+
+async function request<T>(endpoint: string, options: RequestOptions<T>): Promise<T> {
+  const isFormData = options.isFormData === true;
+  const requestHeaders: Record<string, string> = isFormData
+    ? {}
+    : { "Content-Type": "application/json" };
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), apiConfig.timeout);
+
+  let res: Response;
+  try {
+    res = await fetch(buildUrl(endpoint), {
+      method: options.method,
+      headers: { ...requestHeaders, ...options.headers },
+      body: isFormData
+        ? (options.body as FormData)
+        : options.body !== undefined
+          ? JSON.stringify(options.body)
+          : undefined,
+      cache: "no-store",
+      signal: controller.signal,
     });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Network error";
+    throw new ApiError(0, message);
+  } finally {
+    clearTimeout(timeoutId);
   }
-  if (error instanceof Error) return new FetcherError({ message: error.message });
-  return new FetcherError({ message: fallback });
+
+  // ── Blob branch ───────────────────────────────────────────
+  if (options.responseType === "blob") {
+    if (res.ok) return (await res.blob()) as T;
+    const errData = await res.json().catch(() => null);
+    const backendMsg = extractDjangoMessage(errData) ?? "Something went wrong. Please try again.";
+    throw new ApiError(res.status, backendMsg, errData);
+  }
+
+  // ── JSON branch ───────────────────────────────────────────
+  const rawData = await res.json().catch(() => null);
+
+  if (isBusinessError(rawData)) {
+    const backendMsg = extractDjangoMessage(rawData) ?? "Something went wrong. Please try again.";
+    if (process.env.NODE_ENV === "development") {
+      console.error(
+        `[Fetcher] Business error: [Status ${res.status}] ${endpoint}\nMessage: ${backendMsg}`,
+        rawData,
+      );
+    }
+    throw new ApiError(res.status, backendMsg, rawData);
+  }
+
+  if (!res.ok) {
+    const backendMsg = extractDjangoMessage(rawData) ?? "Something went wrong. Please try again.";
+    if (process.env.NODE_ENV === "development") {
+      console.error(
+        `[Fetcher] HTTP error: [Status ${res.status}] ${endpoint}\nMessage: ${backendMsg}`,
+        rawData,
+      );
+    }
+    throw new ApiError(res.status, backendMsg, rawData);
+  }
+
+  if (options.schema) {
+    const parsed = options.schema.safeParse(rawData);
+    if (!parsed.success) {
+      logSchemaMismatch(endpoint, parsed.error.issues);
+      if (options.strictSchema) {
+        throw new ApiError(res.status, `Schema validation failed: ${endpoint}`, rawData);
+      }
+      return rawData as T;
+    }
+    return parsed.data;
+  }
+
+  return rawData as T;
 }
+
+/** No Authorization header — mulearnhome has no login, so this is the only gateway. */
+export const publicGateway = {
+  get: <T>(endpoint: string, schema?: z.ZodSchema<T>, options?: ClientOptions) =>
+    request<T>(endpoint, { method: "GET", schema, ...options }),
+  post: <T>(endpoint: string, body?: unknown, schema?: z.ZodSchema<T>, options?: ClientOptions) =>
+    request<T>(endpoint, { method: "POST", body, schema, ...options }),
+  put: <T>(endpoint: string, body?: unknown, schema?: z.ZodSchema<T>, options?: ClientOptions) =>
+    request<T>(endpoint, { method: "PUT", body, schema, ...options }),
+  patch: <T>(endpoint: string, body?: unknown, schema?: z.ZodSchema<T>, options?: ClientOptions) =>
+    request<T>(endpoint, { method: "PATCH", body, schema, ...options }),
+  delete: <T>(endpoint: string, body?: unknown, schema?: z.ZodSchema<T>, options?: ClientOptions) =>
+    request<T>(endpoint, { method: "DELETE", body, schema, ...options }),
+};

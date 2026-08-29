@@ -23,3 +23,8 @@ export interface LearnerResponse extends Learner {
   muid?: string;
   profile_pic?: string;
 }
+
+/** `GET /public/profile-pic/<muid>/` response shape. */
+export interface ProfilePicApiResponse {
+  image: string | null;
+}

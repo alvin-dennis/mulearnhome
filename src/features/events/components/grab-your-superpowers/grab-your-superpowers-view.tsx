@@ -188,7 +188,7 @@ export function GrabYourSuperpowersView() {
               />
             )}
 
-            <Pagination page={page} setPage={setPage} total={pagination.count} perPage={6} />
+            <Pagination page={page} setPage={setPage} total={pagination.count ?? 0} perPage={6} />
           </div>
         </MotionSection>
       </AnimatePresence>

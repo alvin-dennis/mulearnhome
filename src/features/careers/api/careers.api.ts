@@ -1,42 +1,37 @@
 import { publicGateway } from "@/lib/fetcher";
+import type { ApiResponse, Pagination } from "@/shared";
 import { endpoints } from "@/shared";
-import type { OngoingHiring, PaginationMeta, PreviousHiring } from "../types/careers.types";
+import type {
+  OngoingHiring,
+  OngoingHiringApiResponse,
+  PreviousHiring,
+  PreviousHiringApiResponse,
+} from "../types/careers.types";
 
 export interface PaginatedCareersResponse<T> {
   data: T[];
-  pagination: PaginationMeta;
-}
-
-function parsePaginatedResponse<T>(raw: unknown): PaginatedCareersResponse<T> {
-  if (
-    !raw ||
-    typeof raw !== "object" ||
-    !Array.isArray((raw as { data?: unknown }).data) ||
-    !(raw as { pagination?: unknown }).pagination ||
-    typeof (raw as { pagination?: unknown }).pagination !== "object"
-  ) {
-    throw new Error("Malformed career listing response");
-  }
-  const { data, pagination } = raw as { data: T[]; pagination: PaginationMeta };
-  return { data, pagination };
+  pagination: Pagination | null;
 }
 
 export async function fetchOngoingHiringPage(
   pageIndex = 1,
   perPage = 12,
 ): Promise<PaginatedCareersResponse<OngoingHiring>> {
-  const res = await publicGateway.get(endpoints.careerLab.ongoing, {
-    params: { pageIndex, perPage },
-  });
-  return parsePaginatedResponse<OngoingHiring>(res.data?.response);
+  const qs = new URLSearchParams({ pageIndex: String(pageIndex), perPage: String(perPage) });
+  const envelope = await publicGateway.get<ApiResponse<OngoingHiringApiResponse>>(
+    `${endpoints.careerLab.ongoing}?${qs}`,
+  );
+  // Backend never sends `pagination` for this endpoint — see docs/api-schema-audit-2026-08-29.md.
+  return { data: envelope.response.data, pagination: null };
 }
 
 export async function fetchPreviousHiringPage(
   pageIndex = 1,
   perPage = 12,
 ): Promise<PaginatedCareersResponse<PreviousHiring>> {
-  const res = await publicGateway.get(endpoints.careerLab.previous, {
-    params: { pageIndex, perPage },
-  });
-  return parsePaginatedResponse<PreviousHiring>(res.data?.response);
+  const qs = new URLSearchParams({ pageIndex: String(pageIndex), perPage: String(perPage) });
+  const envelope = await publicGateway.get<ApiResponse<PreviousHiringApiResponse>>(
+    `${endpoints.careerLab.previous}?${qs}`,
+  );
+  return { data: envelope.response.data, pagination: envelope.response.pagination };
 }

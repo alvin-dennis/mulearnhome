@@ -1,12 +1,4 @@
-export interface PaginationMeta {
-  count: number;
-  totalPages: number;
-  isNext: boolean;
-  isPrev: boolean;
-  nextPage: number | null;
-  prevPage: number | null;
-  current_page: number;
-}
+import type { Pagination } from "@/shared";
 
 export interface OngoingHiring {
   id: string;
@@ -38,6 +30,17 @@ export interface PreviousHiring {
   vacancies: number;
   duration: string;
   extracontent?: string;
+}
+
+/** `GET /public/career-lab/ongoing/` response shape — no `pagination` key at all, not even empty. */
+export interface OngoingHiringApiResponse {
+  data: OngoingHiring[];
+}
+
+/** `GET /public/career-lab/previous/` response shape — has `pagination`, unlike `ongoing`. */
+export interface PreviousHiringApiResponse {
+  data: PreviousHiring[];
+  pagination: Pagination;
 }
 
 export interface CareersCardProps {
