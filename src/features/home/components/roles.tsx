@@ -39,15 +39,18 @@ export function Roles() {
         <h2>
           <span className="text-mulearn">Roles</span> in μLearn Network
         </h2>
-        <h6 className="text-[1.2rem] text-mulearn-gray-600 mt-2.5">
+        <p className="font-medium text-[1.2rem] text-mulearn-gray-600 mt-2.5">
           A brief overview of the diverse roles that power our network.
-        </h6>
+        </p>
       </MotionDiv>
 
       <Tabs value={activeRole} onValueChange={setActiveRole} className="w-full">
         <div className="flex flex-col w-full mb-6 items-center justify-center sm:hidden">
           <Select value={activeRole} onValueChange={(v) => setActiveRole(v)}>
-            <SelectTrigger className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn">
+            <SelectTrigger
+              className="w-[200px] border-mulearn shadow-[0_4px_16px_rgba(60,130,246,0.18)] text-mulearn"
+              aria-label="Select a role"
+            >
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>

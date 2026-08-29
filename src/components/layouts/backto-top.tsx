@@ -28,6 +28,7 @@ export function BackToTop() {
     <Link
       className="p-2.5 flex justify-center bg-mulearn rounded-[140px] fixed bottom-3 right-6 md:bottom-20 md:right-10  cursor-pointer"
       href="#home"
+      aria-label="Back to top"
     >
       <MoveUp className="w-6 h-6 md:w-8 md:h-8 text-mulearn-whitish" />
     </Link>

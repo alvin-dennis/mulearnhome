@@ -49,11 +49,11 @@ export function Features() {
             What <span className="text-mulearn">µLearn</span> offers
           </h2>
         </div>
-        <h6 className="font-normal max-w-[800px] mx-auto text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
+        <p className="font-normal max-w-[800px] mx-auto text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
           µLearn offers a wide range of features and opportunities that help you learn, grow, and
           upskill yourself in a fun and engaging way. Here are some of the key features that µLearn
           offers.
-        </h6>
+        </p>
 
         <MotionDiv
           className={`flex w-full mt-10 overflow-hidden relative justify-center gap-2 flex-wrap`}
@@ -115,10 +115,8 @@ export function Features() {
                     className="relative w-full flex items-center justify-center"
                     style={{ height: "140px", minHeight: "140px" }}
                   >
-                    <MuImage
-                      src={feature.image}
-                      alt={feature.title}
-                      width={
+                    {(() => {
+                      const imageWidth =
                         feature.title === "Community"
                           ? 150
                           : feature.title === "Mentors"
@@ -129,14 +127,20 @@ export function Features() {
                                 ? 130
                                 : feature.title === "Challenges"
                                   ? 170
-                                  : 100
-                      }
-                      height={120}
-                      className="object-contain max-w-full max-h-full"
-                      quality={85}
-                      priority={true}
-                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 40vw"
-                    />
+                                  : 100;
+                      return (
+                        <MuImage
+                          src={feature.image}
+                          alt={feature.title}
+                          width={imageWidth}
+                          height={120}
+                          className="object-contain max-w-full max-h-full"
+                          quality={85}
+                          priority={true}
+                          sizes={`${imageWidth}px`}
+                        />
+                      );
+                    })()}
                   </div>
                 </CardContent>
 

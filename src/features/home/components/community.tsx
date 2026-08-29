@@ -33,12 +33,12 @@ export function Community() {
             Learn and Grow <span className="text-mulearn">Together</span> as a{" "}
             <span className="text-mulearn">Community</span>
           </h2>
-          <h6 className="font-normal mb-8 max-w-[800px] text-jusify text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
+          <p className="font-normal mb-8 max-w-[800px] text-jusify text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             Are you ready to learn, grow, and upskill yourself to the next level? Come, be a part of
             the community, and let&apos;s start learning in a new, better way. Call your friends as
             well because things are going to change once you experience it, and it is more effective
             when done in a group.
-          </h6>
+          </p>
 
           <Link
             href="https://discord.com/invite/gtech-mulearn-771670169691881483"

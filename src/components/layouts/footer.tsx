@@ -30,7 +30,7 @@ export function Footer() {
                       src="/assets/logo.webp"
                       alt="µLearn Logo"
                       width={180}
-                      height={0}
+                      height={48}
                       className="object-contain"
                     />
                   </div>

@@ -45,11 +45,11 @@ export function Stats() {
           <h2>
             The Impact of <span className="text-mulearn">μLearn</span>
           </h2>
-          <h6 className="font-normal mb-16 max-w-[800px] mx-auto text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
+          <p className="font-normal mb-16 max-w-[800px] mx-auto text-center text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             Over the last year, we as a community have made an impact on a significant number of
             students, mentors, and facilitators, enabling them to gain more knowledge about the
             ecosystem of learning and upskill themselves.
-          </h6>
+          </p>
         </MotionDiv>
 
         <MotionDiv variants={fadeInUp} className="w-full">

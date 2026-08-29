@@ -27,10 +27,10 @@ export function SpecialEvents() {
           <h2 className="mb-4">
             Special <span className="text-mulearn">Events</span>
           </h2>
-          <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
+          <p className="font-medium text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
             Discover exclusive events designed to inspire innovation, enhance skills, and foster
             meaningful connections across technology, management, and creativity.
-          </h6>
+          </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 justify-items-center">
             {specialevents.map((specialevent) => (

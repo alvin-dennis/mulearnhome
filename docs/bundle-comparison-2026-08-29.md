@@ -9,13 +9,56 @@
 
 ---
 
+## Wins vs. losses — the honest scorecard
+
+### Wins (measured, real)
+
+| # | What | Baseline | Now | Delta | Type |
+|---|---|---|---|---|---|
+| 1 | `/team` page chunk (`team.data.ts` client-boundary fix) | 122 KB | **9.3 KB** | **-113 KB** | Per-route, every `/team` visitor |
+| 2 | Swiper removed entirely (`6993-*.js` gone) | 99 KB | **0 KB** | **-99 KB** | Every route that used to load a carousel |
+| 3 | Embla added (`8169-*.js`, new chunk, wasn't in baseline at all) | 0 KB | 18.3 KB | **+18.3 KB** | The real cost of Swiper's replacement |
+| — | **Net carousel-library swap (2 + 3 combined)** | 99 KB | 18.3 KB | **-80.7 KB (-82%)** | Bigger win than "Swiper deleted" alone suggests |
+| 4 | `/events` barrel split — per-sub-route chunk vs. one shared 49 KB blob | 49 KB (all 5 routes, shared) | 4.2-5.5 KB per sub-route | **-43.5 to -44.8 KB** per sub-route visit | Only visitors to one sub-route benefit; `/events` index itself grew slightly (see losses) |
+| 5 | `react-icons` removed entirely (`package.json`, zero references in any chunk) | never separately attributed (est. "low tens of KB", `bundle-analysis.md` §8.1) | **0 KB, confirmed by grep** | not independently measurable pre/post since it was never its own chunk | Whole-dependency removal, not a chunk-diff |
+| 6 | `<Sparkle>` dedup — `/levelstructure` | 44 KB | 40 KB | **-4 KB (-9%)** | Small, as originally estimated |
+
+**Total measured, attributable win: roughly 197 KB off `/team`'s and the carousel-consuming
+routes' combined weight**, before counting the `/events` per-sub-route savings (which don't
+sum cleanly since baseline distributed 49 KB across all 5 routes equally regardless of which
+one a visitor opened, and today's cost varies 4.2-19.6 KB by route).
+
+### Losses (measured, real — not hidden)
+
+| # | What | Baseline | Now | Delta | Why |
+|---|---|---|---|---|---|
+| 1 | `8169-*.js` — Embla Carousel, new chunk | 0 KB | 18.3 KB | **+18.3 KB** | Unavoidable cost of the replacement library — still net-negative overall against Swiper's 99 KB (see Win #3 above), listed here too so it isn't hidden as a pure win |
+| 2 | `7105-*.js` → `2386-*.js` (tailwind-merge/zod/framer-motion/axios) | 350 KB | 361 KB | **+11 KB** | Unrelated dependency-version drift between the two build dates — none of this session's work touched these packages; not attributable to Phase 2/7 |
+| 3 | `/events` index route (`/events` itself, not its sub-routes) | not separately listed in baseline (was folded into the old shared 49 KB) | 19.6 KB standalone | can't compute a clean delta — baseline never isolated the index route's own cost | The index route now carries its own dedicated chunk instead of sharing one blob with the 4 sub-routes; likely still a net win versus the old shared-49KB-for-everyone model, but not provably measured as a delta the way the sub-routes are |
+
+**No unexplained regressions.** Every "loss" above has a clear, understood cause (a
+necessary replacement library, or unrelated upstream dependency drift) — nothing here is a
+side effect of the fixes themselves working incorrectly.
+
+### Unchanged (confirmed via byte-identical file hashes, not just similar sizes)
+
+`4bd1b696-*.js` (React DOM, 198 KB), `3794-*.js` (App Router internals, 195 KB),
+`framework-*.js` (189 KB, confirmed dead/unused separately), `main-*.js` (129 KB),
+`polyfills-*.js` (112 KB), `2096-*.js`/formerly `3696-*.js` (date-fns/cmdk/Radix, 71 KB),
+`5301-*.js` (enablers data, 67 KB), `5341-*.js` (Radix Select, 50 KB), home page (46 KB) —
+all identical hashes, confirming nothing in this pass touched them, as expected.
+
+---
+
 ## 1. Headline numbers
 
 | Chunk (baseline name → today) | 2026-08-28 | 2026-08-29 | Delta |
 |---|---|---|---|
 | `app/team/page-*.js` | 122 KB | **9.3 KB** | **-113 KB (-93%)** |
 | `6993-*.js` (Swiper) | 99 KB | **0 — gone** | **-99 KB (-100%)** |
+| `8169-*.js` (Embla Carousel — new) | 0 KB (didn't exist) | 18.3 KB | **+18.3 KB** — still net -80.7 KB vs. Swiper |
 | `7111-*.js` (`/events` shared barrel chunk) | 49 KB, shared by all 5 sub-routes | **gone — replaced by 5 dedicated chunks** (see §3) | visitor to one sub-route now downloads ~4-5.5 KB instead of 49 KB |
+| react-icons (whole dependency) | in `package.json`, never separately attributed | **removed — zero references in any chunk or `package.json`** | not independently chunk-diffable, confirmed via `grep` |
 | `app/levelstructure/page-*.js` | 44 KB | **40 KB** | -4 KB (-9%) |
 | `4bd1b696-*.js` (Next's compiled React DOM) | 198 KB | 198 KB (identical hash) | unchanged |
 | `3794-*.js` (App Router internals) | 195 KB | 195 KB (identical hash) | unchanged |

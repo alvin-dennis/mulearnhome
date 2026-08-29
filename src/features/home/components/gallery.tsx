@@ -124,9 +124,9 @@ export function Gallery() {
           <h2 className="mb-4">
             Our <span className="text-mulearn">Moments</span>
           </h2>
-          <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
+          <p className="font-medium text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
             Glimpses from our most impactful events, hackathons, and community meetups.
-          </h6>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
