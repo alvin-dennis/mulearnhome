@@ -2,10 +2,11 @@ import type { Viewport } from "next";
 import { Black_Ops_One, Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import type React from "react";
 import { Suspense } from "react";
-import { Footer, LayoutWidgets, Navbar } from "@/components/layouts";
+import { BackToTop, Footer, Navbar } from "@/components/layouts";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { constructMetadata } from "@/lib/metadata";
-import { AnalyticsProvider } from "@/shared";
+import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/shared";
 import Loader from "./loading";
 
 export const metadata = constructMetadata();
@@ -54,7 +55,12 @@ export default function RootLayout({
           <Navbar />
           <Suspense fallback={<Loader />}>{children}</Suspense>
           <Footer />
-          <LayoutWidgets />
+          <Toaster richColors theme="light" position="bottom-right" />
+          <div className="fixed bottom-4 right-4 z-50">
+            <BackToTop />
+          </div>
+          <CookieConsent />
+          <DebugPanel />
         </AnalyticsProvider>
       </body>
     </html>
