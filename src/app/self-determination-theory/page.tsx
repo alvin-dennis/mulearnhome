@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import { SelfDeterminationTheoryView } from "@/features/self-determination-theory";
+import { constructMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Self-Determination Theory (SDT) — The Science Behind µLearn",
+export const metadata = constructMetadata({
+  title: "Self-Determination Theory (SDT)",
   description:
-    "Self-Determination Theory by Deci & Ryan explains how autonomy, competence, and relatedness drive motivation. See how µLearn is intentionally architected around these three psychological needs.",
+    "The science behind µLearn — how self-determination theory shapes our approach to learning.",
   keywords: [
     "Self-Determination Theory",
     "SDT",
@@ -15,19 +15,9 @@ export const metadata: Metadata = {
     "competence",
     "relatedness",
     "peer-led learning",
-    "µLearn",
   ],
-  alternates: {
-    canonical: "/self-determination-theory",
-  },
-  openGraph: {
-    title: "Self-Determination Theory (SDT) — The Science Behind µLearn",
-    description:
-      "How autonomy, competence, and relatedness drive motivation — and how µLearn is built around these three psychological needs.",
-    url: "https://mulearn.org/self-determination-theory",
-    type: "article",
-  },
-};
+  canonical: "https://mulearn.org/self-determination-theory",
+});
 
 export default async function SelfDeterminationTheoryPage() {
   return <SelfDeterminationTheoryView />;

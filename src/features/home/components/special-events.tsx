@@ -24,9 +24,9 @@ export function SpecialEvents() {
         viewport={{ once: true }}
       >
         <MotionDiv variants={fadeInUp} className="text-center mb-12">
-          <h1 className="mb-4">
+          <h2 className="mb-4">
             Special <span className="text-mulearn">Events</span>
-          </h1>
+          </h2>
           <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
             Discover exclusive events designed to inspire innovation, enhance skills, and foster
             meaningful connections across technology, management, and creativity.

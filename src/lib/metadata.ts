@@ -7,15 +7,16 @@ interface MetadataParams {
   image?: string;
   noIndex?: boolean;
   canonical?: string;
+  keywords?: string[];
 }
 
-/** The ONE function every page that needs custom SEO calls; most pages call nothing at all. */
 export function constructMetadata({
   title = siteConfig.name,
   description = siteConfig.description,
   image = siteConfig.ogImage,
   noIndex = false,
   canonical,
+  keywords,
 }: MetadataParams = {}): Metadata {
   const isBrandInTitle = title === siteConfig.name || title.includes(siteConfig.shortName);
   const titleObj = isBrandInTitle
@@ -25,7 +26,9 @@ export function constructMetadata({
   return {
     title: titleObj,
     description,
-    keywords: [...siteConfig.keywords],
+    keywords: keywords
+      ? [...new Set([...keywords, ...siteConfig.keywords])]
+      : [...siteConfig.keywords],
     authors: [{ name: siteConfig.creator, url: siteConfig.url }],
     creator: siteConfig.creator,
     icons: { icon: "/favicon.ico" },
@@ -35,6 +38,12 @@ export function constructMetadata({
       title,
       description,
       siteName: siteConfig.name,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
       images: [image],
     },
     metadataBase: new URL(siteConfig.url),

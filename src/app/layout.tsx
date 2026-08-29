@@ -1,5 +1,5 @@
+import type { Viewport } from "next";
 import { Black_Ops_One, Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
-import localFont from "next/font/local";
 import type React from "react";
 import { Suspense } from "react";
 import { Footer, MuLoader, Navbar } from "@/components/layouts";
@@ -10,6 +10,12 @@ import { constructMetadata } from "@/lib/metadata";
 import { AnalyticsProvider, CookieConsent, DebugPanel } from "@/shared";
 
 export const metadata = constructMetadata();
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0961F5",
+};
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],

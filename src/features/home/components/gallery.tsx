@@ -121,9 +121,9 @@ export function Gallery() {
         viewport={{ once: true, margin: "-100px" }}
       >
         <div className="text-center mb-12">
-          <h1 className="mb-4">
+          <h2 className="mb-4">
             Our <span className="text-mulearn">Moments</span>
-          </h1>
+          </h2>
           <h6 className="text-lg text-mulearn-gray-600 max-w-3xl mx-auto">
             Glimpses from our most impactful events, hackathons, and community meetups.
           </h6>

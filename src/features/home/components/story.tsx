@@ -23,9 +23,9 @@ export function Story() {
       >
         <div>
           <MotionDiv variants={fadeInUp}>
-            <h1 className="text-center max-w-140">
+            <h2 className="text-center max-w-140">
               Understand μLearn with a <span className="text-mulearn">Story</span>
-            </h1>
+            </h2>
             <h6 className="font-normal my-4 mb-8 max-w-[800px] text-lg sm:text-xl text-justify text-mulearn-gray-600">
               Meet Aami, an eager learner hungry for growth! Join her voyage through the captivating
               µVerse, where she seizes opportunities, builds learning circles, and immerses herself

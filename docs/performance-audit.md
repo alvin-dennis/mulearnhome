@@ -1150,15 +1150,15 @@ real Lighthouse mobile+desktop run per page template before calling this categor
 
 | Lighthouse audit | Current state | Fix | Ref |
 |---|---|---|---|
-| `document-title` / `meta-description` | 32 of 39 routes inherit the generic root title/description | `constructMetadata()` per route, Phase 2 | feature-folder-structure.md §"SEO" |
-| `canonical` | **Fails on 32 routes** — all point at the homepage, the single worst SEO defect in the app | `canonical` per route, Phase 1 (do first — this is a correctness bug, not an enhancement) | feature-folder-structure.md §"canonical-URL bug" |
+| `document-title` / `meta-description` | ✅ done — all routes now call `constructMetadata()` with unique title/description | — | implementation-plan.md Phase 4 |
+| `canonical` | ✅ done — every route passes its own `canonical` | — | implementation-plan.md Phase 4 |
 | `link-text` | Not audited in this pass — spot-check for "click here"/"read more" style anchor text across CTAs before calling this done | Manual pass over CTA copy | — |
-| `is-crawlable` / `robots-txt` | **Fails** — no `robots.ts`, no `sitemap.ts` exist | Add both, Phase 3 | feature-folder-structure.md §"sitemap.ts / robots.ts" |
+| `is-crawlable` / `robots-txt` | ✅ done — `src/app/robots.ts` + `src/app/sitemap.ts` added | — | implementation-plan.md Phase 4 |
 | `hreflang` | N/A — single-locale site, no i18n routing exists; this audit passes vacuously | No action needed | — |
 | `font-size` (legible, no tiny text) | Not statically auditable from Tailwind classes alone without rendering | Verify with a real mobile Lighthouse run | — |
 | `tap-targets` | Same as Accessibility's `target-size` — shared audit surface between the two categories | See §9b | — |
-| `structured-data` (not scored directly, but feeds rich-result eligibility) | Only 1 of 39 routes emits JSON-LD | `Organization`/`WebSite` (home), `Event` (`/events`, `/gallery/[slug]`), `JobPosting` (`/careers`) — Phase 4 | feature-folder-structure.md §"Structured data" |
-| `viewport` meta tag | **Fails** — confirmed via direct read of `layout.tsx`: no `export const viewport` anywhere in the file | Add the `Viewport` export shown in feature-folder-structure.md | feature-folder-structure.md |
+| `structured-data` (not scored directly, but feeds rich-result eligibility) | Still only 1 of 39 routes emits JSON-LD — **deliberately left as-is**, not a gap | Considered (`Organization`/`WebSite`, `Event`, `JobPosting`) and skipped as a judgment call; narrow upside for this site | implementation-plan.md Phase 4 |
+| `viewport` meta tag | ✅ done — `src/app/layout.tsx` now exports `viewport` | — | implementation-plan.md Phase 4 |
 
 ### 9e. Execution order to hit 100/100 across all four categories with minimum wasted motion
 
@@ -1269,11 +1269,9 @@ Performance line items in one change.
 
 ## 12. Status: Done vs. To-Do
 
-**Almost nothing described in this document or in `docs/feature-folder-structure.md` has been
-applied to the codebase — one exception noted below.** Every other session that has touched
-these two files did so in documentation-only mode, by explicit request — this table exists so a
-future reader (or session) doesn't have to re-read either doc end-to-end to find out what's real
-versus proposed.
+**Most of this document is still documented-not-applied — Phase 4 (SEO) is the exception, fully
+shipped 2026-08-29.** This table exists so a future reader (or session) doesn't have to re-read
+either doc end-to-end to find out what's real versus proposed.
 
 | Finding | Section | Status |
 |---|---|---|
@@ -1292,11 +1290,11 @@ versus proposed.
 | `public/assets/gallery/` oversized masters + non-recursive `optimize-images.ts` | §9a.1-9a.2 | Documented — not applied |
 | `sizes` on 15 `fill`-mode images | §9a.3 | Documented — not applied |
 | `poweredByHeader: false` | §9a.4 | Documented — not applied |
-| SEO canonical-URL fix (32 routes) | `feature-folder-structure.md` Phase 1 | Documented — not applied |
-| `constructMetadata()` per-route title/description, twitter card, viewport | `feature-folder-structure.md` Phase 2 | Documented — not applied |
-| `sitemap.ts` / `robots.ts` | `feature-folder-structure.md` Phase 3 | Documented — not applied |
-| JSON-LD structured data | `feature-folder-structure.md` Phase 4 | Documented — not applied |
-| Heading hierarchy fixes | `feature-folder-structure.md` Phase 5 | Documented — not applied; live-confirmed by Lighthouse (§11b) |
+| SEO canonical-URL fix (all routes) | implementation-plan.md Phase 4 | **Applied** |
+| `constructMetadata()` per-route title/description/keywords, twitter card, viewport | implementation-plan.md Phase 4 | **Applied** |
+| `sitemap.ts` / `robots.ts` | implementation-plan.md Phase 4 | **Applied** |
+| JSON-LD structured data | implementation-plan.md Phase 4 | Considered, deliberately not applied — narrow upside for this site |
+| Heading hierarchy fixes | implementation-plan.md Phase 4 | **Applied** |
 | Accessibility mechanical fixes (9 lint warnings) | §5 | Documented — not applied |
 | `console.log` cleanup, unused `localFont` import | §5 | Documented — not applied |
 | Donation form double-submit guard | `feature-folder-structure.md` "Bonus finding" | Documented — not applied |

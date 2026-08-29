@@ -45,9 +45,9 @@ export function Features() {
         viewport={{ once: true }}
       >
         <div className="pt-10 sm:pt-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl text-center max-w-140 font-extrabold leading-snug">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl text-center max-w-140 font-extrabold leading-snug">
             What <span className="text-mulearn">µLearn</span> offers
-          </h1>
+          </h2>
         </div>
         <h6 className="font-normal max-w-[800px] mx-auto text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
           µLearn offers a wide range of features and opportunities that help you learn, grow, and

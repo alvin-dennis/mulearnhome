@@ -29,10 +29,10 @@ export function Community() {
           className="flex flex-col items-start sm:items-center justify-center max-w-[40rem]"
           variants={fadeInUp}
         >
-          <h1 className="text-center max-w-[40rem] mb-5">
+          <h2 className="text-center max-w-[40rem] mb-5">
             Learn and Grow <span className="text-mulearn">Together</span> as a{" "}
             <span className="text-mulearn">Community</span>
-          </h1>
+          </h2>
           <h6 className="font-normal mb-8 max-w-[800px] text-jusify text-lg sm:text-xl text-mulearn-gray-600 mt-2.5">
             Are you ready to learn, grow, and upskill yourself to the next level? Come, be a part of
             the community, and let&apos;s start learning in a new, better way. Call your friends as

@@ -141,9 +141,9 @@ export function TeamView() {
             viewport={{ once: true }}
             className="flex-1 text-center md:text-left"
           >
-            <h2 className="text-5xl md:text-[4.2rem] font-bold text-mulearn-blackish leading-tight">
+            <h1 className="text-5xl md:text-[4.2rem] font-bold text-mulearn-blackish leading-tight">
               The <span className="font-semibold text-mulearn">Gears</span> Behind The Machine.
-            </h2>
+            </h1>
             <p className="text-xl md:text-2xl my-8 text-justify md:text-left text-mulearn-gray-600">
               The &apos;µLearn&apos; community&apos;s growth to this moment would not have been
               possible without the team&apos;s soul and heart...

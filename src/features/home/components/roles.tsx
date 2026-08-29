@@ -36,9 +36,9 @@ export function Roles() {
       viewport={{ once: true }}
     >
       <MotionDiv className="text-center mb-10" variants={fadeInUp}>
-        <h1>
+        <h2>
           <span className="text-mulearn">Roles</span> in μLearn Network
-        </h1>
+        </h2>
         <h6 className="text-[1.2rem] text-mulearn-gray-600 mt-2.5">
           A brief overview of the diverse roles that power our network.
         </h6>

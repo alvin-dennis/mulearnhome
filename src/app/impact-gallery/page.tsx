@@ -4,6 +4,15 @@ import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 import { ImpactGalleryView, ImpactStats } from "@/features/impact-gallery";
+import { constructMetadata } from "@/lib/metadata";
+
+export const metadata = constructMetadata({
+  title: "Impact Gallery",
+  description:
+    "See µLearn's impact through numbers, stories, and moments captured across the community.",
+  keywords: ["impact gallery", "mulearn impact", "community stories", "milestones"],
+  canonical: "https://mulearn.org/impact-gallery",
+});
 
 export default async function ImpactGallery() {
   return (
