@@ -1,5 +1,8 @@
+"use client";
+
 import { YouTubeEmbed } from "@next/third-parties/google";
 import type { Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { MotionDiv, MotionSection } from "@/components/layouts";
 
 const fadeInUp: Variants = {
@@ -12,6 +15,26 @@ const fadeInUp: Variants = {
 };
 
 export function Story() {
+  const embedContainerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false);
+
+  useEffect(() => {
+    const node = embedContainerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadEmbed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full pt-12">
       <MotionSection
@@ -34,7 +57,7 @@ export function Story() {
           </MotionDiv>
         </div>
 
-        <div className="w-full h-full aspect-video">
+        <div ref={embedContainerRef} className="w-full h-full aspect-video">
           <MotionDiv
             variants={{
               hidden: { opacity: 0, y: 50 },
@@ -46,12 +69,16 @@ export function Story() {
             }}
             className="w-full h-full"
           >
-            <YouTubeEmbed
-              videoid="M9serw-CLU0"
-              style="border-none"
-              playlabel="true"
-              params="disablekb=1&enablejsapi=1&playsinline=1"
-            />
+            {shouldLoadEmbed ? (
+              <YouTubeEmbed
+                videoid="M9serw-CLU0"
+                style="border-none"
+                playlabel="true"
+                params="disablekb=1&enablejsapi=1&playsinline=1"
+              />
+            ) : (
+              <div className="w-full h-full rounded-lg bg-mulearn-gray-100" />
+            )}
           </MotionDiv>
         </div>
       </MotionSection>

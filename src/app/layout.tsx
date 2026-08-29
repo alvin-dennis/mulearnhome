@@ -46,7 +46,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://s3.ap-south-1.amazonaws.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://s3.ap-south-1.amazonaws.com" />
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
