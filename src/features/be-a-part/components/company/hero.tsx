@@ -12,7 +12,7 @@ export const CompanyHero = () => {
         className="text-2xl md:text-4xl lg:text-6xl font-bold"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-center flex-col">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extralight leading-tight text-center  max-w-[630px] pt-20">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight text-center max-w-[630px] pt-20">
             <span className="text-mulearn-blackish">Partner With </span>{" "}
             <span className="text-mulearn">µLearn </span>
             <span className="text-mulearn-blackish">to discover talent</span>

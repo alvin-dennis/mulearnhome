@@ -156,7 +156,7 @@ export const Change = () => {
           <MuImage
             src={"/assets/company/lap.webp"}
             alt="Company Partnership Illustration"
-            className="w-[280px] sm:w-[350px] lg:w-auto lg:h-[450px] object-contain"
+            className="object-contain"
             width={650}
             height={450}
             unoptimized
