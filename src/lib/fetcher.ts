@@ -88,8 +88,14 @@ async function request<T>(endpoint: string, options: RequestOptions<T>): Promise
       signal: controller.signal,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Network error";
-    throw new ApiError(0, message);
+    // No backend message exists for a network failure — leave ApiError.message empty so
+    // `error.message || fallback` at the call site (getApiResponseError) shows the caller's
+    // own friendly fallback text instead of a raw browser error string. The raw error is
+    // still logged for debugging.
+    if (process.env.NODE_ENV === "development") {
+      console.error(`[Fetcher] Network error: ${endpoint}`, error);
+    }
+    throw new ApiError(0, "");
   } finally {
     clearTimeout(timeoutId);
   }
@@ -98,33 +104,35 @@ async function request<T>(endpoint: string, options: RequestOptions<T>): Promise
   if (options.responseType === "blob") {
     if (res.ok) return (await res.blob()) as T;
     const errData = await res.json().catch(() => null);
-    const backendMsg = extractDjangoMessage(errData) ?? "Something went wrong. Please try again.";
-    throw new ApiError(res.status, backendMsg, errData);
+    // Empty string (not a generic fallback) when the backend gave no parseable message —
+    // matches production's pattern of letting the call site supply its own fallback text
+    // via `error.message || fallback`, rather than baking one in here.
+    throw new ApiError(res.status, extractDjangoMessage(errData) ?? "", errData);
   }
 
   // ── JSON branch ───────────────────────────────────────────
   const rawData = await res.json().catch(() => null);
 
   if (isBusinessError(rawData)) {
-    const backendMsg = extractDjangoMessage(rawData) ?? "Something went wrong. Please try again.";
+    const backendMsg = extractDjangoMessage(rawData);
     if (process.env.NODE_ENV === "development") {
       console.error(
         `[Fetcher] Business error: [Status ${res.status}] ${endpoint}\nMessage: ${backendMsg}`,
         rawData,
       );
     }
-    throw new ApiError(res.status, backendMsg, rawData);
+    throw new ApiError(res.status, backendMsg ?? "", rawData);
   }
 
   if (!res.ok) {
-    const backendMsg = extractDjangoMessage(rawData) ?? "Something went wrong. Please try again.";
+    const backendMsg = extractDjangoMessage(rawData);
     if (process.env.NODE_ENV === "development") {
       console.error(
         `[Fetcher] HTTP error: [Status ${res.status}] ${endpoint}\nMessage: ${backendMsg}`,
         rawData,
       );
     }
-    throw new ApiError(res.status, backendMsg, rawData);
+    throw new ApiError(res.status, backendMsg ?? "", rawData);
   }
 
   if (options.schema) {

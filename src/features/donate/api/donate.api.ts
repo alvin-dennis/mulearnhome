@@ -33,7 +33,7 @@ const createBaseRazorpayOptions = (data: DonationFormPayload, razorpayKey: strin
 });
 
 const handlePaymentSuccess = (
-  pdfData: DonateVerifyApiResponse,
+  pdfData: ApiResponse<DonateVerifyApiResponse>,
   data: DonationFormPayload,
   paymentId: string,
   orderId?: string,
@@ -136,7 +136,7 @@ export const submitDonationForm = async (data: DonationFormPayload) => {
               res.message?.general?.[0] || "Payment Successful! Thank you for your donation.",
             );
             handlePaymentSuccess(
-              res.response,
+              res,
               data,
               response.razorpay_payment_id,
               response.razorpay_order_id,
@@ -215,7 +215,7 @@ export const submitSubscription = async (data: DonationFormPayload) => {
                 "Subscription Successful! Thank you for your recurring donation.",
             );
             handlePaymentSuccess(
-              res.response,
+              res,
               data,
               response.razorpay_payment_id,
               undefined,
