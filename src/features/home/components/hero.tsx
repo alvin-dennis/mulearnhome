@@ -133,7 +133,7 @@ export function Hero() {
           src="/assets/illustration.webp"
           alt="Community illustration showcasing µLearn peer learning platform"
           className="object-cover object-bottom h-auto w-full max-w-screen md:max-w-[90vw] lg:max-w-[80vw]"
-          preload
+          priority
           fetchPriority="high"
           quality={85}
           width={1300}

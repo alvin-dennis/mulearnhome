@@ -5,7 +5,6 @@ export const metadata = constructMetadata({
   title: "Donate",
   description:
     "Support µLearn's mission of peer-to-peer, proof-of-work learning with a one-time or recurring donation.",
-  image: "/assets/donate/heroImg.webp",
   keywords: ["donate to mulearn", "support mulearn", "mulearn foundation donation"],
   canonical: "https://mulearn.org/donate",
 });

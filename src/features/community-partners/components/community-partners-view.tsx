@@ -67,7 +67,7 @@ export function CommunityPartnersView() {
             height={0}
             alt="Coding Workshop Animation"
             className="block mt-6 md:mt-0 w-full max-w-[38rem] h-auto object-cover rounded-3xl"
-            preload
+            priority
           />
         </MotionDiv>
       </div>

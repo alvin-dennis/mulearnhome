@@ -50,7 +50,7 @@ export function WhoIsEnabler() {
             width={515}
             height={480}
             className="absolute rounded-r-[20px] object-cover"
-            src="/assets/be-a-part/enabler-character.svg"
+            src="/assets/be-a-part/enabler-character.webp"
             alt="Campus Enabler Illustration"
           />
         </div>
@@ -85,7 +85,7 @@ export function WhoIsEnabler() {
 
           <div className="w-full flex justify-center items-end px-4 pb-0">
             <MuImage
-              src="/assets/be-a-part/enabler-character.svg"
+              src="/assets/be-a-part/enabler-character.webp"
               alt="Campus Enabler Illustration"
               width={515}
               height={480}

@@ -29,7 +29,7 @@ export const companies = [
   },
   {
     alt: "Softnotion",
-    src: "/public/assets/careers/companies/Softnotions.webp",
+    src: "/public/assets/careers/companies/softnotions.webp",
   },
   {
     alt: "SunTec",

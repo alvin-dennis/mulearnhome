@@ -40,9 +40,10 @@ export const Action = () => {
               viewport={{ once: true }}
             >
               <MuImage
-                src="/assets/trivial/Browser.svg"
+                src="/assets/trivial/browser.svg"
                 alt="trivial-img"
                 fill
+                sizes="(max-width: 1024px) 100vw, 36rem"
                 className="object-contain"
               />
             </MotionDiv>

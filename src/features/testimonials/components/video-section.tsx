@@ -129,6 +129,7 @@ export function VideoSection({ testimonials }: VideoSectionProps) {
                   alt={video.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                   fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-mulearn-blackish/50 group-hover:bg-mulearn-blackish/30 transition-all flex items-center justify-center">
                   <div

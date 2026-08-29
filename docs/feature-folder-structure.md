@@ -21,8 +21,6 @@ guidance.
   cache needed), and genuinely interactive pages use a plain `"use client"` custom hook
   (`useState`/`useEffect`), formatting errors via `getApiResponseError` from `@/shared`.
   No query-key factories, no query client, no devtools anywhere in the codebase.
-- **`app/sitemap.ts` / `app/robots.ts`** — proposed as Phase 4 cleanup items, never added.
-  Still a legitimate, small, independent task if wanted.
 - **Strictly named barrel re-exports everywhere** — the proposal said "named exports only,
   never `export *`." In practice, feature-root `index.ts` files (e.g.
   `features/kkem/index.ts`) do use `export * from "./components"` /
@@ -255,8 +253,8 @@ getting it wrong is one route, and the fix is one file.
 ## SEO — done (2026-08-29)
 
 > Original investigation below is superseded. Full status lives in
-> `docs/implementation-plan.md` Phase 4; this section is kept short as a pointer, not a
-> re-derivation.
+> `docs/implementation-plan.md` §0 ("Already done"); this section is kept short as a pointer,
+> not a re-derivation.
 
 All gaps this section originally documented are closed:
 

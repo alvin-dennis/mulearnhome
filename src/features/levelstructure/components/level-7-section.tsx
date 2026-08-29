@@ -6,11 +6,12 @@ export function Level7Section() {
     <section className="relative flex items-center py-15 overflow-hidden" id="level-7">
       <div className="absolute inset-0 pointer-events-none z-0">
         <MuImage
-          src="/assets/levelstructure/bg_lvl7.svg"
+          src="/assets/levelstructure/bg-lvl7.webp"
           alt="μVerse Background"
           fill
+          sizes="100vw"
           className="object-cover object-center opacity-90"
-          preload
+          priority
         />
       </div>
 

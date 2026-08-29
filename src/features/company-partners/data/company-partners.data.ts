@@ -8,7 +8,7 @@ export const CompanyPartner = [
   },
   {
     name: "SunTec Business Solutions Pvt. Ltd",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/SunTec.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/suntec.webp",
     website: "https://www.suntecgroup.com/",
     descritpion:
       "A Kerala-based company providing revenue management and billing solutions for banks and telecoms.",
@@ -21,42 +21,42 @@ export const CompanyPartner = [
   },
   {
     name: "Travancore Analytics",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Travancore.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/travancore.webp",
     website: "https://www.travancoreanalytics.com/",
     descritpion:
       "A digital product development company specializing in AR/VR, IoT, and enterprise software.",
   },
   {
     name: "ECESIS GROUP",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Ecesis.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/ecesis.webp",
     website: "https://www.ecesistech.com/",
     descritpion:
       "A technology and business solutions company offering IT, BPO, and consulting services.",
   },
   {
     name: "PIT Solutions",
-    logo: "src/modules/Public/CompanyPartners/assets/companies/Pits.webp",
+    logo: "src/modules/Public/CompanyPartners/assets/companies/pits.webp",
     website: "https://www.pitsolutions.com/",
     descritpion:
       "A global IT services company providing web, mobile, and enterprise software solutions.",
   },
   {
     name: "Softnotions",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Softnotions.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/softnotions.webp",
     website: "https://softnotions.com/",
     descritpion:
       "An IT consulting and software development firm focused on digital transformation and innovation.",
   },
   {
     name: "Triassic Solutions",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Triassic.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/triassic.webp",
     website: "https://triassicsolutions.com/",
     descritpion:
       "A software development and consulting company delivering enterprise technology solutions.",
   },
   {
     name: "Experion",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Experion.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/experion.webp",
     website: "https://www.experionglobal.com/",
     descritpion:
       "A global digital transformation company building software products and data-driven solutions.",
@@ -70,7 +70,7 @@ export const CompanyPartner = [
   },
   {
     name: "THINKPALM TECHNOLOGIES",
-    logo: "/src/modules/Public/CompanyPartners/assets/companies/Thinkpalm.webp",
+    logo: "/src/modules/Public/CompanyPartners/assets/companies/thinkpalm.webp",
     website: "https://thinkpalm.com/",
     description:
       "A product engineering and IT services company specializing in embedded and digital solutions.",

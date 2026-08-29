@@ -21,7 +21,7 @@ export const Success = () => {
         </MotionDiv>
 
         <MuImage
-          src={"/assets/company/hand.svg"}
+          src={"/assets/company/hand.webp"}
           alt="hand icon"
           className="absolute right-40 bottom-0 w-[92px] h-[115px] rotate-[16deg] hidden lg:block"
           width={92}

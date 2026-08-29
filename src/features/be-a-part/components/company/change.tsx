@@ -154,7 +154,7 @@ export const Change = () => {
           className="relative lg:absolute lg:right-16 w-full lg:w-auto justify-center lg:block hidden md:block"
         >
           <MuImage
-            src={"/assets/company/lap.svg"}
+            src={"/assets/company/lap.webp"}
             alt="Company Partnership Illustration"
             className="w-[280px] sm:w-[350px] lg:w-auto lg:h-[450px] object-contain"
             width={650}

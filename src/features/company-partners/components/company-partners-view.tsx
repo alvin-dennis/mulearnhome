@@ -41,8 +41,9 @@ export function CompanyPartnersView() {
                   src={Connecting_teams}
                   alt="Connecting teams"
                   fill
+                  sizes="(max-width: 640px) 16rem, (max-width: 1024px) 20rem, 35rem"
                   className="object-contain"
-                  preload
+                  priority
                 />
               </div>
             </MotionDiv>

@@ -50,7 +50,7 @@ export default async function ImpactGallery() {
             width={500}
             height={500}
             className="w-full h-auto"
-            preload
+            priority
           />
         </MotionDiv>
         <div className="absolute bottom-20 left-1/4 opacity-10">
@@ -77,8 +77,9 @@ export default async function ImpactGallery() {
                 src="/assets/impact-gallery/hero-pic.webp"
                 alt="μLearn Impact Gallery"
                 fill
+                sizes="(max-width: 768px) 100vw, 42rem"
                 className="object-contain"
-                preload
+                priority
                 fetchPriority="high"
                 quality={85}
               />

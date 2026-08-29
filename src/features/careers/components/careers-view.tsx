@@ -82,7 +82,7 @@ export function CareersView() {
               width={400}
               height={400}
               className="w-49 sm:w-64 md:w-72 lg:w-80 h-auto rounded-2xl object-cover"
-              preload
+              priority
             />
           </div>
         </div>

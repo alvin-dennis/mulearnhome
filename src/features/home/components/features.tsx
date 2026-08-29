@@ -134,7 +134,7 @@ export function Features() {
                       height={120}
                       className="object-contain max-w-full max-h-full"
                       quality={85}
-                      preload={true}
+                      priority={true}
                       sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 40vw"
                     />
                   </div>

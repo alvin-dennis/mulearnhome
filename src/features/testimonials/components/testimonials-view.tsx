@@ -26,7 +26,7 @@ export function TestimonialsView() {
             width={600}
             height={600}
             className="w-full h-full"
-            preload
+            priority
           />
         </div>
 

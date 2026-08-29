@@ -7,14 +7,14 @@ export function Level2Section() {
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
-          src="/assets/levelstructure/line_lvl2.svg"
+          src="/assets/levelstructure/line-lvl2.svg"
           alt="Line Path"
           width={1400}
           height={800}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-[1600px] object-contain opacity-40"
         />
         <MuImage
-          src="/assets/levelstructure/rocket_lvl2.svg"
+          src="/assets/levelstructure/rocket-lvl2.webp"
           alt="Rocket"
           width={300}
           height={400}
@@ -48,7 +48,7 @@ export function Level2Section() {
               <Sparkle className="absolute top-[-5%] right-[-25%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-40" />
 
               <MuImage
-                src="/assets/levelstructure/planet_lvl2.svg"
+                src="/assets/levelstructure/planet-lvl2.webp"
                 alt="Planet"
                 width={240}
                 height={240}
@@ -57,7 +57,7 @@ export function Level2Section() {
 
               <div className="relative w-full h-[550px] hidden md:block mt-4 z-10">
                 <MuImage
-                  src="/assets/levelstructure/astronaut3.svg"
+                  src="/assets/levelstructure/astronaut3.webp"
                   alt="Astronaut"
                   width={350}
                   height={350}

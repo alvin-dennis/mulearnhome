@@ -16,7 +16,7 @@ export const galleryData: GalleryItem[] = [
     title: "Rising Beyond Limits",
     description:
       "Two inspiring mentors from the µLearn community have achieved a remarkable milestone as the founders of an AI startup incubated into Y Combinator. This moment marks a proud win for the entire ecosystem, showcasing the power of dedication, skill, and visionary thinking.",
-    image: "/assets/impact-gallery/Congratulations.webp",
+    image: "/assets/impact-gallery/congratulations.webp",
     category: "mentors",
     type: "image",
   },
@@ -43,7 +43,7 @@ export const galleryData: GalleryItem[] = [
     title: "One Step Closer to Open-Source Greatness!",
     description:
       "A proud milestone as a µLearn member gets officially recognized as a Beckn open-source contributor with a successful PR merge into the Beckn-onix repository. A true example of consistency, learning, and community-driven growth. Here’s to many more wins ahead!",
-    image: "/assets/impact-gallery/Thanks.webp",
+    image: "/assets/impact-gallery/thanks.webp",
     category: "companies",
     type: "image",
   },
@@ -52,7 +52,7 @@ export const galleryData: GalleryItem[] = [
     title: "Rising to the Global Stage!",
     description:
       "A proud moment for µLearn as our cybersecurity lead and his team break barriers at the Kaspersky CTF 2025, securing top positions across Asia, India, and the world. A true testament to relentless passion, skill, and teamwork—proof that consistent effort turns ambition into achievement.",
-    image: "/assets/impact-gallery/CTF.webp",
+    image: "/assets/impact-gallery/ctf.webp",
     category: "impact-stories",
     type: "image",
   },

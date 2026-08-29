@@ -53,7 +53,7 @@ export function LearningCircleView() {
             alt="Learning Circle illustration"
             width={500}
             height={400}
-            preload
+            priority
             className="rounded-2xl"
           />
         </MotionDiv>

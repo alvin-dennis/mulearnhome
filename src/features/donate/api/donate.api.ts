@@ -12,7 +12,7 @@ import type {
 const createBaseRazorpayOptions = (data: DonationFormPayload, razorpayKey: string) => ({
   key: razorpayKey,
   name: "µLearn Foundation",
-  image: "/assets/logo.png",
+  image: "/assets/logo.webp",
   prefill: {
     name: data.name,
     email: data.email,

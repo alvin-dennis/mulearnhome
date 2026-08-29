@@ -154,7 +154,7 @@ export function DonateSuccessView() {
             {/* Watermark Logo */}
             <div className="absolute top-6 right-6 opacity-5 pointer-events-none">
               <MuImage
-                src="/assets/logo.png"
+                src="/assets/logo.webp"
                 alt=""
                 className="h-16 w-auto grayscale"
                 width={64}

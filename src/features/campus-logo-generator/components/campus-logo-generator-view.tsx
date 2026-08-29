@@ -10,9 +10,10 @@ import { Label } from "@/components/ui/label";
 
 const StripesBackground = ({ className = "" }: { className?: string }) => (
   <MuImage
-    src="/assets/logo-template/stripes (1).svg"
+    src="/assets/logo-template/stripes-(1).svg"
     alt="Stripes Background"
     fill
+    sizes="18rem"
     className={`object-cover opacity-70 pointer-events-none z-[1] ${className}`}
   />
 );

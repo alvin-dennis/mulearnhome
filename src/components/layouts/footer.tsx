@@ -27,7 +27,7 @@ export function Footer() {
                 <div className="flex items-center justify-center">
                   <div className=" rounded-xl overflow-hidden flex items-center justify-center">
                     <MuImage
-                      src="/assets/logo.png"
+                      src="/assets/logo.webp"
                       alt="µLearn Logo"
                       width={180}
                       height={0}

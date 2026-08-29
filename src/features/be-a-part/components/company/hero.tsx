@@ -117,7 +117,7 @@ export const CompanyHero = () => {
 
           <div className="absolute top-2/3 center w-[300px] h-[300px] rounded-full bg-mulearn blur-[200px] opacity-70 hidden sm:block " />
           <MuImage
-            src={"/assets/company/student.svg"}
+            src={"/assets/company/student.webp"}
             alt="Company Partnership Illustration"
             className="w-full h-full relative  object-contain ml-10"
             width={650}

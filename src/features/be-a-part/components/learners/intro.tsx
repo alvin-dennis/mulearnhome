@@ -14,7 +14,7 @@ export const LearnerIntro = () => {
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 flex items-end justify-center">
               {/* White elliptical shadow/platform - Absolute positioned at the bottom */}
               <MuImage
-                src="/assets/learners/Ellipse 1.png"
+                src="/assets/learners/ellipse-1.webp"
                 alt="Platform"
                 width={384}
                 height={100}
@@ -23,7 +23,7 @@ export const LearnerIntro = () => {
 
               {/* Learner Character - Relative to sit on top of the ellipse */}
               <MuImage
-                src="/assets/learners/learner-character.png"
+                src="/assets/learners/learner-character.webp"
                 alt="Learner Character with Lightbulb"
                 width={384}
                 height={384}

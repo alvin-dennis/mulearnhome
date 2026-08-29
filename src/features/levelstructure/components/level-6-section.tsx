@@ -7,14 +7,14 @@ export function Level6Section() {
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
-          src="/assets/levelstructure/line_lvl2.svg"
+          src="/assets/levelstructure/line-lvl2.svg"
           alt="Line Path"
           width={1400}
           height={800}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-[1600px] object-contain opacity-40"
         />
         <MuImage
-          src="/assets/levelstructure/rocket_lvl2.svg"
+          src="/assets/levelstructure/rocket-lvl2.webp"
           alt="Rocket"
           width={300}
           height={400}
@@ -89,7 +89,7 @@ export function Level6Section() {
           >
             <div className="relative z-10 w-full max-w-[550px] hover:-translate-y-4 transition-transform duration-700 ease-in-out">
               <MuImage
-                src="/assets/levelstructure/astronauts.svg"
+                src="/assets/levelstructure/astronauts.webp"
                 alt="Build & Ship Astronauts"
                 width={500}
                 height={500}
@@ -102,7 +102,7 @@ export function Level6Section() {
 
             <div className="absolute bottom-[-30%] right-[10%] w-64 h-64 md:w-72 md:h-72 opacity-50 z-0">
               <MuImage
-                src="/assets/levelstructure/galaxy_lvl6.svg"
+                src="/assets/levelstructure/galaxy-lvl6.webp"
                 alt="Portal"
                 width={288}
                 height={288}

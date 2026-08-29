@@ -150,7 +150,7 @@ export function SaltMangoTreeView() {
                   width={500}
                   height={500}
                   className="w-full h-auto rounded-2xl"
-                  preload
+                  priority
                 />
               </div>
             </div>

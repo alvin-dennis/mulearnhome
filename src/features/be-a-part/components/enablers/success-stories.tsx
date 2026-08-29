@@ -55,6 +55,7 @@ function VideoCard({ story }: { story: (typeof stories)[0] }) {
               src={story.thumbnail}
               alt={`${story.name} thumbnail`}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center">

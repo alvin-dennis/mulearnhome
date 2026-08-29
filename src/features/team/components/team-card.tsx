@@ -43,6 +43,7 @@ export function TeamCard({
               src={image ? cdnUrl(image) : fallbackImage}
               alt={name}
               fill
+              sizes="128px"
               className="object-cover object-top"
             />
           </div>

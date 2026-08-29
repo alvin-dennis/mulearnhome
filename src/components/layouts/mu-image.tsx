@@ -41,14 +41,15 @@ export const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, re
     }
   }
 
-  // detect tailwind tokens if className present
+  // detect tailwind tokens if className present — matches responsive (`md:h-64`)
+  // and arbitrary (`h-[200px]`) variants too, not just a bare `h-`/`w-` prefix.
   let hasH = false;
   let hasW = false;
   try {
     if (className) {
       const tokens = className.split(/\s+/);
-      hasH = tokens.some((t) => t.startsWith("h-"));
-      hasW = tokens.some((t) => t.startsWith("w-"));
+      hasH = tokens.some((t) => /(^|:)h-/.test(t));
+      hasW = tokens.some((t) => /(^|:)w-/.test(t));
     }
   } catch (_e) {
     /* ignore */
@@ -80,63 +81,20 @@ export const MuImage = React.forwardRef<HTMLImageElement, ImageProps>((props, re
     }
   }
 
-  // Additionally, if a `className` is provided (common with Tailwind classes
-  // like `max-w-full h-auto`), CSS may change one dimension. In that case
-  // ensure the complementary dimension is set to 'auto' to avoid Next.js warnings.
-  if (className) {
-    // If className present and fill, ensure both dims default to auto
-    const isFill = (props as any).fill === true;
-    if (isFill) {
-      newStyle.width = newStyle.width ?? "auto";
-      newStyle.height = newStyle.height ?? "auto";
-    }
-    // Other className-based adjustments already handled above via hasH/hasW
-  }
-
-  // If `fill` is used without a className, still ensure default auto dims
-  // to avoid warnings when parent container controls sizing.
-  const isFillOnly = (props as any).fill === true && !className;
-  if (isFillOnly) {
-    newStyle.width = newStyle.width ?? "auto";
-    newStyle.height = newStyle.height ?? "auto";
-  }
-
-  const alt = rest.alt ?? "";
-
   // If `fill` is used, remove any inline width/height styling — Next.js expects
   // the parent to control dimensions and will error if `style.width` is provided.
   if (isFill) {
-    if (Object.hasOwn(newStyle, "width")) delete (newStyle as any).width;
-    if (Object.hasOwn(newStyle, "height")) delete (newStyle as any).height;
-  }
-  // Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
-  // and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
-  let shouldUnoptimized = false;
-  try {
-    const srcVal = (rest as any).src;
-    if (typeof srcVal === "string" && /^https?:\/\//.test(srcVal)) {
-      const parsed = new URL(srcVal);
-      const host = parsed.hostname;
-      if (
-        host === "s3.ap-south-1.amazonaws.com" ||
-        host.endsWith("cdn.mulearn") ||
-        host.includes("cdn.mulearn")
-      ) {
-        shouldUnoptimized = true;
-      }
-    }
-  } catch (_e) {
-    /* ignore parsing errors */
+    if (Object.hasOwn(newStyle, "width")) delete newStyle.width;
+    if (Object.hasOwn(newStyle, "height")) delete newStyle.height;
   }
 
-  const imageProps = {
-    ...(rest as object),
-    unoptimized: shouldUnoptimized || (rest as any).unoptimized,
-  } as ImageProps;
+  if (process.env.NODE_ENV !== "production" && isFill && !rest.sizes) {
+    console.warn(
+      `MuImage: "${rest.alt ?? rest.src}" uses fill without a sizes prop — Next will assume 100vw and generate an oversized srcset.`,
+    );
+  }
 
-  return (
-    <Image ref={ref} width={width} height={height} style={newStyle} {...imageProps} alt={alt} />
-  );
+  return <Image ref={ref} width={width} height={height} style={newStyle} {...rest} />;
 });
 
 MuImage.displayName = "MuImage";

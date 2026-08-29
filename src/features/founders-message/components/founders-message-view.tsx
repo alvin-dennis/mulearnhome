@@ -148,7 +148,7 @@ export function FoundersMessageView() {
         >
           <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0 border border-neutral-100 shadow-sm">
             <MuImage
-              src="/assets/founders-message/deepu-s-nath.jpg"
+              src="/assets/founders-message/deepu-s-nath.webp"
               alt="Deepu S Nath"
               width={100}
               height={100}

@@ -140,6 +140,7 @@ export function MissionAndGrowth() {
                       src={c.profile_pic ?? fallbackImage}
                       alt={c.full_name}
                       fill
+                      sizes="80px"
                       className="rounded-full object-cover"
                     />
                   </div>

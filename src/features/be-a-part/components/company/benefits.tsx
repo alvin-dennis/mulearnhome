@@ -24,7 +24,7 @@ export const CompanyBenefits = () => {
         </MotionH1>
 
         <MuImage
-          src={"/assets/company/note.svg"}
+          src={"/assets/company/note.webp"}
           alt="note icon"
           className="absolute left-24 top-0 w-[92px] h-[115px] rotate-[16deg] hidden lg:block"
           width={92}

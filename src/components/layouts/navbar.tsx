@@ -62,11 +62,11 @@ export function Navbar() {
         >
           <Link href="/" className="flex items-center shrink-0">
             <MuImage
-              src="/assets/logo.png"
+              src="/assets/logo.webp"
               alt="Mulearn Brand"
               width={170}
               height={170}
-              preload
+              priority
               className="h-auto"
             />
           </Link>
@@ -146,11 +146,11 @@ export function Navbar() {
           <div className="flex justify-between items-center p-4 relative z-1000">
             <Link href="/" className="flex items-center shrink-0">
               <MuImage
-                src="/assets/logo.png"
+                src="/assets/logo.webp"
                 alt="Mulearn Brand"
                 width={120}
                 height={40}
-                preload
+                priority
                 className="h-auto w-auto max-w-[120px]"
               />
             </Link>

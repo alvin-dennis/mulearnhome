@@ -37,7 +37,7 @@ export function CampusHero() {
               width={300}
               height={300}
               className="w-64 sm:w-80 md:w-full h-auto max-w-md rounded-2xl object-contain"
-              preload
+              priority
             />
           </MotionDiv>
         </div>

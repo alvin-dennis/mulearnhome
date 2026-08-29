@@ -36,9 +36,10 @@ export const CTA = () => {
             <div className="relative hidden lg:flex justify-center items-center">
               <div className="relative w-full max-w-md aspect-square">
                 <MuImage
-                  src="/assets/learners/learner-cta.png"
+                  src="/assets/learners/learner-cta.webp"
                   alt="Student learning with laptop"
                   fill
+                  sizes="28rem"
                   className="object-contain"
                   priority={false}
                 />

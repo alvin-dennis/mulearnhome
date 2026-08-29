@@ -25,7 +25,9 @@
 | Item | Evidence |
 |---|---|
 | `@next/bundle-analyzer` wired into `next.config.ts` (`withBundleAnalyzer`, gated on `ANALYZE=true`) + `package.json`'s `analyze` script | `bundle-analysis.md` §1, §10 |
-| Phase 4 — all of SEO (canonical, title/description/keywords, twitter card, viewport, `sitemap.ts`/`robots.ts`, heading hierarchy). JSON-LD skipped by decision. | See Phase 4 below |
+| SEO — all of it (canonical, title/description/keywords, twitter card, viewport, `sitemap.ts`/`robots.ts`, heading hierarchy). JSON-LD skipped by decision. | `feature-folder-structure.md`'s SEO section |
+| Image optimization — `mu-image.tsx` CDN bug fix, `preload`→`priority`, `sizes` on all `fill` sites, dead-code cleanup. `onError` fallback skipped by decision. | `performance-audit.md` §2 |
+| Image asset pipeline — script fixed, all oversized gallery masters resized, all raster/heavy-SVG assets converted to WebP, all filenames normalized, 17 confirmed-unused files (906KB) deleted after a repo-wide reference check. `public/assets` 284MB → 23MB. | `performance-audit.md` §9a.1-9a.3 |
 
 Everything else below is **documented, not applied**.
 
@@ -33,15 +35,6 @@ Everything else below is **documented, not applied**.
 
 ## Phase 0 — Verify before touching prod (blocking, do first, cheap)
 
-Both items are read-only checks that determine *which* variant of a later fix to apply — skipping
-them risks picking the wrong option in Phase 1 or shipping a fix for a non-bug.
-
-- [ ] **DNS check for the image-optimizer bug.** Run `dig s3.ap-south-1.amazonaws.com` and
-      `dig s3.ap-south-1.amazonaws.com @8.8.8.8` from inside every deploy environment (local, CI,
-      staging, prod). If one environment's result lands in a private range (`10.0.0.0/8`,
-      `172.16.0.0/12`, `192.168.0.0/16`, `169.254.0.0/16`), that's the affected one — confirms
-      Phase 1's Option B is safe to scope narrowly and tells you exactly which target needs it.
-      *(`performance-audit.md` §2.3)*
 - [ ] **Live DevTools check for the possibly-orphaned React DOM chunk.** Load a static content
       page, `/campus-logo-generator`, `/contact`, and `/team` with DevTools Network open, filter
       for `framework-`, and confirm whether `framework-*.js` (189KB, a second, separate React DOM
@@ -52,128 +45,6 @@ them risks picking the wrong option in Phase 1 or shipping a fix for a non-bug.
       bug, likely caused by `html-to-image` or `react-google-recaptcha-v3` importing `react-dom`
       directly instead of through Next's client runtime — chase down which one.
       *(`bundle-analysis.md` §3)*
-
----
-
-## Phase 1 — Critical: image optimization (highest impact, lowest risk — do this first)
-
-**Why first:** live-confirmed by Lighthouse to be worth **4.58MB** ("Improve image delivery") +
-**4.70MB** ("efficient cache lifetimes") on just 5 CDN images, out of a **5.4MB total page
-payload** — over 85% of one page's weight from one bug. Fails 3 separate weighted Performance
-audits simultaneously (`uses-optimized-images`, `modern-image-formats`, `prioritize-lcp-image`)
-plus 1 Best Practices audit (`image-aspect-ratio`), site-wide, in one root cause.
-*(`performance-audit.md` §2, §9 priority 1, §10 9a, §11a)*
-
-**Root cause:** `src/components/layouts/mu-image.tsx:112-135` force-sets `unoptimized: true` for
-every image whose hostname is `s3.ap-south-1.amazonaws.com` — which is every CDN image on the
-site, since `NEXT_PUBLIC_CDN_URL` resolves to exactly that host. This was a workaround for Next's
-SSRF guard (refuses to fetch a URL resolving to a private IP) triggering in one environment at
-some point; the fix chosen disables optimization **everywhere, permanently**, instead of scoping
-to the one affected environment. `next.config.ts`'s `images.remotePatterns` already allow-lists
-this host correctly — `mu-image.tsx` overrides it before that config gets a chance to apply.
-
-- [ ] **Remove the private-IP hostname-sniffing block** (`mu-image.tsx:112-135`). Recommended:
-      **Option B** — delete the `shouldUnoptimized` detection entirely; let the existing
-      `unoptimized` prop (already part of `ImageProps`, already spread through via `...rest`,
-      already used explicitly at 6 call sites today — `community-card.tsx:20`,
-      `be-a-part/company/hero.tsx:125`, `be-a-part/company/change.tsx:162`,
-      `text-testimonial-card.tsx:161`, `artofteaching/hero.tsx:60`, `mu-loader.tsx:11`) be the
-      only control, defaulting to optimized. Zero new prop, zero new env var, no
-      environment-dependent implicit behavior — a caller that hits the private-IP guard in a
-      specific environment opts out explicitly at that one call site.
-      *(`performance-audit.md` §2.2 Option B)*
-      - Only pursue **Option A** (real CDN in front of S3 — CloudFront + a real
-        `cdn.mulearn.org` subdomain, matching the code's own dead `cdn.mulearn` branch's implied
-        intent) if Phase 0's DNS check shows this is a recurring, environment-independent problem
-        worth infra investment. This is the structurally correct long-term fix but requires infra
-        provisioning — don't block Phase 1 on it.
-- [ ] **Delete the 2 dead branches** regardless of which option chosen: `host.endsWith("cdn.mulearn")`
-      and `host.includes("cdn.mulearn")` (`mu-image.tsx:112-135`) — can never match while
-      `NEXT_PUBLIC_CDN_URL` points at raw S3; keeping them signals an unfinished migration that
-      isn't in progress.
-- [ ] **Replace the fake `preload` prop with real `priority`.** `mu-image.tsx` never reads a
-      `preload` prop — it's spread straight to the DOM as an inert attribute. 15 files pass it,
-      including hero/above-the-fold sections (`home/components/hero.tsx`,
-      `be-a-part/components/campus/hero.tsx`, `layouts/navbar.tsx` ×2,
-      `app/impact-gallery/page.tsx`, full list via `grep -rln "preload" src/`). Swap each to the
-      real `priority` prop (currently used only twice, both `priority={false}` —
-      `be-a-part/components/learners/cta.tsx:43`, `ui/state-display.tsx:115`) on genuinely
-      above-the-fold images only. *(`performance-audit.md` §2.4)*
-- [ ] **`MuImage` production hardening** — do in this order, tests last so cleanup doesn't lock
-      in the current bugs as "expected":
-      1. Delete dead fill-dimension code (`mu-image.tsx:83-102` — two blocks that set
-         `width`/`height` to `"auto"`, both unconditionally erased by the block at 108-111 that
-         runs right after) and the duplicate `isFill` re-declaration at line 88 (already computed
-         at line 27). Pure no-op deletion, zero behavior change.
-      2. Fix the Tailwind class-detection gap: `hasH`/`hasW` (lines 44-55) only match tokens
-         starting literally with `"h-"`/`"w-"`, missing responsive (`md:h-64`) and arbitrary
-         (`h-[200px]`) variants — a real layout-shift risk at specific viewport widths. Widen the
-         matcher (e.g. `/(^|:)h-/`) or require an explicit prop from the caller instead of
-         string-parsing class names.
-      3. Stop silently defaulting `alt` to `""` (line 104) — currently converts a genuinely
-         missing alt on a content image into a silent "decorative" accessibility bug. Either let
-         the TS requirement stand with no runtime fallback, or add a dev-only `console.warn`.
-      4. Add a dev-only `console.warn` when `fill && !sizes` — catches the gap at the source
-         instead of relying on every future call site remembering.
-      5. Add an `onError` fallback (shared placeholder swap) — currently a failed fetch falls
-         through to the browser's default broken-image icon.
-      6. Add a focused test file covering the width/height/style/fill prop matrix, written after
-         steps 1-2 land.
-      *(`performance-audit.md` §2.5-2.6)*
-- [ ] **Add `sizes` to all 15 `fill`-mode call sites** — zero exist today across all 72 `MuImage`
-      usages (`team-card.tsx:45`, `gallery-sneak-peek.tsx:31`, `company-card.tsx:34`,
-      `company-partners-view.tsx:43`, `cta.tsx:41`, `success-stories.tsx:57`,
-      `mission-and-growth.tsx:142`, `interest-groups-view.tsx:300`, `home/gallery.tsx:102`,
-      `special-event-card.tsx:32`, `video-section.tsx:131`, `action.tsx:45`, `media-card.tsx:33`,
-      `campus-logo-generator-view.tsx:15`, `impact-gallery/page.tsx:70`). Without it, Next assumes
-      `100vw` for every one, generating an oversized `srcset` regardless of actual rendered size.
-      One-line addition per site (e.g. a 3-column grid card:
-      `sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"`) — no restructuring.
-      Best effort-to-impact ratio in this entire plan (~15 min total).
-      *(`performance-audit.md` §9a.3)*
-
-**Acceptance criteria:** re-run the live Lighthouse test (or `next build` + local Lighthouse) —
-"Improve image delivery" and "Use efficient cache lifetimes" line items should disappear or drop
-to near-zero for the 5 images measured in §11a; `view-source:` on any CDN image shows a
-`/_next/image?url=...` src, not the raw S3 URL.
-
----
-
-## Phase 1a — Image asset pipeline (comparable impact to Phase 1, different mechanism)
-
-Hits `/gallery` specifically, independent of the CDN-optimizer bug above (these are **local**
-paths under `public/`, not CDN URLs, so they already go through Next's real optimizer — the
-problem is the *source* files themselves).
-
-**WebP compression covered both ways:** existing oversized `.webp` masters get re-exported
-(below), and `optimize-images.ts` gets a `.webp` match case added so future oversized webp files
-are caught by the script too, not just `.png`/`.jpg`.
-
-- [ ] **Re-export oversized `public/assets/gallery/` masters.** 44 of 84 `.webp` files are over
-      2MB, several over 10MB (`dod/4.webp` 13MB, `dod/5.webp` 11MB, `launchpad2024/5.webp` 9.6MB).
-      Next has to decode/re-encode these on every first request for ~16 size/format variants —
-      real, avoidable CPU/TTFB cost on top of the CDN bug. Re-export at realistic display
-      dimensions, target ~300-500KB per master. Separately: `public/` is 284MB, `.git` is 493MB
-      (largely these binaries in history) — consider moving `public/assets/gallery/` to the same
-      S3/CDN origin (`cdnUrl()`) used everywhere else instead of bundling into the app repo.
-      *(`performance-audit.md` §9a.1)*
-- [ ] **Fix `scripts/optimize-images.ts`** (wired to `bun run optimize:images`, a working
-      Sharp-based converter that has never touched the files above):
-      1. `fs.readdir` (line 46) is non-recursive — change to
-         `fs.readdir(fullPath, { recursive: true })` (Node 20+ native; `package.json`'s
-         `engines.node` already requires `>=20.0.0`, no new dependency).
-      2. Delete the dead `src/modules/Public/Home/assets` entry (line 37) — pre-migration path
-         that never existed as a real directory, silently swallowed by a `try/catch`.
-      3. Add a `.webp` match case so already-oversized `.webp` masters get re-compressed too, not
-         just `.png`/`.jpg`.
-      4. Wire into CI (`.github/workflows/pr-validation.yml` currently has no reference to it) or
-         at minimum a pre-commit hook — "remember to run manually" is how the 44 files above
-         accumulated in the first place.
-      *(`performance-audit.md` §9a.2)*
-
-**Acceptance criteria:** `du -sh public/assets/gallery` drops substantially; every file in that
-directory has a `.webp` sibling under the new size ceiling; CI fails if a new oversized master is
-committed (once wired in).
 
 ---
 
@@ -237,16 +108,6 @@ contains team-member name strings; confirm `/events/*` sub-routes each ship only
 
 **Acceptance criteria:** navigating to `/events` paints the hero/heading immediately; the event
 list streams in behind its own skeleton rather than blocking the whole page.
-
----
-
-## Phase 4 — SEO ✅ done (2026-08-29)
-
-Canonical bug, title/description/keywords, twitter card, viewport, `sitemap.ts`/`robots.ts`, and
-heading hierarchy all shipped. Structured data (JSON-LD) was considered and deliberately **not**
-done — narrow upside (mainly Google Jobs indexing for `/careers`), not worth it for this site;
-revisit only if that specific need comes up. Full detail: `feature-folder-structure.md`'s SEO
-section.
 
 ---
 
@@ -372,17 +233,14 @@ for something skippable once the phases above ship:
 
 ## Verification
 
-- **After every bundle-affecting fix** (Phase 1's image work, Phase 2's config/splitting changes,
-  Phase 7's Swiper/react-icons work if pursued): re-run `bun run analyze` and confirm the measured
+- **After every bundle-affecting fix** (Phase 2's config/splitting changes, Phase 7's
+  Swiper/react-icons work if pursued): re-run `bun run analyze` and confirm the measured
   delta against the baseline numbers in `bundle-analysis.md`. Don't assume — measure.
-- **Phase 4 (done):** Google Search Console URL Inspection, run per route, should confirm the
-  rendered canonical matches that route's own URL — do this once live.
-- **After Phases 1-5 land**: a fresh live Lighthouse run (mobile + desktop) against representative
+- **After Phases 2-5 land**: a fresh live Lighthouse run (mobile + desktop) against representative
   page templates (home, a static content page, `/events`, `/team`, `/contact`) is the final gate —
   this is the only way to confirm the manual-verification-only items above, and to confirm the
   cumulative score movement from the 91/96/100/100 baseline in §11.
-- **Execution order reference:** `performance-audit.md` §9e already sequences every fix so no file
-  needs to be opened twice (image fix → SEO metadata pass → security headers → sitemap/robots →
-  accessibility mechanical fixes → Suspense/pagination refactors → structured data → manual
-  verification last). The phase numbering in this doc mirrors that order; follow it rather than
-  re-deriving a sequence.
+- **Execution order reference:** `performance-audit.md` §9e sequences the remaining fixes
+  (security headers → accessibility mechanical fixes → Suspense/pagination refactors → manual
+  verification last) so no file needs to be opened twice. The phase numbering in this doc
+  mirrors that order.

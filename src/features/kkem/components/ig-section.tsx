@@ -39,7 +39,7 @@ export const IGSection = ({ cards, heading, largeImg }: IGSectionProps) => {
               width={576}
               height={576}
               className="w-72 md:w-[36rem] hidden md:block"
-              preload
+              priority
             />
           </div>
 

@@ -30,7 +30,12 @@ export function MediaCard({ item, index }: MediaCardProps) {
           className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
         >
           {item.image ? (
-            <MuImage src={item.image} alt={item.title} fill />
+            <MuImage
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
           ) : (
             <div className="w-full h-full bg-mulearn-gray-600 flex items-center justify-center">
               <span className="text-mulearn font-bold">{item.title}</span>

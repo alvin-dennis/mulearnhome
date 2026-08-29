@@ -7,14 +7,14 @@ export function Level5Section() {
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
-          src="/assets/levelstructure/line_lvl2.svg"
+          src="/assets/levelstructure/line-lvl2.svg"
           alt="Line Path"
           width={1400}
           height={800}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-[1600px] object-contain opacity-40 scale-x-[-1]"
         />
         <MuImage
-          src="/assets/levelstructure/rocket_lvl2.svg"
+          src="/assets/levelstructure/rocket-lvl2.webp"
           alt="Rocket"
           width={300}
           height={400}
@@ -41,7 +41,7 @@ export function Level5Section() {
             <div className="relative flex items-center justify-center lg:justify-start lg:-ml-32 min-h-[500px]">
               <div className="absolute top-[40%] left-[55%] w-[450px] md:w-[500px] h-auto opacity-80 pointer-events-none z-0">
                 <MuImage
-                  src="/assets/levelstructure/planets_lvl5.svg"
+                  src="/assets/levelstructure/planets-lvl5.webp"
                   alt="Floating Planets"
                   width={500}
                   height={500}
@@ -56,7 +56,7 @@ export function Level5Section() {
                 className="relative z-10 w-full max-w-[480px] hover:-translate-y-4 transition-transform duration-700 ease-in-out"
               >
                 <MuImage
-                  src="/assets/levelstructure/astronaut4.svg"
+                  src="/assets/levelstructure/astronaut4.webp"
                   alt="The Global Arena Astronaut"
                   width={480}
                   height={480}

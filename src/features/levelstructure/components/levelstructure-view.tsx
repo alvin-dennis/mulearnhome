@@ -18,7 +18,7 @@ export function LevelstructureView() {
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
-            backgroundImage: "url('/assets/levelstructure/bg_image1.svg')",
+            backgroundImage: "url('/assets/levelstructure/bg-image1.webp')",
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",

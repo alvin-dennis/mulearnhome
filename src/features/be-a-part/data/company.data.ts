@@ -29,87 +29,87 @@ export const CompanyFeatures = [
 
 export const CompanyPartners = [
   {
-    image: "/assets/company/foxlab.svg",
+    image: "/assets/company/foxlab.webp",
     title: "foxlab",
   },
   {
-    image: "/assets/company/gdsc.svg",
+    image: "/assets/company/gdsc.webp",
     title: "gdsc",
   },
   {
-    image: "/assets/company/google_android.svg",
+    image: "/assets/company/google-android.webp",
     title: "google_android",
   },
   {
-    image: "/assets/company/Google.svg",
+    image: "/assets/company/google.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/ieee.svg",
+    image: "/assets/company/ieee.webp",
     title: "ieee",
   },
   {
-    image: "/assets/company/Softnotions.svg",
+    image: "/assets/company/softnotions.webp",
     title: "softnotions",
   },
   {
-    image: "/assets/company/tiltlabs.svg",
+    image: "/assets/company/tiltlabs.webp",
     title: "tiltlabs",
   },
   {
-    image: "/assets/company/tp.svg",
+    image: "/assets/company/tp.webp",
     title: "Technopark",
   },
   {
-    image: "/assets/company/kuttycoders.svg",
+    image: "/assets/company/kuttycoders.webp",
     title: "foxlab",
   },
   {
-    image: "/assets/company/Triassic.svg",
+    image: "/assets/company/triassic.webp",
     title: "foxlab",
   },
 ];
 
 export const CompanyPartners1 = [
   {
-    image: "/assets/company/icfoss.svg",
+    image: "/assets/company/icfoss.webp",
     title: "foxlab",
   },
   {
-    image: "/assets/company/kites.svg",
+    image: "/assets/company/kites.webp",
     title: "gdsc",
   },
   {
-    image: "/assets/company/ksum.svg",
+    image: "/assets/company/ksum.webp",
     title: "google_android",
   },
   {
-    image: "/assets/company/kdisc.svg",
+    image: "/assets/company/kdisc.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/blockchain.svg",
+    image: "/assets/company/blockchain.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/Ecesis.svg",
+    image: "/assets/company/ecesis.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/Experion.svg",
+    image: "/assets/company/experion.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/Pits.svg",
+    image: "/assets/company/pits.webp",
     title: "Google",
   },
   {
-    image: "/assets/company/SunTec.svg",
+    image: "/assets/company/suntec.webp",
     title: "Google",
   },
 
   {
-    image: "/assets/company/Thinkpalm.svg",
+    image: "/assets/company/thinkpalm.webp",
     title: "Google",
   },
 ];

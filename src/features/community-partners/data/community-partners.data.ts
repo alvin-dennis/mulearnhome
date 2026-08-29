@@ -66,7 +66,7 @@ export const communityPartners = [
   },
   {
     name: "Google Educators",
-    image: "src/modules/Public/CommPartners/assets/partners/google_android.webp",
+    image: "src/modules/Public/CommPartners/assets/partners/google-android.webp",
     link: "https://developer.android.com/teach",
   },
   {

@@ -378,31 +378,31 @@ export const galleryEvents: GalleryEvent[] = (
       name: "OLYMPUS: The HR Icon",
       date: "March 7, 2026",
       location: "Carestack, Technopark, Thiruvananthapuram",
-      coverImage: "/assets/gallery/hrOlympus/2.webp",
+      coverImage: "/assets/gallery/hrolympus/2.webp",
       description:
         "OLYMPUS: The HR Icon is the inaugural flagship hybrid program that brings together students and HR professionals to bridge the gap between academic learning and industry practice. Hosted for management students and HR enthusiasts",
       media: [
         {
           type: "image",
-          src: "/assets/gallery/hrOlympus/1.webp",
+          src: "/assets/gallery/hrolympus/1.webp",
           alt: "Panel discussion at OLYMPUS: The HR Icon",
         },
 
         {
           type: "image",
-          src: "/assets/gallery/hrOlympus/2.webp",
+          src: "/assets/gallery/hrolympus/2.webp",
           alt: "Workshop session at OLYMPUS: The HR Icon",
         },
 
         {
           type: "image",
-          src: "/assets/gallery/hrOlympus/3.webp",
+          src: "/assets/gallery/hrolympus/3.webp",
           alt: "Attendees networking at OLYMPUS: The HR Icon",
         },
 
         {
           type: "image",
-          src: "/assets/gallery/hrOlympus/4.webp",
+          src: "/assets/gallery/hrolympus/4.webp",
           alt: "Group photo from OLYMPUS: The HR Icon",
         },
       ],

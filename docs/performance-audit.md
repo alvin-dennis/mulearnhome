@@ -35,278 +35,14 @@ the issues found are specific and fixable, not systemic.
 
 ---
 
-## 2. Critical: Image Optimization Is Bypassed Site-Wide — and what's actually blocking it
+## 2. Image optimization — done (2026-08-29)
 
-**This section was deepened in a second audit pass.** The first pass (still below) identified
-*that* `mu-image.tsx` force-disables optimization. This pass answers *why the workaround
-exists at all* and what unblocks it for real, rather than just deleting the check.
-
-### 2.0 Root cause: what "resolved to private ip" actually means here
-
-Next.js's built-in image optimizer (`/_next/image`) fetches the source image itself, server-side,
-before resizing/re-encoding it. Since Next 13, it refuses to fetch a URL whose hostname resolves
-(via the DNS the *optimizer's own runtime* sees) to a private/reserved IP range — a real SSRF
-guard, not a bug in Next. The comment in `mu-image.tsx:113` names this exact error, which means
-it was genuinely observed in some environment.
-
-`NEXT_PUBLIC_CDN_URL=https://s3.ap-south-1.amazonaws.com/cdn.mulearn` (`.env`) — note this is
-`s3.ap-south-1.amazonaws.com` **with `/cdn.mulearn` as a URL path segment**, not `cdn.mulearn` as
-a subdomain. So every `cdnUrl()`-built image src has hostname exactly
-`s3.ap-south-1.amazonaws.com`, and the most likely trigger is one of:
-
-1. **An S3 Gateway VPC Endpoint in the deploy environment.** If the app (or a preview/staging
-   environment) runs inside an AWS VPC that has an S3 gateway endpoint attached to its route
-   table, requests to `s3.ap-south-1.amazonaws.com` get transparently routed through the
-   endpoint — and depending on the resolver in that environment, the hostname can resolve to
-   an internal/endpoint-scoped IP rather than S3's public anycast IP. This would reproduce the
-   error deterministically in that one environment (e.g. a staging box inside the VPC) while
-   looking fine from a developer's laptop — which fits a workaround that "solves it everywhere"
-   because nobody could pin down *which* environment triggered it.
-2. **A DNS resolver / hosts-file override** in one deploy target pointing the S3 hostname at an
-   internal proxy/cache IP for cost or latency reasons.
-
-Either way, the fix that was chosen — `shouldUnoptimized = true` for every environment,
-permanently — solves the failure but destroys the feature everywhere, including the
-environments (most of them: developer machines, most CI, and very likely production if it's not
-the affected one) where the private-IP condition never applied. That's the core diagnosis: **one
-environment's transient DNS-routing quirk became a permanent, global regression.**
-
-### 2.1 Evidence the fix was headed toward a real CDN and got abandoned mid-way
-
-`mu-image.tsx:120-124` checks three conditions to trigger `unoptimized`:
-```ts
-host === "s3.ap-south-1.amazonaws.com" ||
-host.endsWith("cdn.mulearn") ||
-host.includes("cdn.mulearn")
-```
-The 2nd and 3rd conditions are **dead code** — `host` (from `new URL(srcVal).hostname`) can never
-equal or end with `"cdn.mulearn"` while every real image src is `s3.ap-south-1.amazonaws.com/...`.
-A hostname literally named `cdn.mulearn` (or `cdn.mulearn.org`) only makes sense if the intent
-was to eventually put a real CDN (CloudFront, or any reverse proxy) in front of the S3 bucket,
-with a custom domain — at which point the private-IP problem disappears on its own, because a
-CDN edge resolves to its own public anycast/edge IPs, never the origin's VPC-internal routing.
-**This dead branch is a fossil of an unfinished migration**: someone anticipated `cdn.mulearn`
-becoming the real hostname, wrote the check for it, but `NEXT_PUBLIC_CDN_URL` was never actually
-cut over to that domain — so the branch has never once matched, and the site has been stuck on
-raw S3 (and therefore stuck on the `unoptimized: true` blanket workaround) ever since.
-
-### 2.2 The actual fix, in order of how much infrastructure change it requires
-
-**Option A — put a real CDN in front of S3 (recommended, matches the code's own intent).**
-Provision a CloudFront distribution (or any CDN) with the S3 bucket as origin, point a real
-subdomain (`cdn.mulearn.org` or similar) at it, and change `NEXT_PUBLIC_CDN_URL` to that
-hostname. Add the new hostname to `next.config.ts`'s `remotePatterns` (already has 8 entries,
-one more is trivial), then delete `mu-image.tsx`'s entire `shouldUnoptimized` block — the
-private-IP condition cannot occur against a CDN's public edge IPs. This is the only option that
-fixes the problem instead of routing around it, and it also gets far better cache-hit rates and
-lower latency than serving straight from a single S3 region.
-
-**Option B — recommended if a real CDN migration isn't feasible right now: drop the automatic
-hostname-sniffing entirely and let the existing `unoptimized` prop control it per call site,
-explicitly, defaulting to optimized.** `ImageProps` (from `next/image`) already declares
-`unoptimized?: boolean`, and `mu-image.tsx` already spreads it through via `...rest` — six call
-sites already pass it explicitly today (`community-card.tsx:20`, `hero.tsx:125` in
-`be-a-part/company`, `change.tsx:162`, `text-testimonial-card.tsx:161`,
-`artofteaching/hero.tsx:60`, `mu-loader.tsx:11`), currently redundant since the automatic
-detection silently overrides it anyway. Deleting the `shouldUnoptimized` detection block (and
-the forced merge in `imageProps`) means:
-- Every image defaults to **optimized** (the prop is `undefined`/falsy unless a caller sets it).
-- A caller that knows its specific `src` will hit the private-IP guard in a given environment
-  opts out explicitly, at that one call site: `<MuImage src={...} unoptimized />`.
-- No new env var, no global flag, no implicit environment-dependent behavior — the bypass is a
-  visible, per-image choice in the JSX itself, consistent with how the 6 existing call sites
-  already use the prop.
-
-This is a **deletion**, not an addition — no new prop needs to be invented; the mechanism already
-exists in `ImageProps` and is already used in the codebase today, just neutralized by the
-auto-detection sitting in front of it.
-
-**Option C — switch to a custom Next.js image loader** (`images.loader: "custom"` in
-`next.config.ts` + a `loader` function), which hands URL construction to your own code and
-**never routes the fetch through Next's built-in optimizer at all** — the private-IP check is
-part of that built-in optimizer specifically, so a custom loader sidesteps it entirely. Only
-worth it if pairing with an external image CDN/transformation service (Cloudinary, imgix, or
-even a thin self-hosted resize endpoint) rather than continuing to point at raw S3 — otherwise
-you've just moved the unoptimized-S3 problem behind a different door.
-
-**Do this regardless of which option is chosen:** delete the two dead `host.endsWith/includes("cdn.mulearn")`
-branches — they've never matched and never will while `NEXT_PUBLIC_CDN_URL` points at the raw S3
-host; keeping them signals a migration that isn't actually in progress.
-
-### 2.3 Verifying which option applies before touching production
-
-Don't guess — reproduce it. Run `dig s3.ap-south-1.amazonaws.com` (or `nslookup`) from inside
-each deploy environment (local, CI, staging, prod) and compare against a public resolver
-(`dig s3.ap-south-1.amazonaws.com @8.8.8.8`). If one environment's result differs and lands in a
-private range (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, or link-local `169.254.0.0/16`),
-that's the affected one — confirms Option B's env-flag approach is safe to scope narrowly, and
-tells you exactly which deploy target needs the flag.
-
----
-
-### 2.4 First-pass findings (context for the above)
-
-The rest of this section is the original, first-pass description of the same bug — kept for
-the exact `file:line` references and the compounding issues found alongside it.
-
-**File:** `src/components/layouts/mu-image.tsx:112-135`
-
-```ts
-// Detect if the image src is a remote CDN/S3 host that may resolve to private IPs
-// and disable Next.js image optimization for those URLs to avoid the "resolved to private ip" error.
-let shouldUnoptimized = false;
-try {
-  const srcVal = (rest as any).src;
-  if (typeof srcVal === "string" && /^https?:\/\//.test(srcVal)) {
-    const parsed = new URL(srcVal);
-    const host = parsed.hostname;
-    if (
-      host === "s3.ap-south-1.amazonaws.com" ||
-      host.endsWith("cdn.mulearn") ||
-      host.includes("cdn.mulearn")
-    ) {
-      shouldUnoptimized = true;
-    }
-  }
-} catch (_e) {
-  /* ignore parsing errors */
-}
-
-const imageProps = {
-  ...(rest as object),
-  unoptimized: shouldUnoptimized || (rest as any).unoptimized,
-} as ImageProps;
-```
-
-**Why this is the direct cause of "images are slow":**
-
-`NEXT_PUBLIC_CDN_URL` resolves to `https://s3.ap-south-1.amazonaws.com/cdn.mulearn`
-(`src/config/env.client.ts`, `.env`). Every asset built with `cdnUrl()`
-(`src/shared/api/cdn.ts`) therefore has a `src` hostname of exactly
-`s3.ap-south-1.amazonaws.com` — which matches the **first** condition above
-unconditionally. The result: **every CDN-hosted image on the entire site is served with
-`unoptimized: true`** — the original, full-resolution file straight from S3, with no
-resizing to the viewport, no AVIF/WebP conversion, and no compression tiering. This is true
-regardless of what size the image is actually displayed at (a 48px avatar and a
-2000px-wide hero both ship their full source file).
-
-The irony: `next.config.ts`'s `images.remotePatterns` already explicitly allow-lists
-`s3.ap-south-1.amazonaws.com` (and 8 other hosts) for optimization — the whole
-`images` config block is correctly set up (`formats: ["image/avif", "image/webp"]`,
-sensible `deviceSizes`/`imageSizes`, `minimumCacheTTL: 604800`), but `mu-image.tsx`
-overrides it before any of that config gets a chance to apply.
-
-The code comment explains the origin: at some point, `s3.ap-south-1.amazonaws.com`
-resolved to a private IP address in some environment, and Next's image optimizer refuses
-to proxy such URLs as an SSRF protection (this is a real, legitimate Next.js safeguard).
-The workaround chosen was "disable optimization for this host entirely" rather than
-something narrower (e.g. fixing the DNS/network issue in that specific environment, or
-scoping the workaround to only the environment where it actually happens). As written, it
-permanently and unconditionally punishes every image everywhere, in every environment,
-including production.
-
-### Compounding issues on top of the same bug
-
-**Redundant per-call `unoptimized` props** — these already inherit `unoptimized: true`
-from the hostname match above, so the explicit prop is a no-op, but signals the same
-misunderstanding is spreading to individual call sites:
-- `src/features/community-partners/components/community-card.tsx:20`
-- `src/features/be-a-part/components/company/hero.tsx:125`
-- `src/features/be-a-part/components/company/change.tsx:162`
-- `src/features/testimonials/components/text-testimonial-card.tsx:161`
-- `src/features/artofteaching/components/hero.tsx:60`
-- `src/components/layouts/mu-loader.tsx:11` (loader graphic — likely intentional here,
-  small asset, low impact either way)
-
-**`preload` is not a real `next/image`/`MuImage` prop** — `mu-image.tsx` never reads or
-acts on a `preload` prop; it's spread straight through to the underlying `<img>` as an
-unrecognized DOM attribute and has zero effect on loading behavior. 15 files pass it,
-including hero/above-the-fold sections that clearly intended eager loading:
-`src/features/home/components/hero.tsx`, `src/features/be-a-part/components/campus/hero.tsx`,
-`src/components/layouts/navbar.tsx` (x2), `src/app/impact-gallery/page.tsx`, and others
-(`grep -rln "preload" src/` for the full list). The real prop for this is `priority` —
-which is used only twice in the entire codebase, both as `priority={false}`
-(`src/features/be-a-part/components/learners/cta.tsx:43`,
-`src/components/ui/state-display.tsx:115`). Practical effect: **every hero image in the
-app is lazy-loaded** (Next's default) rather than eagerly loaded, on top of also being
-unoptimized.
-
-**Missing `sizes` on `fill`-mode images** — e.g.
-`src/features/team/components/team-card.tsx:45` uses `fill` with no `sizes` prop, which
-makes Next.js assume a `100vw` sizing hint by default and can cause over-fetching of a
-larger source than needed for a small card.
-
-### 2.5 Production-level code audit of `MuImage` itself (beyond the private-IP bug)
-
-The private-IP/`unoptimized` bug above (§2.0-2.4) is one defect in this component. Reading the
-full 143-line file (`src/components/layouts/mu-image.tsx`) top to bottom surfaces several more,
-independent of it — these matter for a production-grade fix, not just patching the one bug:
-
-1. **~20 lines of dead code (lines 83-102).** The `className && isFill` block (89-92) and the
-   `isFillOnly` block (98-102) both set `newStyle.width`/`newStyle.height` to `"auto"` when
-   `fill` is true. But the very next block (108-111), which runs unconditionally whenever
-   `isFill` is true, **deletes** `width`/`height` from `newStyle` outright:
-   ```ts
-   if (isFill) {
-     if (Object.hasOwn(newStyle, "width")) delete (newStyle as any).width;
-     if (Object.hasOwn(newStyle, "height")) delete (newStyle as any).height;
-   }
-   ```
-   Whatever the two earlier blocks wrote is unconditionally erased immediately after. Both
-   blocks are provably complete no-ops — safe to delete outright, along with the duplicate,
-   shadowed `isFill` re-declaration at line 88 (already computed once at line 27).
-2. **Tailwind class detection misses responsive/arbitrary variants (lines 44-55).** `hasH`/`hasW`
-   only match tokens that literally start with `"h-"`/`"w-"`. A responsive class like `md:h-64`
-   does **not** start with `"h-"` (it starts with `"md:"`), so the component can wrongly conclude
-   no CSS modifies that dimension at that breakpoint and set a conflicting inline pixel style —
-   a real layout-shift risk that only manifests at specific viewport widths, which is exactly the
-   kind of bug that survives a desktop-only manual QA pass. Same gap applies to arbitrary values
-   (`h-[200px]`). No test file exists for this component to catch it.
-3. **`alt` is silently defaulted to `""` (line 104).** `next/image`'s `ImageProps.alt` is a
-   required `string` at the type level — this wrapper catches a missing/`undefined` runtime value
-   and defaults it to `""`, which is the screen-reader signal for "this image is purely
-   decorative." A genuinely missing alt on a *content* image (e.g. someone forgets to pass one
-   for a new team-member photo) silently becomes an accessibility bug instead of a visible one —
-   the type system's guarantee is undermined by the very wrapper meant to make images easier to
-   use correctly.
-4. **No structural enforcement of `sizes` on `fill` images.** §9a.3 (below) found 15 `fill`-mode
-   call sites, zero of which pass `sizes`. `MuImage` is the single choke point that could catch
-   this at the source — e.g. a dev-only `console.warn` when `fill && !sizes` — rather than
-   relying on every future call site remembering unprompted.
-5. **No `onError` handling.** A failed image fetch (broken S3 path, revoked permission, or — once
-   optimization is correctly restored per §2.2 — a private-IP failure specific to one
-   environment) falls through to the browser's default broken-image icon with no graceful
-   fallback anywhere in the component.
-6. **8 `as any` casts** concentrated in this one file (already counted in §5's TypeScript
-   strictness table) — the direct symptom of the prop-shape-guessing pattern that produced
-   finding 1 above; tightening the types would have caught the dead code at compile-review time.
-7. **Zero unit tests** for an 11-branch conditional component. Every finding above is only
-   discoverable by reading the source line-by-line, not by running anything that exists today.
-
-### 2.6 Implementation plan for `MuImage` (documented here, not yet applied)
-
-Ordered so each step is independently shippable and reviewable on its own:
-
-1. Remove the private-IP hostname-sniffing block entirely (§2.2 Option B) — the existing
-   `unoptimized` prop (already part of `ImageProps`, already used explicitly at the 6 call sites
-   listed under "Compounding issues" above) becomes the only control, defaulting to optimized.
-2. Delete the dead fill-dimension blocks (lines 83-102) and the duplicate `isFill` declaration
-   (line 88) — no behavior change, pure cleanup enabled by finding 2.5.1.
-3. Fix the Tailwind detection gap (2.5.2): widen the matcher to catch a breakpoint-prefixed or
-   arbitrary-value token (e.g. a pattern like `/(^|:)h-/`, `/(^|:)w-/`), or — more robustly —
-   stop string-parsing Tailwind class names altogether and require an explicit prop from the
-   caller when CSS controls sizing, trading a little call-site ergonomics for removing a whole
-   class of string-matching bugs.
-4. Stop silently defaulting `alt` to `""` (2.5.3): either let the TypeScript requirement stand
-   with no runtime fallback, or add a dev-only `console.warn` when `alt` is falsy so a missing
-   alt is visible during development instead of silently read as decorative.
-5. Add a dev-only warning when `fill` is `true` and `sizes` is absent (2.5.4) — closes §9a.3 at
-   the source instead of requiring a manual sweep of every call site.
-6. Add an `onError` fallback — a shared placeholder swap — so a failed fetch never surfaces the
-   browser's default broken-image icon (2.5.5).
-7. Add a focused test file covering the width/height/style/fill prop matrix, written *after*
-   steps 2-3 land — testing against today's dead-code-laden version would lock in bugs 1-2 as
-   "expected" behavior.
+`mu-image.tsx`'s private-IP hostname-sniffing block and both dead `cdn.mulearn` branches are
+deleted; `unoptimized` is now the only control. `MuImage`'s dead fill-dimension code, duplicate
+`isFill`, silent `alt` fallback, and narrow `hasH`/`hasW` regex are all fixed; a dev-only warn
+was added for `fill` without `sizes`. `onError` fallback and a dedicated test file were
+considered and deliberately skipped (see `implementation-plan.md`'s "0. Already done" table for
+why). Full history superseded — nothing here is still open.
 
 ---
 
@@ -899,20 +635,10 @@ what a JSON API response contains).
 
 ## 9. Suggested Priority Order (informational — nothing here has been executed)
 
-Ranked by impact-to-effort ratio, not strictly by section order:
+Image optimization (§2, §9a.1-9a.3) and SEO (canonical, metadata, sitemap/robots, heading
+hierarchy) are done — see `implementation-plan.md` §0. Ranked by impact-to-effort ratio for
+what's left, not strictly by section order:
 
-1. **Fix `mu-image.tsx`'s unoptimized-forcing logic** (§2) — single highest-impact,
-   lowest-risk fix available. §2.2's Option B (env-flag-gated, 10 minutes, zero infra) is the
-   fastest path; Option A (real CDN in front of S3) is the correct long-term fix and is what
-   the code's own dead `cdn.mulearn` branch already implies was intended.
-1a. **Re-export the oversized `public/assets/gallery/` masters and fix `optimize-images.ts`'s
-    non-recursive scan** (§9a.1-9a.2) — 44 gallery files over 2MB (up to 13MB) have never once
-    been run through the repo's own compression script because it doesn't recurse into
-    subdirectories; this is comparable in impact to item 1 above since it hits the same pages
-    (`/gallery`) with the same symptom (slow images) via a completely different mechanism.
-1b. **Add `sizes` to all 15 `fill`-mode images** (§9a.3) — zero `sizes` props exist anywhere in
-    the codebase; ~15 minutes of work across 15 files, likely the best effort-to-impact ratio
-    in this entire document.
 2. **Stop shipping `team.data.ts` (177KB) and `enablers.data.ts` (46KB) as client JS**
    (§5b-5c) — the second-highest-impact fix in this whole audit, and it's concentrated in
    exactly two routes (`/team`, `/be-a-part/enablers`). The `children`-slot refactor
@@ -953,19 +679,9 @@ Ranked by impact-to-effort ratio, not strictly by section order:
     `next/dynamic`-splitting the largest client views (contact form, campus logo
     generator, donation form) the way `home-view.tsx` already does for its below-the-fold
     sections.
-11. Longer-term: if server-side data caching becomes a priority, evaluate migrating
-    `src/features/events/api/events.api.ts` specifically (the one route with genuine
-    server-side backend fetching) off axios onto native `fetch` to unlock Next's
-    Data Cache/ISR for that route — see the full fetch-vs-axios analysis in
-    `docs/feature-folder-structure.md`. Not a repo-wide `fetcher.ts` rewrite — that doc
-    explains why the benefit is concentrated in just this one file. Pairs naturally with
-    item 5's Suspense work, since ISR + streaming solve related-but-distinct problems on
-    the same route.
-12. **SEO** (out of this doc's scope but audited in the same pass) — see
-    `docs/feature-folder-structure.md`'s "SEO: not done for all pages" section for the
-    canonical-URL bug (32 routes point their canonical/OG URL at the homepage), missing
-    Twitter card metadata, and the heading-hierarchy issues (home page has 10 `<h1>`s;
-    `/team`/`/careers`/`/contact`/`/kkem` have zero).
+11. The `events.api.ts` axios→fetch conversion (would've unlocked Next's Data Cache/ISR for
+    `/events`) was investigated and **dropped** — not needed, see `implementation-plan.md`
+    Phase 7.
 
 ---
 
@@ -973,98 +689,18 @@ Ranked by impact-to-effort ratio, not strictly by section order:
 
 A second, more intensive pass — actually walking the filesystem (`du`, `find -size`, `git
 ls-files`) and reading the build-time tooling itself, not just grepping `src/` — surfaced four
-issues the first pass missed entirely, two of which (9a.1, 9a.2) are arguably bigger than
-anything already found, since they compound every other image finding above.
+issues the first pass missed entirely. Three are now done (9a.1-9a.3); 9a.4 remains open.
 
-### 9a.1 CRITICAL: `public/` is 284MB, individually tracked in git, and mostly never optimized
+### 9a.1-9a.3 — image asset pipeline: done (2026-08-29)
 
-```
-$ du -sh public
-284M    public
-$ git ls-files public | wc -l
-223
-```
-
-`public/assets/gallery/` alone holds 84 `.webp` files, **44 of which are over 2MB**, several
-over 10MB (`dod/4.webp` 13MB, `dod/5.webp` 11MB, `launchpad2024/5.webp` 9.6MB). These are
-*master* files — full-resolution exports — served directly as local image sources through
-`MuImage`/`next/image` (confirmed via `gallery.data.ts`: `coverImage: "/assets/gallery/dod/4.webp"`,
-a local path, not a CDN URL). Because it's a local path (not `https://...`), it does **not**
-match `mu-image.tsx`'s CDN host-check (§2), so these images *do* go through Next's real
-optimizer — but that only makes it worse in one specific way: **Next has to decode and re-encode
-a 13MB source file on every first request for every one of its ~16 size/format variant
-combinations** (8 `deviceSizes` × 2 formats, roughly), which is real, avoidable CPU and TTFB cost
-per cold cache entry, compounding poor LCP on `/gallery` regardless of the CDN bug.
-
-Separately from runtime cost, this is a **repository health problem**: `.git` is **493MB**,
-overwhelmingly attributable to these binary assets living in git history. Every clone, every CI
-checkout, every deploy build pulls the full 284MB of `public/` — for context, that's larger than
-this app's entire JS bundle output multiplied many times over. None of this is Lighthouse-scored
-directly, but it's the single largest lever on **build/deploy time** and **cold-start image
-optimization latency** found in either audit pass.
-
-**Fix:** re-export every gallery master at realistic display dimensions (nothing on this site
-displays a gallery thumbnail at native 4000px+ width) before committing it — target under
-~300-500KB per master, letting Next's optimizer handle final per-device sizing from there, not
-raw camera/export resolution. For the git-bloat half of this problem specifically, consider
-moving `public/assets/gallery/` to the same S3/CDN origin already used for everything else
-(`cdnUrl()`) instead of bundling it into the Next.js app/repo at all — this is exactly the kind
-of large, rarely-changed binary asset object storage exists for.
-
-### 9a.2 CRITICAL: the image-optimization script exists but never touches the images that need it most
-
-`scripts/optimize-images.ts` (wired to `bun run optimize:images`) is a real, working Sharp-based
-PNG/JPG→WebP converter — but it has two bugs that mean it has **never once processed the
-gallery images from §9a.1, or `public/assets/home/permute.png` (4.8MB, still a raw PNG)**:
-
-```ts
-// scripts/optimize-images.ts:37
-const imageDirs = ["assets", "src/modules/Public/Home/assets"];
-// ...
-const files = await fs.readdir(fullPath);  // line 46 — NOT recursive
-```
-
-1. **`fs.readdir` is non-recursive** — it lists only files directly inside `public/assets/`,
-   never descending into `public/assets/gallery/*/`, `public/assets/home/`, or any other
-   subdirectory. Confirmed directly: `public/assets/logo.png` has a `logo.webp` sibling (the
-   script *did* process it, since it's a top-level file), but `public/assets/home/permute.png`
-   (4.8MB) has no `.webp` sibling anywhere — it has never been touched by this script, because
-   it's one directory too deep.
-2. **`src/modules/Public/Home/assets` is dead pre-migration cruft** — that path refers to the
-   layer-based structure this repo moved away from months ago (per `docs/migration-progress.md`),
-   and even before the migration the path was wrong (it's joined onto `publicDir`, i.e.
-   `public/src/modules/...`, which never existed as a real directory). The surrounding
-   `try { await fs.access(fullPath) } catch { /* skip */ }` silently swallows this every run —
-   the script has likely never logged an error for it, so nobody would notice it's dead.
-3. **Not wired into `build`, `prepare`, or CI** (`.github/workflows/pr-validation.yml` has no
-   reference to it) — even for the one top-level directory it does cover correctly, it only runs
-   when a developer remembers to invoke it manually.
-
-**Fix:** change line 37 to a recursive `fs.readdir(fullPath, { recursive: true })` (Node 20+
-supports this natively — `engines.node` in `package.json` already requires `>=20.0.0`, so no new
-dependency needed), delete the dead `src/modules/Public/Home/assets` entry, and add a `.webp`
-match case too (so already-oversized `.webp` masters like the 13MB gallery files get
-re-compressed, not just `.png`/`.jpg` ones). Then either wire it into CI as a checked step (fail
-the build if an unoptimized master is committed) or at minimum into `prepare`/a pre-commit hook,
-since "remember to run this manually" is exactly how §9a.1's 44 oversized files accumulated.
-
-### 9a.3 Every `fill`-mode image ships with zero `sizes` prop — confirmed count
-
-Grepping every `MuImage`/`Image` usage in `src/` for a `sizes=` prop returns **zero matches**
-across all 72 `MuImage` call sites. Of those, at least 15 use `fill` mode (`team-card.tsx:45`,
-`gallery-sneak-peek.tsx:31`, `company-card.tsx:34`, `company-partners-view.tsx:43`,
-`cta.tsx:41`, `success-stories.tsx:57`, `mission-and-growth.tsx:142`,
-`interest-groups-view.tsx:300`, `home/gallery.tsx:102`, `special-event-card.tsx:32`,
-`video-section.tsx:131`, `action.tsx:45`, `media-card.tsx:33`,
-`campus-logo-generator-view.tsx:15`, `impact-gallery/page.tsx:70`). Without `sizes`, Next.js
-assumes each of these renders at `100vw` — full viewport width — when in reality every one of
-them is a bounded card/thumbnail/avatar inside a grid or fixed container. This means the
-`srcset` Next generates always includes (and the browser often picks) a far larger image
-variant than the element ever actually displays at. **Fix:** add a `sizes` prop matching each
-component's actual rendered width at each breakpoint (e.g. a 3-column grid card is roughly
-`sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"`, not the `100vw` default) —
-this is a one-line addition per call site, no component restructuring needed, and is the single
-most under-priced fix in this entire audit relative to effort (15 files, ~15 minutes total).
+`public/` was 284MB (mostly unoptimized gallery masters up to 13MB, full-DSLR resolution) with
+a broken, never-recursing `optimize-images.ts` and zero `sizes` props on any `fill`-mode image.
+All three fixed together: script made recursive (dead `src/modules/Public/Home/assets` entry
+removed, `.webp` re-compress case added), every oversized master resized to a 2400px max
+dimension, `sizes` added to all 15 `fill` sites. 17 files with zero references anywhere in
+`src/` (confirmed via repo-wide exact-filename search, not just a `src/`-scoped grep) deleted —
+`public/assets` now 23MB, down from 284MB. CI/pre-commit wiring for the script remains a real
+open follow-up (see `implementation-plan.md`) so this doesn't reaccumulate.
 
 ### 9a.4 `next.config.ts` leaks the framework via `X-Powered-By`
 
@@ -1098,9 +734,9 @@ cross-referencing 8 sections. Verified against this repo's current state
 
 | Lighthouse audit | Current state | Fix | Ref |
 |---|---|---|---|
-| `uses-optimized-images` / `modern-image-formats` / `uses-responsive-images` | **Fails hard** — every CDN image ships `unoptimized: true`, full-res, no AVIF/WebP | Fix `mu-image.tsx`'s host-match bug (§2) | §2 |
-| `prioritize-lcp-image` (LCP element preload) | Hero images use a fake `preload` prop, default to lazy | Replace with real `priority` prop on every above-the-fold hero `<Image>`/`MuImage` | §2 |
-| `image-size-responsive` (`fill` without `sizes`) | `team-card.tsx:45` and others | Add `sizes` to every `fill`-mode image | §2 |
+| `uses-optimized-images` / `modern-image-formats` / `uses-responsive-images` | ✅ done — `mu-image.tsx`'s host-match bug fixed | — | §2 |
+| `prioritize-lcp-image` (LCP element preload) | ✅ done — real `priority` prop on every above-the-fold hero | — | §2 |
+| `image-size-responsive` (`fill` without `sizes`) | ✅ done — `sizes` on all 15 `fill`-mode images | — | §2 |
 | `total-byte-weight` / `unused-javascript` | `team.data.ts` (177KB) + `enablers.data.ts` (46KB) ship as client JS; ~614KB shared-JS floor on every route | Server/client boundary refactor (§5b-c); run `@next/bundle-analyzer` to attribute the 614KB floor (§5e) | §5 |
 | `render-blocking-resources` | No `middleware.ts`, no route-level `loading.tsx`, `/events` blocks fully on backend fetch | Add `<Suspense>` + `loading.tsx` for `/events` (§6b) | §6b |
 | `dom-size` | `team-view.tsx` renders every member of every team unbounded | Paginate `/team` like `mission-and-growth.tsx` already does (§6c) | §6c |
@@ -1110,10 +746,9 @@ cross-referencing 8 sections. Verified against this repo's current state
 | `bootup-time` / `mainthread-work-breakdown` | `campus-logo-generator-view.tsx`'s `htmlToImage.toPng()` is click-gated, not on mount | No action needed | §6a |
 | `uses-text-compression` | `compress: true` already set in `next.config.ts` | No action needed | — |
 
-**Ceiling without any fixes:** the image bug (§2) alone is enough to keep Performance well
-under 100 — it fails 3 separate weighted audits (`uses-optimized-images`,
-`modern-image-formats`, `prioritize-lcp-image`) simultaneously, on every page, because it's
-site-wide, not per-route.
+**Remaining ceiling:** with the image bug (§2) fixed, the client-bundle/data-boundary findings
+above (`team.data.ts`/`enablers.data.ts` as client JS, no `<Suspense>` on `/events`, unbounded
+`/team` DOM, missing `optimizePackageImports`) are what's left keeping Performance under 100.
 
 ### 9b. Accessibility — target 100
 
@@ -1150,50 +785,34 @@ real Lighthouse mobile+desktop run per page template before calling this categor
 
 | Lighthouse audit | Current state | Fix | Ref |
 |---|---|---|---|
-| `document-title` / `meta-description` | ✅ done — all routes now call `constructMetadata()` with unique title/description | — | implementation-plan.md Phase 4 |
-| `canonical` | ✅ done — every route passes its own `canonical` | — | implementation-plan.md Phase 4 |
+| `document-title` / `meta-description` | ✅ done — all routes now call `constructMetadata()` with unique title/description | — | implementation-plan.md §0 |
+| `canonical` | ✅ done — every route passes its own `canonical` | — | implementation-plan.md §0 |
 | `link-text` | Not audited in this pass — spot-check for "click here"/"read more" style anchor text across CTAs before calling this done | Manual pass over CTA copy | — |
-| `is-crawlable` / `robots-txt` | ✅ done — `src/app/robots.ts` + `src/app/sitemap.ts` added | — | implementation-plan.md Phase 4 |
+| `is-crawlable` / `robots-txt` | ✅ done — `src/app/robots.ts` + `src/app/sitemap.ts` added | — | implementation-plan.md §0 |
 | `hreflang` | N/A — single-locale site, no i18n routing exists; this audit passes vacuously | No action needed | — |
 | `font-size` (legible, no tiny text) | Not statically auditable from Tailwind classes alone without rendering | Verify with a real mobile Lighthouse run | — |
 | `tap-targets` | Same as Accessibility's `target-size` — shared audit surface between the two categories | See §9b | — |
-| `structured-data` (not scored directly, but feeds rich-result eligibility) | Still only 1 of 39 routes emits JSON-LD — **deliberately left as-is**, not a gap | Considered (`Organization`/`WebSite`, `Event`, `JobPosting`) and skipped as a judgment call; narrow upside for this site | implementation-plan.md Phase 4 |
-| `viewport` meta tag | ✅ done — `src/app/layout.tsx` now exports `viewport` | — | implementation-plan.md Phase 4 |
+| `structured-data` (not scored directly, but feeds rich-result eligibility) | Still only 1 of 39 routes emits JSON-LD — **deliberately left as-is**, not a gap | Considered (`Organization`/`WebSite`, `Event`, `JobPosting`) and skipped as a judgment call; narrow upside for this site | implementation-plan.md §0 |
+| `viewport` meta tag | ✅ done — `src/app/layout.tsx` now exports `viewport` | — | implementation-plan.md §0 |
 
 ### 9e. Execution order to hit 100/100 across all four categories with minimum wasted motion
 
-Several fixes above close audits in more than one category simultaneously — doing them in
-this order avoids re-touching the same file twice:
+Image optimization (§2) and all of SEO (canonical, metadata, `sitemap.ts`/`robots.ts`,
+heading hierarchy — JSON-LD skipped by decision) are done; see `implementation-plan.md` §0.
+What's left, in the order that avoids re-touching the same file twice:
 
-1. **`mu-image.tsx` fix (§2)** — closes 3 Performance audits + 1 Best Practices audit
-   (`image-aspect-ratio`) in one change. Highest leverage in this entire checklist.
-2. **`canonical` + `viewport` + metadata table (feature-folder-structure.md Phases 1-2)** —
-   closes 4 SEO audits at once; touches every `page.tsx`, so batch it in one pass.
-3. **Security headers, non-CSP first, then CSP in report-only (§7)** — closes
+1. **Security headers, non-CSP first, then CSP in report-only (§7)** — closes
    `csp-xss` (Best Practices) without risking breakage, since report-only mode enforces
    nothing while surfacing violations.
-4. **`sitemap.ts` + `robots.ts` (Phase 3)** — closes `is-crawlable`, two new self-contained
-   files, no dependency on anything else in this list.
-5. **Accessibility mechanical fixes (§4's 9 warnings + heading-order)** — all
+2. **Accessibility mechanical fixes (§4's 9 warnings + heading-order)** — all
    `git grep`-able, zero design review needed since none change visual styling.
-6. **`/events` Suspense + `/team` pagination (§6b-c)** — closes `dom-size` and
-   `render-blocking-resources`; larger refactors, do these once the cheaper wins above are
-   banked.
-7. **Structured data (Phase 4)** — doesn't move a Lighthouse *score* (JSON-LD isn't a
-   scored audit) but is bundled here since it's part of the same SEO pass and cheap to add
-   once every route's metadata is already being touched in step 2.
-8. **Manual-only verification pass** — `color-contrast`, `target-size`, `font-size`,
+3. **`/events` Suspense + `/team` pagination (§6b-c)** — closes `dom-size` and
+   `render-blocking-resources`.
+4. **Manual-only verification pass** — `color-contrast`, `target-size`, `font-size`,
    `link-text`, `no-vulnerable-libraries`, `deprecations`: run actual Lighthouse (mobile +
    desktop) against representative page templates (home, a static content page, `/events`,
-   `/team`, `/contact` with its form) after steps 1-7 land. These audits cannot be
-   confirmed by source review alone — treat this step as mandatory, not optional, before
-   claiming 100/100 anywhere.
-
-**Reality check:** every fix in steps 1-7 is traceable to a specific `file:line` finding
-already documented in this pair of docs — nothing in this checklist is speculative. Step 8
-is the only part of "100/100" that requires an actual browser/Lighthouse run rather than a
-code change, because contrast ratios, tap-target pixel sizes, and console runtime warnings
-don't exist as facts until the page is rendered.
+   `/team`, `/contact` with its form) after steps 1-3 land. These audits cannot be
+   confirmed by source review alone.
 
 ---
 
@@ -1227,7 +846,7 @@ applies, because `unoptimized: true` means the image never reaches Next's optimi
 at all). **This is the clearest real-world confirmation available that §2's fix — restoring
 optimization — directly closes both of these Lighthouse findings simultaneously**, worth ~4.6MB
 of the page's ~5.4MB total payload ("Avoid enormous network payloads", Total size **5,408 KiB**).
-Treat the post-fix version of this exact Lighthouse run as the verification step for §2.2's fix.
+A fresh live Lighthouse run is the verification step for §2's now-shipped fix.
 
 ### 11b. New findings not previously documented in either doc
 
@@ -1269,15 +888,15 @@ Performance line items in one change.
 
 ## 12. Status: Done vs. To-Do
 
-**Most of this document is still documented-not-applied — Phase 4 (SEO) is the exception, fully
-shipped 2026-08-29.** This table exists so a future reader (or session) doesn't have to re-read
-either doc end-to-end to find out what's real versus proposed.
+**Phases 1, 1a, and 4 are shipped (2026-08-29); everything else below is still
+documented-not-applied.** This table exists so a future reader (or session) doesn't have to
+re-read either doc end-to-end to find out what's real versus proposed.
 
 | Finding | Section | Status |
 |---|---|---|
-| `@next/bundle-analyzer` wired into `next.config.ts` + `bun run analyze` script | §6e, `docs/bundle-analysis.md` | **Applied** — the one real code change made so far |
-| `mu-image.tsx` private-IP/`unoptimized` bug | §2.0-2.4 | Documented — not applied |
-| `MuImage` dead code, `alt` default, missing `sizes`/`onError`/tests | §2.5-2.6 | Documented — not applied |
+| `@next/bundle-analyzer` wired into `next.config.ts` + `bun run analyze` script | §6e, `docs/bundle-analysis.md` | **Applied** |
+| `mu-image.tsx` private-IP/`unoptimized` bug | §2 | **Applied** |
+| `MuImage` dead code, `alt` default, missing `sizes` | §2 | **Applied**. `onError`/tests deliberately skipped — see implementation-plan.md Phase 1 |
 | `team.data.ts`/`enablers.data.ts` shipped as client JS | §6b-c | Documented — not applied |
 | `next.config.ts` `optimizePackageImports` (now with measured ~150KB Swiper savings, see `docs/bundle-analysis.md` §4) | §6d | Documented — not applied |
 | `/events` sub-routes bundled into one shared chunk (barrel-import cost) | `docs/bundle-analysis.md` §5 | Documented — not applied |
@@ -1287,14 +906,14 @@ either doc end-to-end to find out what's real versus proposed.
 | `/events` Suspense + `loading.tsx` | §7b | Documented — not applied |
 | `/team` pagination | §7c | Documented — not applied |
 | Security headers (`headers()` block, CSP report-only rollout) | §8 | Documented — not applied; live-confirmed missing (§11b) |
-| `public/assets/gallery/` oversized masters + non-recursive `optimize-images.ts` | §9a.1-9a.2 | Documented — not applied |
-| `sizes` on 15 `fill`-mode images | §9a.3 | Documented — not applied |
+| `public/assets/gallery/` oversized masters + non-recursive `optimize-images.ts` + unused files | §9a.1-9a.3 | **Applied** — 284MB → 23MB (resize + WebP conversion + 17 unused files deleted). CI/pre-commit wiring not done |
+| `sizes` on 15 `fill`-mode images | §9a.3 | **Applied** |
 | `poweredByHeader: false` | §9a.4 | Documented — not applied |
-| SEO canonical-URL fix (all routes) | implementation-plan.md Phase 4 | **Applied** |
-| `constructMetadata()` per-route title/description/keywords, twitter card, viewport | implementation-plan.md Phase 4 | **Applied** |
-| `sitemap.ts` / `robots.ts` | implementation-plan.md Phase 4 | **Applied** |
-| JSON-LD structured data | implementation-plan.md Phase 4 | Considered, deliberately not applied — narrow upside for this site |
-| Heading hierarchy fixes | implementation-plan.md Phase 4 | **Applied** |
+| SEO canonical-URL fix (all routes) | implementation-plan.md §0 | **Applied** |
+| `constructMetadata()` per-route title/description/keywords, twitter card, viewport | implementation-plan.md §0 | **Applied** |
+| `sitemap.ts` / `robots.ts` | implementation-plan.md §0 | **Applied** |
+| JSON-LD structured data | implementation-plan.md §0 | Considered, deliberately not applied — narrow upside for this site |
+| Heading hierarchy fixes | implementation-plan.md §0 | **Applied** |
 | Accessibility mechanical fixes (9 lint warnings) | §5 | Documented — not applied |
 | `console.log` cleanup, unused `localFont` import | §5 | Documented — not applied |
 | Donation form double-submit guard | `feature-folder-structure.md` "Bonus finding" | Documented — not applied |
