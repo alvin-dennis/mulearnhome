@@ -5,9 +5,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, type CarouselHandle, CarouselSlide } from "@/components/ui/carousel";
-import { enablers } from "../../data/enablers.data";
-
-const colleges = enablers.colleges;
+import { enablerColleges as colleges } from "../../data/enablers.data";
 
 export function FiftyPlusColleges() {
   const carouselRef = useRef<CarouselHandle>(null);

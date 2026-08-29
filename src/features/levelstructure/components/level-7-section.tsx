@@ -1,5 +1,12 @@
-import { Sparkle } from "lucide-react";
 import { MotionDiv, MuImage } from "@/components/layouts";
+import { SparkleField } from "./sparkle-field";
+
+const sparkles = [
+  { position: "top-[15%] left-[5%]", size: "w-4 h-4" },
+  { position: "top-[40%] right-[10%]", size: "w-6 h-6" },
+  { position: "bottom-[20%] left-[15%]", size: "w-5 h-5" },
+  { position: "top-[60%] left-[45%]", size: "w-3 h-3" },
+];
 
 export function Level7Section() {
   return (
@@ -96,10 +103,7 @@ export function Level7Section() {
         </MotionDiv>
 
         <div className="absolute inset-0 pointer-events-none opacity-40">
-          <Sparkle className="absolute top-[15%] left-[5%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue" />
-          <Sparkle className="absolute top-[40%] right-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue" />
-          <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue" />
-          <Sparkle className="absolute top-[60%] left-[45%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue" />
+          <SparkleField sparkles={sparkles} />
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ const withBundleAnalyzer = createBundleAnalyzer({
 const nextConfig: NextConfig = {
   compress: true,
   reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     // Serve next-gen formats (AVIF > WebP > fallback)
     formats: ["image/avif", "image/webp"],

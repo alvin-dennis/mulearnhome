@@ -1,4 +1,4 @@
-import { InspirationStationView } from "@/features/events";
+import { InspirationStationView } from "@/features/events/components/inspiration-station";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({

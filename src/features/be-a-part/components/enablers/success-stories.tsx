@@ -7,9 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, type CarouselHandle, CarouselSlide } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { enablers } from "../../data/enablers.data";
-
-const stories = enablers.successStories;
+import { enablerSuccessStories as stories } from "../../data/enablers.data";
 
 const getEmbedUrl = (url: string) => {
   try {

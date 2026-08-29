@@ -1,6 +1,26 @@
-import { Sparkle } from "lucide-react";
 import { MotionDiv, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
+import { SparkleField } from "./sparkle-field";
+
+const backgroundSparkles = [
+  { position: "top-[10%] left-[20%]", size: "w-4 h-4", opacity: "opacity-50" },
+  { position: "top-[30%] left-[5%]", size: "w-6 h-6", opacity: "opacity-40" },
+  { position: "bottom-[20%] left-[15%]", size: "w-5 h-5", opacity: "opacity-60" },
+  { position: "top-[15%] right-[25%]", size: "w-3 h-3", opacity: "opacity-30" },
+  { position: "top-[40%] right-[5%]", size: "w-6 h-6", opacity: "opacity-50" },
+  { position: "bottom-[10%] right-[20%]", size: "w-4 h-4", opacity: "opacity-40" },
+  { position: "top-[50%] left-[30%]", size: "w-3 h-3", opacity: "opacity-50" },
+  { position: "bottom-[40%] right-[30%]", size: "w-5 h-5", opacity: "opacity-60" },
+];
+
+const foregroundSparkles = [
+  { position: "top-10 left-4", size: "w-6 h-6", opacity: "opacity-50", z: "z-50" },
+  { position: "top-1/4 right-0", size: "w-5 h-5", opacity: "opacity-40", z: "z-50" },
+  { position: "bottom-[40%] left-[-10%]", size: "w-4 h-4", opacity: "opacity-50", z: "z-50" },
+  { position: "top-[60%] right-[-15%]", size: "w-3 h-3", opacity: "opacity-30", z: "z-50" },
+  { position: "bottom-4 left-1/2", size: "w-5 h-5", opacity: "opacity-60", z: "z-50" },
+  { position: "top-[-5%] right-[-25%]", size: "w-4 h-4", opacity: "opacity-40", z: "z-50" },
+];
 
 export function Level1Section() {
   return (
@@ -21,14 +41,7 @@ export function Level1Section() {
           height={400}
           className="hidden md:block absolute top-0 left-[-10%] sm:left-[-5%] lg:left-[5%] z-20 w-[40%] sm:w-[30%] max-w-[300px] object-contain scale-x-[-1]"
         />
-        <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute top-[30%] left-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-40" />
-        <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
-        <Sparkle className="absolute top-[15%] right-[25%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
-        <Sparkle className="absolute top-[40%] right-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute bottom-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-40" />
-        <Sparkle className="absolute top-[50%] left-[30%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
+        <SparkleField sparkles={backgroundSparkles} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 w-full z-10">
@@ -40,12 +53,7 @@ export function Level1Section() {
             className="relative flex items-center justify-center order-1"
           >
             <div className="relative w-full max-w-lg aspect-square hidden md:flex flex-col items-center justify-center">
-              <Sparkle className="absolute top-10 left-4 text-mulearn-trusty-blue w-6 h-6 z-50 fill-mulearn-trusty-blue opacity-50" />
-              <Sparkle className="absolute top-1/4 right-0 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-40" />
-              <Sparkle className="absolute bottom-[40%] left-[-10%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-50" />
-              <Sparkle className="absolute top-[60%] right-[-15%] text-mulearn-trusty-blue w-3 h-3 z-50 fill-mulearn-trusty-blue opacity-30" />
-              <Sparkle className="absolute bottom-4 left-1/2 text-mulearn-trusty-blue w-5 h-5 z-50 fill-mulearn-trusty-blue opacity-60" />
-              <Sparkle className="absolute top-[-5%] right-[-25%] text-mulearn-trusty-blue w-4 h-4 z-50 fill-mulearn-trusty-blue opacity-40" />
+              <SparkleField sparkles={foregroundSparkles} />
 
               <MuImage
                 src="/assets/levelstructure/planet-lvl1.webp"

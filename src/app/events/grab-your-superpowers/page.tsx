@@ -1,4 +1,4 @@
-import { GrabYourSuperpowersView } from "@/features/events";
+import { GrabYourSuperpowersView } from "@/features/events/components/grab-your-superpowers";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({

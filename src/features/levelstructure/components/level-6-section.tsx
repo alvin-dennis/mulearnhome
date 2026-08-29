@@ -1,5 +1,21 @@
-import { Sparkle } from "lucide-react";
 import { MotionDiv, MuImage } from "@/components/layouts";
+import { SparkleField } from "./sparkle-field";
+
+const backgroundSparkles = [
+  { position: "top-[10%] left-[20%]", size: "w-4 h-4", opacity: "opacity-50" },
+  { position: "top-[30%] left-[5%]", size: "w-6 h-6", opacity: "opacity-40" },
+  { position: "bottom-[20%] left-[15%]", size: "w-5 h-5", opacity: "opacity-60" },
+  { position: "top-[15%] right-[25%]", size: "w-3 h-3", opacity: "opacity-30" },
+  { position: "top-[40%] right-[5%]", size: "w-6 h-6", opacity: "opacity-50" },
+  { position: "bottom-[10%] right-[20%]", size: "w-4 h-4", opacity: "opacity-40" },
+  { position: "top-[50%] left-[30%]", size: "w-3 h-3", opacity: "opacity-50" },
+  { position: "bottom-[40%] right-[30%]", size: "w-5 h-5", opacity: "opacity-60" },
+];
+
+const foregroundSparkles = [
+  { position: "top-[10%] right-[20%]", size: "w-4 h-4", opacity: "opacity-50" },
+  { position: "bottom-[40%] left-[10%]", size: "w-6 h-6", opacity: "opacity-30" },
+];
 
 export function Level6Section() {
   return (
@@ -20,14 +36,7 @@ export function Level6Section() {
           height={400}
           className="hidden md:block absolute top-0 right-[-10%] sm:right-[-5%] lg:right-[5%] z-20 w-[40%] sm:w-[30%] max-w-[300px] object-contain"
         />
-        <Sparkle className="absolute top-[10%] left-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute top-[30%] left-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-40" />
-        <Sparkle className="absolute bottom-[20%] left-[15%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
-        <Sparkle className="absolute top-[15%] right-[25%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-30" />
-        <Sparkle className="absolute top-[40%] right-[5%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute bottom-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-40" />
-        <Sparkle className="absolute top-[50%] left-[30%] text-mulearn-trusty-blue w-3 h-3 fill-mulearn-trusty-blue opacity-50" />
-        <Sparkle className="absolute bottom-[40%] right-[30%] text-mulearn-trusty-blue w-5 h-5 fill-mulearn-trusty-blue opacity-60" />
+        <SparkleField sparkles={backgroundSparkles} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 w-full z-10">
@@ -97,8 +106,7 @@ export function Level6Section() {
               />
             </div>
 
-            <Sparkle className="absolute top-[10%] right-[20%] text-mulearn-trusty-blue w-4 h-4 fill-mulearn-trusty-blue opacity-50" />
-            <Sparkle className="absolute bottom-[40%] left-[10%] text-mulearn-trusty-blue w-6 h-6 fill-mulearn-trusty-blue opacity-30" />
+            <SparkleField sparkles={foregroundSparkles} />
 
             <div className="absolute bottom-[-30%] right-[10%] w-64 h-64 md:w-72 md:h-72 opacity-50 z-0">
               <MuImage

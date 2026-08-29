@@ -9,7 +9,7 @@ import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 import { cdnUrl, fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
-import { enablers } from "../../data/enablers.data";
+import { enablerFaculties } from "../../data/enablers.data";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,7 +27,7 @@ export function MissionAndGrowth() {
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
 
   useEffect(() => {
-    const visibleFaculties = enablers.faculties.slice(0, displayedCount);
+    const visibleFaculties = enablerFaculties.slice(0, displayedCount);
     const missingMuidList = visibleFaculties
       .map((faculty) => faculty.muid)
       .filter((muid) => publicProfileImages[muid] === undefined);
@@ -62,7 +62,7 @@ export function MissionAndGrowth() {
     setDisplayedCount((prev) => prev + 18);
   };
 
-  const hasMore = displayedCount < enablers.faculties.length;
+  const hasMore = displayedCount < enablerFaculties.length;
 
   if (hasError) {
     return null;
@@ -128,7 +128,7 @@ export function MissionAndGrowth() {
               ))}
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-3 mt-6">
-              {enablers.faculties.slice(0, displayedCount).map((c) => (
+              {enablerFaculties.slice(0, displayedCount).map((c) => (
                 <Link
                   key={c.muid}
                   href={`${clientEnv.NEXT_PUBLIC_APP_URL}profile/${c.muid}`}

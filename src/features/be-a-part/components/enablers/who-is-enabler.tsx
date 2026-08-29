@@ -1,8 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Sparkle } from "lucide-react";
-import Image from "next/image";
 import { MuImage } from "@/components/layouts";
-import { enablers } from "../../data/enablers.data";
+import { enablerFeatures } from "../../data/enablers.data";
 
 const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
   <IconComponent className="w-9 h-9 text-mulearn-whitish" />
@@ -25,7 +24,7 @@ export function WhoIsEnabler() {
               community engagement.
             </p>
             <div className="flex flex-col gap-2.5 w-full">
-              {enablers.features.map((feature) => (
+              {enablerFeatures.map((feature) => (
                 <div
                   key={feature.text}
                   className="flex items-center gap-4 w-full max-w-[511px] min-h-[80px] bg-mulearn rounded-2xl px-6 py-4"
@@ -69,7 +68,7 @@ export function WhoIsEnabler() {
             </p>
 
             <div className="flex flex-col gap-2.5 w-full">
-              {enablers.features.map((feature) => (
+              {enablerFeatures.map((feature) => (
                 <div
                   key={feature.text}
                   className="w-full p-5 bg-mulearn rounded-2xl flex flex-col justify-start items-start gap-2.5"

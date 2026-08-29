@@ -1,4 +1,4 @@
-import { OfficeHoursView } from "@/features/events";
+import { OfficeHoursView } from "@/features/events/components/office-hours";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({

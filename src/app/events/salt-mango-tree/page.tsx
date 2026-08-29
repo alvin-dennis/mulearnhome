@@ -1,4 +1,4 @@
-import { SaltMangoTreeView } from "@/features/events";
+import { SaltMangoTreeView } from "@/features/events/components/salt-mango-tree";
 import { constructMetadata } from "@/lib/metadata";
 
 export const metadata = constructMetadata({

@@ -5,5 +5,10 @@ export {
   CompanyPartners1,
   SuccessStories,
 } from "./company.data";
-export { enablers } from "./enablers.data";
+export {
+  enablerColleges,
+  enablerFaculties,
+  enablerFeatures,
+  enablerSuccessStories,
+} from "./enablers.data";
 export { benefits, obtainables, onboardingSteps, whyKarma } from "./learners.data";
