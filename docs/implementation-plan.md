@@ -20,31 +20,7 @@
 
 ---
 
-## 0. Already done
-
-| Item | Evidence |
-|---|---|
-| `@next/bundle-analyzer` wired into `next.config.ts` (`withBundleAnalyzer`, gated on `ANALYZE=true`) + `package.json`'s `analyze` script | `bundle-analysis.md` §1, §10 |
-| SEO — all of it (canonical, title/description/keywords, twitter card, viewport, `sitemap.ts`/`robots.ts`, heading hierarchy). JSON-LD skipped by decision. | `feature-folder-structure.md`'s SEO section |
-| Image optimization — `mu-image.tsx` CDN bug fix, `preload`→`priority`, `sizes` on all `fill` sites, dead-code cleanup. `onError` fallback skipped by decision. | `performance-audit.md` §2 |
-| Image asset pipeline — script fixed, all oversized gallery masters resized, all raster/heavy-SVG assets converted to WebP, all filenames normalized, 17 confirmed-unused files (906KB) deleted after a repo-wide reference check. `public/assets` 284MB → 23MB. | `performance-audit.md` §9a.1-9a.3 |
-
-Everything else below is **documented, not applied**.
-
----
-
-## Phase 0 — Verify before touching prod (blocking, do first, cheap)
-
-- [ ] **Live DevTools check for the possibly-orphaned React DOM chunk.** Load a static content
-      page, `/campus-logo-generator`, `/contact`, and `/team` with DevTools Network open, filter
-      for `framework-`, and confirm whether `framework-*.js` (189KB, a second, separate React DOM
-      + React + Scheduler build) is ever actually requested. Static analysis found it referenced
-      by zero generated route HTML and zero other chunk — but that's not proof it never loads
-      (could be a route generated after the build, or an edge-case dynamic import). If it never
-      loads: dead build output, harmless, skip. If it does load: a genuine ~189KB duplicate-React
-      bug, likely caused by `html-to-image` or `react-google-recaptcha-v3` importing `react-dom`
-      directly instead of through Next's client runtime — chase down which one.
-      *(`bundle-analysis.md` §3)*
+Everything below is **documented, not applied**.
 
 ---
 
