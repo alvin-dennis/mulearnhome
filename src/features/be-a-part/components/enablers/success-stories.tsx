@@ -2,16 +2,12 @@
 
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useRef, useState } from "react";
-import { Autoplay } from "swiper/modules";
-import { Swiper, type SwiperRef, SwiperSlide } from "swiper/react";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, type CarouselHandle, CarouselSlide } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { enablers } from "../../data/enablers.data";
-
-import "swiper/css";
-import "swiper/css/navigation";
 
 const stories = enablers.successStories;
 
@@ -102,7 +98,7 @@ function VideoCard({ story }: { story: (typeof stories)[0] }) {
 }
 
 export function EnablersSuccessStories() {
-  const swiperRef = useRef<SwiperRef>(null);
+  const carouselRef = useRef<CarouselHandle>(null);
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-20">
@@ -116,7 +112,7 @@ export function EnablersSuccessStories() {
       <div className="relative px-14">
         <Button
           variant="default"
-          onClick={() => swiperRef.current?.swiper.slidePrev()}
+          onClick={() => carouselRef.current?.scrollPrev()}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-20 rounded-full w-12 h-12"
         >
           <ChevronLeft className="w-6 h-6 text-mulearn-whitish" />
@@ -124,35 +120,28 @@ export function EnablersSuccessStories() {
 
         <Button
           variant="default"
-          onClick={() => swiperRef.current?.swiper.slideNext()}
+          onClick={() => carouselRef.current?.scrollNext()}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-20 rounded-full w-12 h-12"
         >
           <ChevronRight className="w-6 h-6 text-mulearn-whitish" />
         </Button>
 
-        <Swiper
-          ref={swiperRef}
-          modules={[Autoplay]}
-          spaceBetween={24}
-          slidesPerView={1}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="!pb-4"
+        <Carousel
+          ref={carouselRef}
+          options={{ loop: true }}
+          autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+          trackClassName="-ml-6"
+          className="pb-4"
         >
           {stories.map((story, index) => (
-            <SwiperSlide key={`${story.url}-${index}`} className="h-auto">
+            <CarouselSlide
+              key={`${story.url}-${index}`}
+              className="h-auto pl-6 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+            >
               <VideoCard story={story} />
-            </SwiperSlide>
+            </CarouselSlide>
           ))}
-        </Swiper>
+        </Carousel>
       </div>
     </section>
   );

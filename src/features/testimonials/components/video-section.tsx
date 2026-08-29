@@ -2,19 +2,12 @@
 
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { MotionDiv } from "@/components/layouts";
+import { useRef, useState } from "react";
+import { MotionDiv, MuImage } from "@/components/layouts";
+import { Button } from "@/components/ui/button";
+import { Carousel, type CarouselHandle, CarouselSlide } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import type { VideoTestimonial } from "../types";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import type SwiperCore from "swiper";
-import { MuImage } from "@/components/layouts";
-import { Button } from "@/components/ui/button";
 
 interface VideoSectionProps {
   testimonials: VideoTestimonial[];
@@ -22,21 +15,20 @@ interface VideoSectionProps {
 
 export function VideoSection({ testimonials }: VideoSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
+  const carouselRef = useRef<CarouselHandle>(null);
   const activeVideo = testimonials[activeIndex];
 
-  useEffect(() => {
-    if (swiperInstance && swiperInstance.activeIndex !== activeIndex) {
-      swiperInstance.slideTo(activeIndex);
-    }
-  }, [activeIndex, swiperInstance]);
+  const goToIndex = (index: number) => {
+    setActiveIndex(index);
+    carouselRef.current?.scrollTo(index);
+  };
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    goToIndex(activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1);
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    goToIndex(activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1);
   };
 
   if (!testimonials.length) return null;
@@ -97,28 +89,21 @@ export function VideoSection({ testimonials }: VideoSectionProps) {
       </div>
 
       <div className="mt-16">
-        <Swiper
-          onSwiper={setSwiperInstance}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          modules={[Navigation, Pagination]}
-          spaceBetween={24}
-          slidesPerView={1.2}
-          centeredSlides={true}
-          breakpoints={{
-            640: { slidesPerView: 2, centeredSlides: false },
-            768: { slidesPerView: 3, centeredSlides: false },
-            1024: { slidesPerView: 4, centeredSlides: false },
-          }}
+        <Carousel
+          ref={carouselRef}
+          onSlideChange={setActiveIndex}
+          options={{ align: "start" }}
+          trackClassName="-ml-6"
           className="pb-16"
         >
           {testimonials.map((video, index) => (
-            <SwiperSlide key={video.id}>
+            <CarouselSlide
+              key={video.id}
+              className="pl-6 flex-[0_0_83.333%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%]"
+            >
               <button
                 type="button"
-                onClick={() => {
-                  setActiveIndex(index);
-                  swiperInstance?.slideTo(index);
-                }}
+                onClick={() => goToIndex(index)}
                 className={cn(
                   "relative w-full rounded-3xl overflow-hidden aspect-video group transition-all duration-500 border-4",
                   activeIndex === index ? "border-mulearn scale-105 z-10" : "hover:scale-105",
@@ -155,9 +140,9 @@ export function VideoSection({ testimonials }: VideoSectionProps) {
                 </p>
                 <p className="text-xs text-mulearn-gray-600/60 font-medium">{video.role}</p>
               </div>
-            </SwiperSlide>
+            </CarouselSlide>
           ))}
-        </Swiper>
+        </Carousel>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
+import { Linkedin } from "lucide-react";
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
 import { MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/shared";
@@ -41,7 +41,7 @@ export const MentorCard = ({ name, designation, image, linkedIn }: MentorCardPro
             rel="noopener noreferrer"
             className="mb-3 inline-block"
           >
-            <FaLinkedin className="w-7 h-7 text-mulearn-trusty-blue hover:scale-110 transition-transform duration-300 hover:opacity-80" />
+            <Linkedin className="w-7 h-7 text-mulearn-trusty-blue hover:scale-110 transition-transform duration-300 hover:opacity-80" />
           </Link>
         )}
 

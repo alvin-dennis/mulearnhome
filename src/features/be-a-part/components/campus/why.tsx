@@ -1,5 +1,4 @@
-import { BookOpen, Users } from "lucide-react";
-import { BiSolidRightArrow } from "react-icons/bi";
+import { ArrowRight, BookOpen, Users } from "lucide-react";
 import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -31,7 +30,7 @@ export function WhyChapter() {
               <ul className="space-y-3 text-mulearn-gray-600">
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>
                     Earn <strong className="text-mulearn">Karma Points</strong> as proof-of-work
@@ -39,13 +38,13 @@ export function WhyChapter() {
                 </li>
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>Build peer-to-peer learning circles across domains</span>
                 </li>
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>
                     Access internships via <strong className="text-mulearn">Launchpad</strong> &{" "}
@@ -54,7 +53,7 @@ export function WhyChapter() {
                 </li>
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>Join 64,000+ community with 400+ partner companies</span>
                 </li>
@@ -76,7 +75,7 @@ export function WhyChapter() {
               <ul className="space-y-3 text-mulearn-gray-600">
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>
                     Align with <strong className="text-mulearn">Education 4.0</strong> standards
@@ -84,13 +83,13 @@ export function WhyChapter() {
                 </li>
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>Proof of student skilling for NAAC/CSR metrics</span>
                 </li>
                 <li className="flex gap-3">
                   <div className="rounded-lg flex items-center justify-center">
-                    <BiSolidRightArrow className="w-5 h-5 text-mulearn" />
+                    <ArrowRight className="w-5 h-5 text-mulearn" />
                   </div>
                   <span>Connect to Kerala&apos;s largest skilling ecosystem</span>
                 </li>

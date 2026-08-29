@@ -54,7 +54,7 @@ export function Footer() {
                         aria-label={social.label}
                         className="w-10 h-10 rounded-lg bg-mulearn-whitish border border-mulearn-gray-200 flex items-center justify-center text-mulearn-gray-600 transition-all duration-300 hover:bg-mulearn hover:text-mulearn-whitish hover:shadow-lg hover:scale-105"
                       >
-                        <Icon />
+                        <Icon size={18} />
                       </Link>
                     );
                   })}

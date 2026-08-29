@@ -12,7 +12,7 @@ export function WhoIsEnabler() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
       <div className="relative w-full rounded-[20px] bg-mulearn shadow-md overflow-hidden">
-        <div className="hidden md:block" style={{ minHeight: "480px" }}>
+        <div className="hidden md:block" style={{ minHeight: "580px" }}>
           <Sparkle className="absolute left-10 top-8 z-20 fill-mulearn-whitish text-mulearn-whitish" />
           <div className="relative z-10 flex flex-col justify-start items-start gap-5 px-10 pt-24 pb-10 max-w-[620px]">
             <h2 className="text-5xl font-bold leading-[1.3]">
@@ -46,10 +46,10 @@ export function WhoIsEnabler() {
           <Sparkle className="absolute right-[130px] top-[320px] z-20 fill-mulearn-whitish text-mulearn-whitish" />
 
           <MuImage
-            style={{ right: 0, top: 0 }}
-            width={515}
-            height={480}
-            className="absolute rounded-r-[20px] object-cover"
+            style={{ right: 0, bottom: 0 }}
+            width={620}
+            height={580}
+            className="absolute rounded-r-[20px] object-contain"
             src="/assets/be-a-part/enabler-character.webp"
             alt="Campus Enabler Illustration"
           />
@@ -89,7 +89,7 @@ export function WhoIsEnabler() {
               alt="Campus Enabler Illustration"
               width={515}
               height={480}
-              className="w-full max-w-xs object-contain"
+              className="w-full max-w-xs h-full object-contain"
             />
           </div>
         </div>

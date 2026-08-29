@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { CalendarClock, History, Radio, Repeat } from "lucide-react";
+import { CalendarClock, Radio, Repeat } from "lucide-react";
 import { Suspense } from "react";
 import { MotionDiv } from "@/components/layouts";
 import { fetchPublicEvents } from "../../api/events.api";
@@ -54,12 +54,10 @@ async function EventsList() {
 
   let ongoingEvents: Event[] | null = null;
   let upcomingEvents: Event[] | null = null;
-  let completedEvents: Event[] | null = null;
 
-  const [ongoingResult, upcomingResult, completedResult] = await Promise.allSettled([
+  const [ongoingResult, upcomingResult] = await Promise.allSettled([
     fetchPublicEvents({ status: "ongoing" }),
     fetchPublicEvents({ status: "upcoming" }),
-    fetchPublicEvents({ status: "completed" }),
   ]);
 
   if (ongoingResult.status === "fulfilled" && Array.isArray(ongoingResult.value)) {
@@ -72,12 +70,6 @@ async function EventsList() {
     upcomingEvents = safeMapEvents(upcomingResult.value, "upcoming");
   } else if (upcomingResult.status === "rejected") {
     console.error("Failed to fetch upcoming events:", upcomingResult.reason);
-  }
-
-  if (completedResult.status === "fulfilled" && Array.isArray(completedResult.value)) {
-    completedEvents = safeMapEvents(completedResult.value, "completed");
-  } else if (completedResult.status === "rejected") {
-    console.error("Failed to fetch completed events:", completedResult.reason);
   }
 
   const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
@@ -113,16 +105,6 @@ async function EventsList() {
       emptyTitle: "No sessions scheduled",
       emptyDescription:
         "Our weekly shows are between sessions right now. The next one will land here soon.",
-    },
-    {
-      id: "past",
-      navLabel: "Past",
-      title: "Past Events",
-      icon: <History className="h-4 w-4" />,
-      events: completedEvents,
-      emptyTitle: "The archive is empty",
-      emptyDescription:
-        "Once events wrap up, they'll show up here so you can look back on what happened.",
     },
   ];
 

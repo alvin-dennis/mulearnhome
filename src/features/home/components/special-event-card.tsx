@@ -1,8 +1,7 @@
 "use client";
 
+import { Calendar, Clock, MapPin } from "lucide-react";
 import { useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FiCalendar, FiClock } from "react-icons/fi";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -64,7 +63,7 @@ export const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ spe
               {specialevent.date && (
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn-greyish/50 text-mulearn-blackish">
-                    <FiCalendar className="w-5 h-5" />
+                    <Calendar className="w-5 h-5" />
                   </div>
                   <p className="font-medium text-base">{specialevent.date}</p>
                 </div>
@@ -72,7 +71,7 @@ export const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ spe
               {specialevent.time && (
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn/10 text-mulearn">
-                    <FiClock className="w-5 h-5" />
+                    <Clock className="w-5 h-5" />
                   </div>
                   <p>{specialevent.time}</p>
                 </div>
@@ -80,7 +79,7 @@ export const SpecialEventCard: React.FC<{ specialevent: SpecialEvent }> = ({ spe
               {specialevent.location && (
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-mulearn/10 text-mulearn">
-                    <FaMapMarkerAlt className="w-5 h-5" />
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <p>{specialevent.location}</p>
                 </div>

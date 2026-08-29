@@ -71,34 +71,6 @@ contains team-member name strings; confirm `/events/*` sub-routes each ship only
 
 ---
 
-## Phase 7 — Dependency swaps (decided: do these two)
-
-Swiper→Embla and react-icons→lucide-react are approved — do both. The third investigated item
-(scoped `events.api.ts` axios→fetch conversion) is dropped, not needed.
-
-- [ ] **Swiper → Embla Carousel migration.** Measured case: current Swiper usage costs ~360KB
-      (`6993-*.js`); even after Phase 2's `optimizePackageImports` fix, Swiper's non-negotiable
-      core alone is ~170-190KB; Embla's entire footprint (core + react + autoplay) is an estimated
-      ~15-25KB — roughly **7-10x smaller** for the exact feature set this codebase uses (all 3
-      call sites confirmed to need only `Autoplay`/`Navigation`/`Pagination`, all of which have a
-      direct Embla equivalent). Real porting cost: 3 files, one shared wrapper absorbs most
-      complexity, manual QA needed on the 2 `loop`-mode carousels (Embla's loop mechanics differ
-      from Swiper's slide-cloning). Full pros/cons, bundle comparison table, and 5-step migration
-      plan already drafted in `bundle-analysis.md` §7. **Recommendation:** land Phase 2's
-      `optimizePackageImports` regardless (zero-risk either way); treat Embla as a separate,
-      scheduled effort, not a blocking dependency of anything above.
-- [ ] **`react-icons` → `lucide-react` + inline brand SVGs.** `lucide-react` is already installed
-      and already on Next's default `optimizePackageImports` list (automatic per-icon
-      tree-shaking); `react-icons` is not. All 7 call sites use single icons; 4 non-brand icons
-      (`FiCalendar`→`Clock`, `BiSolidRightArrow`→`ArrowRight`, `FaMapMarkerAlt`→`MapPin`, etc.)
-      have direct Lucide equivalents; 6 brand logos (GitHub/LinkedIn/Twitter/Facebook/
-      Instagram/YouTube) need small hand-written inline SVGs sourced from official brand marks.
-      **This is an estimate, not a measurement** — `react-icons` never surfaced as its own
-      attributed chunk in the analyzer run; likely low tens of KB, plus the win of dropping an
-      entire dependency. Migration shape drafted in `bundle-analysis.md` §8.
-
----
-
 ## Manual-verification-only items
 
 These **cannot** be closed by code review or a source-level fix — each requires a live

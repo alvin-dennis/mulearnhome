@@ -1,8 +1,8 @@
 "use client";
 
+import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -97,7 +97,7 @@ export function TeamCard({
                     rel="noreferrer"
                     className="text-mulearn-blackish hover:text-mulearn-trusty-blue transition-colors"
                   >
-                    <FaLinkedin size={24} />
+                    <Linkedin size={24} />
                   </Link>
                 )}
                 {github && (
@@ -107,7 +107,7 @@ export function TeamCard({
                     rel="noreferrer"
                     className="text-mulearn-blackish hover:text-mulearn-trusty-blue transition-colors"
                   >
-                    <FaGithub size={24} />
+                    <Github size={24} />
                   </Link>
                 )}
                 {x && (
@@ -117,7 +117,7 @@ export function TeamCard({
                     rel="noreferrer"
                     className="text-mulearn-blackish hover:text-mulearn-trusty-blue transition-colors"
                   >
-                    <FaTwitter size={24} />
+                    <Twitter size={24} />
                   </Link>
                 )}
               </div>

@@ -1,13 +1,13 @@
 import {
-  FaFacebook,
-  FaGithub,
-  FaGlobe,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+  Facebook,
+  Github,
+  Globe,
+  Instagram,
+  Linkedin,
+  MessageCircle,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import type { SocialLinks } from "../types/socials.types";
 
 export interface SocialLinksGroup {
@@ -19,7 +19,7 @@ export interface SocialLinksGroup {
 export const socialLinks: SocialLinksGroup = {
   socials: [
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mulearn.official",
       subtitle: "instagram.com",
       href: "https://instagram.com/mulearn.official?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr",
@@ -27,7 +27,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaYoutube,
+      icon: Youtube,
       title: "µLearn",
       subtitle: "YouTube Channel",
       href: "https://youtube.com/@mulearn?si=uJUH5HktDnbf4-a3",
@@ -35,7 +35,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-destructive",
     },
     {
-      icon: FaFacebook,
+      icon: Facebook,
       title: "Facebook",
       subtitle: "facebook.com",
       href: "https://m.facebook.com/gtechmulearn",
@@ -43,7 +43,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-mulearn",
     },
     {
-      icon: FaTwitter,
+      icon: Twitter,
       title: "Twitter",
       subtitle: "@mulearn",
       href: "https://x.com/gtechmulearn?lang=ar-x-fm",
@@ -51,7 +51,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-mulearn-blackish",
     },
     {
-      icon: FaLinkedin,
+      icon: Linkedin,
       title: "LinkedIn",
       subtitle: "linkedin.com",
       href: "https://www.linkedin.com/company/mulearn",
@@ -59,7 +59,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-mulearn",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.careers",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.careers/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -67,7 +67,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.campus",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.campus/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -75,7 +75,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.tech_",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.tech_/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -83,7 +83,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.designers",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.designers/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -91,7 +91,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu__tv",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu__tv/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
@@ -99,7 +99,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@muplay.gg",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/muplay.gg?igsh=b2U4MHc5OGFyZ2kx",
@@ -107,7 +107,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.comics",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.comics?igsh=NW9oYm1wc29jd3Zs",
@@ -115,7 +115,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mu.v_filmclub",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mu.v_filmclub?igsh=cTdydGV3Z2w2NWF3",
@@ -123,7 +123,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaInstagram,
+      icon: Instagram,
       title: "@mument.mulearn",
       subtitle: "instagram.com",
       href: "https://www.instagram.com/mument.mulearn?igsh=aWk3c3V3ejk2M2U1",
@@ -131,7 +131,7 @@ export const socialLinks: SocialLinksGroup = {
       color: "bg-gradient-to-br from-mulearn-duke-purple to-mulearn-duke-purple",
     },
     {
-      icon: FaWhatsapp,
+      icon: MessageCircle,
       title: "µLearn Foundation",
       subtitle: "whatsapp.com",
       href: "https://www.whatsapp.com/channel/0029VaylbVgICVfsfN2SZc14",
@@ -141,7 +141,7 @@ export const socialLinks: SocialLinksGroup = {
   ],
   website: [
     {
-      icon: FaGlobe,
+      icon: Globe,
       title: "µLearn Home",
       subtitle: "mulearn.org",
       href: "https://mulearn.org",
@@ -150,7 +150,7 @@ export const socialLinks: SocialLinksGroup = {
   ],
   build: [
     {
-      icon: FaGithub,
+      icon: Github,
       title: "GitHub",
       subtitle: "github.com",
       href: "https://github.com/gtech-mulearn",
