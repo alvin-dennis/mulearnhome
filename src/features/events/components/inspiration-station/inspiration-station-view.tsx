@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Radio } from "lucide-react";
 import { useState } from "react";
-import { MotionSection, MuImage } from "@/components/layouts";
+import { MotionSection, MuImage, Section } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/use-debounce";
@@ -124,8 +124,8 @@ export function InspirationStationView() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden py-12 md:py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section>
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-4 md:space-y-6 text-center lg:text-left">
               <div className="flex justify-center lg:justify-start">
@@ -162,10 +162,10 @@ export function InspirationStationView() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section>
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="mb-3 md:mb-4">Inspiration Station Episodes</h2>
             <p className="text-mulearn-gray-600 max-w-2xl mx-auto text-base md:text-lg mb-6 md:mb-8">
@@ -243,7 +243,7 @@ export function InspirationStationView() {
             </MotionSection>
           </AnimatePresence>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionH2, MotionSection } from "@/components/layouts";
+import { MotionDiv, MotionH2, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -16,10 +16,10 @@ const fadeInUp: Variants = {
 
 export function Newsletter() {
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full" suppressHydrationWarning>
-      <MotionSection
+    <div className="w-full" suppressHydrationWarning>
+      <Section
         id="newsletter"
-        className="bg-mulearn-greyish/20 rounded-2xl py-8 my-8 mx-auto max-w-[1000px] shadow-[0_2px_16px_0_rgba(0,0,0,0.02)] flex flex-col items-center gap-4"
+        className="bg-mulearn-greyish/20 rounded-2xl my-8 mx-auto max-w-[1000px] shadow-[0_2px_16px_0_rgba(0,0,0,0.02)] flex flex-col items-center gap-4"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -77,7 +77,7 @@ export function Newsletter() {
             </Button>
           </MotionDiv>
         </form>
-      </MotionSection>
+      </Section>
     </div>
   );
 }

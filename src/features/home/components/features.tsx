@@ -3,7 +3,7 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { features } from "../data/home.data";
@@ -36,9 +36,9 @@ export function Features() {
     !isMobile && !isTablet ? (isHovering ? expandedIndex === index : index === 0) : false;
 
   return (
-    <div className="px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 w-full text-center flex flex-col items-center justify-center gap-4">
-      <MotionSection
-        className="flex flex-col justify-center py-10 pb-0 items-center"
+    <div className="w-full text-center flex flex-col items-center justify-center gap-4">
+      <Section
+        className="flex flex-col justify-center items-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -158,7 +158,7 @@ export function Features() {
             </MotionDiv>
           ))}
         </MotionDiv>
-      </MotionSection>
+      </Section>
     </div>
   );
 }

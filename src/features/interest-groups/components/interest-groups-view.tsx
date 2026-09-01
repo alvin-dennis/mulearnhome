@@ -3,7 +3,7 @@
 import { useScroll, useTransform } from "framer-motion";
 import { ArrowRight, BookOpen, Lightbulb, Search, Target, TrendingUp, Users } from "lucide-react";
 import { useState } from "react";
-import { MotionA, MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionA, MotionDiv, MotionSection, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -125,7 +125,7 @@ export function InterestGroupsView() {
         </div>
       </MotionSection>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <Section className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -155,9 +155,9 @@ export function InterestGroupsView() {
             </MotionDiv>
           ))}
         </div>
-      </section>
+      </Section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <Section>
         <div className="max-w-6xl mx-auto">
           <MotionDiv
             initial={{ opacity: 0, y: 30 }}
@@ -253,9 +253,9 @@ export function InterestGroupsView() {
             })}
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <Section className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -344,9 +344,9 @@ export function InterestGroupsView() {
             </p>
           </MotionDiv>
         )}
-      </section>
+      </Section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-mulearn">
+      <Section variant="mulearn">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +371,7 @@ export function InterestGroupsView() {
             </Button>
           </div>
         </MotionDiv>
-      </section>
+      </Section>
     </div>
   );
 }

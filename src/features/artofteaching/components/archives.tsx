@@ -1,9 +1,10 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { Section } from "@/components/layouts";
 import { artOfTeachingUrls } from "../data/artofteaching.data";
 
 export const Archives = () => {
   return (
-    <div className="px-8 py-8 bg-mulearn-whitish">
+    <Section variant="whitish">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
@@ -30,6 +31,6 @@ export const Archives = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Section>
   );
 };

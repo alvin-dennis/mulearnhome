@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionP, MuImage } from "@/components/layouts";
+import { MotionDiv, MotionP, MuImage, Section } from "@/components/layouts";
 import { cdnUrl } from "@/shared";
 
 const slideInLeft: Variants = {
@@ -14,10 +14,7 @@ const slideInRight: Variants = {
 
 export function IGAbout() {
   return (
-    <section
-      id="about"
-      className="px-12 py-12 flex flex-col lg:flex-row items-center justify-between lg:gap-8"
-    >
+    <Section id="about" className="flex flex-col lg:flex-row items-center justify-between lg:gap-8">
       <MotionDiv
         className="flex-1"
         variants={slideInLeft}
@@ -112,6 +109,6 @@ export function IGAbout() {
           <p>and more...</p>
         </MotionDiv>
       </MotionDiv>
-    </section>
+    </Section>
   );
 }

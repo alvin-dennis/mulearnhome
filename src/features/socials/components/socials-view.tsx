@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv, MotionSection } from "@/components/layouts";
+import { MotionDiv, MotionSection, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -97,7 +97,7 @@ function SocialCard({ social, className }: { social: SocialLinks; className?: st
 export function SocialsView() {
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-12 md:py-20 space-y-14">
+      <Section className="container mx-auto space-y-14">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ export function SocialsView() {
             </MotionDiv>
           </MotionSection>
         </main>
-      </div>
+      </Section>
     </div>
   );
 }

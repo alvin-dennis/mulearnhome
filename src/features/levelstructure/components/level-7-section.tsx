@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { SparkleField } from "./sparkle-field";
 
 const sparkles = [
@@ -10,7 +10,7 @@ const sparkles = [
 
 export function Level7Section() {
   return (
-    <section className="relative flex items-center py-15 overflow-hidden" id="level-7">
+    <Section className="relative flex items-center overflow-hidden" id="level-7">
       <div className="absolute inset-0 pointer-events-none z-0">
         <MuImage
           src="/assets/levelstructure/bg-lvl7.webp"
@@ -106,6 +106,6 @@ export function Level7Section() {
           <SparkleField sparkles={sparkles} />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

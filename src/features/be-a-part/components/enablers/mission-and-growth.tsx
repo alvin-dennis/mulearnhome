@@ -5,7 +5,7 @@ import { Sparkle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 import { cdnUrl, fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
@@ -71,9 +71,9 @@ export function MissionAndGrowth() {
   if (!counts) {
     return (
       <div className="flex justify-center">
-        <div className="px-4 sm:px-8 md:px-16 lg:px-32 max-w-7xl w-full py-24">
+        <Section className="max-w-7xl w-full">
           <StatsLoader count={4} className="flex flex-wrap justify-center gap-9 px-8" />
-        </div>
+        </Section>
       </div>
     );
   }
@@ -86,9 +86,9 @@ export function MissionAndGrowth() {
       <div className="hidden md:block absolute bottom-6 left-8 z-10">
         <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl">
-        <MotionSection
-          className="flex flex-col justify-center py-24 items-center"
+      <div className="max-w-7xl">
+        <Section
+          className="flex flex-col justify-center items-center"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -156,7 +156,7 @@ export function MissionAndGrowth() {
               </div>
             )}
           </MotionDiv>
-        </MotionSection>
+        </Section>
       </div>
     </div>
   );

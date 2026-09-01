@@ -2,7 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import CountUp from "react-countup";
-import { MotionDiv, MotionSection } from "@/components/layouts";
+import { MotionDiv, Section } from "@/components/layouts";
 import { StatsLoader, useLandingStats } from "@/shared";
 
 const fadeInUp: Variants = {
@@ -23,19 +23,19 @@ export function Stats() {
 
   if (!counts) {
     return (
-      <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full py-24">
+      <Section className="w-full">
         <StatsLoader
           count={10}
-          className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-4 sm:px-8"
+          className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
         />
-      </div>
+      </Section>
     );
   }
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
-      <MotionSection
-        className="flex flex-col justify-center py-24 items-center"
+    <div className="w-full">
+      <Section
+        className="flex flex-col justify-center items-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -84,7 +84,7 @@ export function Stats() {
             ))}
           </div>
         </MotionDiv>
-      </MotionSection>
+      </Section>
     </div>
   );
 }

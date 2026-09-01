@@ -20,3 +20,4 @@ export { MuImage } from "./mu-image";
 export { MuLoader } from "./mu-loader";
 export { Navbar } from "./navbar";
 export { NotFoundPage } from "./not-found";
+export { Section } from "./section";

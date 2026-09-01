@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { cdnUrl } from "@/shared";
 
@@ -17,9 +17,9 @@ const community = cdnUrl("/public/assets/home/join.webp");
 
 export function Community() {
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
-      <MotionSection
-        className="grid grid-cols-1 lg:grid-cols-2 gap-5 py-12"
+    <div className="w-full">
+      <Section
+        className="grid grid-cols-1 lg:grid-cols-2 gap-5"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -65,7 +65,7 @@ export function Community() {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </MotionDiv>
-      </MotionSection>
+      </Section>
     </div>
   );
 }

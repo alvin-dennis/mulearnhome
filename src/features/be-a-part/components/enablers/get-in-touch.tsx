@@ -1,10 +1,11 @@
 import { SparklesIcon } from "lucide-react";
 import Link from "next/link";
+import { Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 export function GetInTouch() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+    <Section className="mx-auto max-w-7xl">
       {/* Banner card */}
       <div className="relative w-full rounded-[20px] shadow-lg overflow-hidden bg-mulearn min-h-[24rem] flex items-center justify-center">
         {/* ── Desktop sparkles ── */}
@@ -64,6 +65,6 @@ export function GetInTouch() {
           </Link>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

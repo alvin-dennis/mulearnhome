@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Section } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -50,7 +51,7 @@ export const Guidelines = () => {
   };
 
   return (
-    <div className="px-8 py-8 lg:px-12">
+    <Section>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2">
@@ -152,6 +153,6 @@ export const Guidelines = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };

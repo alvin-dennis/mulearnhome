@@ -1,4 +1,4 @@
-import { MotionDiv } from "@/components/layouts";
+import { MotionDiv, Section } from "@/components/layouts";
 import { campusChapter } from "../../data/campus.data";
 
 type PracticeItem = {
@@ -10,7 +10,7 @@ type PracticeItem = {
 
 export function BestPractices() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
+    <Section className="mx-auto max-w-7xl">
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,6 +75,6 @@ export function BestPractices() {
           })}
         </div>
       </MotionDiv>
-    </section>
+    </Section>
   );
 }

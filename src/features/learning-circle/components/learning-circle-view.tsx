@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { learningCircleData } from "../data/learning-circle.data";
 
@@ -210,12 +210,13 @@ export function LearningCircleView() {
           ))}
         </div>
       </section>
-      <MotionSection
+      <Section
+        variant="mulearn"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full mt-16 bg-mulearn text-mulearn-whitish p-10 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
+        className="mt-16 text-center rounded-3xl max-w-6xl mx-auto shadow-lg border border-mulearn-greyish/20"
       >
         <h2 className="mb-4 text-mulearn-whitish">{ctaSection.title}</h2>
         <p className="text-lg mb-8 text-mulearn-whitish max-w-2xl mx-auto">
@@ -228,7 +229,7 @@ export function LearningCircleView() {
             </Button>
           </Link>
         </MotionDiv>
-      </MotionSection>
+      </Section>
     </main>
   );
 }

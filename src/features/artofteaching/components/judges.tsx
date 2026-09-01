@@ -1,9 +1,10 @@
+import { Section } from "@/components/layouts";
 import { artOfTeachingMentors } from "../data/artofteaching.data";
 import { MentorCard } from "./mentor-card";
 
 export const Judges = () => {
   return (
-    <div className="px-8 py-8 lg:px-12">
+    <Section>
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h2 className="text-4xl lg:text-6xl font-semibold text-mulearn-blackish leading-tight mb-4">
@@ -27,6 +28,6 @@ export const Judges = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Section>
   );
 };

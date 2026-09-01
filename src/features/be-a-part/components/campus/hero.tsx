@@ -1,9 +1,9 @@
-import { MotionDiv, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 
 export function CampusHero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-20 lg:py-32">
+    <Section>
+      <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <MotionDiv
             initial={{ opacity: 0, x: -30 }}
@@ -42,6 +42,6 @@ export function CampusHero() {
           </MotionDiv>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

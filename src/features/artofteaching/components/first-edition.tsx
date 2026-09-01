@@ -1,10 +1,11 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { Section } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 import { artOfTeachingUrls } from "../data/artofteaching.data";
 
 export const FirstEdition = () => {
   return (
-    <div className="px-8 py-8 bg-mulearn-whitish lg:px-12">
+    <Section variant="whitish">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-2/5">
@@ -33,6 +34,6 @@ export const FirstEdition = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };

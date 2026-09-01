@@ -1,3 +1,4 @@
+import { Section } from "@/components/layouts";
 import { termsAndConditions } from "../data/terms-and-conditions.data";
 
 const Paragraph = ({ text }: { text: string }) => (
@@ -19,7 +20,7 @@ const SubsectionList = ({ subsections }: { subsections: string[] }) => (
 export async function TermsAndConditionsView() {
   return (
     <main className="min-h-screen bg-mulearn-whitish">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 xl:px-12">
+      <Section className="mx-auto max-w-7xl">
         <header className="mb-10 text-center">
           <h1 className="mb-3 tracking-tight uppercase">{termsAndConditions.title}</h1>
           <p className="text-sm text-mulearn-gray-600">
@@ -59,7 +60,7 @@ export async function TermsAndConditionsView() {
             </section>
           ))}
         </div>
-      </div>
+      </Section>
     </main>
   );
 }

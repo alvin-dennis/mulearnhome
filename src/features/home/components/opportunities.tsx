@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { opportunities } from "../data/home.data";
 
@@ -14,9 +14,9 @@ const fadeInUp: Variants = {
 
 export function Opportunities() {
   return (
-    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full ">
-      <MotionSection
-        className="flex flex-col justify-center py-24 items-center"
+    <div className="w-full">
+      <Section
+        className="flex flex-col justify-center items-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -63,7 +63,7 @@ export function Opportunities() {
             </MotionDiv>
           ))}
         </MotionDiv>
-      </MotionSection>
+      </Section>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage } from "@/components/layouts";
+import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { cdnUrl } from "@/shared";
 import { SuccessStories } from "../../data/company.data";
@@ -6,7 +6,7 @@ import { SuccessStories } from "../../data/company.data";
 export const Success = () => {
   const fallbackImage = cdnUrl("public/assets/team/default.webp");
   return (
-    <section className="py-10 px-11 overflow-hidden relative min-h-[700px]">
+    <Section className="min-h-[700px]">
       <div className="max-w-7xl mx-auto flex items-center justify-center flex-col">
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
@@ -67,6 +67,6 @@ export const Success = () => {
           </MotionDiv>
         </MotionDiv>
       </div>
-    </section>
+    </Section>
   );
 };

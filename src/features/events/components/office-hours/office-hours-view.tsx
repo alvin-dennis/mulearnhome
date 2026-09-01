@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Mic } from "lucide-react";
 import { useState } from "react";
-import { MotionSection } from "@/components/layouts";
+import { Section } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { StateDisplay } from "@/components/ui/state-display";
 import { useDebounce } from "@/hooks/use-debounce";
@@ -134,8 +134,8 @@ export function OfficeHoursView() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden py-4 md:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section>
+        <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-4xl mx-auto">
             <Badge
               variant="outline"
@@ -155,7 +155,7 @@ export function OfficeHoursView() {
             </p>
           </div>
         </div>
-      </section>
+      </Section>
 
       <SearchAndFilter
         search={searchInput}
@@ -182,16 +182,15 @@ export function OfficeHoursView() {
       </div>
 
       <AnimatePresence mode="wait">
-        <MotionSection
+        <Section
           key={view}
           variants={motionVariants}
           initial="initial"
           animate="animate"
           exit="exit"
           transition={{ duration: 0.35 }}
-          className="py-12 pb-20"
         >
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
             {isLoading && events.length === 0 ? (
               <GenericEventCardSkeletonGrid />
             ) : events.length > 0 ? (
@@ -213,7 +212,7 @@ export function OfficeHoursView() {
               <Pagination page={page} setPage={setPage} total={pagination.count ?? 0} perPage={6} />
             )}
           </div>
-        </MotionSection>
+        </Section>
       </AnimatePresence>
     </div>
   );
