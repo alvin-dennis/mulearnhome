@@ -38,17 +38,15 @@ export function Features() {
   return (
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 w-full text-center flex flex-col items-center justify-center gap-4">
       <MotionSection
-        className="flex flex-col justify-center py-24 pb-0 items-center"
+        className="flex flex-col justify-center py-10 pb-0 items-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="pt-10 sm:pt-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl text-center max-w-140 font-extrabold leading-snug">
-            What <span className="text-mulearn">µLearn</span> offers
-          </h2>
-        </div>
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl text-center max-w-140 font-extrabold leading-snug">
+          What <span className="text-mulearn">µLearn</span> offers
+        </h2>
         <p className="font-normal max-w-[800px] mx-auto text-center text-base sm:text-lg md:text-xl text-mulearn-gray-600 px-2">
           µLearn offers a wide range of features and opportunities that help you learn, grow, and
           upskill yourself in a fun and engaging way. Here are some of the key features that µLearn
@@ -60,7 +58,7 @@ export function Features() {
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           onMouseLeave={() => setIsHovering(false)}
         >
           {features.map((feature, i) => (
