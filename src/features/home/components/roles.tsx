@@ -29,7 +29,7 @@ export function Roles() {
 
   return (
     <Section
-      className="max-w-[1200px] mx-auto"
+      className="mx-auto"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
