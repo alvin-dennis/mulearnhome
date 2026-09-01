@@ -3,7 +3,7 @@
 import { Mail, MapPin } from "lucide-react";
 import { Suspense } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { clientEnv } from "@/config/env.client";
 import { contactInfo } from "@/shared";
 import { contactPage } from "../data/contact.data";
@@ -45,8 +45,8 @@ export function ContactView() {
         </div>
       </section>
 
-      <Section id="get-in-touch" className="mt-14">
-        <div className="max-w-7xl mx-auto">
+      <section id="get-in-touch" className="relative mt-14 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-8 flex flex-col justify-center">
               <div className="space-y-6">
@@ -126,7 +126,7 @@ export function ContactView() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
     </div>
   );
 }

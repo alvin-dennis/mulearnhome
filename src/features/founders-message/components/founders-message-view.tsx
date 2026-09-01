@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 
@@ -23,11 +23,11 @@ const fadeInUp: Variants = {
 
 export function FoundersMessageView() {
   return (
-    <Section
+    <MotionDiv
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="min-h-screen bg-neutral-50/70 flex justify-center items-start"
+      className="min-h-screen bg-neutral-50/70 py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex justify-center items-start"
     >
       <div className="w-full max-w-5xl bg-white border border-neutral-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] rounded-2xl p-6 sm:p-10 md:p-16 text-[#1a1a1a] flex flex-col font-sans">
         {/* Hello Greeting */}
@@ -182,6 +182,6 @@ export function FoundersMessageView() {
           </Link>
         </MotionDiv>
       </div>
-    </Section>
+    </MotionDiv>
   );
 }

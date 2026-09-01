@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MotionDiv, MotionH1, MotionP, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MotionH1, MotionP, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { useRedirectToApp } from "@/lib/utils";
 import { useLandingStats } from "@/shared";
@@ -64,7 +64,7 @@ export function TestimonialsView() {
       </div>
 
       {/* Video Section */}
-      <Section id="video-testimonials" className="relative z-10">
+      <section id="video-testimonials" className="py-24 sm:py-32 relative z-10">
         <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
           <h2 className="text-4xl sm:text-6xl font-black text-mulearn-blackish mb-6 tracking-tight">
             Video Stories
@@ -72,10 +72,13 @@ export function TestimonialsView() {
           <div className="w-20 h-1.5 bg-mulearn mx-auto rounded-full" />
         </div>
         <VideoSection testimonials={videoTestimonialData} />
-      </Section>
+      </section>
 
       {/* Text Testimonials Section */}
-      <Section id="community-feedback" className="relative z-10 bg-mulearn-whitish/30">
+      <section
+        id="community-feedback"
+        className="py-24 sm:py-32 relative z-10 bg-mulearn-whitish/30"
+      >
         <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
           <h2 className="text-4xl sm:text-6xl font-black text-mulearn-blackish mb-6 tracking-tight">
             Community Echoes
@@ -88,10 +91,10 @@ export function TestimonialsView() {
         <div className="max-w-7xl mx-auto px-6">
           <TextTestimonialsGrid testimonials={textTestimonialData} />
         </div>
-      </Section>
+      </section>
 
       {/* CTA Section */}
-      <Section className="relative z-10">
+      <div className="py-24 sm:py-32 px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <MotionDiv
             className="bg-mulearn rounded-[3.5rem] p-12 sm:p-24 text-center text-mulearn-whitish shadow-2xl relative overflow-hidden group"
@@ -130,7 +133,7 @@ export function TestimonialsView() {
             </div>
           </MotionDiv>
         </div>
-      </Section>
+      </div>
     </div>
   );
 }

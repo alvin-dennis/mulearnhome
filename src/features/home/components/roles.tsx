@@ -2,7 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import { useState } from "react";
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -28,8 +28,8 @@ export function Roles() {
   const [activeRole, setActiveRole] = useState<string>("partner");
 
   return (
-    <Section
-      className="mx-auto"
+    <MotionSection
+      className="py-[30px] px-5 max-w-[1200px] mx-auto"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
@@ -113,6 +113,6 @@ export function Roles() {
           </TabsContent>
         ))}
       </Tabs>
-    </Section>
+    </MotionSection>
   );
 }

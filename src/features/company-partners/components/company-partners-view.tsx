@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { cdnUrl } from "@/shared";
 import { CompanyPartner } from "../data/company-partners.data";
 import { CompanyCard } from "./company-card";
@@ -51,7 +51,7 @@ export function CompanyPartnersView() {
         </div>
       </section>
 
-      <Section variant="whitish">
+      <section className="px-4 sm:px-8 py-12 sm:py-16 bg-mulearn-whitish">
         <div className="max-w-7xl mx-auto">
           <MotionDiv
             className="mb-8 sm:mb-12 lg:mb-16"
@@ -75,7 +75,7 @@ export function CompanyPartnersView() {
             ))}
           </div>
         </div>
-      </Section>
+      </section>
     </div>
   );
 }

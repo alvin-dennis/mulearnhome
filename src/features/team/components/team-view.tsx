@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { cdnUrl } from "@/shared";
 import { team } from "../data/team.data";
 import type { YearData } from "../types";
@@ -23,7 +23,7 @@ export function TeamView() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { staggerChildren: 0.2, when: "beforeChildren" } }}
     >
-      <Section className="flex justify-center">
+      <div className="py-12 px-4 flex justify-center">
         <div className="flex flex-col md:flex-row items-center max-w-7xl w-full gap-8">
           <MotionDiv
             initial={{ opacity: 0, x: -50 }}
@@ -57,7 +57,7 @@ export function TeamView() {
             />
           </MotionDiv>
         </div>
-      </Section>
+      </div>
 
       {muTeamData && (
         <div className="mb-20 mt-10 max-w-7xl mx-auto px-4">{renderTeamGrid(muTeamData.teams)}</div>

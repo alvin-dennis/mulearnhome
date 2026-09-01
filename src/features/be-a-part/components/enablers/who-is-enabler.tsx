@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Sparkle } from "lucide-react";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { enablerFeatures } from "../../data/enablers.data";
 
 const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
@@ -9,7 +9,7 @@ const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
 
 export function WhoIsEnabler() {
   return (
-    <Section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
       <div className="relative w-full rounded-[20px] bg-mulearn shadow-md overflow-hidden">
         <div className="hidden md:block" style={{ minHeight: "580px" }}>
           <Sparkle className="absolute left-10 top-8 z-20 fill-mulearn-whitish text-mulearn-whitish" />
@@ -93,6 +93,6 @@ export function WhoIsEnabler() {
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

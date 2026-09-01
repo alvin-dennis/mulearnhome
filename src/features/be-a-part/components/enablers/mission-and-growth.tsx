@@ -4,7 +4,7 @@ import type { Variants } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
 import {
@@ -76,9 +76,9 @@ export function MissionAndGrowth() {
   if (!counts) {
     return (
       <div className="flex justify-center">
-        <Section className="max-w-7xl w-full">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-32 max-w-7xl w-full py-24">
           <StatsLoader count={4} className="flex flex-wrap justify-center gap-9 px-8" />
-        </Section>
+        </div>
       </div>
     );
   }
@@ -91,9 +91,9 @@ export function MissionAndGrowth() {
       <div className="hidden md:block absolute bottom-6 left-8 z-10">
         <Sparkle className="w-6 h-6 fill-mulearn text-mulearn" />
       </div>
-      <div className="max-w-7xl">
-        <Section
-          className="flex flex-col justify-center items-center"
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl">
+        <MotionSection
+          className="flex flex-col justify-center py-24 items-center"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -161,7 +161,7 @@ export function MissionAndGrowth() {
               </div>
             )}
           </MotionDiv>
-        </Section>
+        </MotionSection>
       </div>
     </div>
   );

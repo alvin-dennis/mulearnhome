@@ -3,7 +3,7 @@
 import { YouTubeEmbed } from "@next/third-parties/google";
 import type { Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -36,9 +36,9 @@ export function Story() {
   }, []);
 
   return (
-    <div className="w-full">
-      <Section
-        className="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5"
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full pt-12">
+      <MotionSection
+        className="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5 py-12"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -81,7 +81,7 @@ export function Story() {
             )}
           </MotionDiv>
         </div>
-      </Section>
+      </MotionSection>
     </div>
   );
 }

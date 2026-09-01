@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { cdnUrl } from "@/shared";
 import { artOfTeachingUrls } from "../data/artofteaching.data";
@@ -8,7 +8,7 @@ export const Hero = () => {
   const teachingGif = cdnUrl("/src/modules/Public/ArtOfTeaching/assets/Teaching.gif");
 
   return (
-    <Section>
+    <div className="px-8 py-8 lg:px-12 lg:py-12">
       <div className="flex flex-col-reverse lg:flex-row items-center p-4 justify-between max-w-7xl mx-auto">
         <div className="text-center  lg:text-left lg:w-1/2">
           <h1 className="text-5xl lg:text-7xl font-semibold text-mulearn-blackish leading-tight">
@@ -61,6 +61,6 @@ export const Hero = () => {
           />
         </div>
       </div>
-    </Section>
+    </div>
   );
 };

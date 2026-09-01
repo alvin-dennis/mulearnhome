@@ -1,10 +1,10 @@
 import { ArrowRight, BookOpen, Users } from "lucide-react";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function WhyChapter() {
   return (
-    <Section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -98,6 +98,6 @@ export function WhyChapter() {
           </Card>
         </div>
       </MotionDiv>
-    </Section>
+    </section>
   );
 }

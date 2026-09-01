@@ -3,7 +3,7 @@
 import { ArrowLeft, Calendar, MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { GalleryEvent, GalleryMediaItem } from "../../types/gallery.types";
@@ -38,7 +38,7 @@ export function EventMediaClient({ event }: EventMediaClientProps) {
   };
 
   return (
-    <Section className="min-h-screen">
+    <section className="px-6 py-8 md:px-12 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <Button variant="link" onClick={() => router.back()} className="mb-6 text-mulearn">
           <ArrowLeft className="w-4 h-4" />
@@ -107,6 +107,6 @@ export function EventMediaClient({ event }: EventMediaClientProps) {
           onNavigate={setLightboxIndex}
         />
       </div>
-    </Section>
+    </section>
   );
 }

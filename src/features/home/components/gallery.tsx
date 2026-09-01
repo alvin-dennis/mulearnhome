@@ -2,9 +2,10 @@
 
 import type { Variants } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { galleryEvents } from "@/features/gallery";
 
@@ -112,8 +113,8 @@ const RotatingImage = ({
 
 export function Gallery() {
   return (
-    <div className="max-w-7xl mx-auto">
-      <Section
+    <div className="max-w-7xl mx-auto px-5 mt-20 mb-10">
+      <MotionSection
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -141,7 +142,7 @@ export function Gallery() {
             </Button>
           </Link>
         </div>
-      </Section>
+      </MotionSection>
     </div>
   );
 }

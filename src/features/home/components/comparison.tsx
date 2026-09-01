@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { comparisons } from "../data/home.data";
 
 const fadeInUp: Variants = {
@@ -13,9 +13,9 @@ const fadeInUp: Variants = {
 
 export function Comparison() {
   return (
-    <div className="w-full">
-      <Section
-        className="flex flex-col justify-center items-center"
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 w-full">
+      <MotionSection
+        className="flex flex-col justify-center py-24 pb-0 items-center"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -65,7 +65,7 @@ export function Comparison() {
             </tbody>
           </table>
         </MotionDiv>
-      </Section>
+      </MotionSection>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 
 export function Apply() {
   return (
-    <Section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -33,6 +33,6 @@ export function Apply() {
           </Button>
         </Link>
       </MotionDiv>
-    </Section>
+    </section>
   );
 }

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { StateDisplay } from "@/components/ui/state-display";
 import { EventMediaClient, getGalleryEventBySlug } from "@/features/gallery";
@@ -35,7 +34,7 @@ export default async function EventGalleryPage({
 
   if (!event) {
     return (
-      <Section className="min-h-screen">
+      <section className="px-6 py-8 md:px-12 min-h-screen">
         <StateDisplay
           variant="no-results"
           title="Event Not Found"
@@ -47,7 +46,7 @@ export default async function EventGalleryPage({
             </Button>
           }
         />
-      </Section>
+      </section>
     );
   }
 

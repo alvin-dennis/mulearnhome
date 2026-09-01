@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { SparkleField } from "./sparkle-field";
 
 const backgroundSparkles = [
@@ -26,7 +26,7 @@ const INTEREST_GROUPS = [
 
 export function Level4Section() {
   return (
-    <Section className="relative flex items-center overflow-hidden" id="level-4">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-4">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
@@ -158,6 +158,6 @@ export function Level4Section() {
           </MotionDiv>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

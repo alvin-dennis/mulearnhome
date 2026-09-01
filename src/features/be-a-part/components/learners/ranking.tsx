@@ -1,4 +1,4 @@
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 import { fetchTopLearners } from "@/shared";
 
@@ -6,7 +6,7 @@ export async function RankingSection() {
   const topLearners = await fetchTopLearners(10);
 
   return (
-    <Section className="container mx-auto">
+    <section className="py-16 md:py-20 container mx-auto px-4 relative">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -52,6 +52,6 @@ export async function RankingSection() {
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

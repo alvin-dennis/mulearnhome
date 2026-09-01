@@ -2,7 +2,7 @@
 
 import type { Variants } from "framer-motion";
 import { FileText, Target, TrendingUp, Users } from "lucide-react";
-import { MotionDiv, MotionH1, MotionP, Section } from "@/components/layouts";
+import { MotionDiv, MotionH1, MotionP, MotionSection } from "@/components/layouts";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -56,9 +56,8 @@ const values = [
 
 export function ReportHero() {
   return (
-    <Section
-      variant="gradient"
-      className="relative overflow-hidden"
+    <MotionSection
+      className="relative overflow-hidden bg-linear-to-br from-mulearn-whitish via-mulearn-whitish to-mulearn-duke-purple/30"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
@@ -66,7 +65,7 @@ export function ReportHero() {
     >
       <div className="absolute inset-0 bg-linear-to-r from-mulearn-trusty-blue/5 to-mulearn-duke-purple/5" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
         <div className="text-center mb-16">
           <MotionH1
             custom={1}
@@ -131,6 +130,6 @@ export function ReportHero() {
           ))}
         </MotionDiv>
       </div>
-    </Section>
+    </MotionSection>
   );
 }

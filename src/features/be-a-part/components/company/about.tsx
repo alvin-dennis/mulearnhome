@@ -1,6 +1,6 @@
 "use client";
 import type { Variants } from "framer-motion";
-import { MotionDiv, MotionH1, MotionP, Section } from "@/components/layouts";
+import { MotionDiv, MotionH1, MotionP } from "@/components/layouts";
 
 export const About = () => {
   const textVariant: Variants = {
@@ -12,7 +12,7 @@ export const About = () => {
     }),
   };
   return (
-    <Section variant="whitish" className="z-10">
+    <section className="py-14 px-4 bg-mulearn-whitish overflow-hidden z-10 relative">
       <MotionDiv
         custom={3}
         initial="hidden"
@@ -123,6 +123,6 @@ export const About = () => {
           </svg>
         </div>
       </MotionDiv>
-    </Section>
+    </section>
   );
 };

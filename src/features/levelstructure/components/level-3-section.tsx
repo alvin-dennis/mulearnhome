@@ -1,4 +1,4 @@
-import { MotionDiv, MuImage, Section } from "@/components/layouts";
+import { MotionDiv, MuImage } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { SparkleField } from "./sparkle-field";
 
@@ -24,7 +24,7 @@ const foregroundSparkles = [
 
 export function Level3Section() {
   return (
-    <Section className="relative flex items-center overflow-hidden" id="level-3">
+    <section className="relative flex items-center py-15 overflow-hidden" id="level-3">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <MuImage
@@ -106,6 +106,6 @@ export function Level3Section() {
           </MotionDiv>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

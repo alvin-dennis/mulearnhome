@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv } from "@/components/layouts";
 import { GalleryClient, galleryEvents } from "@/features/gallery";
 import { constructMetadata } from "@/lib/metadata";
 
@@ -21,7 +21,7 @@ export default async function GalleryPage() {
   };
 
   return (
-    <Section className="min-h-screen">
+    <section className="px-6 py-8 min-h-screen">
       <div className="max-w-[1300px] mx-auto mb-16">
         <MotionDiv
           initial="hidden"
@@ -41,6 +41,6 @@ export default async function GalleryPage() {
       </div>
 
       <GalleryClient events={galleryEvents} />
-    </Section>
+    </section>
   );
 }

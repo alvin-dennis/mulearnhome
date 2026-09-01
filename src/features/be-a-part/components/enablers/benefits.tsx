@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import { Award, Building2, Layers, Users } from "lucide-react";
-import { Section } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 
 interface BenefitCard {
@@ -41,7 +40,7 @@ const Icon = ({ icon: IconComponent }: { icon: LucideIcon }) => (
 
 export function EnablersBenefits() {
   return (
-    <Section className="mx-auto max-w-[1276px]">
+    <section className="mx-auto max-w-[1276px] px-6 py-16 lg:px-8 lg:py-20">
       <div className="w-full flex flex-col items-center gap-5">
         <div className="self-stretch text-center">
           <span className="text-5xl font-bold leading-[62.40px]">Benefits of an </span>
@@ -64,6 +63,6 @@ export function EnablersBenefits() {
           ))}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

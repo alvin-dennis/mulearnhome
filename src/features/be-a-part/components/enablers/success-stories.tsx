@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useRef, useState } from "react";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, type CarouselHandle, CarouselSlide } from "@/components/ui/carousel";
@@ -99,7 +99,7 @@ export function EnablersSuccessStories() {
   const carouselRef = useRef<CarouselHandle>(null);
 
   return (
-    <Section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-20">
       <div className="text-center mb-10">
         <h2 className="text-5xl font-bold leading-[62.40px]">
           <span>Success Stories from </span>
@@ -141,6 +141,6 @@ export function EnablersSuccessStories() {
           ))}
         </Carousel>
       </div>
-    </Section>
+    </section>
   );
 }

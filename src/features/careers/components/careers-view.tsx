@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { MuImage, Section } from "@/components/layouts";
+import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import LogoLoop from "@/components/ui/logo-loop";
 import {
@@ -54,7 +54,7 @@ export function CareersView() {
 
   return (
     <div className="min-h-screen">
-      <Section className="mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl sm:text-5xl lg:text-7xl font-semibold mb-5 sm:mb-12 text-mulearn-blackish">
@@ -87,7 +87,7 @@ export function CareersView() {
             />
           </div>
         </div>
-      </Section>
+      </div>
 
       <div className="mb-4 mt-12 flex flex-nowrap overflow-x-auto">
         <LogoLoop
@@ -107,7 +107,10 @@ export function CareersView() {
         />
       </div>
 
-      <Section id="careers-listing" className="mx-auto max-w-[1300px]">
+      <div
+        id="careers-listing"
+        className="mx-auto mt-12 mb-12 sm:mb-16 max-w-[1300px] px-4 sm:px-6 lg:px-8"
+      >
         <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as TabValue)}>
           <div className="md:hidden flex justify-center mb-6">
             <Select value={activeTab} onValueChange={(value) => setActiveTab(value as TabValue)}>
@@ -273,7 +276,7 @@ export function CareersView() {
             )}
           </TabsContent>
         </Tabs>
-      </Section>
+      </div>
     </div>
   );
 }

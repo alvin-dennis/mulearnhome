@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import Link from "next/link";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { specialevents } from "../data/home.data";
 import { SpecialEventCard } from "./special-event-card";
@@ -16,8 +16,13 @@ const fadeInUp: Variants = {
 
 export function SpecialEvents() {
   return (
-    <div className="max-w-7xl mx-auto">
-      <Section variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <div className="max-w-7xl mx-auto px-5 mt-20">
+      <MotionSection
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <MotionDiv variants={fadeInUp} className="text-center mb-12">
           <h2 className="mb-4">
             Special <span className="text-mulearn">Events</span>
@@ -40,7 +45,7 @@ export function SpecialEvents() {
             </Link>
           </div>
         </MotionDiv>
-      </Section>
+      </MotionSection>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { Section } from "@/components/layouts";
 import { SanitizedHtml } from "@/components/ui/sanitized-html";
 import { privacyPolicy } from "../data/privacy-policy.data";
 
@@ -26,7 +25,7 @@ const SubsectionList = ({ subsections }: { subsections: string[] }) => (
 export async function PrivacyPolicyView() {
   return (
     <main className="min-h-screen bg-mulearn-whitish">
-      <Section className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 xl:px-12">
         <header className="mb-10 text-center">
           <h1 className="mb-3 tracking-tight uppercase">{privacyPolicy.title}</h1>
           <p className="text-sm text-mulearn-gray-600">Last Updated: {privacyPolicy.lastUpdated}</p>
@@ -57,7 +56,7 @@ export async function PrivacyPolicyView() {
             </section>
           ))}
         </div>
-      </Section>
+      </div>
     </main>
   );
 }

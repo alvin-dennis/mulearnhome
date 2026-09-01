@@ -1,10 +1,10 @@
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv } from "@/components/layouts";
 import { Card, CardContent } from "@/components/ui/card";
 import { campusChapter } from "../../data/campus.data";
 
 export function Activities() {
   return (
-    <Section className="mx-auto max-w-7xl">
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-32">
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,6 +50,6 @@ export function Activities() {
           })}
         </div>
       </MotionDiv>
-    </Section>
+    </section>
   );
 }

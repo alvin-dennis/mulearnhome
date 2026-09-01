@@ -1,5 +1,5 @@
 import { Sparkle } from "lucide-react";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv } from "@/components/layouts";
 
 const steps = [
   {
@@ -89,7 +89,7 @@ export function Onboarding() {
   const row2 = steps.slice(3, 5);
 
   return (
-    <Section className="hidden md:block w-full relative">
+    <section className="hidden md:block w-full relative overflow-hidden py-16 px-6">
       {/* Sparkle accents */}
       <div className="absolute top-8 right-16 opacity-60">
         <Sparkle size={18} className="fill-mulearn text-mulearn" />
@@ -162,6 +162,6 @@ export function Onboarding() {
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

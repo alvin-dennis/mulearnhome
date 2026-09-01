@@ -1,4 +1,3 @@
-import { Section } from "@/components/layouts";
 import { SanitizedHtml } from "@/components/ui/sanitized-html";
 import { refundPolicy } from "../data/refund-policy.data";
 
@@ -13,7 +12,7 @@ const Paragraph = ({ text }: { text: string }) => (
 export function RefundPolicyView() {
   return (
     <main className="min-h-screen">
-      <Section className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 xl:px-12">
         <header className="mb-10 text-center">
           <h1 className="mb-3 tracking-tight uppercase">{refundPolicy.title}</h1>
           <p className="text-sm text-mulearn-gray-600">Last Updated: {refundPolicy.lastUpdated}</p>
@@ -52,7 +51,7 @@ export function RefundPolicyView() {
             </section>
           ))}
         </div>
-      </Section>
+      </div>
     </main>
   );
 }

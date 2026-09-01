@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Section } from "@/components/layouts";
 import { StateDisplay } from "@/components/ui/state-display";
 import { Pagination } from "@/features/events";
 import type { GalleryEvent } from "../types/gallery.types";
@@ -50,7 +49,7 @@ export function GalleryClient({ events }: GalleryClientProps) {
       };
 
   return (
-    <Section className="min-h-screen">
+    <div className="px-6 py-8 md:px-12 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between mb-8">
           <GallerySearch search={search} onSearchChange={handleSearchChange} />
@@ -80,6 +79,6 @@ export function GalleryClient({ events }: GalleryClientProps) {
           />
         )}
       </div>
-    </Section>
+    </div>
   );
 }

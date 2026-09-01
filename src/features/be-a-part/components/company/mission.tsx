@@ -1,7 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 const fadeInUp: Variants = {
@@ -23,21 +23,21 @@ export function Mission() {
   if (!counts) {
     return (
       <div className="flex justify-center">
-        <Section className="max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl w-full">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-32 max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl w-full py-24">
           <StatsLoader
             count={8}
-            className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9"
+            className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 px-4 sm:px-8"
           />
-        </Section>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="flex justify-center">
-      <div className="max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl">
-        <Section
-          className="flex flex-col justify-center items-center"
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32  max-w-7xl bg-mulearn-trusty-blue/10 rounded-2xl">
+        <MotionSection
+          className="flex flex-col justify-center py-24 items-center"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -65,7 +65,7 @@ export function Mission() {
               <StatCard value={120} label="Products" />
             </div>
           </MotionDiv>
-        </Section>
+        </MotionSection>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { MotionDiv, Section } from "@/components/layouts";
+import { MotionDiv, MotionSection } from "@/components/layouts";
 import { whereItGoesCategories } from "../data/donate.data";
 
 const fadeInUp: Variants = {
@@ -15,8 +15,8 @@ const fadeInUp: Variants = {
 
 export function WhereItGoes() {
   return (
-    <Section
-      variant="mulearn"
+    <MotionSection
+      className="w-full bg-mulearn px-4 py-20 text-mulearn-whitish sm:px-6 md:px-12 lg:px-24 xl:px-40"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -62,6 +62,6 @@ export function WhereItGoes() {
           );
         })}
       </div>
-    </Section>
+    </MotionSection>
   );
 }
