@@ -49,7 +49,7 @@ export function Navbar() {
         </Link>
 
         <NavigationMenu>
-          <NavigationMenuList className="gap-8 space-x-0 xl:gap-8 lg:gap-6">
+          <NavigationMenuList className="gap-8 space-x-0 xl:gap-8 lg:gap-6 md:gap-4">
             {navItems.map((item) => renderMenuItem(item))}
           </NavigationMenuList>
         </NavigationMenu>
@@ -216,7 +216,7 @@ const renderMenuItem = (item: NavItem) => {
 };
 
 const navTriggerClass =
-  "relative cursor-pointer px-3 py-2 text-left text-base font-bold text-mulearn-gray-600 transition-all duration-300 after:absolute after:bottom-0 after:left-3 after:h-0.5 after:w-0 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:-translate-y-px hover:text-mulearn-trusty-blue hover:after:w-[calc(100%-1.5rem)] data-[state=open]:text-mulearn-trusty-blue";
+  "relative cursor-pointer py-2 text-left text-base font-bold text-mulearn-gray-600 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-mulearn-trusty-blue after:transition-all after:duration-500 hover:-translate-y-px hover:text-mulearn-trusty-blue hover:after:w-full data-[state=open]:text-mulearn-trusty-blue";
 
 const getGridClass = (item: NavItem) => {
   if (!item.submenu) return "grid-cols-1";
