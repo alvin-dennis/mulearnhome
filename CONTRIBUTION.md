@@ -82,7 +82,7 @@ under `src/features/<name>/`. Follow the project structure and guidelines:
 - Only ever import from `@/shared` (the barrel) — never `@/shared/api/...` or any other
   deep path, from outside `shared/` itself
 
-#### **Import Rule (enforced by `bun run lint:boundaries`)**
+#### **Import Rule**
 
 - Only import a feature or shared module via its top-level `index.ts` barrel
   (`@/features/<name>` or `@/shared`) — never a deep path like
@@ -121,9 +121,6 @@ bun run typecheck
 bun run lint
 bun run lint:fix
 bun run format
-
-# Check feature-folder / barrel-import boundaries
-bun run lint:boundaries
 
 # Run all validation checks
 bun run validate
@@ -221,7 +218,6 @@ mulearnhome/
 ├── .env.example                 # Environment variable template
 ├── .env.local                   # Your local env (not committed)
 ├── biome.json                   # Biome linter/formatter config
-├── .dependency-cruiser.cjs      # Feature-folder / barrel-import boundary rules
 ├── commitlint.config.js         # Commit message linting
 └── tsconfig.json                # TypeScript configuration
 ```
@@ -379,7 +375,7 @@ import { Button } from "@/components/ui/button";
 
 - Use absolute imports with `@/` alias for anything outside the current module
 - Only import a feature/`shared` module via its barrel (`@/features/<name>`, `@/shared`)
-  — never a deep path (enforced by `bun run lint:boundaries`)
+  — never a deep path
 - No default exports — always named exports
 - No unused imports (Biome will catch this)
 
@@ -397,7 +393,6 @@ When adding features, consider:
 
 - Type safety (TypeScript)
 - Linting (Biome)
-- Barrel/import boundaries (`bun run lint:boundaries`)
 - Build success (`bun run build`)
 - Manual testing in dev mode
 

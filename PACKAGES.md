@@ -91,8 +91,7 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 * Also powers `AnimatedCounter` (`src/shared/components/animated-counter/`), the animated
   number counter used across stats sections (landing stats, careers, testimonials, etc.) —
-  built directly on Framer Motion's `animate`/`useInView`, replacing the standalone
-  `react-countup` dependency
+  built directly on Framer Motion's `animate`/`useInView`
 
 ---
 
@@ -179,11 +178,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 * Replaces ESLint + Prettier for speed and simplicity
 * Also enforces this repo's `kebab-case` filename convention and disallows direct
   `process.env` access
-
-### **dependency-cruiser**
-
-* Enforces the feature-folder architecture: features and `shared` may only be imported
-  via their top-level barrel (`bun run lint:boundaries`)
 
 ### **Husky**
 

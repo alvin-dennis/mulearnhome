@@ -38,7 +38,6 @@ mulearnhome/
 ├── package.json                  # Project metadata and dependencies
 ├── tsconfig.json                 # TypeScript config (path aliases)
 ├── biome.json                    # Biome linter/formatter config
-├── .dependency-cruiser.cjs       # Enforces the feature-folder/barrel import rules
 ├── next.config.ts                # Next.js config
 ├── postcss.config.mjs            # Tailwind/PostCSS config
 ├── README.md                     # Project documentation
@@ -65,10 +64,9 @@ src/features/<name>/
 `@/features/<name>` and renders it, keeping only Next.js-specific exports (`metadata`,
 `dynamic`) in `app/`.
 
-**Import rule (enforced by `bun run lint:boundaries`):** only import a feature or `shared`
-via its top-level `index.ts` barrel (`@/features/<name>` or `@/shared`) — never a deep path
-like `@/features/events/api/events.api`. Internal files inside a feature may still import
-siblings by relative path.
+**Import rule:** only import a feature or `shared` via its top-level `index.ts` barrel
+(`@/features/<name>` or `@/shared`) — never a deep path like `@/features/events/api/events.api`.
+Internal files inside a feature may still import siblings by relative path.
 
 ---
 
