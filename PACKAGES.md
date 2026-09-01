@@ -60,8 +60,8 @@ This document explains **why each major library is used** in the µLearn Next.js
 ### **Radix UI (`@radix-ui/*`)**
 
 * Accessible, unstyled UI primitives
-* Used for avatar, dialog, label, popover, radio-group, select, separator, slot, and tabs
-  (`src/components/ui/`)
+* Used for accordion, avatar, dialog, label, navigation-menu, popover, radio-group, select,
+  separator, slot, switch, and tabs (`src/components/ui/`)
 
 ### **clsx**
 
@@ -74,10 +74,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 ### **lucide-react**
 
 * Modern, tree-shakable icon library — the primary icon set across the app
-
-### **react-icons**
-
-* Additional icon sets when Lucide is insufficient (social/brand icons in the footer)
 
 ### **react-colorful**
 
@@ -131,10 +127,6 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 ## Networking & Communication
 
-### **Axios**
-
-* Promise-based HTTP client, used internally by the shared `fetcher`
-
 ### **date-fns**
 
 * Date formatting/parsing utilities (careers listings, events)
@@ -160,9 +152,9 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 * Converts DOM nodes to images (campus logo generator's download/share flow)
 
-### **swiper**
+### **embla-carousel-react**
 
-* Touch-enabled sliders and carousels (galleries, testimonials, colleges list, events)
+* Touch-enabled carousel engine powering the `Carousel` primitive (`src/components/ui/carousel.tsx`)
 
 ### **canvas-confetti**
 

@@ -24,8 +24,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "lint:boundaries": "depcruise src --config .dependency-cruiser.cjs",
     "validate": "bun run typecheck && bun run lint && bun run lint:boundaries",
-    "optimize:images": "bun run scripts/optimize-images.ts",
-    "analyze": "ANALYZE=true next build --webpack"
+    "optimize:images": "bun run scripts/optimize-images.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -71,7 +70,6 @@
     "@biomejs/biome": "^2.3.15",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@next/bundle-analyzer": "^16.3.3",
     "@tailwindcss/postcss": "^4.1.15",
     "@types/node": "^20",
     "@types/react": "^19",
