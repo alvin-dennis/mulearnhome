@@ -26,6 +26,7 @@ export {
   useGrabYourSuperpowers,
   useInspirationStation,
   useOfficeHours,
+  usePublicEvents,
   useSaltMangoTree,
 } from "./hooks";
 export type {

@@ -1,13 +1,18 @@
+"use client";
+
 import type { Variants } from "framer-motion";
 import { CalendarClock, Radio, Repeat } from "lucide-react";
-import { Suspense } from "react";
+import { useEffect, useState } from "react";
 import { MotionDiv } from "@/components/layouts";
-import { fetchPublicEvents } from "../../api/events.api";
 import { events } from "../../data/events.data";
+import { usePublicEvents } from "../../hooks/events.hooks";
 import type { Event } from "../../types/events.types";
 import { safeMapEvents, withNextSessionDate } from "../../utils/events.utils";
 import { type EventCategory, EventCategoryTabs } from "./event-category-tabs";
 import { EventsSkeleton } from "./events-skeleton";
+import { Pagination } from "./pagination";
+
+const PER_PAGE = 9;
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -41,38 +46,54 @@ export function EventsView() {
       </div>
 
       <div className="mx-auto max-w-7xl">
-        <Suspense fallback={<EventsSkeleton />}>
-          <EventsList />
-        </Suspense>
+        <EventsList />
       </div>
     </section>
   );
 }
 
-async function EventsList() {
+function EventsList() {
   const { recurringEvents } = events;
 
-  let ongoingEvents: Event[] | null = null;
-  let upcomingEvents: Event[] | null = null;
+  const [ongoingPage, setOngoingPage] = useState(1);
+  const [upcomingPage, setUpcomingPage] = useState(1);
 
-  const [ongoingResult, upcomingResult] = await Promise.allSettled([
-    fetchPublicEvents({ status: "ongoing" }),
-    fetchPublicEvents({ status: "upcoming" }),
-  ]);
+  const {
+    data: ongoingRaw,
+    pagination: ongoingPagination,
+    error: ongoingError,
+    isLoading: ongoingLoading,
+  } = usePublicEvents({ status: "ongoing", pageIndex: ongoingPage, perPage: PER_PAGE });
 
-  if (ongoingResult.status === "fulfilled" && Array.isArray(ongoingResult.value)) {
-    ongoingEvents = safeMapEvents(ongoingResult.value, "ongoing");
-  } else if (ongoingResult.status === "rejected") {
-    console.error("Failed to fetch ongoing events:", ongoingResult.reason);
+  const {
+    data: upcomingRaw,
+    pagination: upcomingPagination,
+    error: upcomingError,
+    isLoading: upcomingLoading,
+  } = usePublicEvents({ status: "upcoming", pageIndex: upcomingPage, perPage: PER_PAGE });
+
+  const [weeklyWithDates, setWeeklyWithDates] = useState<Event[]>(recurringEvents.weekly);
+
+  useEffect(() => {
+    let isCurrent = true;
+    withNextSessionDate(recurringEvents.weekly).then((weekly) => {
+      if (isCurrent) setWeeklyWithDates(weekly);
+    });
+    return () => {
+      isCurrent = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (
+    (ongoingLoading && ongoingRaw.length === 0) ||
+    (upcomingLoading && upcomingRaw.length === 0)
+  ) {
+    return <EventsSkeleton />;
   }
 
-  if (upcomingResult.status === "fulfilled" && Array.isArray(upcomingResult.value)) {
-    upcomingEvents = safeMapEvents(upcomingResult.value, "upcoming");
-  } else if (upcomingResult.status === "rejected") {
-    console.error("Failed to fetch upcoming events:", upcomingResult.reason);
-  }
-
-  const weeklyWithDates = await withNextSessionDate(recurringEvents.weekly);
+  const ongoingEvents = ongoingError ? null : safeMapEvents(ongoingRaw, "ongoing");
+  const upcomingEvents = upcomingError ? null : safeMapEvents(upcomingRaw, "upcoming");
 
   const categories: EventCategory[] = [
     {
@@ -85,6 +106,14 @@ async function EventsList() {
       emptyDescription:
         "μLearn's stage is quiet at the moment. Check back soon to catch something happening live.",
       live: !!ongoingEvents && ongoingEvents.length > 0,
+      footer: (
+        <Pagination
+          page={ongoingPage}
+          setPage={setOngoingPage}
+          total={ongoingPagination?.count ?? 0}
+          perPage={PER_PAGE}
+        />
+      ),
     },
     {
       id: "upcoming",
@@ -95,6 +124,14 @@ async function EventsList() {
       emptyTitle: "No upcoming events yet",
       emptyDescription:
         "Nothing's on the calendar just yet. New events get added often, so check back soon.",
+      footer: (
+        <Pagination
+          page={upcomingPage}
+          setPage={setUpcomingPage}
+          total={upcomingPagination?.count ?? 0}
+          perPage={PER_PAGE}
+        />
+      ),
     },
     {
       id: "weekly",

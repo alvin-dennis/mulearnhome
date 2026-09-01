@@ -6,11 +6,14 @@ import {
   fetchGrabYourSuperpowers,
   fetchInspirationStation,
   fetchOfficeHours,
+  fetchPublicEvents,
   fetchSaltMangoTree,
 } from "../api/events.api";
 import type {
   GrabYourSuperpowersSession,
   OfficeHoursSession,
+  PublicEvent,
+  PublicEventsParams,
   WeeklyTwitchEpisode,
   WeeklyTwitchPagination,
   WeeklyTwitchParams,
@@ -23,11 +26,9 @@ interface WeeklyTwitchResult<T> {
   isLoading: boolean;
 }
 
-function useWeeklyTwitchFetch<T>(
-  fetcher: (
-    params: WeeklyTwitchParams,
-  ) => Promise<{ data: T[]; pagination: WeeklyTwitchPagination }>,
-  params: WeeklyTwitchParams,
+function useWeeklyTwitchFetch<T, P>(
+  fetcher: (params: P) => Promise<{ data: T[]; pagination: WeeklyTwitchPagination }>,
+  params: P,
 ): WeeklyTwitchResult<T> {
   const [data, setData] = useState<T[]>([]);
   const [pagination, setPagination] = useState<WeeklyTwitchPagination | null>(null);
@@ -58,7 +59,6 @@ function useWeeklyTwitchFetch<T>(
     return () => {
       isCurrent = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetcher, JSON.stringify(params)]);
 
   return { data, pagination, error, isLoading };
@@ -84,4 +84,8 @@ export function useGrabYourSuperpowers(
   params: WeeklyTwitchParams,
 ): WeeklyTwitchResult<GrabYourSuperpowersSession> {
   return useWeeklyTwitchFetch(fetchGrabYourSuperpowers, params);
+}
+
+export function usePublicEvents(params: PublicEventsParams): WeeklyTwitchResult<PublicEvent> {
+  return useWeeklyTwitchFetch(fetchPublicEvents, params);
 }

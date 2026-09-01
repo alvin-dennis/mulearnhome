@@ -125,6 +125,8 @@ export interface PublicEventsParams {
   tags?: string;
   search?: string;
   sortBy?: string;
+  pageIndex?: number;
+  perPage?: number;
 }
 
 /** `GET /public/events/` response shape — an object with `data`/`pagination`, not a plain array. */

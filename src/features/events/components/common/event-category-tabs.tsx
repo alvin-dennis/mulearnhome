@@ -22,6 +22,7 @@ export interface EventCategory {
   emptyTitle: string;
   emptyDescription: string;
   live?: boolean;
+  footer?: ReactNode;
 }
 
 function LiveDot() {
@@ -91,6 +92,7 @@ export function EventCategoryTabs({ categories }: { categories: EventCategory[] 
                 size="md"
               />
             )}
+            {category.footer}
           </TabsContent>
         );
       })}

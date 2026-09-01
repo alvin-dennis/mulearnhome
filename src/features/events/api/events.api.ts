@@ -4,7 +4,6 @@ import { endpoints } from "@/shared";
 import type {
   GrabYourSuperpowersSession,
   OfficeHoursSession,
-  PublicEvent,
   PublicEventsListResponse,
   PublicEventsParams,
   WeeklyTwitchEpisode,
@@ -31,21 +30,21 @@ function buildPublicEventsParams(params: PublicEventsParams): URLSearchParams {
   if (params.tags) out.append("tags", params.tags);
   if (params.search) out.append("search", params.search);
   if (params.sortBy) out.append("sortBy", params.sortBy);
+  if (params.pageIndex !== undefined) out.append("pageIndex", String(params.pageIndex));
+  if (params.perPage) out.append("perPage", String(params.perPage));
 
   return out;
 }
 
-/**
- * Backend response is `{ data: PublicEvent[], pagination }`, not a plain array — see
- * docs/api-schema-audit-2026-08-29.md, Bug 1. Extracting `.response.data` (not `.response`
- * itself) is the fix; `pagination` is discarded since no caller paginates events today.
- */
-export async function fetchPublicEvents(params?: PublicEventsParams): Promise<PublicEvent[]> {
+/** Backend response is `{ data: PublicEvent[], pagination }`, not a plain array. */
+export async function fetchPublicEvents(
+  params?: PublicEventsParams,
+): Promise<PublicEventsListResponse> {
   const qs = params ? buildPublicEventsParams(params).toString() : "";
   const envelope = await publicGateway.get<ApiResponse<PublicEventsListResponse>>(
     qs ? `${endpoints.publicEvents.getEvents}?${qs}` : endpoints.publicEvents.getEvents,
   );
-  return envelope.response.data;
+  return envelope.response;
 }
 
 interface WeeklyTwitchResponse<T> {
