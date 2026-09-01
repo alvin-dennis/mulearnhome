@@ -4,11 +4,16 @@ import type { Variants } from "framer-motion";
 import { Sparkle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import CountUp from "react-countup";
 import { MotionDiv, MuImage, Section } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { clientEnv } from "@/config/env.client";
-import { cdnUrl, fetchPublicProfileImage, StatsLoader, useLandingStats } from "@/shared";
+import {
+  AnimatedCounter,
+  cdnUrl,
+  fetchPublicProfileImage,
+  StatsLoader,
+  useLandingStats,
+} from "@/shared";
 import { enablerFaculties } from "../../data/enablers.data";
 
 const fadeInUp: Variants = {
@@ -174,11 +179,7 @@ function StatCard({
   return (
     <div className="bg-card rounded-2xl shadow-sm flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
-        {isString ? (
-          value
-        ) : (
-          <CountUp end={value as number} duration={5} separator="," autoAnimate autoAnimateOnce />
-        )}
+        {isString ? value : <AnimatedCounter end={value as number} duration={5} separator="," />}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1">{label}</p>
     </div>

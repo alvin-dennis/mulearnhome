@@ -89,9 +89,10 @@ This document explains **why each major library is used** in the µLearn Next.js
 * Declarative animations for React
 * Used for page transitions and micro-interactions across nearly every feature
 
-### **react-countup**
-
-* Animated number counters for stats sections (landing stats, careers, testimonials, etc.)
+* Also powers `AnimatedCounter` (`src/shared/components/animated-counter/`), the animated
+  number counter used across stats sections (landing stats, careers, testimonials, etc.) —
+  built directly on Framer Motion's `animate`/`useInView`, replacing the standalone
+  `react-countup` dependency
 
 ---
 

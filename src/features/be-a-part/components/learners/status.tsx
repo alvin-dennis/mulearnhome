@@ -1,8 +1,7 @@
 "use client";
 
-import CountUp from "react-countup";
 import { MotionDiv } from "@/components/layouts";
-import { StatsLoader, useLandingStats } from "@/shared";
+import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 export const LearnersStatus = () => {
   const { counts, hasError } = useLandingStats();
@@ -72,13 +71,7 @@ export const LearnersStatus = () => {
               className="text-center"
             >
               <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-mulearn mb-4">
-                <CountUp
-                  end={stat.number}
-                  duration={2.5}
-                  separator=","
-                  autoAnimate
-                  autoAnimateOnce
-                />
+                <AnimatedCounter end={stat.number} duration={2.5} separator="," />
               </h3>
 
               <p className="text-lg md:text-xl font-medium">{stat.label}</p>

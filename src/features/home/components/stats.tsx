@@ -1,9 +1,8 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import CountUp from "react-countup";
 import { MotionDiv, Section } from "@/components/layouts";
-import { StatsLoader, useLandingStats } from "@/shared";
+import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -101,11 +100,7 @@ function StatCard({
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
-        {isString ? (
-          value
-        ) : (
-          <CountUp end={value as number} duration={10} separator="," autoAnimate autoAnimateOnce />
-        )}
+        {isString ? value : <AnimatedCounter end={value as number} duration={10} separator="," />}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1 text-mulearn-blackish">{label}</p>
     </div>

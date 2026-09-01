@@ -1,11 +1,8 @@
-"use client";
-
 import { Star, TrendingUp, Users } from "lucide-react";
-import CountUp from "react-countup";
 import { MotionDiv } from "@/components/layouts";
 import { Card } from "@/components/ui/card";
 import type { Counts } from "@/shared";
-import { StatsLoader } from "@/shared";
+import { AnimatedCounter, StatsLoader } from "@/shared";
 
 interface TestimonialStatsProps {
   counts: Counts | null;
@@ -63,13 +60,7 @@ export function TestimonialStats({ counts, hasError }: TestimonialStatsProps) {
                 <Icon className="w-6 h-6" />
               </div>
               <div className="text-3xl sm:text-4xl font-black text-mulearn mb-2">
-                <CountUp
-                  end={stat.value}
-                  duration={2.5}
-                  separator=","
-                  autoAnimate
-                  autoAnimateOnce
-                />
+                <AnimatedCounter end={stat.value} duration={2.5} separator="," />
                 <span className="text-2xl ml-0.5">+</span>
               </div>
               <div className="text-sm font-bold text-mulearn-gray-600 uppercase tracking-widest">

@@ -1,8 +1,7 @@
 "use client";
 
-import CountUp from "react-countup";
 import { Separator } from "@/components/ui/separator";
-import { StatsLoader, useLandingStats } from "@/shared";
+import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 export function ImpactStats() {
   const { counts, hasError } = useLandingStats();
@@ -68,11 +67,7 @@ function StatCard({
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <p className="font-semibold text-mulearn text-2xl sm:text-3xl lg:text-[2rem]">
-        {isString ? (
-          value
-        ) : (
-          <CountUp end={value as number} duration={5} separator="," autoAnimate autoAnimateOnce />
-        )}
+        {isString ? value : <AnimatedCounter end={value as number} duration={5} separator="," />}
       </p>
       <p className="text-sm sm:text-base font-medium mt-1">{label}</p>
     </div>

@@ -1,6 +1,7 @@
 export { cdnUrl, endpoints, fetchPublicProfileImage, fetchTopLearners } from "./api";
 export {
   AnalyticsProvider,
+  AnimatedCounter,
   CookieConsent,
   CookiePreferencesModal,
   CookieSettingsLink,

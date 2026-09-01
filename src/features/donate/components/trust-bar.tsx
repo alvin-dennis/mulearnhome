@@ -1,8 +1,7 @@
 "use client";
 
 import { Heart } from "lucide-react";
-import CountUp from "react-countup";
-import { StatsLoader, useLandingStats } from "@/shared";
+import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 export function TrustBar() {
   const { counts, hasError } = useLandingStats();
@@ -50,13 +49,7 @@ export function TrustBar() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-2xl font-extrabold text-mulearn sm:text-3xl">
-                  <CountUp
-                    end={stat.value}
-                    duration={2.5}
-                    separator=","
-                    autoAnimate
-                    autoAnimateOnce
-                  />
+                  <AnimatedCounter end={stat.value} duration={2.5} separator="," />
                 </p>
                 <p className="text-sm text-mulearn-gray-600">{stat.label}</p>
               </div>

@@ -1,7 +1,6 @@
 "use client";
 
-import CountUp from "react-countup";
-import { StatsLoader, useLandingStats } from "@/shared";
+import { AnimatedCounter, StatsLoader, useLandingStats } from "@/shared";
 
 export function CareersStats() {
   const { counts, hasError } = useLandingStats();
@@ -23,20 +22,19 @@ export function CareersStats() {
     <div className="mt-4 sm:mt-6 flex flex-wrap justify-center lg:justify-start gap-6">
       <div className="flex flex-col items-center lg:items-start">
         <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-          <CountUp end={hiredCandidates} duration={2.5} separator="," autoAnimate autoAnimateOnce />
-          +
+          <AnimatedCounter end={hiredCandidates} duration={2.5} separator="," />+
         </span>
         <span className="text-base">Hired Candidates</span>
       </div>
       <div className="flex flex-col items-center lg:items-start">
         <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-          <CountUp end={companyCount} duration={2.5} separator="," autoAnimate autoAnimateOnce />+
+          <AnimatedCounter end={companyCount} duration={2.5} separator="," />+
         </span>
         <span className="text-base">Companies</span>
       </div>
       <div className="flex flex-col items-center lg:items-start">
         <span className="text-[1.6rem] md:text-[2rem] font-semibold text-mulearn">
-          <CountUp end={hiringCalls} duration={2.5} separator="," autoAnimate autoAnimateOnce />+
+          <AnimatedCounter end={hiringCalls} duration={2.5} separator="," />+
         </span>
         <span className="text-base">Hiring Calls</span>
       </div>
