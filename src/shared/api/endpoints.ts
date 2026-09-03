@@ -16,8 +16,6 @@ export const endpoints = {
     subscription: "/donate/subscription/create/",
     /** POST - Verify subscription payment */
     subscriptionVerify: "/donate/subscription/verify/",
-    /** POST - Submit a bank-transfer donation */
-    bankTransfer: "/donate/bank-transfer/",
   },
 
   // ============================================
