@@ -58,7 +58,7 @@ export const ClosedCareersCard = ({
             <strong>Remuneration:</strong> {remuneration}
           </p>
         )}
-        {vacancies !== undefined && vacancies !== null && (
+        {Boolean(vacancies) && (
           <p className="text-left">
             <strong>Vacancies:</strong> {vacancies}
           </p>

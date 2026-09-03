@@ -57,7 +57,7 @@ export const CareersCard = ({
             <span className="font-semibold">Remuneration:</span> {remuneration}
           </p>
         )}
-        {vacancies !== undefined && vacancies !== null && (
+        {Boolean(vacancies) && (
           <p className="text-left text-base text-mulearn-blackish">
             <span className="font-semibold">Vacancies:</span> {vacancies}
           </p>
