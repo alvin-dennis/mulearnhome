@@ -53,7 +53,7 @@ export function mapPublicEventToEvent(item: PublicEvent): Event {
     image: item.cover_image || undefined,
     isLive: now >= start && now <= end,
     date: dateRange,
-    link: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/event/${item.id}`,
+    link: `${clientEnv.NEXT_PUBLIC_APP_URL}dashboard/events/${item.id}`,
     category,
     organizedBy,
     tags: item.tags?.length ? item.tags : undefined,
