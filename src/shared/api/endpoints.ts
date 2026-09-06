@@ -24,6 +24,8 @@ export const endpoints = {
   publicEvents: {
     /** GET - List public events */
     getEvents: "/public/events/",
+    /** GET - Featured public events */
+    getFeaturedEvents: "/public/events/featured/",
   },
 
   // ============================================

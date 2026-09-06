@@ -1,11 +1,11 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import { CalendarClock, Radio, Repeat } from "lucide-react";
+import { CalendarClock, Radio, Repeat, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MotionDiv } from "@/components/layouts";
 import { events } from "../../data/events.data";
-import { usePublicEvents } from "../../hooks/events.hooks";
+import { useFeaturedEvents, usePublicEvents } from "../../hooks/events.hooks";
 import type { Event } from "../../types/events.types";
 import { safeMapEvents, withNextSessionDate } from "../../utils/events.utils";
 import { type EventCategory, EventCategoryTabs } from "./event-category-tabs";
@@ -55,8 +55,16 @@ export function EventsView() {
 function EventsList() {
   const { recurringEvents } = events;
 
+  const [featuredPage, setFeaturedPage] = useState(1);
   const [ongoingPage, setOngoingPage] = useState(1);
   const [upcomingPage, setUpcomingPage] = useState(1);
+
+  const {
+    data: featuredRaw,
+    pagination: featuredPagination,
+    error: featuredError,
+    isLoading: featuredLoading,
+  } = useFeaturedEvents({ pageIndex: featuredPage, perPage: PER_PAGE });
 
   const {
     data: ongoingRaw,
@@ -86,16 +94,35 @@ function EventsList() {
   }, []);
 
   if (
+    (featuredLoading && featuredRaw.length === 0) ||
     (ongoingLoading && ongoingRaw.length === 0) ||
     (upcomingLoading && upcomingRaw.length === 0)
   ) {
     return <EventsSkeleton />;
   }
 
+  const featuredEvents = featuredError ? null : safeMapEvents(featuredRaw, "featured");
   const ongoingEvents = ongoingError ? null : safeMapEvents(ongoingRaw, "ongoing");
   const upcomingEvents = upcomingError ? null : safeMapEvents(upcomingRaw, "upcoming");
 
   const categories: EventCategory[] = [
+    {
+      id: "featured",
+      navLabel: "Featured",
+      title: "Featured Events",
+      icon: <Star className="h-4 w-4" />,
+      events: featuredEvents,
+      emptyTitle: "No featured events right now",
+      emptyDescription: "Check back soon — standout events get featured here.",
+      footer: (
+        <Pagination
+          page={featuredPage}
+          setPage={setFeaturedPage}
+          total={featuredPagination?.count ?? 0}
+          perPage={PER_PAGE}
+        />
+      ),
+    },
     {
       id: "ongoing",
       navLabel: "Ongoing",

@@ -1,4 +1,5 @@
 export {
+  useFeaturedEvents,
   useGrabYourSuperpowers,
   useInspirationStation,
   useOfficeHours,

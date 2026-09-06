@@ -47,6 +47,19 @@ export async function fetchPublicEvents(
   return envelope.response;
 }
 
+/** Backend response is `{ data: PublicEvent[], pagination }`, not a plain array. */
+export async function fetchFeaturedEvents(
+  params?: PublicEventsParams,
+): Promise<PublicEventsListResponse> {
+  const qs = params ? buildPublicEventsParams(params).toString() : "";
+  const envelope = await publicGateway.get<ApiResponse<PublicEventsListResponse>>(
+    qs
+      ? `${endpoints.publicEvents.getFeaturedEvents}?${qs}`
+      : endpoints.publicEvents.getFeaturedEvents,
+  );
+  return envelope.response;
+}
+
 interface WeeklyTwitchResponse<T> {
   data: T[];
   pagination: WeeklyTwitchPagination;

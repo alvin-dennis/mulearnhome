@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getApiResponseError } from "@/shared";
 import {
+  fetchFeaturedEvents,
   fetchGrabYourSuperpowers,
   fetchInspirationStation,
   fetchOfficeHours,
@@ -88,4 +89,8 @@ export function useGrabYourSuperpowers(
 
 export function usePublicEvents(params: PublicEventsParams): WeeklyTwitchResult<PublicEvent> {
   return useWeeklyTwitchFetch(fetchPublicEvents, params);
+}
+
+export function useFeaturedEvents(params: PublicEventsParams): WeeklyTwitchResult<PublicEvent> {
+  return useWeeklyTwitchFetch(fetchFeaturedEvents, params);
 }

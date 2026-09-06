@@ -1,4 +1,5 @@
 export {
+  fetchFeaturedEvents,
   fetchGrabYourSuperpowers,
   fetchInspirationStation,
   fetchOfficeHours,
@@ -23,6 +24,7 @@ export {
 } from "./components";
 export { events } from "./data";
 export {
+  useFeaturedEvents,
   useGrabYourSuperpowers,
   useInspirationStation,
   useOfficeHours,

@@ -1,4 +1,5 @@
 export {
+  fetchFeaturedEvents,
   fetchGrabYourSuperpowers,
   fetchInspirationStation,
   fetchOfficeHours,
