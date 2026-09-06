@@ -69,6 +69,72 @@ h5 {
 }
 
 @layer utilities {
+    /* Event type chips — tinted bg + solid text, mirrors mulearn-dashboard's ig-cat-* */
+    .ig-cat-workshop {
+        background-color: color-mix(in srgb, var(--chart-1) 16%, var(--background));
+        color: var(--chart-1);
+    }
+    .ig-cat-webinar {
+        background-color: color-mix(in srgb, var(--chart-2) 16%, var(--background));
+        color: var(--chart-2);
+    }
+    .ig-cat-hackathon {
+        background-color: color-mix(in srgb, var(--chart-3) 16%, var(--background));
+        color: var(--chart-3);
+    }
+    .ig-cat-meetup {
+        background-color: color-mix(in srgb, var(--chart-4) 16%, var(--background));
+        color: var(--chart-4);
+    }
+    .ig-cat-competition {
+        background-color: color-mix(in srgb, var(--chart-5) 16%, var(--background));
+        color: var(--chart-5);
+    }
+    .ig-cat-seminar {
+        background-color: color-mix(in srgb, var(--mulearn) 16%, var(--background));
+        color: var(--mulearn);
+    }
+    .ig-cat-bootcamp {
+        background-color: color-mix(in srgb, var(--mulearn-trusty-blue) 16%, var(--background));
+        color: var(--mulearn-trusty-blue);
+    }
+    .ig-cat-conference {
+        background-color: color-mix(in srgb, var(--mulearn-duke-purple) 16%, var(--background));
+        color: var(--mulearn-duke-purple);
+    }
+    .ig-cat-ideathon {
+        background-color: color-mix(in srgb, var(--chart-1) 16%, var(--background));
+        color: var(--chart-1);
+    }
+    .ig-cat-cultural_event {
+        background-color: color-mix(in srgb, var(--chart-2) 16%, var(--background));
+        color: var(--chart-2);
+    }
+    .ig-cat-sports_event {
+        background-color: color-mix(in srgb, var(--chart-3) 16%, var(--background));
+        color: var(--chart-3);
+    }
+    .ig-cat-community_event {
+        background-color: color-mix(in srgb, var(--chart-4) 16%, var(--background));
+        color: var(--chart-4);
+    }
+    .ig-cat-expo {
+        background-color: color-mix(in srgb, var(--chart-5) 16%, var(--background));
+        color: var(--chart-5);
+    }
+    .ig-cat-networking_event {
+        background-color: color-mix(in srgb, var(--mulearn) 16%, var(--background));
+        color: var(--mulearn);
+    }
+    .ig-cat-tech_talk {
+        background-color: color-mix(in srgb, var(--mulearn-trusty-blue) 16%, var(--background));
+        color: var(--mulearn-trusty-blue);
+    }
+    .ig-cat-others {
+        background-color: color-mix(in srgb, var(--mulearn-gray-600) 12%, var(--background));
+        color: var(--mulearn-gray-600);
+    }
+
     @keyframes floatY {
 
         0%,
