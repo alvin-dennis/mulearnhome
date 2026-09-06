@@ -132,7 +132,6 @@ function EventsList() {
       emptyTitle: "Nothing's live right now",
       emptyDescription:
         "μLearn's stage is quiet at the moment. Check back soon to catch something happening live.",
-      live: !!ongoingEvents && ongoingEvents.length > 0,
       footer: (
         <Pagination
           page={ongoingPage}

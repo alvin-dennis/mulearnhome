@@ -21,17 +21,7 @@ export interface EventCategory {
   events: Event[] | null;
   emptyTitle: string;
   emptyDescription: string;
-  live?: boolean;
   footer?: ReactNode;
-}
-
-function LiveDot() {
-  return (
-    <span className="relative flex h-1.5 w-1.5">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mulearn-trusty-blue/70" />
-      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-mulearn-trusty-blue" />
-    </span>
-  );
 }
 
 export function EventCategoryTabs({ categories }: { categories: EventCategory[] }) {
@@ -65,7 +55,6 @@ export function EventCategoryTabs({ categories }: { categories: EventCategory[] 
             >
               {category.icon}
               {category.navLabel}
-              {category.live && <LiveDot />}
             </TabsTrigger>
           ))}
         </TabsList>

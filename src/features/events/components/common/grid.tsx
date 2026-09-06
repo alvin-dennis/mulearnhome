@@ -14,6 +14,7 @@ export function Grid({ events }: Props) {
         return (
           <MotionDiv
             key={`${event.title}-${event.date || i}`}
+            className="w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
