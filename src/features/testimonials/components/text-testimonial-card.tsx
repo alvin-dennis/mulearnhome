@@ -1,7 +1,8 @@
 "use client";
 
-import { Instagram, Linkedin, MessageCircle, Star, Twitter, Users } from "lucide-react";
+import { MessageCircle, Star, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -55,9 +56,9 @@ export function TextTestimonialCard({ testimonial }: TextTestimonialCardProps) {
 
   const getSocialIcon = (socialProof?: string) => {
     if (!socialProof) return <MessageCircle className="w-4 h-4" />;
-    if (socialProof.includes("LinkedIn")) return <Linkedin className="w-4 h-4" />;
-    if (socialProof.includes("Instgram")) return <Instagram className="w-4 h-4" />;
-    if (socialProof.includes("Twitter")) return <Twitter className="w-4 h-4" />;
+    if (socialProof.includes("LinkedIn")) return <FaLinkedin className="w-4 h-4" />;
+    if (socialProof.includes("Instgram")) return <FaInstagram className="w-4 h-4" />;
+    if (socialProof.includes("Twitter")) return <FaTwitter className="w-4 h-4" />;
     if (socialProof.includes("Community")) return <Users className="w-4 h-4" />;
     return <MessageCircle className="w-4 h-4" />;
   };

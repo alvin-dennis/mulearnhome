@@ -75,6 +75,11 @@ This document explains **why each major library is used** in the µLearn Next.js
 
 * Modern, tree-shakable icon library — the primary icon set across the app
 
+### **react-icons**
+
+* Brand icon set (`react-icons/fa`) — required for all social platform icons (LinkedIn, Instagram,
+  Facebook, Twitter, YouTube, GitHub, WhatsApp) instead of lucide-react, since lucide lacks brand-accurate marks
+
 ### **react-colorful**
 
 * Lightweight color picker component

@@ -1,7 +1,7 @@
-import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
 export type SocialLinks = {
-  icon: LucideIcon;
+  icon: IconType;
   title: string;
   subtitle?: string;
   href: string;

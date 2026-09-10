@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { clientEnv } from "@/config/env.client";
 
 export const navItems = [
@@ -158,22 +158,22 @@ export const footer = [
 
 export const socials = [
   {
-    icon: Linkedin,
+    icon: FaLinkedin,
     url: "https://linkedin.com/company/gtechmulearn/",
     label: "LinkedIn",
   },
   {
-    icon: Instagram,
+    icon: FaInstagram,
     url: "https://instagram.com/mulearn.official/",
     label: "Instagram",
   },
   {
-    icon: Youtube,
+    icon: FaYoutube,
     url: "https://youtube.com/c/mulearn",
     label: "YouTube",
   },
   {
-    icon: Facebook,
+    icon: FaFacebook,
     url: "http://facebook.com/gtechmulearn",
     label: "Facebook",
   },
