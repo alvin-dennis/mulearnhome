@@ -1,14 +1,27 @@
 "use client";
 
 import { useScroll, useTransform } from "framer-motion";
-import { ArrowRight, BookOpen, Lightbulb, Search, Target, TrendingUp, Users } from "lucide-react";
-import { useState } from "react";
+import {
+  ArrowRight,
+  BookOpen,
+  Info,
+  Lightbulb,
+  Search,
+  Target,
+  TrendingUp,
+  Users,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 import { MotionA, MotionDiv, MotionSection, MuImage } from "@/components/layouts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { clientEnv } from "@/config/env.client";
+import { fetchPublicInterestGroups } from "../api/interest-groups.api";
 import { interestGroups } from "../data/interest-groups.data";
+import type { InterestGroupDisplayItem } from "../types/interest-groups.types";
+import { getPresentationMetadata, resolveGroupImage } from "../utils/interest-groups.utils";
+import { InterestGroupDetailDialog } from "./interest-group-detail-dialog";
 
 const workflowSteps = [
   {
@@ -61,13 +74,53 @@ const coreValues = [
   },
 ];
 
+const FALLBACK_GROUPS: InterestGroupDisplayItem[] = interestGroups.map((group) => ({
+  ...group,
+  leads: [],
+  mentors: [],
+  thinktank: [],
+  impact_projects: [],
+}));
+
 export function InterestGroupsView() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [groups, setGroups] = useState<InterestGroupDisplayItem[]>(FALLBACK_GROUPS);
+  const [selectedGroup, setSelectedGroup] = useState<InterestGroupDisplayItem | null>(null);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 500], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  const filteredGroups = interestGroups.filter(
+  useEffect(() => {
+    async function loadApiData() {
+      const apiGroups = await fetchPublicInterestGroups();
+      if (apiGroups.length === 0) return;
+
+      const appBaseUrl = clientEnv.NEXT_PUBLIC_APP_URL.replace(/\/+$/, "");
+      const merged = apiGroups.map((apiGroup) => {
+        const localMatch = getPresentationMetadata(apiGroup.name);
+        const groupLink = apiGroup.id
+          ? `${appBaseUrl}/dashboard/interest-group/${apiGroup.id}`
+          : `${appBaseUrl}/dashboard/interest-group`;
+
+        return {
+          id: apiGroup.id,
+          name: apiGroup.name,
+          tagline: localMatch?.tagline || "",
+          image: resolveGroupImage(apiGroup.name, apiGroup.image, apiGroup.icon),
+          description: localMatch?.description || "",
+          link: groupLink,
+          leads: apiGroup.leads ?? [],
+          mentors: apiGroup.mentors ?? [],
+          thinktank: apiGroup.thinktank ?? [],
+          impact_projects: apiGroup.impact_projects ?? [],
+        };
+      });
+      setGroups(merged);
+    }
+    loadApiData();
+  }, []);
+
+  const filteredGroups = groups.filter(
     (group) =>
       group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       group.tagline.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -282,55 +335,76 @@ export function InterestGroupsView() {
         </MotionDiv>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredGroups.map((group, index) => (
-            <MotionA
-              key={group.name}
-              href={group.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group block"
-            >
-              <Card
-                variant="hoverable"
-                className="relative h-full bg-mulearn-whitish border-mulearn-greyish/20"
+          {filteredGroups.map((group, index) => {
+            const hasApiDetails =
+              group.leads.length > 0 ||
+              group.mentors.length > 0 ||
+              group.thinktank.length > 0 ||
+              group.impact_projects.length > 0;
+
+            return (
+              <MotionDiv
+                key={group.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="group block h-full"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <MuImage
-                    src={group.image}
-                    alt={group.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                <Card
+                  variant="hoverable"
+                  className="relative h-full flex flex-col justify-between bg-mulearn-whitish border-mulearn-greyish/20"
+                >
+                  <MotionA
+                    href={group.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <MuImage
+                        src={group.image}
+                        alt={group.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </MotionA>
 
-                <CardContent className="p-6">
-                  <CardTitle className="mb-2 text-mulearn">{group.name}</CardTitle>
-                  <CardDescription className="text-mulearn-gray-600 mb-4">
-                    {group.tagline}
-                  </CardDescription>
+                  <CardContent className="p-6 flex flex-col flex-1 gap-3">
+                    <div className="flex-1">
+                      <CardTitle className="mb-2 text-mulearn">{group.name}</CardTitle>
+                      <CardDescription className="text-mulearn-gray-600">
+                        {group.tagline}
+                      </CardDescription>
+                    </div>
 
-                  <div className="flex items-center gap-2 text-mulearn font-medium text-sm group-hover:gap-3 transition-all duration-300">
-                    Explore <ArrowRight className="w-4 h-4" />
-                  </div>
-                </CardContent>
+                    <div className="flex items-center justify-between gap-2 pt-3 border-t border-mulearn-greyish/20">
+                      <a
+                        href={group.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-mulearn font-medium text-sm hover:gap-3 transition-all duration-300"
+                      >
+                        Explore <ArrowRight className="w-4 h-4" />
+                      </a>
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-mulearn opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 rounded-2xl">
-                  <p className="text-mulearn-whitish text-sm leading-relaxed text-center mb-4">
-                    {group.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-mulearn-whitish font-medium text-sm">
-                    Explore <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </Card>
-            </MotionA>
-          ))}
+                      {hasApiDetails && (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedGroup(group)}
+                          className="px-2.5 py-1 text-[11px] font-semibold bg-blue-50 text-mulearn-trusty-blue hover:bg-mulearn-trusty-blue hover:text-mulearn-whitish rounded-lg transition-colors flex items-center gap-1 cursor-pointer shrink-0"
+                        >
+                          <Info className="w-3 h-3" /> Team & Details
+                        </button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </MotionDiv>
+            );
+          })}
         </div>
 
         {filteredGroups.length === 0 && (
@@ -345,6 +419,11 @@ export function InterestGroupsView() {
           </MotionDiv>
         )}
       </section>
+
+      <InterestGroupDetailDialog
+        group={selectedGroup}
+        onOpenChange={(open) => !open && setSelectedGroup(null)}
+      />
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-mulearn">
         <MotionDiv

@@ -43,6 +43,14 @@ export const endpoints = {
   },
 
   // ============================================
+  // Interest Group Endpoints
+  // ============================================
+  interestGroups: {
+    /** GET - List public interest groups (leads, mentors, thinktank, impact projects) */
+    list: "/public/ig/list/",
+  },
+
+  // ============================================
   // Career Lab Endpoints
   // ============================================
   careerLab: {

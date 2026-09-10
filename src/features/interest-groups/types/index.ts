@@ -1,6 +1,3 @@
-export { fetchPublicInterestGroups } from "./api";
-export { InterestGroupsView } from "./components";
-export { interestGroups } from "./data";
 export type {
   ApiImpactProject,
   ApiImpactProjectLink,
@@ -11,4 +8,4 @@ export type {
   InterestGroupDisplayItem,
   InterestGroupLocalMeta,
   PublicIgApiResponse,
-} from "./types";
+} from "./interest-groups.types";
