@@ -1,7 +1,5 @@
-"use client";
-
-import { BadgeCheck, Check, Clock, ExternalLink, GraduationCap, Users, X } from "lucide-react";
-import { type ReactNode, useState } from "react";
+import { BadgeCheck, ExternalLink, GraduationCap, Users, X } from "lucide-react";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,8 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import type { ApiMember, InterestGroupDisplayItem } from "../types/interest-groups.types";
-import { GroupAbout } from "./group-about";
 import { CATEGORY_META, GroupMark } from "./group-icon";
+import { ImpactProjectCard } from "./impact-project-card";
 import { MemberCard } from "./member-card";
 
 const TEAM_SECTION_ID = "ig-dialog-team";
@@ -20,51 +18,12 @@ const TEAM_SECTION_ID = "ig-dialog-team";
 const plural = (count: number, word: string) =>
   `${count.toLocaleString("en-US")} ${count === 1 ? word : `${word}s`}`;
 
-const AsideHeading = ({ children }: { children: ReactNode }) => (
-  <h4 className="mb-3 text-xs font-bold uppercase tracking-wider text-mulearn">{children}</h4>
-);
-
 function MetaItem({ icon: Icon, children }: { icon: typeof Users; children: ReactNode }) {
   return (
     <span className="inline-flex items-center gap-1.5">
       <Icon className="size-4 text-mulearn" aria-hidden="true" />
       {children}
     </span>
-  );
-}
-
-const VISIBLE_CAREERS = 8;
-
-function CareerPaths({ careers }: { careers: string[] }) {
-  const [showAll, setShowAll] = useState(false);
-  const hidden = careers.length - VISIBLE_CAREERS;
-  const visible = showAll || hidden <= 0 ? careers : careers.slice(0, VISIBLE_CAREERS);
-
-  return (
-    <div>
-      <AsideHeading>Career paths</AsideHeading>
-      <ul className="flex flex-wrap gap-2">
-        {visible.map((career) => (
-          <li
-            key={career}
-            className="rounded-full border border-mulearn/15 bg-card px-3 py-1 text-sm text-mulearn-blackish"
-          >
-            {career}
-          </li>
-        ))}
-        {hidden > 0 && (
-          <li>
-            <button
-              type="button"
-              onClick={() => setShowAll((prev) => !prev)}
-              className="cursor-pointer rounded-full bg-mulearn px-3 py-1 text-sm font-semibold text-mulearn-whitish transition-opacity hover:opacity-90"
-            >
-              {showAll ? "Show fewer" : `+${hidden} more`}
-            </button>
-          </li>
-        )}
-      </ul>
-    </div>
   );
 }
 
@@ -102,13 +61,6 @@ export function InterestGroupDetailDialog({
   const category = group?.category ? CATEGORY_META[group.category] : undefined;
   const teamCount =
     (group?.leads.length ?? 0) + (group?.mentors.length ?? 0) + (group?.thinktank.length ?? 0);
-  const hasAside = Boolean(
-    group &&
-      (group.prerequisites.length ||
-        group.careers.length ||
-        group.officeHours ||
-        group.resources.length),
-  );
 
   return (
     <Dialog open={!!group} onOpenChange={onOpenChange}>
@@ -162,19 +114,6 @@ export function InterestGroupDetailDialog({
                       Join &amp; explore group <ExternalLink className="size-4" />
                     </a>
                   </Button>
-                  {teamCount > 0 && (
-                    <Button
-                      variant="outline"
-                      className="rounded-full"
-                      onClick={() =>
-                        document
-                          .getElementById(TEAM_SECTION_ID)
-                          ?.scrollIntoView({ behavior: "smooth", block: "start" })
-                      }
-                    >
-                      Meet the team
-                    </Button>
-                  )}
                 </div>
               </div>
 
@@ -184,76 +123,6 @@ export function InterestGroupDetailDialog({
                 className="hidden aspect-8/5 md:block"
               />
             </div>
-
-            {(group.about || hasAside) && (
-              <div className="grid gap-10 border-t border-mulearn/10 p-6 md:p-10 lg:grid-cols-[minmax(0,1fr)_19rem]">
-                {group.about && (
-                  <div>
-                    <h3 className="mb-4 text-2xl md:text-3xl font-black">
-                      About <span className="text-mulearn">{group.name}</span>
-                    </h3>
-                    <GroupAbout key={group.id ?? group.name} about={group.about} />
-                  </div>
-                )}
-
-                {hasAside && (
-                  <aside className="space-y-7 self-start rounded-3xl bg-mulearn-trusty-blue/10 p-6">
-                    {group.prerequisites.length > 0 && (
-                      <div>
-                        <AsideHeading>Skills to start with</AsideHeading>
-                        <ul className="space-y-2">
-                          {group.prerequisites.map((item) => (
-                            <li key={item} className="flex gap-2.5 text-sm text-mulearn-blackish">
-                              <Check
-                                className="mt-0.5 size-4 shrink-0 text-mulearn"
-                                strokeWidth={2.5}
-                                aria-hidden="true"
-                              />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {group.careers.length > 0 && (
-                      <CareerPaths key={group.id ?? group.name} careers={group.careers} />
-                    )}
-
-                    {group.officeHours && (
-                      <div>
-                        <AsideHeading>Office hours</AsideHeading>
-                        <p className="inline-flex items-center gap-2 text-sm font-medium text-mulearn-blackish">
-                          <Clock className="size-4 text-mulearn" aria-hidden="true" />
-                          {group.officeHours}
-                        </p>
-                      </div>
-                    )}
-
-                    {group.resources.length > 0 && (
-                      <div>
-                        <AsideHeading>Resources</AsideHeading>
-                        <ul className="space-y-2">
-                          {group.resources.map((resource) => (
-                            <li key={resource.url}>
-                              <a
-                                href={resource.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 break-all text-sm font-medium text-mulearn hover:underline"
-                              >
-                                {resource.label}
-                                <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </aside>
-                )}
-              </div>
-            )}
 
             {teamCount > 0 && (
               <div
@@ -266,6 +135,23 @@ export function InterestGroupDetailDialog({
                 <TeamGroup title="Leads" members={group.leads} isLead />
                 <TeamGroup title="Mentors" members={group.mentors} />
                 <TeamGroup title="Thinktank" members={group.thinktank} />
+              </div>
+            )}
+
+            {group.impactProjects.length > 0 && (
+              <div className="space-y-6 border-t border-mulearn/10 p-6 md:p-10">
+                <h3 className="inline-flex items-center gap-2 text-2xl md:text-3xl font-black">
+                  Impact <span className="text-mulearn">projects</span>
+                </h3>
+                <div className="space-y-3">
+                  {group.impactProjects.map((project, index) => (
+                    <ImpactProjectCard
+                      key={project.id}
+                      project={project}
+                      defaultExpanded={index === 0}
+                    />
+                  ))}
+                </div>
               </div>
             )}
           </>

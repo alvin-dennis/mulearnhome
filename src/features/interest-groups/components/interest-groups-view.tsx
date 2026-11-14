@@ -19,7 +19,7 @@ const JOIN_URL = `${APP_BASE_URL}/dashboard/profile`;
 
 async function getGroups() {
   const apiGroups = await fetchInterestGroups();
-  if (apiGroups.length === 0) return localDisplayItems();
+  if (apiGroups.length === 0) return localDisplayItems(APP_BASE_URL);
   return apiGroups
     .map((group) => toDisplayItem(group, APP_BASE_URL))
     .sort((a, b) => (b.members ?? 0) - (a.members ?? 0));
